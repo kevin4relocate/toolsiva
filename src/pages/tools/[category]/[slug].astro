@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import AdSlot from "@/components/common/AdSlot.astro";
 import TextToolWorkspace from "@/components/tools/TextToolWorkspace.astro";
 import DeveloperToolWorkspace from "@/components/tools/DeveloperToolWorkspace.astro";
+import SecurityToolWorkspace from "@/components/tools/SecurityToolWorkspace.astro";
 import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
@@ -89,6 +90,7 @@ const breadcrumbSchema = {
 
     {tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
     {tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
+    {tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
 
     <section class="mt-16">
       <h2 class="text-2xl font-bold text-white">How to use this tool</h2>

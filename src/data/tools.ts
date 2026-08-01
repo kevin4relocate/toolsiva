@@ -498,9 +498,9 @@ export const tools: ToolDefinition[] = [
   slug: "yaml-validator",
   category: "developer",
   name: "YAML Validator",
-  shortDescription: "Validate YAML syntax using a full YAML parser.",
+  shortDescription: "Check common YAML syntax and indentation issues.",
   metaDescription:
-    "Validate YAML syntax online with a full parser and local browser processing.",
+    "Validate common YAML structures online with local browser processing.",
   keywords: ["yaml validator", "validate yaml", "yaml syntax checker"],
   relatedTools: ["json-to-yaml", "json-validator", "xml-validator"],
   faq: [
@@ -567,6 +567,201 @@ export const tools: ToolDefinition[] = [
       question: "Are seconds and milliseconds supported?",
       answer:
         "Yes. The tool detects common 10-digit second timestamps and 13-digit millisecond timestamps.",
+    },
+    mobileFaq,
+  ],
+},
+
+{
+  slug: "password-generator",
+  category: "security",
+  name: "Password Generator",
+  shortDescription: "Generate strong passwords with configurable character groups.",
+  metaDescription:
+    "Generate secure random passwords locally in your browser with adjustable length and character options.",
+  keywords: ["password generator", "strong password", "random password"],
+  featured: true,
+  relatedTools: ["password-strength-checker", "passphrase-generator", "secure-token-generator"],
+  faq: [
+    privacyFaq,
+    {
+      question: "How are passwords generated?",
+      answer:
+        "Passwords are generated with the browser cryptography API rather than Math.random.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "passphrase-generator",
+  category: "security",
+  name: "Passphrase Generator",
+  shortDescription: "Generate memorable multi-word passphrases securely.",
+  metaDescription:
+    "Generate secure random passphrases locally in your browser with configurable word count and separators.",
+  keywords: ["passphrase generator", "diceware alternative", "secure passphrase"],
+  featured: true,
+  relatedTools: ["password-generator", "password-strength-checker", "random-string-generator"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Are passphrases easier to remember?",
+      answer:
+        "Multi-word passphrases can be easier to remember while remaining strong when enough random words are used.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "random-string-generator",
+  category: "security",
+  name: "Random String Generator",
+  shortDescription: "Create cryptographically secure random strings.",
+  metaDescription:
+    "Generate random strings with custom length and character sets using the browser cryptography API.",
+  keywords: ["random string generator", "secure random string", "random characters"],
+  relatedTools: ["secure-token-generator", "password-generator", "passphrase-generator"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Can I choose the character set?",
+      answer:
+        "Yes. You can include lowercase, uppercase, numbers and symbols.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "secure-token-generator",
+  category: "security",
+  name: "Secure Token Generator",
+  shortDescription: "Generate secure hexadecimal or Base64 URL-safe tokens.",
+  metaDescription:
+    "Generate cryptographically secure tokens locally in hexadecimal or Base64 URL-safe format.",
+  keywords: ["secure token generator", "api token generator", "random token"],
+  featured: true,
+  relatedTools: ["random-string-generator", "password-generator", "sha256-hash-generator"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Which token formats are supported?",
+      answer:
+        "The tool supports hexadecimal and URL-safe Base64 output.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "password-strength-checker",
+  category: "security",
+  name: "Password Strength Checker",
+  shortDescription: "Estimate password strength and identify common weaknesses.",
+  metaDescription:
+    "Check password strength locally and review practical improvement suggestions without uploading the password.",
+  keywords: ["password strength checker", "check password security", "password score"],
+  featured: true,
+  relatedTools: ["password-generator", "passphrase-generator", "hash-compare"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Does a high score guarantee safety?",
+      answer:
+        "No. The score is an estimate. Unique passwords and a password manager are still recommended.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "sha256-hash-generator",
+  category: "security",
+  name: "SHA-256 Hash Generator",
+  shortDescription: "Generate a SHA-256 digest from text.",
+  metaDescription:
+    "Generate SHA-256 hashes locally in your browser without sending the source text to a server.",
+  keywords: ["sha256 generator", "sha-256 hash", "text hash generator"],
+  relatedTools: ["sha512-hash-generator", "hmac-generator", "hash-compare"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Can a SHA-256 hash be reversed?",
+      answer:
+        "No. SHA-256 is a one-way digest, although weak inputs may still be guessed.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "sha512-hash-generator",
+  category: "security",
+  name: "SHA-512 Hash Generator",
+  shortDescription: "Generate a SHA-512 digest from text.",
+  metaDescription:
+    "Generate SHA-512 hashes locally in your browser with UTF-8 input support.",
+  keywords: ["sha512 generator", "sha-512 hash", "hash text"],
+  relatedTools: ["sha256-hash-generator", "hmac-generator", "hash-compare"],
+  faq: [
+    privacyFaq,
+    {
+      question: "What output format is used?",
+      answer:
+        "The generated digest is shown as lowercase hexadecimal.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "hmac-generator",
+  category: "security",
+  name: "HMAC Generator",
+  shortDescription: "Generate HMAC signatures with SHA-256 or SHA-512.",
+  metaDescription:
+    "Generate HMAC signatures locally using a message, secret key and SHA-256 or SHA-512.",
+  keywords: ["hmac generator", "hmac sha256", "hmac sha512"],
+  relatedTools: ["sha256-hash-generator", "sha512-hash-generator", "hash-compare"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Is the secret key uploaded?",
+      answer:
+        "No. The key and message are processed only by the browser cryptography API.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "basic-auth-generator",
+  category: "security",
+  name: "Basic Auth Header Generator",
+  shortDescription: "Create an HTTP Basic Authorization header.",
+  metaDescription:
+    "Generate an HTTP Basic Authorization header locally from a username and password.",
+  keywords: ["basic auth generator", "authorization header", "http basic authentication"],
+  relatedTools: ["secure-token-generator", "base64-encode", "password-generator"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Does Basic Auth encrypt credentials?",
+      answer:
+        "No. It only Base64-encodes them, so it should be used only over HTTPS.",
+    },
+    mobileFaq,
+  ],
+},
+{
+  slug: "hash-compare",
+  category: "security",
+  name: "Hash Compare",
+  shortDescription: "Compare two hashes using timing-safe style logic.",
+  metaDescription:
+    "Compare two hash strings locally while ignoring surrounding whitespace and optional letter case.",
+  keywords: ["hash compare", "compare checksum", "verify hash"],
+  relatedTools: ["sha256-hash-generator", "sha512-hash-generator", "hmac-generator"],
+  faq: [
+    privacyFaq,
+    {
+      question: "Does this identify the hash algorithm?",
+      answer:
+        "No. It compares two supplied strings and reports whether they match.",
     },
     mobileFaq,
   ],
