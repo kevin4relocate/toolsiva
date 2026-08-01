@@ -2,9 +2,11 @@
 interface Props { mode: string; }
 const { mode } = Astro.props;
 const isCounter = mode === "word-counter" || mode === "character-counter";
+const isCase = mode === "case-converter";
 const isCompare = mode === "text-compare";
 const isFindReplace = mode === "find-and-replace";
-const hasMode = ["case-converter", "sort-lines", "reverse-text"].includes(mode);
+const dualPaneModes = new Set(["remove-duplicate-lines","sort-lines","reverse-text","remove-extra-spaces","find-and-replace","slug-generator"]);
+const isDualPane = dualPaneModes.has(mode);
 ---
 
 <section class="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/20" data-text-tool data-mode={mode}>
@@ -24,116 +26,181 @@ const hasMode = ["case-converter", "sort-lines", "reverse-text"].includes(mode);
       <p class="text-sm text-zinc-500">Updates automatically in your browser.</p>
       <div class="flex flex-wrap items-center gap-2">
         <span data-status class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity" aria-live="polite"></span>
-        <button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-brand-400/40 hover:bg-white/5">{isCounter ? "Copy summary" : "Copy result"}</button>
-        <button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button>
+        {!isCase && !isCompare && <button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-brand-400/40 hover:bg-white/5">{isCounter ? "Copy summary" : "Copy result"}</button>}
+        <button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button>
       </div>
     </div>
+
+    {isCase && (
+      <>
+        <div class="mb-4 flex flex-wrap gap-2">
+          {[['upper','UPPERCASE'],['lower','lowercase'],['title','Title Case'],['sentence','Sentence case'],['capitalize','Capitalize Words'],['alternating','aLtErNaTiNg']].map(([value,label]) => (
+            <button type="button" data-case-action={value} class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:border-brand-400/50 hover:bg-brand-500/10">{label}</button>
+          ))}
+          <button type="button" data-undo class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:bg-white/5" disabled>Undo</button>
+          <button type="button" data-copy-editor class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:bg-white/5">Copy</button>
+        </div>
+        <label class="grid gap-2 text-sm text-zinc-300">Text editor<textarea data-input class="focus-ring min-h-80 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text, then choose a case…"></textarea></label>
+      </>
+    )}
 
     {isFindReplace && (
       <div class="mb-4 grid gap-3 sm:grid-cols-2">
         <label class="grid gap-2 text-sm text-zinc-300">Find<input data-find class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" /></label>
         <label class="grid gap-2 text-sm text-zinc-300">Replace with<input data-replace class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" /></label>
-        <label class="flex cursor-pointer items-center gap-2 text-sm text-zinc-400 sm:col-span-2"><input type="checkbox" data-case-sensitive class="size-4 cursor-pointer accent-violet-600" />Case-sensitive matching</label>
+        <label class="flex cursor-pointer items-center gap-2 text-sm text-zinc-400 sm:col-span-2"><input type="checkbox" data-case-sensitive class="size-4 accent-violet-600" /> Case-sensitive matching</label>
       </div>
     )}
 
-    {hasMode && (
+    {(mode === "sort-lines" || mode === "reverse-text") && (
       <div class="mb-4">
-        <label class="grid max-w-xs gap-2 text-sm text-zinc-300">Mode
-          <select data-option class="focus-ring cursor-pointer rounded-xl border border-white/10 bg-zinc-950 px-4 py-3">
-            {mode === "case-converter" && <><option value="upper">UPPERCASE</option><option value="lower">lowercase</option><option value="title">Title Case</option><option value="sentence">Sentence case</option></>}
-            {mode === "sort-lines" && <><option value="asc">Ascending</option><option value="desc">Descending</option></>}
-            {mode === "reverse-text" && <><option value="characters">Characters</option><option value="words">Words</option><option value="lines">Lines</option></>}
-          </select>
-        </label>
+        <label class="grid max-w-xs gap-2 text-sm text-zinc-300">Mode<select data-option class="focus-ring cursor-pointer rounded-xl border border-white/10 bg-zinc-950 px-4 py-3">
+          {mode === "sort-lines" && <><option value="asc">Ascending</option><option value="desc">Descending</option></>}
+          {mode === "reverse-text" && <><option value="characters">Characters</option><option value="words">Words</option><option value="lines">Lines</option></>}
+        </select></label>
       </div>
     )}
 
-    {isCompare ? (
-      <div class="grid gap-4 lg:grid-cols-2">
-        <label class="grid gap-2 text-sm text-zinc-300">Original text<textarea data-input-a class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Paste the first text…"></textarea></label>
-        <label class="grid gap-2 text-sm text-zinc-300">Updated text<textarea data-input-b class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Paste the second text…"></textarea></label>
-      </div>
-    ) : (
-      <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-72 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100 placeholder:text-zinc-600" placeholder="Type or paste your text here…" spellcheck="true"></textarea></label>
-    )}
-
-    {!isCounter && (
-      <div class="mt-4">
-        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-56 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 leading-7 text-zinc-100"></textarea></label>
-        <div class="mt-3 flex justify-end gap-2">
-          <button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-brand-400/40 hover:bg-white/5">Copy result</button>
-          <button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button>
+    {isCompare && (
+      <>
+        <div class="mb-4 flex flex-wrap items-center gap-4 text-sm text-zinc-300">
+          <label class="flex items-center gap-2"><input data-ignore-case type="checkbox" /> Ignore case</label>
+          <label class="flex items-center gap-2"><input data-ignore-space type="checkbox" /> Ignore whitespace</label>
         </div>
+        <div class="grid gap-4 lg:grid-cols-2">
+          <label class="grid gap-2 text-sm text-zinc-300">Original text<textarea data-input-a class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste original text…"></textarea></label>
+          <label class="grid gap-2 text-sm text-zinc-300">Updated text<textarea data-input-b class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste updated text…"></textarea></label>
+        </div>
+        <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div class="rounded-xl border border-white/10 p-3"><strong data-diff-stat="unchanged" class="block text-xl text-zinc-200">0</strong><span class="text-xs text-zinc-500">Unchanged</span></div>
+          <div class="rounded-xl border border-emerald-400/20 bg-emerald-500/5 p-3"><strong data-diff-stat="added" class="block text-xl text-emerald-300">0</strong><span class="text-xs text-emerald-400/70">Added</span></div>
+          <div class="rounded-xl border border-red-400/20 bg-red-500/5 p-3"><strong data-diff-stat="removed" class="block text-xl text-red-300">0</strong><span class="text-xs text-red-400/70">Removed</span></div>
+          <div class="rounded-xl border border-amber-400/20 bg-amber-500/5 p-3"><strong data-diff-stat="changed" class="block text-xl text-amber-300">0</strong><span class="text-xs text-amber-400/70">Changed blocks</span></div>
+        </div>
+        <div class="mt-5 overflow-hidden rounded-2xl border border-white/10">
+          <div class="grid grid-cols-2 border-b border-white/10 bg-zinc-950/70 text-xs font-semibold uppercase tracking-wide text-zinc-500"><div class="px-4 py-3">Original</div><div class="border-l border-white/10 px-4 py-3">Updated</div></div>
+          <div data-diff-view class="max-h-[36rem] overflow-auto bg-zinc-950/40 font-mono text-sm"></div>
+        </div>
+      </>
+    )}
+
+    {!isCase && !isCompare && isDualPane && (
+      <div class="grid gap-4 lg:grid-cols-2">
+        <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-72 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text…"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-72 resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 leading-7 text-zinc-100"></textarea></label>
       </div>
     )}
+
+    {isCounter && <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-72 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text…"></textarea></label>}
   </div>
 </section>
 
 <script>
-  const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const slugify = (value: string) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-  const titleCase = (value: string) => value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
-  const sentenceCase = (value: string) => value.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, m => m.toUpperCase());
+  const esc=(v:string)=>v.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]??c));
+  const escapeRegExp=(v:string)=>v.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  const title=(v:string)=>v.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+  const sentence=(v:string)=>v.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g,m=>m.toUpperCase());
+  const capitalize=(v:string)=>v.replace(/\b\w/g,c=>c.toUpperCase());
+  const alternating=(v:string)=>{let i=0;return Array.from(v).map(c=>/[A-Za-z]/.test(c)?(i++%2?c.toUpperCase():c.toLowerCase()):c).join("");};
+  const slug=(v:string)=>v.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+  const lcs = (a: string[], b: string[]) => {
+    const m = a.length;
+    const n = b.length;
+    const dp: number[][] = Array.from(
+      { length: m + 1 },
+      () => Array<number>(n + 1).fill(0),
+    );
 
-  function setupTextTools() {
-    document.querySelectorAll<HTMLElement>("[data-text-tool]").forEach(root => {
-      if (root.dataset.initialized === "true") return;
-      root.dataset.initialized = "true";
-      const mode = root.dataset.mode ?? "";
-      const input = root.querySelector<HTMLTextAreaElement>("[data-input]");
-      const inputA = root.querySelector<HTMLTextAreaElement>("[data-input-a]");
-      const inputB = root.querySelector<HTMLTextAreaElement>("[data-input-b]");
-      const output = root.querySelector<HTMLTextAreaElement>("[data-output]");
-      const option = root.querySelector<HTMLSelectElement>("[data-option]");
-      const findInput = root.querySelector<HTMLInputElement>("[data-find]");
-      const replaceInput = root.querySelector<HTMLInputElement>("[data-replace]");
-      const caseSensitive = root.querySelector<HTMLInputElement>("[data-case-sensitive]");
-      const copyButtons = root.querySelectorAll<HTMLButtonElement>("[data-copy]");
-      const clearButtons = root.querySelectorAll<HTMLButtonElement>("[data-clear]");
-      const status = root.querySelector<HTMLElement>("[data-status]");
-      let timer = 0;
+    for (let i = m - 1; i >= 0; i -= 1) {
+      for (let j = n - 1; j >= 0; j -= 1) {
+        const diagonal = dp[i + 1]?.[j + 1] ?? 0;
+        const below = dp[i + 1]?.[j] ?? 0;
+        const right = dp[i]?.[j + 1] ?? 0;
 
-      const notify = (message: string) => {
-        if (!status) return;
-        status.textContent = message; status.classList.replace("opacity-0", "opacity-100");
-        window.clearTimeout(timer); timer = window.setTimeout(() => status.classList.replace("opacity-100", "opacity-0"), 1200);
-      };
-      const flash = (buttons: NodeListOf<HTMLButtonElement>, label: string) => buttons.forEach(button => {
-        const original = button.textContent ?? ""; button.textContent = label;
-        setTimeout(() => button.textContent = original, 800);
-      });
-      const stats = () => {
-        const value = input?.value ?? ""; const trimmed = value.trim();
-        const values = { words: trimmed ? trimmed.split(/\s+/u).length : 0, characters: value.length, "without-spaces": value.replace(/\s/gu, "").length, sentences: trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter(x => x.trim()).length ?? 0, paragraphs: trimmed ? value.split(/\n\s*\n/u).map(x => x.trim()).filter(Boolean).length : 0 };
-        Object.entries(values).forEach(([key,val]) => { const field = root.querySelector<HTMLElement>(`[data-stat="${key}"]`); if (field) field.textContent = val.toLocaleString(); });
-        return values;
-      };
-      const update = () => {
-        if (mode === "word-counter" || mode === "character-counter") { stats(); return; }
-        const value = input?.value ?? ""; let result = "";
-        switch (mode) {
-          case "case-converter": result = option?.value === "lower" ? value.toLowerCase() : option?.value === "title" ? titleCase(value) : option?.value === "sentence" ? sentenceCase(value) : value.toUpperCase(); break;
-          case "remove-duplicate-lines": { const seen = new Set<string>(); result = value.split(/\r?\n/u).filter(line => seen.has(line) ? false : (seen.add(line), true)).join("\n"); break; }
-          case "sort-lines": { const lines = value.split(/\r?\n/u).sort((a,b) => a.localeCompare(b, undefined, { sensitivity: "base" })); if (option?.value === "desc") lines.reverse(); result = lines.join("\n"); break; }
-          case "reverse-text": result = option?.value === "words" ? value.trim().split(/\s+/u).reverse().join(" ") : option?.value === "lines" ? value.split(/\r?\n/u).reverse().join("\n") : Array.from(value).reverse().join(""); break;
-          case "remove-extra-spaces": result = value.split(/\r?\n/u).map(line => line.replace(/[ \t]+/g, " ").trim()).join("\n").replace(/\n{3,}/g, "\n\n").trim(); break;
-          case "find-and-replace": { const find = findInput?.value ?? ""; result = find ? value.replace(new RegExp(escapeRegExp(find), caseSensitive?.checked ? "g" : "gi"), replaceInput?.value ?? "") : value; break; }
-          case "text-compare": { const first = (inputA?.value ?? "").split(/\r?\n/u), second = (inputB?.value ?? "").split(/\r?\n/u); const a = new Set(first), b = new Set(second); const removed = first.filter(x => !b.has(x)), added = second.filter(x => !a.has(x)), matching = first.filter(x => b.has(x)); result = [`Matching lines: ${matching.length}`,`Removed lines: ${removed.length}`,`Added lines: ${added.length}`,"","Only in original:",...(removed.length ? removed.map(x => `- ${x}`) : ["(none)"]),"","Only in updated:",...(added.length ? added.map(x => `+ ${x}`) : ["(none)"])].join("\n"); break; }
-          case "slug-generator": result = slugify(value); break;
+        if (a[i] === b[j]) {
+          const currentRow = dp[i];
+          if (currentRow) currentRow[j] = diagonal + 1;
+        } else {
+          const currentRow = dp[i];
+          if (currentRow) currentRow[j] = Math.max(below, right);
         }
-        if (output) output.value = result;
-      };
-      [input,inputA,inputB,findInput,replaceInput].forEach(el => el?.addEventListener("input", update));
-      option?.addEventListener("change", update); caseSensitive?.addEventListener("change", update);
-      copyButtons.forEach(button => button.addEventListener("click", async () => {
-        let value = output?.value ?? "";
-        if (mode === "word-counter" || mode === "character-counter") { const s = stats(); value = `Words: ${s.words}\nCharacters: ${s.characters}\nWithout spaces: ${s["without-spaces"]}\nSentences: ${s.sentences}\nParagraphs: ${s.paragraphs}`; }
-        if (!value) return notify("Nothing to copy"); await navigator.clipboard.writeText(value); flash(copyButtons, "Copied!"); notify("Copied");
-      }));
-      clearButtons.forEach(button => button.addEventListener("click", () => { if(input) input.value=""; if(inputA) inputA.value=""; if(inputB) inputB.value=""; if(output) output.value=""; if(findInput) findInput.value=""; if(replaceInput) replaceInput.value=""; update(); flash(clearButtons,"Cleared"); notify("Cleared"); }));
-      update();
-    });
-  }
-  setupTextTools(); document.addEventListener("astro:page-load", setupTextTools);
+      }
+    }
+
+    const out: {
+      left: string | null;
+      right: string | null;
+      type: "unchanged" | "removed" | "added";
+    }[] = [];
+
+    let i = 0;
+    let j = 0;
+
+    while (i < m && j < n) {
+      if (a[i] === b[j]) {
+        out.push({
+          left: a[i] ?? "",
+          right: b[j] ?? "",
+          type: "unchanged",
+        });
+        i += 1;
+        j += 1;
+        continue;
+      }
+
+      const below = dp[i + 1]?.[j] ?? 0;
+      const right = dp[i]?.[j + 1] ?? 0;
+
+      if (below >= right) {
+        out.push({
+          left: a[i] ?? "",
+          right: null,
+          type: "removed",
+        });
+        i += 1;
+      } else {
+        out.push({
+          left: null,
+          right: b[j] ?? "",
+          type: "added",
+        });
+        j += 1;
+      }
+    }
+
+    while (i < m) {
+      out.push({
+        left: a[i] ?? "",
+        right: null,
+        type: "removed",
+      });
+      i += 1;
+    }
+
+    while (j < n) {
+      out.push({
+        left: null,
+        right: b[j] ?? "",
+        type: "added",
+      });
+      j += 1;
+    }
+
+    return out;
+  };
+
+  function setup(){document.querySelectorAll<HTMLElement>("[data-text-tool]").forEach(root=>{if(root.dataset.initialized==="true")return;root.dataset.initialized="true";const mode=root.dataset.mode??"";const input=root.querySelector<HTMLTextAreaElement>("[data-input]"),a=root.querySelector<HTMLTextAreaElement>("[data-input-a]"),b=root.querySelector<HTMLTextAreaElement>("[data-input-b]"),output=root.querySelector<HTMLTextAreaElement>("[data-output]"),option=root.querySelector<HTMLSelectElement>("[data-option]"),find=root.querySelector<HTMLInputElement>("[data-find]"),replace=root.querySelector<HTMLInputElement>("[data-replace]"),caseSensitive=root.querySelector<HTMLInputElement>("[data-case-sensitive]"),ignoreCase=root.querySelector<HTMLInputElement>("[data-ignore-case]"),ignoreSpace=root.querySelector<HTMLInputElement>("[data-ignore-space]"),diff=root.querySelector<HTMLElement>("[data-diff-view]"),status=root.querySelector<HTMLElement>("[data-status]");const copies=root.querySelectorAll<HTMLButtonElement>("[data-copy]"),clears=root.querySelectorAll<HTMLButtonElement>("[data-clear]");let history:string[]=[];let timer:ReturnType<typeof setTimeout>|undefined;
+    const notify=(m:string)=>{if(!status)return;status.textContent=m;status.classList.replace("opacity-0","opacity-100");if(timer)clearTimeout(timer);timer=setTimeout(()=>status.classList.replace("opacity-100","opacity-0"),1200);};
+    const stats=()=>{const v=input?.value??"",t=v.trim();const s={words:t?t.split(/\s+/u).length:0,characters:v.length,"without-spaces":v.replace(/\s/gu,"").length,sentences:t.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter(x=>x.trim()).length??0,paragraphs:t?v.split(/\n\s*\n/u).map(x=>x.trim()).filter(Boolean).length:0};Object.entries(s).forEach(([k,val])=>{const el=root.querySelector<HTMLElement>(`[data-stat="${k}"]`);if(el)el.textContent=val.toLocaleString();});return s;};
+    const transform=()=>{if(mode==="word-counter"||mode==="character-counter"){stats();return;}const v=input?.value??"";let r="";if(mode==="remove-duplicate-lines"){const seen=new Set<string>();r=v.split(/\r?\n/u).filter(x=>seen.has(x)?false:(seen.add(x),true)).join("\n");}else if(mode==="sort-lines"){const lines=v.split(/\r?\n/u).sort((x,y)=>x.localeCompare(y,undefined,{sensitivity:"base"}));if(option?.value==="desc")lines.reverse();r=lines.join("\n");}else if(mode==="reverse-text")r=option?.value==="words"?v.trim().split(/\s+/u).reverse().join(" "):option?.value==="lines"?v.split(/\r?\n/u).reverse().join("\n"):Array.from(v).reverse().join("");else if(mode==="remove-extra-spaces")r=v.split(/\r?\n/u).map(x=>x.replace(/[ \t]+/g," ").trim()).join("\n").replace(/\n{3,}/g,"\n\n").trim();else if(mode==="find-and-replace"){const f=find?.value??"";r=f?v.replace(new RegExp(escapeRegExp(f),caseSensitive?.checked?"g":"gi"),replace?.value??""):v;}else if(mode==="slug-generator")r=slug(v);if(output)output.value=r;};
+    const compare=()=>{if(!diff)return;const left=(a?.value??"").split(/\r?\n/u),right=(b?.value??"").split(/\r?\n/u);const norm=(x:string)=>{let y=x;if(ignoreSpace?.checked)y=y.replace(/\s+/g," ").trim();if(ignoreCase?.checked)y=y.toLowerCase();return y;};const rows=lcs(left.map(norm),right.map(norm));let li=0,ri=0,added=0,removed=0,unchanged=0,changed=0;const html:string[]=[];for(let i=0;i<rows.length;i++){const row=rows[i];let type: "unchanged" | "removed" | "added" | "changed" = row?.type ?? "unchanged",l=row?.left??null,r=row?.right??null;if(type==="removed"&&rows[i+1]?.type==="added"){type="changed";r=rows[i+1]?.right??"";i++;changed++;}else if(type==="added")added++;else if(type==="removed")removed++;else unchanged++;if(l!==null)li++;if(r!==null)ri++;const cls=type==="added"?"diff-added":type==="removed"?"diff-removed":type==="changed"?"diff-changed":"diff-unchanged";html.push(`<div class="grid grid-cols-2 border-b border-white/5 ${cls}"><div class="grid grid-cols-[3rem_1fr] px-2 py-1.5"><span class="select-none text-right text-zinc-600">${l!==null?li:""}</span><span class="whitespace-pre-wrap break-words px-3">${l!==null?esc(a?.value.split(/\r?\n/u)[li-1]??""):""}</span></div><div class="grid grid-cols-[3rem_1fr] border-l border-white/5 px-2 py-1.5"><span class="select-none text-right text-zinc-600">${r!==null?ri:""}</span><span class="whitespace-pre-wrap break-words px-3">${r!==null?esc(b?.value.split(/\r?\n/u)[ri-1]??""):""}</span></div></div>`);}diff.innerHTML=html.join("")||'<div class="p-6 text-center text-zinc-600">Paste two texts to compare.</div>';({unchanged,added,removed,changed} as Record<string,number>);Object.entries({unchanged,added,removed,changed}).forEach(([k,v])=>{const el=root.querySelector<HTMLElement>(`[data-diff-stat="${k}"]`);if(el)el.textContent=String(v);});};
+    root.querySelectorAll<HTMLButtonElement>("[data-case-action]").forEach(btn=>btn.addEventListener("click",()=>{if(!input)return;history.push(input.value);const action=btn.dataset.caseAction;input.value=action==="upper"?input.value.toUpperCase():action==="lower"?input.value.toLowerCase():action==="title"?title(input.value):action==="sentence"?sentence(input.value):action==="capitalize"?capitalize(input.value):alternating(input.value);const undo=root.querySelector<HTMLButtonElement>("[data-undo]");if(undo)undo.disabled=false;notify("Converted");}));
+    root.querySelector<HTMLButtonElement>("[data-undo]")?.addEventListener("click",()=>{if(!input||!history.length)return;input.value=history.pop()??input.value;const u=root.querySelector<HTMLButtonElement>("[data-undo]");if(u)u.disabled=history.length===0;notify("Undone");});
+    root.querySelector<HTMLButtonElement>("[data-copy-editor]")?.addEventListener("click",async()=>{if(!input?.value)return notify("Nothing to copy");await navigator.clipboard.writeText(input.value);notify("Copied");});
+    [input,find,replace].forEach(el=>el?.addEventListener("input",transform));option?.addEventListener("change",transform);caseSensitive?.addEventListener("change",transform);[a,b].forEach(el=>el?.addEventListener("input",compare));ignoreCase?.addEventListener("change",compare);ignoreSpace?.addEventListener("change",compare);
+    copies.forEach(btn=>btn.addEventListener("click",async()=>{let v=output?.value??"";if(mode==="word-counter"||mode==="character-counter"){const s=stats();v=`Words: ${s.words}\nCharacters: ${s.characters}\nWithout spaces: ${s["without-spaces"]}\nSentences: ${s.sentences}\nParagraphs: ${s.paragraphs}`;}if(!v)return notify("Nothing to copy");await navigator.clipboard.writeText(v);notify("Copied");}));
+    clears.forEach(btn=>btn.addEventListener("click",()=>{[input,a,b,output].forEach(el=>{if(el)el.value="";});if(find)find.value="";if(replace)replace.value="";history=[];transform();compare();notify("Cleared");}));
+    transform();compare();
+  });}
+  setup();document.addEventListener("astro:page-load",setup);
 </script>
