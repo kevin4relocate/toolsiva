@@ -4,6 +4,9 @@ import AdSlot from "@/components/common/AdSlot.astro";
 import TextToolWorkspace from "@/components/tools/TextToolWorkspace.astro";
 import DeveloperToolWorkspace from "@/components/tools/DeveloperToolWorkspace.astro";
 import SecurityToolWorkspace from "@/components/tools/SecurityToolWorkspace.astro";
+import QrToolWorkspace from "@/components/tools/QrToolWorkspace.astro";
+import CalculatorToolWorkspace from "@/components/tools/CalculatorToolWorkspace.astro";
+import ConverterToolWorkspace from "@/components/tools/ConverterToolWorkspace.astro";
 import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
@@ -93,6 +96,9 @@ const breadcrumbSchema = {
     {tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
     {tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
     {tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
+    {tool.category === "qr" && <QrToolWorkspace mode={tool.slug} />}
+    {tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}
+    {tool.category === "converter" && <ConverterToolWorkspace mode={tool.slug} />}
 
     <section class="mt-10">
       <h2 class="text-xl font-bold text-white">How to use this tool</h2>

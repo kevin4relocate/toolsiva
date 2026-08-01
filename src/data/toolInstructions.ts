@@ -34,5 +34,20 @@ export function getToolInstructions(tool: ToolDefinition): ToolInstruction[] {
     { title: "Review the generated value", description: "The authorization header or signature updates automatically." },
     { title: "Copy the result", description: "Copy the generated value when it is ready." },
   ];
+  if (tool.category === "qr") return [
+    { title: "Enter the QR content", description: "Complete the fields for the text, link, contact or action." },
+    { title: "Review the preview", description: "The QR code updates locally in your browser." },
+    { title: "Download the QR code", description: "Save the generated PNG when it is ready." },
+  ];
+  if (tool.category === "calculator") return [
+    { title: "Enter the values", description: "Complete the calculator fields with your numbers or dates." },
+    { title: "Review the calculation", description: "Results update automatically when inputs change." },
+    { title: "Adjust and compare", description: "Change any value to compare another scenario." },
+  ];
+  if (tool.category === "converter") return [
+    { title: "Enter a value", description: "Add the number you want to convert." },
+    { title: "Choose both units", description: "Select the source unit and destination unit." },
+    { title: "Copy the converted value", description: "Use the live result in your work." },
+  ];
   return defaults;
 }

@@ -1,0 +1,39 @@
+---
+interface Props { mode: string; }
+const { mode } = Astro.props;
+const labels: Record<string,string[]> = {
+ "percentage-calculator":["Percentage (%)","Number"], "percentage-change-calculator":["Original value","New value"], "discount-calculator":["Original price","Discount (%)"], "tip-calculator":["Bill amount","Tip (%)","People"], "age-calculator":["Date of birth"], "bmi-calculator":["Weight (kg)","Height (cm)"], "loan-calculator":["Loan amount","Annual rate (%)","Term (years)"], "simple-interest-calculator":["Principal","Annual rate (%)","Time (years)"], "compound-interest-calculator":["Principal","Annual rate (%)","Time (years)","Compounds per year"], "date-difference-calculator":["Start date","End date"], "time-duration-calculator":["Start time","End time"], "average-calculator":["Numbers separated by commas"]
+};
+const names = labels[mode] ?? ["Value 1","Value 2"];
+const dateModes = new Set(["age-calculator","date-difference-calculator"]);
+const timeMode = mode === "time-duration-calculator";
+---
+<section class="rounded-2xl border border-white/10 bg-zinc-900/80 p-4 shadow-xl shadow-black/20 sm:p-5" data-calculator data-mode={mode}>
+ <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.75fr)]">
+  <div class="grid gap-3 sm:grid-cols-2">
+   {names.map((label,index)=><label class:list={["grid gap-1.5", mode === "average-calculator" && "sm:col-span-2"]}><span class="text-xs font-medium text-zinc-400">{label}</span><input data-value={index} type={dateModes.has(mode)?"date":timeMode?"time":mode==="average-calculator"?"text":"number"} step="any" class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-sm text-white" /></label>)}
+  </div>
+  <div class="rounded-2xl border border-white/10 bg-zinc-950/70 p-4"><p class="text-xs font-semibold uppercase tracking-wider text-zinc-500">Result</p><div data-result class="mt-3 text-2xl font-bold text-white">Enter values</div><div data-details class="mt-2 text-sm leading-6 text-zinc-400"></div></div>
+ </div>
+</section>
+<script>
+ document.querySelectorAll<HTMLElement>("[data-calculator]").forEach(root=>{
+  const mode=root.dataset.mode??""; const inputs=[...root.querySelectorAll<HTMLInputElement>("[data-value]")]; const result=root.querySelector<HTMLElement>("[data-result]"); const details=root.querySelector<HTMLElement>("[data-details]");
+  const n=(i:number)=>Number(inputs[i]?.value); const fmt=(v:number,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):"—";
+  const update=()=>{ if(!result||!details)return; let main="Enter values", extra="";
+   if(mode==="percentage-calculator"&&Number.isFinite(n(0))&&Number.isFinite(n(1))) main=fmt(n(1)*n(0)/100);
+   else if(mode==="percentage-change-calculator"&&n(0)!==0&&Number.isFinite(n(1))){const v=(n(1)-n(0))/Math.abs(n(0))*100;main=`${fmt(v)}%`;extra=v>=0?"Increase":"Decrease";}
+   else if(mode==="discount-calculator"&&Number.isFinite(n(0))&&Number.isFinite(n(1))){const save=n(0)*n(1)/100;main=fmt(n(0)-save);extra=`You save ${fmt(save)}`;}
+   else if(mode==="tip-calculator"&&Number.isFinite(n(0))&&Number.isFinite(n(1))){const people=Math.max(1,n(2)||1),tip=n(0)*n(1)/100,total=n(0)+tip;main=fmt(total/people);extra=`Total ${fmt(total)} · Tip ${fmt(tip)} · Per person`;}
+   else if(mode==="bmi-calculator"&&n(0)>0&&n(1)>0){const bmi=n(0)/Math.pow(n(1)/100,2);main=fmt(bmi,1);extra=bmi<18.5?"Underweight":bmi<25?"Healthy range":bmi<30?"Overweight":"Obesity range";}
+   else if(mode==="loan-calculator"&&n(0)>0&&n(2)>0){const r=n(1)/1200,p=n(2)*12,pay=r===0?n(0)/p:n(0)*r*Math.pow(1+r,p)/(Math.pow(1+r,p)-1);main=fmt(pay);extra=`Monthly payment · Total ${fmt(pay*p)} · Interest ${fmt(pay*p-n(0))}`;}
+   else if(mode==="simple-interest-calculator"&&n(0)>=0){const interest=n(0)*n(1)*n(2)/100;main=fmt(n(0)+interest);extra=`Interest ${fmt(interest)}`;}
+   else if(mode==="compound-interest-calculator"&&n(0)>=0){const c=Math.max(1,n(3)||1),amount=n(0)*Math.pow(1+n(1)/100/c,c*n(2));main=fmt(amount);extra=`Interest ${fmt(amount-n(0))}`;}
+   else if(mode==="average-calculator"){const vals=(inputs[0]?.value??"").split(/[\s,]+/).map(Number).filter(Number.isFinite);if(vals.length){const sum=vals.reduce((a,b)=>a+b,0);main=fmt(sum/vals.length);extra=`Count ${vals.length} · Sum ${fmt(sum)} · Min ${fmt(Math.min(...vals))} · Max ${fmt(Math.max(...vals))}`;}}
+   else if(mode==="date-difference-calculator"&&inputs[0]?.value&&inputs[1]?.value){const d=Math.abs(new Date(inputs[1].value).getTime()-new Date(inputs[0].value).getTime())/86400000;main=`${fmt(d,0)} days`;}
+   else if(mode==="age-calculator"&&inputs[0]?.value){const birth=new Date(inputs[0].value),now=new Date();let years=now.getFullYear()-birth.getFullYear();const m=now.getMonth()-birth.getMonth();if(m<0||(m===0&&now.getDate()<birth.getDate()))years--;main=`${Math.max(0,years)} years`;extra=`Born ${birth.toLocaleDateString()}`;}
+   else if(mode==="time-duration-calculator"&&inputs[0]?.value&&inputs[1]?.value){const toMin=(s:string)=>{const [h = 0, m = 0] = s.split(":").map(Number); return h * 60 + m};let d=toMin(inputs[1].value)-toMin(inputs[0].value);if(d<0)d+=1440;main=`${Math.floor(d/60)}h ${d%60}m`;extra=`${d} minutes`;}
+   result.textContent=main;details.textContent=extra;
+  }; root.addEventListener("input",update);update();
+ });
+</script>

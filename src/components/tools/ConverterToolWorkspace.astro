@@ -1,0 +1,38 @@
+---
+interface Props { mode: string; }
+const { mode } = Astro.props;
+---
+<section class="rounded-2xl border border-white/10 bg-zinc-900/80 p-4 shadow-xl shadow-black/20 sm:p-5" data-converter data-mode={mode}>
+ <div class="grid gap-4 lg:grid-cols-[1fr_auto_1fr] lg:items-end">
+  <label class="grid gap-1.5"><span class="text-xs font-medium text-zinc-400">From</span><div class="grid grid-cols-[1fr_auto] gap-2"><input data-input type="number" step="any" value="1" class="min-w-0 rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-sm text-white"/><select data-from class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-sm text-white"></select></div></label>
+  <button data-swap type="button" class="cursor-pointer rounded-xl border border-white/10 px-3 py-3 text-sm text-zinc-300 hover:bg-white/5" aria-label="Swap units">⇄</button>
+  <label class="grid gap-1.5"><span class="text-xs font-medium text-zinc-400">To</span><div class="grid grid-cols-[1fr_auto] gap-2"><output data-output class="min-w-0 overflow-x-auto rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-sm font-semibold text-white">—</output><select data-to class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-sm text-white"></select></div></label>
+ </div><p data-formula class="mt-3 text-xs text-zinc-500"></p>
+</section>
+<script>
+ type Unit={label:string,factor?:number,toBase?:(v:number)=>number,fromBase?:(v:number)=>number};
+ const sets:Record<string,Record<string,Unit>>={
+  "length-converter":{m:{label:"metres",factor:1},km:{label:"kilometres",factor:1000},cm:{label:"centimetres",factor:.01},mm:{label:"millimetres",factor:.001},mi:{label:"miles",factor:1609.344},yd:{label:"yards",factor:.9144},ft:{label:"feet",factor:.3048},in:{label:"inches",factor:.0254}},
+  "weight-converter":{kg:{label:"kilograms",factor:1},g:{label:"grams",factor:.001},mg:{label:"milligrams",factor:.000001},lb:{label:"pounds",factor:.45359237},oz:{label:"ounces",factor:.028349523125},t:{label:"metric tonnes",factor:1000}},
+  "temperature-converter":{C:{label:"Celsius",toBase:v=>v,fromBase:v=>v},F:{label:"Fahrenheit",toBase:v=>(v-32)*5/9,fromBase:v=>v*9/5+32},K:{label:"Kelvin",toBase:v=>v-273.15,fromBase:v=>v+273.15}},
+  "area-converter":{m2:{label:"square metres",factor:1},km2:{label:"square kilometres",factor:1e6},cm2:{label:"square centimetres",factor:1e-4},ha:{label:"hectares",factor:1e4},acre:{label:"acres",factor:4046.8564224},ft2:{label:"square feet",factor:.09290304}},
+  "volume-converter":{L:{label:"litres",factor:1},mL:{label:"millilitres",factor:.001},m3:{label:"cubic metres",factor:1000},gal:{label:"US gallons",factor:3.785411784},qt:{label:"US quarts",factor:.946352946},cup:{label:"US cups",factor:.2365882365}},
+  "speed-converter":{mps:{label:"metres/second",factor:1},kph:{label:"kilometres/hour",factor:.2777777778},mph:{label:"miles/hour",factor:.44704},knot:{label:"knots",factor:.5144444444},fps:{label:"feet/second",factor:.3048}},
+  "time-converter":{s:{label:"seconds",factor:1},min:{label:"minutes",factor:60},h:{label:"hours",factor:3600},day:{label:"days",factor:86400},week:{label:"weeks",factor:604800}},
+  "data-storage-converter":{B:{label:"bytes",factor:1},KB:{label:"kilobytes",factor:1000},MB:{label:"megabytes",factor:1e6},GB:{label:"gigabytes",factor:1e9},TB:{label:"terabytes",factor:1e12},KiB:{label:"kibibytes",factor:1024},MiB:{label:"mebibytes",factor:1048576},GiB:{label:"gibibytes",factor:1073741824}},
+  "pressure-converter":{Pa:{label:"pascals",factor:1},kPa:{label:"kilopascals",factor:1000},bar:{label:"bar",factor:100000},psi:{label:"PSI",factor:6894.757293},atm:{label:"atmospheres",factor:101325},mmHg:{label:"mmHg",factor:133.3223874}},
+  "energy-converter":{J:{label:"joules",factor:1},kJ:{label:"kilojoules",factor:1000},cal:{label:"calories",factor:4.184},kcal:{label:"kilocalories",factor:4184},Wh:{label:"watt-hours",factor:3600},kWh:{label:"kilowatt-hours",factor:3600000}},
+  "power-converter":{W:{label:"watts",factor:1},kW:{label:"kilowatts",factor:1000},MW:{label:"megawatts",factor:1e6},hp:{label:"horsepower",factor:745.699872}},
+  "angle-converter":{deg:{label:"degrees",factor:Math.PI/180},rad:{label:"radians",factor:1},turn:{label:"turns",factor:Math.PI*2},grad:{label:"gradians",factor:Math.PI/200}},
+  "frequency-converter":{Hz:{label:"hertz",factor:1},kHz:{label:"kilohertz",factor:1e3},MHz:{label:"megahertz",factor:1e6},GHz:{label:"gigahertz",factor:1e9}},
+  "force-converter":{N:{label:"newtons",factor:1},kN:{label:"kilonewtons",factor:1000},lbf:{label:"pound-force",factor:4.4482216153},kgf:{label:"kilogram-force",factor:9.80665}},
+  "torque-converter":{Nm:{label:"newton-metres",factor:1},lbft:{label:"pound-feet",factor:1.3558179483},lbin:{label:"pound-inches",factor:.112984829},kgfm:{label:"kilogram-force metres",factor:9.80665}},
+  "density-converter":{kgm3:{label:"kg/m³",factor:1},gcm3:{label:"g/cm³",factor:1000},gL:{label:"g/L",factor:1},lbft3:{label:"lb/ft³",factor:16.01846337}},
+  "acceleration-converter":{mps2:{label:"m/s²",factor:1},g:{label:"g-force",factor:9.80665},fps2:{label:"ft/s²",factor:.3048},gal:{label:"Gal",factor:.01}},
+  "fuel-economy-converter":{L100:{label:"L/100 km",toBase:v=>v,fromBase:v=>v},mpgUS:{label:"MPG (US)",toBase:v=>235.214583/Math.max(v,1e-12),fromBase:v=>235.214583/Math.max(v,1e-12)},mpgUK:{label:"MPG (UK)",toBase:v=>282.480936/Math.max(v,1e-12),fromBase:v=>282.480936/Math.max(v,1e-12)},kmL:{label:"km/L",toBase:v=>100/Math.max(v,1e-12),fromBase:v=>100/Math.max(v,1e-12)}},
+  "data-transfer-rate-converter":{bps:{label:"bits/s",factor:1},Kbps:{label:"kilobits/s",factor:1e3},Mbps:{label:"megabits/s",factor:1e6},Gbps:{label:"gigabits/s",factor:1e9},Bps:{label:"bytes/s",factor:8},MBps:{label:"megabytes/s",factor:8e6}},
+  "cooking-volume-converter":{mL:{label:"millilitres",factor:1},L:{label:"litres",factor:1000},tsp:{label:"US teaspoons",factor:4.92892159375},tbsp:{label:"US tablespoons",factor:14.78676478125},cup:{label:"US cups",factor:236.5882365},floz:{label:"US fluid ounces",factor:29.5735295625}}
+ };
+ document.querySelectorAll<HTMLElement>("[data-converter]").forEach(root=>{const mode = root.dataset.mode ?? ""; const fallbackUnits = sets["length-converter"]; if (!fallbackUnits) return; const units = sets[mode] ?? fallbackUnits; const input=root.querySelector<HTMLInputElement>("[data-input]"),from=root.querySelector<HTMLSelectElement>("[data-from]"),to=root.querySelector<HTMLSelectElement>("[data-to]"),output=root.querySelector<HTMLOutputElement>("[data-output]"),formula=root.querySelector<HTMLElement>("[data-formula]"); if(!input||!from||!to||!output)return; Object.entries(units).forEach(([key,u])=>{from.add(new Option(u.label,key));to.add(new Option(u.label,key));});to.selectedIndex=Math.min(1,to.options.length-1);
+ const update=()=>{const value=Number(input.value),a=units[from.value],b=units[to.value];if(!Number.isFinite(value)||!a||!b){output.textContent="—";return;}const base=a.toBase?a.toBase(value):value*(a.factor??1),converted=b.fromBase?b.fromBase(base):base/(b.factor??1);output.textContent=Number.isFinite(converted)?converted.toLocaleString(undefined,{maximumSignificantDigits:12}):"—";if(formula)formula.textContent=`${value} ${a.label} = ${output.textContent} ${b.label}`;}; root.addEventListener("input",update);root.addEventListener("change",update);root.querySelector("[data-swap]")?.addEventListener("click",()=>{const v=from.value;from.value=to.value;to.value=v;update();});update();});
+</script>
