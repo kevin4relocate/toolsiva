@@ -1,40 +1,84 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ToolCard from "@/components/common/ToolCard.astro";
+import { categories } from "@/data/categories";
 import { tools } from "@/data/tools";
 
-const featuredTools = tools.filter((tool) => tool.featured);
+const featuredTools = tools.filter((tool) => tool.featured).slice(0, 12);
 ---
 
 <BaseLayout>
-  <section class="mx-auto max-w-7xl px-4 pb-16 pt-24 text-center sm:px-6 lg:px-8">
-    <p class="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-brand-300">
+  <section class="mx-auto max-w-[84rem] px-4 pb-14 pt-16 text-center sm:px-5 sm:pt-20 lg:px-6">
+    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-brand-300">
       Fast · Private · Simple
     </p>
-    <h1 class="mx-auto max-w-4xl text-5xl font-black tracking-tight text-white sm:text-7xl">
+    <h1 class="mx-auto max-w-5xl text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
       Useful online tools without the clutter.
     </h1>
-    <p class="mx-auto mt-7 max-w-2xl text-lg leading-8 text-zinc-400">
-      Complete everyday tasks in seconds. Most Toolsiva tools run directly in your browser, so
-      your data stays on your device.
+    <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+      Complete everyday tasks in seconds with {tools.length}+ focused tools. Most processing runs
+      directly in your browser, so your input stays on your device.
     </p>
-    <div class="mt-10 flex flex-wrap justify-center gap-3">
-      <a class="focus-ring rounded-xl bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-500" href="/tools">
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a class="focus-ring rounded-xl bg-brand-600 px-6 py-3 font-semibold text-white transition hover:bg-brand-500" href="/tools">
         Explore all tools
       </a>
-      <a class="focus-ring rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold hover:bg-white/10" href="/tools/text">
-        Text tools
+      <a class="focus-ring rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold transition hover:bg-white/10" href="#categories">
+        Browse categories
       </a>
+    </div>
+    <div class="mx-auto mt-10 grid max-w-3xl grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/[0.02] py-4">
+      <div><strong class="text-xl text-white sm:text-2xl">{tools.length}+</strong><span class="mt-1 block text-xs text-zinc-500">tools</span></div>
+      <div><strong class="text-xl text-white sm:text-2xl">{categories.length}</strong><span class="mt-1 block text-xs text-zinc-500">categories</span></div>
+      <div><strong class="text-xl text-white sm:text-2xl">No account</strong><span class="mt-1 block text-xs text-zinc-500">required</span></div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="mb-8">
-      <p class="text-sm font-semibold text-brand-300">START HERE</p>
-      <h2 class="mt-2 text-3xl font-bold text-white">Featured tools</h2>
+  <section id="categories" class="mx-auto max-w-[84rem] scroll-mt-20 px-4 py-10 sm:px-5 lg:px-6">
+    <div class="mb-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Categories</p>
+      <h2 class="mt-2 text-2xl font-bold text-white sm:text-3xl">Find the right tool faster</h2>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {categories.map((category) => {
+        const count = tools.filter((tool) => tool.category === category.slug).length;
+        return (
+          <a href={`/tools/${category.slug}`} class="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:border-brand-400/30 hover:bg-white/[0.04]">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="font-bold text-white">{category.name}</h3>
+              <span class="rounded-full border border-white/10 px-2.5 py-1 text-xs text-zinc-500">{count}</span>
+            </div>
+            <p class="mt-2 text-sm leading-6 text-zinc-400">{category.description}</p>
+            <span class="mt-4 inline-flex text-sm font-semibold text-brand-300 transition group-hover:text-brand-200">View tools →</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[84rem] px-4 py-12 sm:px-5 lg:px-6">
+    <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Popular tools</p>
+        <h2 class="mt-2 text-2xl font-bold text-white sm:text-3xl">Start with these</h2>
+      </div>
+      <a href="/tools" class="text-sm font-semibold text-brand-300 hover:text-brand-200">View all tools →</a>
     </div>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {featuredTools.map((tool) => <ToolCard tool={tool} />)}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[84rem] px-4 py-12 sm:px-5 lg:px-6">
+    <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-brand-500/10 to-transparent p-6 sm:p-9">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Privacy-minded</p>
+      <h2 class="mt-2 text-2xl font-bold text-white">Your input should stay yours.</h2>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-zinc-300">
+        Most Toolsiva tools run locally in the browser. No account is required, and tool pages
+        explain how their input is processed. Review the Privacy Policy for details about hosting,
+        technical logs and future third-party services.
+      </p>
+      <a href="/privacy" class="mt-5 inline-flex text-sm font-semibold text-brand-300 hover:text-brand-200">Read the Privacy Policy →</a>
     </div>
   </section>
 </BaseLayout>

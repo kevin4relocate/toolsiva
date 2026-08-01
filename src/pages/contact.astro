@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Toolsiva about feedback, bugs, privacy questions and general enquiries."
+>
+  <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Contact</p>
+    <h1 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
+      Send us a message
+    </h1>
+    <p class="mt-4 text-base leading-7 text-zinc-400">
+      Report a bug, suggest a tool or ask a privacy question. Include the tool URL, browser,
+      device and steps to reproduce when reporting a technical issue.
+    </p>
+
+    <div class="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+      <h2 class="text-lg font-bold text-white">Email</h2>
+      <a
+        href={`mailto:${siteConfig.contactEmail}`}
+        class="focus-ring mt-3 inline-flex rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-brand-300 transition hover:bg-white/10 hover:text-white"
+      >
+        {siteConfig.contactEmail}
+      </a>
+      <p class="mt-4 text-xs leading-5 text-zinc-500">
+        This website does not currently use a server-side contact form, which avoids collecting
+        message data through Toolsiva itself.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

@@ -111,3 +111,32 @@ button:disabled,
 [aria-disabled="true"] {
   cursor: not-allowed;
 }
+
+/* Premium editorial content */
+.prose-premium h2 {
+  margin-bottom: 0.75rem;
+  color: rgb(244 244 245);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.prose-premium p {
+  color: rgb(161 161 170);
+}
+
+.prose-premium a {
+  color: rgb(196 181 253);
+  text-decoration: underline;
+  text-decoration-color: rgb(139 92 246 / 0.45);
+  text-underline-offset: 0.2em;
+}
+
+.prose-premium a:hover {
+  color: white;
+}
+
+::selection {
+  background: rgb(124 58 237 / 0.45);
+  color: white;
+}

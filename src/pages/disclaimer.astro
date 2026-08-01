@@ -1,0 +1,46 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Disclaimer"
+  description="Important information about the limitations of Toolsiva tools and generated results."
+>
+  <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Legal</p>
+    <h1 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">Disclaimer</h1>
+
+    <div class="prose-premium mt-8 space-y-8 text-sm leading-7 text-zinc-300">
+      <section>
+        <h2>General information</h2>
+        <p>
+          Toolsiva provides general-purpose utilities and informational results. The service is
+          not a substitute for professional advice, certified software, regulatory guidance or
+          independent verification.
+        </p>
+      </section>
+      <section>
+        <h2>Calculations and conversions</h2>
+        <p>
+          Values may be rounded and may depend on assumptions, unit definitions or the data you
+          enter. Verify important calculations using an authoritative source.
+        </p>
+      </section>
+      <section>
+        <h2>Security tools</h2>
+        <p>
+          Password, token, hash and encoding tools do not guarantee that a wider system is secure.
+          Security depends on implementation, storage, transmission, configuration and current
+          standards.
+        </p>
+      </section>
+      <section>
+        <h2>QR codes and generated content</h2>
+        <p>
+          Review QR content before sharing it. Compatibility can vary between scanning devices,
+          applications and payload formats.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
