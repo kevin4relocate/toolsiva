@@ -6,9 +6,9 @@ const isValidator = validators.has(mode);
 const isGenerator = mode === "uuid-generator";
 const dualPane = !isValidator && !isGenerator;
 ---
-<section class="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/20" data-developer-tool data-mode={mode} data-validator={isValidator ? "true" : "false"} data-generator={isGenerator ? "true" : "false"}>
-  <div class="p-4 sm:p-6">
-    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+<section class="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/80 shadow-xl shadow-black/20" data-developer-tool data-mode={mode} data-validator={isValidator ? "true" : "false"} data-generator={isGenerator ? "true" : "false"}>
+  <div class="p-4 sm:p-5">
+    <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
       <p class="text-sm text-zinc-500">{isGenerator ? "Generated locally in your browser." : "Updates automatically in your browser."}</p>
       <div class="flex flex-wrap items-center gap-2"><span data-status class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity" aria-live="polite"></span>{isGenerator && <button type="button" data-generate class="focus-ring cursor-pointer rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-500">Generate UUIDs</button>}<button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:bg-white/5">Copy result</button><button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-red-400/40 hover:bg-red-500/10">Clear</button></div>
     </div>
@@ -17,7 +17,7 @@ const dualPane = !isValidator && !isGenerator;
 
     {isValidator && (
       <>
-        <label class="grid gap-2 text-sm text-zinc-300">Editor<textarea data-input class="focus-ring min-h-80 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste data to validate…" spellcheck="false"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Editor<textarea data-input class="focus-ring min-h-[clamp(18rem,50vh,35rem)] w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste data to validate…" spellcheck="false"></textarea></label>
         <div data-validation-card class="mt-4 rounded-2xl border border-white/10 bg-zinc-950/60 p-5 text-zinc-400">
           <div class="flex flex-wrap items-center justify-between gap-3"><div><strong data-validation-title class="block text-base text-zinc-200">Waiting for input</strong><span data-validation-location class="mt-1 block text-sm text-zinc-500"></span></div><button type="button" data-go-error class="hidden rounded-lg border border-red-400/30 px-3 py-2 text-sm text-red-200 hover:bg-red-500/10">Go to error</button></div>
           <p data-validation-message class="mt-3 whitespace-pre-wrap font-mono text-sm leading-6">Paste JSON, XML or YAML to validate.</p>
@@ -29,8 +29,8 @@ const dualPane = !isValidator && !isGenerator;
 
     {dualPane && (
       <div class="grid gap-4 lg:grid-cols-2">
-        <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-80 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste input…" spellcheck="false"></textarea></label>
-        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-80 resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 font-mono text-sm leading-7 text-zinc-100"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-[clamp(18rem,50vh,35rem)] resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste input…" spellcheck="false"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-[clamp(18rem,50vh,35rem)] resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 font-mono text-sm leading-7 text-zinc-100"></textarea></label>
       </div>
     )}
   </div>

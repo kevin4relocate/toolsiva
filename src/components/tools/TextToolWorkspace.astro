@@ -9,7 +9,7 @@ const dualPaneModes = new Set(["remove-duplicate-lines","sort-lines","reverse-te
 const isDualPane = dualPaneModes.has(mode);
 ---
 
-<section class="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/20" data-text-tool data-mode={mode}>
+<section class="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/80 shadow-xl shadow-black/20" data-text-tool data-mode={mode}>
   {isCounter && (
     <div class="grid grid-cols-2 border-b border-white/10 sm:grid-cols-5">
       {[["words","Words"],["characters","Characters"],["without-spaces","Without spaces"],["sentences","Sentences"],["paragraphs","Paragraphs"]].map(([key,label]) => (
@@ -21,8 +21,8 @@ const isDualPane = dualPaneModes.has(mode);
     </div>
   )}
 
-  <div class="p-4 sm:p-6">
-    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+  <div class="p-4 sm:p-5">
+    <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
       <p class="text-sm text-zinc-500">Updates automatically in your browser.</p>
       <div class="flex flex-wrap items-center gap-2">
         <span data-status class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity" aria-live="polite"></span>
@@ -40,7 +40,7 @@ const isDualPane = dualPaneModes.has(mode);
           <button type="button" data-undo class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:bg-white/5" disabled>Undo</button>
           <button type="button" data-copy-editor class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:bg-white/5">Copy</button>
         </div>
-        <label class="grid gap-2 text-sm text-zinc-300">Text editor<textarea data-input class="focus-ring min-h-80 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text, then choose a case…"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Text editor<textarea data-input class="focus-ring min-h-[clamp(18rem,48vh,34rem)] w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text, then choose a case…"></textarea></label>
       </>
     )}
 
@@ -68,16 +68,16 @@ const isDualPane = dualPaneModes.has(mode);
           <label class="flex items-center gap-2"><input data-ignore-space type="checkbox" /> Ignore whitespace</label>
         </div>
         <div class="grid gap-4 lg:grid-cols-2">
-          <label class="grid gap-2 text-sm text-zinc-300">Original text<textarea data-input-a class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste original text…"></textarea></label>
-          <label class="grid gap-2 text-sm text-zinc-300">Updated text<textarea data-input-b class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste updated text…"></textarea></label>
+          <label class="grid gap-2 text-sm text-zinc-300">Original text<textarea data-input-a class="focus-ring min-h-[clamp(16rem,42vh,30rem)] resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste original text…"></textarea></label>
+          <label class="grid gap-2 text-sm text-zinc-300">Updated text<textarea data-input-b class="focus-ring min-h-[clamp(16rem,42vh,30rem)] resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Paste updated text…"></textarea></label>
         </div>
-        <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <div class="rounded-xl border border-white/10 p-3"><strong data-diff-stat="unchanged" class="block text-xl text-zinc-200">0</strong><span class="text-xs text-zinc-500">Unchanged</span></div>
           <div class="rounded-xl border border-emerald-400/20 bg-emerald-500/5 p-3"><strong data-diff-stat="added" class="block text-xl text-emerald-300">0</strong><span class="text-xs text-emerald-400/70">Added</span></div>
           <div class="rounded-xl border border-red-400/20 bg-red-500/5 p-3"><strong data-diff-stat="removed" class="block text-xl text-red-300">0</strong><span class="text-xs text-red-400/70">Removed</span></div>
           <div class="rounded-xl border border-amber-400/20 bg-amber-500/5 p-3"><strong data-diff-stat="changed" class="block text-xl text-amber-300">0</strong><span class="text-xs text-amber-400/70">Changed blocks</span></div>
         </div>
-        <div class="mt-5 overflow-hidden rounded-2xl border border-white/10">
+        <div class="mt-4 overflow-hidden rounded-2xl border border-white/10">
           <div class="grid grid-cols-2 border-b border-white/10 bg-zinc-950/70 text-xs font-semibold uppercase tracking-wide text-zinc-500"><div class="px-4 py-3">Original</div><div class="border-l border-white/10 px-4 py-3">Updated</div></div>
           <div data-diff-view class="max-h-[36rem] overflow-auto bg-zinc-950/40 font-mono text-sm"></div>
         </div>
@@ -86,12 +86,12 @@ const isDualPane = dualPaneModes.has(mode);
 
     {!isCase && !isCompare && isDualPane && (
       <div class="grid gap-4 lg:grid-cols-2">
-        <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-72 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text…"></textarea></label>
-        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-72 resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 leading-7 text-zinc-100"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-[clamp(17rem,46vh,32rem)] resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text…"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-[clamp(17rem,46vh,32rem)] resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 leading-7 text-zinc-100"></textarea></label>
       </div>
     )}
 
-    {isCounter && <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-72 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text…"></textarea></label>}
+    {isCounter && <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-[clamp(17rem,46vh,32rem)] w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text…"></textarea></label>}
   </div>
 </section>
 
