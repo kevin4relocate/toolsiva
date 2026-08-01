@@ -97,3 +97,17 @@ select {
 .diff-changed { background: rgba(245, 158, 11, 0.13); color: #fde68a; }
 .diff-unchanged { color: #a1a1aa; }
 .error-line { background: rgba(239, 68, 68, 0.14); color: #fecaca; }
+
+/* Interactive controls */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+summary,
+select,
+label[for] {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}

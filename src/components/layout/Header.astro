@@ -24,7 +24,7 @@ const categoryEntries = visibleCategories.map((category) => ({
         All Tools
       </a>
       {categoryEntries.map((category) => (
-        <details class="group relative">
+        <details class="group relative" data-nav-menu>
           <summary class="focus-ring flex cursor-pointer list-none items-center gap-1 rounded-lg px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white [&::-webkit-details-marker]:hidden">
             {category.name}
             <svg class="size-4 text-zinc-500 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -57,7 +57,7 @@ const categoryEntries = visibleCategories.map((category) => ({
         Browse tools
       </a>
 
-      <details class="relative lg:hidden">
+      <details class="relative lg:hidden" data-nav-menu>
         <summary class="focus-ring flex cursor-pointer list-none items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-zinc-200 transition hover:bg-white/10 [&::-webkit-details-marker]:hidden">
           Menu
         </summary>
@@ -65,7 +65,7 @@ const categoryEntries = visibleCategories.map((category) => ({
           <a href="/tools" class="mb-2 block rounded-xl px-3 py-2 text-sm font-medium text-zinc-100 transition hover:bg-white/5">All Tools</a>
           <div class="grid gap-2">
             {categoryEntries.map((category) => (
-              <details class="rounded-xl border border-white/10 bg-white/[0.02] p-1">
+              <details class="rounded-xl border border-white/10 bg-white/[0.02] p-1" data-mobile-category>
                 <summary class="cursor-pointer list-none rounded-lg px-3 py-2 text-sm font-medium text-zinc-200 [&::-webkit-details-marker]:hidden">
                   {category.name}
                 </summary>
@@ -87,3 +87,43 @@ const categoryEntries = visibleCategories.map((category) => ({
     </div>
   </div>
 </header>
+
+<script>
+  const setupHeaderMenus = () => {
+    const menus = Array.from(
+      document.querySelectorAll<HTMLDetailsElement>('header details[data-nav-menu]'),
+    );
+
+    const closeMenus = (except: HTMLDetailsElement | null = null) => {
+      for (const menu of menus) {
+        if (menu !== except) menu.removeAttribute('open');
+      }
+    };
+
+    for (const menu of menus) {
+      menu.addEventListener('toggle', () => {
+        if (menu.open) closeMenus(menu);
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => closeMenus());
+      });
+    }
+
+    document.addEventListener('pointerdown', (event) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!menus.some((menu) => menu.contains(target))) closeMenus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenus();
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHeaderMenus, { once: true });
+  } else {
+    setupHeaderMenus();
+  }
+</script>
