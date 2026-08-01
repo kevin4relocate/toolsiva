@@ -140,3 +140,13 @@ button:disabled,
   background: rgb(124 58 237 / 0.45);
   color: white;
 }
+
+
+/* Premium content readability v2 */
+.prose-premium section + section {
+  padding-top: 0.25rem;
+}
+
+.prose-premium p + p {
+  margin-top: 0.9rem;
+}

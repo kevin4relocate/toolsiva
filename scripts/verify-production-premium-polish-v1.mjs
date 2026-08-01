@@ -22,7 +22,7 @@ const checks = [
   ["Website structured data exists", layout.includes('"@type": "WebSite"')],
   ["Organization structured data exists", layout.includes('"@type": "Organization"')],
   ["Skip link exists", layout.includes("Skip to main content")],
-  ["Privacy is not placeholder", !privacy.includes("placeholder") && privacy.includes("Information processed by tools")],
+  ["Privacy is not placeholder", !privacy.includes("foundation uses placeholder") && privacy.includes("Information processed inside your browser")],
   ["Terms are not placeholder", !terms.includes("placeholder") && terms.includes("Limitation of liability")],
   ["Contact email is configurable", site.includes("contactEmail")],
   ["Premium homepage categories exist", home.includes('id="categories"')],

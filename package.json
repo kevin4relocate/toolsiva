@@ -14,7 +14,8 @@
     "deploy": "npm run build && wrangler deploy",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:validators": "node scripts/test-validator-fixtures.mjs"
+    "test:validators": "node scripts/test-validator-fixtures.mjs",
+    "brand:generate": "node scripts/generate-brand-assets.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",

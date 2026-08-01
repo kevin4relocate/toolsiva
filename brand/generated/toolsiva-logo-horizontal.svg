@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360">
+  <rect width="1400" height="360" fill="transparent"/>
+  <rect x="36" y="36" width="288" height="288" rx="76" fill="#7C3AED"/>
+  <path d="M104 104h152v50h-51v118h-50V154h-51z" fill="#FFFFFF"/>
+  <text x="380" y="190" font-family="Inter,Arial,sans-serif" font-size="112" font-weight="800" fill="#FFFFFF">Toolsiva</text>
+  <text x="386" y="258" font-family="Inter,Arial,sans-serif" font-size="35" font-weight="500" fill="#A1A1AA">Fast tools. Private by default.</text>
+</svg>

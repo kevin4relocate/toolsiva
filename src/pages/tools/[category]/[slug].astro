@@ -11,6 +11,7 @@ import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
 import { getToolInstructions } from "@/data/toolInstructions";
+import ToolSeoContent from "@/components/tools/ToolSeoContent.astro";
 
 export function getStaticPaths() {
   return tools.map((tool) => ({
@@ -126,17 +127,25 @@ const breadcrumbSchema = {
       </div>
     </section>
 
+    <ToolSeoContent tool={tool} />
+
     {
       relatedTools.length > 0 && (
-        <section class="mt-16">
-          <h2 class="text-xl font-bold text-white">Related tools</h2>
+        <section class="mt-12 rounded-3xl border border-brand-400/20 bg-brand-500/[0.05] p-5 sm:p-7">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Continue working</p>
+              <h2 class="mt-2 text-xl font-bold text-white">Related tools</h2>
+            </div>
+            <a class="text-sm font-semibold text-brand-300 hover:text-brand-200" href={`/tools/${tool.category}`}>View all {category?.name} →</a>
+          </div>
           <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((related) => (
               <a
-                class="rounded-xl border border-white/10 p-4 transition hover:border-brand-400/40"
+                class="group rounded-2xl border border-white/10 bg-zinc-950/50 p-4 transition hover:-translate-y-0.5 hover:border-brand-400/40 hover:bg-zinc-950/80"
                 href={getToolPath(related)}
               >
-                <strong>{related.name}</strong>
+                <strong class="text-white group-hover:text-brand-200">{related.name}</strong>
                 <span class="mt-1.5 block text-xs leading-5 text-zinc-400">{related.shortDescription}</span>
               </a>
             ))}

@@ -5,34 +5,24 @@ import { siteConfig } from "@/config/site";
 
 <BaseLayout
   title="Accessibility"
-  description="Toolsiva's accessibility approach and how to report an accessibility issue."
+  description="Read about Toolsiva's accessibility approach, supported interactions and issue reporting."
 >
-  <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
+  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Accessibility</p>
     <h1 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
       Building tools that are easier to use
     </h1>
-    <div class="prose-premium mt-8 space-y-8 text-sm leading-7 text-zinc-300">
+    <div class="prose-premium mt-10 space-y-10 text-sm leading-7 text-zinc-300">
+      <section><h2>Our approach</h2><p>Toolsiva aims to support keyboard navigation, visible focus indicators, semantic HTML, clear labels, readable contrast, responsive layouts and understandable status feedback.</p></section>
+      <section><h2>Keyboard interaction</h2><p>Primary navigation, form fields, buttons, links and expandable sections are intended to work without a mouse. A skip link is provided to move directly to main content.</p></section>
+      <section><h2>Responsive presentation</h2><p>Layouts adapt for desktop, tablet and mobile screens. Complex two-column workspaces collapse into a single-column flow on smaller displays.</p></section>
+      <section><h2>Known limitations</h2><p>Native date inputs, canvases, generated QR images, code editors and browser-specific controls can vary between assistive technologies. Toolsiva is actively reviewing these areas.</p></section>
       <section>
-        <h2>Our approach</h2>
+        <h2>Report an accessibility issue</h2>
         <p>
-          Toolsiva aims to support keyboard navigation, visible focus indicators, semantic HTML,
-          readable contrast, responsive layouts and clear form labels.
-        </p>
-      </section>
-      <section>
-        <h2>Known limitations</h2>
-        <p>
-          The site is actively evolving, and some complex editors, generated visual content or
-          third-party browser controls may not yet provide an ideal experience for every assistive
-          technology.
-        </p>
-      </section>
-      <section>
-        <h2>Report a problem</h2>
-        <p>
-          Send the affected page URL, browser, assistive technology and a description of the issue
-          to <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
+          Send the page URL, browser, operating system, assistive technology and a description
+          of the problem to{" "}
+          <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
         </p>
       </section>
     </div>

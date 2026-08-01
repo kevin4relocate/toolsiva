@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="20%" cy="20%" r="80%">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity=".32"/>
+      <stop offset=".55" stop-color="#7C3AED" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#09090B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#09090B"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="84" y="88" width="88" height="88" rx="22" fill="#7C3AED"/>
+  <text x="112" y="154" font-family="Inter,Arial,sans-serif" font-size="54" font-weight="800" fill="#FFFFFF">T</text>
+  <text x="197" y="154" font-family="Inter,Arial,sans-serif" font-size="50" font-weight="800" fill="#FFFFFF">Toolsiva</text>
+  <text x="84" y="353" font-family="Inter,Arial,sans-serif" font-size="62" font-weight="800" fill="#FFFFFF">Useful online tools without the clutter.</text>
+  <text x="84" y="441" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="500" fill="#C4B5FD">Fast tools. Private by default.</text>
+  <text x="84" y="529" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="500" fill="#A1A1AA">toolsiva.com</text>
+</svg>
