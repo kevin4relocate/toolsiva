@@ -1,360 +1,139 @@
 ---
-interface Props {
-  mode: string;
-}
-
+interface Props { mode: string; }
 const { mode } = Astro.props;
+const isCounter = mode === "word-counter" || mode === "character-counter";
 const isCompare = mode === "text-compare";
 const isFindReplace = mode === "find-and-replace";
-const isCaseConverter = mode === "case-converter";
-const isSort = mode === "sort-lines";
-const isReverse = mode === "reverse-text";
+const hasMode = ["case-converter", "sort-lines", "reverse-text"].includes(mode);
 ---
 
-<section
-  class="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/20"
-  data-text-tool
-  data-mode={mode}
->
-  {
-    mode === "word-counter" || mode === "character-counter" ? (
-      <div class="grid grid-cols-2 border-b border-white/10 sm:grid-cols-5">
-        {[
-          ["words", "Words"],
-          ["characters", "Characters"],
-          ["without-spaces", "Without spaces"],
-          ["sentences", "Sentences"],
-          ["paragraphs", "Paragraphs"],
-        ].map(([key, label]) => (
-          <div class="border-white/10 p-4 text-center sm:border-r last:border-r-0">
-            <strong class="block text-2xl text-white" data-stat={key}>0</strong>
-            <span class="mt-1 block text-xs text-zinc-400">{label}</span>
-          </div>
-        ))}
-      </div>
-    ) : null
-  }
+<section class="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/20" data-text-tool data-mode={mode}>
+  {isCounter && (
+    <div class="grid grid-cols-2 border-b border-white/10 sm:grid-cols-5">
+      {[["words","Words"],["characters","Characters"],["without-spaces","Without spaces"],["sentences","Sentences"],["paragraphs","Paragraphs"]].map(([key,label]) => (
+        <div class="border-white/10 p-4 text-center sm:border-r last:border-r-0">
+          <strong class="block text-2xl text-white" data-stat={key}>0</strong>
+          <span class="mt-1 block text-xs text-zinc-400">{label}</span>
+        </div>
+      ))}
+    </div>
+  )}
 
   <div class="p-4 sm:p-6">
-    {
-      isFindReplace && (
-        <div class="mb-4 grid gap-3 sm:grid-cols-2">
-          <label class="grid gap-2 text-sm text-zinc-300">
-            Find
-            <input data-find class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" />
-          </label>
-          <label class="grid gap-2 text-sm text-zinc-300">
-            Replace with
-            <input data-replace class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" />
-          </label>
-          <label class="flex cursor-pointer items-center gap-2 text-sm text-zinc-400 sm:col-span-2">
-            <input type="checkbox" data-case-sensitive class="size-4 cursor-pointer accent-violet-600" />
-            Case-sensitive matching
-          </label>
-        </div>
-      )
-    }
-
-    {
-      (isCaseConverter || isSort || isReverse) && (
-        <div class="mb-4">
-          <label class="grid max-w-xs gap-2 text-sm text-zinc-300">
-            Mode
-            <select data-option class="focus-ring cursor-pointer rounded-xl border border-white/10 bg-zinc-950 px-4 py-3">
-              {isCaseConverter && (
-                <>
-                  <option value="upper">UPPERCASE</option>
-                  <option value="lower">lowercase</option>
-                  <option value="title">Title Case</option>
-                  <option value="sentence">Sentence case</option>
-                </>
-              )}
-              {isSort && (
-                <>
-                  <option value="asc">Ascending</option>
-                  <option value="desc">Descending</option>
-                </>
-              )}
-              {isReverse && (
-                <>
-                  <option value="characters">Characters</option>
-                  <option value="words">Words</option>
-                  <option value="lines">Lines</option>
-                </>
-              )}
-            </select>
-          </label>
-        </div>
-      )
-    }
-
-    {
-      isCompare ? (
-        <div class="grid gap-4 lg:grid-cols-2">
-          <label class="grid gap-2 text-sm text-zinc-300">
-            Original text
-            <textarea data-input-a class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Paste the first text…"></textarea>
-          </label>
-          <label class="grid gap-2 text-sm text-zinc-300">
-            Updated text
-            <textarea data-input-b class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Paste the second text…"></textarea>
-          </label>
-        </div>
-      ) : (
-        <label class="grid gap-2 text-sm text-zinc-300">
-          Input
-          <textarea data-input class="focus-ring min-h-72 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100 placeholder:text-zinc-600" placeholder="Type or paste your text here…" spellcheck="true"></textarea>
-        </label>
-      )
-    }
-
-    {
-      mode !== "word-counter" && mode !== "character-counter" && (
-        <div class="mt-4">
-          <label class="grid gap-2 text-sm text-zinc-300">
-            Result
-            <textarea data-output readonly class="focus-ring min-h-56 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 leading-7 text-zinc-100"></textarea>
-          </label>
-        </div>
-      )
-    }
-
-    <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-      <p class="text-sm text-zinc-500">Processed locally in your browser.</p>
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <p class="text-sm text-zinc-500">Updates automatically in your browser.</p>
       <div class="flex flex-wrap items-center gap-2">
-        <span
-          data-status
-          class="pointer-events-none min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity duration-200"
-          aria-live="polite"
-        ></span>
-
-        <button
-          type="button"
-          data-run
-          class="focus-ring cursor-pointer rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:-translate-y-0.5 hover:bg-brand-500 active:translate-y-0 active:scale-[0.98]"
-        >
-          Process
-        </button>
-        <button
-          type="button"
-          data-copy
-          class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition duration-150 hover:-translate-y-0.5 hover:border-brand-400/40 hover:bg-white/5 active:translate-y-0 active:scale-[0.98]"
-        >
-          Copy result
-        </button>
-        <button
-          type="button"
-          data-clear
-          class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition duration-150 hover:-translate-y-0.5 hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200 active:translate-y-0 active:scale-[0.98]"
-        >
-          Clear
-        </button>
+        <span data-status class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity" aria-live="polite"></span>
+        <button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-brand-400/40 hover:bg-white/5">{isCounter ? "Copy summary" : "Copy result"}</button>
+        <button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button>
       </div>
     </div>
+
+    {isFindReplace && (
+      <div class="mb-4 grid gap-3 sm:grid-cols-2">
+        <label class="grid gap-2 text-sm text-zinc-300">Find<input data-find class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" /></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Replace with<input data-replace class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" /></label>
+        <label class="flex cursor-pointer items-center gap-2 text-sm text-zinc-400 sm:col-span-2"><input type="checkbox" data-case-sensitive class="size-4 cursor-pointer accent-violet-600" />Case-sensitive matching</label>
+      </div>
+    )}
+
+    {hasMode && (
+      <div class="mb-4">
+        <label class="grid max-w-xs gap-2 text-sm text-zinc-300">Mode
+          <select data-option class="focus-ring cursor-pointer rounded-xl border border-white/10 bg-zinc-950 px-4 py-3">
+            {mode === "case-converter" && <><option value="upper">UPPERCASE</option><option value="lower">lowercase</option><option value="title">Title Case</option><option value="sentence">Sentence case</option></>}
+            {mode === "sort-lines" && <><option value="asc">Ascending</option><option value="desc">Descending</option></>}
+            {mode === "reverse-text" && <><option value="characters">Characters</option><option value="words">Words</option><option value="lines">Lines</option></>}
+          </select>
+        </label>
+      </div>
+    )}
+
+    {isCompare ? (
+      <div class="grid gap-4 lg:grid-cols-2">
+        <label class="grid gap-2 text-sm text-zinc-300">Original text<textarea data-input-a class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Paste the first text…"></textarea></label>
+        <label class="grid gap-2 text-sm text-zinc-300">Updated text<textarea data-input-b class="focus-ring min-h-64 resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Paste the second text…"></textarea></label>
+      </div>
+    ) : (
+      <label class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-72 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100 placeholder:text-zinc-600" placeholder="Type or paste your text here…" spellcheck="true"></textarea></label>
+    )}
+
+    {!isCounter && (
+      <div class="mt-4">
+        <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-56 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950/70 p-5 leading-7 text-zinc-100"></textarea></label>
+        <div class="mt-3 flex justify-end gap-2">
+          <button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-brand-400/40 hover:bg-white/5">Copy result</button>
+          <button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button>
+        </div>
+      </div>
+    )}
   </div>
 </section>
 
 <script>
   const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const slugify = (value: string) =>
-    value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
-      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-  const titleCase = (value: string) =>
-    value.toLowerCase().replace(/\b\w/g, (character) => character.toUpperCase());
-  const sentenceCase = (value: string) =>
-    value.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, (match) => match.toUpperCase());
+  const slugify = (value: string) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const titleCase = (value: string) => value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  const sentenceCase = (value: string) => value.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, m => m.toUpperCase());
 
   function setupTextTools() {
-    document.querySelectorAll<HTMLElement>("[data-text-tool]").forEach((root) => {
+    document.querySelectorAll<HTMLElement>("[data-text-tool]").forEach(root => {
       if (root.dataset.initialized === "true") return;
       root.dataset.initialized = "true";
-
       const mode = root.dataset.mode ?? "";
       const input = root.querySelector<HTMLTextAreaElement>("[data-input]");
       const inputA = root.querySelector<HTMLTextAreaElement>("[data-input-a]");
       const inputB = root.querySelector<HTMLTextAreaElement>("[data-input-b]");
       const output = root.querySelector<HTMLTextAreaElement>("[data-output]");
-      const runButton = root.querySelector<HTMLButtonElement>("[data-run]");
-      const copyButton = root.querySelector<HTMLButtonElement>("[data-copy]");
-      const clearButton = root.querySelector<HTMLButtonElement>("[data-clear]");
       const option = root.querySelector<HTMLSelectElement>("[data-option]");
       const findInput = root.querySelector<HTMLInputElement>("[data-find]");
       const replaceInput = root.querySelector<HTMLInputElement>("[data-replace]");
       const caseSensitive = root.querySelector<HTMLInputElement>("[data-case-sensitive]");
+      const copyButtons = root.querySelectorAll<HTMLButtonElement>("[data-copy]");
+      const clearButtons = root.querySelectorAll<HTMLButtonElement>("[data-clear]");
       const status = root.querySelector<HTMLElement>("[data-status]");
-      let statusTimer = 0;
+      let timer = 0;
 
-      const showStatus = (message: string) => {
+      const notify = (message: string) => {
         if (!status) return;
-        window.clearTimeout(statusTimer);
-        status.textContent = message;
-        status.classList.remove("opacity-0");
-        status.classList.add("opacity-100");
-        statusTimer = window.setTimeout(() => {
-          status.classList.remove("opacity-100");
-          status.classList.add("opacity-0");
-        }, 1400);
+        status.textContent = message; status.classList.replace("opacity-0", "opacity-100");
+        window.clearTimeout(timer); timer = window.setTimeout(() => status.classList.replace("opacity-100", "opacity-0"), 1200);
       };
-
-      const flashButton = (button: HTMLButtonElement | null, label: string) => {
-        if (!button) return;
-        const original = button.textContent ?? "";
-        button.textContent = label;
-        button.classList.add("ring-2", "ring-emerald-400/60");
-        window.setTimeout(() => {
-          button.textContent = original;
-          button.classList.remove("ring-2", "ring-emerald-400/60");
-        }, 900);
+      const flash = (buttons: NodeListOf<HTMLButtonElement>, label: string) => buttons.forEach(button => {
+        const original = button.textContent ?? ""; button.textContent = label;
+        setTimeout(() => button.textContent = original, 800);
+      });
+      const stats = () => {
+        const value = input?.value ?? ""; const trimmed = value.trim();
+        const values = { words: trimmed ? trimmed.split(/\s+/u).length : 0, characters: value.length, "without-spaces": value.replace(/\s/gu, "").length, sentences: trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter(x => x.trim()).length ?? 0, paragraphs: trimmed ? value.split(/\n\s*\n/u).map(x => x.trim()).filter(Boolean).length : 0 };
+        Object.entries(values).forEach(([key,val]) => { const field = root.querySelector<HTMLElement>(`[data-stat="${key}"]`); if (field) field.textContent = val.toLocaleString(); });
+        return values;
       };
-
-      const updateStats = () => {
-        if (!input) return;
-        const value = input.value;
-        const trimmed = value.trim();
-        const values = {
-          words: trimmed ? trimmed.split(/\s+/u).length : 0,
-          characters: value.length,
-          "without-spaces": value.replace(/\s/gu, "").length,
-          sentences: trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter((item) => item.trim()).length ?? 0,
-          paragraphs: trimmed ? value.split(/\n\s*\n/u).map((item) => item.trim()).filter(Boolean).length : 0,
-        };
-        Object.entries(values).forEach(([key, value]) => {
-          const field = root.querySelector<HTMLElement>(`[data-stat="${key}"]`);
-          if (field) field.textContent = value.toLocaleString();
-        });
-      };
-
-      const process = (withFeedback = false) => {
-        if (mode === "word-counter" || mode === "character-counter") {
-          updateStats();
-          if (withFeedback) {
-            flashButton(runButton, "Processed");
-            showStatus("Updated");
-          }
-          return;
-        }
-
-        let result = "";
-        const value = input?.value ?? "";
-
+      const update = () => {
+        if (mode === "word-counter" || mode === "character-counter") { stats(); return; }
+        const value = input?.value ?? ""; let result = "";
         switch (mode) {
-          case "case-converter":
-            if (option?.value === "lower") result = value.toLowerCase();
-            else if (option?.value === "title") result = titleCase(value);
-            else if (option?.value === "sentence") result = sentenceCase(value);
-            else result = value.toUpperCase();
-            break;
-          case "remove-duplicate-lines": {
-            const seen = new Set<string>();
-            result = value.split(/\r?\n/u).filter((line) => {
-              if (seen.has(line)) return false;
-              seen.add(line);
-              return true;
-            }).join("\n");
-            break;
-          }
-          case "sort-lines": {
-            const lines = value.split(/\r?\n/u);
-            lines.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
-            if (option?.value === "desc") lines.reverse();
-            result = lines.join("\n");
-            break;
-          }
-          case "reverse-text":
-            if (option?.value === "words") result = value.trim().split(/\s+/u).reverse().join(" ");
-            else if (option?.value === "lines") result = value.split(/\r?\n/u).reverse().join("\n");
-            else result = Array.from(value).reverse().join("");
-            break;
-          case "remove-extra-spaces":
-            result = value.split(/\r?\n/u).map((line) => line.replace(/[ \t]+/g, " ").trim())
-              .join("\n").replace(/\n{3,}/g, "\n\n").trim();
-            break;
-          case "find-and-replace": {
-            const findValue = findInput?.value ?? "";
-            if (!findValue) result = value;
-            else result = value.replace(
-              new RegExp(escapeRegExp(findValue), caseSensitive?.checked ? "g" : "gi"),
-              replaceInput?.value ?? "",
-            );
-            break;
-          }
-          case "text-compare": {
-            const first = (inputA?.value ?? "").split(/\r?\n/u);
-            const second = (inputB?.value ?? "").split(/\r?\n/u);
-            const firstSet = new Set(first);
-            const secondSet = new Set(second);
-            const removed = first.filter((line) => !secondSet.has(line));
-            const added = second.filter((line) => !firstSet.has(line));
-            const matching = first.filter((line) => secondSet.has(line));
-            result = [
-              `Matching lines: ${matching.length}`,
-              `Removed lines: ${removed.length}`,
-              `Added lines: ${added.length}`,
-              "",
-              "Only in original:",
-              ...(removed.length ? removed.map((line) => `- ${line}`) : ["(none)"]),
-              "",
-              "Only in updated:",
-              ...(added.length ? added.map((line) => `+ ${line}`) : ["(none)"]),
-            ].join("\n");
-            break;
-          }
-          case "slug-generator":
-            result = slugify(value);
-            break;
+          case "case-converter": result = option?.value === "lower" ? value.toLowerCase() : option?.value === "title" ? titleCase(value) : option?.value === "sentence" ? sentenceCase(value) : value.toUpperCase(); break;
+          case "remove-duplicate-lines": { const seen = new Set<string>(); result = value.split(/\r?\n/u).filter(line => seen.has(line) ? false : (seen.add(line), true)).join("\n"); break; }
+          case "sort-lines": { const lines = value.split(/\r?\n/u).sort((a,b) => a.localeCompare(b, undefined, { sensitivity: "base" })); if (option?.value === "desc") lines.reverse(); result = lines.join("\n"); break; }
+          case "reverse-text": result = option?.value === "words" ? value.trim().split(/\s+/u).reverse().join(" ") : option?.value === "lines" ? value.split(/\r?\n/u).reverse().join("\n") : Array.from(value).reverse().join(""); break;
+          case "remove-extra-spaces": result = value.split(/\r?\n/u).map(line => line.replace(/[ \t]+/g, " ").trim()).join("\n").replace(/\n{3,}/g, "\n\n").trim(); break;
+          case "find-and-replace": { const find = findInput?.value ?? ""; result = find ? value.replace(new RegExp(escapeRegExp(find), caseSensitive?.checked ? "g" : "gi"), replaceInput?.value ?? "") : value; break; }
+          case "text-compare": { const first = (inputA?.value ?? "").split(/\r?\n/u), second = (inputB?.value ?? "").split(/\r?\n/u); const a = new Set(first), b = new Set(second); const removed = first.filter(x => !b.has(x)), added = second.filter(x => !a.has(x)), matching = first.filter(x => b.has(x)); result = [`Matching lines: ${matching.length}`,`Removed lines: ${removed.length}`,`Added lines: ${added.length}`,"","Only in original:",...(removed.length ? removed.map(x => `- ${x}`) : ["(none)"]),"","Only in updated:",...(added.length ? added.map(x => `+ ${x}`) : ["(none)"])].join("\n"); break; }
+          case "slug-generator": result = slugify(value); break;
         }
-
         if (output) output.value = result;
-        if (withFeedback) {
-          flashButton(runButton, "Processed");
-          showStatus("Result updated");
-        }
       };
-
-      input?.addEventListener("input", () => {
-        updateStats();
-        if (mode !== "word-counter" && mode !== "character-counter") process(false);
-      });
-
-      runButton?.addEventListener("click", () => process(true));
-      option?.addEventListener("change", () => process(false));
-      findInput?.addEventListener("input", () => process(false));
-      replaceInput?.addEventListener("input", () => process(false));
-      caseSensitive?.addEventListener("change", () => process(false));
-      inputA?.addEventListener("input", () => process(false));
-      inputB?.addEventListener("input", () => process(false));
-
-      copyButton?.addEventListener("click", async () => {
-        const value =
-          mode === "word-counter" || mode === "character-counter"
-            ? input?.value ?? ""
-            : output?.value ?? "";
-        if (!value) {
-          showStatus("Nothing to copy");
-          return;
-        }
-        await navigator.clipboard.writeText(value);
-        flashButton(copyButton, "Copied!");
-        showStatus("Copied to clipboard");
-      });
-
-      clearButton?.addEventListener("click", () => {
-        if (input) input.value = "";
-        if (inputA) inputA.value = "";
-        if (inputB) inputB.value = "";
-        if (output) output.value = "";
-        if (findInput) findInput.value = "";
-        if (replaceInput) replaceInput.value = "";
-        updateStats();
-        flashButton(clearButton, "Cleared");
-        showStatus("All fields cleared");
-      });
-
-      updateStats();
-      process(false);
+      [input,inputA,inputB,findInput,replaceInput].forEach(el => el?.addEventListener("input", update));
+      option?.addEventListener("change", update); caseSensitive?.addEventListener("change", update);
+      copyButtons.forEach(button => button.addEventListener("click", async () => {
+        let value = output?.value ?? "";
+        if (mode === "word-counter" || mode === "character-counter") { const s = stats(); value = `Words: ${s.words}\nCharacters: ${s.characters}\nWithout spaces: ${s["without-spaces"]}\nSentences: ${s.sentences}\nParagraphs: ${s.paragraphs}`; }
+        if (!value) return notify("Nothing to copy"); await navigator.clipboard.writeText(value); flash(copyButtons, "Copied!"); notify("Copied");
+      }));
+      clearButtons.forEach(button => button.addEventListener("click", () => { if(input) input.value=""; if(inputA) inputA.value=""; if(inputB) inputB.value=""; if(output) output.value=""; if(findInput) findInput.value=""; if(replaceInput) replaceInput.value=""; update(); flash(clearButtons,"Cleared"); notify("Cleared"); }));
+      update();
     });
   }
-
-  setupTextTools();
-  document.addEventListener("astro:page-load", setupTextTools);
+  setupTextTools(); document.addEventListener("astro:page-load", setupTextTools);
 </script>
