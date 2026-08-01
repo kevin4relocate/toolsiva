@@ -7,6 +7,7 @@ import SecurityToolWorkspace from "@/components/tools/SecurityToolWorkspace.astr
 import QrToolWorkspace from "@/components/tools/QrToolWorkspace.astro";
 import CalculatorToolWorkspace from "@/components/tools/CalculatorToolWorkspace.astro";
 import ConverterToolWorkspace from "@/components/tools/ConverterToolWorkspace.astro";
+import ExpansionToolWorkspace from "@/components/tools/ExpansionToolWorkspace.astro";
 import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
@@ -27,6 +28,7 @@ const { tool } = Astro.props;
 const category = categoryMap.get(tool.category);
 const relatedTools = getRelatedTools(tool);
 const instructions = getToolInstructions(tool);
+const expansionToolSlugs = new Set(["line-counter","sentence-counter","paragraph-counter","text-to-list","list-to-text","remove-empty-lines","add-line-numbers","strip-html-tags","text-repeater","whitespace-visualizer","ratio-calculator","proportion-calculator","fraction-calculator","gcd-lcm-calculator","pace-calculator","unit-price-calculator","profit-margin-calculator","markup-calculator"]);
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -94,11 +96,12 @@ const breadcrumbSchema = {
 
     <AdSlot placement="tool-top" minHeight={0} />
 
-    {tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
+    {expansionToolSlugs.has(tool.slug) && <ExpansionToolWorkspace mode={tool.slug} />}
+    {!expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
     {tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
     {tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
     {tool.category === "qr" && <QrToolWorkspace mode={tool.slug} />}
-    {tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}
+    {!expansionToolSlugs.has(tool.slug) && tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}
     {tool.category === "converter" && <ConverterToolWorkspace mode={tool.slug} />}
 
     <section class="mt-10">

@@ -34,13 +34,13 @@ for (const match of source.matchAll(categoryPattern)) {
 
 const checks = [
   ["No duplicate tool slugs", duplicates.length === 0],
-  ["10 text tools remain", categoryCounts.text === 10],
+  ["20 text tools remain", categoryCounts.text === 20],
   ["20 developer tools remain", categoryCounts.developer === 20],
   ["10 security tools remain", categoryCounts.security === 10],
   ["10 QR tools remain", categoryCounts.qr === 10],
-  ["12 calculator tools remain", categoryCounts.calculator === 12],
+  ["20 calculator tools remain", categoryCounts.calculator === 20],
   ["20 converter tools remain", categoryCounts.converter === 20],
-  ["Exactly 82 unique tools", slugCounts.size === 82],
+  ["Exactly 100 unique tools", slugCounts.size === 100],
 ];
 
 let failed = false;

@@ -1,0 +1,121 @@
+---
+interface Props { mode: string; }
+const { mode } = Astro.props;
+const textModes = new Set([
+  "line-counter","sentence-counter","paragraph-counter","text-to-list","list-to-text",
+  "remove-empty-lines","add-line-numbers","strip-html-tags","text-repeater","whitespace-visualizer",
+]);
+const isText = textModes.has(mode);
+---
+
+<section class="rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-5" data-expansion-tool data-mode={mode}>
+  {isText ? (
+    <div class="grid gap-4 lg:grid-cols-2">
+      <div>
+        <label class="mb-2 block text-sm font-semibold text-zinc-200">Input</label>
+        <textarea data-input rows="12" class="min-h-72 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none transition focus:border-brand-400/50" placeholder="Enter or paste text here..."></textarea>
+        <div data-options class="mt-3 flex flex-wrap gap-3"></div>
+      </div>
+      <div>
+        <div class="mb-2 flex items-center justify-between gap-3">
+          <label class="text-sm font-semibold text-zinc-200">Result</label>
+          <button type="button" data-copy class="cursor-pointer rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300 transition hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50">Copy</button>
+        </div>
+        <textarea data-output rows="12" readonly class="min-h-72 w-full resize-y rounded-xl border border-white/10 bg-zinc-950/70 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none" placeholder="Result appears automatically..."></textarea>
+        <div data-stats class="mt-3 grid gap-2 sm:grid-cols-3"></div>
+      </div>
+    </div>
+  ) : (
+    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,.8fr)]">
+      <div data-fields class="grid gap-4 sm:grid-cols-2"></div>
+      <div class="rounded-2xl border border-white/10 bg-zinc-950/60 p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">Result</p>
+        <div data-result class="mt-3 space-y-3 text-sm text-zinc-300">Enter values to calculate.</div>
+      </div>
+    </div>
+  )}
+</section>
+
+<script>
+  type Field={key:string;label:string;type?:string;value?:string;options?:string[];min?:string;step?:string};
+  type Config={fields:Field[];compute:(v:Record<string,string>)=>Array<[string,string]>};
+  const n=(v:string|undefined)=>Number.parseFloat(v??"");
+  const fmt=(v:number,d=4)=>Number.isFinite(v)?new Intl.NumberFormat("en-US",{maximumFractionDigits:d}).format(v):"—";
+  const gcd=(a:number,b:number):number=>{a=Math.abs(Math.trunc(a));b=Math.abs(Math.trunc(b));while(b)[a,b]=[b,a%b];return a};
+  const lcm=(a:number,b:number)=>a&&b?Math.abs(a*b)/gcd(a,b):0;
+  const esc=(s:string)=>{const e=document.createElement("div");e.textContent=s;return e.innerHTML};
+
+  const configs:Record<string,Config>={
+    "ratio-calculator":{fields:[
+      {key:"a",label:"First value",type:"number",value:"12"},{key:"b",label:"Second value",type:"number",value:"18"}
+    ],compute:v=>{const a=n(v.a),b=n(v.b);if(!Number.isFinite(a)||!Number.isFinite(b)||b===0)return[["Status","Enter valid values; second value cannot be zero."]];const d=gcd(a,b)||1;return[["Simplified ratio",`${a/d}:${b/d}`],["Decimal",fmt(a/b,6)]]}},
+    "proportion-calculator":{fields:[
+      {key:"a",label:"A",type:"number",value:"2"},{key:"b",label:"B",type:"number",value:"5"},{key:"c",label:"C",type:"number",value:"8"}
+    ],compute:v=>{const a=n(v.a),b=n(v.b),c=n(v.c);return !Number.isFinite(a)||!Number.isFinite(b)||!Number.isFinite(c)||a===0?[["Status","Enter valid values and make A non-zero."]]:[["Missing value D",fmt(b*c/a,8)],["Equation",`${fmt(a)} / ${fmt(b)} = ${fmt(c)} / D`]]}},
+    "fraction-calculator":{fields:[
+      {key:"n1",label:"Numerator 1",type:"number",value:"1"},{key:"d1",label:"Denominator 1",type:"number",value:"2"},
+      {key:"op",label:"Operation",type:"select",value:"+",options:["+","-","×","÷"]},
+      {key:"n2",label:"Numerator 2",type:"number",value:"1"},{key:"d2",label:"Denominator 2",type:"number",value:"3"}
+    ],compute:v=>{const a=n(v.n1),b=n(v.d1),c=n(v.n2),d=n(v.d2);if(![a,b,c,d].every(Number.isFinite)||b===0||d===0)return[["Status","Use valid fractions with non-zero denominators."]];let x=0,y=1;if(v.op==="+"){x=a*d+c*b;y=b*d}if(v.op==="-"){x=a*d-c*b;y=b*d}if(v.op==="×"){x=a*c;y=b*d}if(v.op==="÷"){x=a*d;y=b*c}if(y===0)return[["Status","Division by zero is not allowed."]];const q=gcd(x,y)||1;x/=q;y/=q;if(y<0){x=-x;y=-y}return[["Simplified fraction",`${x}/${y}`],["Decimal",fmt(x/y,8)]]}},
+    "gcd-lcm-calculator":{fields:[{key:"values",label:"Integers separated by commas",value:"12, 18, 30"}],compute:v=>{const xs=(v.values??"").split(/[\s,]+/).filter(Boolean).map(Number).filter(Number.isInteger);return xs.length<2?[["Status","Enter at least two integers."]]:[["GCD",String(xs.reduce(gcd))],["LCM",String(xs.reduce(lcm))]]}},
+    "pace-calculator":{fields:[
+      {key:"distance",label:"Distance",type:"number",value:"5",min:"0"},{key:"hours",label:"Hours",type:"number",value:"0",min:"0"},
+      {key:"minutes",label:"Minutes",type:"number",value:"30",min:"0"},{key:"unit",label:"Distance unit",type:"select",value:"km",options:["km","mi"]}
+    ],compute:v=>{const d=n(v.distance),t=n(v.hours)*60+n(v.minutes);if(!(d>0)||!(t>0))return[["Status","Enter a positive distance and duration."]];const p=t/d,m=Math.floor(p),s=Math.round((p-m)*60);return[["Pace",`${m}:${String(s).padStart(2,"0")} min/${v.unit}`],["Speed",`${fmt(d/(t/60),2)} ${v.unit}/h`]]}},
+    "unit-price-calculator":{fields:[
+      {key:"p1",label:"Product A price",type:"number",value:"5.30",min:"0"},{key:"q1",label:"Product A quantity",type:"number",value:"20",min:"0"},
+      {key:"p2",label:"Product B price",type:"number",value:"9.40",min:"0"},{key:"q2",label:"Product B quantity",type:"number",value:"30",min:"0"}
+    ],compute:v=>{const p1=n(v.p1),q1=n(v.q1),p2=n(v.p2),q2=n(v.q2);if(!(q1>0)||!(q2>0)||p1<0||p2<0)return[["Status","Enter valid prices and positive quantities."]];const a=p1/q1,b=p2/q2;return[["Product A per unit",fmt(a,6)],["Product B per unit",fmt(b,6)],["Better value",a<b?"Product A":b<a?"Product B":"Equal"]]}},
+    "profit-margin-calculator":{fields:[
+      {key:"cost",label:"Cost",type:"number",value:"60",min:"0"},{key:"revenue",label:"Selling price",type:"number",value:"100",min:"0"}
+    ],compute:v=>{const c=n(v.cost),r=n(v.revenue);if(!Number.isFinite(c)||!(r>0))return[["Status","Enter valid cost and selling price."]];return[["Profit",fmt(r-c,2)],["Profit margin",`${fmt((r-c)/r*100,2)}%`],["Markup",c>0?`${fmt((r-c)/c*100,2)}%`:"—"]]}},
+    "markup-calculator":{fields:[
+      {key:"cost",label:"Cost",type:"number",value:"60",min:"0"},{key:"markup",label:"Markup percentage",type:"number",value:"50"}
+    ],compute:v=>{const c=n(v.cost),m=n(v.markup);if(!Number.isFinite(c)||!Number.isFinite(m)||c<0)return[["Status","Enter valid cost and markup."]];const p=c*(1+m/100);return[["Selling price",fmt(p,2)],["Profit",fmt(p-c,2)],["Resulting margin",p?`${fmt((p-c)/p*100,2)}%`:"—"]]}}
+  };
+
+  document.querySelectorAll<HTMLElement>("[data-expansion-tool]").forEach(root=>{
+    const mode=root.dataset.mode??"";
+    const input=root.querySelector<HTMLTextAreaElement>("[data-input]");
+    const output=root.querySelector<HTMLTextAreaElement>("[data-output]");
+    const stats=root.querySelector<HTMLElement>("[data-stats]");
+    const options=root.querySelector<HTMLElement>("[data-options]");
+    const copy=root.querySelector<HTMLButtonElement>("[data-copy]");
+
+    if(input&&output){
+      if(mode==="text-to-list")options!.innerHTML='<label class="text-xs text-zinc-400">Separator <select data-opt="separator" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"><option value="auto">Auto</option><option value=",">Comma</option><option value=";">Semicolon</option><option value="tab">Tab</option></select></label>';
+      if(mode==="list-to-text")options!.innerHTML='<label class="text-xs text-zinc-400">Join with <select data-opt="separator" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"><option value=", ">Comma</option><option value=" ">Space</option><option value=" | ">Pipe</option><option value="; ">Semicolon</option></select></label>';
+      if(mode==="add-line-numbers")options!.innerHTML='<label class="text-xs text-zinc-400">Start <input data-opt="start" type="number" value="1" class="ml-2 w-20 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"></label><label class="text-xs text-zinc-400">Separator <input data-opt="separator" value=". " class="ml-2 w-20 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"></label>';
+      if(mode==="text-repeater")options!.innerHTML='<label class="text-xs text-zinc-400">Times <input data-opt="count" type="number" min="1" max="1000" value="3" class="ml-2 w-20 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"></label><label class="text-xs text-zinc-400">Separator <select data-opt="separator" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"><option value="newline">New line</option><option value="space">Space</option><option value=", ">Comma</option></select></label>';
+      const opt=(key:string,fallback="")=>root.querySelector<HTMLInputElement|HTMLSelectElement>(`[data-opt="${key}"]`)?.value??fallback;
+      const update=()=>{
+        const text=input.value,lines=text.split(/\r?\n/);let result=text;const m:Array<[string,string]>=[];
+        if(mode==="line-counter"){const ne=lines.filter(x=>x.trim()).length;m.push(["Total",String(text?lines.length:0)],["Non-empty",String(ne)],["Empty",String(text?lines.length-ne:0)])}
+        if(mode==="sentence-counter"){const ss=(text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)??[]).map(x=>x.trim()).filter(Boolean),w=text.trim()?text.trim().split(/\s+/):[];m.push(["Sentences",String(ss.length)],["Words",String(w.length)],["Avg. words",ss.length?fmt(w.length/ss.length,1):"0"])}
+        if(mode==="paragraph-counter"){const ps=text.trim()?text.trim().split(/\n\s*\n/).filter(Boolean):[];m.push(["Paragraphs",String(ps.length)],["Longest words",String(Math.max(0,...ps.map(p=>p.trim().split(/\s+/).length)))],["Avg. words",ps.length?fmt(ps.reduce((s,p)=>s+p.trim().split(/\s+/).length,0)/ps.length,1):"0"])}
+        if(mode==="text-to-list"){const s=opt("separator","auto"),rx=s==="auto"?/[,;\t]+/:s==="tab"?/\t+/:new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"+");result=text.split(rx).map(x=>x.trim()).filter(Boolean).join("\n")}
+        if(mode==="list-to-text")result=lines.map(x=>x.trim()).filter(Boolean).join(opt("separator",", "));
+        if(mode==="remove-empty-lines"){result=lines.filter(x=>x.trim()).join("\n");m.push(["Removed",String(lines.length-(result?result.split("\n").length:0))])}
+        if(mode==="add-line-numbers"){const start=Number.parseInt(opt("start","1"),10)||1,sep=opt("separator",". ");result=lines.map((x,i)=>`${start+i}${sep}${x}`).join("\n")}
+        if(mode==="strip-html-tags"){result=(new DOMParser().parseFromString(text,"text/html").body.textContent??"").replace(/\n{3,}/g,"\n\n").trim()}
+        if(mode==="text-repeater"){const c=Math.min(1000,Math.max(1,Number.parseInt(opt("count","3"),10)||1)),sv=opt("separator","newline"),sep=sv==="newline"?"\n":sv==="space"?" ":sv;result=Array(c).fill(text).join(sep);m.push(["Repeats",String(c)],["Characters",String(result.length)])}
+        if(mode==="whitespace-visualizer"){result=text.replace(/ /g,"·").replace(/\t/g,"→\t").replace(/\r?\n/g,"↵\n");m.push(["Spaces",String((text.match(/ /g)??[]).length)],["Tabs",String((text.match(/\t/g)??[]).length)],["Breaks",String((text.match(/\n/g)??[]).length)])}
+        output.value=result;copy!.disabled=!result;
+        stats!.innerHTML=m.map(([a,b])=>`<div class="rounded-xl border border-white/10 p-3"><strong class="block text-lg text-white">${esc(b)}</strong><span class="text-xs text-zinc-500">${esc(a)}</span></div>`).join("");
+      };
+      input.addEventListener("input",update);options?.addEventListener("input",update);options?.addEventListener("change",update);
+      copy?.addEventListener("click",async()=>{await navigator.clipboard.writeText(output.value);copy.textContent="Copied";setTimeout(()=>copy.textContent="Copy",900)});
+      update();
+    }
+
+    const config=configs[mode],fields=root.querySelector<HTMLElement>("[data-fields]"),result=root.querySelector<HTMLElement>("[data-result]");
+    if(config&&fields&&result){
+      fields.innerHTML=config.fields.map(f=>f.type==="select"
+        ?`<label class="text-sm font-semibold text-zinc-200">${esc(f.label)}<select data-field="${f.key}" class="mt-2 w-full rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-zinc-100">${(f.options??[]).map(o=>`<option ${o===f.value?"selected":""}>${esc(o)}</option>`).join("")}</select></label>`
+        :`<label class="text-sm font-semibold text-zinc-200">${esc(f.label)}<input data-field="${f.key}" type="${f.type??"text"}" value="${esc(f.value??"")}" min="${f.min??""}" step="${f.step??"any"}" class="mt-2 w-full rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-zinc-100 outline-none transition focus:border-brand-400/50"></label>`
+      ).join("");
+      const update=()=>{const values:Record<string,string>={};fields.querySelectorAll<HTMLInputElement|HTMLSelectElement>("[data-field]").forEach(e=>values[e.dataset.field??""]=e.value);result.innerHTML=config.compute(values).map(([a,b])=>`<div class="flex items-start justify-between gap-4 border-b border-white/10 pb-3 last:border-0 last:pb-0"><span class="text-zinc-500">${esc(a)}</span><strong class="text-right text-white">${esc(b)}</strong></div>`).join("")};
+      fields.addEventListener("input",update);fields.addEventListener("change",update);update();
+    }
+  });
+</script>
