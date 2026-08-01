@@ -7,15 +7,15 @@ const isCompact = mode === "password-strength-checker" || mode === "hash-compare
 const actionLabel = mode === "password-generator" ? "Generate password" : mode === "passphrase-generator" ? "Generate passphrase" : mode === "random-string-generator" ? "Generate string" : mode === "secure-token-generator" ? "Generate token" : "Generate";
 ---
 <section class="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/80 shadow-xl shadow-black/20" data-security-tool data-mode={mode} data-generator={isGenerator ? "true" : "false"} data-compact={isCompact ? "true" : "false"}>
-  <div class="p-4 sm:p-5">
-    <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
+  <div class="p-3 sm:p-4">
+    <div class="mb-2.5 flex flex-wrap items-center justify-between gap-2.5">
       <p class="text-sm text-zinc-500">{isGenerator ? "Generated locally in your browser." : "Updates automatically in your browser."}</p>
       <div class="flex flex-wrap items-center gap-2"><span data-status class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity" aria-live="polite"></span>{isGenerator && <button data-generate type="button" class="focus-ring cursor-pointer rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-500">{actionLabel}</button>}<button data-copy type="button" class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-brand-400/40 hover:bg-white/5">Copy result</button><button data-clear type="button" class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button></div>
     </div>
 
     <div class="grid gap-4">
-      <label data-primary-field class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-[clamp(13rem,36vh,24rem)] rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Enter input…"></textarea></label>
-      <label data-secondary-field class="hidden gap-2 text-sm text-zinc-300">Second value<textarea data-secondary class="focus-ring min-h-[clamp(10rem,28vh,18rem)] rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100"></textarea></label>
+      <label data-primary-field class="grid gap-2 text-sm text-zinc-300">Input<textarea data-input class="focus-ring min-h-[clamp(10rem,28vh,17rem)] rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100" placeholder="Enter input…"></textarea></label>
+      <label data-secondary-field class="hidden gap-2 text-sm text-zinc-300">Second value<textarea data-secondary class="focus-ring min-h-[clamp(9rem,24vh,15rem)] rounded-2xl border border-white/10 bg-zinc-950 p-5 font-mono text-sm leading-7 text-zinc-100"></textarea></label>
       <div data-generator-options class="hidden grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <label data-length-field class="grid gap-2 text-sm text-zinc-300">Length<input data-length type="number" min="4" max="4096" value="24" class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" /></label>
         <label data-count-field class="hidden gap-2 text-sm text-zinc-300">Word count<input data-count type="number" min="3" max="12" value="5" class="focus-ring rounded-xl border border-white/10 bg-zinc-950 px-4 py-3" /></label>
@@ -27,7 +27,7 @@ const actionLabel = mode === "password-generator" ? "Generate password" : mode =
       <label data-case-field class="hidden items-center gap-2 text-sm text-zinc-300"><input data-ignore-case type="checkbox" checked /> Ignore letter case</label>
     </div>
 
-    <div class="mt-4">{isCompact ? <div class="grid gap-2 text-sm text-zinc-300">Result<div data-compact-result class="min-h-20 whitespace-pre-wrap rounded-2xl border border-white/10 bg-zinc-950/70 px-5 py-4 font-mono text-sm leading-6 text-zinc-400">Enter data to check.</div><textarea data-output class="hidden" readonly></textarea></div> : <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-[clamp(14rem,38vh,26rem)] rounded-2xl border border-white/10 bg-zinc-950/70 p-5 font-mono text-sm leading-7 text-zinc-100"></textarea></label>}</div>
+    <div class="mt-4">{isCompact ? <div class="grid gap-2 text-sm text-zinc-300">Result<div data-compact-result class="min-h-20 whitespace-pre-wrap rounded-2xl border border-white/10 bg-zinc-950/70 px-5 py-4 font-mono text-sm leading-6 text-zinc-400">Enter data to check.</div><textarea data-output class="hidden" readonly></textarea></div> : <label class="grid gap-2 text-sm text-zinc-300">Result<textarea data-output readonly class="focus-ring min-h-[clamp(11rem,30vh,18rem)] rounded-2xl border border-white/10 bg-zinc-950/70 p-5 font-mono text-sm leading-7 text-zinc-100"></textarea></label>}</div>
     <div class="mt-3 flex justify-end gap-2">{isGenerator && <button data-generate type="button" class="focus-ring cursor-pointer rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-500">{actionLabel}</button>}<button data-copy type="button" class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-brand-400/40 hover:bg-white/5">Copy result</button><button data-clear type="button" class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button></div>
   </div>
 </section>
