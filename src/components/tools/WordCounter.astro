@@ -1,0 +1,130 @@
+<section
+  class="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/20"
+  data-word-counter
+>
+  <div class="grid grid-cols-2 border-b border-white/10 sm:grid-cols-5">
+    <div class="border-white/10 p-4 text-center sm:border-r">
+      <strong class="block text-2xl text-white" data-stat="words">0</strong>
+      <span class="mt-1 block text-xs text-zinc-400">Words</span>
+    </div>
+    <div class="border-white/10 p-4 text-center sm:border-r">
+      <strong class="block text-2xl text-white" data-stat="characters">0</strong>
+      <span class="mt-1 block text-xs text-zinc-400">Characters</span>
+    </div>
+    <div class="border-white/10 p-4 text-center sm:border-r">
+      <strong class="block text-2xl text-white" data-stat="without-spaces">0</strong>
+      <span class="mt-1 block text-xs text-zinc-400">Without spaces</span>
+    </div>
+    <div class="border-white/10 p-4 text-center sm:border-r">
+      <strong class="block text-2xl text-white" data-stat="sentences">0</strong>
+      <span class="mt-1 block text-xs text-zinc-400">Sentences</span>
+    </div>
+    <div class="p-4 text-center">
+      <strong class="block text-2xl text-white" data-stat="paragraphs">0</strong>
+      <span class="mt-1 block text-xs text-zinc-400">Paragraphs</span>
+    </div>
+  </div>
+
+  <div class="p-4 sm:p-6">
+    <label class="sr-only" for="word-counter-input">Enter or paste text</label>
+    <textarea
+      id="word-counter-input"
+      data-input
+      placeholder="Type or paste your text here…"
+      class="focus-ring min-h-80 w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100 placeholder:text-zinc-600"
+      spellcheck="true"
+    ></textarea>
+
+    <div class="mt-4 flex flex-wrap justify-between gap-3">
+      <p class="text-sm text-zinc-500">Processed locally in your browser.</p>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          data-copy
+          disabled
+          class="focus-ring inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Copy
+        </button>
+        <button
+          type="button"
+          data-clear
+          disabled
+          class="focus-ring inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-500 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupWordCounters() {
+    document.querySelectorAll<HTMLElement>("[data-word-counter]").forEach((root) => {
+      if (root.dataset.initialized === "true") return;
+      root.dataset.initialized = "true";
+
+      const input = root.querySelector<HTMLTextAreaElement>("[data-input]");
+      const copyButton = root.querySelector<HTMLButtonElement>("[data-copy]");
+      const clearButton = root.querySelector<HTMLButtonElement>("[data-clear]");
+
+      if (!input || !copyButton || !clearButton) return;
+
+      const fields = {
+        words: root.querySelector<HTMLElement>('[data-stat="words"]'),
+        characters: root.querySelector<HTMLElement>('[data-stat="characters"]'),
+        withoutSpaces: root.querySelector<HTMLElement>('[data-stat="without-spaces"]'),
+        sentences: root.querySelector<HTMLElement>('[data-stat="sentences"]'),
+        paragraphs: root.querySelector<HTMLElement>('[data-stat="paragraphs"]'),
+      };
+
+      const format = (value: number) => value.toLocaleString();
+
+      const update = () => {
+        const value = input.value;
+        const trimmed = value.trim();
+
+        const words = trimmed ? trimmed.split(/\s+/u).length : 0;
+        const characters = value.length;
+        const withoutSpaces = value.replace(/\s/gu, "").length;
+        const sentences =
+          trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter((item) => item.trim()).length ?? 0;
+        const paragraphs = trimmed
+          ? value
+              .split(/\n\s*\n/u)
+              .map((item) => item.trim())
+              .filter(Boolean).length
+          : 0;
+
+        if (fields.words) fields.words.textContent = format(words);
+        if (fields.characters) fields.characters.textContent = format(characters);
+        if (fields.withoutSpaces) fields.withoutSpaces.textContent = format(withoutSpaces);
+        if (fields.sentences) fields.sentences.textContent = format(sentences);
+        if (fields.paragraphs) fields.paragraphs.textContent = format(paragraphs);
+
+        const isEmpty = value.length === 0;
+        copyButton.disabled = isEmpty;
+        clearButton.disabled = isEmpty;
+      };
+
+      input.addEventListener("input", update);
+
+      copyButton.addEventListener("click", async () => {
+        if (!input.value) return;
+        await navigator.clipboard.writeText(input.value);
+      });
+
+      clearButton.addEventListener("click", () => {
+        input.value = "";
+        input.focus();
+        update();
+      });
+
+      update();
+    });
+  }
+
+  setupWordCounters();
+  document.addEventListener("astro:page-load", setupWordCounters);
+</script>

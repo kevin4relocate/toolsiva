@@ -1,0 +1,22 @@
+---
+interface Props {
+  placement: string;
+  minHeight?: number;
+}
+
+const { placement, minHeight = 0 } = Astro.props;
+const enabled = import.meta.env.PUBLIC_ADSENSE_ENABLED === "true";
+---
+
+{
+  enabled ? (
+    <aside
+      class="my-8 flex items-center justify-center overflow-hidden rounded-xl"
+      style={`min-height:${minHeight}px`}
+      data-ad-placement={placement}
+      aria-label="Advertisement"
+    >
+      <!-- AdSense integration will be added only after approval. -->
+    </aside>
+  ) : null
+}

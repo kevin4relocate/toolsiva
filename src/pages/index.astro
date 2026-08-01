@@ -1,0 +1,40 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ToolCard from "@/components/common/ToolCard.astro";
+import { tools } from "@/data/tools";
+
+const featuredTools = tools.filter((tool) => tool.featured);
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-7xl px-4 pb-16 pt-24 text-center sm:px-6 lg:px-8">
+    <p class="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-brand-300">
+      Fast · Private · Simple
+    </p>
+    <h1 class="mx-auto max-w-4xl text-5xl font-black tracking-tight text-white sm:text-7xl">
+      Useful online tools without the clutter.
+    </h1>
+    <p class="mx-auto mt-7 max-w-2xl text-lg leading-8 text-zinc-400">
+      Complete everyday tasks in seconds. Most Toolsiva tools run directly in your browser, so
+      your data stays on your device.
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      <a class="focus-ring rounded-xl bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-500" href="/tools">
+        Explore all tools
+      </a>
+      <a class="focus-ring rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold hover:bg-white/10" href="/tools/text">
+        Text tools
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <p class="text-sm font-semibold text-brand-300">START HERE</p>
+      <h2 class="mt-2 text-3xl font-bold text-white">Featured tools</h2>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {featuredTools.map((tool) => <ToolCard tool={tool} />)}
+    </div>
+  </section>
+</BaseLayout>
