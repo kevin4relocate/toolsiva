@@ -3,7 +3,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://toolsiva.com",
+  site: "https://kevin4relocate.github.io",
+  base: "/toolsiva",
   output: "static",
   trailingSlash: "never",
   integrations: [sitemap()],
