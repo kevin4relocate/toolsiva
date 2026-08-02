@@ -61,7 +61,7 @@ const categoryEntries = visibleCategories.map((category) => ({
         <summary class="focus-ring flex cursor-pointer list-none items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-zinc-200 transition hover:bg-white/10 [&::-webkit-details-marker]:hidden">
           Menu
         </summary>
-        <div class="absolute right-0 top-full mt-2 w-[20rem] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/95 p-3 shadow-2xl shadow-black/40 backdrop-blur-xl">
+        <div class="absolute right-0 top-full mt-2 max-h-[calc(100vh-5rem)] w-[20rem] max-w-[calc(100vw-2rem)] overflow-y-auto overscroll-contain rounded-2xl border border-white/10 bg-zinc-950/95 p-3 shadow-2xl shadow-black/40 backdrop-blur-xl">
           <a href="/tools" class="mb-2 block rounded-xl px-3 py-2 text-sm font-medium text-zinc-100 transition hover:bg-white/5">All Tools</a>
           <div class="grid gap-2">
             {categoryEntries.map((category) => (
