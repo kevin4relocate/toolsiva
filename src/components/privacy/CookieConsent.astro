@@ -1,0 +1,90 @@
+<aside
+  id="cookie-consent"
+  class="fixed inset-x-4 bottom-4 z-[120] hidden max-w-2xl rounded-2xl border border-white/10 bg-zinc-950/95 p-5 shadow-2xl shadow-black/50 backdrop-blur-xl sm:left-auto sm:right-5 sm:w-[32rem]"
+  role="dialog"
+  aria-labelledby="cookie-consent-title"
+  aria-describedby="cookie-consent-description"
+  aria-live="polite"
+>
+  <p id="cookie-consent-title" class="text-base font-bold text-white">Analytics preferences</p>
+  <p id="cookie-consent-description" class="mt-2 text-sm leading-6 text-zinc-400">
+    Toolsiva uses optional Google Analytics cookies to understand general website usage and improve
+    our tools. Tool inputs and generated results are not intentionally sent to Google Analytics.
+    Read our <a class="text-brand-300 underline-offset-4 hover:underline" href="/privacy">Privacy Policy</a>.
+  </p>
+
+  <div class="mt-5 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+    <button
+      type="button"
+      data-consent-reject
+      class="focus-ring rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200 transition hover:bg-white/5"
+    >
+      Reject analytics
+    </button>
+    <button
+      type="button"
+      data-consent-accept
+      class="focus-ring rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-500"
+    >
+      Accept analytics
+    </button>
+  </div>
+</aside>
+
+<script is:inline>
+  (() => {
+    const STORAGE_KEY = "toolsiva_analytics_consent";
+    const panel = document.getElementById("cookie-consent");
+
+    const setVisibility = (visible) => {
+      if (!panel) return;
+      panel.classList.toggle("hidden", !visible);
+    };
+
+    const updateConsent = (choice) => {
+      const granted = choice === "granted";
+      window.gtag?.("consent", "update", {
+        analytics_storage: granted ? "granted" : "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      try {
+        localStorage.setItem(STORAGE_KEY, choice);
+      } catch {
+        // Consent still applies for the current page when storage is unavailable.
+      }
+
+      setVisibility(false);
+      window.dispatchEvent(
+        new CustomEvent("toolsiva:consent-changed", { detail: { analytics: choice } }),
+      );
+    };
+
+    document.querySelector("[data-consent-accept]")?.addEventListener("click", () => {
+      updateConsent("granted");
+    });
+
+    document.querySelector("[data-consent-reject]")?.addEventListener("click", () => {
+      updateConsent("denied");
+    });
+
+    document.querySelectorAll("[data-open-cookie-settings]").forEach((button) => {
+      button.addEventListener("click", () => setVisibility(true));
+    });
+
+    window.addEventListener("toolsiva:open-cookie-settings", () => setVisibility(true));
+
+    let savedChoice = null;
+    try {
+      savedChoice = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      savedChoice = null;
+    }
+
+    if (savedChoice !== "granted" && savedChoice !== "denied") {
+      setVisibility(true);
+    }
+  })();
+</script>
