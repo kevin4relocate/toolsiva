@@ -1,24 +1,48 @@
 ---
 import type { ToolDefinition } from "@/types/tool";
-import { getToolContentSections } from "@/data/toolSeoContent";
+import { getPriorityToolContent, getToolContentSections } from "@/data/toolSeoContent";
 
-interface Props {
-  tool: ToolDefinition;
-}
+interface Props { tool: ToolDefinition; }
 
 const { tool } = Astro.props;
 const sections = getToolContentSections(tool);
+const priorityContent = getPriorityToolContent(tool.slug);
 ---
 
 <section class="mt-12 border-t border-white/10 pt-10" aria-labelledby="tool-guide-heading">
   <div class="max-w-5xl">
     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Tool guide</p>
-    <h2 id="tool-guide-heading" class="mt-2 text-2xl font-bold text-white">
-      About {tool.name}
-    </h2>
+    <h2 id="tool-guide-heading" class="mt-2 text-2xl font-bold text-white">About {tool.name}</h2>
   </div>
 
-  <div class="mt-6 grid gap-x-10 gap-y-8 lg:grid-cols-2">
+  {priorityContent && (
+    <div class="mt-6 grid gap-5 lg:grid-cols-2">
+      <section class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+        <h3 class="text-lg font-bold text-white">Example</h3>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">Input</p>
+            <pre class="mt-2 overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/10 bg-zinc-950 p-4 text-sm leading-6 text-zinc-300"><code>{priorityContent.example.input}</code></pre>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">Output</p>
+            <pre class="mt-2 overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/10 bg-zinc-950 p-4 text-sm leading-6 text-zinc-300"><code>{priorityContent.example.output}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+        <h3 class="text-lg font-bold text-white">Common use cases</h3>
+        <ul class="mt-4 grid gap-3 text-sm leading-6 text-zinc-400 sm:grid-cols-2">
+          {priorityContent.useCases.map((item) => (
+            <li class="rounded-xl border border-white/10 px-4 py-3">{item}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  )}
+
+  <div class="mt-8 grid gap-x-10 gap-y-8 lg:grid-cols-2">
     {sections.map((section) => (
       <section>
         <h3 class="text-lg font-bold text-white">{section.heading}</h3>
