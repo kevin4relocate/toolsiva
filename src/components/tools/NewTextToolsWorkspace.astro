@@ -40,15 +40,19 @@ const { mode } = Astro.props;
 
     if (mode === "add-bullets-to-text") {
       options.innerHTML = `
-        <label class="text-xs text-zinc-400">Bullet
-          <select data-opt="bullet" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5">
-            <option value="-">-</option><option value="•">•</option><option value="◦">◦</option>
-            <option value="▪">▪</option><option value="✓">✓</option><option value="→">→</option><option value="*">*</option>
-          </select>
-        </label>
-        <label class="text-xs text-zinc-400">Custom
-          <input data-opt="customBullet" placeholder="Optional" class="ml-2 w-28 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5">
-        </label>`;
+        <div class="grid grid-cols-[10rem_minmax(8rem,12rem)] items-end gap-3">
+          <label class="grid gap-1.5 text-xs text-zinc-400">
+            <span>Bullet</span>
+            <select data-opt="bullet" class="min-h-[2.875rem] w-full rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100">
+              <option value="-">-</option><option value="•">•</option><option value="◦">◦</option>
+              <option value="▪">▪</option><option value="✓">✓</option><option value="→">→</option><option value="*">*</option>
+            </select>
+          </label>
+          <label class="grid gap-1.5 text-xs text-zinc-400">
+            <span>Custom</span>
+            <input data-opt="customBullet" placeholder="Optional" class="min-h-[2.875rem] w-full rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none transition focus:border-brand-400/50">
+          </label>
+        </div>`;
     }
 
     if (mode === "add-blank-lines-between-text") {
