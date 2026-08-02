@@ -24,12 +24,14 @@ const config = configs[mode] ?? fallbackConfig;
       <h2 class="text-base font-semibold text-white">{config.title}</h2>
       <div class="mt-3 grid gap-3 sm:grid-cols-2">
         {config.fields.map((field) => (
-          <label class:list={["grid gap-1.5", field.name === "message" && "sm:col-span-2"]}>
-            {field.type === "checkbox" ? (
-              <span aria-hidden="true" class="invisible text-xs font-medium text-zinc-400">
-                Security
-              </span>
-            ) : (
+          <label
+            class:list={[
+              "grid gap-1.5",
+              (field.name === "message" || field.name === "security") && "sm:col-span-2",
+              field.type === "checkbox" && "hidden",
+            ]}
+          >
+            {field.type !== "checkbox" && (
               <span class="text-xs font-medium text-zinc-400">{field.label}</span>
             )}
             {field.options ? (
@@ -42,20 +44,23 @@ const config = configs[mode] ?? fallbackConfig;
                   ))}
                 </select>
                 {field.name === "security" && (
-                  <span class="text-[11px] leading-4 text-zinc-500">
-                    Most home networks use WPA / WPA2. Choose WEP only for older routers.
-                  </span>
+                  <>
+                    <span class="text-[11px] leading-4 text-zinc-500">
+                      Most home networks use WPA / WPA2. Choose WEP only for older routers.
+                    </span>
+                    <label class="mt-1 flex min-h-[2.875rem] items-center gap-2 rounded-xl border border-white/10 bg-zinc-950 px-4 text-sm text-zinc-300">
+                      <input
+                        name="hidden"
+                        type="checkbox"
+                        class="size-4 rounded border-white/20 bg-zinc-950 accent-brand-500"
+                      />
+                      <span>Network is hidden</span>
+                    </label>
+                  </>
                 )}
               </>
             ) : field.type === "checkbox" ? (
-              <label class="flex min-h-[2.875rem] items-center gap-2 rounded-xl border border-white/10 bg-zinc-950 px-4 text-sm text-zinc-300">
-                <input
-                  name={field.name}
-                  type="checkbox"
-                  class="size-4 rounded border-white/20 bg-zinc-950 accent-brand-500"
-                />
-                <span>Network is hidden</span>
-              </label>
+              <></>
             ) : field.type === "password" ? (
               <span class="flex overflow-hidden rounded-xl border border-white/10 bg-zinc-950">
                 <input
