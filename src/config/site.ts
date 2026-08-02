@@ -8,6 +8,6 @@ export const siteConfig = {
   locale: "en_US",
   themeColor: "#09090b",
   socialImage: "/social/toolsiva-default.png",
-  contactEmail: "hello@toolsiva.com",
+  contactEmail: "contact@toolsiva.com",
   foundedYear: 2026,
 } as const;
