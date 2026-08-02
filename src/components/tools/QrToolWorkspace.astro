@@ -42,10 +42,14 @@ const config = configs[mode] ?? fallbackConfig;
                 )}
               </>
             ) : field.type === "checkbox" ? (
-              <span class="flex h-10 items-center gap-2 rounded-xl border border-white/10 bg-zinc-950 px-3">
-                <input name={field.name} type="checkbox" class="size-4 accent-brand-500" />
-                <span class="text-sm text-zinc-300">This WiFi network is hidden</span>
-              </span>
+              <label class="inline-flex w-fit items-center gap-2 rounded-lg px-1 py-1.5 text-sm text-zinc-300">
+                <input
+                  name={field.name}
+                  type="checkbox"
+                  class="size-4 rounded border-white/20 bg-zinc-950 accent-brand-500"
+                />
+                <span>Network is hidden</span>
+              </label>
             ) : field.type === "password" ? (
               <span class="flex overflow-hidden rounded-xl border border-white/10 bg-zinc-950">
                 <input
