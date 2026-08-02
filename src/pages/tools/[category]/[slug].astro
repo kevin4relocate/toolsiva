@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
 import AdSlot from "@/components/common/AdSlot.astro";
 import TextToolWorkspace from "@/components/tools/TextToolWorkspace.astro";
 import DeveloperToolWorkspace from "@/components/tools/DeveloperToolWorkspace.astro";
@@ -47,6 +48,38 @@ const faqSchema = {
   })),
 };
 
+const toolUrl = new URL(getToolPath(tool), siteConfig.url).toString();
+const categoryUrl = new URL(`/tools/${tool.category}`, siteConfig.url).toString();
+
+const webApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: tool.name,
+  url: toolUrl,
+  description: tool.metaDescription,
+  applicationCategory: "UtilitiesApplication",
+  applicationSubCategory: category?.name ?? "Online Tool",
+  operatingSystem: "Any",
+  browserRequirements: "Requires a modern web browser with JavaScript enabled.",
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  featureList: [
+    tool.shortDescription,
+    "Runs directly in a modern web browser",
+    "No account required",
+  ],
+  inLanguage: siteConfig.language,
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -55,19 +88,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Tools",
-      item: "https://toolsiva.com/tools",
+      item: new URL("/tools", siteConfig.url).toString(),
     },
     {
       "@type": "ListItem",
       position: 2,
-      name: category?.name,
-      item: `https://toolsiva.com/tools/${tool.category}`,
+      name: category?.name ?? "Tools",
+      item: categoryUrl,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: tool.name,
-      item: `https://toolsiva.com${getToolPath(tool)}`,
+      item: toolUrl,
     },
   ],
 };
@@ -78,8 +111,9 @@ const breadcrumbSchema = {
   description={tool.metaDescription}
   canonicalPath={getToolPath(tool)}
 >
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(webApplicationSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <div class="mx-auto grid w-full grid-cols-1 px-4 py-5 sm:px-5 lg:px-6 lg:py-6 min-[1700px]:max-w-[1608px] min-[1700px]:grid-cols-[160px_minmax(0,1240px)_160px] min-[1700px]:gap-6">
     <div class="hidden min-[1700px]:block"><AdSlot placement="tool-side-left" minHeight={600} variant="side-rail" /></div>
