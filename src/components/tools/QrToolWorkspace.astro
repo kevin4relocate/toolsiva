@@ -63,14 +63,14 @@ const config = configs[mode] ?? fallbackConfig;
     </div>
     <div
       data-preview
-      class="box-border grid aspect-square w-full max-w-80 min-w-0 self-start place-items-center overflow-hidden rounded-2xl border border-white/10 bg-white p-5 shadow-lg shadow-black/20"
+      class="box-border grid aspect-square w-full max-w-64 min-w-0 self-start place-items-center overflow-hidden rounded-2xl border border-white/10 bg-transparent p-0 shadow-lg shadow-black/20"
     >
       <canvas
         data-canvas
-        width="320"
-        height="320"
-        class="block h-auto w-full max-w-full"
-        style="width: 100% !important; height: auto !important; max-width: 100% !important; aspect-ratio: 1 / 1;"
+        width="256"
+        height="256"
+        class="block size-full aspect-square rounded-xl"
+        style="width: 100% !important; height: 100% !important; max-width: 100% !important; max-height: 100% !important;"
         aria-label="Generated QR code"
       ></canvas>
     </div>
@@ -173,7 +173,7 @@ const config = configs[mode] ?? fallbackConfig;
       }
       try {
         await QRCode.toCanvas(canvas, value, {
-          width: 320,
+          width: 256,
           margin: 4,
           errorCorrectionLevel: "H",
           color: {
