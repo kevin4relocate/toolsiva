@@ -150,3 +150,49 @@ button:disabled,
 .prose-premium p + p {
   margin-top: 0.9rem;
 }
+
+/* Toolsiva global select controls v1 */
+select:not([multiple]) {
+  min-height: 2.875rem;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 0.875rem;
+  background-color: rgb(9 9 11 / 0.96);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m6 8 4 4 4-4' stroke='%23a1a1aa' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 0.875rem center;
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  padding: 0.6875rem 3rem 0.6875rem 1rem;
+  color: rgb(244 244 245);
+  line-height: 1.25rem;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+select:not([multiple]):hover {
+  border-color: rgb(255 255 255 / 0.2);
+  background-color: rgb(12 12 15 / 0.98);
+}
+
+select:not([multiple]):focus,
+select:not([multiple]):focus-visible {
+  border-color: rgb(167 139 250 / 0.9);
+  box-shadow:
+    0 0 0 3px rgb(124 58 237 / 0.2),
+    inset 0 1px 0 rgb(255 255 255 / 0.03);
+}
+
+select:not([multiple]):disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+select option {
+  background: #09090b;
+  color: #f4f4f5;
+}

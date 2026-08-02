@@ -25,7 +25,9 @@ const config = configs[mode] ?? fallbackConfig;
       <div class="mt-3 grid gap-3 sm:grid-cols-2">
         {config.fields.map((field) => (
           <label class:list={["grid gap-1.5", field.name === "message" && "sm:col-span-2"]}>
-            <span class="text-xs font-medium text-zinc-400">{field.label}</span>
+            {field.name !== "hidden" && (
+              <span class="text-xs font-medium text-zinc-400">{field.label}</span>
+            )}
             {field.options ? (
               <>
                 <select name={field.name} class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-2.5 text-sm text-white">
