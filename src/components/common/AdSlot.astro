@@ -2,16 +2,20 @@
 interface Props {
   placement: string;
   minHeight?: number;
+  variant?: "inline" | "side-rail";
 }
 
-const { placement, minHeight = 0 } = Astro.props;
+const { placement, minHeight = 0, variant = "inline" } = Astro.props;
+const slotClass = variant === "side-rail"
+  ? "sticky top-24 hidden h-[600px] w-[160px] items-center justify-center overflow-hidden rounded-xl min-[1700px]:flex"
+  : "my-8 flex items-center justify-center overflow-hidden rounded-xl";
 const enabled = import.meta.env.PUBLIC_ADSENSE_ENABLED === "true";
 ---
 
 {
   enabled ? (
     <aside
-      class="my-8 flex items-center justify-center overflow-hidden rounded-xl"
+      class={slotClass}
       style={`min-height:${minHeight}px`}
       data-ad-placement={placement}
       aria-label="Advertisement"

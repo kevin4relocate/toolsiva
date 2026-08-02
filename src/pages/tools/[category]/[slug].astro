@@ -79,7 +79,9 @@ const breadcrumbSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <article class="mx-auto w-full max-w-[84rem] px-4 py-5 sm:px-5 lg:px-6 lg:py-6">
+  <div class="mx-auto grid w-full grid-cols-1 px-4 py-5 sm:px-5 lg:px-6 lg:py-6 min-[1700px]:max-w-[1616px] min-[1700px]:grid-cols-[160px_minmax(0,1240px)_160px] min-[1700px]:gap-7">
+    <div class="hidden min-[1700px]:block"><AdSlot placement="tool-side-left" minHeight={600} variant="side-rail" /></div>
+    <article class="min-w-0 w-full max-w-[84rem] justify-self-center min-[1700px]:max-w-[77.5rem]">
     <nav class="mb-3 text-xs text-zinc-500 sm:text-sm" aria-label="Breadcrumb">
       <a class="hover:text-white" href="/tools">Tools</a>
       <span class="mx-2">/</span>
@@ -100,7 +102,7 @@ const breadcrumbSchema = {
 
     {newTextToolSlugs.has(tool.slug) && <NewTextToolsWorkspace mode={tool.slug} />}
     {expansionToolSlugs.has(tool.slug) && <ExpansionToolWorkspace mode={tool.slug} />}
-    {!expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
+    {!newTextToolSlugs.has(tool.slug) && !expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
     {tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
     {tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
     {tool.category === "qr" && <QrToolWorkspace mode={tool.slug} />}
@@ -159,5 +161,7 @@ const breadcrumbSchema = {
         </section>
       )
     }
-  </article>
+    </article>
+    <div class="hidden min-[1700px]:block"><AdSlot placement="tool-side-right" minHeight={600} variant="side-rail" /></div>
+  </div>
 </BaseLayout>
