@@ -1,4 +1,5 @@
 import type { ToolDefinition } from "@/types/tool";
+import { buildToolFaqs } from "@/data/toolFaqs";
 
 const privacyFaq = {
   question: "Does Toolsiva store my text?",
@@ -11,8 +12,7 @@ const mobileFaq = {
   answer: "Yes. The workspace is responsive and works in modern mobile and desktop browsers.",
 };
 
-export const tools: ToolDefinition[
-] = [
+const toolCatalog: ToolDefinition[] = [
   {
     slug: "word-counter",
     category: "text",
@@ -3012,6 +3012,11 @@ export const tools: ToolDefinition[
   ]
 }
 ];
+
+export const tools: ToolDefinition[] = toolCatalog.map((tool) => ({
+  ...tool,
+  faq: buildToolFaqs(tool),
+}));
 
 export const toolMap = new Map(tools.map((tool) => [`${tool.category}/${tool.slug}`, tool]));
 
