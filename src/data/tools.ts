@@ -2451,6 +2451,254 @@ export const tools: ToolDefinition[
         "answer": "Yes. It works in modern mobile and desktop browsers."
       }
     ]
+  },
+  {
+    "slug": "add-bullets-to-text",
+    "category": "text",
+    "name": "Add Bullets to Text",
+    "shortDescription": "Add a bullet or custom prefix to every non-empty line.",
+    "metaDescription": "Add a bullet or custom prefix to every non-empty line. Free online tool with private browser-based processing.",
+    "keywords": [
+      "add bullets to text",
+      "add bullets to text",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Add Bullets to Text free to use?",
+        "answer": "Yes. Add Bullets to Text is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "add-blank-lines-between-text",
+    "category": "text",
+    "name": "Add Blank Lines Between Text",
+    "shortDescription": "Insert a chosen number of blank lines between text lines.",
+    "metaDescription": "Insert a chosen number of blank lines between text lines. Free online tool with private browser-based processing.",
+    "keywords": [
+      "add blank lines between text",
+      "add blank lines between text",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Add Blank Lines Between Text free to use?",
+        "answer": "Yes. Add Blank Lines Between Text is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "add-prefix-suffix-to-lines",
+    "category": "text",
+    "name": "Add Prefix and Suffix to Lines",
+    "shortDescription": "Add custom text before and after every line.",
+    "metaDescription": "Add custom text before and after every line. Free online tool with private browser-based processing.",
+    "keywords": [
+      "add prefix and suffix to lines",
+      "add prefix suffix to lines",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Add Prefix and Suffix to Lines free to use?",
+        "answer": "Yes. Add Prefix and Suffix to Lines is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "trim-each-line",
+    "category": "text",
+    "name": "Trim Each Line",
+    "shortDescription": "Remove leading and trailing whitespace from every line.",
+    "metaDescription": "Remove leading and trailing whitespace from every line. Free online tool with private browser-based processing.",
+    "keywords": [
+      "trim each line",
+      "trim each line",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Trim Each Line free to use?",
+        "answer": "Yes. Trim Each Line is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "quote-each-line",
+    "category": "text",
+    "name": "Quote Each Line",
+    "shortDescription": "Wrap every line in quotes or custom characters.",
+    "metaDescription": "Wrap every line in quotes or custom characters. Free online tool with private browser-based processing.",
+    "keywords": [
+      "quote each line",
+      "quote each line",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Quote Each Line free to use?",
+        "answer": "Yes. Quote Each Line is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "remove-line-numbers",
+    "category": "text",
+    "name": "Remove Line Numbers",
+    "shortDescription": "Remove common numeric prefixes from the beginning of lines.",
+    "metaDescription": "Remove common numeric prefixes from the beginning of lines. Free online tool with private browser-based processing.",
+    "keywords": [
+      "remove line numbers",
+      "remove line numbers",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Remove Line Numbers free to use?",
+        "answer": "Yes. Remove Line Numbers is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "extract-emails-from-text",
+    "category": "text",
+    "name": "Extract Emails from Text",
+    "shortDescription": "Find email addresses and optionally remove duplicates.",
+    "metaDescription": "Find email addresses and optionally remove duplicates. Free online tool with private browser-based processing.",
+    "keywords": [
+      "extract emails from text",
+      "extract emails from text",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Extract Emails from Text free to use?",
+        "answer": "Yes. Extract Emails from Text is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
+  },
+  {
+    "slug": "extract-urls-from-text",
+    "category": "text",
+    "name": "Extract URLs from Text",
+    "shortDescription": "Find web links in text and optionally remove duplicates.",
+    "metaDescription": "Find web links in text and optionally remove duplicates. Free online tool with private browser-based processing.",
+    "keywords": [
+      "extract urls from text",
+      "extract urls from text",
+      "free online text tool"
+    ],
+    "relatedTools": [
+      "add-line-numbers",
+      "remove-empty-lines",
+      "text-to-list"
+    ],
+    "faq": [
+      {
+        "question": "Is Extract URLs from Text free to use?",
+        "answer": "Yes. Extract URLs from Text is free and requires no account."
+      },
+      {
+        "question": "Is my text uploaded?",
+        "answer": "No. Processing happens locally in your browser."
+      },
+      {
+        "question": "Does it work on mobile?",
+        "answer": "Yes. It works in modern mobile and desktop browsers."
+      }
+    ]
   }
 ];
 
