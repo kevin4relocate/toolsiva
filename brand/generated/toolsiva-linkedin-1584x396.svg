@@ -1,17 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
-  <defs>
-    <radialGradient id="glow" cx="20%" cy="20%" r="80%">
-      <stop offset="0" stop-color="#7C3AED" stop-opacity=".32"/>
-      <stop offset=".55" stop-color="#7C3AED" stop-opacity=".08"/>
-      <stop offset="1" stop-color="#09090B" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1584" height="396" fill="#09090B"/>
-  <rect width="1584" height="396" fill="url(#glow)"/>
-  <rect x="111" y="55" width="55" height="55" rx="14" fill="#7C3AED"/>
-  <text x="129" y="97" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="800" fill="#FFFFFF">T</text>
-  <text x="182" y="97" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">Toolsiva</text>
-  <text x="111" y="222" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="800" fill="#FFFFFF">Useful online tools without the clutter.</text>
-  <text x="111" y="277" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="500" fill="#C4B5FD">Fast tools. Private by default.</text>
-  <text x="111" y="333" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="500" fill="#A1A1AA">toolsiva.com</text>
-</svg>
+    <defs>
+      <linearGradient id="backgroundGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#09090B"/>
+        <stop offset=".58" stop-color="#11101A"/>
+        <stop offset="1" stop-color="#09090B"/>
+      </linearGradient>
+      <radialGradient id="brandGlow" cx="16%" cy="18%" r="72%">
+        <stop offset="0" stop-color="#7C3AED" stop-opacity=".36"/>
+        <stop offset=".55" stop-color="#7C3AED" stop-opacity=".08"/>
+        <stop offset="1" stop-color="#09090B" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="toolsivaGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#A855F7"/>
+        <stop offset="0.48" stop-color="#7C3AED"/>
+        <stop offset="1" stop-color="#5B21B6"/>
+      </linearGradient>
+      <filter id="tileShadow" x="-40%" y="-40%" width="180%" height="180%">
+        <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#2E1065" flood-opacity=".28"/>
+      </filter>
+    </defs>
+    <rect width="1584" height="396" fill="url(#backgroundGradient)"/>
+    <rect width="1584" height="396" fill="url(#brandGlow)"/>
+    <circle cx="1394" cy="67" r="87" fill="#7C3AED" opacity=".06"/>
+    
+    <g transform="translate(111 59) scale(0.16015625)">
+      <rect width="512" height="512" rx="118" fill="url(#toolsivaGradient)"/>
+      <g fill="#FFFFFF" filter="url(#tileShadow)">
+        <rect x="196" y="91" width="120" height="120" rx="26" transform="rotate(45 256 151)"/>
+        <rect x="99" y="190" width="120" height="120" rx="26" transform="rotate(45 159 250)"/>
+        <rect x="196" y="291" width="120" height="120" rx="26" transform="rotate(45 256 351)"/>
+        <path d="M318 204c8-15 25-23 42-19l72 17c19 5 28 27 18 43l-39 61c-9 14-27 20-43 14l-64-24c-18-7-25-29-15-45l29-47Z"/>
+      </g>
+    </g>
+    <text x="213" y="111" font-family="Inter,Arial,sans-serif" font-size="35" font-weight="760" letter-spacing="-1" fill="#FFFFFF">Toolsiva</text>
+    <text x="111" y="238" font-family="Inter,Arial,sans-serif" font-size="48" font-weight="780" letter-spacing="-1" fill="#FFFFFF">Useful online tools without the clutter.</text>
+    <text x="111" y="297" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="500" fill="#C4B5FD">Fast tools. Private by default.</text>
+    <text x="111" y="348" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="500" fill="#A1A1AA">toolsiva.com</text>
+  </svg>

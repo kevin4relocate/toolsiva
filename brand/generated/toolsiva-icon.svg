@@ -1,5 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="120" fill="#09090B"/>
-  <rect x="56" y="56" width="400" height="400" rx="104" fill="#7C3AED"/>
-  <path d="M151 151h210v58h-75v165h-60V209h-75z" fill="#FFFFFF"/>
+  
+  <defs>
+    <linearGradient id="toolsivaGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.48" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#5B21B6"/>
+    </linearGradient>
+    <filter id="tileShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#2E1065" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  
+    <g transform="translate(0 0) scale(1)">
+      <rect width="512" height="512" rx="118" fill="url(#toolsivaGradient)"/>
+      <g fill="#FFFFFF" filter="url(#tileShadow)">
+        <rect x="196" y="91" width="120" height="120" rx="26" transform="rotate(45 256 151)"/>
+        <rect x="99" y="190" width="120" height="120" rx="26" transform="rotate(45 159 250)"/>
+        <rect x="196" y="291" width="120" height="120" rx="26" transform="rotate(45 256 351)"/>
+        <path d="M318 204c8-15 25-23 42-19l72 17c19 5 28 27 18 43l-39 61c-9 14-27 20-43 14l-64-24c-18-7-25-29-15-45l29-47Z"/>
+      </g>
+    </g>
 </svg>
