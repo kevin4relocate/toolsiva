@@ -2699,7 +2699,318 @@ export const tools: ToolDefinition[
         "answer": "Yes. It works in modern mobile and desktop browsers."
       }
     ]
-  }
+  },
+{
+  "slug": "regex-tester",
+  "category": "developer",
+  "name": "Regex Tester",
+  "shortDescription": "Test regular expressions against sample text with flags and match details.",
+  "metaDescription": "Test regular expressions online with flags, match counts and captured groups. Runs privately in your browser.",
+  "keywords": [
+    "regex tester",
+    "regular expression tester",
+    "regex match tester"
+  ],
+  "relatedTools": [
+    "find-and-replace",
+    "json-validator",
+    "text-compare"
+  ],
+  "faq": [
+    {
+      "question": "Which regex flags are supported?",
+      "answer": "The tool supports common JavaScript flags including global, case-insensitive, multiline, dotAll, Unicode and sticky."
+    },
+    {
+      "question": "Can it show captured groups?",
+      "answer": "Yes. Each match includes its full value, index and captured groups when available."
+    },
+    {
+      "question": "Is my sample text uploaded?",
+      "answer": "No. The regex and sample text are processed locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "utm-url-generator",
+  "category": "developer",
+  "name": "UTM URL Generator",
+  "shortDescription": "Build campaign URLs with UTM source, medium, campaign and optional tags.",
+  "metaDescription": "Generate UTM campaign URLs online with source, medium, campaign, term and content parameters.",
+  "keywords": [
+    "utm generator",
+    "utm url builder",
+    "campaign url generator"
+  ],
+  "relatedTools": [
+    "url-encode",
+    "url-decode",
+    "qr-url-generator"
+  ],
+  "faq": [
+    {
+      "question": "Which UTM fields are required?",
+      "answer": "The destination URL, campaign source, medium and campaign name are the most commonly required fields."
+    },
+    {
+      "question": "Are existing query parameters preserved?",
+      "answer": "Yes. Existing URL parameters remain and UTM parameters are added or updated."
+    },
+    {
+      "question": "Is the URL sent to a server?",
+      "answer": "No. URL generation happens locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "markdown-table-generator",
+  "category": "developer",
+  "name": "Markdown Table Generator",
+  "shortDescription": "Create Markdown tables with editable rows, columns and alignment.",
+  "metaDescription": "Build Markdown tables online with editable cells, row and column controls, alignment and instant copy.",
+  "keywords": [
+    "markdown table generator",
+    "markdown table maker",
+    "create markdown table"
+  ],
+  "relatedTools": [
+    "json-to-csv",
+    "json-formatter",
+    "text-to-list"
+  ],
+  "faq": [
+    {
+      "question": "Can I change column alignment?",
+      "answer": "Yes. Each column can be aligned left, center or right."
+    },
+    {
+      "question": "Can I add and remove rows or columns?",
+      "answer": "Yes. The table editor supports both row and column controls."
+    },
+    {
+      "question": "Is table data uploaded?",
+      "answer": "No. The table is generated locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "word-frequency-counter",
+  "category": "text",
+  "name": "Word Frequency Counter",
+  "shortDescription": "Count repeated words and sort them by frequency or alphabetically.",
+  "metaDescription": "Count word frequency online, ignore case, remove punctuation and sort results by count or alphabetically.",
+  "keywords": [
+    "word frequency counter",
+    "word count frequency",
+    "repeated word counter"
+  ],
+  "relatedTools": [
+    "word-counter",
+    "remove-duplicate-lines",
+    "sort-lines"
+  ],
+  "faq": [
+    {
+      "question": "Can the counter ignore capitalization?",
+      "answer": "Yes. Enable case-insensitive counting to combine words such as Tool and tool."
+    },
+    {
+      "question": "Are punctuation marks removed?",
+      "answer": "Yes. The default tokenizer removes surrounding punctuation before counting."
+    },
+    {
+      "question": "Is my text uploaded?",
+      "answer": "No. Word counting happens in your browser."
+    }
+  ]
+},
+{
+  "slug": "programming-case-converter",
+  "category": "text",
+  "name": "Programming Case Converter",
+  "shortDescription": "Convert text to camelCase, PascalCase, snake_case, kebab-case and dot.case.",
+  "metaDescription": "Convert text to camelCase, PascalCase, snake_case, kebab-case and dot.case instantly in your browser.",
+  "keywords": [
+    "programming case converter",
+    "camelcase converter",
+    "snake case converter",
+    "kebab case converter"
+  ],
+  "relatedTools": [
+    "case-converter",
+    "slug-generator",
+    "remove-extra-spaces"
+  ],
+  "faq": [
+    {
+      "question": "Which programming cases are supported?",
+      "answer": "camelCase, PascalCase, snake_case, kebab-case, dot.case and CONSTANT_CASE are included."
+    },
+    {
+      "question": "How are words detected?",
+      "answer": "Spaces, punctuation, underscores, hyphens and existing case changes are normalized into words."
+    },
+    {
+      "question": "Is my text uploaded?",
+      "answer": "No. Conversion happens locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "morse-code-translator",
+  "category": "text",
+  "name": "Morse Code Translator",
+  "shortDescription": "Translate text to Morse code and decode Morse code back to text.",
+  "metaDescription": "Translate English text to Morse code or decode Morse code to text online with instant browser-based results.",
+  "keywords": [
+    "morse code translator",
+    "text to morse code",
+    "morse code decoder"
+  ],
+  "relatedTools": [
+    "binary-code-translator",
+    "base64-encode",
+    "base64-decode"
+  ],
+  "faq": [
+    {
+      "question": "How are letters and words separated?",
+      "answer": "Letters use spaces and words use a slash in the generated Morse output."
+    },
+    {
+      "question": "Which characters are supported?",
+      "answer": "English letters, digits and common punctuation are supported."
+    },
+    {
+      "question": "Is translation private?",
+      "answer": "Yes. Translation happens locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "binary-code-translator",
+  "category": "developer",
+  "name": "Binary Code Translator",
+  "shortDescription": "Convert UTF-8 text to binary bytes and decode binary back to text.",
+  "metaDescription": "Translate UTF-8 text to binary code or decode binary bytes back to text directly in your browser.",
+  "keywords": [
+    "binary code translator",
+    "text to binary",
+    "binary to text"
+  ],
+  "relatedTools": [
+    "morse-code-translator",
+    "base64-encode",
+    "base64-decode"
+  ],
+  "faq": [
+    {
+      "question": "Does it support Unicode text?",
+      "answer": "Yes. Text is encoded and decoded as UTF-8 bytes."
+    },
+    {
+      "question": "How should binary bytes be separated?",
+      "answer": "Use spaces between 8-bit binary byte values."
+    },
+    {
+      "question": "Is the input uploaded?",
+      "answer": "No. Encoding and decoding happen locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "number-sorter",
+  "category": "text",
+  "name": "Number Sorter",
+  "shortDescription": "Sort integers and decimal numbers in ascending or descending order.",
+  "metaDescription": "Sort numbers online in ascending or descending order with support for decimals, negatives and mixed separators.",
+  "keywords": [
+    "number sorter",
+    "sort numbers",
+    "ascending number sorter"
+  ],
+  "relatedTools": [
+    "sort-lines",
+    "average-calculator",
+    "remove-duplicate-lines"
+  ],
+  "faq": [
+    {
+      "question": "Which separators are accepted?",
+      "answer": "Numbers can be separated by spaces, commas, semicolons or line breaks."
+    },
+    {
+      "question": "Are negative and decimal values supported?",
+      "answer": "Yes. Both negative values and decimal numbers are supported."
+    },
+    {
+      "question": "Is the list uploaded?",
+      "answer": "No. Sorting happens locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "remove-line-breaks",
+  "category": "text",
+  "name": "Remove Line Breaks",
+  "shortDescription": "Replace line breaks with spaces, commas or a custom separator.",
+  "metaDescription": "Remove line breaks online and join text with spaces, commas, semicolons or a custom separator.",
+  "keywords": [
+    "remove line breaks",
+    "join lines",
+    "line break remover"
+  ],
+  "relatedTools": [
+    "remove-empty-lines",
+    "remove-extra-spaces",
+    "list-to-text"
+  ],
+  "faq": [
+    {
+      "question": "Can I choose the replacement separator?",
+      "answer": "Yes. Use a space, comma, semicolon or any custom separator."
+    },
+    {
+      "question": "Are empty lines removed?",
+      "answer": "Empty lines are ignored by default before joining the remaining lines."
+    },
+    {
+      "question": "Is my text uploaded?",
+      "answer": "No. Processing happens locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "random-choice-generator",
+  "category": "security",
+  "name": "Random Choice Generator",
+  "shortDescription": "Choose one or more random items from a list with optional no-repeat selection.",
+  "metaDescription": "Pick random choices from a list online, choose multiple winners and prevent repeated selections.",
+  "keywords": [
+    "random choice generator",
+    "random picker",
+    "random list picker"
+  ],
+  "relatedTools": [
+    "random-string-generator",
+    "secure-token-generator",
+    "uuid-generator"
+  ],
+  "faq": [
+    {
+      "question": "Can I select multiple winners?",
+      "answer": "Yes. Choose how many results to pick from the list."
+    },
+    {
+      "question": "Can duplicate results be prevented?",
+      "answer": "Yes. The no-repeat option selects unique list items."
+    },
+    {
+      "question": "Is my list uploaded?",
+      "answer": "No. Random selection happens locally in your browser."
+    }
+  ]
+}
 ];
 
 export const toolMap = new Map(tools.map((tool) => [`${tool.category}/${tool.slug}`, tool]));

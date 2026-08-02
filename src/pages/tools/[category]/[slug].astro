@@ -9,6 +9,7 @@ import CalculatorToolWorkspace from "@/components/tools/CalculatorToolWorkspace.
 import ConverterToolWorkspace from "@/components/tools/ConverterToolWorkspace.astro";
 import ExpansionToolWorkspace from "@/components/tools/ExpansionToolWorkspace.astro";
 import NewTextToolsWorkspace from "@/components/tools/NewTextToolsWorkspace.astro";
+import HighValueToolsWorkspace from "@/components/tools/HighValueToolsWorkspace.astro";
 import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
@@ -31,6 +32,7 @@ const relatedTools = getRelatedTools(tool);
 const instructions = getToolInstructions(tool);
 const expansionToolSlugs = new Set(["line-counter","sentence-counter","paragraph-counter","text-to-list","list-to-text","remove-empty-lines","add-line-numbers","strip-html-tags","text-repeater","whitespace-visualizer","ratio-calculator","proportion-calculator","fraction-calculator","gcd-lcm-calculator","pace-calculator","unit-price-calculator","profit-margin-calculator","markup-calculator"]);
 const newTextToolSlugs = new Set(["add-bullets-to-text", "add-blank-lines-between-text", "add-prefix-suffix-to-lines", "trim-each-line", "quote-each-line", "remove-line-numbers", "extract-emails-from-text", "extract-urls-from-text"]);
+const highValueToolSlugs = new Set(["regex-tester", "utm-url-generator", "markdown-table-generator", "word-frequency-counter", "programming-case-converter", "morse-code-translator", "binary-code-translator", "number-sorter", "remove-line-breaks", "random-choice-generator"]);
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -101,10 +103,11 @@ const breadcrumbSchema = {
     <AdSlot placement="tool-top" minHeight={0} />
 
     {newTextToolSlugs.has(tool.slug) && <NewTextToolsWorkspace mode={tool.slug} />}
+    {highValueToolSlugs.has(tool.slug) && <HighValueToolsWorkspace mode={tool.slug} />}
     {expansionToolSlugs.has(tool.slug) && <ExpansionToolWorkspace mode={tool.slug} />}
-    {!newTextToolSlugs.has(tool.slug) && !expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
-    {tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
-    {tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
+    {!highValueToolSlugs.has(tool.slug) && !newTextToolSlugs.has(tool.slug) && !expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
+    {!highValueToolSlugs.has(tool.slug) && tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
+    {!highValueToolSlugs.has(tool.slug) && tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
     {tool.category === "qr" && <QrToolWorkspace mode={tool.slug} />}
     {!expansionToolSlugs.has(tool.slug) && tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}
     {tool.category === "converter" && <ConverterToolWorkspace mode={tool.slug} />}

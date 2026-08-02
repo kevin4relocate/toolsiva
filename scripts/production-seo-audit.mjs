@@ -3,8 +3,8 @@ import path from "node:path";
 
 const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, "dist");
-const expectedPages = Number.parseInt(process.env.EXPECTED_PAGES ?? "123", 10);
-const expectedToolPages = Number.parseInt(process.env.EXPECTED_TOOL_PAGES ?? "108", 10);
+const expectedPages = Number.parseInt(process.env.EXPECTED_PAGES ?? "133", 10);
+const expectedToolPages = Number.parseInt(process.env.EXPECTED_TOOL_PAGES ?? "118", 10);
 const siteUrl = (process.env.SITE_URL ?? "https://toolsiva.com").replace(/\/+$/, "");
 
 const failOnWarnings = process.argv.includes("--strict");
