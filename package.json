@@ -15,7 +15,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:validators": "node scripts/test-validator-fixtures.mjs",
-    "brand:generate": "node scripts/generate-brand-assets.mjs"
+    "brand:generate": "node scripts/generate-brand-assets.mjs",
+    "seo:audit": "node scripts/production-seo-audit.mjs",
+    "seo:audit:strict": "node scripts/production-seo-audit.mjs --strict",
+    "launch:check": "npm run check && npm run build && npm run seo:audit"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
