@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
 import ToolCard from "@/components/common/ToolCard.astro";
 import { categories, categoryMap } from "@/data/categories";
 import { tools } from "@/data/tools";
@@ -18,7 +19,53 @@ if (!category) {
   return Astro.redirect("/tools");
 }
 
-const categoryTools = tools.filter((tool) => tool.category === categorySlug);
+const categoryTools = tools
+  .filter((tool) => tool.category === categorySlug)
+  .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.name.localeCompare(b.name));
+
+const categoryUrl = new URL(`/tools/${category.slug}`, siteConfig.url).toString();
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: category.name,
+  description: category.description,
+  url: categoryUrl,
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: categoryTools.length,
+    itemListElement: categoryTools.map((tool, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: tool.name,
+      url: new URL(`/tools/${tool.category}/${tool.slug}`, siteConfig.url).toString(),
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "All Tools",
+      item: new URL("/tools", siteConfig.url).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: category.name,
+      item: categoryUrl,
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -26,6 +73,9 @@ const categoryTools = tools.filter((tool) => tool.category === categorySlug);
   description={category.description}
   canonicalPath={`/tools/${category.slug}`}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <nav class="mb-6 text-sm text-zinc-500" aria-label="Breadcrumb">
       <a class="hover:text-white" href="/tools">All tools</a>
@@ -35,6 +85,20 @@ const categoryTools = tools.filter((tool) => tool.category === categorySlug);
 
     <h1 class="text-4xl font-black text-white sm:text-5xl">{category.name}</h1>
     <p class="mt-4 max-w-2xl text-lg text-zinc-400">{category.description}</p>
+    <p class="mt-3 text-sm text-zinc-500">
+      Browse {categoryTools.length} free {category.name.toLowerCase()} from Toolsiva.
+    </p>
+
+    <nav class="mt-7 flex flex-wrap gap-2" aria-label={`Popular ${category.name}`}>
+      {categoryTools.slice(0, 6).map((tool) => (
+        <a
+          href={`/tools/${tool.category}/${tool.slug}`}
+          class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:border-brand-400/40 hover:text-brand-200"
+        >
+          {tool.name}
+        </a>
+      ))}
+    </nav>
 
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {categoryTools.map((tool) => <ToolCard tool={tool} />)}
