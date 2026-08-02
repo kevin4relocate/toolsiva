@@ -1,11 +1,11 @@
 ---
 interface Props { mode: string; }
 const { mode } = Astro.props;
-type QrInputType = "text" | "url" | "password" | "email" | "tel" | "number" | "datetime-local";
+type QrInputType = "text" | "url" | "password" | "email" | "tel" | "number" | "datetime-local" | "checkbox";
 const configs: Record<string, { title: string; fields: Array<{name:string;label:string;type?:QrInputType;placeholder?:string;options?:string[]}> }> = {
   "qr-text-generator": { title: "Text", fields: [{name:"text",label:"Text",placeholder:"Enter text"}] },
   "qr-url-generator": { title: "Website URL", fields: [{name:"url",label:"URL",type:"url",placeholder:"https://example.com"}] },
-  "qr-wifi-generator": { title: "WiFi network", fields: [{name:"ssid",label:"Network name"},{name:"password",label:"Password",type:"password"},{name:"security",label:"Security",options:["WPA","WEP","nopass"]}] },
+  "qr-wifi-generator": { title: "WiFi network", fields: [{name:"ssid",label:"Network name"},{name:"password",label:"Password",type:"password"},{name:"security",label:"Security",options:["WPA","WEP","nopass"]},{name:"hidden",label:"Hidden network",type:"checkbox"}] },
   "qr-email-generator": { title: "Email", fields: [{name:"email",label:"Email address",type:"email"},{name:"subject",label:"Subject"},{name:"message",label:"Message"}] },
   "qr-phone-generator": { title: "Phone number", fields: [{name:"phone",label:"Phone number",type:"tel"}] },
   "qr-sms-generator": { title: "SMS", fields: [{name:"phone",label:"Phone number",type:"tel"},{name:"message",label:"Message"}] },
@@ -26,7 +26,46 @@ const config = configs[mode] ?? fallbackConfig;
         {config.fields.map((field) => (
           <label class:list={["grid gap-1.5", field.name === "message" && "sm:col-span-2"]}>
             <span class="text-xs font-medium text-zinc-400">{field.label}</span>
-            {field.options ? <select name={field.name} class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-2.5 text-sm text-white">{field.options.map((option)=><option value={option}>{option}</option>)}</select> : <input name={field.name} type={field.type ?? "text"} placeholder={field.placeholder} class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-600" />}
+            {field.options ? (
+              <>
+                <select name={field.name} class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-2.5 text-sm text-white">
+                  {field.options.map((option) => (
+                    <option value={option}>
+                      {option === "WPA" ? "WPA / WPA2 / WPA3" : option === "nopass" ? "No password" : option}
+                    </option>
+                  ))}
+                </select>
+                {field.name === "security" && (
+                  <span class="text-[11px] leading-4 text-zinc-500">
+                    Most home networks use WPA / WPA2. Choose WEP only for older routers.
+                  </span>
+                )}
+              </>
+            ) : field.type === "checkbox" ? (
+              <span class="flex h-10 items-center gap-2 rounded-xl border border-white/10 bg-zinc-950 px-3">
+                <input name={field.name} type="checkbox" class="size-4 accent-brand-500" />
+                <span class="text-sm text-zinc-300">This WiFi network is hidden</span>
+              </span>
+            ) : field.type === "password" ? (
+              <span class="flex overflow-hidden rounded-xl border border-white/10 bg-zinc-950">
+                <input
+                  name={field.name}
+                  type="password"
+                  placeholder={field.placeholder}
+                  class="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-sm text-white outline-none placeholder:text-zinc-600"
+                />
+                <button
+                  type="button"
+                  data-toggle-password
+                  class="border-l border-white/10 px-3 text-xs font-medium text-zinc-400 transition hover:bg-white/5 hover:text-white"
+                  aria-label="Show WiFi password"
+                >
+                  Show
+                </button>
+              </span>
+            ) : (
+              <input name={field.name} type={field.type ?? "text"} placeholder={field.placeholder} class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-600" />
+            )}
           </label>
         ))}
       </div>
@@ -150,7 +189,16 @@ const config = configs[mode] ?? fallbackConfig;
 
     const payload = () => {
       if (mode === "qr-url-generator") return get("url");
-      if (mode === "qr-wifi-generator") return get("ssid") ? `WIFI:T:${get("security")};S:${escapeWifi(get("ssid"))};P:${escapeWifi(get("password"))};;` : "";
+      if (mode === "qr-wifi-generator") {
+        const ssid = get("ssid");
+        const security = get("security") || "WPA";
+        const password = get("password");
+        const hidden = root.querySelector<HTMLInputElement>('[name="hidden"]')?.checked ?? false;
+        if (!ssid) return "";
+        if (security !== "nopass" && !password) return "";
+        const passwordPart = security === "nopass" ? "" : `P:${escapeWifi(password)};`;
+        return `WIFI:S:${escapeWifi(ssid)};T:${security};${passwordPart}H:${hidden ? "true" : "false"};;`;
+      }
       if (mode === "qr-email-generator") return get("email") ? `mailto:${get("email")}?subject=${encodeURIComponent(get("subject"))}&body=${encodeURIComponent(get("message"))}` : "";
       if (mode === "qr-phone-generator") return get("phone") ? `tel:${get("phone")}` : "";
       if (mode === "qr-sms-generator") return get("phone") ? `SMSTO:${get("phone")}:${get("message")}` : "";
@@ -168,7 +216,16 @@ const config = configs[mode] ?? fallbackConfig;
         const context = canvas.getContext("2d");
         context?.clearRect(0, 0, canvas.width, canvas.height);
         download.disabled = true;
-        status.textContent = "Enter content to generate a QR code.";
+        if (
+          mode === "qr-wifi-generator" &&
+          get("ssid") &&
+          get("security") !== "nopass" &&
+          !get("password")
+        ) {
+          status.textContent = "Enter the WiFi password, or choose No password for an open network.";
+        } else {
+          status.textContent = "Enter content to generate a QR code.";
+        }
         return;
       }
       try {
@@ -203,6 +260,16 @@ const config = configs[mode] ?? fallbackConfig;
       else if (/^#[0-9A-Fa-f]{6}$/.test(hex.value.trim())) picker.value = hex.value.trim();
       render();
     };
+
+    root.querySelector<HTMLButtonElement>("[data-toggle-password]")?.addEventListener("click", (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const passwordInput = root.querySelector<HTMLInputElement>('input[name="password"]');
+      if (!passwordInput) return;
+      const showing = passwordInput.type === "text";
+      passwordInput.type = showing ? "password" : "text";
+      button.textContent = showing ? "Show" : "Hide";
+      button.setAttribute("aria-label", showing ? "Show WiFi password" : "Hide WiFi password");
+    });
 
     darkColor?.addEventListener("input", () => syncColorPair(darkColor, darkHex, "picker"));
     darkHex?.addEventListener("input", () => syncColorPair(darkColor, darkHex, "hex"));
