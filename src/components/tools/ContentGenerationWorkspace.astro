@@ -15,9 +15,12 @@ const { mode } = Astro.props;
         </label>
         <label class="grid gap-1.5 text-xs font-medium text-zinc-400">Amount
           <input data-random-amount type="number" min="1" max="100" value="3" class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none" />
-          <span data-random-limit class="text-[11px] leading-4 text-zinc-500">
-            Maximum: 100 paragraphs
-          </span>
+          <div
+            data-random-limit
+            class="rounded-xl border border-brand-400/30 bg-brand-500/10 px-3 py-2 text-xs font-semibold leading-5 text-brand-200"
+          >
+            Maximum: 500 paragraphs
+          </div>
         </label>
         <div class="grid gap-2 text-sm text-zinc-300">
           <label class="flex items-center gap-2"><input data-random-option="numbers" type="checkbox" checked class="size-4 accent-brand-500" /> Include numbers</label>
@@ -124,10 +127,10 @@ const { mode } = Astro.props;
         return firstCharacter + value.slice(1) + pick([".", ".", "!", "?"]);
       };
       const limits: Record<string, number> = {
-        words: 10000,
-        sentences: 1000,
-        paragraphs: 100,
-        mixed: 5000,
+        words: 50000,
+        sentences: 5000,
+        paragraphs: 500,
+        mixed: 20000,
       };
 
       const amountLabels: Record<string, string> = {
@@ -137,22 +140,69 @@ const { mode } = Astro.props;
         mixed: "items",
       };
 
+      const normalNoticeClasses =
+        "rounded-xl border border-brand-400/30 bg-brand-500/10 px-3 py-2 text-xs font-semibold leading-5 text-brand-200";
+
+      const warningNoticeClasses =
+        "rounded-xl border border-brand-300/60 bg-brand-500/20 px-3 py-2 text-xs font-bold leading-5 text-brand-100";
+
       const updateLimit = () => {
-        const maximum = limits[type.value] ?? 100;
+        const maximum = limits[type.value] ?? 500;
+        const label = amountLabels[type.value] ?? "items";
+
         amount.max = String(maximum);
+        limitMessage.className = normalNoticeClasses;
         limitMessage.textContent =
-          `Maximum: ${maximum.toLocaleString()} ${amountLabels[type.value] ?? "items"}`;
+          `Maximum: ${maximum.toLocaleString()} ${label}`;
+      };
+
+      const updateStats = () => {
+        const currentText = output.value;
+        const trimmedText = currentText.trim();
+
+        const wordCount =
+          trimmedText.length > 0
+            ? trimmedText.split(/\s+/u).filter(Boolean).length
+            : 0;
+
+        const characterCount = Array.from(currentText).length;
+
+        stats.textContent =
+          `${wordCount.toLocaleString()} words · ` +
+          `${characterCount.toLocaleString()} characters`;
       };
 
       const generate = () => {
-        const maximum = limits[type.value] ?? 100;
-        const entered = Number.parseInt(amount.value, 10);
-        const count = Math.max(
-          1,
-          Math.min(maximum, Number.isFinite(entered) ? entered : 1),
-        );
+        const maximum = limits[type.value] ?? 500;
+        const label = amountLabels[type.value] ?? "items";
+        const rawAmount = amount.value.trim();
+        const enteredAmount = Number(rawAmount);
+
+        const exceedsLimit =
+          rawAmount.length > 0 &&
+          (!Number.isFinite(enteredAmount) || enteredAmount > maximum);
+
+        const count = exceedsLimit
+          ? maximum
+          : Math.max(
+              1,
+              Math.min(
+                maximum,
+                Math.floor(
+                  Number.isFinite(enteredAmount) ? enteredAmount : 1,
+                ),
+              ),
+            );
 
         amount.value = String(count);
+
+        if (exceedsLimit) {
+          limitMessage.className = warningNoticeClasses;
+          limitMessage.textContent =
+            `Limited to ${maximum.toLocaleString()} ${label} to keep the browser responsive.`;
+        } else {
+          updateLimit();
+        }
 
         let result = "";
 
@@ -192,10 +242,9 @@ const { mode } = Astro.props;
         }
 
         output.value = result;
-        stats.textContent =
-          `${count.toLocaleString()} ${amountLabels[type.value] ?? "items"} · ` +
-          `${result.length.toLocaleString()} characters`;
+        updateStats();
       };
+
       type.addEventListener("change", () => {
         updateLimit();
         generate();
@@ -207,7 +256,8 @@ const { mode } = Astro.props;
       );
       root.querySelector("[data-clear-random]")?.addEventListener("click", () => {
         output.value = "";
-        stats.textContent = "";
+        updateStats();
+        updateLimit();
       });
       root.querySelector("[data-download-random]")?.addEventListener("click", () => {
         const url = URL.createObjectURL(
