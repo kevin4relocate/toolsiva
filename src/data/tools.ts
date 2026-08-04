@@ -3058,9 +3058,7 @@ const toolCatalog: ToolDefinition[] = [
   "featured": true,
   "relatedTools": [
     "html-to-markdown",
-    "markdown-to-plain-text",
-    "markdown-converter"
-  ],
+    "markdown-to-plain-text"],
   "faq": [
     {
       "question": "Which Markdown features are supported?",
@@ -3089,9 +3087,7 @@ const toolCatalog: ToolDefinition[] = [
   ],
   "relatedTools": [
     "markdown-to-html",
-    "markdown-to-plain-text",
-    "markdown-converter"
-  ],
+    "markdown-to-plain-text"],
   "faq": [
     {
       "question": "Which HTML elements are converted?",
@@ -3138,39 +3134,6 @@ const toolCatalog: ToolDefinition[] = [
     }
   ]
 },
-{
-  "slug": "markdown-converter",
-  "category": "developer",
-  "name": "Markdown Converter",
-  "shortDescription": "Convert between Markdown, HTML and plain text in one workspace.",
-  "metaDescription": "Convert between Markdown, HTML and plain text online. Swap formats, copy results and download converted files.",
-  "keywords": [
-    "markdown converter",
-    "markdown html converter",
-    "html markdown converter",
-    "markdown plain text"
-  ],
-  "featured": true,
-  "relatedTools": [
-    "markdown-to-html",
-    "html-to-markdown",
-    "markdown-to-plain-text"
-  ],
-  "faq": [
-    {
-      "question": "Which formats are supported?",
-      "answer": "Markdown, HTML and plain text."
-    },
-    {
-      "question": "Can I swap formats?",
-      "answer": "Yes. Use Swap to reverse input and output."
-    },
-    {
-      "question": "Is content uploaded?",
-      "answer": "No. Conversion is local."
-    }
-  ]
-}
 ];
 
 export const tools: ToolDefinition[] = toolCatalog.map((tool) => ({

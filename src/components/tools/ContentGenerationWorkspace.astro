@@ -73,20 +73,66 @@ const { mode } = Astro.props;
   </div>
 
   <div class:list={[mode === "random-text-generator" && "hidden"]}>
-    <div class="mb-4 flex flex-wrap items-end gap-3" data-format-controls>
-      <label class="grid min-w-40 gap-1.5 text-xs font-medium text-zinc-400">Input format
-        <select data-from-format><option value="markdown">Markdown</option><option value="html">HTML</option><option value="text">Plain text</option></select>
-      </label>
-      <button data-swap type="button" class="min-h-[2.875rem] rounded-xl border border-white/10 px-4 text-sm font-semibold text-zinc-300">Swap</button>
-      <label class="grid min-w-40 gap-1.5 text-xs font-medium text-zinc-400">Output format
-        <select data-to-format><option value="html">HTML</option><option value="markdown">Markdown</option><option value="text">Plain text</option></select>
-      </label>
-    </div>
     <div class="grid gap-4 lg:grid-cols-2">
-      <div class="grid min-w-0 grid-rows-[2.75rem_auto]"><div class="flex h-11 items-center"><label class="text-sm font-semibold text-zinc-200">Input</label></div><textarea data-convert-input class="h-[clamp(20rem,45vh,30rem)] min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none" placeholder="Enter content to convert..."></textarea></div>
-      <div class="grid min-w-0 grid-rows-[2.75rem_auto]"><div class="flex h-11 items-center justify-between gap-3"><label class="text-sm font-semibold text-zinc-200">Output</label><button data-copy-output type="button" class="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300">Copy</button></div><textarea data-convert-output readonly class="h-[clamp(20rem,45vh,30rem)] min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950/70 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"></textarea></div>
+      <div class="grid min-w-0 grid-rows-[2.75rem_auto]">
+        <div class="flex h-11 items-center">
+          <span class="text-sm font-semibold text-zinc-200">Input</span>
+        </div>
+
+        <textarea
+          data-convert-input
+          class="h-[clamp(20rem,45vh,30rem)] min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"
+          placeholder="Enter content to convert..."
+        ></textarea>
+      </div>
+
+      <div class="grid min-w-0 grid-rows-[2.75rem_auto]">
+        <div class="flex h-11 items-center justify-between gap-3">
+          <span class="text-sm font-semibold text-zinc-200">Output</span>
+
+          <div class="flex flex-wrap items-center justify-end gap-2">
+            <button
+              data-copy-output
+              type="button"
+              disabled
+              class="focus-ring min-w-20 rounded-xl border border-white/10 px-4 py-2 text-sm font-medium text-zinc-300 transition duration-150 hover:border-brand-400/40 hover:bg-brand-500/10 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Copy
+            </button>
+
+            <button
+              data-clear-converter
+              type="button"
+              disabled
+              class="focus-ring min-w-20 rounded-xl border border-white/10 px-4 py-2 text-sm font-medium text-zinc-300 transition duration-150 hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <textarea
+          data-convert-output
+          readonly
+          class="h-[clamp(20rem,45vh,30rem)] min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950/70 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"
+        ></textarea>
+      </div>
     </div>
-    <div class="mt-3 flex flex-wrap gap-2"><button data-convert type="button" class="rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white">Convert</button><button data-download-output type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200">Download</button><button data-clear-converter type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-400">Clear</button></div>
+
+    <div class="mt-3 flex flex-wrap items-center gap-2">
+      <button
+        data-download-output
+        type="button"
+        disabled
+        class="focus-ring rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200 transition duration-150 hover:border-brand-400/40 hover:bg-brand-500/10 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        Download
+      </button>
+
+      <span class="text-xs text-zinc-500">
+        Output updates automatically as you type.
+      </span>
+    </div>
   </div>
 </section>
 
@@ -366,9 +412,96 @@ const { mode } = Astro.props;
       generate();
       return;
     }
-    const input=root.querySelector<HTMLTextAreaElement>("[data-convert-input]")!, output=root.querySelector<HTMLTextAreaElement>("[data-convert-output]")!, from=root.querySelector<HTMLSelectElement>("[data-from-format]")!, to=root.querySelector<HTMLSelectElement>("[data-to-format]")!, controls=root.querySelector<HTMLElement>("[data-format-controls]")!;
-    const presets:Record<string,[string,string]>={"markdown-to-html":["markdown","html"],"html-to-markdown":["html","markdown"],"markdown-to-plain-text":["markdown","text"]}; if(presets[mode]){[from.value,to.value]=presets[mode];controls.classList.add("hidden");}
-    const convert=()=>{const v=input.value;if(from.value===to.value)output.value=v;else if(from.value==="markdown"&&to.value==="html")output.value=mdToHtml(v);else if(from.value==="markdown"&&to.value==="text")output.value=htmlToText(mdToHtml(v));else if(from.value==="html"&&to.value==="markdown")output.value=htmlToMd(v);else if(from.value==="html"&&to.value==="text")output.value=htmlToText(v);else if(from.value==="text"&&to.value==="html")output.value=`<p>${esc(v).replace(/\n/g,"<br>")}</p>`;else output.value=v;};
-    input.addEventListener("input",convert); from.addEventListener("change",convert); to.addEventListener("change",convert); root.querySelector("[data-convert]")?.addEventListener("click",convert); root.querySelector("[data-swap]")?.addEventListener("click",()=>{const x=from.value;from.value=to.value;to.value=x;input.value=output.value;convert();}); root.querySelector("[data-copy-output]")?.addEventListener("click",()=>navigator.clipboard.writeText(output.value)); root.querySelector("[data-clear-converter]")?.addEventListener("click",()=>{input.value="";output.value="";}); root.querySelector("[data-download-output]")?.addEventListener("click",()=>{const ext=to.value==="html"?"html":to.value==="markdown"?"md":"txt";const u=URL.createObjectURL(new Blob([output.value],{type:"text/plain"}));const a=document.createElement("a");a.href=u;a.download=`converted.${ext}`;a.click();URL.revokeObjectURL(u);}); convert();
+    const input =
+      root.querySelector<HTMLTextAreaElement>("[data-convert-input]")!;
+    const output =
+      root.querySelector<HTMLTextAreaElement>("[data-convert-output]")!;
+    const copyButton =
+      root.querySelector<HTMLButtonElement>("[data-copy-output]")!;
+    const clearButton =
+      root.querySelector<HTMLButtonElement>("[data-clear-converter]")!;
+    const downloadButton =
+      root.querySelector<HTMLButtonElement>("[data-download-output]")!;
+
+    const fileExtensions: Record<string, string> = {
+      "markdown-to-html": "html",
+      "html-to-markdown": "md",
+      "markdown-to-plain-text": "txt",
+    };
+
+    const updateActions = () => {
+      const hasInput = input.value.length > 0;
+      const hasOutput = output.value.length > 0;
+
+      copyButton.disabled = !hasOutput;
+      clearButton.disabled = !hasInput && !hasOutput;
+      downloadButton.disabled = !hasOutput;
+    };
+
+    const convert = () => {
+      const value = input.value;
+
+      if (!value) {
+        output.value = "";
+        updateActions();
+        return;
+      }
+
+      if (mode === "markdown-to-html") {
+        output.value = mdToHtml(value);
+      } else if (mode === "html-to-markdown") {
+        output.value = htmlToMd(value);
+      } else if (mode === "markdown-to-plain-text") {
+        output.value = htmlToText(mdToHtml(value));
+      } else {
+        output.value = value;
+      }
+
+      updateActions();
+    };
+
+    input.addEventListener("input", convert);
+
+    copyButton.addEventListener("click", async () => {
+      if (!output.value) return;
+
+      try {
+        await navigator.clipboard.writeText(output.value);
+      } catch {
+        return;
+      }
+    });
+
+    clearButton.addEventListener("click", () => {
+      input.value = "";
+      output.value = "";
+      updateActions();
+      input.focus();
+    });
+
+    downloadButton.addEventListener("click", () => {
+      if (!output.value) return;
+
+      const extension = fileExtensions[mode] ?? "txt";
+      const mimeType =
+        extension === "html"
+          ? "text/html;charset=utf-8"
+          : "text/plain;charset=utf-8";
+
+      const url = URL.createObjectURL(
+        new Blob([output.value], {
+          type: mimeType,
+        }),
+      );
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `converted.${extension}`;
+      link.click();
+
+      URL.revokeObjectURL(url);
+    });
+
+    convert();
   });
 </script>

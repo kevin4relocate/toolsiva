@@ -30,6 +30,8 @@
     "[data-output]",
     "[data-result]",
     "[data-preview-output]",
+    "[data-convert-output]",
+    "[data-random-output]",
   ].join(",");
 
   const feedbackTimers = new WeakMap();
