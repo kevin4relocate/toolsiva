@@ -1,0 +1,126 @@
+---
+interface Props { mode: string; }
+const { mode } = Astro.props;
+---
+
+<section class="rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-5" data-content-tools data-mode={mode}>
+  <div class:list={[mode !== "random-text-generator" && "hidden"]}>
+    <div class="grid gap-4 lg:grid-cols-[20rem_minmax(0,1fr)]">
+      <div class="space-y-4 rounded-2xl border border-white/10 bg-zinc-950/50 p-4">
+        <label class="grid gap-1.5 text-xs font-medium text-zinc-400">Output type
+          <select data-random-type>
+            <option value="words">Words</option><option value="sentences">Sentences</option>
+            <option value="paragraphs" selected>Paragraphs</option><option value="mixed">Mixed test text</option>
+          </select>
+        </label>
+        <label class="grid gap-1.5 text-xs font-medium text-zinc-400">Amount
+          <input data-random-amount type="number" min="1" max="100" value="3" class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none" />
+        </label>
+        <div class="grid gap-2 text-sm text-zinc-300">
+          <label class="flex items-center gap-2"><input data-random-option="numbers" type="checkbox" checked class="size-4 accent-brand-500" /> Include numbers</label>
+          <label class="flex items-center gap-2"><input data-random-option="emoji" type="checkbox" checked class="size-4 accent-brand-500" /> Include emojis</label>
+          <label class="flex items-center gap-2"><input data-random-option="special" type="checkbox" class="size-4 accent-brand-500" /> Include special characters</label>
+          <label class="flex items-center gap-2"><input data-random-option="uppercase" type="checkbox" checked class="size-4 accent-brand-500" /> Include uppercase words</label>
+          <label class="flex items-center gap-2"><input data-random-option="lineBreaks" type="checkbox" checked class="size-4 accent-brand-500" /> Add line breaks</label>
+        </div>
+        <label class="grid gap-1.5 text-xs font-medium text-zinc-400">Custom separator
+          <input data-random-separator placeholder="Leave empty for spaces" class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none" />
+        </label>
+        <button data-generate type="button" class="min-h-[2.875rem] w-full rounded-xl bg-brand-500 px-4 text-sm font-bold text-white hover:bg-brand-400">Generate</button>
+      </div>
+      <div class="grid min-w-0 grid-rows-[auto_minmax(20rem,1fr)_auto] gap-3">
+        <div class="flex items-center justify-between gap-3"><span class="text-sm font-semibold text-zinc-200">Generated text</span><span data-random-stats class="text-xs text-zinc-500"></span></div>
+        <textarea data-random-output readonly class="min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"></textarea>
+        <div class="flex flex-wrap gap-2">
+          <button data-copy-random type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200">Copy</button>
+          <button data-download-random type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200">Download TXT</button>
+          <button data-clear-random type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-400">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class:list={[mode === "random-text-generator" && "hidden"]}>
+    <div class="mb-4 flex flex-wrap items-end gap-3" data-format-controls>
+      <label class="grid min-w-40 gap-1.5 text-xs font-medium text-zinc-400">Input format
+        <select data-from-format><option value="markdown">Markdown</option><option value="html">HTML</option><option value="text">Plain text</option></select>
+      </label>
+      <button data-swap type="button" class="min-h-[2.875rem] rounded-xl border border-white/10 px-4 text-sm font-semibold text-zinc-300">Swap</button>
+      <label class="grid min-w-40 gap-1.5 text-xs font-medium text-zinc-400">Output format
+        <select data-to-format><option value="html">HTML</option><option value="markdown">Markdown</option><option value="text">Plain text</option></select>
+      </label>
+    </div>
+    <div class="grid gap-4 lg:grid-cols-2">
+      <div class="grid min-w-0 grid-rows-[2.75rem_auto]"><div class="flex h-11 items-center"><label class="text-sm font-semibold text-zinc-200">Input</label></div><textarea data-convert-input class="h-[clamp(20rem,45vh,30rem)] min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none" placeholder="Enter content to convert..."></textarea></div>
+      <div class="grid min-w-0 grid-rows-[2.75rem_auto]"><div class="flex h-11 items-center justify-between gap-3"><label class="text-sm font-semibold text-zinc-200">Output</label><button data-copy-output type="button" class="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300">Copy</button></div><textarea data-convert-output readonly class="h-[clamp(20rem,45vh,30rem)] min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950/70 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"></textarea></div>
+    </div>
+    <div class="mt-3 flex flex-wrap gap-2"><button data-convert type="button" class="rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white">Convert</button><button data-download-output type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200">Download</button><button data-clear-converter type="button" class="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-400">Clear</button></div>
+  </div>
+</section>
+
+<script>
+  const esc = (s: string) => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const mdToHtml = (md: string) => {
+    const inline = (s: string) => s.replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/\*([^*]+)\*/g,"<em>$1</em>").replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" rel="noopener noreferrer">$1</a>');
+    const out: string[] = []; let list = false;
+    for (const raw of esc(md).split(/\r?\n/)) {
+      const item = raw.match(/^\s*[-*+]\s+(.+)$/);
+      if (item) {
+        const itemText = item[1] ?? "";
+        if (!list) {
+          out.push("<ul>");
+          list = true;
+        }
+        out.push(`<li>${inline(itemText)}</li>`);
+        continue;
+      }
+      if (list) { out.push("</ul>"); list = false; }
+      const h = raw.match(/^(#{1,6})\s+(.+)$/);
+      if (h) {
+        const marks = h[1] ?? "#";
+        const headingText = h[2] ?? "";
+        const level = marks.length;
+        out.push(`<h${level}>${inline(headingText)}</h${level}>`);
+      }
+      else if (/^>\s?/.test(raw)) out.push(`<blockquote>${inline(raw.replace(/^>\s?/,""))}</blockquote>`);
+      else if (raw.trim()) out.push(`<p>${inline(raw)}</p>`); else out.push("");
+    }
+    if (list) out.push("</ul>"); return out.join("\n");
+  };
+  const htmlToText = (html: string) => { const d = new DOMParser().parseFromString(html,"text/html"); d.querySelectorAll("script,style,noscript").forEach(n=>n.remove()); return (d.body.textContent ?? "").replace(/\n{3,}/g,"\n\n").trim(); };
+  const htmlToMd = (html: string) => {
+    const d = new DOMParser().parseFromString(html,"text/html"); d.querySelectorAll("script,style,noscript").forEach(n=>n.remove());
+    const walk = (n: Node): string => { if (n.nodeType === Node.TEXT_NODE) return n.textContent ?? ""; if (!(n instanceof HTMLElement)) return ""; const c = Array.from(n.childNodes).map(walk).join(""); switch(n.tagName.toLowerCase()) { case "h1": return `# ${c}\n\n`; case "h2": return `## ${c}\n\n`; case "h3": return `### ${c}\n\n`; case "strong": case "b": return `**${c}**`; case "em": case "i": return `*${c}*`; case "code": return `\`${c}\``; case "a": return `[${c}](${n.getAttribute("href") ?? ""})`; case "li": return `- ${c.trim()}\n`; case "ul": case "ol": return `${c}\n`; case "blockquote": return `> ${c.trim()}\n\n`; case "br": return "\n"; case "p": case "div": return `${c.trim()}\n\n`; default: return c; } };
+    return walk(d.body).replace(/\n{3,}/g,"\n\n").trim();
+  };
+  document.querySelectorAll<HTMLElement>("[data-content-tools]").forEach((root) => {
+    const mode = root.dataset.mode ?? "";
+    if (mode === "random-text-generator") {
+      const output = root.querySelector<HTMLTextAreaElement>("[data-random-output]")!; const amount = root.querySelector<HTMLInputElement>("[data-random-amount]")!; const type = root.querySelector<HTMLSelectElement>("[data-random-type]")!; const separator = root.querySelector<HTMLInputElement>("[data-random-separator]")!; const stats = root.querySelector<HTMLElement>("[data-random-stats]")!;
+      const words=["bright","quiet","forest","river","signal","window","simple","purple","future","cloud","gentle","system","creative","journey","useful","modern","stable","rapid","quality","open"], emojis=["✨","🚀","🌿","📦","💡","🎯","✅","🌙","⚡","🧩"], specials=["!","@","#","$","%","&","*","+","=","?"];
+      const checked=(n:string)=>root.querySelector<HTMLInputElement>(`[data-random-option="${n}"]`)?.checked ?? false; const pick = <T,>(items: readonly T[]): T => {
+        const item = items[Math.floor(Math.random() * items.length)];
+        if (item === undefined) {
+          throw new Error("Cannot select a random item from an empty list.");
+        }
+        return item;
+      };
+      const word=()=>{ let v=pick(words); if(checked("uppercase")&&Math.random()>.75)v=v.toUpperCase(); if(checked("numbers")&&Math.random()>.72)v+=Math.floor(Math.random()*1000); if(checked("emoji")&&Math.random()>.82)v+=pick(emojis); if(checked("special")&&Math.random()>.78)v+=pick(specials); return v; };
+      const sentence = () => {
+        const value = Array.from(
+          { length: 6 + Math.floor(Math.random() * 8) },
+          word,
+        ).join(" ");
+
+        const firstCharacter = value.charAt(0).toUpperCase();
+        return firstCharacter + value.slice(1) + pick([".", ".", "!", "?"]);
+      };
+      const generate=()=>{ const n=Math.max(1,Math.min(100,parseInt(amount.value)||1)); let r=""; if(type.value==="words")r=Array.from({length:n},word).join(separator.value||" "); else if(type.value==="sentences")r=Array.from({length:n},sentence).join(checked("lineBreaks")?"\n":" "); else if(type.value==="paragraphs")r=Array.from({length:n},()=>Array.from({length:3+Math.floor(Math.random()*4)},sentence).join(" ")).join(checked("lineBreaks")?"\n\n":" "); else r=Array.from({length:n},()=>[word(),word(),checked("numbers")?String(Math.floor(Math.random()*100000)):"",checked("emoji")?pick(emojis):"",checked("special")?pick(specials):""].filter(Boolean).join(separator.value||" ")).join(checked("lineBreaks")?"\n":" "); output.value=r; stats.textContent=`${r.length} characters`; };
+      root.querySelector("[data-generate]")?.addEventListener("click",generate); root.querySelector("[data-copy-random]")?.addEventListener("click",()=>navigator.clipboard.writeText(output.value)); root.querySelector("[data-clear-random]")?.addEventListener("click",()=>{output.value="";stats.textContent="";}); root.querySelector("[data-download-random]")?.addEventListener("click",()=>{const u=URL.createObjectURL(new Blob([output.value],{type:"text/plain"}));const a=document.createElement("a");a.href=u;a.download="random-text.txt";a.click();URL.revokeObjectURL(u);}); generate(); return;
+    }
+    const input=root.querySelector<HTMLTextAreaElement>("[data-convert-input]")!, output=root.querySelector<HTMLTextAreaElement>("[data-convert-output]")!, from=root.querySelector<HTMLSelectElement>("[data-from-format]")!, to=root.querySelector<HTMLSelectElement>("[data-to-format]")!, controls=root.querySelector<HTMLElement>("[data-format-controls]")!;
+    const presets:Record<string,[string,string]>={"markdown-to-html":["markdown","html"],"html-to-markdown":["html","markdown"],"markdown-to-plain-text":["markdown","text"]}; if(presets[mode]){[from.value,to.value]=presets[mode];controls.classList.add("hidden");}
+    const convert=()=>{const v=input.value;if(from.value===to.value)output.value=v;else if(from.value==="markdown"&&to.value==="html")output.value=mdToHtml(v);else if(from.value==="markdown"&&to.value==="text")output.value=htmlToText(mdToHtml(v));else if(from.value==="html"&&to.value==="markdown")output.value=htmlToMd(v);else if(from.value==="html"&&to.value==="text")output.value=htmlToText(v);else if(from.value==="text"&&to.value==="html")output.value=`<p>${esc(v).replace(/\n/g,"<br>")}</p>`;else output.value=v;};
+    input.addEventListener("input",convert); from.addEventListener("change",convert); to.addEventListener("change",convert); root.querySelector("[data-convert]")?.addEventListener("click",convert); root.querySelector("[data-swap]")?.addEventListener("click",()=>{const x=from.value;from.value=to.value;to.value=x;input.value=output.value;convert();}); root.querySelector("[data-copy-output]")?.addEventListener("click",()=>navigator.clipboard.writeText(output.value)); root.querySelector("[data-clear-converter]")?.addEventListener("click",()=>{input.value="";output.value="";}); root.querySelector("[data-download-output]")?.addEventListener("click",()=>{const ext=to.value==="html"?"html":to.value==="markdown"?"md":"txt";const u=URL.createObjectURL(new Blob([output.value],{type:"text/plain"}));const a=document.createElement("a");a.href=u;a.download=`converted.${ext}`;a.click();URL.revokeObjectURL(u);}); convert();
+  });
+</script>

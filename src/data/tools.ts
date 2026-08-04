@@ -3010,6 +3010,166 @@ const toolCatalog: ToolDefinition[] = [
       "answer": "No. Random selection happens locally in your browser."
     }
   ]
+},
+{
+  "slug": "random-text-generator",
+  "category": "text",
+  "name": "Random Text Generator",
+  "shortDescription": "Generate random words, sentences, paragraphs, numbers, emojis and special characters.",
+  "metaDescription": "Generate random words, sentences, paragraphs and mixed test text with numbers, emojis, symbols and line breaks. Runs privately in your browser.",
+  "keywords": [
+    "random text generator",
+    "random paragraph generator",
+    "random words generator",
+    "test data generator"
+  ],
+  "featured": true,
+  "relatedTools": [
+    "word-counter",
+    "random-choice-generator",
+    "text-repeater"
+  ],
+  "faq": [
+    {
+      "question": "What can this generator create?",
+      "answer": "Words, sentences, paragraphs and mixed test text with optional numbers, emojis, symbols and line breaks."
+    },
+    {
+      "question": "Can I use it as test data?",
+      "answer": "Yes. Mixed mode is useful for UI, form, localization and QA testing."
+    },
+    {
+      "question": "Is the output stored?",
+      "answer": "No. Generation happens locally in your browser."
+    }
+  ]
+},
+{
+  "slug": "markdown-to-html",
+  "category": "developer",
+  "name": "Markdown to HTML",
+  "shortDescription": "Convert Markdown headings, lists, links, emphasis and code into HTML.",
+  "metaDescription": "Convert Markdown to HTML online, including headings, lists, links, emphasis and blockquotes. Processing stays in your browser.",
+  "keywords": [
+    "markdown to html",
+    "convert markdown html",
+    "markdown converter"
+  ],
+  "featured": true,
+  "relatedTools": [
+    "html-to-markdown",
+    "markdown-to-plain-text",
+    "markdown-converter"
+  ],
+  "faq": [
+    {
+      "question": "Which Markdown features are supported?",
+      "answer": "Headings, paragraphs, unordered lists, links, bold, italic, inline code and blockquotes."
+    },
+    {
+      "question": "Does it run locally?",
+      "answer": "Yes. Your Markdown is converted inside your browser."
+    },
+    {
+      "question": "Can I download the HTML?",
+      "answer": "Yes. Copy it or download an HTML file."
+    }
+  ]
+},
+{
+  "slug": "html-to-markdown",
+  "category": "developer",
+  "name": "HTML to Markdown",
+  "shortDescription": "Convert common HTML elements into clean Markdown.",
+  "metaDescription": "Convert HTML to Markdown online, including headings, links, lists, emphasis and paragraphs. Your content stays in your browser.",
+  "keywords": [
+    "html to markdown",
+    "convert html markdown",
+    "html markdown converter"
+  ],
+  "relatedTools": [
+    "markdown-to-html",
+    "markdown-to-plain-text",
+    "markdown-converter"
+  ],
+  "faq": [
+    {
+      "question": "Which HTML elements are converted?",
+      "answer": "Common headings, paragraphs, links, lists, bold, italic, code, blockquotes and line breaks."
+    },
+    {
+      "question": "Are scripts included?",
+      "answer": "No. Script, style and noscript elements are removed."
+    },
+    {
+      "question": "Is HTML uploaded?",
+      "answer": "No. Conversion happens locally."
+    }
+  ]
+},
+{
+  "slug": "markdown-to-plain-text",
+  "category": "text",
+  "name": "Markdown to Plain Text",
+  "shortDescription": "Remove Markdown formatting and keep readable plain text.",
+  "metaDescription": "Convert Markdown to clean plain text online while preserving readable content. Processing stays in your browser.",
+  "keywords": [
+    "markdown to plain text",
+    "remove markdown formatting",
+    "markdown text converter"
+  ],
+  "relatedTools": [
+    "markdown-to-html",
+    "html-to-markdown",
+    "remove-line-breaks"
+  ],
+  "faq": [
+    {
+      "question": "What formatting is removed?",
+      "answer": "Headings, emphasis, links, lists and blockquotes become readable text."
+    },
+    {
+      "question": "Is link text preserved?",
+      "answer": "Yes. Link text remains while Markdown syntax is removed."
+    },
+    {
+      "question": "Is content stored?",
+      "answer": "No. It is processed locally."
+    }
+  ]
+},
+{
+  "slug": "markdown-converter",
+  "category": "developer",
+  "name": "Markdown Converter",
+  "shortDescription": "Convert between Markdown, HTML and plain text in one workspace.",
+  "metaDescription": "Convert between Markdown, HTML and plain text online. Swap formats, copy results and download converted files.",
+  "keywords": [
+    "markdown converter",
+    "markdown html converter",
+    "html markdown converter",
+    "markdown plain text"
+  ],
+  "featured": true,
+  "relatedTools": [
+    "markdown-to-html",
+    "html-to-markdown",
+    "markdown-to-plain-text"
+  ],
+  "faq": [
+    {
+      "question": "Which formats are supported?",
+      "answer": "Markdown, HTML and plain text."
+    },
+    {
+      "question": "Can I swap formats?",
+      "answer": "Yes. Use Swap to reverse input and output."
+    },
+    {
+      "question": "Is content uploaded?",
+      "answer": "No. Conversion is local."
+    }
+  ]
 }
 ];
 
