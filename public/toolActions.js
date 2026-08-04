@@ -212,18 +212,18 @@
     const existingActionContainer =
       preferredAnchor?.parentElement || null;
 
-    if (existingActionContainer) {
-      existingActionContainer.classList.add(
-        "flex",
-        "flex-wrap",
-        "items-center",
-        "gap-2",
-      );
+    if (existingActionContainer && preferredAnchor) {
+      const actionGroup = document.createElement("div");
 
-      existingActionContainer.append(clearButton);
+      actionGroup.dataset.toolActionsGenerated = "";
+      actionGroup.className =
+        "flex flex-wrap items-center justify-end gap-2";
+
+      preferredAnchor.before(actionGroup);
+      actionGroup.append(preferredAnchor, clearButton);
 
       return {
-        toolbar: existingActionContainer,
+        toolbar: actionGroup,
         clearButton,
       };
     }
