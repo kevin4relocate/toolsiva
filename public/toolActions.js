@@ -201,15 +201,40 @@
   };
 
   const createToolbar = (root) => {
+    const clearButton = createButton("universalClear", "Clear");
+
+    const preferredAnchor =
+      root.querySelector("[data-copy-editor]") ||
+      root.querySelector("[data-copy]") ||
+      root.querySelector("[data-download-output]") ||
+      root.querySelector("[data-convert]");
+
+    const existingActionContainer =
+      preferredAnchor?.parentElement || null;
+
+    if (existingActionContainer) {
+      existingActionContainer.classList.add(
+        "flex",
+        "flex-wrap",
+        "items-center",
+        "gap-2",
+      );
+
+      existingActionContainer.append(clearButton);
+
+      return {
+        toolbar: existingActionContainer,
+        clearButton,
+      };
+    }
+
     const toolbar = document.createElement("div");
 
     toolbar.dataset.toolActionsGenerated = "";
     toolbar.className =
       "mb-3 flex flex-wrap items-center justify-end gap-2";
 
-    const clearButton = createButton("universalClear", "Clear");
     toolbar.append(clearButton);
-
     root.prepend(toolbar);
 
     return {
