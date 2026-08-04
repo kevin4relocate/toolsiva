@@ -15,6 +15,9 @@ const { mode } = Astro.props;
         </label>
         <label class="grid gap-1.5 text-xs font-medium text-zinc-400">Amount
           <input data-random-amount type="number" min="1" max="100" value="3" class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none" />
+          <span data-random-limit class="text-[11px] leading-4 text-zinc-500">
+            Maximum: 100 paragraphs
+          </span>
         </label>
         <div class="grid gap-2 text-sm text-zinc-300">
           <label class="flex items-center gap-2"><input data-random-option="numbers" type="checkbox" checked class="size-4 accent-brand-500" /> Include numbers</label>
@@ -96,7 +99,12 @@ const { mode } = Astro.props;
   document.querySelectorAll<HTMLElement>("[data-content-tools]").forEach((root) => {
     const mode = root.dataset.mode ?? "";
     if (mode === "random-text-generator") {
-      const output = root.querySelector<HTMLTextAreaElement>("[data-random-output]")!; const amount = root.querySelector<HTMLInputElement>("[data-random-amount]")!; const type = root.querySelector<HTMLSelectElement>("[data-random-type]")!; const separator = root.querySelector<HTMLInputElement>("[data-random-separator]")!; const stats = root.querySelector<HTMLElement>("[data-random-stats]")!;
+      const output = root.querySelector<HTMLTextAreaElement>("[data-random-output]")!;
+      const amount = root.querySelector<HTMLInputElement>("[data-random-amount]")!;
+      const type = root.querySelector<HTMLSelectElement>("[data-random-type]")!;
+      const separator = root.querySelector<HTMLInputElement>("[data-random-separator]")!;
+      const stats = root.querySelector<HTMLElement>("[data-random-stats]")!;
+      const limitMessage = root.querySelector<HTMLElement>("[data-random-limit]")!;
       const words=["bright","quiet","forest","river","signal","window","simple","purple","future","cloud","gentle","system","creative","journey","useful","modern","stable","rapid","quality","open"], emojis=["✨","🚀","🌿","📦","💡","🎯","✅","🌙","⚡","🧩"], specials=["!","@","#","$","%","&","*","+","=","?"];
       const checked=(n:string)=>root.querySelector<HTMLInputElement>(`[data-random-option="${n}"]`)?.checked ?? false; const pick = <T,>(items: readonly T[]): T => {
         const item = items[Math.floor(Math.random() * items.length)];
@@ -115,8 +123,106 @@ const { mode } = Astro.props;
         const firstCharacter = value.charAt(0).toUpperCase();
         return firstCharacter + value.slice(1) + pick([".", ".", "!", "?"]);
       };
-      const generate=()=>{ const n=Math.max(1,Math.min(100,parseInt(amount.value)||1)); let r=""; if(type.value==="words")r=Array.from({length:n},word).join(separator.value||" "); else if(type.value==="sentences")r=Array.from({length:n},sentence).join(checked("lineBreaks")?"\n":" "); else if(type.value==="paragraphs")r=Array.from({length:n},()=>Array.from({length:3+Math.floor(Math.random()*4)},sentence).join(" ")).join(checked("lineBreaks")?"\n\n":" "); else r=Array.from({length:n},()=>[word(),word(),checked("numbers")?String(Math.floor(Math.random()*100000)):"",checked("emoji")?pick(emojis):"",checked("special")?pick(specials):""].filter(Boolean).join(separator.value||" ")).join(checked("lineBreaks")?"\n":" "); output.value=r; stats.textContent=`${r.length} characters`; };
-      root.querySelector("[data-generate]")?.addEventListener("click",generate); root.querySelector("[data-copy-random]")?.addEventListener("click",()=>navigator.clipboard.writeText(output.value)); root.querySelector("[data-clear-random]")?.addEventListener("click",()=>{output.value="";stats.textContent="";}); root.querySelector("[data-download-random]")?.addEventListener("click",()=>{const u=URL.createObjectURL(new Blob([output.value],{type:"text/plain"}));const a=document.createElement("a");a.href=u;a.download="random-text.txt";a.click();URL.revokeObjectURL(u);}); generate(); return;
+      const limits: Record<string, number> = {
+        words: 10000,
+        sentences: 1000,
+        paragraphs: 100,
+        mixed: 5000,
+      };
+
+      const amountLabels: Record<string, string> = {
+        words: "words",
+        sentences: "sentences",
+        paragraphs: "paragraphs",
+        mixed: "items",
+      };
+
+      const updateLimit = () => {
+        const maximum = limits[type.value] ?? 100;
+        amount.max = String(maximum);
+        limitMessage.textContent =
+          `Maximum: ${maximum.toLocaleString()} ${amountLabels[type.value] ?? "items"}`;
+      };
+
+      const generate = () => {
+        const maximum = limits[type.value] ?? 100;
+        const entered = Number.parseInt(amount.value, 10);
+        const count = Math.max(
+          1,
+          Math.min(maximum, Number.isFinite(entered) ? entered : 1),
+        );
+
+        amount.value = String(count);
+
+        let result = "";
+
+        if (type.value === "words") {
+          result = Array.from({ length: count }, word).join(
+            separator.value || " ",
+          );
+        } else if (type.value === "sentences") {
+          result = Array.from({ length: count }, sentence).join(
+            checked("lineBreaks") ? "\n" : " ",
+          );
+        } else if (type.value === "paragraphs") {
+          result = Array.from(
+            { length: count },
+            () =>
+              Array.from(
+                { length: 3 + Math.floor(Math.random() * 4) },
+                sentence,
+              ).join(" "),
+          ).join(checked("lineBreaks") ? "\n\n" : " ");
+        } else {
+          result = Array.from(
+            { length: count },
+            () =>
+              [
+                word(),
+                word(),
+                checked("numbers")
+                  ? String(Math.floor(Math.random() * 100000))
+                  : "",
+                checked("emoji") ? pick(emojis) : "",
+                checked("special") ? pick(specials) : "",
+              ]
+                .filter(Boolean)
+                .join(separator.value || " "),
+          ).join(checked("lineBreaks") ? "\n" : " ");
+        }
+
+        output.value = result;
+        stats.textContent =
+          `${count.toLocaleString()} ${amountLabels[type.value] ?? "items"} · ` +
+          `${result.length.toLocaleString()} characters`;
+      };
+      type.addEventListener("change", () => {
+        updateLimit();
+        generate();
+      });
+
+      root.querySelector("[data-generate]")?.addEventListener("click", generate);
+      root.querySelector("[data-copy-random]")?.addEventListener("click", () =>
+        navigator.clipboard.writeText(output.value)
+      );
+      root.querySelector("[data-clear-random]")?.addEventListener("click", () => {
+        output.value = "";
+        stats.textContent = "";
+      });
+      root.querySelector("[data-download-random]")?.addEventListener("click", () => {
+        const url = URL.createObjectURL(
+          new Blob([output.value], { type: "text/plain" }),
+        );
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "random-text.txt";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      updateLimit();
+      generate();
+      return;
     }
     const input=root.querySelector<HTMLTextAreaElement>("[data-convert-input]")!, output=root.querySelector<HTMLTextAreaElement>("[data-convert-output]")!, from=root.querySelector<HTMLSelectElement>("[data-from-format]")!, to=root.querySelector<HTMLSelectElement>("[data-to-format]")!, controls=root.querySelector<HTMLElement>("[data-format-controls]")!;
     const presets:Record<string,[string,string]>={"markdown-to-html":["markdown","html"],"html-to-markdown":["html","markdown"],"markdown-to-plain-text":["markdown","text"]}; if(presets[mode]){[from.value,to.value]=presets[mode];controls.classList.add("hidden");}
