@@ -25,9 +25,51 @@ const isDualPane = dualPaneModes.has(mode);
     <div class="mb-2.5 flex flex-wrap items-center justify-between gap-2.5">
       <p class="text-sm text-zinc-500">Updates automatically in your browser.</p>
       <div class="flex flex-wrap items-center gap-2">
-        <span data-status class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity" aria-live="polite"></span>
-        {!isCase && !isCompare && <button type="button" data-copy class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-brand-400/40 hover:bg-white/5">{isCounter ? "Copy summary" : "Copy result"}</button>}
-        <button type="button" data-clear class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200">Clear</button>
+        <span
+          data-status
+          class="min-w-20 text-right text-sm font-medium text-emerald-400 opacity-0 transition-opacity"
+          aria-live="polite"
+        ></span>
+
+        {isCase && (
+          <>
+            <button
+              type="button"
+              data-undo
+              disabled
+              class="focus-ring min-w-20 cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition duration-150 hover:border-brand-400/40 hover:bg-brand-500/10 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Undo
+            </button>
+
+            <button
+              type="button"
+              data-copy-editor
+              disabled
+              class="focus-ring min-w-20 cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition duration-150 hover:border-brand-400/40 hover:bg-brand-500/10 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Copy
+            </button>
+          </>
+        )}
+
+        {!isCase && !isCompare && (
+          <button
+            type="button"
+            data-copy
+            class="focus-ring cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition duration-150 hover:border-brand-400/40 hover:bg-white/5 active:scale-95"
+          >
+            {isCounter ? "Copy summary" : "Copy result"}
+          </button>
+        )}
+
+        <button
+          type="button"
+          data-clear
+          class="focus-ring min-w-20 cursor-pointer rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition duration-150 hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Clear
+        </button>
       </div>
     </div>
 
@@ -37,8 +79,6 @@ const isDualPane = dualPaneModes.has(mode);
           {[['upper','UPPERCASE'],['lower','lowercase'],['title','Title Case'],['sentence','Sentence case'],['capitalize','Capitalize Words'],['alternating','aLtErNaTiNg']].map(([value,label]) => (
             <button type="button" data-case-action={value} class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:border-brand-400/50 hover:bg-brand-500/10">{label}</button>
           ))}
-          <button type="button" data-undo class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:bg-white/5" disabled>Undo</button>
-          <button type="button" data-copy-editor class="focus-ring cursor-pointer rounded-xl border border-white/10 px-3.5 py-2 text-sm font-medium hover:bg-white/5">Copy</button>
         </div>
         <label class="grid gap-2 text-sm text-zinc-300">Text editor<textarea data-input class="focus-ring min-h-[clamp(14rem,36vh,24rem)] w-full resize-y rounded-2xl border border-white/10 bg-zinc-950 p-5 leading-7 text-zinc-100" placeholder="Type or paste text, then choose a case…"></textarea></label>
       </>
@@ -191,16 +231,65 @@ const isDualPane = dualPaneModes.has(mode);
 
   function setup(){document.querySelectorAll<HTMLElement>("[data-text-tool]").forEach(root=>{if(root.dataset.initialized==="true")return;root.dataset.initialized="true";const mode=root.dataset.mode??"";const input=root.querySelector<HTMLTextAreaElement>("[data-input]"),a=root.querySelector<HTMLTextAreaElement>("[data-input-a]"),b=root.querySelector<HTMLTextAreaElement>("[data-input-b]"),output=root.querySelector<HTMLTextAreaElement>("[data-output]"),option=root.querySelector<HTMLSelectElement>("[data-option]"),find=root.querySelector<HTMLInputElement>("[data-find]"),replace=root.querySelector<HTMLInputElement>("[data-replace]"),caseSensitive=root.querySelector<HTMLInputElement>("[data-case-sensitive]"),ignoreCase=root.querySelector<HTMLInputElement>("[data-ignore-case]"),ignoreSpace=root.querySelector<HTMLInputElement>("[data-ignore-space]"),diff=root.querySelector<HTMLElement>("[data-diff-view]"),status=root.querySelector<HTMLElement>("[data-status]");const copies=root.querySelectorAll<HTMLButtonElement>("[data-copy]"),clears=root.querySelectorAll<HTMLButtonElement>("[data-clear]");let history:string[]=[];let timer:ReturnType<typeof setTimeout>|undefined;
     const notify=(m:string)=>{if(!status)return;status.textContent=m;status.classList.replace("opacity-0","opacity-100");if(timer)clearTimeout(timer);timer=setTimeout(()=>status.classList.replace("opacity-100","opacity-0"),1200);};
+
+    const actionFeedback = (
+      button: HTMLButtonElement | null,
+      temporaryLabel: string,
+    ) => {
+      if (!button) return;
+
+      const originalLabel =
+        button.dataset.originalLabel ??
+        button.textContent?.trim() ??
+        "";
+
+      button.dataset.originalLabel = originalLabel;
+      button.textContent = temporaryLabel;
+
+      button.classList.add(
+        "border-brand-400/60",
+        "bg-brand-500/20",
+        "text-brand-100",
+        "scale-[0.97]",
+      );
+
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+        button.classList.remove(
+          "border-brand-400/60",
+          "bg-brand-500/20",
+          "text-brand-100",
+          "scale-[0.97]",
+        );
+      }, 1000);
+    };
+
+    const updateCaseActions = () => {
+      if (mode !== "case-converter" || !input) return;
+
+      const undoButton =
+        root.querySelector<HTMLButtonElement>("[data-undo]");
+      const copyButton =
+        root.querySelector<HTMLButtonElement>("[data-copy-editor]");
+      const clearButton =
+        root.querySelector<HTMLButtonElement>("[data-clear]");
+
+      const hasText = input.value.length > 0;
+
+      if (undoButton) undoButton.disabled = history.length === 0;
+      if (copyButton) copyButton.disabled = !hasText;
+      if (clearButton) clearButton.disabled = !hasText;
+    };
     const stats=()=>{const v=input?.value??"",t=v.trim();const s={words:t?t.split(/\s+/u).length:0,characters:v.length,"without-spaces":v.replace(/\s/gu,"").length,sentences:t.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter(x=>x.trim()).length??0,paragraphs:t?v.split(/\n\s*\n/u).map(x=>x.trim()).filter(Boolean).length:0};Object.entries(s).forEach(([k,val])=>{const el=root.querySelector<HTMLElement>(`[data-stat="${k}"]`);if(el)el.textContent=val.toLocaleString();});return s;};
     const transform=()=>{if(mode==="word-counter"||mode==="character-counter"){stats();return;}const v=input?.value??"";let r="";if(mode==="remove-duplicate-lines"){const seen=new Set<string>();r=v.split(/\r?\n/u).filter(x=>seen.has(x)?false:(seen.add(x),true)).join("\n");}else if(mode==="sort-lines"){const lines=v.split(/\r?\n/u).sort((x,y)=>x.localeCompare(y,undefined,{sensitivity:"base"}));if(option?.value==="desc")lines.reverse();r=lines.join("\n");}else if(mode==="reverse-text")r=option?.value==="words"?v.trim().split(/\s+/u).reverse().join(" "):option?.value==="lines"?v.split(/\r?\n/u).reverse().join("\n"):Array.from(v).reverse().join("");else if(mode==="remove-extra-spaces")r=v.split(/\r?\n/u).map(x=>x.replace(/[ \t]+/g," ").trim()).join("\n").replace(/\n{3,}/g,"\n\n").trim();else if(mode==="find-and-replace"){const f=find?.value??"";r=f?v.replace(new RegExp(escapeRegExp(f),caseSensitive?.checked?"g":"gi"),replace?.value??""):v;}else if(mode==="slug-generator")r=slug(v);if(output)output.value=r;};
     const compare=()=>{if(!diff)return;const left=(a?.value??"").split(/\r?\n/u),right=(b?.value??"").split(/\r?\n/u);const norm=(x:string)=>{let y=x;if(ignoreSpace?.checked)y=y.replace(/\s+/g," ").trim();if(ignoreCase?.checked)y=y.toLowerCase();return y;};const rows=lcs(left.map(norm),right.map(norm));let li=0,ri=0,added=0,removed=0,unchanged=0,changed=0;const html:string[]=[];for(let i=0;i<rows.length;i++){const row=rows[i];let type: "unchanged" | "removed" | "added" | "changed" = row?.type ?? "unchanged",l=row?.left??null,r=row?.right??null;if(type==="removed"&&rows[i+1]?.type==="added"){type="changed";r=rows[i+1]?.right??"";i++;changed++;}else if(type==="added")added++;else if(type==="removed")removed++;else unchanged++;if(l!==null)li++;if(r!==null)ri++;const cls=type==="added"?"diff-added":type==="removed"?"diff-removed":type==="changed"?"diff-changed":"diff-unchanged";html.push(`<div class="grid grid-cols-2 border-b border-white/5 ${cls}"><div class="grid grid-cols-[3rem_1fr] px-2 py-1.5"><span class="select-none text-right text-zinc-600">${l!==null?li:""}</span><span class="whitespace-pre-wrap break-words px-3">${l!==null?esc(a?.value.split(/\r?\n/u)[li-1]??""):""}</span></div><div class="grid grid-cols-[3rem_1fr] border-l border-white/5 px-2 py-1.5"><span class="select-none text-right text-zinc-600">${r!==null?ri:""}</span><span class="whitespace-pre-wrap break-words px-3">${r!==null?esc(b?.value.split(/\r?\n/u)[ri-1]??""):""}</span></div></div>`);}diff.innerHTML=html.join("")||'<div class="p-6 text-center text-zinc-600">Paste two texts to compare.</div>';({unchanged,added,removed,changed} as Record<string,number>);Object.entries({unchanged,added,removed,changed}).forEach(([k,v])=>{const el=root.querySelector<HTMLElement>(`[data-diff-stat="${k}"]`);if(el)el.textContent=String(v);});};
-    root.querySelectorAll<HTMLButtonElement>("[data-case-action]").forEach(btn=>btn.addEventListener("click",()=>{if(!input)return;history.push(input.value);const action=btn.dataset.caseAction;input.value=action==="upper"?input.value.toUpperCase():action==="lower"?input.value.toLowerCase():action==="title"?title(input.value):action==="sentence"?sentence(input.value):action==="capitalize"?capitalize(input.value):alternating(input.value);const undo=root.querySelector<HTMLButtonElement>("[data-undo]");if(undo)undo.disabled=false;notify("Converted");}));
-    root.querySelector<HTMLButtonElement>("[data-undo]")?.addEventListener("click",()=>{if(!input||!history.length)return;input.value=history.pop()??input.value;const u=root.querySelector<HTMLButtonElement>("[data-undo]");if(u)u.disabled=history.length===0;notify("Undone");});
-    root.querySelector<HTMLButtonElement>("[data-copy-editor]")?.addEventListener("click",async()=>{if(!input?.value)return notify("Nothing to copy");await navigator.clipboard.writeText(input.value);notify("Copied");});
-    [input,find,replace].forEach(el=>el?.addEventListener("input",transform));option?.addEventListener("change",transform);caseSensitive?.addEventListener("change",transform);[a,b].forEach(el=>el?.addEventListener("input",compare));ignoreCase?.addEventListener("change",compare);ignoreSpace?.addEventListener("change",compare);
+    root.querySelectorAll<HTMLButtonElement>("[data-case-action]").forEach(btn=>btn.addEventListener("click",()=>{if(!input||!input.value)return;history.push(input.value);const action=btn.dataset.caseAction;input.value=action==="upper"?input.value.toUpperCase():action==="lower"?input.value.toLowerCase():action==="title"?title(input.value):action==="sentence"?sentence(input.value):action==="capitalize"?capitalize(input.value):alternating(input.value);updateCaseActions();actionFeedback(btn,"Applied!");notify("Converted");}));
+    root.querySelector<HTMLButtonElement>("[data-undo]")?.addEventListener("click",()=>{if(!input||!history.length)return;input.value=history.pop()??input.value;const button=root.querySelector<HTMLButtonElement>("[data-undo]");updateCaseActions();actionFeedback(button,"Undone");notify("Undone");});
+    root.querySelector<HTMLButtonElement>("[data-copy-editor]")?.addEventListener("click",async()=>{if(!input?.value)return notify("Nothing to copy");const button=root.querySelector<HTMLButtonElement>("[data-copy-editor]");try{await navigator.clipboard.writeText(input.value);actionFeedback(button,"Copied!");notify("Copied");}catch{notify("Copy failed");}});
+    [input,find,replace].forEach(el=>el?.addEventListener("input",()=>{transform();updateCaseActions();}));option?.addEventListener("change",transform);caseSensitive?.addEventListener("change",transform);[a,b].forEach(el=>el?.addEventListener("input",compare));ignoreCase?.addEventListener("change",compare);ignoreSpace?.addEventListener("change",compare);
     copies.forEach(btn=>btn.addEventListener("click",async()=>{let v=output?.value??"";if(mode==="word-counter"||mode==="character-counter"){const s=stats();v=`Words: ${s.words}\nCharacters: ${s.characters}\nWithout spaces: ${s["without-spaces"]}\nSentences: ${s.sentences}\nParagraphs: ${s.paragraphs}`;}if(!v)return notify("Nothing to copy");await navigator.clipboard.writeText(v);notify("Copied");}));
-    clears.forEach(btn=>btn.addEventListener("click",()=>{[input,a,b,output].forEach(el=>{if(el)el.value="";});if(find)find.value="";if(replace)replace.value="";history=[];transform();compare();notify("Cleared");}));
-    transform();compare();
+    clears.forEach(btn=>btn.addEventListener("click",()=>{[input,a,b,output].forEach(el=>{if(el)el.value="";});if(find)find.value="";if(replace)replace.value="";history=[];transform();compare();updateCaseActions();actionFeedback(btn,"Cleared");notify("Cleared");}));
+    transform();compare();updateCaseActions();
   });}
   setup();document.addEventListener("astro:page-load",setup);
 </script>
