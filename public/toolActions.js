@@ -286,6 +286,25 @@
       primaryClear?.parentElement ||
       toolbar;
 
+    const copyButtons = Array.from(
+      root.querySelectorAll(
+        "[data-copy], [data-copy-editor], [data-copy-output], [data-copy-random]",
+      ),
+    ).filter((button) => button instanceof HTMLButtonElement);
+
+    copyButtons.forEach((button) => {
+      button.dataset.originalLabel = "Copy";
+      button.textContent = "Copy";
+
+      button.classList.add(
+        "transition",
+        "duration-150",
+        "active:scale-95",
+        "disabled:cursor-not-allowed",
+        "disabled:opacity-40",
+      );
+    });
+
     const needsReset =
       hasMeaningfulConfiguration(controls) ||
       controls.filter((control) => !isOutputControl(control)).length > 2;
@@ -322,6 +341,48 @@
         return state ? controlChanged(control, state) : false;
       });
 
+    const getCopyValue = (button) => {
+      if (button.matches("[data-copy-editor]")) {
+        const editor = root.querySelector(
+          "[data-input]",
+        );
+
+        if (
+          editor instanceof HTMLInputElement ||
+          editor instanceof HTMLTextAreaElement
+        ) {
+          return editor.value;
+        }
+      }
+
+      const output = root.querySelector(
+        "[data-output], [data-result], [data-preview-output]",
+      );
+
+      if (
+        output instanceof HTMLInputElement ||
+        output instanceof HTMLTextAreaElement
+      ) {
+        return output.value;
+      }
+
+      if (
+        root.dataset.mode === "word-counter" ||
+        root.dataset.mode === "character-counter"
+      ) {
+        const input = root.querySelector("[data-input]");
+
+        if (
+          input instanceof HTMLInputElement ||
+          input instanceof HTMLTextAreaElement
+        ) {
+          return input.value;
+        }
+      }
+
+      return "";
+    };
+
     const updateButtons = () => {
       const canClear = hasClearableData();
 
@@ -336,9 +397,20 @@
         );
       });
 
+      copyButtons.forEach((button) => {
+        button.disabled = getCopyValue(button).trim().length === 0;
+      });
+
       if (resetButton instanceof HTMLButtonElement) {
         resetButton.disabled = !hasChangedState();
       }
+    };
+
+    const scheduleUpdate = () => {
+      window.setTimeout(updateButtons, 0);
+
+      // Một số tool như JSON Formatter dùng debounce.
+      window.setTimeout(updateButtons, 250);
     };
 
     const genericClear = () => {
@@ -388,13 +460,11 @@
     }
 
     controls.forEach((control) => {
-      control.addEventListener("input", updateButtons);
-      control.addEventListener("change", updateButtons);
+      control.addEventListener("input", scheduleUpdate);
+      control.addEventListener("change", scheduleUpdate);
     });
 
-    root.addEventListener("click", () => {
-      window.setTimeout(updateButtons, 0);
-    });
+    root.addEventListener("click", scheduleUpdate);
 
     updateButtons();
   };
