@@ -13,158 +13,26 @@
     "[data-word-counter]",
   ].join(",");
 
-  const CLEAR_SELECTORS = [
+  const COPY_SELECTOR = [
+    "[data-copy]",
+    "[data-copy-editor]",
+    "[data-copy-output]",
+    "[data-copy-random]",
+  ].join(",");
+
+  const CLEAR_SELECTOR = [
     "[data-clear]",
     "[data-clear-random]",
     "[data-clear-converter]",
   ].join(",");
 
+  const OUTPUT_SELECTOR = [
+    "[data-output]",
+    "[data-result]",
+    "[data-preview-output]",
+  ].join(",");
+
   const feedbackTimers = new WeakMap();
-
-  const isEditableTextControl = (control) => {
-    if (control instanceof HTMLTextAreaElement) {
-      return !control.readOnly && !control.disabled;
-    }
-
-    if (!(control instanceof HTMLInputElement)) return false;
-    if (control.disabled || control.readOnly) return false;
-
-    return [
-      "text",
-      "search",
-      "email",
-      "url",
-      "tel",
-      "password",
-      "number",
-      "date",
-      "datetime-local",
-      "time",
-      "month",
-      "week",
-    ].includes(control.type);
-  };
-
-  const isOutputControl = (control) =>
-    control instanceof HTMLTextAreaElement &&
-    (control.readOnly ||
-      control.matches("[data-output], [data-result], [data-preview-output]"));
-
-  const getControls = (root) =>
-    Array.from(
-      root.querySelectorAll("input, textarea, select"),
-    ).filter((control) => !control.closest("[data-tool-actions-generated]"));
-
-  const snapshotControl = (control) => {
-    if (control instanceof HTMLInputElement) {
-      if (control.type === "checkbox" || control.type === "radio") {
-        return {
-          type: "checked",
-          checked: control.checked,
-        };
-      }
-
-      return {
-        type: "value",
-        value: control.value,
-      };
-    }
-
-    if (
-      control instanceof HTMLTextAreaElement ||
-      control instanceof HTMLSelectElement
-    ) {
-      return {
-        type: "value",
-        value: control.value,
-      };
-    }
-
-    return { type: "value", value: "" };
-  };
-
-  const restoreControl = (control, state) => {
-    if (
-      state.type === "checked" &&
-      control instanceof HTMLInputElement
-    ) {
-      control.checked = state.checked;
-      return;
-    }
-
-    if (
-      state.type === "value" &&
-      (
-        control instanceof HTMLInputElement ||
-        control instanceof HTMLTextAreaElement ||
-        control instanceof HTMLSelectElement
-      )
-    ) {
-      control.value = state.value;
-    }
-  };
-
-  const controlChanged = (control, state) => {
-    if (
-      state.type === "checked" &&
-      control instanceof HTMLInputElement
-    ) {
-      return control.checked !== state.checked;
-    }
-
-    if (
-      state.type === "value" &&
-      (
-        control instanceof HTMLInputElement ||
-        control instanceof HTMLTextAreaElement ||
-        control instanceof HTMLSelectElement
-      )
-    ) {
-      return control.value !== state.value;
-    }
-
-    return false;
-  };
-
-  const dispatchUpdates = (control) => {
-    control.dispatchEvent(new Event("input", { bubbles: true }));
-    control.dispatchEvent(new Event("change", { bubbles: true }));
-  };
-
-  const showButtonFeedback = (button, temporaryLabel) => {
-    const originalLabel =
-      button.dataset.originalLabel ||
-      button.textContent?.trim() ||
-      "";
-
-    button.dataset.originalLabel = originalLabel;
-    button.textContent = temporaryLabel;
-
-    button.classList.add(
-      "border-brand-400/60",
-      "bg-brand-500/20",
-      "text-brand-100",
-      "scale-[0.97]",
-    );
-
-    const oldTimer = feedbackTimers.get(button);
-    if (oldTimer) window.clearTimeout(oldTimer);
-
-    const timer = window.setTimeout(() => {
-      button.textContent = originalLabel;
-
-      button.classList.remove(
-        "border-brand-400/60",
-        "bg-brand-500/20",
-        "text-brand-100",
-        "scale-[0.97]",
-      );
-
-      feedbackTimers.delete(button);
-    }, 1000);
-
-    feedbackTimers.set(button, timer);
-  };
 
   const buttonClasses = [
     "focus-ring",
@@ -180,19 +48,56 @@
     "text-zinc-300",
     "transition",
     "duration-150",
-    "hover:border-red-400/40",
-    "hover:bg-red-500/10",
-    "hover:text-red-200",
+    "hover:border-brand-400/40",
+    "hover:bg-brand-500/10",
+    "hover:text-white",
     "active:scale-95",
     "disabled:cursor-not-allowed",
     "disabled:opacity-40",
   ];
+
+  const isFormControl = (element) =>
+    element instanceof HTMLInputElement ||
+    element instanceof HTMLTextAreaElement ||
+    element instanceof HTMLSelectElement;
+
+  const isTextControl = (element) => {
+    if (element instanceof HTMLTextAreaElement) return true;
+
+    if (!(element instanceof HTMLInputElement)) return false;
+
+    return [
+      "text",
+      "search",
+      "email",
+      "url",
+      "tel",
+      "password",
+      "number",
+      "date",
+      "datetime-local",
+      "time",
+      "month",
+      "week",
+    ].includes(element.type);
+  };
+
+  const isVisible = (element) => {
+    if (!(element instanceof HTMLElement)) return false;
+
+    return (
+      !element.hidden &&
+      element.getAttribute("type") !== "hidden" &&
+      getComputedStyle(element).display !== "none"
+    );
+  };
 
   const createButton = (action, label) => {
     const button = document.createElement("button");
 
     button.type = "button";
     button.dataset[action] = "";
+    button.dataset.originalLabel = label;
     button.textContent = label;
     button.disabled = true;
     button.classList.add(...buttonClasses);
@@ -200,32 +105,205 @@
     return button;
   };
 
-  const createToolbar = (root) => {
-    const clearButton = createButton("universalClear", "Clear");
+  const showFeedback = (button, label) => {
+    const original =
+      button.dataset.originalLabel ||
+      button.textContent?.trim() ||
+      "";
 
-    const preferredAnchor =
-      root.querySelector("[data-copy-editor]") ||
-      root.querySelector("[data-copy]") ||
-      root.querySelector("[data-download-output]") ||
-      root.querySelector("[data-convert]");
+    button.dataset.originalLabel = original;
+    button.textContent = label;
 
-    const existingActionContainer =
-      preferredAnchor?.parentElement || null;
+    button.classList.add(
+      "border-brand-400/60",
+      "bg-brand-500/20",
+      "text-brand-100",
+      "scale-[0.97]",
+    );
 
-    if (existingActionContainer && preferredAnchor) {
-      const actionGroup = document.createElement("div");
+    const previousTimer = feedbackTimers.get(button);
+    if (previousTimer) window.clearTimeout(previousTimer);
 
-      actionGroup.dataset.toolActionsGenerated = "";
-      actionGroup.className =
-        "flex flex-wrap items-center justify-end gap-2";
+    const timer = window.setTimeout(() => {
+      button.textContent = original;
 
-      preferredAnchor.before(actionGroup);
-      actionGroup.append(preferredAnchor, clearButton);
+      button.classList.remove(
+        "border-brand-400/60",
+        "bg-brand-500/20",
+        "text-brand-100",
+        "scale-[0.97]",
+      );
 
+      feedbackTimers.delete(button);
+    }, 1000);
+
+    feedbackTimers.set(button, timer);
+  };
+
+  const snapshot = (control) => {
+    if (
+      control instanceof HTMLInputElement &&
+      (control.type === "checkbox" || control.type === "radio")
+    ) {
       return {
-        toolbar: actionGroup,
-        clearButton,
+        kind: "checked",
+        value: control.checked,
       };
+    }
+
+    return {
+      kind: "value",
+      value: control.value,
+    };
+  };
+
+  const differsFromSnapshot = (control, state) => {
+    if (
+      state.kind === "checked" &&
+      control instanceof HTMLInputElement
+    ) {
+      return control.checked !== state.value;
+    }
+
+    return control.value !== state.value;
+  };
+
+  const restoreSnapshot = (control, state) => {
+    if (
+      state.kind === "checked" &&
+      control instanceof HTMLInputElement
+    ) {
+      control.checked = state.value;
+      return;
+    }
+
+    control.value = state.value;
+  };
+
+  const dispatchUpdates = (control) => {
+    control.dispatchEvent(
+      new Event("input", {
+        bubbles: true,
+      }),
+    );
+
+    control.dispatchEvent(
+      new Event("change", {
+        bubbles: true,
+      }),
+    );
+  };
+
+  const findVisibleOutput = (root) =>
+    Array.from(root.querySelectorAll(OUTPUT_SELECTOR)).find(
+      (element) =>
+        isFormControl(element) &&
+        isVisible(element),
+    ) || null;
+
+  const removeDirectLabelText = (label) => {
+    const textNode = Array.from(label.childNodes).find(
+      (node) =>
+        node.nodeType === Node.TEXT_NODE &&
+        node.textContent?.trim(),
+    );
+
+    const labelText = textNode?.textContent?.trim() || "Result";
+
+    textNode?.remove();
+
+    return labelText;
+  };
+
+  const createActionGroup = () => {
+    const group = document.createElement("div");
+
+    group.dataset.toolActionGroup = "";
+    group.className =
+      "flex flex-wrap items-center justify-end gap-2";
+
+    return group;
+  };
+
+  const placeActionsBesideResult = (
+    output,
+    buttons,
+  ) => {
+    const existingHeader =
+      output.previousElementSibling instanceof HTMLElement &&
+      (
+        output.previousElementSibling.querySelector("label") ||
+        output.previousElementSibling.textContent
+          ?.trim()
+          .toLowerCase() === "result"
+      )
+        ? output.previousElementSibling
+        : null;
+
+    if (existingHeader) {
+      existingHeader.classList.add(
+        "flex",
+        "min-h-11",
+        "items-center",
+        "justify-between",
+        "gap-3",
+      );
+
+      const oldGeneratedGroup =
+        existingHeader.querySelector("[data-tool-action-group]");
+
+      oldGeneratedGroup?.remove();
+
+      const group = createActionGroup();
+      group.append(...buttons);
+      existingHeader.append(group);
+
+      return true;
+    }
+
+    const label = output.closest("label");
+
+    if (label instanceof HTMLLabelElement) {
+      const labelText = removeDirectLabelText(label);
+      const header = document.createElement("div");
+      const title = document.createElement("span");
+      const group = createActionGroup();
+
+      header.dataset.toolResultHeader = "";
+      header.className =
+        "flex min-h-11 items-center justify-between gap-3";
+
+      title.className =
+        "text-sm font-semibold text-zinc-200";
+      title.textContent = labelText;
+
+      group.append(...buttons);
+      header.append(title, group);
+      label.prepend(header);
+
+      return true;
+    }
+
+    return false;
+  };
+
+  const placeActionsTopRight = (root, buttons) => {
+    const existingContainer =
+      buttons
+        .map((button) => button.parentElement)
+        .find(Boolean) || null;
+
+    if (existingContainer) {
+      existingContainer.classList.add(
+        "flex",
+        "flex-wrap",
+        "items-center",
+        "justify-end",
+        "gap-2",
+      );
+
+      existingContainer.append(...buttons);
+      return;
     }
 
     const toolbar = document.createElement("div");
@@ -234,171 +312,189 @@
     toolbar.className =
       "mb-3 flex flex-wrap items-center justify-end gap-2";
 
-    toolbar.append(clearButton);
+    toolbar.append(...buttons);
     root.prepend(toolbar);
-
-    return {
-      toolbar,
-      clearButton,
-    };
   };
-
-  const hasMeaningfulConfiguration = (controls) =>
-    controls.some((control) => {
-      if (control instanceof HTMLSelectElement) return true;
-
-      if (!(control instanceof HTMLInputElement)) return false;
-
-      return [
-        "checkbox",
-        "radio",
-        "range",
-        "color",
-      ].includes(control.type);
-    });
 
   const setupRoot = (root) => {
     if (root.dataset.toolActionsReady === "true") return;
     root.dataset.toolActionsReady = "true";
 
-    const controls = getControls(root);
+    const mode = root.dataset.mode || "";
+
+    if (mode === "case-converter") {
+      const duplicateStatus =
+        root.querySelector("[data-status]");
+
+      duplicateStatus?.classList.add("hidden");
+    }
+
+    const controls = Array.from(
+      root.querySelectorAll(
+        "input, textarea, select",
+      ),
+    ).filter(isFormControl);
+
     const defaults = new Map(
       controls.map((control) => [
         control,
-        snapshotControl(control),
+        snapshot(control),
       ]),
     );
 
-    let clearButtons = Array.from(
-      root.querySelectorAll(CLEAR_SELECTORS),
+    let copyButtons = Array.from(
+      root.querySelectorAll(COPY_SELECTOR),
+    ).filter(
+      (button) =>
+        button instanceof HTMLButtonElement,
     );
 
-    let toolbar = null;
-
-    if (clearButtons.length === 0) {
-      const generated = createToolbar(root);
-      toolbar = generated.toolbar;
-      clearButtons = [generated.clearButton];
-    }
-
-    const primaryClear = clearButtons[0] || null;
-    const actionContainer =
-      primaryClear?.parentElement ||
-      toolbar;
-
-    const copyButtons = Array.from(
-      root.querySelectorAll(
-        "[data-copy], [data-copy-editor], [data-copy-output], [data-copy-random]",
-      ),
-    ).filter((button) => button instanceof HTMLButtonElement);
+    let clearButtons = Array.from(
+      root.querySelectorAll(CLEAR_SELECTOR),
+    ).filter(
+      (button) =>
+        button instanceof HTMLButtonElement,
+    );
 
     copyButtons.forEach((button) => {
       button.dataset.originalLabel = "Copy";
       button.textContent = "Copy";
-
-      button.classList.add(
-        "transition",
-        "duration-150",
-        "active:scale-95",
-        "disabled:cursor-not-allowed",
-        "disabled:opacity-40",
-      );
+      button.classList.add(...buttonClasses);
     });
 
-    const needsReset =
-      hasMeaningfulConfiguration(controls) ||
-      controls.filter((control) => !isOutputControl(control)).length > 2;
-
-    let resetButton = root.querySelector("[data-universal-reset]");
-
-    if (needsReset && !resetButton && actionContainer) {
-      resetButton = createButton("universalReset", "Reset");
-      actionContainer.append(resetButton);
+    if (clearButtons.length === 0) {
+      clearButtons = [
+        createButton("universalClear", "Clear"),
+      ];
+    } else {
+      clearButtons.forEach((button) => {
+        button.dataset.originalLabel = "Clear";
+        button.textContent = "Clear";
+        button.classList.add(...buttonClasses);
+      });
     }
 
-    const getClearableControls = () =>
-      controls.filter(
-        (control) =>
-          isEditableTextControl(control) ||
-          isOutputControl(control),
+    const hasConfiguration = controls.some(
+      (control) =>
+        control instanceof HTMLSelectElement ||
+        (
+          control instanceof HTMLInputElement &&
+          [
+            "checkbox",
+            "radio",
+            "range",
+            "color",
+          ].includes(control.type)
+        ),
+    );
+
+    let resetButton =
+      root.querySelector("[data-universal-reset]");
+
+    if (
+      hasConfiguration &&
+      !(resetButton instanceof HTMLButtonElement)
+    ) {
+      resetButton = createButton(
+        "universalReset",
+        "Reset",
+      );
+    }
+
+    const actionButtons = [
+      ...copyButtons,
+      ...clearButtons,
+      ...(resetButton instanceof HTMLButtonElement
+        ? [resetButton]
+        : []),
+    ];
+
+    const output = findVisibleOutput(root);
+
+    const isTwoPane =
+      output !== null &&
+      root.querySelector("[data-input]") !== null;
+
+    const placedBesideResult =
+      isTwoPane &&
+      placeActionsBesideResult(
+        output,
+        actionButtons,
       );
 
-    const hasClearableData = () =>
-      getClearableControls().some((control) => {
-        if (
-          control instanceof HTMLInputElement ||
-          control instanceof HTMLTextAreaElement
-        ) {
-          return control.value.length > 0;
-        }
-
-        return false;
-      });
-
-    const hasChangedState = () =>
-      controls.some((control) => {
-        const state = defaults.get(control);
-        return state ? controlChanged(control, state) : false;
-      });
+    if (!placedBesideResult) {
+      placeActionsTopRight(root, actionButtons);
+    }
 
     const getCopyValue = (button) => {
       if (button.matches("[data-copy-editor]")) {
-        const editor = root.querySelector(
-          "[data-input]",
-        );
+        const editor =
+          root.querySelector("[data-input]");
 
-        if (
-          editor instanceof HTMLInputElement ||
-          editor instanceof HTMLTextAreaElement
-        ) {
-          return editor.value;
-        }
+        return isFormControl(editor)
+          ? editor.value
+          : "";
       }
 
-      const output = root.querySelector(
-        "[data-output], [data-result], [data-preview-output]",
-      );
+      const outputControl =
+        root.querySelector(OUTPUT_SELECTOR);
 
       if (
-        output instanceof HTMLInputElement ||
-        output instanceof HTMLTextAreaElement
+        isFormControl(outputControl) &&
+        outputControl.value.trim()
       ) {
-        return output.value;
+        return outputControl.value;
       }
 
       if (
-        root.dataset.mode === "word-counter" ||
-        root.dataset.mode === "character-counter"
+        mode === "word-counter" ||
+        mode === "character-counter"
       ) {
-        const input = root.querySelector("[data-input]");
+        const input =
+          root.querySelector("[data-input]");
 
-        if (
-          input instanceof HTMLInputElement ||
-          input instanceof HTMLTextAreaElement
-        ) {
-          return input.value;
-        }
+        return isFormControl(input)
+          ? input.value
+          : "";
       }
 
       return "";
     };
 
-    const updateButtons = () => {
-      const canClear = hasClearableData();
+    const clearableControls = controls.filter(
+      (control) =>
+        isTextControl(control) &&
+        (
+          !(
+            control instanceof HTMLInputElement ||
+            control instanceof HTMLTextAreaElement
+          ) ||
+          !control.disabled
+        ),
+    );
 
-      clearButtons.forEach((button) => {
-        button.disabled = !canClear;
-        button.classList.add(
-          "transition",
-          "duration-150",
-          "active:scale-95",
-          "disabled:cursor-not-allowed",
-          "disabled:opacity-40",
-        );
+    const hasClearableData = () =>
+      clearableControls.some(
+        (control) => control.value.length > 0,
+      );
+
+    const hasChangedState = () =>
+      controls.some((control) => {
+        const state = defaults.get(control);
+
+        return state
+          ? differsFromSnapshot(control, state)
+          : false;
       });
 
+    const updateButtons = () => {
       copyButtons.forEach((button) => {
-        button.disabled = getCopyValue(button).trim().length === 0;
+        button.disabled =
+          getCopyValue(button).trim().length === 0;
+      });
+
+      clearButtons.forEach((button) => {
+        button.disabled = !hasClearableData();
       });
 
       if (resetButton instanceof HTMLButtonElement) {
@@ -408,33 +504,35 @@
 
     const scheduleUpdate = () => {
       window.setTimeout(updateButtons, 0);
-
-      // Một số tool như JSON Formatter dùng debounce.
-      window.setTimeout(updateButtons, 250);
-    };
-
-    const genericClear = () => {
-      getClearableControls().forEach((control) => {
-        if (
-          control instanceof HTMLInputElement ||
-          control instanceof HTMLTextAreaElement
-        ) {
-          control.value = "";
-          dispatchUpdates(control);
-        }
-      });
+      window.setTimeout(updateButtons, 220);
+      window.setTimeout(updateButtons, 400);
     };
 
     clearButtons.forEach((button) => {
       if (button.matches("[data-universal-clear]")) {
-        button.addEventListener("click", genericClear);
+        button.addEventListener("click", () => {
+          clearableControls.forEach((control) => {
+            control.value = "";
+            dispatchUpdates(control);
+          });
+        });
       }
 
       button.addEventListener("click", () => {
         window.setTimeout(() => {
-          showButtonFeedback(button, "Cleared");
+          showFeedback(button, "Cleared");
           updateButtons();
         }, 0);
+      });
+    });
+
+    copyButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (!button.disabled) {
+          window.setTimeout(() => {
+            showFeedback(button, "Copied!");
+          }, 0);
+        }
       });
     });
 
@@ -444,7 +542,7 @@
           const state = defaults.get(control);
           if (!state) return;
 
-          restoreControl(control, state);
+          restoreSnapshot(control, state);
           dispatchUpdates(control);
         });
 
@@ -454,14 +552,21 @@
           }),
         );
 
-        showButtonFeedback(resetButton, "Reset!");
-        window.setTimeout(updateButtons, 0);
+        showFeedback(resetButton, "Reset!");
+        scheduleUpdate();
       });
     }
 
     controls.forEach((control) => {
-      control.addEventListener("input", scheduleUpdate);
-      control.addEventListener("change", scheduleUpdate);
+      control.addEventListener(
+        "input",
+        scheduleUpdate,
+      );
+
+      control.addEventListener(
+        "change",
+        scheduleUpdate,
+      );
     });
 
     root.addEventListener("click", scheduleUpdate);
@@ -476,6 +581,8 @@
   };
 
   setup();
-
-  document.addEventListener("astro:page-load", setup);
+  document.addEventListener(
+    "astro:page-load",
+    setup,
+  );
 })();
