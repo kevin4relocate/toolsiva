@@ -107,10 +107,32 @@ const config = configs[mode] ?? fallbackConfig;
           <p data-contrast class="text-xs text-emerald-400">Contrast: 21.00:1 · Excellent</p>
           <button type="button" data-reset-colors class="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:bg-white/5 hover:text-white">Reset colors</button>
         </div>
+
+        <label class="mt-4 grid gap-1.5">
+          <span class="text-xs font-medium text-zinc-400">Frame</span>
+          <select
+            data-frame-style
+            class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-white"
+          >
+            <option value="none">No frame</option>
+            <option value="border">Simple border</option>
+            <option value="rounded">Rounded card</option>
+            <option value="scan">Scan Me</option>
+            <option value="labelled">QR Code + Scan Me</option>
+          </select>
+        </label>
       </div>
 
       <div class="mt-4 flex flex-wrap gap-2">
-        <button type="button" data-download disabled class="cursor-pointer rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40">Download PNG</button>
+        <button
+          type="button"
+          data-download
+          data-action-managed="local"
+          disabled
+          class="cursor-pointer rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Download PNG
+        </button>
         <button type="button" data-clear class="cursor-pointer rounded-lg border border-white/10 px-4 py-2 text-sm font-medium text-zinc-200 hover:bg-white/5">Clear</button>
       </div>
       <p data-status class="mt-3 text-xs text-zinc-500">Enter content to generate a QR code.</p>
@@ -145,6 +167,8 @@ const config = configs[mode] ?? fallbackConfig;
     const darkHex = root.querySelector<HTMLInputElement>("[data-dark-hex]");
     const lightColor = root.querySelector<HTMLInputElement>("[data-light-color]");
     const lightHex = root.querySelector<HTMLInputElement>("[data-light-hex]");
+    const frameStyle =
+      root.querySelector<HTMLSelectElement>("[data-frame-style]");
     const get = (name:string) => (root.querySelector<HTMLInputElement|HTMLSelectElement>(`[name="${name}"]`)?.value ?? "").trim();
 
     const normalizeHex = (value: string, fallback: string) => {
@@ -202,6 +226,184 @@ const config = configs[mode] ?? fallbackConfig;
       return { ...colors, ratio, safe };
     };
 
+    const roundedRect = (
+      context: CanvasRenderingContext2D,
+      x: number,
+      y: number,
+      width: number,
+      height: number,
+      radius: number,
+    ) => {
+      const safeRadius = Math.min(
+        radius,
+        width / 2,
+        height / 2,
+      );
+
+      context.beginPath();
+      context.roundRect(
+        x,
+        y,
+        width,
+        height,
+        safeRadius,
+      );
+    };
+
+    const composeQrCanvas = async (
+      target: HTMLCanvasElement,
+      value: string,
+      size: number,
+      colors: {
+        dark: string;
+        light: string;
+      },
+    ) => {
+      const selectedFrame = frameStyle?.value ?? "none";
+      const hasTopLabel = selectedFrame === "labelled";
+      const hasBottomLabel =
+        selectedFrame === "scan" ||
+        selectedFrame === "labelled";
+
+      const outerPadding =
+        selectedFrame === "none" ? 0 : Math.round(size * 0.055);
+
+      const labelHeight = Math.round(size * 0.14);
+      const topHeight = hasTopLabel ? labelHeight : 0;
+      const bottomHeight = hasBottomLabel ? labelHeight : 0;
+
+      const qrSize =
+        size -
+        outerPadding * 2 -
+        topHeight -
+        bottomHeight;
+
+      const qrCanvas = document.createElement("canvas");
+
+      await QRCode.toCanvas(qrCanvas, value, {
+        width: qrSize,
+        margin: selectedFrame === "none" ? 4 : 2,
+        errorCorrectionLevel: "H",
+        color: {
+          dark: colors.dark,
+          light: colors.light,
+        },
+      });
+
+      target.width = size;
+      target.height = size;
+
+      const context = target.getContext("2d");
+
+      if (!context) {
+        throw new Error("Canvas context is unavailable.");
+      }
+
+      context.clearRect(0, 0, size, size);
+      context.fillStyle = colors.light;
+
+      if (selectedFrame === "rounded") {
+        roundedRect(
+          context,
+          1,
+          1,
+          size - 2,
+          size - 2,
+          Math.round(size * 0.07),
+        );
+        context.fill();
+      } else {
+        context.fillRect(0, 0, size, size);
+      }
+
+      if (
+        selectedFrame === "border" ||
+        selectedFrame === "rounded"
+      ) {
+        context.strokeStyle = colors.dark;
+        context.lineWidth = Math.max(
+          2,
+          Math.round(size * 0.012),
+        );
+
+        if (selectedFrame === "rounded") {
+          roundedRect(
+            context,
+            context.lineWidth / 2,
+            context.lineWidth / 2,
+            size - context.lineWidth,
+            size - context.lineWidth,
+            Math.round(size * 0.07),
+          );
+          context.stroke();
+        } else {
+          context.strokeRect(
+            context.lineWidth / 2,
+            context.lineWidth / 2,
+            size - context.lineWidth,
+            size - context.lineWidth,
+          );
+        }
+      }
+
+      const qrX = Math.round((size - qrSize) / 2);
+      const qrY = outerPadding + topHeight;
+
+      context.drawImage(
+        qrCanvas,
+        qrX,
+        qrY,
+        qrSize,
+        qrSize,
+      );
+
+      const drawLabel = (
+        label: string,
+        y: number,
+      ) => {
+        const horizontalMargin = Math.round(size * 0.08);
+        const boxHeight = Math.round(labelHeight * 0.72);
+        const boxY =
+          y + Math.round((labelHeight - boxHeight) / 2);
+
+        context.fillStyle = colors.dark;
+
+        roundedRect(
+          context,
+          horizontalMargin,
+          boxY,
+          size - horizontalMargin * 2,
+          boxHeight,
+          Math.round(boxHeight * 0.16),
+        );
+
+        context.fill();
+
+        context.fillStyle = colors.light;
+        context.font =
+          `600 ${Math.round(boxHeight * 0.48)}px system-ui, sans-serif`;
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+
+        context.fillText(
+          label,
+          size / 2,
+          boxY + boxHeight / 2,
+        );
+      };
+
+      if (hasTopLabel) {
+        drawLabel("QR CODE", 0);
+      }
+
+      if (hasBottomLabel) {
+        drawLabel(
+          "SCAN ME",
+          size - bottomHeight,
+        );
+      }
+    };
+
     const payload = () => {
       if (mode === "qr-url-generator") return get("url");
       if (mode === "qr-wifi-generator") {
@@ -244,15 +446,12 @@ const config = configs[mode] ?? fallbackConfig;
         return;
       }
       try {
-        await QRCode.toCanvas(canvas, value, {
-          width: 256,
-          margin: 4,
-          errorCorrectionLevel: "H",
-          color: {
-            dark: colors.dark,
-            light: colors.light,
-          },
-        });
+        await composeQrCanvas(
+          canvas,
+          value,
+          256,
+          colors,
+        );
         download.disabled = !colors.safe;
         status.textContent = colors.safe
           ? "QR code ready and optimized for scanning. Processing stays in your browser."
@@ -290,6 +489,7 @@ const config = configs[mode] ?? fallbackConfig;
     darkHex?.addEventListener("input", () => syncColorPair(darkColor, darkHex, "hex"));
     lightColor?.addEventListener("input", () => syncColorPair(lightColor, lightHex, "picker"));
     lightHex?.addEventListener("input", () => syncColorPair(lightColor, lightHex, "hex"));
+    frameStyle?.addEventListener("change", render);
 
     root.querySelector("[data-reset-colors]")?.addEventListener("click", () => {
       if (darkColor) darkColor.value = "#000000";
@@ -321,15 +521,12 @@ const config = configs[mode] ?? fallbackConfig;
 
       const exportCanvas = document.createElement("canvas");
       try {
-        await QRCode.toCanvas(exportCanvas, value, {
-          width: 1024,
-          margin: 4,
-          errorCorrectionLevel: "H",
-          color: {
-            dark: colors.dark,
-            light: colors.light,
-          },
-        });
+        await composeQrCanvas(
+          exportCanvas,
+          value,
+          1024,
+          colors,
+        );
         const link = document.createElement("a");
         link.download = "toolsiva-qr-code.png";
         link.href = exportCanvas.toDataURL("image/png");
@@ -341,5 +538,6 @@ const config = configs[mode] ?? fallbackConfig;
     });
 
     updateColorUi();
+    render();
   });
 </script>

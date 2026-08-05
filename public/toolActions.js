@@ -401,6 +401,7 @@
     ).filter(
       (button) =>
         button instanceof HTMLButtonElement &&
+        button.dataset.actionManaged !== "local" &&
         isVisible(button),
     );
 
@@ -409,6 +410,7 @@
     ).filter(
       (button) =>
         button instanceof HTMLButtonElement &&
+        button.dataset.actionManaged !== "local" &&
         isVisible(button),
     );
 
@@ -417,6 +419,7 @@
     ).filter(
       (button) =>
         button instanceof HTMLButtonElement &&
+        button.dataset.actionManaged !== "local" &&
         isVisible(button),
     );
 
