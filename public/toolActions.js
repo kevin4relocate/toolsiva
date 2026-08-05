@@ -93,11 +93,36 @@
   const isVisible = (element) => {
     if (!(element instanceof HTMLElement)) return false;
 
-    return (
-      !element.hidden &&
-      element.getAttribute("type") !== "hidden" &&
-      getComputedStyle(element).display !== "none"
-    );
+    if (
+      element.hidden ||
+      element.getAttribute("type") === "hidden"
+    ) {
+      return false;
+    }
+
+    let current = element;
+
+    while (current) {
+      if (
+        current.hidden ||
+        current.classList.contains("hidden")
+      ) {
+        return false;
+      }
+
+      const style = getComputedStyle(current);
+
+      if (
+        style.display === "none" ||
+        style.visibility === "hidden"
+      ) {
+        return false;
+      }
+
+      current = current.parentElement;
+    }
+
+    return true;
   };
 
   const createButton = (action, label) => {
@@ -358,7 +383,11 @@
       root.querySelectorAll(
         "input, textarea, select",
       ),
-    ).filter(isFormControl);
+    ).filter(
+      (control) =>
+        isFormControl(control) &&
+        isVisible(control),
+    );
 
     const defaults = new Map(
       controls.map((control) => [
@@ -371,21 +400,24 @@
       root.querySelectorAll(COPY_SELECTOR),
     ).filter(
       (button) =>
-        button instanceof HTMLButtonElement,
+        button instanceof HTMLButtonElement &&
+        isVisible(button),
     );
 
     let clearButtons = Array.from(
       root.querySelectorAll(CLEAR_SELECTOR),
     ).filter(
       (button) =>
-        button instanceof HTMLButtonElement,
+        button instanceof HTMLButtonElement &&
+        isVisible(button),
     );
 
     const downloadButtons = Array.from(
       root.querySelectorAll(DOWNLOAD_SELECTOR),
     ).filter(
       (button) =>
-        button instanceof HTMLButtonElement,
+        button instanceof HTMLButtonElement &&
+        isVisible(button),
     );
 
     downloadButtons.forEach((button) => {
