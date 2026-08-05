@@ -26,6 +26,12 @@
     "[data-clear-converter]",
   ].join(",");
 
+  const DOWNLOAD_SELECTOR = [
+    "[data-download]",
+    "[data-download-output]",
+    "[data-download-random]",
+  ].join(",");
+
   const OUTPUT_SELECTOR = [
     "[data-output]",
     "[data-result]",
@@ -203,6 +209,23 @@
         isVisible(element),
     ) || null;
 
+  const getSourceControl = (root, button, datasetKey) => {
+    const selector =
+      button.dataset[datasetKey] ||
+      button.dataset.actionSource ||
+      "";
+
+    if (selector) {
+      const source = root.querySelector(selector);
+
+      if (isFormControl(source)) return source;
+    }
+
+    const fallback = root.querySelector(OUTPUT_SELECTOR);
+
+    return isFormControl(fallback) ? fallback : null;
+  };
+
   const removeDirectLabelText = (label) => {
     const textNode = Array.from(label.childNodes).find(
       (node) =>
@@ -358,6 +381,19 @@
         button instanceof HTMLButtonElement,
     );
 
+    const downloadButtons = Array.from(
+      root.querySelectorAll(DOWNLOAD_SELECTOR),
+    ).filter(
+      (button) =>
+        button instanceof HTMLButtonElement,
+    );
+
+    downloadButtons.forEach((button) => {
+      button.dataset.originalLabel =
+        button.textContent?.trim() || "Download";
+      button.classList.add(...buttonClasses);
+    });
+
     copyButtons.forEach((button) => {
       button.dataset.originalLabel = "Copy";
       button.textContent = "Copy";
@@ -405,6 +441,7 @@
 
     const actionButtons = [
       ...copyButtons,
+      ...downloadButtons,
       ...clearButtons,
       ...(resetButton instanceof HTMLButtonElement
         ? [resetButton]
@@ -439,7 +476,11 @@
       }
 
       const outputControl =
-        root.querySelector(OUTPUT_SELECTOR);
+        getSourceControl(
+          root,
+          button,
+          "actionSource",
+        );
 
       if (
         isFormControl(outputControl) &&
@@ -495,8 +536,32 @@
           getCopyValue(button).trim().length === 0;
       });
 
+      downloadButtons.forEach((button) => {
+        const source = getSourceControl(
+          root,
+          button,
+          "downloadSource",
+        );
+
+        button.disabled =
+          !source ||
+          source.value.trim().length === 0;
+      });
+
       clearButtons.forEach((button) => {
-        button.disabled = !hasClearableData();
+        const sourceSelector =
+          button.dataset.clearSource || "";
+
+        if (sourceSelector) {
+          const source =
+            root.querySelector(sourceSelector);
+
+          button.disabled =
+            !isFormControl(source) ||
+            source.value.length === 0;
+        } else {
+          button.disabled = !hasClearableData();
+        }
       });
 
       if (resetButton instanceof HTMLButtonElement) {
@@ -511,20 +576,73 @@
     };
 
     clearButtons.forEach((button) => {
-      if (button.matches("[data-universal-clear]")) {
-        button.addEventListener("click", () => {
+      button.addEventListener("click", () => {
+        const sourceSelector =
+          button.dataset.clearSource || "";
+
+        if (sourceSelector) {
+          const source =
+            root.querySelector(sourceSelector);
+
+          if (isFormControl(source)) {
+            source.value = "";
+            dispatchUpdates(source);
+          }
+        } else if (
+          button.matches("[data-universal-clear]")
+        ) {
           clearableControls.forEach((control) => {
             control.value = "";
             dispatchUpdates(control);
           });
-        });
-      }
+        }
+      });
 
       button.addEventListener("click", () => {
         window.setTimeout(() => {
           showFeedback(button, "Cleared");
           updateButtons();
         }, 0);
+      });
+    });
+
+    downloadButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const source = getSourceControl(
+          root,
+          button,
+          "downloadSource",
+        );
+
+        if (
+          !source ||
+          source.value.length === 0
+        ) {
+          return;
+        }
+
+        const filename =
+          button.dataset.downloadFilename ||
+          "download.txt";
+
+        const mime =
+          button.dataset.downloadMime ||
+          "text/plain;charset=utf-8";
+
+        const url = URL.createObjectURL(
+          new Blob([source.value], {
+            type: mime,
+          }),
+        );
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+
+        URL.revokeObjectURL(url);
+        showFeedback(button, "Downloaded!");
+        scheduleUpdate();
       });
     });
 

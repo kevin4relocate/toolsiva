@@ -29,17 +29,31 @@ const { mode } = Astro.props;
           <label class="flex items-center gap-2"><input data-random-option="uppercase" type="checkbox" checked class="size-4 accent-brand-500" /> Include uppercase words</label>
           <label class="flex items-center gap-2"><input data-random-option="lineBreaks" type="checkbox" checked class="size-4 accent-brand-500" /> Add line breaks</label>
         </div>
-        <label class="grid gap-1.5 text-xs font-medium text-zinc-400">Custom separator
-          <input data-random-separator placeholder="Leave empty for spaces" class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none" />
+        <label
+          data-random-separator-field
+          class="grid gap-1.5 text-xs font-medium text-zinc-400"
+        >
+          Custom separator
+          <input
+            data-random-separator
+            placeholder="Leave empty for spaces"
+            class="min-h-[2.875rem] rounded-xl border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-100 outline-none"
+          />
         </label>
         <button data-generate type="button" class="min-h-[2.875rem] w-full rounded-xl bg-brand-500 px-4 text-sm font-bold text-white hover:bg-brand-400">Generate</button>
       </div>
       <div class="grid min-w-0 grid-rows-[auto_minmax(20rem,1fr)_auto] gap-3">
         <div class="flex items-center justify-between gap-3"><span class="text-sm font-semibold text-zinc-200">Generated text</span><span data-random-stats class="text-xs text-zinc-500"></span></div>
-        <textarea data-random-output readonly class="min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"></textarea>
+        <textarea
+          data-random-output
+          data-output
+          readonly
+          class="min-h-80 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none"
+        ></textarea>
         <div class="flex flex-wrap items-center gap-2">
           <button
-            data-copy-random
+            data-copy
+            data-action-source="[data-random-output]"
             type="button"
             class="focus-ring min-w-24 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200 transition duration-150 hover:-translate-y-0.5 hover:border-brand-400/50 hover:bg-brand-500/10 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
           >
@@ -47,7 +61,10 @@ const { mode } = Astro.props;
           </button>
 
           <button
-            data-download-random
+            data-download
+            data-download-source="[data-random-output]"
+            data-download-filename="random-text.txt"
+            data-download-mime="text/plain;charset=utf-8"
             type="button"
             class="focus-ring min-w-36 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-200 transition duration-150 hover:-translate-y-0.5 hover:border-brand-400/50 hover:bg-brand-500/10 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
           >
@@ -55,18 +72,14 @@ const { mode } = Astro.props;
           </button>
 
           <button
-            data-clear-random
+            data-clear
+            data-clear-source="[data-random-output]"
             type="button"
             class="focus-ring min-w-24 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-zinc-400 transition duration-150 hover:-translate-y-0.5 hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Clear
           </button>
 
-          <span
-            data-random-action-status
-            aria-live="polite"
-            class="text-xs font-semibold text-brand-300"
-          ></span>
         </div>
       </div>
     </div>
@@ -178,12 +191,10 @@ const { mode } = Astro.props;
       const amount = root.querySelector<HTMLInputElement>("[data-random-amount]")!;
       const type = root.querySelector<HTMLSelectElement>("[data-random-type]")!;
       const separator = root.querySelector<HTMLInputElement>("[data-random-separator]")!;
+      const separatorField =
+        root.querySelector<HTMLElement>("[data-random-separator-field]")!;
       const stats = root.querySelector<HTMLElement>("[data-random-stats]")!;
       const limitMessage = root.querySelector<HTMLElement>("[data-random-limit]")!;
-      const copyButton = root.querySelector<HTMLButtonElement>("[data-copy-random]")!;
-      const downloadButton = root.querySelector<HTMLButtonElement>("[data-download-random]")!;
-      const clearButton = root.querySelector<HTMLButtonElement>("[data-clear-random]")!;
-      const actionStatus = root.querySelector<HTMLElement>("[data-random-action-status]")!;
       const words=["bright","quiet","forest","river","signal","window","simple","purple","future","cloud","gentle","system","creative","journey","useful","modern","stable","rapid","quality","open"], emojis=["✨","🚀","🌿","📦","💡","🎯","✅","🌙","⚡","🧩"], specials=["!","@","#","$","%","&","*","+","=","?"];
       const checked=(n:string)=>root.querySelector<HTMLInputElement>(`[data-random-option="${n}"]`)?.checked ?? false; const pick = <T,>(items: readonly T[]): T => {
         const item = items[Math.floor(Math.random() * items.length)];
@@ -222,6 +233,18 @@ const { mode } = Astro.props;
       const warningNoticeClasses =
         "rounded-xl border border-brand-300/60 bg-brand-500/20 px-3 py-2 text-xs font-bold leading-5 text-brand-100";
 
+      const updateSeparatorVisibility = () => {
+        const supportsSeparator =
+          type.value === "words" ||
+          type.value === "mixed";
+
+        separator.disabled = !supportsSeparator;
+        separatorField.classList.toggle(
+          "hidden",
+          !supportsSeparator,
+        );
+      };
+
       const updateLimit = () => {
         const maximum = limits[type.value] ?? 500;
         const label = amountLabels[type.value] ?? "items";
@@ -230,6 +253,8 @@ const { mode } = Astro.props;
         limitMessage.className = normalNoticeClasses;
         limitMessage.textContent =
           `Maximum: ${maximum.toLocaleString()} ${label}`;
+
+        updateSeparatorVisibility();
       };
 
       const updateStats = () => {
@@ -247,10 +272,6 @@ const { mode } = Astro.props;
           `${wordCount.toLocaleString()} words · ` +
           `${characterCount.toLocaleString()} characters`;
 
-        const hasOutput = currentText.length > 0;
-        copyButton.disabled = !hasOutput;
-        downloadButton.disabled = !hasOutput;
-        clearButton.disabled = !hasOutput;
       };
 
       const generate = () => {
@@ -324,6 +345,12 @@ const { mode } = Astro.props;
 
         output.value = result;
         updateStats();
+
+        output.dispatchEvent(
+          new Event("input", {
+            bubbles: true,
+          }),
+        );
       };
 
       type.addEventListener("change", () => {
@@ -332,82 +359,6 @@ const { mode } = Astro.props;
       });
 
       root.querySelector("[data-generate]")?.addEventListener("click", generate);
-      const showActionFeedback = (
-        button: HTMLButtonElement,
-        message: string,
-        temporaryLabel: string,
-      ) => {
-        const originalLabel = button.dataset.originalLabel ?? button.textContent ?? "";
-        button.dataset.originalLabel = originalLabel;
-
-        button.textContent = temporaryLabel;
-        button.classList.add(
-          "border-brand-400/60",
-          "bg-brand-500/20",
-          "text-brand-100",
-          "scale-[0.98]",
-        );
-
-        actionStatus.textContent = message;
-
-        window.setTimeout(() => {
-          button.textContent = originalLabel;
-          button.classList.remove(
-            "border-brand-400/60",
-            "bg-brand-500/20",
-            "text-brand-100",
-            "scale-[0.98]",
-          );
-
-          if (actionStatus.textContent === message) {
-            actionStatus.textContent = "";
-          }
-        }, 1200);
-      };
-
-      copyButton.addEventListener("click", async () => {
-        if (!output.value) return;
-
-        try {
-          await navigator.clipboard.writeText(output.value);
-          showActionFeedback(copyButton, "Text copied to clipboard.", "Copied!");
-        } catch {
-          actionStatus.textContent = "Copy failed. Please try again.";
-        }
-      });
-
-      downloadButton.addEventListener("click", () => {
-        if (!output.value) return;
-
-        const url = URL.createObjectURL(
-          new Blob([output.value], {
-            type: "text/plain;charset=utf-8",
-          }),
-        );
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "random-text.txt";
-        link.click();
-        URL.revokeObjectURL(url);
-
-        showActionFeedback(
-          downloadButton,
-          "TXT file downloaded.",
-          "Downloaded!",
-        );
-      });
-
-      clearButton.addEventListener("click", () => {
-        if (!output.value) return;
-
-        output.value = "";
-        updateStats();
-        updateLimit();
-
-        showActionFeedback(clearButton, "Generated text cleared.", "Cleared");
-      });
-
       updateLimit();
       generate();
       return;
