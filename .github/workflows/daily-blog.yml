@@ -1,0 +1,36 @@
+name: Publish Daily Toolsiva Guide
+on:
+  schedule:
+    - cron: "20 1 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Generate article
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+        run: npm run blog:generate
+      - run: npm run blog:validate
+      - run: npm run check
+      - run: npm run build
+      - name: Commit article
+        run: |
+          git config user.name "Toolsiva Blog Bot"
+          git config user.email "blog-bot@toolsiva.com"
+          git add src/content/blog
+          git diff --cached --quiet && exit 0
+          git commit -m "Publish daily Toolsiva guide"
+          git push origin HEAD:main

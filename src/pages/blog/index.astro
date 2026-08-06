@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+const posts = (await getCollection("blog")).filter((p) => !p.data.draft).sort((a,b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
+const formatDate = (date: Date) => new Intl.DateTimeFormat("en-US", { year:"numeric", month:"long", day:"numeric" }).format(date);
+---
+<BaseLayout title="Toolsiva Blog" description="Practical guides and tutorials for Toolsiva online tools." canonicalPath="/blog/">
+  <div class="mx-auto w-full max-w-[84rem] px-4 py-10 sm:px-5 lg:px-6">
+    <header class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Toolsiva guides</p>
+      <h1 class="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Practical guides for everyday online tools</h1>
+      <p class="mt-4 text-base leading-7 text-zinc-400">Learn how to complete common tasks and use Toolsiva utilities more effectively.</p>
+    </header>
+    <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <article class="flex flex-col rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition hover:-translate-y-0.5 hover:border-brand-400/35">
+          <p class="text-xs text-zinc-500">{formatDate(post.data.publishedDate)}</p>
+          <h2 class="mt-3 text-lg font-bold leading-7 text-white"><a class="hover:text-brand-200" href={`/blog/${post.data.slug}/`}>{post.data.title}</a></h2>
+          <p class="mt-3 flex-1 text-sm leading-6 text-zinc-400">{post.data.excerpt}</p>
+          <a href={`/blog/${post.data.slug}/`} class="mt-5 text-sm font-semibold text-brand-300 hover:text-brand-200">Read guide →</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

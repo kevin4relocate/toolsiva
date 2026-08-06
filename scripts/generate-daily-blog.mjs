@@ -1,0 +1,38 @@
+import fs from "node:fs";
+import path from "node:path";
+const ROOT=process.cwd();
+const BLOG_DIR=path.join(ROOT,"src/content/blog");
+const API_KEY=process.env.GEMINI_API_KEY;
+const MODEL=process.env.GEMINI_MODEL||"gemini-2.5-flash";
+if(!API_KEY) throw new Error("Missing GEMINI_API_KEY.");
+const source=fs.readFileSync(path.join(ROOT,"src/data/tools.ts"),"utf8");
+const declaration=source.indexOf("const toolCatalog");
+const arrayStart=source.indexOf("[",declaration);
+const arrayEnd=source.indexOf("\n];",arrayStart);
+const tools=JSON.parse(source.slice(arrayStart,arrayEnd+2));
+const existing=fs.readdirSync(BLOG_DIR).filter((n)=>n.endsWith(".md"));
+const primaryTool=tools.find((tool)=>!existing.some((name)=>name.includes(tool.slug)))||tools[0];
+const related=(primaryTool.relatedTools||[]).map((slug)=>tools.find((tool)=>tool.slug===slug)).filter(Boolean).slice(0,3);
+const toolPath=(tool)=>`/tools/${tool.category}/${tool.slug}/`;
+const slugify=(value)=>value.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,90);
+const prompt=`Write one high-quality English tutorial for Toolsiva.com.\nTool: ${primaryTool.name}\nDescription: ${primaryTool.shortDescription}\nExact path: ${toolPath(primaryTool)}\nReturn JSON with title, description, excerpt, introduction (array), sections (array with heading, paragraphs, bullets), faq (array with question, answer). Requirements: 900-1300 words, at least 5 sections, practical examples, common mistakes, no URLs, no Markdown links, no invented statistics/laws/prices/current events, do not mention AI or SEO.`;
+const response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`,{method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":API_KEY},body:JSON.stringify({contents:[{role:"user",parts:[{text:prompt}]}],generationConfig:{responseMimeType:"application/json",temperature:.65,maxOutputTokens:8192}})});
+if(!response.ok) throw new Error(`Gemini API failed: ${response.status}`);
+const payload=await response.json();
+const raw=payload?.candidates?.[0]?.content?.parts?.map((part)=>part.text||"").join("")||"";
+const article=JSON.parse(raw);
+const title=String(article.title).trim();
+const slug=slugify(title);
+const today=new Date().toISOString().slice(0,10);
+const lines=[];
+for(const paragraph of article.introduction||[]) lines.push(String(paragraph),"");
+lines.push(`Use the free [${primaryTool.name}](${toolPath(primaryTool)}) while following this guide.`,"");
+for(const section of article.sections||[]){lines.push(`## ${section.heading}`,"");for(const paragraph of section.paragraphs||[])lines.push(String(paragraph),"");for(const bullet of section.bullets||[])lines.push(`- ${bullet}`);lines.push("")}
+if(related.length){lines.push("## Related Toolsiva tools","");for(const tool of related)lines.push(`- [${tool.name}](${toolPath(tool)})`);lines.push("")}
+lines.push("## Frequently asked questions","");for(const item of article.faq||[])lines.push(`### ${item.question}`,"",String(item.answer),"");
+const relatedYaml=related.flatMap((tool)=>[`  - name: ${JSON.stringify(tool.name)}`,`    path: ${JSON.stringify(toolPath(tool))}`]).join("\n");
+const frontmatter=`---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(String(article.description).slice(0,180))}\nslug: ${JSON.stringify(slug)}\npublishedDate: ${today}\nupdatedDate: ${today}\nauthor: "Toolsiva Editorial"\nprimaryTool: ${JSON.stringify(primaryTool.name)}\nprimaryToolPath: ${JSON.stringify(toolPath(primaryTool))}\nrelatedTools:\n${relatedYaml}\nkeywords:\n${(primaryTool.keywords||[]).slice(0,8).map((keyword)=>`  - ${JSON.stringify(keyword)}`).join("\n")}\nexcerpt: ${JSON.stringify(String(article.excerpt))}\ndraft: false\naiAssisted: true\n---\n\n`;
+const destination=path.join(BLOG_DIR,`${slug}.md`);
+if(fs.existsSync(destination)) throw new Error(`Post already exists: ${slug}`);
+fs.writeFileSync(destination,frontmatter+lines.join("\n").trim()+"\n","utf8");
+console.log(`Created ${path.relative(ROOT,destination)}`);
