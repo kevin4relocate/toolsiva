@@ -12,6 +12,7 @@ import ExpansionToolWorkspace from "@/components/tools/ExpansionToolWorkspace.as
 import NewTextToolsWorkspace from "@/components/tools/NewTextToolsWorkspace.astro";
 import HighValueToolsWorkspace from "@/components/tools/HighValueToolsWorkspace.astro";
 import ContentGenerationWorkspace from "@/components/tools/ContentGenerationWorkspace.astro";
+import MarkdownLivePreviewWorkspace from "@/components/tools/MarkdownLivePreviewWorkspace.astro";
 import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
@@ -36,6 +37,7 @@ const expansionToolSlugs = new Set(["line-counter","sentence-counter","paragraph
 const newTextToolSlugs = new Set(["add-bullets-to-text", "add-blank-lines-between-text", "add-prefix-suffix-to-lines", "trim-each-line", "quote-each-line", "remove-line-numbers", "extract-emails-from-text", "extract-urls-from-text"]);
 const highValueToolSlugs = new Set(["regex-tester", "utm-url-generator", "markdown-table-generator", "word-frequency-counter", "programming-case-converter", "morse-code-translator", "binary-code-translator", "number-sorter", "remove-line-breaks", "random-choice-generator"]);
 const contentGenerationToolSlugs = new Set(["random-text-generator", "markdown-to-html", "html-to-markdown", "markdown-to-plain-text"]);
+const markdownLivePreviewSlugs = new Set(["markdown-live-preview"]);
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -140,10 +142,11 @@ const breadcrumbSchema = {
 
     {newTextToolSlugs.has(tool.slug) && <NewTextToolsWorkspace mode={tool.slug} />}
     {contentGenerationToolSlugs.has(tool.slug) && <ContentGenerationWorkspace mode={tool.slug} />}
+    {markdownLivePreviewSlugs.has(tool.slug) && <MarkdownLivePreviewWorkspace />}
     {highValueToolSlugs.has(tool.slug) && <HighValueToolsWorkspace mode={tool.slug} />}
     {expansionToolSlugs.has(tool.slug) && <ExpansionToolWorkspace mode={tool.slug} />}
     {!contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && !newTextToolSlugs.has(tool.slug) && !expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
-    {!contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
+    {!markdownLivePreviewSlugs.has(tool.slug) && !contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
     {!highValueToolSlugs.has(tool.slug) && tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
     {tool.category === "qr" && <QrToolWorkspace mode={tool.slug} />}
     {!expansionToolSlugs.has(tool.slug) && tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}

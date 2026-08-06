@@ -1,0 +1,669 @@
+---
+---
+
+<section
+  class="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/80 shadow-xl shadow-black/20"
+  data-markdown-live-preview
+>
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+    <div class="flex flex-wrap items-center gap-2">
+      <button type="button" data-reset class="tool-button">Reset</button>
+      <button
+        type="button"
+        data-clear
+        class="tool-button text-red-200 hover:border-red-400/40 hover:bg-red-500/10"
+      >
+        Clear
+      </button>
+      <button type="button" data-copy-markdown class="tool-button">Copy Markdown</button>
+      <button type="button" data-copy-html class="tool-button">Copy HTML</button>
+
+      <button type="button" data-download-markdown class="tool-button">
+        Download MD
+      </button>
+
+      <button type="button" data-download-html class="tool-button">
+        Download HTML
+      </button>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-300">
+      <label class="flex cursor-pointer items-center gap-2">
+        <input
+          data-sync-scroll
+          type="checkbox"
+          checked
+          class="size-4 accent-brand-500"
+        />
+        Sync scroll
+      </label>
+
+    </div>
+  </div>
+
+  <div
+    class="grid min-h-[36rem] lg:grid-cols-2"
+    data-workspace-grid
+  >
+    <section
+      class="relative min-w-0 border-b border-white/10 lg:border-b-0 lg:border-r"
+      data-editor-panel
+    >
+      <div class="flex h-11 items-center justify-between border-b border-white/10 px-4">
+        <div>
+          <strong class="text-sm text-white">Markdown</strong>
+          <span data-editor-stats class="ml-2 text-xs text-zinc-500"></span>
+        </div>
+
+        <button
+          type="button"
+          data-fullscreen-editor
+          class="tool-button-small"
+        >
+          Fullscreen
+        </button>
+      </div>
+
+      <textarea
+        data-markdown-input
+        spellcheck="false"
+        aria-label="Markdown editor"
+        class="block h-[calc(100%-2.75rem)] min-h-[33rem] w-full resize-none bg-zinc-950 p-4 font-mono text-sm leading-7 text-zinc-100 outline-none placeholder:text-zinc-600"
+      ></textarea>
+    </section>
+
+    <section
+      class="relative min-w-0 bg-zinc-950"
+      data-preview-panel
+    >
+      <div
+        class="flex h-11 items-center justify-between border-b border-white/10 bg-zinc-950 px-4"
+        data-preview-header
+      >
+        <strong class="text-sm text-white">Preview</strong>
+
+        <button
+          type="button"
+          data-fullscreen-preview
+          class="tool-button-small-light"
+        >
+          Fullscreen
+        </button>
+      </div>
+
+      <article
+        data-markdown-preview
+        class="markdown-preview preview-dark h-[calc(100%-2.75rem)] min-h-[33rem] overflow-auto p-6 text-zinc-100"
+      ></article>
+    </section>
+  </div>
+
+  <div class="flex min-h-10 items-center justify-between gap-3 border-t border-white/10 px-4 py-2">
+    <span data-status aria-live="polite" class="text-xs text-zinc-500">
+      Preview updates automatically as you type.
+    </span>
+
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        data-reset
+        class="tool-button"
+      >
+        Reset
+      </button>
+
+      <button
+        type="button"
+        data-clear
+        class="tool-button text-red-200 hover:border-red-400/40 hover:bg-red-500/10"
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { marked } from "marked";
+  import DOMPurify from "dompurify";
+
+  const SAMPLE_MARKDOWN = `# Markdown Live Preview
+
+Write Markdown on the left and see the rendered result instantly.
+
+## Supported formatting
+
+- **Bold text**
+- *Italic text*
+- [Links](https://toolsiva.com)
+- \`Inline code\`
+- Tables and task lists
+
+### Task list
+
+- [x] Write Markdown
+- [x] Review the preview
+- [ ] Download the final file
+
+### Table
+
+| Tool | Status |
+| --- | --- |
+| Live preview | Ready |
+| HTML export | Ready |
+
+> Everything is processed locally in your browser.
+
+\`\`\`javascript
+const message = "Hello from Toolsiva";
+console.log(message);
+\`\`\`
+`;
+
+  document
+    .querySelectorAll<HTMLElement>("[data-markdown-live-preview]")
+    .forEach((root) => {
+      const input =
+        root.querySelector<HTMLTextAreaElement>("[data-markdown-input]");
+
+      const preview =
+        root.querySelector<HTMLElement>("[data-markdown-preview]");
+
+      const previewPanel =
+        root.querySelector<HTMLElement>("[data-preview-panel]");
+
+      const previewHeader =
+        root.querySelector<HTMLElement>("[data-preview-header]");
+
+      const editorPanel =
+        root.querySelector<HTMLElement>("[data-editor-panel]");
+
+      const grid =
+        root.querySelector<HTMLElement>("[data-workspace-grid]");
+
+      const status =
+        root.querySelector<HTMLElement>("[data-status]");
+
+      const stats =
+        root.querySelector<HTMLElement>("[data-editor-stats]");
+
+      const syncScroll =
+        root.querySelector<HTMLInputElement>("[data-sync-scroll]");
+
+      if (
+        !input ||
+        !preview ||
+        !previewPanel ||
+        !previewHeader ||
+        !editorPanel ||
+        !grid ||
+        !status ||
+        !stats ||
+        !syncScroll
+      ) {
+        return;
+      }
+
+      marked.setOptions({
+        gfm: true,
+        breaks: true,
+      });
+
+      const STORAGE_KEY =
+        "toolsiva:markdown-live-preview:content";
+
+      let cleanHtml = "";
+      let syncing = false;
+
+      const showFeedback = (
+        message: string,
+        timeout = 1200,
+      ) => {
+        status.textContent = message;
+
+        window.setTimeout(() => {
+          if (status.textContent === message) {
+            status.textContent =
+              "Preview updates automatically as you type.";
+          }
+        }, timeout);
+      };
+
+      const downloadText = (
+        content: string,
+        filename: string,
+        mime: string,
+      ) => {
+        const url = URL.createObjectURL(
+          new Blob([content], {
+            type: mime,
+          }),
+        );
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.style.display = "none";
+
+        document.body.append(link);
+        link.click();
+        link.remove();
+
+        window.setTimeout(() => {
+          URL.revokeObjectURL(url);
+        }, 0);
+      };
+
+      const saveDraft = () => {
+        try {
+          if (input.value) {
+            localStorage.setItem(
+              STORAGE_KEY,
+              input.value,
+            );
+          } else {
+            localStorage.removeItem(STORAGE_KEY);
+          }
+        } catch {
+          // Storage can be unavailable in private browsing.
+        }
+      };
+
+      const loadDraft = () => {
+        try {
+          return localStorage.getItem(STORAGE_KEY);
+        } catch {
+          return null;
+        }
+      };
+
+      const render = () => {
+        const markdown = input.value;
+
+        const rendered = marked.parse(markdown, {
+          async: false,
+        }) as string;
+
+        cleanHtml = DOMPurify.sanitize(rendered, {
+          USE_PROFILES: {
+            html: true,
+          },
+        });
+
+        preview.innerHTML = cleanHtml;
+
+        const words = markdown.trim()
+          ? markdown.trim().split(/\s+/u).length
+          : 0;
+
+        const lines = markdown.length
+          ? markdown.split(/\r?\n/u).length
+          : 0;
+
+        stats.textContent =
+          `${words.toLocaleString()} words · ` +
+          `${lines.toLocaleString()} lines`;
+      };
+
+      const syncByRatio = (
+        source: HTMLElement,
+        target: HTMLElement,
+      ) => {
+        if (!syncScroll.checked || syncing) return;
+
+        const sourceMaximum =
+          source.scrollHeight - source.clientHeight;
+
+        const targetMaximum =
+          target.scrollHeight - target.clientHeight;
+
+        if (sourceMaximum <= 0 || targetMaximum <= 0) return;
+
+        syncing = true;
+
+        const ratio = source.scrollTop / sourceMaximum;
+        target.scrollTop = ratio * targetMaximum;
+
+        window.requestAnimationFrame(() => {
+          syncing = false;
+        });
+      };
+
+      const exitFullscreen = () => {
+        editorPanel.classList.remove("tool-panel-fullscreen");
+        previewPanel.classList.remove("tool-panel-fullscreen");
+        document.body.classList.remove("overflow-hidden");
+      };
+
+      const enterFullscreen = (
+        panel: HTMLElement,
+      ) => {
+        exitFullscreen();
+        panel.classList.add("tool-panel-fullscreen");
+        document.body.classList.add("overflow-hidden");
+      };
+
+      input.addEventListener("input", () => {
+        render();
+        saveDraft();
+      });
+
+      input.addEventListener("scroll", () => {
+        syncByRatio(input, preview);
+      });
+
+      preview.addEventListener("scroll", () => {
+        syncByRatio(preview, input);
+      });
+
+      root
+        .querySelector("[data-copy-markdown]")
+        ?.addEventListener("click", async () => {
+          await navigator.clipboard.writeText(input.value);
+          showFeedback("Markdown copied.");
+        });
+
+      root
+        .querySelector("[data-copy-html]")
+        ?.addEventListener("click", async () => {
+          await navigator.clipboard.writeText(cleanHtml);
+          showFeedback("HTML copied.");
+        });
+
+      root
+        .querySelector("[data-download-markdown]")
+        ?.addEventListener("click", () => {
+          downloadText(
+            input.value,
+            "toolsiva-markdown.md",
+            "text/markdown;charset=utf-8",
+          );
+
+          showFeedback("Markdown file downloaded.");
+        });
+
+      root
+        .querySelector("[data-download-html]")
+        ?.addEventListener("click", () => {
+          const documentHtml = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markdown Document</title>
+</head>
+<body>
+${cleanHtml}
+</body>
+</html>`;
+
+          downloadText(
+            documentHtml,
+            "toolsiva-markdown.html",
+            "text/html;charset=utf-8",
+          );
+
+          showFeedback("HTML file downloaded.");
+        });
+
+      root
+        .querySelectorAll<HTMLButtonElement>("[data-clear]")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            input.value = "";
+            render();
+            saveDraft();
+
+            input.scrollTop = 0;
+            preview.scrollTop = 0;
+
+            showFeedback("Editor cleared.");
+          });
+        });
+
+      root
+        .querySelectorAll<HTMLButtonElement>("[data-reset]")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            input.value = SAMPLE_MARKDOWN;
+            syncScroll.checked = true;
+
+            render();
+            saveDraft();
+
+            input.scrollTop = 0;
+            preview.scrollTop = 0;
+
+            showFeedback("Default example restored.");
+          });
+        });
+
+      root
+        .querySelector("[data-fullscreen-editor]")
+        ?.addEventListener("click", () => {
+          if (editorPanel.classList.contains("tool-panel-fullscreen")) {
+            exitFullscreen();
+          } else {
+            enterFullscreen(editorPanel);
+          }
+        });
+
+      root
+        .querySelector("[data-fullscreen-preview]")
+        ?.addEventListener("click", () => {
+          if (previewPanel.classList.contains("tool-panel-fullscreen")) {
+            exitFullscreen();
+          } else {
+            enterFullscreen(previewPanel);
+          }
+        });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          exitFullscreen();
+        }
+      });
+
+      const article = root.closest("article");
+
+      article
+        ?.querySelectorAll<HTMLButtonElement>("button")
+        .forEach((button) => {
+          const label =
+            button.textContent
+              ?.trim()
+              .toLowerCase() ?? "";
+
+          if (
+            label.includes("favorite") ||
+            label.includes("favourite")
+          ) {
+            button.remove();
+          }
+        });
+
+      const savedDraft = loadDraft();
+
+      input.value =
+        savedDraft !== null
+          ? savedDraft
+          : SAMPLE_MARKDOWN;
+
+      render();
+    });
+</script>
+
+<style>
+  .tool-button {
+    min-height: 2.25rem;
+    cursor: pointer;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 0.65rem;
+    padding: 0.4rem 0.75rem;
+    color: rgb(228 228 231);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: 150ms;
+  }
+
+  .tool-button:hover {
+    border-color: rgb(167 139 250 / 0.45);
+    background: rgb(139 92 246 / 0.1);
+    color: white;
+  }
+
+  .tool-button-small,
+  .tool-button-small-light {
+    cursor: pointer;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 0.55rem;
+    padding: 0.3rem 0.65rem;
+    color: rgb(212 212 216);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .tool-button-small-light {
+    border-color: rgb(0 0 0 / 0.12);
+    color: rgb(63 63 70);
+  }
+
+  .tool-panel-fullscreen {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 9999 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgb(9 9 11);
+  }
+
+  .tool-panel-fullscreen textarea,
+  .tool-panel-fullscreen article {
+    height: calc(100vh - 2.75rem) !important;
+    max-height: none !important;
+  }
+
+  .markdown-preview {
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+
+  .markdown-preview :global(h1),
+  .markdown-preview :global(h2),
+  .markdown-preview :global(h3),
+  .markdown-preview :global(h4) {
+    margin-top: 1.5em;
+    margin-bottom: 0.65em;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .markdown-preview :global(h1) {
+    border-bottom: 1px solid rgb(161 161 170 / 0.35);
+    padding-bottom: 0.35em;
+    font-size: 2rem;
+  }
+
+  .markdown-preview :global(h2) {
+    border-bottom: 1px solid rgb(161 161 170 / 0.25);
+    padding-bottom: 0.3em;
+    font-size: 1.55rem;
+  }
+
+  .markdown-preview :global(h3) {
+    font-size: 1.25rem;
+  }
+
+  .markdown-preview :global(p),
+  .markdown-preview :global(ul),
+  .markdown-preview :global(ol),
+  .markdown-preview :global(blockquote),
+  .markdown-preview :global(pre),
+  .markdown-preview :global(table) {
+    margin: 1em 0;
+  }
+
+  .markdown-preview :global(ul) {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .markdown-preview :global(ol) {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+
+  .markdown-preview :global(a) {
+    color: rgb(124 58 237);
+    text-decoration: underline;
+  }
+
+  .preview-dark :global(a) {
+    color: rgb(196 181 253);
+  }
+
+  .markdown-preview :global(blockquote) {
+    border-left: 4px solid rgb(139 92 246);
+    padding-left: 1rem;
+    color: rgb(113 113 122);
+  }
+
+  .preview-dark :global(blockquote) {
+    color: rgb(161 161 170);
+  }
+
+  .markdown-preview :global(code) {
+    border-radius: 0.3rem;
+    background: rgb(228 228 231);
+    padding: 0.15rem 0.35rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
+  }
+
+  .preview-dark :global(code) {
+    background: rgb(39 39 42);
+  }
+
+  .markdown-preview :global(pre) {
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    background: rgb(24 24 27);
+    padding: 1rem;
+    color: rgb(244 244 245);
+  }
+
+  .markdown-preview :global(pre code) {
+    background: transparent;
+    padding: 0;
+  }
+
+  .markdown-preview :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .markdown-preview :global(th),
+  .markdown-preview :global(td) {
+    border: 1px solid rgb(161 161 170 / 0.35);
+    padding: 0.55rem 0.75rem;
+    text-align: left;
+  }
+
+  .markdown-preview :global(th) {
+    background: rgb(244 244 245);
+    font-weight: 700;
+  }
+
+  .preview-dark :global(th) {
+    background: rgb(39 39 42);
+  }
+
+  .markdown-preview :global(img) {
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+
+  .markdown-preview :global(input[type="checkbox"]) {
+    margin-right: 0.45rem;
+  }
+</style>

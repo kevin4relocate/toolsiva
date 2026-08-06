@@ -24,6 +24,8 @@
     "@astrojs/sitemap": "3.7.3",
     "@tailwindcss/vite": "4.3.3",
     "astro": "7.1.4",
+    "dompurify": "^3.4.13",
+    "marked": "^18.0.9",
     "qrcode": "^1.5.4",
     "tailwindcss": "4.3.3",
     "yaml": "2.9.0"

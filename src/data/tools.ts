@@ -3045,6 +3045,39 @@ const toolCatalog: ToolDefinition[] = [
   ]
 },
 {
+  "slug": "markdown-live-preview",
+  "category": "developer",
+  "name": "Markdown Live Preview",
+  "shortDescription": "Write Markdown and preview the rendered document instantly side by side.",
+  "metaDescription": "Preview Markdown online as you type with tables, task lists, code blocks, HTML export, synchronized scrolling and private browser-based processing.",
+  "keywords": [
+    "markdown live preview",
+    "markdown preview",
+    "online markdown editor",
+    "markdown editor"
+  ],
+  "featured": true,
+  "relatedTools": [
+    "markdown-to-html",
+    "html-to-markdown",
+    "markdown-table-generator"
+  ],
+  "faq": [
+    {
+      "question": "Which Markdown features are supported?",
+      "answer": "The preview supports headings, emphasis, links, images, lists, task lists, tables, blockquotes, inline code and fenced code blocks."
+    },
+    {
+      "question": "Can I download my document?",
+      "answer": "Yes. Download the source as a Markdown file or export the rendered result as an HTML file."
+    },
+    {
+      "question": "Is my Markdown uploaded?",
+      "answer": "No. Parsing, previewing and exporting happen locally in your browser."
+    }
+  ]
+},
+{
   "slug": "markdown-to-html",
   "category": "developer",
   "name": "Markdown to HTML",
