@@ -19,7 +19,15 @@ const isText = textModes.has(mode);
       <div class="grid min-w-0 grid-rows-[2.75rem_auto_auto]">
         <div class="flex h-11 items-center justify-between gap-3">
           <label class="text-sm font-semibold text-zinc-200">Result</label>
-          <button type="button" data-copy class="cursor-pointer rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300 transition hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50">Copy</button>
+          <div class="flex flex-wrap items-center justify-end gap-2">
+            <button type="button" data-copy class="focus-ring cursor-pointer rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300 transition hover:border-brand-400/40 hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50">Copy</button>
+            {mode === "remove-empty-lines" && (
+              <>
+                <button type="button" data-clear class="focus-ring cursor-pointer rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300 transition hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-200 disabled:cursor-not-allowed disabled:opacity-50">Clear</button>
+                <button type="button" data-reset class="focus-ring cursor-pointer rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-300 transition hover:border-brand-400/40 hover:bg-brand-500/10 disabled:cursor-not-allowed disabled:opacity-50">Reset</button>
+              </>
+            )}
+          </div>
         </div>
         <textarea data-output rows="12" readonly class="h-[clamp(18rem,42vh,26rem)] min-h-72 w-full resize-y rounded-xl border border-white/10 bg-zinc-950/70 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none" placeholder="Result appears automatically..."></textarea>
         <div data-stats class="mt-3 grid gap-2 sm:grid-cols-3"></div>
@@ -81,10 +89,13 @@ const isText = textModes.has(mode);
     const stats=root.querySelector<HTMLElement>("[data-stats]");
     const options=root.querySelector<HTMLElement>("[data-options]");
     const copy=root.querySelector<HTMLButtonElement>("[data-copy]");
+    const clear=root.querySelector<HTMLButtonElement>("[data-clear]");
+    const reset=root.querySelector<HTMLButtonElement>("[data-reset]");
 
     if(input&&output){
       if(mode==="text-to-list")options!.innerHTML='<label class="text-xs text-zinc-400">Separator <select data-opt="separator" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"><option value="auto">Auto</option><option value=",">Comma</option><option value=";">Semicolon</option><option value="tab">Tab</option></select></label>';
       if(mode==="list-to-text")options!.innerHTML='<label class="text-xs text-zinc-400">Join with <select data-opt="separator" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"><option value=", ">Comma</option><option value=" ">Space</option><option value=" | ">Pipe</option><option value="; ">Semicolon</option></select></label>';
+      if(mode==="remove-empty-lines")options!.innerHTML='<label class="text-xs text-zinc-400">Prefix <input data-opt="prefix" placeholder="Optional" class="ml-2 w-28 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5 text-zinc-100 outline-none transition focus:border-brand-400/50"></label><label class="text-xs text-zinc-400">Suffix <input data-opt="suffix" placeholder="Optional" class="ml-2 w-28 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5 text-zinc-100 outline-none transition focus:border-brand-400/50"></label>';
       if(mode==="add-line-numbers")options!.innerHTML='<label class="text-xs text-zinc-400">Start <input data-opt="start" type="number" value="1" class="ml-2 w-20 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"></label><label class="text-xs text-zinc-400">Separator <input data-opt="separator" value=". " class="ml-2 w-20 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"></label>';
       if(mode==="text-repeater")options!.innerHTML='<label class="text-xs text-zinc-400">Times <input data-opt="count" type="number" min="1" max="1000" value="3" class="ml-2 w-20 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"></label><label class="text-xs text-zinc-400">Separator <select data-opt="separator" class="ml-2 rounded-lg border border-white/10 bg-zinc-950 px-2 py-1.5"><option value="newline">New line</option><option value="space">Space</option><option value=", ">Comma</option></select></label>';
       const opt=(key:string,fallback="")=>root.querySelector<HTMLInputElement|HTMLSelectElement>(`[data-opt="${key}"]`)?.value??fallback;
@@ -95,16 +106,32 @@ const isText = textModes.has(mode);
         if(mode==="paragraph-counter"){const ps=text.trim()?text.trim().split(/\n\s*\n/).filter(Boolean):[];m.push(["Paragraphs",String(ps.length)],["Longest words",String(Math.max(0,...ps.map(p=>p.trim().split(/\s+/).length)))],["Avg. words",ps.length?fmt(ps.reduce((s,p)=>s+p.trim().split(/\s+/).length,0)/ps.length,1):"0"])}
         if(mode==="text-to-list"){const s=opt("separator","auto"),rx=s==="auto"?/[,;\t]+/:s==="tab"?/\t+/:new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"+");result=text.split(rx).map(x=>x.trim()).filter(Boolean).join("\n")}
         if(mode==="list-to-text")result=lines.map(x=>x.trim()).filter(Boolean).join(opt("separator",", "));
-        if(mode==="remove-empty-lines"){result=lines.filter(x=>x.trim()).join("\n");m.push(["Removed",String(lines.length-(result?result.split("\n").length:0))])}
+        if(mode==="remove-empty-lines"){
+          const contentLines=lines.filter(x=>x.trim());
+          const prefix=opt("prefix"),suffix=opt("suffix");
+          result=contentLines.map(line=>`${prefix}${line}${suffix}`).join("\n");
+          m.push(["Removed",String(lines.length-contentLines.length)])
+        }
         if(mode==="add-line-numbers"){const start=Number.parseInt(opt("start","1"),10)||1,sep=opt("separator",". ");result=lines.map((x,i)=>`${start+i}${sep}${x}`).join("\n")}
         if(mode==="strip-html-tags"){result=(new DOMParser().parseFromString(text,"text/html").body.textContent??"").replace(/\n{3,}/g,"\n\n").trim()}
         if(mode==="text-repeater"){const c=Math.min(1000,Math.max(1,Number.parseInt(opt("count","3"),10)||1)),sv=opt("separator","newline"),sep=sv==="newline"?"\n":sv==="space"?" ":sv;result=Array(c).fill(text).join(sep);m.push(["Repeats",String(c)],["Characters",String(result.length)])}
         if(mode==="whitespace-visualizer"){result=text.replace(/ /g,"·").replace(/\t/g,"→\t").replace(/\r?\n/g,"↵\n");m.push(["Spaces",String((text.match(/ /g)??[]).length)],["Tabs",String((text.match(/\t/g)??[]).length)],["Breaks",String((text.match(/\n/g)??[]).length)])}
         output.value=result;copy!.disabled=!result;
+        if(clear)clear.disabled=!text&&!result;
+        if(reset)reset.disabled=!text&&!opt("prefix")&&!opt("suffix");
         stats!.innerHTML=m.map(([a,b])=>`<div class="rounded-xl border border-white/10 p-3"><strong class="block text-lg text-white">${esc(b)}</strong><span class="text-xs text-zinc-500">${esc(a)}</span></div>`).join("");
       };
       input.addEventListener("input",update);options?.addEventListener("input",update);options?.addEventListener("change",update);
       copy?.addEventListener("click",async()=>{await navigator.clipboard.writeText(output.value);copy.textContent="Copied";setTimeout(()=>copy.textContent="Copy",900)});
+      clear?.addEventListener("click",()=>{input.value="";update();input.focus()});
+      reset?.addEventListener("click",()=>{
+        input.value="";
+        options?.querySelectorAll<HTMLInputElement|HTMLSelectElement>("[data-opt]").forEach(element=>{
+          if(element instanceof HTMLSelectElement)element.selectedIndex=0;
+          else element.value=element.defaultValue;
+        });
+        update();input.focus()
+      });
       update();
     }
 
