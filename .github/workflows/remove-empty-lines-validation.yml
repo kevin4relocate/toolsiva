@@ -1,9 +1,9 @@
 name: Validate Remove Empty Lines
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - agent/remove-empty-lines-prefix-suffix
 
 permissions:
   contents: read
