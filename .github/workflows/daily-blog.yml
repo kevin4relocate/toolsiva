@@ -1,7 +1,5 @@
 name: Publish Daily Toolsiva Guide
 on:
-  schedule:
-    - cron: "20 1 * * *"
   workflow_dispatch:
 permissions:
   contents: write
