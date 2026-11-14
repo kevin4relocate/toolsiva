@@ -87,6 +87,15 @@ const organizationSchema = {
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-D5TEQMBGRB"
     ></script>
+    <!-- Google Tag Manager: reuse the existing dataLayer and consent defaults. -->
+    <script is:inline>
+      window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+    </script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtm.js?id=GTM-TVGV8PTP"
+    ></script>
     <SeoHead
       title={title}
       description={description}
