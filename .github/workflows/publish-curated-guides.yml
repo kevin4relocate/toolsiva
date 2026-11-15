@@ -63,7 +63,7 @@ jobs:
           git config user.name "Toolsiva Curated Publisher"
           git config user.email "curated-publisher@users.noreply.github.com"
           git add -- "src/content/blog/${{ steps.release.outputs.slug }}.md"
-          git diff --cached --exit-code && exit 1 || true
+          if git diff --cached --quiet; then echo "No staged article change"; exit 1; fi
           git commit -m "content(blog): publish curated guide ${{ steps.release.outputs.slug }}"
           git push origin HEAD:main
 
