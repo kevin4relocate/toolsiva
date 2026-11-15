@@ -9,7 +9,10 @@ const { placement, minHeight = 0, variant = "inline" } = Astro.props;
 const slotClass = variant === "side-rail"
   ? "sticky top-24 hidden h-[600px] w-[160px] items-center justify-center overflow-hidden rounded-xl min-[1700px]:flex"
   : "my-8 flex items-center justify-center overflow-hidden rounded-xl";
-const enabled = import.meta.env.PUBLIC_ADSENSE_ENABLED === "true";
+// Readiness mode: the website does not display ads before an approved publisher
+// account, a consent-management solution and a tested ad integration exist.
+// A flag alone must never render an empty, misleading "Advertisement" placeholder.
+const enabled = false;
 ---
 
 {
