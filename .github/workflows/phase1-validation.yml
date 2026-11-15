@@ -26,7 +26,9 @@ jobs:
       - run: npm run test:phase1
       - run: npm run test:validators
       - run: npm run test:phase2
+      - run: npm run test:phase3
       - run: npm run blog:validate
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
+      - run: npm run analytics:verify
