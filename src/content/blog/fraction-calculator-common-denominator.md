@@ -57,21 +57,21 @@ Adding two positive fractions less than one should give a positive result. Compa
 
 For **1/2 + 1/3**, the denominators 2 and 3 have a least common multiple of 6, so sixths make the calculation intuitive:
 
-\`1/2 = 3/6\`
+`1/2 = 3/6`
 
-\`1/3 = 2/6\`
+`1/3 = 2/6`
 
-\`3/6 + 2/6 = 5/6\`
+`3/6 + 2/6 = 5/6`
 
 For other pairs, you can use the general formula instead:
 
-\`a/b + c/d = (a×d + c×b) / (b×d)\`
+`a/b + c/d = (a×d + c×b) / (b×d)`
 
 Take **3/4 + 2/5**:
 
-\`(3×5 + 2×4) / (4×5) = 23/20\`
+`(3×5 + 2×4) / (4×5) = 23/20`
 
-That is an **improper fraction**, greater than one. It can also be expressed as the mixed number **1 3/20** or decimal **1.15**. Toolsiva displays the simplified fractional form, so expect \`23/20\`, not a mixed-number display.
+That is an **improper fraction**, greater than one. It can also be expressed as the mixed number **1 3/20** or decimal **1.15**. Toolsiva displays the simplified fractional form, so expect `23/20`, not a mixed-number display.
 
 ## Enter the operation in Toolsiva
 
@@ -86,15 +86,15 @@ The [Fraction Calculator](/tools/calculator/fraction-calculator/) provides field
 | Denominator 2 | 3 |
 | Result | **5/6** |
 
-Use the operation selector to compare adding, subtracting, multiplying and dividing. These operations follow different rules; for example, \`1/2 × 1/3 = 1/6\`, while \`1/2 ÷ 1/3 = 3/2\`.
+Use the operation selector to compare adding, subtracting, multiplying and dividing. These operations follow different rules; for example, `1/2 × 1/3 = 1/6`, while `1/2 ÷ 1/3 = 3/2`.
 
 The tool simplifies the result by dividing the numerator and denominator by their greatest common divisor. If the calculated denominator is negative, it normalizes the sign so the denominator is positive.
 
 ## Division by zero and exact integer limits
 
-A denominator of **zero** makes an input fraction undefined. Division by a fraction equal to zero is also undefined. For example, dividing \`1/2\` by \`0/3\` fails because the second fraction represents zero.
+A denominator of **zero** makes an input fraction undefined. Division by a fraction equal to zero is also undefined. For example, dividing `1/2` by `0/3` fails because the second fraction represents zero.
 
-The calculator uses **whole-number numerators and denominators**. Typing \`1.5\` as a numerator is not the same as entering an exact fraction with an integer numerator; the tool rejects it. Convert the decimal into an integer fraction first if exact arithmetic is your goal.
+The calculator uses **whole-number numerators and denominators**. Typing `1.5` as a numerator is not the same as entering an exact fraction with an integer numerator; the tool rejects it. Convert the decimal into an integer fraction first if exact arithmetic is your goal.
 
 Behind the scenes, the calculator uses JavaScript's safe-integer limits for exact products and sums. Extremely large values may be rejected rather than silently producing a precise-looking but unreliable fraction.
 
@@ -102,8 +102,8 @@ Behind the scenes, the calculator uses JavaScript's safe-integer limits for exac
 
 Before copying a result, compare its magnitude with the inputs:
 
-- \`1/2 + 1/3\` should be between **1/2** and **1**, since both terms are positive and their sum is less than one.
-- \`3/4 + 2/5\` should exceed **1**, because 0.75 + 0.40 = 1.15.
+- `1/2 + 1/3` should be between **1/2** and **1**, since both terms are positive and their sum is less than one.
+- `3/4 + 2/5` should exceed **1**, because 0.75 + 0.40 = 1.15.
 - Multiplying two positive fractions less than one usually produces a smaller positive result than either input.
 
 These checks do not replace exact arithmetic but catch operator mistakes and reversed fractions. If you need to inspect common denominators directly, the [GCD/LCM Calculator](/tools/calculator/gcd-lcm-calculator/) can help show why different fractions can be expressed in the same-sized parts.
