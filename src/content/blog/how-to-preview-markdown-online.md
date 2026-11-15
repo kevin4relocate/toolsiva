@@ -20,6 +20,10 @@ keywords:
 excerpt: "A practical walkthrough of Markdown headings, lists, task lists, tables, link checks, HTML export and optional local drafts."
 draft: false
 aiAssisted: true
+featuredImage: "/blog/illustrations/markdown-live-preview-guide.svg"
+imageAlt: "Example Markdown workflow showing a heading and checklist in an editor, a rendered preview, and an exported document"
+imageCaption: "Markdown editing workflow: write source, compare the live preview, and export the checked document."
+
 ---
 
 Markdown is a useful format for README files, documentation, notes and release instructions. Its plain-text syntax is convenient, but it can be difficult to spot a broken list, an incorrectly nested heading or a table that will not render as expected. A live preview helps you compare what you type with the result your readers will see.
