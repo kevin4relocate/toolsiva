@@ -1,0 +1,517 @@
+{
+  "sort-lines": {
+    "how": "Reorders lines alphabetically in ascending or descending order while keeping the individual line contents intact.",
+    "tryThis": "Paste three names in the wrong order, then compare ascending and descending results.",
+    "watch": "Sorting changes row order; save the original if positional relationships matter."
+  },
+  "reverse-text": {
+    "how": "Reverses the order of text characters for inspection or playful transformation.",
+    "tryThis": "Enter a short phrase, then reverse the result again to compare with the original.",
+    "watch": "Unicode grapheme clusters can include several code points and may not reverse as a single visual character."
+  },
+  "remove-extra-spaces": {
+    "how": "Normalizes repeated spacing to make copied text easier to read and reuse.",
+    "tryThis": "Paste a sentence with repeated spaces and compare the corrected output.",
+    "watch": "Review whitespace in code, indentation or fixed-width formats before replacing it."
+  },
+  "find-and-replace": {
+    "how": "Finds text occurrences and applies replacement text to the editable result.",
+    "tryThis": "Replace an outdated product name in a short sample before working on a longer document.",
+    "watch": "Preview matches carefully when case sensitivity or repeated substrings matter."
+  },
+  "text-compare": {
+    "how": "Compares two texts line by line, identifying unchanged, added and removed sections.",
+    "tryThis": "Paste two versions of a paragraph and review the highlighted line changes.",
+    "watch": "Large documents are limited to protect browser responsiveness; compare smaller sections if needed."
+  },
+  "slug-generator": {
+    "how": "Converts a phrase into a lowercase, URL-friendly slug.",
+    "tryThis": "Try a title with spaces and punctuation, then check the generated path segment.",
+    "watch": "Slugs may lose accents or punctuation; ensure uniqueness before publishing a URL."
+  },
+  "json-minifier": {
+    "how": "Removes unnecessary JSON whitespace without changing its parsed structure.",
+    "tryThis": "Paste formatted JSON and compare the compact result with the original.",
+    "watch": "Whitespace inside string values is data and should remain unchanged."
+  },
+  "json-escape": {
+    "how": "Escapes a text value for inclusion inside a JSON string.",
+    "tryThis": "Enter text with quotes and line breaks, then inspect the escaped result.",
+    "watch": "Escape sequences are not the same as URL encoding or HTML entity escaping."
+  },
+  "json-unescape": {
+    "how": "Decodes JSON string escape sequences such as newline, tab and Unicode escapes.",
+    "tryThis": "Try a quoted JSON string containing \\n or \\u00e9 and inspect the decoded result.",
+    "watch": "Malformed JSON escapes must be corrected rather than silently ignored."
+  },
+  "json-to-csv": {
+    "how": "Converts an array of JSON objects into a delimited table with a header row.",
+    "tryThis": "Use two objects with overlapping keys, then inspect CSV headers and empty cells.",
+    "watch": "Nested objects become serialized cell content, not additional spreadsheet columns."
+  },
+  "json-to-xml": {
+    "how": "Serializes JSON objects or arrays as a hierarchical XML representation.",
+    "tryThis": "Try an object containing a list, then inspect the generated nested XML elements.",
+    "watch": "XML names must be valid; transformed property names may not match the original JSON keys."
+  },
+  "json-to-yaml": {
+    "how": "Renders JSON data as YAML while preserving scalar values and nested collections where possible.",
+    "tryThis": "Convert a small JSON settings object and examine indentation and arrays.",
+    "watch": "Review quotation and special characters when reusing YAML in configuration files."
+  },
+  "url-encode": {
+    "how": "Encodes text into a URL component where reserved characters need escaping.",
+    "tryThis": "Enter a phrase containing spaces and an ampersand to see the escaped representation.",
+    "watch": "Encoding a complete URL as one component differs from encoding its individual parameters."
+  },
+  "url-decode": {
+    "how": "Decodes percent-encoded URL component text into readable characters.",
+    "tryThis": "Decode a short string containing %20 and inspect the resulting spaces.",
+    "watch": "Malformed percent sequences can fail; plus signs may be interpreted as spaces in form-style content."
+  },
+  "html-encode": {
+    "how": "Replaces special HTML characters with safe entity forms for textual display.",
+    "tryThis": "Encode an angle-bracket tag and compare its text rendering to the original.",
+    "watch": "Encoding is context-sensitive; do not use HTML escaping as a substitute for URL or JavaScript escaping."
+  },
+  "html-decode": {
+    "how": "Converts HTML entity references back to their corresponding text characters.",
+    "tryThis": "Decode &amp;amp; and inspect the resulting ampersand entity.",
+    "watch": "Decoded text can contain markup characters; treat it as data rather than trusted HTML."
+  },
+  "xml-formatter": {
+    "how": "Parses and reserializes XML for easier visual inspection.",
+    "tryThis": "Paste a compact XML document and review the formatted output.",
+    "watch": "A serializer may change spacing or empty-element notation; verify compatibility with downstream systems."
+  },
+  "xml-validator": {
+    "how": "Checks whether XML text is syntactically parseable and reports parser errors.",
+    "tryThis": "Test a document with an unclosed element and inspect the error feedback.",
+    "watch": "A well-formed XML document is not necessarily valid against a schema or DTD."
+  },
+  "yaml-validator": {
+    "how": "Checks YAML parsing, including malformed indentation or duplicated mapping keys.",
+    "tryThis": "Try a small YAML mapping, then intentionally repeat a key.",
+    "watch": "Successful syntax validation does not prove the settings are accepted by a particular application."
+  },
+  "jwt-decoder": {
+    "how": "Decodes the header and payload segments of a JSON Web Token for inspection.",
+    "tryThis": "Inspect a sample token header and compare the declared algorithm with its payload claims.",
+    "watch": "Decoding a JWT does not verify its cryptographic signature or make its claims trustworthy."
+  },
+  "unix-timestamp-converter": {
+    "how": "Converts Unix time values and date strings into human-readable time representations.",
+    "tryThis": "Compare a known timestamp in seconds and the equivalent value in milliseconds.",
+    "watch": "Check your input units and time zone before comparing displayed local times."
+  },
+  "passphrase-generator": {
+    "how": "Combines randomly selected words into a memorable secret phrase.",
+    "tryThis": "Generate a ten-word phrase and regenerate to see how the combination changes.",
+    "watch": "The safety of a phrase depends on independent random selection and protecting the generated secret."
+  },
+  "random-string-generator": {
+    "how": "Generates random strings using selected character sets and length settings.",
+    "tryThis": "Generate several values with letters, digits and punctuation enabled.",
+    "watch": "Avoid assumptions about downstream password rules; choose an accepted length and alphabet."
+  },
+  "secure-token-generator": {
+    "how": "Generates cryptographically random bytes encoded as hex or URL-safe Base64.",
+    "tryThis": "Generate a token in both formats and compare character lengths.",
+    "watch": "A token is sensitive; store it securely and do not paste it into logs or analytics."
+  },
+  "password-strength-checker": {
+    "how": "Estimates password strength from length and character patterns in the browser.",
+    "tryThis": "Compare a short predictable password with a longer randomized one.",
+    "watch": "This is a basic heuristic, not a guarantee that a password has never leaked."
+  },
+  "sha256-hash-generator": {
+    "how": "Computes a SHA-256 digest for supplied text using Web Crypto.",
+    "tryThis": "Hash the same text twice to confirm the digest remains the same.",
+    "watch": "SHA-256 is a general-purpose hash, not a salted password-storage algorithm."
+  },
+  "sha512-hash-generator": {
+    "how": "Computes a SHA-512 digest from text and displays its hexadecimal value.",
+    "tryThis": "Change one character in a sample string and compare the resulting digest.",
+    "watch": "Hashing is not encryption and cannot be reversed to recover the input."
+  },
+  "hmac-generator": {
+    "how": "Creates an HMAC signature of a message using a secret key and a selected hash.",
+    "tryThis": "Sign a sample message, change one character and regenerate the signature.",
+    "watch": "The same key and exact bytes must be used when verifying a signature elsewhere."
+  },
+  "basic-auth-generator": {
+    "how": "Creates an HTTP Basic Authorization header from a username and password.",
+    "tryThis": "Enter a test username and password, then inspect the Base64-encoded header.",
+    "watch": "Basic Auth encodes credentials but does not encrypt them; use HTTPS and avoid real credentials on shared devices."
+  },
+  "hash-compare": {
+    "how": "Compares two hash values, with an option to ignore letter case.",
+    "tryThis": "Paste two equal hexadecimal digests and then change one character.",
+    "watch": "Comparing strings alone does not establish the origin or authenticity of either digest."
+  },
+  "qr-text-generator": {
+    "how": "Encodes plain text as a scannable QR payload without navigating to a website.",
+    "tryThis": "Try a short message and scan the result with a second device.",
+    "watch": "Very long text increases QR density and may reduce practical scanning reliability."
+  },
+  "qr-wifi-generator": {
+    "how": "Encodes Wi-Fi network name, security type and password into the Wi-Fi QR format.",
+    "tryThis": "Generate a QR code for a test network with punctuation in its SSID.",
+    "watch": "Treat exported QR images as secrets if they contain a real Wi-Fi password."
+  },
+  "qr-email-generator": {
+    "how": "Encodes an email address, subject and message as a mailto link.",
+    "tryThis": "Try an address and a subject containing spaces, then inspect the opened mail client.",
+    "watch": "Mail applications vary in how they handle prefilled content."
+  },
+  "qr-phone-generator": {
+    "how": "Encodes a telephone link that compatible phone scanners can open.",
+    "tryThis": "Try an international test number including its country calling code.",
+    "watch": "Scanner applications vary; use an actual valid number when publishing."
+  },
+  "qr-sms-generator": {
+    "how": "Encodes a phone number and an SMS text in a mobile-friendly payload.",
+    "tryThis": "Try a short test message and verify how the phone messaging app opens it.",
+    "watch": "SMS QR support varies between scanner and messaging applications."
+  },
+  "qr-whatsapp-generator": {
+    "how": "Creates a WhatsApp chat URL with an optional prefilled message.",
+    "tryThis": "Try an international number and a short message containing spaces.",
+    "watch": "The destination number must use international digits without a leading local trunk prefix."
+  },
+  "qr-vcard-generator": {
+    "how": "Encodes contact details in vCard 3.0 format for address-book import.",
+    "tryThis": "Try a name, organization and telephone number, then test importing the contact.",
+    "watch": "Special characters and contact-app field support should be tested before mass printing."
+  },
+  "qr-location-generator": {
+    "how": "Encodes latitude and longitude in a geo URI for a map-compatible scanner.",
+    "tryThis": "Try coordinates 0,0, then replace them with the intended location.",
+    "watch": "Coordinates must be within valid geographic ranges; receiver support can vary."
+  },
+  "qr-event-generator": {
+    "how": "Encodes a calendar event with title, local start/end times and optional location.",
+    "tryThis": "Create a short event with an end time after its start and test adding it to a calendar.",
+    "watch": "Floating local date-times follow the scanning device's local time zone."
+  },
+  "percentage-change-calculator": {
+    "how": "Measures relative change between an original number and a new number.",
+    "tryThis": "Compare a value before and after a price adjustment.",
+    "watch": "An original value of zero has no defined percentage change in this calculation."
+  },
+  "tip-calculator": {
+    "how": "Calculates the total bill, tip amount and share per person.",
+    "tryThis": "Enter a bill, tip percentage and number of diners.",
+    "watch": "The person count must be a positive whole number; local tax or service charges may change the bill."
+  },
+  "simple-interest-calculator": {
+    "how": "Computes linear interest on a principal over a period of years.",
+    "tryThis": "Try one year and then two years while keeping the rate fixed.",
+    "watch": "Simple interest does not compound unless the terms explicitly say so."
+  },
+  "compound-interest-calculator": {
+    "how": "Models growth when interest is added a specified number of times per year.",
+    "tryThis": "Compare annual and monthly compounding for the same principal and rate.",
+    "watch": "Actual returns may be affected by fees, taxes, contribution timing and variable rates."
+  },
+  "date-difference-calculator": {
+    "how": "Counts whole calendar days between two selected dates.",
+    "tryThis": "Compare dates on opposite sides of a daylight-saving clock change.",
+    "watch": "The result counts calendar days, not elapsed clock hours."
+  },
+  "time-duration-calculator": {
+    "how": "Calculates the interval between two clock times, including a period that passes midnight.",
+    "tryThis": "Enter 23:50 as the start and 00:20 as the end.",
+    "watch": "Two equal times are treated as a zero-length interval rather than a full day."
+  },
+  "average-calculator": {
+    "how": "Computes mean, minimum, maximum and count from a list of numbers.",
+    "tryThis": "Enter three comma-separated values and compare the displayed average and sum.",
+    "watch": "Unexpected words or nonfinite values are rejected rather than silently omitted."
+  },
+  "area-converter": {
+    "how": "Converts surface area between square metres, hectares, acres and other units.",
+    "tryThis": "Compare one hectare with its equivalent square metres.",
+    "watch": "Area uses squared units; a linear metre cannot be substituted for a square metre."
+  },
+  "volume-converter": {
+    "how": "Converts capacity among litres, millilitres, cubic metres and US customary volume units.",
+    "tryThis": "Compare a US gallon with litres using the labelled units.",
+    "watch": "US and imperial gallons are different; check which standard your source uses."
+  },
+  "speed-converter": {
+    "how": "Converts speed between metres per second, kilometres per hour, miles per hour and more.",
+    "tryThis": "Enter a highway speed in km/h and compare it with mph.",
+    "watch": "Displayed decimals are rounded; use consistent units for further calculations."
+  },
+  "time-converter": {
+    "how": "Converts durations across seconds, minutes, hours, days and weeks.",
+    "tryThis": "Convert 90 minutes into hours.",
+    "watch": "A 24-hour day is a duration assumption and does not represent every civil calendar day."
+  },
+  "data-storage-converter": {
+    "how": "Compares decimal storage units and binary storage units such as MB versus MiB.",
+    "tryThis": "Convert one GiB into MB to see the difference.",
+    "watch": "KB/MB and KiB/MiB use different unit bases; check device and software conventions."
+  },
+  "pressure-converter": {
+    "how": "Converts pressure among pascals, kilopascals, bar, psi and atmospheres.",
+    "tryThis": "Compare a tyre pressure in psi with kilopascals.",
+    "watch": "Do not use rounded values for precision-sensitive pressure specifications."
+  },
+  "energy-converter": {
+    "how": "Converts joules, calories, watt-hours and kilowatt-hours.",
+    "tryThis": "Convert one kilowatt-hour into joules.",
+    "watch": "A food calorie is commonly a kilocalorie, not the small-calorie unit labelled cal."
+  },
+  "power-converter": {
+    "how": "Converts power values among watts, kilowatts, megawatts and horsepower.",
+    "tryThis": "Compare one mechanical horsepower with watts.",
+    "watch": "Different horsepower definitions exist; use the unit definition matching your context."
+  },
+  "angle-converter": {
+    "how": "Converts angles between degrees, radians, turns and gradians.",
+    "tryThis": "Convert 180 degrees to radians.",
+    "watch": "Angles are not lengths; calculations using trigonometric functions often expect radians."
+  },
+  "frequency-converter": {
+    "how": "Converts frequency values between hertz and metric multiples.",
+    "tryThis": "Convert 2.4 gigahertz to megahertz.",
+    "watch": "A frequency conversion does not estimate bandwidth or data throughput."
+  },
+  "force-converter": {
+    "how": "Converts force measurements between newtons, pound-force and kilogram-force.",
+    "tryThis": "Compare ten newtons with pound-force.",
+    "watch": "Mass and force are different quantities; kilogram-force is not a kilogram of mass."
+  },
+  "torque-converter": {
+    "how": "Converts moments of force across newton-metres and customary torque units.",
+    "tryThis": "Convert a tightening specification from lb-ft to N·m.",
+    "watch": "Torque is not energy even though some unit symbols may look similar."
+  },
+  "density-converter": {
+    "how": "Converts mass per volume across common metric and imperial density units.",
+    "tryThis": "Compare 1 g/cm³ with kg/m³.",
+    "watch": "Density varies with substance and temperature; a unit converter does not determine material properties."
+  },
+  "acceleration-converter": {
+    "how": "Converts acceleration across m/s², g-force, ft/s² and Gal.",
+    "tryThis": "Convert standard gravity into metres per second squared.",
+    "watch": "The standard g-force definition is a conventional reference, not the local gravity measurement."
+  },
+  "fuel-economy-converter": {
+    "how": "Converts between L/100 km, US/UK mpg and km per litre.",
+    "tryThis": "Compare a car's US mpg value with litres per 100 kilometres.",
+    "watch": "Fuel economy inversely relates to fuel consumption; zero or negative values are invalid."
+  },
+  "data-transfer-rate-converter": {
+    "how": "Converts network transfer rates from bits per second to bytes per second and metric multiples.",
+    "tryThis": "Compare 100 Mbps with megabytes per second.",
+    "watch": "A lowercase b means bits, uppercase B means bytes; protocol overhead changes actual throughput."
+  },
+  "cooking-volume-converter": {
+    "how": "Converts kitchen volume measures including millilitres, teaspoons and cups.",
+    "tryThis": "Convert one US cup into millilitres.",
+    "watch": "Cup and spoon sizes vary between countries and recipes; this tool uses US definitions."
+  },
+  "line-counter": {
+    "how": "Counts total, nonempty and empty lines in pasted text.",
+    "tryThis": "Paste a paragraph containing blank lines and compare total versus nonempty counts.",
+    "watch": "A trailing line break may produce an extra empty line, depending on the counting convention."
+  },
+  "sentence-counter": {
+    "how": "Estimates sentence count using sentence-ending punctuation.",
+    "tryThis": "Try a passage with periods, question marks and exclamation marks.",
+    "watch": "Abbreviations and unusual punctuation can make automatic sentence counts approximate."
+  },
+  "paragraph-counter": {
+    "how": "Counts text blocks separated by blank lines and reports their lengths.",
+    "tryThis": "Paste text containing two blocks separated by an empty line.",
+    "watch": "Single line breaks inside a paragraph are not necessarily paragraph breaks."
+  },
+  "text-to-list": {
+    "how": "Splits comma-, semicolon- or tab-separated text into lines.",
+    "tryThis": "Enter three comma-separated entries and review the resulting vertical list.",
+    "watch": "Quoted CSV fields containing commas need a dedicated CSV parser."
+  },
+  "list-to-text": {
+    "how": "Joins individual lines into one sequence with a chosen separator.",
+    "tryThis": "Paste three names on separate lines and join them with commas.",
+    "watch": "Empty lines may be excluded from the joined result."
+  },
+  "remove-empty-lines": {
+    "how": "Removes blank lines and can add a prefix and suffix to the remaining lines.",
+    "tryThis": "Paste an alternating list of text and empty rows, then add a prefix.",
+    "watch": "Whitespace-only lines may be treated as empty; review intentional formatting."
+  },
+  "add-line-numbers": {
+    "how": "Prefixes lines with sequential numbers from a chosen starting number.",
+    "tryThis": "Enter several lines and start numbering from 1.",
+    "watch": "Number prefixes become part of copied text and may need removing later."
+  },
+  "strip-html-tags": {
+    "how": "Parses HTML and extracts its text content without tags.",
+    "tryThis": "Paste a paragraph with nested formatting tags and review the plain text.",
+    "watch": "Scripts, CSS and some layout semantics may not appear in extracted text."
+  },
+  "text-repeater": {
+    "how": "Repeats a text sample with a selected separator and repeat count.",
+    "tryThis": "Repeat a short phrase five times with newlines between copies.",
+    "watch": "Repeating very large text can produce unexpectedly large output."
+  },
+  "whitespace-visualizer": {
+    "how": "Replaces invisible whitespace with visible markers for debugging.",
+    "tryThis": "Paste tabs, spaces and line breaks to see each kind of spacing.",
+    "watch": "Markers are visual aids, not the original raw characters."
+  },
+  "ratio-calculator": {
+    "how": "Simplifies an integer ratio by its greatest common divisor.",
+    "tryThis": "Enter 12 and 18 to obtain the simplified relationship.",
+    "watch": "Decimal inputs are not supported in the exact ratio simplification."
+  },
+  "proportion-calculator": {
+    "how": "Solves the missing fourth term in a relationship of proportional quantities.",
+    "tryThis": "Enter three related values to calculate the fourth.",
+    "watch": "A zero denominator or zero scaling quantity can make the relationship undefined."
+  },
+  "fraction-calculator": {
+    "how": "Adds, subtracts, multiplies or divides exact integer fractions.",
+    "tryThis": "Add one half and one third, then inspect both fraction and decimal forms.",
+    "watch": "Denominators cannot be zero; dividing by a zero numerator is undefined."
+  },
+  "gcd-lcm-calculator": {
+    "how": "Calculates greatest common divisor and least common multiple of integers.",
+    "tryThis": "Enter 12, 18 and 30 to compare their common divisor and common multiple.",
+    "watch": "Very large integer combinations may exceed JavaScript's exact safe range."
+  },
+  "pace-calculator": {
+    "how": "Computes running pace and speed from distance and total elapsed time.",
+    "tryThis": "Enter 5 km in 30 minutes to compare min/km and km/h.",
+    "watch": "Hours and minutes must describe the elapsed duration; terrain and stops are not modeled."
+  },
+  "unit-price-calculator": {
+    "how": "Compares the cost per unit for two differently priced packages.",
+    "tryThis": "Enter two prices with package quantities to see the cheaper per-unit price.",
+    "watch": "Both quantities must use compatible units and be greater than zero."
+  },
+  "profit-margin-calculator": {
+    "how": "Separates profit from revenue and calculates margin and markup percentages.",
+    "tryThis": "Compare a selling price of 100 with a cost of 60.",
+    "watch": "Margin divides by selling price; markup divides by cost."
+  },
+  "markup-calculator": {
+    "how": "Applies a markup percentage to cost and shows the resulting selling price.",
+    "tryThis": "Start with cost 60 and markup 50% to see the difference from margin.",
+    "watch": "A percentage markup is not the same as the percentage profit margin."
+  },
+  "add-blank-lines-between-text": {
+    "how": "Inserts additional empty lines between existing text lines.",
+    "tryThis": "Paste a short list and add blank lines for readability.",
+    "watch": "Added newlines change character counts and downstream parsing."
+  },
+  "add-prefix-suffix-to-lines": {
+    "how": "Adds a fixed prefix or suffix to each line independently.",
+    "tryThis": "Add a dash or quotation mark to every entry in a list.",
+    "watch": "The transformation affects each line even if the line contains punctuation."
+  },
+  "trim-each-line": {
+    "how": "Removes leading and trailing whitespace from every line.",
+    "tryThis": "Paste indented lines and compare their trimmed copies.",
+    "watch": "Trimming can break code indentation or intentional fixed-width formatting."
+  },
+  "quote-each-line": {
+    "how": "Wraps each line in a selected quotation format.",
+    "tryThis": "Convert a list of plain values into quoted items.",
+    "watch": "Existing quote characters may need escaping for a particular output syntax."
+  },
+  "remove-line-numbers": {
+    "how": "Removes numeric prefixes from lines of text.",
+    "tryThis": "Paste a numbered list copied from a document and review the cleaned result.",
+    "watch": "Confirm that legitimate numbers at the start of a line are not deleted."
+  },
+  "extract-emails-from-text": {
+    "how": "Finds email-like strings embedded in larger text.",
+    "tryThis": "Paste a short paragraph with multiple addresses and inspect extracted results.",
+    "watch": "Pattern extraction is not proof that an address exists or accepts messages."
+  },
+  "extract-urls-from-text": {
+    "how": "Finds URL-like strings inside pasted content.",
+    "tryThis": "Paste a paragraph containing multiple web links.",
+    "watch": "A string that looks like a URL may still be unsafe or unavailable."
+  },
+  "regex-tester": {
+    "how": "Tests a regular expression against sample text and shows matched substrings.",
+    "tryThis": "Try a simple digit-matching pattern and compare global matches.",
+    "watch": "Complex expressions can use significant CPU; avoid untrusted high-cost patterns."
+  },
+  "utm-url-generator": {
+    "how": "Adds campaign tracking parameters to a destination URL.",
+    "tryThis": "Build a tagged URL for a sample campaign and inspect its query string.",
+    "watch": "Do not place personal identifiers or secrets in marketing URL parameters."
+  },
+  "markdown-table-generator": {
+    "how": "Builds Markdown tables from input rows with header and alignment options.",
+    "tryThis": "Create a two-column table and inspect its separator row.",
+    "watch": "Pipe characters inside cells need escaping to preserve the table structure."
+  },
+  "word-frequency-counter": {
+    "how": "Counts repeated words and summarizes their relative frequency.",
+    "tryThis": "Paste a short paragraph containing repeated terms and inspect the count order.",
+    "watch": "Case and punctuation normalization affect the totals."
+  },
+  "programming-case-converter": {
+    "how": "Converts identifiers among camelCase, PascalCase, snake_case and kebab-case.",
+    "tryThis": "Enter a multiword phrase and compare naming styles.",
+    "watch": "Acronyms and existing separators may need review when transforming code identifiers."
+  },
+  "morse-code-translator": {
+    "how": "Encodes plain characters into Morse code or decodes supported sequences.",
+    "tryThis": "Translate a short alphabetic word and then reverse the conversion.",
+    "watch": "Unsupported symbols and ambiguous spacing need review."
+  },
+  "binary-code-translator": {
+    "how": "Encodes or decodes text as binary values.",
+    "tryThis": "Try a short ASCII word and examine its encoded bytes.",
+    "watch": "Unicode characters can occupy several UTF-8 bytes."
+  },
+  "number-sorter": {
+    "how": "Sorts a list of numeric values in ascending or descending order.",
+    "tryThis": "Enter 10, 2 and 5 to check numeric rather than alphabetic ordering.",
+    "watch": "Invalid numeric entries should be corrected rather than assumed to be zero."
+  },
+  "remove-line-breaks": {
+    "how": "Joins multiline text by replacing line boundaries with spaces.",
+    "tryThis": "Paste an address copied over several lines and inspect the single-line form.",
+    "watch": "Removing boundaries may change meaning in structured or poetic text."
+  },
+  "random-choice-generator": {
+    "how": "Chooses entries from a supplied list according to selection settings.",
+    "tryThis": "Enter several names and generate a random selection.",
+    "watch": "Avoid using casual random picks as an audited lottery or security-sensitive decision."
+  },
+  "random-text-generator": {
+    "how": "Generates placeholder words, sentences and paragraphs for layout testing.",
+    "tryThis": "Choose a paragraph count and fill a test layout with sample content.",
+    "watch": "Generated filler is not verified factual content and should not be published as-is."
+  },
+  "markdown-live-preview": {
+    "how": "Renders Markdown while you edit and offers source and HTML export options.",
+    "tryThis": "Paste a heading and task list, then compare source with the live preview.",
+    "watch": "Local draft saving is opt-in; rendered HTML should be treated as untrusted when sharing."
+  },
+  "markdown-to-html": {
+    "how": "Converts supported Markdown syntax into HTML markup for reuse.",
+    "tryThis": "Try a heading, list and a short link, then inspect generated HTML.",
+    "watch": "Review or sanitize HTML before inserting it into an untrusted destination."
+  },
+  "html-to-markdown": {
+    "how": "Converts common HTML elements into a Markdown approximation.",
+    "tryThis": "Paste a document snippet with headings and links.",
+    "watch": "Not every HTML element has a lossless Markdown equivalent."
+  },
+  "markdown-to-plain-text": {
+    "how": "Strips Markdown formatting while keeping readable text content.",
+    "tryThis": "Paste formatted Markdown and compare the plain text output.",
+    "watch": "Link destinations and layout details may be lost when formatting is removed."
+  }
+}
