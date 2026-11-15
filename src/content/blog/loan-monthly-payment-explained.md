@@ -5,7 +5,7 @@ slug: "loan-monthly-payment-explained"
 publishedDate: 2026-11-28
 updatedDate: 2026-11-28
 author: "Toolsiva Editorial"
-primaryTool: "Loan estimate"
+primaryTool: "Loan Calculator"
 primaryToolPath: "/tools/calculator/loan-calculator/"
 relatedTools: []
 excerpt: "Estimate fixed-rate loan payments with a $100,000 example, interpret total interest and identify missing fees."
