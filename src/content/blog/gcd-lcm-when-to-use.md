@@ -53,13 +53,13 @@ A useful final test is to divide the proposed GCD into each number and the propo
 
 For the article's numbers **12, 18 and 30**, write their prime factors:
 
-- \`12 = 2² × 3\`
-- \`18 = 2 × 3²\`
-- \`30 = 2 × 3 × 5\`
+- `12 = 2² × 3`
+- `18 = 2 × 3²`
+- `30 = 2 × 3 × 5`
 
-For the **GCD**, keep only factors that appear in **every** number, using the lowest shared exponent. That gives \`2 × 3 = 6\`.
+For the **GCD**, keep only factors that appear in **every** number, using the lowest shared exponent. That gives `2 × 3 = 6`.
 
-For the **LCM**, include every prime factor needed to cover all three inputs, using the **largest exponent** for each. That gives \`2² × 3² × 5 = 180\`.
+For the **LCM**, include every prime factor needed to cover all three inputs, using the **largest exponent** for each. That gives `2² × 3² × 5 = 180`.
 
 | Question | Operation | Result |
 | --- | --- | ---: |
@@ -72,7 +72,7 @@ The two answers are not interchangeable. In ordinary arithmetic with nonzero inp
 
 Imagine **12 red**, **18 blue** and **30 green** tiles. You need the **largest possible number of identical groups**, with each group receiving the same number of each color and using all tiles.
 
-Because \`GCD(12, 18, 30) = 6\`, you can make **six groups**, each containing **2 red, 3 blue and 5 green** tiles.
+Because `GCD(12, 18, 30) = 6`, you can make **six groups**, each containing **2 red, 3 blue and 5 green** tiles.
 
 If instead you wanted the greatest number of tiles **per group**, or you allowed unequal counts, you would need to restate the problem. The GCD solution depends on the equal-division requirement.
 
@@ -84,9 +84,9 @@ This only works when each interval is fixed and the starting alignment is the sa
 
 ## Use the input form carefully
 
-The [GCD/LCM Calculator](/tools/calculator/gcd-lcm-calculator/) accepts a list of at least **two whole integers**, separated by commas or spaces. Enter \`12, 18, 30\`, then read the two outputs.
+The [GCD/LCM Calculator](/tools/calculator/gcd-lcm-calculator/) accepts a list of at least **two whole integers**, separated by commas or spaces. Enter `12, 18, 30`, then read the two outputs.
 
-The implementation accepts negative integers and computes the GCD and LCM from their absolute magnitudes. For example, \`-12\` and \`18\` have GCD 6 and LCM 36 in the calculator's convention. Decimal values are not accepted for the exact integer operation.
+The implementation accepts negative integers and computes the GCD and LCM from their absolute magnitudes. For example, `-12` and `18` have GCD 6 and LCM 36 in the calculator's convention. Decimal values are not accepted for the exact integer operation.
 
 It can accept zero, with special conventions: when a zero appears in the list, the calculated LCM becomes **0**; GCD is determined from the remaining magnitudes. Mathematical definitions involving zero vary by context, so check whether that convention matches your task.
 
