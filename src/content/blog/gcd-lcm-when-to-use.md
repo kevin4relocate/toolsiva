@@ -17,7 +17,7 @@ aiAssisted: true
 curatedSeries: true
 ---
 
-GCD and LCM answer almost opposite questions. The **greatest common divisor** is the largest positive integer that divides every input exactly. The **least common multiple** is the smallest nonnegative common multiple of the inputs.
+GCD and LCM answer almost opposite questions. For nonzero whole numbers, the **greatest common divisor** is the largest positive integer that divides every input exactly. The **least common multiple** is the smallest **positive** common multiple. Zero needs a special convention, which we explain below.
 
 Use the [GCD/LCM Calculator](/tools/calculator/gcd-lcm-calculator/) for whole-number lists where those relationships matter.
 
@@ -48,3 +48,50 @@ The calculator expects whole integers. Decimal values such as 1.5 are not valid 
 Zero inputs have special mathematical conventions. If you are working with all-zero data, decide how your definition treats GCD and LCM before reusing the output.
 
 A useful final test is to divide the proposed GCD into each number and the proposed LCM by each number. All divisions should come out exact.
+
+## Prime factorization makes the difference visible
+
+For the article's numbers **12, 18 and 30**, write their prime factors:
+
+- `12 = 2² × 3`
+- `18 = 2 × 3²`
+- `30 = 2 × 3 × 5`
+
+For the **GCD**, keep only factors that appear in **every** number, using the lowest shared exponent. That gives `2 × 3 = 6`.
+
+For the **LCM**, include every prime factor needed to cover all three inputs, using the **largest exponent** for each. That gives `2² × 3² × 5 = 180`.
+
+| Question | Operation | Result |
+| --- | --- | ---: |
+| Greatest positive integer dividing 12, 18 and 30 | GCD | **6** |
+| Smallest positive multiple shared by 12, 18 and 30 | LCM | **180** |
+
+The two answers are not interchangeable. In ordinary arithmetic with nonzero inputs, GCD describes **shared divisibility**, while LCM describes **a common repetition or size**.
+
+## Example: equal groups without leftovers
+
+Imagine **12 red**, **18 blue** and **30 green** tiles. You need the **largest possible number of identical groups**, with each group receiving the same number of each color and using all tiles.
+
+Because `GCD(12, 18, 30) = 6`, you can make **six groups**, each containing **2 red, 3 blue and 5 green** tiles.
+
+If instead you wanted the greatest number of tiles **per group**, or you allowed unequal counts, you would need to restate the problem. The GCD solution depends on the equal-division requirement.
+
+## Example: schedules that repeat together
+
+Three maintenance tasks recur at intervals of **12, 18 and 30 days**, and all begin on the same day. Their first simultaneous repeat is after **180 days**. That is an LCM question.
+
+This only works when each interval is fixed and the starting alignment is the same. If tasks shift due to weekends, holidays, delayed work or other constraints, a real schedule requires more than number theory.
+
+## Use the input form carefully
+
+The [GCD/LCM Calculator](/tools/calculator/gcd-lcm-calculator/) accepts a list of at least **two whole integers**, separated by commas or spaces. Enter `12, 18, 30`, then read the two outputs.
+
+The implementation accepts negative integers and computes the GCD and LCM from their absolute magnitudes. For example, `-12` and `18` have GCD 6 and LCM 36 in the calculator's convention. Decimal values are not accepted for the exact integer operation.
+
+It can accept zero, with special conventions: when a zero appears in the list, the calculated LCM becomes **0**; GCD is determined from the remaining magnitudes. Mathematical definitions involving zero vary by context, so check whether that convention matches your task.
+
+## Extremely large numbers
+
+Unlike a calculator that returns only a decimal approximation, this tool aims to keep GCD/LCM **exact within the JavaScript safe-integer range**. Products used for an LCM can grow rapidly. When a result would exceed exact safe-integer precision, the tool reports that limitation instead of providing a fabricated exact value.
+
+A final verification is straightforward: every original input should divide evenly by the GCD, and the LCM should divide evenly by every nonzero original input. Reversing those two tests is a useful way to catch confusion.

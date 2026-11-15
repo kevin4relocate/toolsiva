@@ -51,3 +51,55 @@ For very short distances or unusual units, rounding can have a larger proportion
 If you need to convert kilometres to miles before comparing a race plan, use the [Length Converter](/tools/converter/length-converter/).
 
 Pace helps compare sessions, but terrain, weather and effort can vary. Do not treat a single average as a promise of future race performance.
+
+## Turn average pace into a planning number
+
+The [Pace Calculator](/tools/calculator/pace-calculator/) takes **Distance**, **Hours**, **Minutes** and a unit selection of **km** or **mi**. It calculates two outputs from those values:
+
+`Average pace = total elapsed minutes ÷ distance`
+
+`Average speed = distance ÷ elapsed hours`
+
+For **5 km in 30 minutes**, pace is `30 ÷ 5 = 6` minutes per kilometer and speed is `5 ÷ 0.5 = 10` kilometers per hour.
+
+| Distance | Elapsed time | Average pace | Average speed |
+| --- | --- | --- | --- |
+| 5 km | 30 minutes | **6:00 min/km** | **10 km/h** |
+| 10 km | 55 minutes | **5:30 min/km** | About **10.91 km/h** |
+| 5 km | 25 minutes | **5:00 min/km** | **12 km/h** |
+
+These examples assume the total elapsed time is divided over the entire distance. They do not establish that every kilometer was run at the same speed.
+
+## Why 5:30 is not 5.30 minutes
+
+Clock-style pace notation uses **minutes and seconds**. A pace of `5:30` means 5 minutes and 30 seconds, or **5.5 decimal minutes**. It does not mean 5.30 decimal minutes.
+
+For a 10 km route at an evenly maintained 5:30 pace:
+
+`5.5 minutes × 10 = 55 minutes`
+
+If a calculation produces fractional seconds, the tool rounds to the nearest second before formatting. A pace near 4 minutes 59.6 seconds therefore becomes **5:00**, not **4:60**.
+
+## Compare kilometers with miles
+
+A mile is longer than a kilometer. If you maintain **6:00 min/km**, the equivalent pace per mile is approximately **9:39 min/mi** because one mile is about 1.609 km. Switching the calculator's unit without converting the distance would compare different runs, not simply display the same run differently.
+
+When comparing route lengths, use the [Length Converter](/tools/converter/length-converter/) to convert the physical distance first. Then keep your distance and time measurements consistent.
+
+## What the pace calculator does not model
+
+The current interface does not accept **seconds as a separate time input**; it accepts whole hours and 0–59 whole minutes. For a run recorded as 27 minutes 45 seconds, entering 28 minutes would be an approximation, not a precisely timed calculation.
+
+The result is an average based on **whatever duration you entered**. If a running watch supplies both *moving time* and *elapsed time*, the difference may include pauses at crossings, water stops or other interruptions. Decide which measure supports your comparison before using the tool.
+
+Road slope, trail surface, temperature, wind, fatigue and race congestion also affect pace. A constant-pace projection is not a performance guarantee.
+
+## A quick check before exporting results
+
+1. Verify the distance and its unit.
+2. Enter hours and minutes separately: 90 minutes means `1` hour and `30` minutes, not `90` in the minutes field.
+3. Confirm the pace's **time per distance unit** is smaller for a faster effort.
+4. Convert units before comparing km and mile results.
+5. Label a projected race time as an estimate rather than a prediction.
+
+The value of average pace is that it makes sessions comparable **when you use the same definitions** of distance and time.
