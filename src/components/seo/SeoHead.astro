@@ -7,6 +7,7 @@ interface Props {
   canonicalPath?: string;
   noindex?: boolean;
   image?: string;
+  imageAlt?: string;
   type?: "website" | "article";
 }
 
@@ -16,6 +17,7 @@ const {
   canonicalPath = "/",
   noindex = false,
   image = siteConfig.socialImage,
+  imageAlt = `${siteConfig.name} — fast, private online tools`,
   type = "website",
 } = Astro.props;
 
@@ -62,12 +64,12 @@ const robots = noindex
 <meta property="og:image" content={socialImageUrl} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content={`${siteConfig.name} — fast, private online tools`} />
+<meta property="og:image:alt" content={imageAlt} />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={socialImageUrl} />
-<meta name="twitter:image:alt" content={`${siteConfig.name} — fast, private online tools`} />
+<meta name="twitter:image:alt" content={imageAlt} />
 
 <title>{pageTitle}</title>
