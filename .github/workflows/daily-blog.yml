@@ -1,8 +1,9 @@
-name: Publish Daily Toolsiva Guide
+name: Generate Toolsiva Guide Draft for Editorial Review
 on:
   workflow_dispatch:
 permissions:
   contents: write
+  pull-requests: write
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
@@ -29,17 +30,26 @@ jobs:
       - run: npm run test:phase4
       - run: npm run test:phase5
       - run: npm run test:phase6
+      - run: npm run test:phase7
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
       - run: npm run analytics:verify
       - run: npm run seo:audit
       - run: npm run hardening:verify
-      - name: Commit article
+      - run: npm run adsense:audit
+      - name: Open editorial review PR (never auto-publish)
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          BRANCH="content/review-guide-${{ github.run_id }}"
+          git checkout -b "$BRANCH"
           git config user.name "Toolsiva Blog Bot"
           git config user.email "blog-bot@toolsiva.com"
           git add src/content/blog
           git diff --cached --quiet && exit 0
-          git commit -m "Publish daily Toolsiva guide"
-          git push origin HEAD:main
+          git commit -m "draft(blog): add guide pending editorial review"
+          git push origin HEAD:"$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "Review Toolsiva guide draft #${{ github.run_id }}" \
+            --body "AI-assisted draft: verify every factual claim, tool output, example, citations where relevant, originality and policy compliance. Keep draft: true until editorial review is complete. No ad serving on unpublished or low-value pages."
