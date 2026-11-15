@@ -29,7 +29,9 @@
     "test:phase4": "node --experimental-strip-types --test tests/phase4.test.mjs",
     "test:phase5": "node --test tests/phase5.test.mjs",
     "test:phase6": "node --experimental-strip-types --test tests/phase6.test.mjs",
-    "hardening:verify": "node scripts/verify-hardening.mjs"
+    "hardening:verify": "node scripts/verify-hardening.mjs",
+    "test:phase7": "node --test tests/phase7.test.mjs",
+    "adsense:audit": "node scripts/adsense-readiness-audit.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
