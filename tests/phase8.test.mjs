@@ -190,7 +190,13 @@ test("Curated guides 11–20 preserve SEO images and contain concrete tool examp
     const scheduled = dailySchedule[10 + offset];
     assert.equal(scheduled.slug, slug, slug + ": article identity or release order changed");
     const { data, body } = article(scheduled);
-    assert.equal(data.draft, true, slug + ": scheduled draft must remain unpublished");
+    if (!data.draft) {
+      // A queued article legitimately becomes public on or after its date.
+      const released = data.publishedDate instanceof Date
+        ? data.publishedDate.toISOString().slice(0, 10)
+        : String(data.publishedDate).slice(0, 10);
+      assert.ok(released >= scheduled.date, slug + ": released before its planned slot");
+    }
     assert.equal(data.featuredImage, scheduled.image, slug + ": illustration reference changed");
     assert.equal(data.imageAlt, scheduled.imageAlt, slug + ": descriptive image alt changed");
     assert.equal(data.imageCaption, scheduled.imageCaption, slug + ": visible caption changed");
@@ -202,4 +208,50 @@ test("Curated guides 11–20 preserve SEO images and contain concrete tool examp
     assert.ok(body.includes("](" + scheduled.primaryToolPath + ")"), slug + ": tool link missing");
     assert.ok(/\| ---|\x60{3}(?:json|csv|text)/.test(body), slug + ": expected a table or code example");
   }
+});
+
+
+test("Curated guides 21–30 retain SEO figures, publication dates and verified usage examples", () => {
+  const examples = [
+    ["url-encode-special-characters", /red%20shoes%20%26%20bags/, /Double|double|encoded component/],
+    ["jwt-decoder-security-checklist", /"alg": "HS256"/, /signature|cryptographic verification/],
+    ["regex-tester-verify-patterns", /500 matches/, /catastrophic backtracking/],
+    ["base64-encode-vs-encryption", /w6k=/, /not.*encryption|not.*confidential/],
+    ["vcard-qr-contact-card", /BEGIN:VCARD/, /Privacy and updates/],
+    ["calendar-event-qr-code", /DTSTART:20261211T100000/, /floating local/],
+    ["location-qr-coordinates", /geo:21\.0285,105\.8542/, /Precision and accuracy/],
+    ["remove-duplicate-lines-clean-list", /apple.*apple|Apple.*apple/, /case-sensitive/],
+    ["markdown-preview-document-checklist", /Release checklist/, /four-backtick|longer outer fence|sanitize/],
+    ["gigabyte-gibibyte-conversion", /1,073,741,824/, /465\.66/],
+  ];
+  for (const [offset, [slug, calculation, caution]] of examples.entries()) {
+    const scheduled = dailySchedule[20 + offset];
+    assert.equal(scheduled.slug, slug, slug + ": content moved outside its release slot");
+    const { data, body } = article(scheduled);
+    assert.equal(data.featuredImage, scheduled.image, slug + ": illustration path changed");
+    assert.equal(data.imageAlt, scheduled.imageAlt, slug + ": accessible alt text changed");
+    assert.equal(data.imageCaption, scheduled.imageCaption, slug + ": caption changed");
+    assert.equal(data.primaryToolPath, scheduled.primaryToolPath, slug + ": canonical tool link changed");
+    assert.equal(data.curatedSeries, true, slug + ": not a curated queue article");
+    assert.ok(body.trim().split(/\s+/).length >= 700, slug + ": guide is too shallow");
+    assert.ok((body.match(/^## /gm) || []).length >= 7, slug + ": lacks organized explanations");
+    assert.match(body, calculation, slug + ": expected worked example missing");
+    assert.match(body, caution, slug + ": important use limitation missing");
+    assert.ok(body.includes("](" + scheduled.primaryToolPath + ")"), slug + ": primary tool link missing");
+    assert.ok(/\| ---|^\x60{3,4}(?:text|json|markdown|javascript)/m.test(body), slug + ": missing tabular or code example");
+    assert.doesNotMatch(body, /\\\x60/, slug + ": Markdown code delimiters must render, not be escaped");
+    if (!data.draft) {
+      const published = data.publishedDate instanceof Date
+        ? data.publishedDate.toISOString().slice(0, 10)
+        : String(data.publishedDate).slice(0, 10);
+      assert.ok(published >= scheduled.date, slug + ": published before scheduled date");
+    }
+  }
+});
+
+test("Markdown teaching guide shows nested code fences using a longer outer fence", () => {
+  const guide = article(dailySchedule[28]);
+  assert.match(guide.body, /^\x60{4}markdown$/m);
+  assert.match(guide.body, /^\x60{3}sh$/m);
+  assert.match(guide.body, /^\x60{4}$/m);
 });
