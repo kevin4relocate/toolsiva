@@ -171,3 +171,35 @@ test("BlogPost template renders SEO image alt, visible caption and article schem
   assert.ok(page.includes('height="630"'));
   assert.ok(page.includes("image: hero"));
 });
+
+
+test("Curated guides 11–20 preserve SEO images and contain concrete tool examples", () => {
+  const examples = [
+    ["bmi-calculator-units", /BMI = 70|70 ÷ 1\.70/, /Underweight/],
+    ["percentage-change-increase-decrease", /93\.75/, /percentage points/],
+    ["loan-monthly-payment-explained", /\$599\.55/, /APR/],
+    ["date-difference-without-dst-errors", /2024-02-28/, /Inclusive/],
+    ["compound-interest-frequency", /\$1,104\.94/, /Effective annual rate/],
+    ["fraction-calculator-common-denominator", /23\/20/, /Division by zero/],
+    ["gcd-lcm-when-to-use", /180/, /Prime factorization/],
+    ["running-pace-per-km", /5:30/, /9:39/],
+    ["compare-unit-prices", /\$0\.008/, /per 100 g/],
+    ["json-to-csv-clean-columns", /"name","score","city"/, /Spreadsheet safety/],
+  ];
+  for (const [offset, [slug, calculation, caution]] of examples.entries()) {
+    const scheduled = dailySchedule[10 + offset];
+    assert.equal(scheduled.slug, slug, slug + ": article identity or release order changed");
+    const { data, body } = article(scheduled);
+    assert.equal(data.draft, true, slug + ": scheduled draft must remain unpublished");
+    assert.equal(data.featuredImage, scheduled.image, slug + ": illustration reference changed");
+    assert.equal(data.imageAlt, scheduled.imageAlt, slug + ": descriptive image alt changed");
+    assert.equal(data.imageCaption, scheduled.imageCaption, slug + ": visible caption changed");
+    assert.equal(data.primaryToolPath, scheduled.primaryToolPath, slug + ": primary canonical tool link changed");
+    assert.ok(body.trim().split(/\s+/).length >= 700, slug + ": content too shallow");
+    assert.ok((body.match(/^## /gm) || []).length >= 7, slug + ": missing structured explanations");
+    assert.match(body, calculation, slug + ": worked example missing");
+    assert.match(body, caution, slug + ": domain-specific caution missing");
+    assert.ok(body.includes("](" + scheduled.primaryToolPath + ")"), slug + ": tool link missing");
+    assert.ok(/\| ---|\x60{3}(?:json|csv|text)/.test(body), slug + ": expected a table or code example");
+  }
+});
