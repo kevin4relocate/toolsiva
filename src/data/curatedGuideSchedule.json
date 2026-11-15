@@ -1,0 +1,602 @@
+[
+  {
+    "slot": 1,
+    "slug": "age-calculator-birthday-guide",
+    "date": "2026-11-16",
+    "toolSlug": "age-calculator",
+    "category": "calculator",
+    "title": "How to Calculate Age Correctly Around Birthdays",
+    "primaryToolPath": "/tools/calculator/age-calculator/",
+    "image": "/blog/illustrations/age-calculator-birthday-guide.svg",
+    "imageAlt": "Visual walkthrough for how to calculate age correctly around birthdays: Date of birth, Compare month & day, then Completed years.",
+    "imageCaption": "An age changes at a birthday, not simply at the start of a calendar year.",
+    "diagram": {
+      "heading": "Age calculation",
+      "steps": [
+        "Date of birth",
+        "Compare month & day",
+        "Completed years"
+      ]
+    }
+  },
+  {
+    "slot": 2,
+    "slug": "proportion-calculator-missing-value",
+    "date": "2026-11-17",
+    "toolSlug": "proportion-calculator",
+    "category": "calculator",
+    "title": "How to Solve a Missing Value in a Proportion",
+    "primaryToolPath": "/tools/calculator/proportion-calculator/",
+    "image": "/blog/illustrations/proportion-calculator-missing-value.svg",
+    "imageAlt": "Visual walkthrough for how to solve a missing value in a proportion: 6 : 9, 10 : x, then x = 15.",
+    "imageCaption": "Cross multiplication works only when both ratios describe the same relationship.",
+    "diagram": {
+      "heading": "Equivalent ratios",
+      "steps": [
+        "6 : 9",
+        "10 : x",
+        "x = 15"
+      ]
+    }
+  },
+  {
+    "slot": 3,
+    "slug": "tip-calculator-split-bill",
+    "date": "2026-11-18",
+    "toolSlug": "tip-calculator",
+    "category": "calculator",
+    "title": "How to Calculate a Tip and Split a Restaurant Bill",
+    "primaryToolPath": "/tools/calculator/tip-calculator/",
+    "image": "/blog/illustrations/tip-calculator-split-bill.svg",
+    "imageAlt": "Visual walkthrough for how to calculate a tip and split a restaurant bill: Bill: $80, Tip: 15%, then Two people: $46 each.",
+    "imageCaption": "A $12 tip makes a $92 total, split evenly into $46 per person.",
+    "diagram": {
+      "heading": "Share the bill",
+      "steps": [
+        "Bill: $80",
+        "Tip: 15%",
+        "Two people: $46 each"
+      ]
+    }
+  },
+  {
+    "slot": 4,
+    "slug": "random-text-for-design-tests",
+    "date": "2026-11-19",
+    "toolSlug": "random-text-generator",
+    "category": "text",
+    "title": "How to Use Random Text for Realistic Design Testing",
+    "primaryToolPath": "/tools/text/random-text-generator/",
+    "image": "/blog/illustrations/random-text-for-design-tests.svg",
+    "imageAlt": "Visual walkthrough for how to use random text for realistic design testing: Short labels, Long paragraphs, then Check overflow.",
+    "imageCaption": "Placeholder text helps reveal layout problems before final copy is ready.",
+    "diagram": {
+      "heading": "Test layout states",
+      "steps": [
+        "Short labels",
+        "Long paragraphs",
+        "Check overflow"
+      ]
+    }
+  },
+  {
+    "slot": 5,
+    "slug": "morse-code-translator-sos",
+    "date": "2026-11-20",
+    "toolSlug": "morse-code-translator",
+    "category": "text",
+    "title": "Morse Code Translator: Encode and Decode SOS",
+    "primaryToolPath": "/tools/text/morse-code-translator/",
+    "image": "/blog/illustrations/morse-code-translator-sos.svg",
+    "imageAlt": "Visual walkthrough for morse code translator: encode and decode sos: S = ..., O = ---, then SOS = ... --- ....",
+    "imageCaption": "Morse symbols represent letters; spacing determines where one symbol or word ends.",
+    "diagram": {
+      "heading": "Morse translation",
+      "steps": [
+        "S = ...",
+        "O = ---",
+        "SOS = ... --- ..."
+      ]
+    }
+  },
+  {
+    "slot": 6,
+    "slug": "list-to-text-csv-ready",
+    "date": "2026-11-21",
+    "toolSlug": "list-to-text",
+    "category": "text",
+    "title": "Turn a Multiline List into Clean Separated Text",
+    "primaryToolPath": "/tools/text/list-to-text/",
+    "image": "/blog/illustrations/list-to-text-csv-ready.svg",
+    "imageAlt": "Visual walkthrough for turn a multiline list into clean separated text: alpha · beta · gamma, Choose separator, then alpha, beta, gamma.",
+    "imageCaption": "Convert a line-based list into one line with a deliberate separator.",
+    "diagram": {
+      "heading": "List transformation",
+      "steps": [
+        "alpha · beta · gamma",
+        "Choose separator",
+        "alpha, beta, gamma"
+      ]
+    }
+  },
+  {
+    "slot": 7,
+    "slug": "word-counter-writing-goals",
+    "date": "2026-11-22",
+    "toolSlug": "word-counter",
+    "category": "text",
+    "title": "How to Check Word Count Without Confusing Characters",
+    "primaryToolPath": "/tools/text/word-counter/",
+    "image": "/blog/illustrations/word-counter-writing-goals.svg",
+    "imageAlt": "Visual walkthrough for how to check word count without confusing characters: Paste draft, Count words, then Review length.",
+    "imageCaption": "Word count, character count and line count answer different editorial questions.",
+    "diagram": {
+      "heading": "Word count audit",
+      "steps": [
+        "Paste draft",
+        "Count words",
+        "Review length"
+      ]
+    }
+  },
+  {
+    "slot": 8,
+    "slug": "json-formatter-debugging",
+    "date": "2026-11-23",
+    "toolSlug": "json-formatter",
+    "category": "developer",
+    "title": "Format JSON for Debugging Without Changing Data",
+    "primaryToolPath": "/tools/developer/json-formatter/",
+    "image": "/blog/illustrations/json-formatter-debugging.svg",
+    "imageAlt": "Visual walkthrough for format json for debugging without changing data: Compact JSON, Add indentation, then Readable object.",
+    "imageCaption": "Formatting reorganizes whitespace; it does not repair missing syntax automatically.",
+    "diagram": {
+      "heading": "JSON formatting",
+      "steps": [
+        "Compact JSON",
+        "Add indentation",
+        "Readable object"
+      ]
+    }
+  },
+  {
+    "slot": 9,
+    "slug": "password-generator-best-settings",
+    "date": "2026-11-24",
+    "toolSlug": "password-generator",
+    "category": "security",
+    "title": "Choose Password Generator Settings That Actually Help",
+    "primaryToolPath": "/tools/security/password-generator/",
+    "image": "/blog/illustrations/password-generator-best-settings.svg",
+    "imageAlt": "Visual walkthrough for choose password generator settings that actually help: Choose length, Include groups, then Generate locally.",
+    "imageCaption": "A long randomly generated password is more useful than a complicated predictable pattern.",
+    "diagram": {
+      "heading": "Password choices",
+      "steps": [
+        "Choose length",
+        "Include groups",
+        "Generate locally"
+      ]
+    }
+  },
+  {
+    "slot": 10,
+    "slug": "wifi-qr-code-safely",
+    "date": "2026-11-25",
+    "toolSlug": "qr-wifi-generator",
+    "category": "qr",
+    "title": "Create a Wi-Fi QR Code Without Sharing the Password in Text",
+    "primaryToolPath": "/tools/qr/qr-wifi-generator/",
+    "image": "/blog/illustrations/wifi-qr-code-safely.svg",
+    "imageAlt": "Visual walkthrough for create a wi-fi qr code without sharing the password in text: Network name, Security + secret, then Scan to join.",
+    "imageCaption": "A Wi-Fi QR image contains connection details and should be treated as sensitive.",
+    "diagram": {
+      "heading": "Wi-Fi QR payload",
+      "steps": [
+        "Network name",
+        "Security + secret",
+        "Scan to join"
+      ]
+    }
+  },
+  {
+    "slot": 11,
+    "slug": "bmi-calculator-units",
+    "date": "2026-11-26",
+    "toolSlug": "bmi-calculator",
+    "category": "calculator",
+    "title": "BMI Calculator: Convert Height and Weight into the Right Units",
+    "primaryToolPath": "/tools/calculator/bmi-calculator/",
+    "image": "/blog/illustrations/bmi-calculator-units.svg",
+    "imageAlt": "Visual walkthrough for bmi calculator: convert height and weight into the right units: 70 kg, 1.70 m, then BMI ≈ 24.2.",
+    "imageCaption": "BMI is a screening measure based on weight and height, not a diagnosis.",
+    "diagram": {
+      "heading": "BMI formula",
+      "steps": [
+        "70 kg",
+        "1.70 m",
+        "BMI ≈ 24.2"
+      ]
+    }
+  },
+  {
+    "slot": 12,
+    "slug": "percentage-change-increase-decrease",
+    "date": "2026-11-27",
+    "toolSlug": "percentage-change-calculator",
+    "category": "calculator",
+    "title": "Percentage Change: Calculate Increases and Decreases Correctly",
+    "primaryToolPath": "/tools/calculator/percentage-change-calculator/",
+    "image": "/blog/illustrations/percentage-change-increase-decrease.svg",
+    "imageAlt": "Visual walkthrough for percentage change: calculate increases and decreases correctly: Original: 100, New: 125, then +25%.",
+    "imageCaption": "A percentage change uses the original value as its reference.",
+    "diagram": {
+      "heading": "Relative change",
+      "steps": [
+        "Original: 100",
+        "New: 125",
+        "+25%"
+      ]
+    }
+  },
+  {
+    "slot": 13,
+    "slug": "loan-monthly-payment-explained",
+    "date": "2026-11-28",
+    "toolSlug": "loan-calculator",
+    "category": "calculator",
+    "title": "Estimate a Monthly Loan Payment and Understand the Assumptions",
+    "primaryToolPath": "/tools/calculator/loan-calculator/",
+    "image": "/blog/illustrations/loan-monthly-payment-explained.svg",
+    "imageAlt": "Visual walkthrough for estimate a monthly loan payment and understand the assumptions: $100,000, 6% · 30 years, then ≈ $599.55/month.",
+    "imageCaption": "The calculated payment excludes additional fees, insurance and variable-rate changes.",
+    "diagram": {
+      "heading": "Loan estimate",
+      "steps": [
+        "$100,000",
+        "6% · 30 years",
+        "≈ $599.55/month"
+      ]
+    }
+  },
+  {
+    "slot": 14,
+    "slug": "date-difference-without-dst-errors",
+    "date": "2026-11-29",
+    "toolSlug": "date-difference-calculator",
+    "category": "calculator",
+    "title": "Count Days Between Dates Without Daylight-Saving Errors",
+    "primaryToolPath": "/tools/calculator/date-difference-calculator/",
+    "image": "/blog/illustrations/date-difference-without-dst-errors.svg",
+    "imageAlt": "Visual walkthrough for count days between dates without daylight-saving errors: March 7, March 9, then 2 calendar days.",
+    "imageCaption": "Calendar-day subtraction should not depend on local clock changes.",
+    "diagram": {
+      "heading": "Calendar-day difference",
+      "steps": [
+        "March 7",
+        "March 9",
+        "2 calendar days"
+      ]
+    }
+  },
+  {
+    "slot": 15,
+    "slug": "compound-interest-frequency",
+    "date": "2026-11-30",
+    "toolSlug": "compound-interest-calculator",
+    "category": "calculator",
+    "title": "Compound Interest: Annual vs Monthly Compounding",
+    "primaryToolPath": "/tools/calculator/compound-interest-calculator/",
+    "image": "/blog/illustrations/compound-interest-frequency.svg",
+    "imageAlt": "Visual walkthrough for compound interest: annual vs monthly compounding: Principal: $1,000, 5% for 2 years, then Annual: $1,102.50.",
+    "imageCaption": "How often interest compounds changes the outcome, even with the same annual rate.",
+    "diagram": {
+      "heading": "Compound growth",
+      "steps": [
+        "Principal: $1,000",
+        "5% for 2 years",
+        "Annual: $1,102.50"
+      ]
+    }
+  },
+  {
+    "slot": 16,
+    "slug": "fraction-calculator-common-denominator",
+    "date": "2026-12-01",
+    "toolSlug": "fraction-calculator",
+    "category": "calculator",
+    "title": "Add Fractions with Unlike Denominators Step by Step",
+    "primaryToolPath": "/tools/calculator/fraction-calculator/",
+    "image": "/blog/illustrations/fraction-calculator-common-denominator.svg",
+    "imageAlt": "Visual walkthrough for add fractions with unlike denominators step by step: 1/2 + 1/3, Common sixths, then 5/6.",
+    "imageCaption": "Equivalent denominators show why one half plus one third equals five sixths.",
+    "diagram": {
+      "heading": "Fraction addition",
+      "steps": [
+        "1/2 + 1/3",
+        "Common sixths",
+        "5/6"
+      ]
+    }
+  },
+  {
+    "slot": 17,
+    "slug": "gcd-lcm-when-to-use",
+    "date": "2026-12-02",
+    "toolSlug": "gcd-lcm-calculator",
+    "category": "calculator",
+    "title": "GCD vs LCM: Which Number Do You Actually Need?",
+    "primaryToolPath": "/tools/calculator/gcd-lcm-calculator/",
+    "image": "/blog/illustrations/gcd-lcm-when-to-use.svg",
+    "imageAlt": "Visual walkthrough for gcd vs lcm: which number do you actually need?: 12 · 18 · 30, GCD = 6, then LCM = 180.",
+    "imageCaption": "Use GCD to divide evenly; LCM to align repeating intervals.",
+    "diagram": {
+      "heading": "Divisors and multiples",
+      "steps": [
+        "12 · 18 · 30",
+        "GCD = 6",
+        "LCM = 180"
+      ]
+    }
+  },
+  {
+    "slot": 18,
+    "slug": "running-pace-per-km",
+    "date": "2026-12-03",
+    "toolSlug": "pace-calculator",
+    "category": "calculator",
+    "title": "Calculate Running Pace per Kilometer and Convert to Speed",
+    "primaryToolPath": "/tools/calculator/pace-calculator/",
+    "image": "/blog/illustrations/running-pace-per-km.svg",
+    "imageAlt": "Visual walkthrough for calculate running pace per kilometer and convert to speed: 5 km, 30 minutes, then 6:00 min/km.",
+    "imageCaption": "Speed and pace are reciprocal descriptions of the same steady average.",
+    "diagram": {
+      "heading": "Running pace",
+      "steps": [
+        "5 km",
+        "30 minutes",
+        "6:00 min/km"
+      ]
+    }
+  },
+  {
+    "slot": 19,
+    "slug": "compare-unit-prices",
+    "date": "2026-12-04",
+    "toolSlug": "unit-price-calculator",
+    "category": "calculator",
+    "title": "Compare Package Prices by Unit, Not Sticker Price",
+    "primaryToolPath": "/tools/calculator/unit-price-calculator/",
+    "image": "/blog/illustrations/compare-unit-prices.svg",
+    "imageAlt": "Visual walkthrough for compare package prices by unit, not sticker price: 300 g for $3, 500 g for $4, then Larger pack wins.",
+    "imageCaption": "A cheaper package is not always the cheaper price per unit.",
+    "diagram": {
+      "heading": "Unit price",
+      "steps": [
+        "300 g for $3",
+        "500 g for $4",
+        "Larger pack wins"
+      ]
+    }
+  },
+  {
+    "slot": 20,
+    "slug": "json-to-csv-clean-columns",
+    "date": "2026-12-05",
+    "toolSlug": "json-to-csv",
+    "category": "developer",
+    "title": "Convert JSON to CSV Without Losing Track of Column Names",
+    "primaryToolPath": "/tools/developer/json-to-csv/",
+    "image": "/blog/illustrations/json-to-csv-clean-columns.svg",
+    "imageAlt": "Visual walkthrough for convert json to csv without losing track of column names: Object array, Union of keys, then CSV columns.",
+    "imageCaption": "Check column alignment and nested values before using CSV in a spreadsheet.",
+    "diagram": {
+      "heading": "JSON to CSV",
+      "steps": [
+        "Object array",
+        "Union of keys",
+        "CSV columns"
+      ]
+    }
+  },
+  {
+    "slot": 21,
+    "slug": "url-encode-special-characters",
+    "date": "2026-12-06",
+    "toolSlug": "url-encode",
+    "category": "developer",
+    "title": "URL Encoding Explained with Spaces and Ampersands",
+    "primaryToolPath": "/tools/developer/url-encode/",
+    "image": "/blog/illustrations/url-encode-special-characters.svg",
+    "imageAlt": "Visual walkthrough for url encoding explained with spaces and ampersands: red shoes & bags, Encode component, then Safe query value.",
+    "imageCaption": "Encode values separately so special characters do not change URL structure.",
+    "diagram": {
+      "heading": "URL components",
+      "steps": [
+        "red shoes & bags",
+        "Encode component",
+        "Safe query value"
+      ]
+    }
+  },
+  {
+    "slot": 22,
+    "slug": "jwt-decoder-security-checklist",
+    "date": "2026-12-07",
+    "toolSlug": "jwt-decoder",
+    "category": "developer",
+    "title": "Read a JWT Header and Payload Without Trusting Its Claims",
+    "primaryToolPath": "/tools/developer/jwt-decoder/",
+    "image": "/blog/illustrations/jwt-decoder-security-checklist.svg",
+    "imageAlt": "Visual walkthrough for read a jwt header and payload without trusting its claims: Header segment, Payload segment, then Verify elsewhere.",
+    "imageCaption": "A readable JWT payload is not proof of signature validity or authenticity.",
+    "diagram": {
+      "heading": "JWT inspection",
+      "steps": [
+        "Header segment",
+        "Payload segment",
+        "Verify elsewhere"
+      ]
+    }
+  },
+  {
+    "slot": 23,
+    "slug": "regex-tester-verify-patterns",
+    "date": "2026-12-08",
+    "toolSlug": "regex-tester",
+    "category": "developer",
+    "title": "Test Regular Expressions Using Small Controlled Examples",
+    "primaryToolPath": "/tools/developer/regex-tester/",
+    "image": "/blog/illustrations/regex-tester-verify-patterns.svg",
+    "imageAlt": "Visual walkthrough for test regular expressions using small controlled examples: Sample text, Pattern: \\d+, then Check matches.",
+    "imageCaption": "Regex testing helps inspect behavior but does not make untrusted patterns safe.",
+    "diagram": {
+      "heading": "Regex testing",
+      "steps": [
+        "Sample text",
+        "Pattern: \\d+",
+        "Check matches"
+      ]
+    }
+  },
+  {
+    "slot": 24,
+    "slug": "base64-encode-vs-encryption",
+    "date": "2026-12-09",
+    "toolSlug": "base64-encode",
+    "category": "developer",
+    "title": "Base64 Encoding Is Not Encryption: A Practical Example",
+    "primaryToolPath": "/tools/developer/base64-encode/",
+    "image": "/blog/illustrations/base64-encode-vs-encryption.svg",
+    "imageAlt": "Visual walkthrough for base64 encoding is not encryption: a practical example: Plain text: Hi, Encode bytes, then SGk=.",
+    "imageCaption": "Base64 is a reversible text representation; it does not keep secrets confidential.",
+    "diagram": {
+      "heading": "Base64 encoding",
+      "steps": [
+        "Plain text: Hi",
+        "Encode bytes",
+        "SGk="
+      ]
+    }
+  },
+  {
+    "slot": 25,
+    "slug": "vcard-qr-contact-card",
+    "date": "2026-12-10",
+    "toolSlug": "qr-vcard-generator",
+    "category": "qr",
+    "title": "Create a vCard QR Code for a Contact Card",
+    "primaryToolPath": "/tools/qr/qr-vcard-generator/",
+    "image": "/blog/illustrations/vcard-qr-contact-card.svg",
+    "imageAlt": "Visual walkthrough for create a vcard qr code for a contact card: Name, Phone + email, then Import contact.",
+    "imageCaption": "A vCard encodes contact details that a compatible scanner can offer to save.",
+    "diagram": {
+      "heading": "Contact QR",
+      "steps": [
+        "Name",
+        "Phone + email",
+        "Import contact"
+      ]
+    }
+  },
+  {
+    "slot": 26,
+    "slug": "calendar-event-qr-code",
+    "date": "2026-12-11",
+    "toolSlug": "qr-event-generator",
+    "category": "qr",
+    "title": "Make a Calendar Event QR Code with Correct Start and End Times",
+    "primaryToolPath": "/tools/qr/qr-event-generator/",
+    "image": "/blog/illustrations/calendar-event-qr-code.svg",
+    "imageAlt": "Visual walkthrough for make a calendar event qr code with correct start and end times: Start: 10:00, End: 11:00, then Add event.",
+    "imageCaption": "Event QR codes need valid time order and can use the scanning device's local time.",
+    "diagram": {
+      "heading": "Calendar QR",
+      "steps": [
+        "Start: 10:00",
+        "End: 11:00",
+        "Add event"
+      ]
+    }
+  },
+  {
+    "slot": 27,
+    "slug": "location-qr-coordinates",
+    "date": "2026-12-12",
+    "toolSlug": "qr-location-generator",
+    "category": "qr",
+    "title": "Create a Location QR Code from Latitude and Longitude",
+    "primaryToolPath": "/tools/qr/qr-location-generator/",
+    "image": "/blog/illustrations/location-qr-coordinates.svg",
+    "imageAlt": "Visual walkthrough for create a location qr code from latitude and longitude: Latitude, Longitude, then Open maps.",
+    "imageCaption": "Coordinates identify positions; scanners may choose different map applications.",
+    "diagram": {
+      "heading": "Location QR",
+      "steps": [
+        "Latitude",
+        "Longitude",
+        "Open maps"
+      ]
+    }
+  },
+  {
+    "slot": 28,
+    "slug": "remove-duplicate-lines-clean-list",
+    "date": "2026-12-13",
+    "toolSlug": "remove-duplicate-lines",
+    "category": "text",
+    "title": "Remove Duplicate Lines While Preserving Important Order",
+    "primaryToolPath": "/tools/text/remove-duplicate-lines/",
+    "image": "/blog/illustrations/remove-duplicate-lines-clean-list.svg",
+    "imageAlt": "Visual walkthrough for remove duplicate lines while preserving important order: alpha · beta · alpha, Remove duplicate, then alpha · beta.",
+    "imageCaption": "Deduplicating lines can simplify lists but may remove intentional repeats.",
+    "diagram": {
+      "heading": "Deduplicate list",
+      "steps": [
+        "alpha · beta · alpha",
+        "Remove duplicate",
+        "alpha · beta"
+      ]
+    }
+  },
+  {
+    "slot": 29,
+    "slug": "markdown-preview-document-checklist",
+    "date": "2026-12-14",
+    "toolSlug": "markdown-live-preview",
+    "category": "developer",
+    "title": "Review Markdown Tables and Checklists Before Publishing",
+    "primaryToolPath": "/tools/developer/markdown-live-preview/",
+    "image": "/blog/illustrations/markdown-preview-document-checklist.svg",
+    "imageAlt": "Visual walkthrough for review markdown tables and checklists before publishing: Write source, Live preview, then Export checked copy.",
+    "imageCaption": "Preview headings, checklists and tables before distributing a Markdown document.",
+    "diagram": {
+      "heading": "Markdown QA",
+      "steps": [
+        "Write source",
+        "Live preview",
+        "Export checked copy"
+      ]
+    }
+  },
+  {
+    "slot": 30,
+    "slug": "gigabyte-gibibyte-conversion",
+    "date": "2026-12-15",
+    "toolSlug": "data-storage-converter",
+    "category": "converter",
+    "title": "GB vs GiB: Understand Decimal and Binary Storage Units",
+    "primaryToolPath": "/tools/converter/data-storage-converter/",
+    "image": "/blog/illustrations/gigabyte-gibibyte-conversion.svg",
+    "imageAlt": "Visual walkthrough for gb vs gib: understand decimal and binary storage units: 1 GiB, 1,073,741,824 B, then ≈ 1,073.74 MB.",
+    "imageCaption": "Decimal GB and binary GiB use different base multipliers.",
+    "diagram": {
+      "heading": "Storage units",
+      "steps": [
+        "1 GiB",
+        "1,073,741,824 B",
+        "≈ 1,073.74 MB"
+      ]
+    }
+  }
+]
