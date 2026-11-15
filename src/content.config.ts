@@ -17,6 +17,11 @@ const blog = defineCollection({
     excerpt: z.string().min(50),
     draft: z.boolean().default(true),
     aiAssisted: z.boolean().default(false),
+    featuredImage: z.string().startsWith("/blog/illustrations/").optional(),
+    imageAlt: z.string().min(25).max(220).optional(),
+    imageCaption: z.string().min(35).max(260).optional(),
+    curatedSeries: z.boolean().default(false),
+
   }),
 });
 
