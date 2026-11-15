@@ -5,7 +5,7 @@ slug: "location-qr-coordinates"
 publishedDate: 2026-12-12
 updatedDate: 2026-12-12
 author: "Toolsiva Editorial"
-primaryTool: "Location QR"
+primaryTool: "Location QR Code Generator"
 primaryToolPath: "/tools/qr/qr-location-generator/"
 relatedTools: []
 excerpt: "Make a location QR from latitude and longitude, check geographic ranges and understand that map-app support varies."
