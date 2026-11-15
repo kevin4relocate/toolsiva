@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 630" width="1200" height="630">
+<title id="title">SOLVE A PROPORTION — Toolsiva educational diagram</title>
+<desc id="desc">Keep the order of corresponding quantities. GIVEN: 2 / 5 = 8 / D. SOLVE FOR D: (5 × 8) / 2. Result: D = 20.</desc>
+<defs>
+<linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080b16"/><stop offset=".68" stop-color="#101326"/><stop offset="1" stop-color="#0c1020"/></linearGradient>
+<linearGradient id="result" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399" stop-opacity=".3"/><stop offset="1" stop-color="#34d399" stop-opacity=".065"/></linearGradient>
+<radialGradient id="glow"><stop offset="0" stop-color="#34d399" stop-opacity=".33"/><stop offset="1" stop-color="#34d399" stop-opacity="0"/></radialGradient>
+<filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#000" flood-opacity=".25"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#background)"/>
+<circle cx="1080" cy="65" r="340" fill="url(#glow)"/>
+<circle cx="70" cy="580" r="250" fill="url(#glow)" opacity=".35"/>
+<g stroke="#34d399" stroke-opacity=".11" stroke-width="1">
+<path d="M-100 0 L130 630"/>
+<path d="M0 0 L230 630"/>
+<path d="M100 0 L330 630"/>
+<path d="M200 0 L430 630"/>
+<path d="M300 0 L530 630"/>
+<path d="M400 0 L630 630"/>
+<path d="M500 0 L730 630"/>
+<path d="M600 0 L830 630"/>
+<path d="M700 0 L930 630"/>
+<path d="M800 0 L1030 630"/>
+<path d="M900 0 L1130 630"/>
+<path d="M1000 0 L1230 630"/>
+<path d="M1100 0 L1330 630"/>
+<path d="M1200 0 L1430 630"/>
+<path d="M1300 0 L1530 630"/>
+<path d="M1400 0 L1630 630"/>
+</g>
+<rect x="70" y="48" width="166" height="36" rx="18" fill="#34d399" fill-opacity=".15" stroke="#34d399" stroke-opacity=".5"/>
+<text x="91" y="72" fill="#6ee7b7" font-size="17" font-weight="700" font-family="Arial, Helvetica, sans-serif" letter-spacing="2">TOOLSIVA GUIDE</text>
+<text x="70" y="147" fill="#fff" font-size="57" font-weight="800" letter-spacing="-1" font-family="Arial, Helvetica, sans-serif">SOLVE A PROPORTION</text>
+<text x="72" y="190" fill="#b9bbcb" font-size="22" font-family="Arial, Helvetica, sans-serif">Keep the order of corresponding quantities</text>
+<g filter="url(#shadow)">
+<rect x="70" y="233" width="506" height="143" rx="23" fill="#171b2d" stroke="#3b4058"/>
+<rect x="598" y="233" width="532" height="143" rx="23" fill="#171b2d" stroke="#3b4058"/>
+</g>
+<rect x="87" y="251" width="5" height="106" rx="3" fill="#34d399"/>
+<rect x="615" y="251" width="5" height="106" rx="3" fill="#34d399"/>
+<text x="112" y="280" fill="#a6a9bc" font-size="17" font-weight="700" letter-spacing="2" font-family="Arial, Helvetica, sans-serif">GIVEN</text>
+<text x="112" y="333" fill="#fff" font-size="34" font-weight="750" font-family="Arial, Helvetica, sans-serif">2 / 5 = 8 / D</text>
+<text x="641" y="280" fill="#a6a9bc" font-size="17" font-weight="700" letter-spacing="2" font-family="Arial, Helvetica, sans-serif">SOLVE FOR D</text>
+<text x="641" y="333" fill="#fff" font-size="34" font-weight="750" font-family="Arial, Helvetica, sans-serif">(5 × 8) / 2</text>
+<path d="M556 394 l20 18 -20 18" fill="none" stroke="#34d399" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="70" y="405" width="1060" height="154" rx="24" fill="url(#result)" stroke="#34d399" stroke-opacity=".65" stroke-width="2"/>
+<text x="105" y="453" fill="#6ee7b7" font-size="18" font-weight="700" letter-spacing="3" font-family="Arial, Helvetica, sans-serif">ILLUSTRATIVE RESULT</text>
+<text x="105" y="518" fill="#fff" font-size="59" font-weight="800" letter-spacing="-1" font-family="Arial, Helvetica, sans-serif">D = 20</text>
+<text x="72" y="601" fill="#9da1b7" font-size="17" font-family="Arial, Helvetica, sans-serif">toolsiva.com  •  Example values for learning; verify your inputs</text>
+<rect x="1053" y="582" width="76" height="8" rx="4" fill="#34d399"/>
+</svg>
