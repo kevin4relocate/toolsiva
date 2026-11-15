@@ -54,3 +54,48 @@ Some application protocols combine Base64 with other mechanisms, but security co
 Check whether the receiving system expects standard Base64, URL-safe Base64 or some other variant. Characters and padding conventions can differ.
 
 Encoding correctly is valuable for compatibility. Treat the encoded content with the same sensitivity as the original input.
+
+## Follow the bytes in a tiny example
+
+The [Base64 Encode](/tools/developer/base64-encode/) tool turns a text string into **UTF-8 bytes**, then encodes those bytes in standard Base64. For the text `Hi`:
+
+| Stage | Data |
+| --- | --- |
+| Original text | `Hi` |
+| UTF-8 byte values | `48 69` in hexadecimal |
+| Standard Base64 | `SGk=` |
+| Decoded text | `Hi` |
+
+Base64 divides a stream of bytes into groups that can be represented using a **64-character alphabet**. Padding marks such as `=` can be added when the byte length does not neatly fill a group.
+
+There is no encryption key in that procedure. Anyone who has `SGk=` can decode it into `Hi`, and the same applies to encoded secrets.
+
+## Test a non-ASCII word
+
+UTF-8 represents many non-ASCII characters with more than one byte. For example, the character `é` has UTF-8 bytes `C3 A9`, so its standard Base64 representation is `w6k=`.
+
+Enter `é` into Base64 Encode and check the result with [Base64 Decode](/tools/developer/base64-decode/). The decoder uses a strict UTF-8 interpretation for the resulting bytes. That means an arbitrary Base64 string representing **non-UTF-8 binary bytes** may fail to decode as text even though its Base64 syntax is valid.
+
+For arbitrary binary files, use a byte-oriented conversion workflow instead of assuming a text input field can preserve every possible byte sequence.
+
+## Size and alphabet differences
+
+Base64 is usually **larger** than the original binary data: three input bytes are commonly represented by four characters. For long inputs, the expansion approaches roughly **one third** before transport-specific line wrapping or headers.
+
+Standard Base64 uses symbols including `+` and `/`, while **Base64URL** substitutes `-` and `_` to avoid certain URL difficulties. Padding conventions can differ. A JWT uses Base64URL-formatted segments; those are not exactly the same alphabet and padding arrangement as every conventional Base64 string.
+
+Do not automatically treat Base64, Base64URL and percent encoding as interchangeable formats. Each serves a different transport convention.
+
+## Encoding, hashing and encryption answer different questions
+
+- **Encoding:** changes representation so systems can store or transfer data; ordinary Base64 is trivially reversible.
+- **Hashing:** computes a digest, often for checking integrity; it is not a way to recover plaintext.
+- **Encryption:** protects confidentiality when paired with an appropriate algorithm and secret or public/private key system.
+
+A password or API key does not become secure merely because it is Base64-encoded. Treat encoded sensitive content with the **same access controls** as the original.
+
+## Check the receiving format
+
+Before copying an encoded string into an API payload or configuration file, check whether the destination expects UTF-8 text, raw bytes, standard Base64, Base64URL, padding or a specific media type. A successful decode in the browser is useful, but protocol compatibility depends on matching the receiving system's rules.
+
+The goal of Base64 is reliable representation—not confidentiality, compression or authentication.
