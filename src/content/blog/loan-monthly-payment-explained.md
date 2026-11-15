@@ -57,12 +57,12 @@ The [Loan Calculator](/tools/calculator/loan-calculator/) models a conventional 
 
 A standard formula is:
 
-\`Payment = P × r ÷ (1 − (1 + r)^(−n))\`
+`Payment = P × r ÷ (1 − (1 + r)^(−n))`
 
 Here **P** is the amount borrowed, **r** is the annual nominal rate divided by 12 and **n** is the number of monthly installments. For a $100,000 balance at 6% annual interest over 30 years:
 
-- Monthly interest rate: \`0.06 ÷ 12 = 0.005\`.
-- Number of installments: \`30 × 12 = 360\`.
+- Monthly interest rate: `0.06 ÷ 12 = 0.005`.
+- Number of installments: `30 × 12 = 360`.
 - Estimated monthly principal and interest: **$599.55**.
 - Total modeled principal and interest over 360 months: about **$215,838**.
 - Of that total, modeled interest is about **$115,838**.
