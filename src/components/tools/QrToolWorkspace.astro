@@ -154,8 +154,7 @@ const config = configs[mode] ?? fallbackConfig;
 </section>
 <script>
   import QRCode from "qrcode";
-  const escapeWifi = (value: string) => value.replace(/([\\;,:"])/g, "\\$1");
-  const compactDate = (value: string) => value ? value.replace(/[-:]/g, "").replace(".", "").slice(0,15) : "";
+  import { buildQrPayload } from "@/lib/qrPayloads";
   document.querySelectorAll<HTMLElement>("[data-qr-workspace]").forEach((root) => {
     const mode = root.dataset.mode ?? "";
     const canvas = root.querySelector<HTMLCanvasElement>("[data-canvas]");
@@ -404,59 +403,44 @@ const config = configs[mode] ?? fallbackConfig;
       }
     };
 
-    const payload = () => {
-      if (mode === "qr-url-generator") return get("url");
-      if (mode === "qr-wifi-generator") {
-        const ssid = get("ssid");
-        const security = get("security") || "WPA";
-        const password = get("password");
-        const hidden = root.querySelector<HTMLInputElement>('[name="hidden"]')?.checked ?? false;
-        if (!ssid) return "";
-        if (security !== "nopass" && !password) return "";
-        const passwordPart = security === "nopass" ? "" : `P:${escapeWifi(password)};`;
-        return `WIFI:S:${escapeWifi(ssid)};T:${security};${passwordPart}H:${hidden ? "true" : "false"};;`;
-      }
-      if (mode === "qr-email-generator") return get("email") ? `mailto:${get("email")}?subject=${encodeURIComponent(get("subject"))}&body=${encodeURIComponent(get("message"))}` : "";
-      if (mode === "qr-phone-generator") return get("phone") ? `tel:${get("phone")}` : "";
-      if (mode === "qr-sms-generator") return get("phone") ? `SMSTO:${get("phone")}:${get("message")}` : "";
-      if (mode === "qr-whatsapp-generator") return get("phone") ? `https://wa.me/${get("phone").replace(/\D/g,"")}?text=${encodeURIComponent(get("message"))}` : "";
-      if (mode === "qr-vcard-generator") return get("name") ? `BEGIN:VCARD\nVERSION:3.0\nFN:${get("name")}\nTEL:${get("phone")}\nEMAIL:${get("email")}\nORG:${get("organization")}\nEND:VCARD` : "";
-      if (mode === "qr-location-generator") return get("latitude") && get("longitude") ? `geo:${get("latitude")},${get("longitude")}` : "";
-      if (mode === "qr-event-generator") return get("title") ? `BEGIN:VEVENT\nSUMMARY:${get("title")}\nDTSTART:${compactDate(get("start"))}\nDTEND:${compactDate(get("end"))}\nLOCATION:${get("location")}\nEND:VEVENT` : "";
-      return get("text");
+    const uid = crypto.randomUUID();
+    const eventStamp = new Date();
+    let renderVersion = 0;
+    const payloadResult = () => {
+      const values: Record<string, string | boolean> = {};
+      root.querySelectorAll<HTMLInputElement | HTMLSelectElement>("[name]").forEach((field) => {
+        values[field.name] = field instanceof HTMLInputElement && field.type === "checkbox"
+          ? field.checked
+          : field.value;
+      });
+      return buildQrPayload(mode, values, { uid, now: eventStamp });
     };
     const render = async () => {
       if (!canvas || !download || !status) return;
-      const value = payload();
+      const version = ++renderVersion;
+      const { value, error: payloadError } = payloadResult();
       const colors = updateColorUi();
       if (!value) {
         const context = canvas.getContext("2d");
         context?.clearRect(0, 0, canvas.width, canvas.height);
         download.disabled = true;
-        if (
-          mode === "qr-wifi-generator" &&
-          get("ssid") &&
-          get("security") !== "nopass" &&
-          !get("password")
-        ) {
-          status.textContent = "Enter the WiFi password, or choose No password for an open network.";
-        } else {
-          status.textContent = "Enter content to generate a QR code.";
-        }
+        status.textContent = payloadError ?? "Enter content to generate a QR code.";
         return;
       }
       try {
-        await composeQrCanvas(
-          canvas,
-          value,
-          256,
-          colors,
-        );
+        // Generate offscreen so outdated input cannot overwrite a newer QR preview.
+        const nextCanvas = document.createElement("canvas");
+        await composeQrCanvas(nextCanvas, value, 256, colors);
+        if (version !== renderVersion) return;
+        canvas.width = nextCanvas.width;
+        canvas.height = nextCanvas.height;
+        canvas.getContext("2d")?.drawImage(nextCanvas, 0, 0);
         download.disabled = !colors.safe;
         status.textContent = colors.safe
-          ? "QR code ready and optimized for scanning. Processing stays in your browser."
+          ? "QR code ready. Processing stays in your browser."
           : "Preview generated, but stronger color contrast is required before download.";
       } catch (error) {
+        if (version !== renderVersion) return;
         const context = canvas.getContext("2d");
         context?.clearRect(0, 0, canvas.width, canvas.height);
         download.disabled = true;
@@ -515,9 +499,12 @@ const config = configs[mode] ?? fallbackConfig;
     });
     download?.addEventListener("click", async () => {
       if (!canvas) return;
-      const value = payload();
+      const { value, error: payloadError } = payloadResult();
       const colors = updateColorUi();
-      if (!value || !colors.safe) return;
+      if (!value || !colors.safe) {
+        if (payloadError && status) status.textContent = payloadError;
+        return;
+      }
 
       const exportCanvas = document.createElement("canvas");
       try {
