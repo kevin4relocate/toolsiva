@@ -1145,7 +1145,7 @@ const toolCatalog: ToolDefinition[] = [
   "category": "calculator",
   "name": "Age Calculator",
   "shortDescription": "Calculate age from a date of birth.",
-  "metaDescription": "Calculate age in years, months and days.",
+  "metaDescription": "Calculate completed years from a birth date, including birthday and leap-day edge cases, using a browser-based age calculator.",
   "keywords": [
     "age calculator",
     "birthday calculator"
