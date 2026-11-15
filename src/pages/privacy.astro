@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { siteConfig } from "@/config/site";
 
-const updated = "August 3, 2026";
+const updated = "November 15, 2026";
 ---
 
 <BaseLayout
@@ -57,10 +57,12 @@ const updated = "August 3, 2026";
       <section>
         <h2>4. Local storage and browser features</h2>
         <p>
-          Individual tools may use temporary browser memory, canvas, clipboard, download or other
-          browser capabilities to perform a requested action. Toolsiva does not currently require
-          a user account. Any future persistent preference storage will be documented where it is
-          used.
+          Toolsiva stores your Google Analytics preference and may store favorites or recently
+          used tools in localStorage on your device. Markdown Live Preview offers optional local
+          draft saving, disabled by default. You can enable it in the editor, restore a previous
+          locally saved draft, disable saving or delete the saved draft. Draft content is not
+          intentionally uploaded to Toolsiva's application servers. Other tools may use browser
+          memory, canvas, clipboard and downloads without persistent storage.
         </p>
       </section>
 
@@ -68,9 +70,9 @@ const updated = "August 3, 2026";
         <h2>5. Cookies and consent</h2>
         <p>
           Essential infrastructure may use limited cookies or similar technologies for security,
-          traffic management and service delivery. Toolsiva also offers an analytics preference
-          banner for optional Google Analytics storage. Analytics storage is denied by default and
-          is enabled only after you select “Accept analytics.”
+          traffic management and service delivery. Google Analytics 4 and Google Tag Manager are
+          not loaded until you explicitly select “Accept Google Analytics.” Google Consent Mode
+          v2 defaults to denied for analytics and advertising storage and related purposes.
         </p>
         <p>
           Your selection is stored in your browser so the website can remember it. You can review
@@ -88,16 +90,32 @@ const updated = "August 3, 2026";
           behalf under Google’s applicable terms and privacy documentation.
         </p>
         <p>
-          Toolsiva configures Google Consent Mode v2 with analytics storage denied by default.
-          Advertising storage, advertising user data and advertising personalization remain
-          denied. Google Signals and advertising-personalization signals are disabled in the
-          website tag.
+          Toolsiva implements basic Google Consent Mode v2. Until you opt in, the website does
+          not load Google Analytics or Google Tag Manager scripts. Advertising storage,
+          advertising user data and advertising personalization remain denied even if you opt
+          into Google Analytics. Google Signals and advertising-personalization signals are
+          disabled in the site's direct GA4 tag. Withdrawing consent disables future collection
+          and reloads the page to remove previously loaded Google scripts.
         </p>
         <p>
-          Tool inputs, passwords, tokens, QR payloads and generated results are not intentionally
-          included in analytics events. Toolsiva does not currently display third-party
-          advertising. This policy will be updated before introducing advertising technologies
-          that materially change how information is processed.
+          Our own GA4 events contain only tool identifiers and fixed action categories, not
+          tool inputs, passwords, QR payloads, search text or generated results. Our directly
+          emitted pageview URLs omit search parameters and fragments. Google Tag Manager's
+          separately configured tags are reviewed and must follow the same consent and data
+          minimization rules. Toolsiva does not currently display third-party advertising.
+          This policy will be updated before materially changing those practices.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cloudflare Web Analytics</h2>
+        <p>
+          Cloudflare may separately collect pageview and performance metrics through its
+          Web Analytics beacon when enabled for the domain in the Cloudflare dashboard.
+          According to Cloudflare, this service does not use cookies or localStorage to
+          identify individuals for analytics. It operates independently of the optional
+          Google Analytics consent setting. Traffic and security logs are also managed by
+          Cloudflare as a hosting and security provider.
         </p>
       </section>
 
