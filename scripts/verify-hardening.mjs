@@ -23,7 +23,7 @@ export function verifyHardening({
   }
   assert(/\/_astro\/\*\s*\n\s*Cache-Control: public, max-age=31536000, immutable/.test(headers),
     "Hashed Astro assets must use immutable browser cache policy.");
-  assert(!/\/\*\s*\n\s*Cache-Control:\s*public,\s*max-age=31536000/im.test(headers),
+  assert(!/^\/\*\s*\n\s*Cache-Control:\s*public,\s*max-age=31536000/im.test(headers),
     "Do not apply immutable cache policy to non-versioned routes.");
 
   const style = fs.readFileSync(path.join(sourceDir, "styles/global.css"), "utf8");
