@@ -30,12 +30,14 @@ jobs:
       - run: npm run test:phase4
       - run: npm run test:phase5
       - run: npm run test:phase6
+      - run: npm run test:phase7
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
       - run: npm run analytics:verify
       - run: npm run seo:audit
       - run: npm run hardening:verify
+      - run: npm run adsense:audit
       - name: Open editorial review PR (never auto-publish)
         env:
           GH_TOKEN: ${{ github.token }}
