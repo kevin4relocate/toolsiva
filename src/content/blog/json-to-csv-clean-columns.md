@@ -65,50 +65,50 @@ The [JSON to CSV Converter](/tools/developer/json-to-csv/) expects the **top-lev
 
 Consider this source:
 
-\`\`\`json
+```json
 [
   {"name": "Ada", "score": 7},
   {"name": "Ben", "city": "Paris"}
 ]
-\`\`\`
+```
 
-The first record supplies \`name\` and \`score\`; the second introduces \`city\`. The converter creates columns for **all three**, preserving empty cells where a property is absent:
+The first record supplies `name` and `score`; the second introduces `city`. The converter creates columns for **all three**, preserving empty cells where a property is absent:
 
-\`\`\`csv
+```csv
 "name","score","city"
 "Ada","7",""
 "Ben","","Paris"
-\`\`\`
+```
 
 This matches the current implementation's **quoted-cell output**. Headers are quoted too, even if they contain no commas. That is valid CSV and helps the output preserve embedded punctuation.
 
 ## Missing, null and zero are not interchangeable
 
-Suppose a record explicitly contains \`"score": 0\`. The corresponding CSV cell is **"0"**, which means a numeric value was supplied.
+Suppose a record explicitly contains `"score": 0`. The corresponding CSV cell is **"0"**, which means a numeric value was supplied.
 
-If a record has **no score key**, the CSV cell is blank. Likewise, a JSON value of \`null\` currently becomes an empty cell. The conversion therefore loses the distinction between **property absent** and **property explicitly set to null**.
+If a record has **no score key**, the CSV cell is blank. Likewise, a JSON value of `null` currently becomes an empty cell. The conversion therefore loses the distinction between **property absent** and **property explicitly set to null**.
 
 Before importing into analytics software, decide whether those cases need to remain separate. If they do, transform the JSON into a clearer tabular representation with explicit status columns before converting.
 
 ## Quoting protects commas and newlines
 
-CSV cannot simply join every value with a comma. Consider a person's name \`Smith, Jane\`: it contains a comma that belongs **inside one field**. The exporter wraps values in double quotes and doubles any double quotes inside a field.
+CSV cannot simply join every value with a comma. Consider a person's name `Smith, Jane`: it contains a comma that belongs **inside one field**. The exporter wraps values in double quotes and doubles any double quotes inside a field.
 
 That also allows a cell to contain line breaks without being mistaken for a new record, provided the importing program understands quoted CSV correctly.
 
-**Spreadsheet safety:** quoting a cell is not the same as preventing a spreadsheet from evaluating formula-like content. Text beginning with characters such as \`=\` may be interpreted as a formula by some spreadsheet applications on import. Treat data from untrusted users as untrusted, inspect the destination application's import settings and use appropriate CSV/formula-injection defenses.
+**Spreadsheet safety:** quoting a cell is not the same as preventing a spreadsheet from evaluating formula-like content. Text beginning with characters such as `=` may be interpreted as a formula by some spreadsheet applications on import. Treat data from untrusted users as untrusted, inspect the destination application's import settings and use appropriate CSV/formula-injection defenses.
 
 ## Nested objects and arrays remain inside cells
 
 For a record like:
 
-\`\`\`json
+```json
 {"name": "Ada", "contact": {"city": "Paris", "country": "FR"}}
-\`\`\`
+```
 
-The nested \`contact\` object does **not** automatically create separate \`city\` and \`country\` columns. The converter serializes the nested object as JSON text inside a single CSV cell. It also serializes array values rather than producing extra rows.
+The nested `contact` object does **not** automatically create separate `city` and `country` columns. The converter serializes the nested object as JSON text inside a single CSV cell. It also serializes array values rather than producing extra rows.
 
-If you need columns such as \`contact.city\` and \`contact.country\`, flatten your objects deliberately before using the converter. CSV has no built-in hierarchy, so automated flattening rules should be defined for the specific data shape.
+If you need columns such as `contact.city` and `contact.country`, flatten your objects deliberately before using the converter. CSV has no built-in hierarchy, so automated flattening rules should be defined for the specific data shape.
 
 ## A better import-and-review checklist
 
