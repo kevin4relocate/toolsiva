@@ -25,7 +25,8 @@
     "test:phase2": "node --test tests/phase2.test.mjs",
     "tools:verify": "node scripts/verify-tool-routes.mjs",
     "test:phase3": "node --test tests/phase3.test.mjs",
-    "analytics:verify": "node scripts/verify-analytics.mjs"
+    "analytics:verify": "node scripts/verify-analytics.mjs",
+    "test:phase4": "node --experimental-strip-types --test tests/phase4.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
