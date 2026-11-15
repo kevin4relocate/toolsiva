@@ -5,7 +5,7 @@ slug: "markdown-preview-document-checklist"
 publishedDate: 2026-12-14
 updatedDate: 2026-12-14
 author: "Toolsiva Editorial"
-primaryTool: "Markdown QA"
+primaryTool: "Markdown Live Preview"
 primaryToolPath: "/tools/developer/markdown-live-preview/"
 relatedTools: []
 excerpt: "Review Markdown headings, task lists, tables and exports before publishing, with an actionable checklist for documentation writers."
