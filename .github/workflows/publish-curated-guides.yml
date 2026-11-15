@@ -1,0 +1,76 @@
+name: Publish One Curated Toolsiva Guide Daily
+
+on:
+  schedule:
+    # 02:00 UTC = 09:00 in Vietnam (Asia/Ho_Chi_Minh).
+    # GitHub schedules are best-effort and may start late.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: toolsiva-curated-daily-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish-curated-guide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate original guide illustrations
+        run: npm run blog:images
+
+      - name: Release at most one eligible curated guide
+        id: release
+        run: npm run blog:release
+
+      - name: Validate content and all editorial constraints
+        if: steps.release.outputs.released == 'true'
+        run: |
+          npm run blog:validate
+          npm run test:phase8
+          npm run test:phase7
+          npm run test:canonical-routing
+
+      - name: Check and build site before publishing
+        if: steps.release.outputs.released == 'true'
+        run: |
+          npm run check
+          npm run build
+          npm run tools:verify
+          npm run seo:audit
+          npm run seo:canonical
+          npm run adsense:audit
+
+      - name: Commit the single scheduled post to main
+        if: steps.release.outputs.released == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "Toolsiva Curated Publisher"
+          git config user.email "curated-publisher@users.noreply.github.com"
+          git add -- "src/content/blog/${{ steps.release.outputs.slug }}.md"
+          git diff --cached --exit-code && exit 1 || true
+          git commit -m "content(blog): publish curated guide ${{ steps.release.outputs.slug }}"
+          git push origin HEAD:main
+
+      - name: Publication summary
+        if: always()
+        run: |
+          echo "Scheduled release: ${{ steps.release.outputs.release_date || 'n/a' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Released: ${{ steps.release.outputs.released || 'false' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Article: ${{ steps.release.outputs.slug || 'none' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Only scheduled curated content is published. AI generator drafts remain review-only." >> "$GITHUB_STEP_SUMMARY"
