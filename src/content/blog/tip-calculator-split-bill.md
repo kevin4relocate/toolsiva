@@ -5,7 +5,7 @@ slug: "tip-calculator-split-bill"
 publishedDate: 2026-11-18
 updatedDate: 2026-11-18
 author: "Toolsiva Editorial"
-primaryTool: "Share the bill"
+primaryTool: "Tip Calculator"
 primaryToolPath: "/tools/calculator/tip-calculator/"
 relatedTools: []
 excerpt: "Calculate a restaurant tip, total and even split with an $80 example, while checking taxes, existing service charges and rounding."
