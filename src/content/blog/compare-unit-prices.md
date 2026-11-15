@@ -5,7 +5,7 @@ slug: "compare-unit-prices"
 publishedDate: 2026-12-04
 updatedDate: 2026-12-04
 author: "Toolsiva Editorial"
-primaryTool: "Unit price"
+primaryTool: "Unit Price Calculator"
 primaryToolPath: "/tools/calculator/unit-price-calculator/"
 relatedTools: []
 excerpt: "Compare two packages using cost per gram rather than sticker price, with a 300g versus 500g example."
