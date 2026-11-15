@@ -5,7 +5,7 @@ slug: "morse-code-translator-sos"
 publishedDate: 2026-11-20
 updatedDate: 2026-11-20
 author: "Toolsiva Editorial"
-primaryTool: "Morse translation"
+primaryTool: "Morse Code Translator"
 primaryToolPath: "/tools/text/morse-code-translator/"
 relatedTools: []
 excerpt: "Translate SOS between letters and Morse symbols, learn why spacing matters, and distinguish written code from transmitted timing."
