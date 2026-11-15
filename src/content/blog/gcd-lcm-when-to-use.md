@@ -5,7 +5,7 @@ slug: "gcd-lcm-when-to-use"
 publishedDate: 2026-12-02
 updatedDate: 2026-12-02
 author: "Toolsiva Editorial"
-primaryTool: "Divisors and multiples"
+primaryTool: "GCD and LCM Calculator"
 primaryToolPath: "/tools/calculator/gcd-lcm-calculator/"
 relatedTools: []
 excerpt: "Decide when to use greatest common divisor versus least common multiple, with the 12,18,30 example."
