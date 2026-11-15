@@ -53,3 +53,42 @@ If a contract or deadline specifies inclusive counting, apply the contract's rul
 Check leap years before manually typing February 29. Confirm the year especially when working around New Year's Day. For official periods, business days, holidays and jurisdictional rules may require a separate calendar.
 
 A date difference is reliable only when the question's counting convention is clear.
+
+## Calendar dates are not clock timestamps
+
+The [Date Difference Calculator](/tools/calculator/date-difference-calculator/) accepts **Start date** and **End date** as calendar dates. Its implementation validates the dates and compares them at **UTC midnight**. It then divides the millisecond difference by the length of a standard 24-hour UTC day.
+
+This avoids a common problem with subtracting **local** midnights. In some time zones, a daylight-saving clock change makes the elapsed time between two local midnight timestamps 23 or 25 hours instead of 24. When your question is about **calendar days**, you usually do not want the daylight-saving transition to change the answer.
+
+| Start date | End date | Calendar-day difference |
+| --- | --- | ---: |
+| 2026-03-07 | 2026-03-09 | **2 days** |
+| 2024-02-28 | 2024-03-01 | **2 days** (leap year) |
+| 2025-02-28 | 2025-03-01 | **1 day** |
+| 2026-12-31 | 2027-01-01 | **1 day** |
+
+The March 7–9 example spans the March daylight-saving change in locations that observe it in 2026, but the calendar separation is still two days. The tool does not ask you to choose a time zone because it is not measuring the exact elapsed hours between local events.
+
+## Inclusive counting is a separate operation
+
+Imagine a booking that includes arrival on March 7 and departure on March 9. The date difference is **2 days**, and a two-night stay normally corresponds to that separation. But a work assignment that counts **every calendar date including the first and last** covers March 7, 8 and 9: **3 dates**.
+
+For a period in which both endpoints count, an ordinary rule is:
+
+\`Inclusive calendar-date count = absolute date difference + 1\`
+
+That assumes the domain really uses inclusive calendar dates. Legal deadlines, banking cutoffs and business-day calendars may instead exclude weekends, holidays or particular boundary dates. Always follow the applicable rule.
+
+## Comparing dates across years and leap days
+
+An interval crossing February 29 in a leap year includes that additional calendar date. The tool validates real calendar dates, so **2024-02-29** is valid but **2025-02-29** is not.
+
+You can test a year boundary too: from December 31 to January 1 is one day, even though the year labels differ. If an output feels too large or too small, check that you selected the correct year in both fields.
+
+The tool returns an **absolute value**. Reversing the start and end does not produce a negative result, so it cannot directly tell you which event happened first. You need to inspect the dates separately to establish direction.
+
+## When to choose a different tool
+
+Do not use calendar-day subtraction to calculate an overnight work shift or the duration of a flight. Those involve actual times, time zones and potentially daylight-saving changes. The [Time Duration Calculator](/tools/calculator/time-duration-calculator/) can help with simple clock-time intervals, but its own overnight behavior is not a replacement for timestamp- and time-zone-aware calculations.
+
+For a contract, travel plan or project schedule, write down whether you want **elapsed hours**, **calendar-day separation**, **inclusive dates** or **business days** before choosing a tool. The definition matters as much as the subtraction.
