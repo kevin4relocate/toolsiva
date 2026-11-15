@@ -5,7 +5,7 @@ slug: "compound-interest-frequency"
 publishedDate: 2026-11-30
 updatedDate: 2026-11-30
 author: "Toolsiva Editorial"
-primaryTool: "Compound growth"
+primaryTool: "Compound Interest Calculator"
 primaryToolPath: "/tools/calculator/compound-interest-calculator/"
 relatedTools: []
 excerpt: "Compare annual and more frequent compounding, with a $1,000 example and explanations of rate and time assumptions."
