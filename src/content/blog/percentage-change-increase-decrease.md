@@ -54,7 +54,7 @@ The most useful reporting style combines the original, new value, absolute diffe
 
 A percentage change makes more sense when a reader can see the original value, the new value and the difference in ordinary units. The [Percentage Change Calculator](/tools/calculator/percentage-change-calculator/) implements:
 
-\`Percentage change = (new − original) ÷ |original| × 100\`
+`Percentage change = (new − original) ÷ |original| × 100`
 
 For positive starting values, this is the familiar comparison relative to the original amount.
 
@@ -71,7 +71,7 @@ Compare the first two rows. Both have a difference of 25 units, but the base amo
 
 Suppose a conversion rate changes from **4% to 5%**. The difference is **1 percentage point**, but the relative percentage increase is:
 
-\`(5 − 4) ÷ 4 × 100 = 25%\`
+`(5 − 4) ÷ 4 × 100 = 25%`
 
 Both statements can be correct, but they describe different measurements. If you write "conversion improved by 1%," readers may not know whether you mean a one-percentage-point change or a 1% relative increase. State the starting and ending rates so the meaning is unambiguous.
 
@@ -81,9 +81,9 @@ For a separate question such as "What is 15% of 80?" use the [Percentage Calcula
 
 This specific Toolsiva implementation divides by the **absolute value** of the original. For example:
 
-\`Original = −50; New = −30; Difference = +20\`
+`Original = −50; New = −30; Difference = +20`
 
-\`20 ÷ |−50| × 100 = +40%\`
+`20 ÷ |−50| × 100 = +40%`
 
 That numerical result says the value moved upward by 20 units relative to a 50-unit baseline magnitude. It does **not** automatically mean that a business's losses, debt or risk "grew 40%" in the ordinary sense. Reporting conventions can differ for signed values, so include the equation or prefer the absolute difference when the sign may confuse the audience.
 
