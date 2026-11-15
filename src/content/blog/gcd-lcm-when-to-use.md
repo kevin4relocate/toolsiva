@@ -17,7 +17,7 @@ aiAssisted: true
 curatedSeries: true
 ---
 
-GCD and LCM answer almost opposite questions. The **greatest common divisor** is the largest positive integer that divides every input exactly. The **least common multiple** is the smallest nonnegative common multiple of the inputs.
+GCD and LCM answer almost opposite questions. For nonzero whole numbers, the **greatest common divisor** is the largest positive integer that divides every input exactly. The **least common multiple** is the smallest **positive** common multiple. Zero needs a special convention, which we explain below.
 
 Use the [GCD/LCM Calculator](/tools/calculator/gcd-lcm-calculator/) for whole-number lists where those relationships matter.
 
