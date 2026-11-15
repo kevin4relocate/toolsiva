@@ -5,7 +5,7 @@ slug: "gigabyte-gibibyte-conversion"
 publishedDate: 2026-12-15
 updatedDate: 2026-12-15
 author: "Toolsiva Editorial"
-primaryTool: "Storage units"
+primaryTool: "Data Storage Converter"
 primaryToolPath: "/tools/converter/data-storage-converter/"
 relatedTools: []
 excerpt: "Understand the difference between GB and GiB, with a 1 GiB example and advice for comparing storage labels."
