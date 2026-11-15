@@ -219,7 +219,7 @@
   }
 
   function markdown(state) {
-    function clean(cell) { return String(cell).replaceAll("|", "\\\\|").replaceAll("\\n", " "); }
+    function clean(cell) { return String(cell).replaceAll("|", "\\|").replaceAll("\n", " "); }
     var first = state.data[0] || [];
     var header = "| " + first.map(clean).join(" | ") + " |";
     var divider = "| " + state.alignments.map(function (alignment) {
@@ -227,8 +227,8 @@
     }).join(" | ") + " |";
     var body = state.data.slice(1).map(function (row) {
       return "| " + row.map(clean).join(" | ") + " |";
-    }).join("\\n");
-    return [header, divider, body].filter(Boolean).join("\\n");
+    }).join("\n");
+    return [header, divider, body].filter(Boolean).join("\n");
   }
 
   function update(root, mode, state) {
@@ -258,7 +258,7 @@
           lines.push(row.textContent);
         });
         if (!found.length) list.textContent = "No matches.";
-        result = lines.join("\\n");
+        result = lines.join("\n");
         copy.dataset.result = result;
         copy.disabled = !result;
       } catch (error) {
@@ -299,7 +299,7 @@
       entries.sort(value(root, "[data-sort-mode]") === "alphabetical"
         ? function (a, b) { return a[0].localeCompare(b[0]); }
         : function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
-      result = entries.map(function (item) { return item[0] + "\\t" + item[1]; }).join("\\n");
+      result = entries.map(function (item) { return item[0] + "\t" + item[1]; }).join("\n");
     } else if (mode === "programming-case-converter") {
       var raw = value(root, "[data-input]").replace(/([a-z0-9])([A-Z])/g, "$1 $2");
       var parts = raw.split(/[^\p{L}\p{N}]+/u).filter(Boolean).map(function (part) { return part.toLocaleLowerCase(); });
@@ -312,7 +312,7 @@
           "kebab-case: " + parts.join("-"),
           "dot.case: " + parts.join("."),
           "CONSTANT_CASE: " + parts.join("_").toLocaleUpperCase()
-        ].join("\\n");
+        ].join("\n");
       }
     } else if (mode === "morse-code-translator") {
       var morseInput = value(root, "[data-input]");
@@ -347,7 +347,7 @@
       numbers.sort(value(root, "[data-direction]") === "desc"
         ? function (a, b) { return b - a; }
         : function (a, b) { return a - b; });
-      result = numbers.join("\\n");
+      result = numbers.join("\n");
     } else if (mode === "remove-line-breaks") {
       var lines = value(root, "[data-input]").split(/\r?\n/).map(function (line) { return line.trim(); }).filter(Boolean);
       var selected = value(root, "[data-separator-mode]");
@@ -421,7 +421,7 @@
         picks.push(pool[index]);
         if (checked(root, "[data-unique]")) pool.splice(index, 1);
       }
-      setResult(root, picks.join("\\n"));
+      setResult(root, picks.join("\n"));
     });
 
     root.querySelector("[data-copy]").addEventListener("click", function () {
