@@ -5,7 +5,7 @@ slug: "word-counter-writing-goals"
 publishedDate: 2026-11-22
 updatedDate: 2026-11-22
 author: "Toolsiva Editorial"
-primaryTool: "Word count audit"
+primaryTool: "Word Counter"
 primaryToolPath: "/tools/text/word-counter/"
 relatedTools: []
 excerpt: "Understand word counts versus character counts, set writing goals and review limits without using length as a proxy for quality."
