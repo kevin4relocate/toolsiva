@@ -5,7 +5,7 @@ slug: "regex-tester-verify-patterns"
 publishedDate: 2026-12-08
 updatedDate: 2026-12-08
 author: "Toolsiva Editorial"
-primaryTool: "Regex testing"
+primaryTool: "Regex Tester"
 primaryToolPath: "/tools/developer/regex-tester/"
 relatedTools: []
 excerpt: "Learn to test regular-expression patterns against known samples, inspect matches and avoid costly untrusted expressions."
