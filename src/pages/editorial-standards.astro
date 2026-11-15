@@ -1,0 +1,67 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+---
+
+<BaseLayout
+  title="Editorial Standards"
+  description="How Toolsiva approaches practical tool guides, AI-assisted drafts, factual corrections, advertising and editorial transparency."
+>
+  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Transparency</p>
+    <h1 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">Editorial standards</h1>
+    <p class="mt-5 text-base leading-7 text-zinc-400">
+      Toolsiva combines browser-based utilities with practical guides that explain what a tool
+      does, how to use it and when its results need independent verification.
+    </p>
+
+    <div class="prose-premium mt-10 space-y-10 text-sm leading-7 text-zinc-300">
+      <section>
+        <h2>Practical information comes first</h2>
+        <p>
+          A guide should help readers solve a concrete task. We aim to include examples that can
+          be reproduced with the related tool, explain meaningful limitations and link only to
+          relevant supporting resources. Tool availability does not guarantee that any particular
+          output is suitable for high-stakes decisions.
+        </p>
+      </section>
+      <section>
+        <h2>AI-assisted draft review</h2>
+        <p>
+          Toolsiva may use generative AI to help prepare drafts. As of November 15, 2026, the
+          automated guide workflow produces unpublished drafts for editorial review rather than
+          publishing them immediately. A draft needs its claims, examples, originality, relevance,
+          links and actual tool behavior reviewed before its status is changed to published.
+          Existing articles may be revised as this review process develops.
+        </p>
+      </section>
+      <section>
+        <h2>Accuracy and revisions</h2>
+        <p>
+          Software and standards can change. Calculator assumptions, encoding formats, browser
+          behavior and security advice are not universally interchangeable. We aim to correct
+          reproducible errors and make meaningful updates visible through revised article dates,
+          without altering dates just to imply freshness.
+        </p>
+      </section>
+      <section>
+        <h2>Advertising independence</h2>
+        <p>
+          Toolsiva does not currently display third-party advertisements. If advertising is
+          introduced, advertisements should be distinguishable from tool controls and editorial
+          information, and the Privacy Policy will be updated to reflect applicable data use and
+          consent practices. Payment or advertising should not determine a calculation's output.
+        </p>
+      </section>
+      <section>
+        <h2>Questions and corrections</h2>
+        <p>
+          To report a mistake, please include the page URL, sample input, expected result and
+          actual result. Send feedback to
+          <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
+          You can also review our <a href="/privacy">Privacy Policy</a> and <a href="/disclaimer">Disclaimer</a>.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
