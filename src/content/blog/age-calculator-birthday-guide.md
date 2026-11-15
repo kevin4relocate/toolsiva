@@ -17,28 +17,67 @@ aiAssisted: true
 curatedSeries: true
 ---
 
-Age in completed years depends on whether the birthday has happened yet. Simply subtracting the birth year from today's year is not enough. This matters for forms, deadlines and any situation asking for age on a specific date.
+Age is easy to describe in conversation, but calculating it correctly means checking more than the year printed on a birth certificate. You need a **birth date**, a **reference date**, and a decision about whether a birthday has already happened in the current year. Subtracting the years alone can give an answer one year too high.
 
-Use the [Age Calculator](/tools/calculator/age-calculator/) when you need a fast calculation from a date of birth.
+[Open the Toolsiva Age Calculator](/tools/calculator/age-calculator/) to try the examples below. The current tool asks for a date of birth and calculates **completed years as of today**, using your browser's local calendar date. It does not currently provide a month-and-day breakdown or let you choose a different reference date.
 
-## A birthday boundary example
+## The rule: has the birthday happened this year?
 
-Someone born on July 20, 2000 is **25** on July 19, 2026, not 26. The arithmetic 2026 minus 2000 gives 26, but the birthday is one day away. On July 20, their completed age becomes 26.
+Start by subtracting the birth year from the reference year. Then subtract one if the person has **not yet reached their birthday** on the reference date.
 
-To check manually, subtract the years, compare the current month and day with the birth month and day, then subtract one if the birthday has not happened this year. The calculator automates this comparison.
+Consider someone born on **December 20, 2000**. On November 15, 2026:
 
-## Enter the date carefully
+- Year difference: 2026 − 2000 = 26.
+- December 20 has not arrived in 2026.
+- Completed age: **25 years**.
 
-Choose the actual date of birth. Check that the month and year were not transposed or mistyped. The result is years already completed, not a count of elapsed hours. A future birth date or an impossible calendar date is not valid input.
+For someone born on **January 1, 2000**, the same reference date gives **26 completed years**, because the birthday already occurred.
 
-If you want elapsed days between two events rather than the person's age, use the [Date Difference Calculator](/tools/calculator/date-difference-calculator/).
+A useful mental check is to ask: *How many birthdays has this person passed?* That is what a completed-year age is counting.
 
-## What about February 29?
+## Example: calculate age using Toolsiva
 
-Under this calculator's month-and-day comparison, a person born on February 29, 2000 is 25 on February 28, 2026 and becomes 26 on March 1, 2026. Institutions may apply different legal or administrative policies for leap-day birthdays. A calculator cannot decide those rules on their behalf.
+1. Visit the [Age Calculator](/tools/calculator/age-calculator/).
+2. Choose a valid date of birth in the **Date of birth** field.
+3. Read the result in years. The tool updates as the input changes.
+4. Check the date on your device: the calculation uses its local **today**, which can matter around midnight or when you travel.
+5. If you need a different reference date—say an age at the start of a course—use the birthday rule above rather than interpreting today's result as a past-age lookup.
 
-## When age alone is not enough
+For this example, imagine your device's date is November 15, 2026. Enter **2000-01-01**. The expected result is **26 years**. Try changing the birthday to **2000-12-20**; the expected completed age is **25 years**.
 
-A form might ask for age today, age at a closing date or age at the start of an event. Record the reference date rather than assuming the present-day result answers every question. In official contexts, follow the rules issued by the organization requesting the information.
+## Why subtracting years alone can be wrong
 
-**Quick check:** Does the date refer to an upcoming birthday? If so, calculate against the actual reference date; do not round a nearly completed year upward.
+The shortcut `current year − birth year` counts calendar-year labels, not completed birthdays. On January 2, somebody born on December 31 may not have reached their birthday for almost another full year. When planning eligibility deadlines or filling a form, this distinction matters.
+
+| Date of birth | Reference date | Completed years | Why |
+| --- | --- | ---: | --- |
+| 2000-01-01 | 2026-11-15 | 26 | Birthday already passed |
+| 2000-12-20 | 2026-11-15 | 25 | Birthday still ahead |
+| 2008-11-15 | 2026-11-15 | 18 | Birthday is today |
+| 2008-11-16 | 2026-11-15 | 17 | Birthday is tomorrow |
+
+These are illustrative examples on a fixed reference date, not live results that always remain the same.
+
+## Leap-day birthdays need special attention
+
+Someone born on February 29 has a straightforward anniversary in leap years. In a non-leap year, the legal or administrative treatment of that birthday can differ between jurisdictions and organizations. Toolsiva's current completed-year calculation advances a February 29 birth date when the calendar passes **March 1** in a non-leap year. This is a software convention, **not** a legal determination for eligibility, contracts or age-restricted services.
+
+For official purposes, use the rule provided by the authority requesting the information, even if it differs from a general online calculator.
+
+## Age versus days between dates
+
+Age in completed years and elapsed calendar days answer different questions. To find how many days fall between two particular dates, use the [Date Difference Calculator](/tools/calculator/date-difference-calculator/). That tool accepts a start date and an end date and counts calendar days rather than birthdays.
+
+Neither result is a substitute for checking the wording on an official document. A form may ask for age on a specified day, age at the end of a calendar year or a complete birth date. Read the requirement before choosing which calculation to use.
+
+## Quick troubleshooting
+
+**The result seems one year too high.** Confirm whether the birthday has happened this year. Also check that the date picker hasn't reversed the month and day.
+
+**The result changes unexpectedly near midnight.** Your device's local date may have advanced; try again after checking its time zone.
+
+**The date of birth is in the future.** The tool rejects future dates rather than displaying a negative age.
+
+**You need months and days, not just years.** The current Age Calculator presents completed years only. Don't treat its output as an exact years-months-days interval.
+
+The reliable approach is simple: use the correct dates, count completed birthdays, and treat official age rules as separate from a general-purpose calculator.
