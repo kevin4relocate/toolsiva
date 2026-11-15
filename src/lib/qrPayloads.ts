@@ -14,7 +14,7 @@ function escapeText(value: string): string {
 }
 
 function escapeWifi(value: string): string {
-  return value.replace(/([\\;,:"'])/g, "\\$1");
+  return value.replace(/([\\;,:"])/g, "\\$1");
 }
 
 function phoneNumber(raw: string): string | null {
