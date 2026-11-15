@@ -75,7 +75,7 @@ Imagine a booking that includes arrival on March 7 and departure on March 9. The
 
 For a period in which both endpoints count, an ordinary rule is:
 
-\`Inclusive calendar-date count = absolute date difference + 1\`
+`Inclusive calendar-date count = absolute date difference + 1`
 
 That assumes the domain really uses inclusive calendar dates. Legal deadlines, banking cutoffs and business-day calendars may instead exclude weekends, holidays or particular boundary dates. Always follow the applicable rule.
 
