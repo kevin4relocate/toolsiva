@@ -115,7 +115,7 @@ test("Indexable 404 error pages are blocked", () => {
 test("Editorial standards are linked globally and never invent a publisher ID", () => {
   const footer = fs.readFileSync("src/components/layout/Footer.astro", "utf8");
   const editorial = fs.readFileSync("src/pages/editorial-standards.astro", "utf8");
-  assert.match(footer, /href="\/editorial-standards"/);
+  assert.match(footer, /href="\/editorial-standards\/"/);
   assert.match(editorial, /AI-assisted drafts/);
   assert.match(editorial, /does not currently display third-party advertisements/);
   assert.doesNotMatch(editorial, /ca-pub-\d{16}/);
