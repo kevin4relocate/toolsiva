@@ -16,14 +16,14 @@ const categorySlug = Astro.params.category as ToolCategory;
 const category = categoryMap.get(categorySlug);
 
 if (!category) {
-  return Astro.redirect("/tools");
+  return Astro.redirect("/tools/");
 }
 
 const categoryTools = tools
   .filter((tool) => tool.category === categorySlug)
   .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.name.localeCompare(b.name));
 
-const categoryUrl = new URL(`/tools/${category.slug}`, siteConfig.url).toString();
+const categoryUrl = new URL(`/tools/${category.slug}/`, siteConfig.url).toString();
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -43,7 +43,7 @@ const collectionSchema = {
       "@type": "ListItem",
       position: index + 1,
       name: tool.name,
-      url: new URL(`/tools/${tool.category}/${tool.slug}`, siteConfig.url).toString(),
+      url: new URL(`/tools/${tool.category}/${tool.slug}/`, siteConfig.url).toString(),
     })),
   },
 };
@@ -56,7 +56,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "All Tools",
-      item: new URL("/tools", siteConfig.url).toString(),
+      item: new URL("/tools/", siteConfig.url).toString(),
     },
     {
       "@type": "ListItem",
@@ -72,14 +72,14 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
 <BaseLayout
   title={category.name}
   description={category.description}
-  canonicalPath={`/tools/${category.slug}`}
+  canonicalPath={`/tools/${category.slug}/`}
 >
   <script is:inline type="application/ld+json" set:html={safeJsonForHtml(collectionSchema)} />
   <script is:inline type="application/ld+json" set:html={safeJsonForHtml(breadcrumbSchema)} />
 
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <nav class="mb-6 text-sm text-zinc-500" aria-label="Breadcrumb">
-      <a class="hover:text-white" href="/tools">All tools</a>
+      <a class="hover:text-white" href="/tools/">All tools</a>
       <span class="mx-2">/</span>
       <span>{category.name}</span>
     </nav>
@@ -93,7 +93,7 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
     <nav class="mt-7 flex flex-wrap gap-2" aria-label={`Popular ${category.name}`}>
       {categoryTools.slice(0, 6).map((tool) => (
         <a
-          href={`/tools/${tool.category}/${tool.slug}`}
+          href={`/tools/${tool.category}/${tool.slug}/`}
           class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:border-brand-400/40 hover:text-brand-200"
         >
           {tool.name}
