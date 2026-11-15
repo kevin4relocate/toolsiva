@@ -80,7 +80,7 @@ If a value appears close to a category cutoff, remember that weight, height and 
 
 ## Troubleshooting unexpected values
 
-**The result is unusually high.** Check that height was entered in **centimeters**. Typing \`1.70\` when you meant \`170\` makes the tool treat the number as 1.70 cm, not 1.70 m.
+**The result is unusually high.** Check that height was entered in **centimeters**. Typing `1.70` when you meant `170` makes the tool treat the number as 1.70 cm, not 1.70 m.
 
 **The result is invalid.** Both measurements must be greater than zero. Blank, zero or negative inputs cannot produce a meaningful value.
 
