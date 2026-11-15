@@ -126,6 +126,7 @@ test("Storage-blocked browser defaults to no tracking and can consent for curren
 test("Analytics event handler only sends allowlisted fields and static action names", () => {
   const source = eventsSource;
   assert.match(source, /window\.toolsivaConsent\?\.hasAnalyticsConsent\(\)/);
+  assert.match(source, /SAFE_ACTION_SOURCES\.has\(normalized\)/);
   assert.match(source, /return element\.tagName\.toLowerCase\(\) === "a" \? "link" : "button"/);
   assert.doesNotMatch(source, /return buttonLabel\(element\) \|\|/);
   assert.match(source, /if \(target\.closest\("form"\)\) return/);
