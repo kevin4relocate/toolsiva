@@ -7,10 +7,10 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build",
+    "dev": "npm run blog:images && astro dev",
+    "build": "npm run blog:images && astro check && astro build",
     "preview": "astro preview",
-    "check": "astro check",
+    "check": "npm run blog:images && astro check",
     "deploy": "npm run build && wrangler deploy",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -20,7 +20,7 @@
     "seo:audit:strict": "node scripts/production-seo-audit.mjs --strict",
     "launch:check": "npm run check && npm run build && npm run seo:audit",
     "blog:generate": "node scripts/generate-daily-blog.mjs",
-    "blog:validate": "node scripts/validate-blog-links.mjs",
+    "blog:validate": "npm run blog:images && node scripts/validate-blog-links.mjs",
     "test:phase1": "node --experimental-strip-types --test tests/phase1.test.mjs",
     "test:phase2": "node --test tests/phase2.test.mjs",
     "tools:verify": "node scripts/verify-tool-routes.mjs",
@@ -33,7 +33,11 @@
     "test:phase7": "node --test tests/phase7.test.mjs",
     "adsense:audit": "node scripts/adsense-readiness-audit.mjs",
     "test:canonical-routing": "node --test tests/canonical-routing.test.mjs",
-    "seo:canonical": "node scripts/verify-canonical-routing.mjs"
+    "seo:canonical": "node scripts/verify-canonical-routing.mjs",
+    "blog:images": "node scripts/generate-guide-images.mjs",
+    "blog:release": "node scripts/release-curated-guide.mjs",
+    "blog:release:dry": "node scripts/release-curated-guide.mjs --dry-run",
+    "test:phase8": "node --test tests/phase8.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
