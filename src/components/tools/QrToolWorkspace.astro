@@ -168,7 +168,6 @@ const config = configs[mode] ?? fallbackConfig;
     const lightHex = root.querySelector<HTMLInputElement>("[data-light-hex]");
     const frameStyle =
       root.querySelector<HTMLSelectElement>("[data-frame-style]");
-    const get = (name:string) => (root.querySelector<HTMLInputElement|HTMLSelectElement>(`[name="${name}"]`)?.value ?? "").trim();
 
     const normalizeHex = (value: string, fallback: string) => {
       const candidate = value.trim().toUpperCase();
