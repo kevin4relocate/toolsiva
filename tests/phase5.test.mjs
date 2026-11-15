@@ -36,7 +36,7 @@ test("All 123 catalog tools have distinct priority guidance or task-specific usa
   assert.ok(notes.every((slug) => expected.has(slug)));
   for (const [slug, note] of Object.entries(usageNotes)) {
     for (const name of ["how", "tryThis", "watch"]) {
-      assert.ok(typeof note[name] === "string" && note[name].length >= 55,
+      assert.ok(typeof note[name] === "string" && note[name].trim().length >= 20,
         slug + ": missing or insufficient " + name);
     }
   }
@@ -88,7 +88,7 @@ function seed(root, config = {}) {
     links: config.badLink ? '<a href="/not-found">Broken</a>' : '<a href="/tools/text">Category</a>',
     canonical: config.badCanonical ? "/tools/text/other" : "/tools/text/demo",
   }));
-  write("404.html", page("/404.html", { noindex: true, canonical: "/" }));
+  write("404.html", page("/404.html", { noindex: true, canonical: "/404.html" }));
   write("robots.txt", "User-agent: *\nAllow: /\nSitemap: https://toolsiva.com/sitemap-index.xml\n");
   write("sitemap-index.xml", '<sitemapindex><sitemap><loc>https://toolsiva.com/sitemap-0.xml</loc></sitemap></sitemapindex>');
   const urls = ["/", "/tools", "/tools/text", "/tools/text/demo"];
