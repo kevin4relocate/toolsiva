@@ -22,7 +22,7 @@ test("Cloudflare security header policy blocks framing and prevents MIME sniffin
   assert.match(headers, /Referrer-Policy: strict-origin-when-cross-origin/);
   assert.match(headers, /frame-ancestors 'none'/);
   assert.match(headers, /\/_astro\/\*\s*\n\s*Cache-Control: public, max-age=31536000, immutable/);
-  assert.doesNotMatch(headers, /\/\*\s*\n\s*Cache-Control: public, max-age=31536000, immutable/);
+  assert.doesNotMatch(headers, /^\/\*\s*\n\s*Cache-Control: public, max-age=31536000, immutable/m);
 });
 
 test("Header navigation keeps menu limited while all tools remain accessible from categories", () => {
