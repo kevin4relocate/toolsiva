@@ -15,7 +15,7 @@ const blog = defineCollection({
     relatedTools: z.array(z.object({ name: z.string(), path: z.string().startsWith("/tools/") })).default([]),
     keywords: z.array(z.string()).default([]),
     excerpt: z.string().min(50),
-    draft: z.boolean().default(false),
+    draft: z.boolean().default(true),
     aiAssisted: z.boolean().default(false),
   }),
 });
