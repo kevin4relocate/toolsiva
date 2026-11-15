@@ -5,7 +5,7 @@ slug: "fraction-calculator-common-denominator"
 publishedDate: 2026-12-01
 updatedDate: 2026-12-01
 author: "Toolsiva Editorial"
-primaryTool: "Fraction addition"
+primaryTool: "Fraction Calculator"
 primaryToolPath: "/tools/calculator/fraction-calculator/"
 relatedTools: []
 excerpt: "Add fractions with unlike denominators using 1/2 plus 1/3, and understand why dividing by zero is invalid."
