@@ -5,7 +5,7 @@ slug: "running-pace-per-km"
 publishedDate: 2026-12-03
 updatedDate: 2026-12-03
 author: "Toolsiva Editorial"
-primaryTool: "Running pace"
+primaryTool: "Pace Calculator"
 primaryToolPath: "/tools/calculator/pace-calculator/"
 relatedTools: []
 excerpt: "Calculate running pace and average speed from five kilometres in thirty minutes, and avoid minute-rounding errors."
