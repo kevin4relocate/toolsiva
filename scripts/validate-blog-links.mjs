@@ -24,7 +24,7 @@ function toolPathFromLink(href) {
   return pathname.replace(/\/+$/, "");
 }
 
-export function validateBlogContent(name, content, validPaths) {
+export function validateBlogContent(name, content, validPaths, options = {}) {
   const issues = [];
   const match = content.match(/^\uFEFF?---\r?\n([\s\S]*?)\r?\n---\r?\n/);
   if (!match) return [name + ": missing or malformed YAML frontmatter."];
@@ -55,6 +55,28 @@ export function validateBlogContent(name, content, validPaths) {
     }
     return true;
   };
+
+  // No unreviewed scheduled draft may be published without an actual image.
+  // Ordinary AI-generated unpublished drafts may omit images until editorial review.
+  const requiresHero = data.draft === false || data.reviewApproved === true || Boolean(data.scheduledDate);
+  if (requiresHero) {
+    if (typeof data.heroImage !== "string" || !/^\/blog\/[a-z0-9-]+\.(?:svg|webp|png|jpg|jpeg)$/i.test(data.heroImage)) {
+      issues.push(name + ": published or queued guide needs an internal SEO heroImage.");
+    } else if (options.publicRoot) {
+      const asset = path.join(options.publicRoot, data.heroImage.slice(1));
+      if (!fs.existsSync(asset) || !fs.statSync(asset).isFile() || fs.statSync(asset).size < 100) {
+        issues.push(name + ": missing or empty hero image file: " + data.heroImage);
+      }
+    }
+    for (const key of ["heroImageAlt", "heroImageCaption"]) {
+      if (typeof data[key] !== "string" || data[key].trim().length < 30) {
+        issues.push(name + ": missing or insufficient " + key + " for SEO and accessibility.");
+      }
+    }
+    if (![data.heroImageWidth, data.heroImageHeight].every((n) => Number.isInteger(n) && n > 0)) {
+      issues.push(name + ": hero image needs positive pixel width and height.");
+    }
+  }
 
   checkLink(data.primaryToolPath, "primaryToolPath");
   if (data.relatedTools !== undefined && !Array.isArray(data.relatedTools)) {
@@ -99,7 +121,7 @@ export function validateBlogDirectory(root = process.cwd(), dir = path.join(root
   if (!fs.existsSync(dir)) return { errors: ["Missing blog directory: " + dir], checkedPosts: 0, toolCount: registry.tools.length };
   const files = fs.readdirSync(dir).filter((name) => /\.(md|mdx)$/i.test(name));
   const errors = files.flatMap((name) =>
-    validateBlogContent(name, fs.readFileSync(path.join(dir, name), "utf8"), registry.paths)
+    validateBlogContent(name, fs.readFileSync(path.join(dir, name), "utf8"), registry.paths, { publicRoot: path.join(root, "public") })
   );
   return { errors, checkedPosts: files.length, toolCount: registry.tools.length };
 }
