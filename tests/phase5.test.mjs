@@ -85,7 +85,8 @@ function seed(root, config = {}) {
   write("tools/text/index.html", page("/tools/text", { links: '<a href="/tools/text/demo/">Demo</a>' }));
   write("tools/text/demo/index.html", page("/tools/text/demo", {
     types: ["WebApplication", "BreadcrumbList"],
-    links: config.badLink ? '<a href="/not-found">Broken</a>' : '<a href="/tools/text">Category</a>',
+    links: (config.badLink ? '<a href="/not-found">Broken</a>' : '<a href="/tools/text">Category</a>') +
+      '<script>const template = `<a href="${escapeHtml(tool.path)}">Fake inline link</a>`;</script>',
     canonical: config.badCanonical ? "/tools/text/other" : "/tools/text/demo",
   }));
   write("404.html", page("/404.html", { noindex: true, canonical: "/404.html" }));
