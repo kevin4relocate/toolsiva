@@ -17,30 +17,75 @@ aiAssisted: true
 curatedSeries: true
 ---
 
-A proportion describes two equal ratios. It is useful for scaling recipes, comparing rates and resizing designs when the underlying relationship is linear. The most important step is keeping corresponding quantities in the same positions.
+A **proportion** says that two ratios express the same relationship. It is useful for scaling recipes, reading map distances, comparing equivalent quantities and solving "if this much corresponds to that much, what about a different amount?" problems.
 
-Use the [Proportion Calculator](/tools/calculator/proportion-calculator/) to find a fourth value when you know the other three.
+The illustration uses another valid example: **6/9 = 10/D**, giving `D = (9 × 10) ÷ 6 = 15`. The field order and the reasoning are the same as in the worked example below.
 
-## Worked example: 6 is to 9 as 10 is to x
+Toolsiva's [Proportion Calculator](/tools/calculator/proportion-calculator/) is designed for a specific form:
 
-Write the relationship as **6/9 = 10/x**. Cross-multiply: 6 times x equals 9 times 10. Divide 90 by 6 to obtain **x = 15**. You can check the result because 6/9 and 10/15 both simplify to 2/3.
+`A / B = C / D`
 
-Think about the units as well. If six identical packages cost nine units of money, ten packages at the same unit price should cost fifteen. The answer should increase when the package count increases.
+You enter **A**, **B** and **C**. The tool solves for the missing **D**.
 
-## Enter the fields in matching order
+## Worked example: 2/5 = 8/D
 
-Identify which quantity belongs on each side of the ratio. If one side is packages divided by money, the other must also be packages divided by money. Reversing just one pair describes a different relationship and produces the wrong result.
+Set `A = 2`, `B = 5` and `C = 8`.
 
-After using the calculator, substitute the answer back into the original equation. This quick check catches a swapped-input mistake without another tool.
+We want:
 
-## Do not assume every relationship is proportional
+`2 / 5 = 8 / D`
 
-Doubling the side of a square makes its area four times as large, not twice as large. A simple linear proportion is unsuitable for that scenario. Similarly, a price with a fixed starting fee may not scale proportionally with quantity.
+Cross multiplication gives:
 
-Zero denominators make a ratio undefined. A zero-to-zero pair alone cannot establish a unique rate.
+`2 × D = 5 × 8`
 
-## When to use a different calculation
+Therefore:
 
-If you already have two integers and merely want their smallest equivalent ratio, use the [Ratio Calculator](/tools/calculator/ratio-calculator/). If the question involves percentage change rather than a missing ratio term, use the dedicated percentage tool.
+`D = (5 × 8) ÷ 2 = 20`
 
-Before reusing the answer, verify units, direction of change and whether the situation actually involves a constant ratio.
+To verify, calculate both sides: `2 ÷ 5 = 0.4` and `8 ÷ 20 = 0.4`. They match.
+
+| Input field | Enter |
+| --- | ---: |
+| A | 2 |
+| B | 5 |
+| C | 8 |
+| Missing D | **20** |
+
+These are the same default example values displayed in the tool.
+
+## How to enter a proportion correctly
+
+The most common error is writing the quantities in different orders on the two sides of the equation. If the first fraction compares **cups of concentrate to cups of water**, the second fraction must compare **concentrate to water** too.
+
+For example, a mixture uses 2 cups of concentrate for every 5 cups of water. With 8 cups of concentrate, how much water is needed?
+
+`concentrate / water = 2 / 5 = 8 / D`
+
+The answer is **20 cups of water**. You can check it by scaling both original amounts by four: 2 → 8 and 5 → 20.
+
+If you had accidentally reversed the second ratio to `water / concentrate`, cross multiplication would solve a different equation, even though the arithmetic might look convincing.
+
+## When cross multiplication is valid
+
+The equation `A/B = C/D` assumes a meaningful equal-ratio relationship and **nonzero denominators**. The Toolsiva implementation rejects values when A or B is zero, so it cannot express every mathematically possible degenerate case. It also requires finite numeric inputs.
+
+A proportion calculator does not establish that a real-world relationship is proportional. For example, doubling a product quantity does not always double the price if discounts, fixed fees or minimum charges apply. It is your job to decide whether a constant ratio is the right model.
+
+## Compare with a ratio calculator
+
+The [Ratio Calculator](/tools/calculator/ratio-calculator/) simplifies two whole-number terms, such as `12:18 → 2:3`. It does not solve for an unknown fourth quantity. Use the Proportion Calculator when the problem already says two ratios should be equal.
+
+Another related idea is percentage. A percentage is a ratio with a base of 100. For instance, `25/100 = 1/4`. If your task is finding 25% of 80, the [Percentage Calculator](/tools/calculator/percentage-calculator/) is a more direct choice.
+
+## Common mistakes and how to catch them
+
+**Mixing different units.** If one side is measured in metres and the other in centimetres, convert to the same unit before setting up your equation.
+
+**Putting B and C in the wrong fields.** Write the equation on paper first, then label A, B, C and D. The calculator is not able to infer which pair of quantities you intended.
+
+**Dividing by zero.** The rearrangement `D = B × C / A` cannot be used when A = 0. Toolsiva shows a status message rather than an ordinary result for invalid inputs.
+
+**Rounding too early.** For money or measurements, keep enough precision until the final step. The display is rounded for readability, not a guarantee of measurement accuracy.
+
+The strongest habit is to **substitute your answer back into the original equation**. If the two sides are not equal to a reasonable precision, revisit the setup before using the result.
