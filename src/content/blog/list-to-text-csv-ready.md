@@ -5,7 +5,7 @@ slug: "list-to-text-csv-ready"
 publishedDate: 2026-11-21
 updatedDate: 2026-11-21
 author: "Toolsiva Editorial"
-primaryTool: "List transformation"
+primaryTool: "List to Text Converter"
 primaryToolPath: "/tools/text/list-to-text/"
 relatedTools: []
 excerpt: "Join multiline lists using the right separator and learn when a simple text join is not sufficient for CSV or spreadsheet import."
