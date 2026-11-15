@@ -9,9 +9,10 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const url = new URL(`/blog/${post.data.slug}`, siteConfig.url).toString();
 const schema = { "@context":"https://schema.org", "@type":"BlogPosting", headline:post.data.title, description:post.data.description, datePublished:post.data.publishedDate.toISOString(), dateModified:post.data.updatedDate.toISOString(), url, mainEntityOfPage:url, author:{"@type":"Organization",name:post.data.author}, publisher:{"@type":"Organization",name:siteConfig.name,url:siteConfig.url}, inLanguage:"en" };
+import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
 ---
 <BaseLayout title={post.data.title} description={post.data.description} canonicalPath={`/blog/${post.data.slug}`}>
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script is:inline type="application/ld+json" set:html={safeJsonForHtml(schema)} />
   <article class="mx-auto w-full max-w-4xl px-4 py-10 sm:px-5 lg:px-6">
     <nav class="text-sm text-zinc-500"><a href="/">Home</a><span class="mx-2">/</span><a href="/blog/">Blog</a></nav>
     <header class="mt-6">
