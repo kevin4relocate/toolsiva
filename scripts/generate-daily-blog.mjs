@@ -89,7 +89,7 @@ const related = (primaryTool.relatedTools || [])
   .map((slug) => tools.find((tool) => tool.slug === slug))
   .filter(Boolean)
   .slice(0, 3);
-const toolPath = (tool) => `/tools/${tool.category}/${tool.slug}/`;
+const toolPath = (tool) => `/tools/${tool.category}/${tool.slug}`;
 const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 90);
 const prompt = `Write one high-quality English tutorial for Toolsiva.com.\nTool: ${primaryTool.name}\nDescription: ${primaryTool.shortDescription}\nExact path: ${toolPath(primaryTool)}\nReturn JSON with title, description, excerpt, introduction (array), sections (array with heading, paragraphs, bullets), faq (array with question, answer). Requirements: 900-1300 words, at least 5 sections, practical examples, common mistakes, no URLs, no Markdown links, no invented statistics/laws/prices/current events, do not mention AI or SEO.`;
 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`, {
@@ -126,8 +126,8 @@ for (const item of article.faq || []) lines.push(`### ${item.question}`, "", Str
 const relatedYaml = related
   .flatMap((tool) => [`  - name: ${JSON.stringify(tool.name)}`, `    path: ${JSON.stringify(toolPath(tool))}`])
   .join("\n");
-const frontmatter = `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(String(article.description).slice(0, 180))}\nslug: ${JSON.stringify(slug)}\npublishedDate: ${today}\nupdatedDate: ${today}\nauthor: "Toolsiva Editorial"\nprimaryTool: ${JSON.stringify(primaryTool.name)}\nprimaryToolPath: ${JSON.stringify(toolPath(primaryTool))}\nrelatedTools:\n${relatedYaml}\nkeywords:\n${(primaryTool.keywords || []).slice(0, 8).map((keyword) => `  - ${JSON.stringify(keyword)}`).join("\n")}\nexcerpt: ${JSON.stringify(String(article.excerpt))}\ndraft: false\naiAssisted: true\n---\n\n`;
+const frontmatter = `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(String(article.description).slice(0, 180))}\nslug: ${JSON.stringify(slug)}\npublishedDate: ${today}\nupdatedDate: ${today}\nauthor: "Toolsiva Editorial"\nprimaryTool: ${JSON.stringify(primaryTool.name)}\nprimaryToolPath: ${JSON.stringify(toolPath(primaryTool))}\nrelatedTools:\n${relatedYaml}\nkeywords:\n${(primaryTool.keywords || []).slice(0, 8).map((keyword) => `  - ${JSON.stringify(keyword)}`).join("\n")}\nexcerpt: ${JSON.stringify(String(article.excerpt))}\ndraft: true\naiAssisted: true\n---\n\n`;
 const destination = path.join(BLOG_DIR, `${slug}.md`);
 if (fs.existsSync(destination)) throw new Error(`Post already exists: ${slug}`);
 fs.writeFileSync(destination, frontmatter + lines.join("\n").trim() + "\n", "utf8");
-console.log(`Created ${path.relative(ROOT, destination)}`);
+console.log(`Created review-only draft: ${path.relative(ROOT, destination)}. Editorial review is required before publishing.`);
