@@ -5,7 +5,7 @@ slug: "jwt-decoder-security-checklist"
 publishedDate: 2026-12-07
 updatedDate: 2026-12-07
 author: "Toolsiva Editorial"
-primaryTool: "JWT inspection"
+primaryTool: "JWT Decoder"
 primaryToolPath: "/tools/developer/jwt-decoder/"
 relatedTools: []
 excerpt: "Inspect JWT header and payload claims without confusing Base64URL decoding with signature validation or authorization."
