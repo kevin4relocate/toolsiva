@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 const posts = (await getCollection("blog")).filter((p) => !p.data.draft).sort((a,b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
 const formatDate = (date: Date) => new Intl.DateTimeFormat("en-US", { year:"numeric", month:"long", day:"numeric" }).format(date);
 ---
-<BaseLayout title="Toolsiva Blog" description="Practical guides and tutorials for Toolsiva online tools." canonicalPath="/blog/">
+<BaseLayout title="Toolsiva Blog" description="Step-by-step Toolsiva guides with practical examples for text, developer utilities, online calculators, QR codes and conversions." canonicalPath="/blog">
   <div class="mx-auto w-full max-w-[84rem] px-4 py-10 sm:px-5 lg:px-6">
     <header class="max-w-3xl">
       <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Toolsiva guides</p>
@@ -15,9 +15,9 @@ const formatDate = (date: Date) => new Intl.DateTimeFormat("en-US", { year:"nume
       {posts.map((post) => (
         <article class="flex flex-col rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition hover:-translate-y-0.5 hover:border-brand-400/35">
           <p class="text-xs text-zinc-500">{formatDate(post.data.publishedDate)}</p>
-          <h2 class="mt-3 text-lg font-bold leading-7 text-white"><a class="hover:text-brand-200" href={`/blog/${post.data.slug}/`}>{post.data.title}</a></h2>
+          <h2 class="mt-3 text-lg font-bold leading-7 text-white"><a class="hover:text-brand-200" href={`/blog/${post.data.slug}`}>{post.data.title}</a></h2>
           <p class="mt-3 flex-1 text-sm leading-6 text-zinc-400">{post.data.excerpt}</p>
-          <a href={`/blog/${post.data.slug}/`} class="mt-5 text-sm font-semibold text-brand-300 hover:text-brand-200">Read guide →</a>
+          <a href={`/blog/${post.data.slug}`} class="mt-5 text-sm font-semibold text-brand-300 hover:text-brand-200">Read guide →</a>
         </article>
       ))}
     </div>
