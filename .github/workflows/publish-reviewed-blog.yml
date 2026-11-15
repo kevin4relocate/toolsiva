@@ -1,0 +1,63 @@
+name: Publish Reviewed Toolsiva Blog Queue
+on:
+  schedule:
+    # GitHub cron is UTC. 02:00 UTC = 09:00 in Asia/Bangkok (UTC+7).
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: toolsiva-blog-daily-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish-one:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Promote at most one reviewed, due draft
+        run: npm run blog:publish-queue
+      - name: Detect publication
+        id: changed
+        run: |
+          if git diff --quiet -- src/content/blog; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Validate blog and all SEO image references
+        if: steps.changed.outputs.publish == 'true'
+        run: npm run blog:validate && npm run test:phase8
+      - name: Typecheck and build before publishing
+        if: steps.changed.outputs.publish == 'true'
+        run: npm run check && npm run build
+      - name: Verify sitemap, canonical, privacy, SEO and AdSense safeguards
+        if: steps.changed.outputs.publish == 'true'
+        run: |
+          npm run tools:verify
+          npm run seo:audit
+          npm run seo:canonical
+          npm run analytics:verify
+          npm run hardening:verify
+          npm run adsense:audit
+      - name: Commit only the reviewed, validated article
+        if: steps.changed.outputs.publish == 'true'
+        run: |
+          git config user.name "Toolsiva Content Scheduler"
+          git config user.email "blog-bot@toolsiva.com"
+          git add src/content/blog
+          git diff --cached --quiet && exit 0
+          git commit -m "publish(blog): release one editorially approved scheduled guide"
+          git push origin HEAD:main
