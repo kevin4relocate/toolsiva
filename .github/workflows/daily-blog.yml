@@ -28,11 +28,13 @@ jobs:
       - run: npm run test:phase3
       - run: npm run test:phase4
       - run: npm run test:phase5
+      - run: npm run test:phase6
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
       - run: npm run analytics:verify
       - run: npm run seo:audit
+      - run: npm run hardening:verify
       - name: Commit article
         run: |
           git config user.name "Toolsiva Blog Bot"
