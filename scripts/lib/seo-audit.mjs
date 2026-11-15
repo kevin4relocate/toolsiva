@@ -34,6 +34,7 @@ export function normalizeSeoPath(value, siteUrl = "https://toolsiva.com", basePa
 
 function routeForFile(file, dist) {
   const relative = path.relative(dist, file).replaceAll(path.sep, "/");
+  if (relative === "index.html") return "/";
   if (relative === "404.html") return "/404.html";
   return normalizeSeoPath("/" + relative.replace(/\/index\.html$/, "").replace(/\.html$/, ""));
 }
@@ -127,9 +128,9 @@ export function auditBuiltSite({
       try {
         const parsed = new URL(canonical);
         if (parsed.origin !== new URL(siteUrl).origin || parsed.search || parsed.hash ||
-          normalizeSeoPath(canonical, siteUrl) !== (route === "/404.html" ? "/" : route)) {
+          normalizeSeoPath(canonical, siteUrl) !== route) {
           issue("error", "incorrect-canonical", route, canonical);
-        } else if (route !== "/" && parsed.pathname.endsWith("/")) {
+        } else if (route !== "/" && route !== "/404.html" && parsed.pathname.endsWith("/")) {
           issue("warning", "noncanonical-trailing-slash", route, canonical);
         }
       } catch { issue("error", "invalid-canonical", route, canonical); }
