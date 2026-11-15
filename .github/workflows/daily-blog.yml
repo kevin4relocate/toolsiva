@@ -22,8 +22,12 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
         run: npm run blog:generate
       - run: npm run blog:validate
+      - run: npm run test:phase1
+      - run: npm run test:validators
+      - run: npm run test:phase2
       - run: npm run check
       - run: npm run build
+      - run: npm run tools:verify
       - name: Commit article
         run: |
           git config user.name "Toolsiva Blog Bot"

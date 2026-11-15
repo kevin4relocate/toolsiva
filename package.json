@@ -21,7 +21,9 @@
     "launch:check": "npm run check && npm run build && npm run seo:audit",
     "blog:generate": "node scripts/generate-daily-blog.mjs",
     "blog:validate": "node scripts/validate-blog-links.mjs",
-    "test:phase1": "node --experimental-strip-types --test tests/phase1.test.mjs"
+    "test:phase1": "node --experimental-strip-types --test tests/phase1.test.mjs",
+    "test:phase2": "node --test tests/phase2.test.mjs",
+    "tools:verify": "node scripts/verify-tool-routes.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",

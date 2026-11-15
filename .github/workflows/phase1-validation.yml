@@ -1,4 +1,4 @@
-name: Phase 1 Correctness Checks
+name: Toolsiva CI — Tools, Blog and Build
 
 on:
   pull_request:
@@ -8,10 +8,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: toolsiva-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,5 +25,8 @@ jobs:
       - run: npm ci
       - run: npm run test:phase1
       - run: npm run test:validators
+      - run: npm run test:phase2
+      - run: npm run blog:validate
       - run: npm run check
       - run: npm run build
+      - run: npm run tools:verify
