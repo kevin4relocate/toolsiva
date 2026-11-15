@@ -5,7 +5,7 @@ slug: "date-difference-without-dst-errors"
 publishedDate: 2026-11-29
 updatedDate: 2026-11-29
 author: "Toolsiva Editorial"
-primaryTool: "Calendar-day difference"
+primaryTool: "Date Difference Calculator"
 primaryToolPath: "/tools/calculator/date-difference-calculator/"
 relatedTools: []
 excerpt: "Count whole calendar days between dates, avoid daylight-saving pitfalls and distinguish dates from elapsed hours."
