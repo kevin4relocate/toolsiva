@@ -5,7 +5,7 @@ slug: "calendar-event-qr-code"
 publishedDate: 2026-12-11
 updatedDate: 2026-12-11
 author: "Toolsiva Editorial"
-primaryTool: "Calendar QR"
+primaryTool: "Event QR Code Generator"
 primaryToolPath: "/tools/qr/qr-event-generator/"
 relatedTools: []
 excerpt: "Create a calendar QR with a valid title, start and end time, understand floating local times, and test real calendar import."
