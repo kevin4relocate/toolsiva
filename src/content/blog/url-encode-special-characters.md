@@ -5,7 +5,7 @@ slug: "url-encode-special-characters"
 publishedDate: 2026-12-06
 updatedDate: 2026-12-06
 author: "Toolsiva Editorial"
-primaryTool: "URL components"
+primaryTool: "URL Encode"
 primaryToolPath: "/tools/developer/url-encode/"
 relatedTools: []
 excerpt: "Understand percent-encoding for URL query values, including spaces and ampersands, without accidentally encoding a whole URL."
