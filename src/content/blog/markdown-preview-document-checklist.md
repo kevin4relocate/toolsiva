@@ -94,13 +94,13 @@ This is a **formatting test**, not evidence that any release checks were actuall
 
 Next add a real, safe example URL and a short command:
 
-```markdown
+````markdown
 Read the [documentation](https://example.com/docs).
 
 ```sh
 npm run build
 ```
-```
+````
 
 When you enter an actual Markdown code block, the three-backtick opening and closing fences must match. If your document contains literal triple backticks as part of a teaching example, choose a longer outer fence or demonstrate the syntax separately.
 
