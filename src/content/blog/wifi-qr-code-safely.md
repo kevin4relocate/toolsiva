@@ -5,7 +5,7 @@ slug: "wifi-qr-code-safely"
 publishedDate: 2026-11-25
 updatedDate: 2026-11-25
 author: "Toolsiva Editorial"
-primaryTool: "Wi-Fi QR payload"
+primaryTool: "WiFi QR Code Generator"
 primaryToolPath: "/tools/qr/qr-wifi-generator/"
 relatedTools: []
 excerpt: "Generate a scannable Wi-Fi QR with the correct SSID, security type and password; understand why exported QR images are sensitive."
