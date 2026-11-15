@@ -5,7 +5,7 @@ slug: "vcard-qr-contact-card"
 publishedDate: 2026-12-10
 updatedDate: 2026-12-10
 author: "Toolsiva Editorial"
-primaryTool: "Contact QR"
+primaryTool: "vCard QR Code Generator"
 primaryToolPath: "/tools/qr/qr-vcard-generator/"
 relatedTools: []
 excerpt: "Create a contact-card QR using vCard 3.0 and test how names, phone numbers and organizations appear on a phone."
