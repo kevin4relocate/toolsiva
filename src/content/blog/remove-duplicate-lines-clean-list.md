@@ -5,7 +5,7 @@ slug: "remove-duplicate-lines-clean-list"
 publishedDate: 2026-12-13
 updatedDate: 2026-12-13
 author: "Toolsiva Editorial"
-primaryTool: "Deduplicate list"
+primaryTool: "Remove Duplicate Lines"
 primaryToolPath: "/tools/text/remove-duplicate-lines/"
 relatedTools: []
 excerpt: "Clean repeated list entries without losing important order, inspect whitespace and decide whether repeated rows are intentional."
