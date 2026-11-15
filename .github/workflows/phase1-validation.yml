@@ -31,12 +31,14 @@ jobs:
       - run: npm run test:phase5
       - run: npm run test:phase6
       - run: npm run test:phase7
+      - run: npm run test:canonical-routing
       - run: npm run blog:validate
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
       - run: npm run analytics:verify
       - run: npm run seo:audit
+      - run: npm run seo:canonical
       - run: npm run hardening:verify
       - run: npm run adsense:audit
       - name: Upload SEO audit report

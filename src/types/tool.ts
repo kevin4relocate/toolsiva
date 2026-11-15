@@ -27,5 +27,5 @@ export interface ToolDefinition {
 }
 
 export function getToolPath(tool: Pick<ToolDefinition, "category" | "slug">): string {
-  return `/tools/${tool.category}/${tool.slug}`;
+  return `/tools/${tool.category}/${tool.slug}/`;
 }

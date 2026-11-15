@@ -134,8 +134,8 @@ export function auditBuiltSite({
         if (parsed.origin !== new URL(siteUrl).origin || parsed.search || parsed.hash ||
           normalizeSeoPath(canonical, siteUrl) !== route) {
           issue("error", "incorrect-canonical", route, canonical);
-        } else if (route !== "/" && route !== "/404.html" && parsed.pathname.endsWith("/")) {
-          issue("warning", "noncanonical-trailing-slash", route, canonical);
+        } else if (route !== "/" && route !== "/404.html" && !parsed.pathname.endsWith("/")) {
+          issue("warning", "canonical-missing-trailing-slash", route, canonical);
         }
       } catch { issue("error", "invalid-canonical", route, canonical); }
     }
@@ -209,8 +209,8 @@ export function auditBuiltSite({
       const route = normalizeSeoPath(loc, siteUrl);
       if (!route) { issue("error", "external-sitemap-url", path.basename(file), loc); continue; }
       sitemapUrls.set(route, (sitemapUrls.get(route) ?? 0) + 1);
-      if (route !== "/" && new URL(loc).pathname.endsWith("/")) {
-        issue("warning", "sitemap-trailing-slash", path.basename(file), loc);
+      if (route !== "/" && !new URL(loc).pathname.endsWith("/")) {
+        issue("warning", "sitemap-missing-trailing-slash", path.basename(file), loc);
       }
     }
   }

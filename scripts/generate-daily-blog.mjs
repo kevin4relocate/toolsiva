@@ -89,7 +89,7 @@ const related = (primaryTool.relatedTools || [])
   .map((slug) => tools.find((tool) => tool.slug === slug))
   .filter(Boolean)
   .slice(0, 3);
-const toolPath = (tool) => `/tools/${tool.category}/${tool.slug}`;
+const toolPath = (tool) => `/tools/${tool.category}/${tool.slug}/`;
 const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 90);
 const prompt = `Write one high-quality English tutorial for Toolsiva.com.\nTool: ${primaryTool.name}\nDescription: ${primaryTool.shortDescription}\nExact path: ${toolPath(primaryTool)}\nReturn JSON with title, description, excerpt, introduction (array), sections (array with heading, paragraphs, bullets), faq (array with question, answer). Requirements: 900-1300 words, at least 5 sections, practical examples, common mistakes, no URLs, no Markdown links, no invented statistics/laws/prices/current events, do not mention AI or SEO.`;
 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`, {

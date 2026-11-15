@@ -37,8 +37,8 @@ const instructions = getToolInstructions(tool);
 const linkedGuides = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .filter((post) =>
-    post.data.primaryToolPath.replace(/\/+$/, "") === getToolPath(tool) ||
-    post.data.relatedTools.some((related) => related.path.replace(/\/+$/, "") === getToolPath(tool))
+    post.data.primaryToolPath.replace(/\/+$/, "") === getToolPath(tool).replace(/\/+$/, "") ||
+    post.data.relatedTools.some((related) => related.path.replace(/\/+$/, "") === getToolPath(tool).replace(/\/+$/, ""))
   )
   .sort((a, b) => b.data.updatedDate.getTime() - a.data.updatedDate.getTime())
   .slice(0, 3);
@@ -62,7 +62,7 @@ const faqSchema = {
 };
 
 const toolUrl = new URL(getToolPath(tool), siteConfig.url).toString();
-const categoryUrl = new URL(`/tools/${tool.category}`, siteConfig.url).toString();
+const categoryUrl = new URL(`/tools/${tool.category}/`, siteConfig.url).toString();
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
@@ -101,7 +101,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Tools",
-      item: new URL("/tools", siteConfig.url).toString(),
+      item: new URL("/tools/", siteConfig.url).toString(),
     },
     {
       "@type": "ListItem",
@@ -133,9 +133,9 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
     <div class="hidden min-[1800px]:block"><AdSlot placement="tool-side-left" minHeight={600} variant="side-rail" /></div>
     <article class="min-w-0 w-full">
     <nav class="mb-3 text-xs text-zinc-500 sm:text-sm" aria-label="Breadcrumb">
-      <a class="hover:text-white" href="/tools">Tools</a>
+      <a class="hover:text-white" href="/tools/">Tools</a>
       <span class="mx-2">/</span>
-      <a class="hover:text-white" href={`/tools/${tool.category}`}>{category?.name}</a>
+      <a class="hover:text-white" href={`/tools/${tool.category}/`}>{category?.name}</a>
       <span class="mx-2">/</span>
       <span>{tool.name}</span>
     </nav>
@@ -197,7 +197,7 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
         <ul class="mt-4 grid gap-3 sm:grid-cols-2">
           {linkedGuides.map((post) => (
             <li>
-              <a href={`/blog/${post.data.slug}`} class="block rounded-xl border border-white/10 p-4 transition hover:border-brand-400/40 hover:text-brand-200">
+              <a href={`/blog/${post.data.slug}/`} class="block rounded-xl border border-white/10 p-4 transition hover:border-brand-400/40 hover:text-brand-200">
                 <strong class="text-sm text-white">{post.data.title}</strong>
                 <span class="mt-1 block text-xs leading-5 text-zinc-400">{post.data.excerpt}</span>
               </a>
@@ -217,7 +217,7 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
               <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">Continue working</p>
               <h2 class="mt-2 text-xl font-bold text-white">Related tools</h2>
             </div>
-            <a class="text-sm font-semibold text-brand-300 hover:text-brand-200" href={`/tools/${tool.category}`}>View all {category?.name} →</a>
+            <a class="text-sm font-semibold text-brand-300 hover:text-brand-200" href={`/tools/${tool.category}/`}>View all {category?.name} →</a>
           </div>
           <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((related) => (

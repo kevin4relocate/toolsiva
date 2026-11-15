@@ -20,7 +20,16 @@ const {
 } = Astro.props;
 
 const pageTitle = title === siteConfig.title ? title : `${title} | ${siteConfig.name}`;
-const canonicalUrl = new URL(canonicalPath, siteConfig.url);
+// Cloudflare Workers Static Assets serves generated directory/index.html at /path/.
+// Keep canonical URLs aligned with that redirect policy, except root and 404.html.
+const rawCanonical = new URL(canonicalPath, siteConfig.url);
+const canonicalPathname = rawCanonical.pathname;
+if (canonicalPathname !== "/" && !canonicalPathname.endsWith(".html")) {
+  rawCanonical.pathname = canonicalPathname.endsWith("/") ? canonicalPathname : canonicalPathname + "/";
+}
+rawCanonical.search = "";
+rawCanonical.hash = "";
+const canonicalUrl = rawCanonical;
 const socialImageUrl = new URL(image, siteConfig.url);
 const robots = noindex
   ? "noindex,nofollow"

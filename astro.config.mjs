@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://toolsiva.com",
   output: "static",
-  trailingSlash: "never",
+  trailingSlash: "always",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
