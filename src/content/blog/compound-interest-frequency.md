@@ -53,7 +53,7 @@ The [Compound Interest Calculator](/tools/calculator/compound-interest-calculato
 
 The standard model is:
 
-\`A = P × (1 + r/n)^(n×t)\`
+`A = P × (1 + r/n)^(n×t)`
 
 Here **P** is the starting principal, **r** is the annual rate as a decimal, **n** is the number of times interest compounds per year, and **t** is the number of years.
 
@@ -70,7 +70,7 @@ The approximately **$2.44** difference comes entirely from how often interest is
 
 A 5% nominal annual rate compounded monthly produces a slightly higher **effective annual rate**:
 
-\`Effective annual rate = (1 + 0.05/12)^12 − 1 ≈ 5.116%\`
+`Effective annual rate = (1 + 0.05/12)^12 − 1 ≈ 5.116%`
 
 This does not mean the institution advertised a 5.116% nominal rate. It means that, in this simplified model, monthly reinvestment increases the balance by about 5.116% over one full year.
 
