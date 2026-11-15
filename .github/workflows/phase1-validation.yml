@@ -28,8 +28,19 @@ jobs:
       - run: npm run test:phase2
       - run: npm run test:phase3
       - run: npm run test:phase4
+      - run: npm run test:phase5
       - run: npm run blog:validate
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
       - run: npm run analytics:verify
+      - run: npm run seo:audit
+      - name: Upload SEO audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: toolsiva-seo-audit
+          path: |
+            reports/production-seo-audit.json
+            reports/production-seo-issues.csv
+          if-no-files-found: warn

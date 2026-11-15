@@ -10,32 +10,32 @@ export const categories: CategoryDefinition[] = [
   {
     slug: "text",
     name: "Text Tools",
-    description: "Count, clean, transform and organize text directly in your browser.",
+    description: "Count words, compare drafts, remove duplicate lines, format lists and clean copied text with fast browser-based utilities.",
   },
   {
     slug: "developer",
     name: "Developer Tools",
-    description: "Format, validate and convert developer data without sending it to a server.",
+    description: "Format JSON, validate XML and YAML, inspect tokens, encode data and convert developer formats directly in your browser.",
   },
   {
     slug: "security",
     name: "Security Tools",
-    description: "Generate passwords, tokens and hashes locally.",
+    description: "Generate passwords and passphrases, create tokens, compare hashes and work with cryptographic utilities locally in your browser.",
   },
   {
     slug: "qr",
     name: "QR Tools",
-    description: "Create useful QR codes without storing their content.",
+    description: "Make downloadable QR codes for URLs, Wi-Fi networks, contacts, email, events and locations with browser-side generation.",
   },
   {
     slug: "calculator",
     name: "Calculators",
-    description: "Fast calculators for work and everyday decisions.",
+    description: "Calculate percentages, tips, interest, loan payments, time differences and other everyday results with clear inputs.",
   },
   {
     slug: "converter",
     name: "Converters",
-    description: "Simple unit and data conversions with immediate results.",
+    description: "Convert distance, temperature, storage, speed, fuel economy, cooking measurements and more with labelled units.",
   },
 ];
 

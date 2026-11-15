@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 import { siteConfig } from "@/config/site";
 import AdSlot from "@/components/common/AdSlot.astro";
 import TextToolWorkspace from "@/components/tools/TextToolWorkspace.astro";
@@ -33,6 +34,14 @@ const { tool } = Astro.props;
 const category = categoryMap.get(tool.category);
 const relatedTools = getRelatedTools(tool);
 const instructions = getToolInstructions(tool);
+const linkedGuides = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .filter((post) =>
+    post.data.primaryToolPath.replace(/\/+$/, "") === getToolPath(tool) ||
+    post.data.relatedTools.some((related) => related.path.replace(/\/+$/, "") === getToolPath(tool))
+  )
+  .sort((a, b) => b.data.updatedDate.getTime() - a.data.updatedDate.getTime())
+  .slice(0, 3);
 const expansionToolSlugs = new Set(["line-counter","sentence-counter","paragraph-counter","text-to-list","list-to-text","remove-empty-lines","add-line-numbers","strip-html-tags","text-repeater","whitespace-visualizer","ratio-calculator","proportion-calculator","fraction-calculator","gcd-lcm-calculator","pace-calculator","unit-price-calculator","profit-margin-calculator","markup-calculator"]);
 const newTextToolSlugs = new Set(["add-bullets-to-text", "add-blank-lines-between-text", "add-prefix-suffix-to-lines", "trim-each-line", "quote-each-line", "remove-line-numbers", "extract-emails-from-text", "extract-urls-from-text"]);
 const highValueToolSlugs = new Set(["regex-tester", "utm-url-generator", "markdown-table-generator", "word-frequency-counter", "programming-case-converter", "morse-code-translator", "binary-code-translator", "number-sorter", "remove-line-breaks", "random-choice-generator"]);
@@ -179,6 +188,25 @@ const breadcrumbSchema = {
     </section>
 
     <ToolSeoContent tool={tool} />
+
+    {linkedGuides.length > 0 && (
+      <section class="mt-12 rounded-2xl border border-white/10 p-5 sm:p-6">
+        <h2 class="text-xl font-bold text-white">Practical guides using this tool</h2>
+        <p class="mt-2 text-sm text-zinc-400">Follow a related tutorial with examples and step-by-step context.</p>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          {linkedGuides.map((post) => (
+            <li>
+              <a href={`/blog/${post.data.slug}`} class="block rounded-xl border border-white/10 p-4 transition hover:border-brand-400/40 hover:text-brand-200">
+                <strong class="text-sm text-white">{post.data.title}</strong>
+                <span class="mt-1 block text-xs leading-5 text-zinc-400">{post.data.excerpt}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+
 
     {
       relatedTools.length > 0 && (
