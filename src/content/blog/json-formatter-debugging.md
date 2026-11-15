@@ -52,3 +52,51 @@ API responses may contain access tokens, internal identifiers or personal inform
 Compare important properties to the original, confirm valid syntax and ensure the receiving system expects JSON. If you need a compact representation for transfer, the [JSON Minifier](/tools/developer/json-minifier/) performs the opposite whitespace transformation.
 
 Pretty-printing helps a human see the data; correctness still depends on the schema and the application using it.
+
+## A practical before-and-after example
+
+Consider this compact JSON value:
+
+```json
+{"name":"Ada","active":true,"roles":["editor","viewer"]}
+```
+
+Enter it into the [JSON Formatter](/tools/developer/json-formatter/) input. The tool parses it and serializes it again with two-space indentation:
+
+```json
+{
+  "name": "Ada",
+  "active": true,
+  "roles": [
+    "editor",
+    "viewer"
+  ]
+}
+```
+
+Indentation makes nested structures easier to trace, particularly when comparing a response from an API with an expected shape. It does not add missing properties or make an invalid field value correct.
+
+## Formatting and validation are different jobs
+
+A formatter that relies on `JSON.parse` must parse valid JSON before it can display a result. Missing commas, unescaped quotes and trailing commas can cause parsing errors. If you want an explicit **valid/invalid** status rather than reformatted text, use the [JSON Validator](/tools/developer/json-validator/).
+
+Keep in mind that **valid JSON syntax does not mean valid application data**. A configuration may parse perfectly while still having the wrong field types, a misspelled key or an unsupported value. Confirm the schema or API contract separately.
+
+## Formatting can alter representations
+
+The common phrase "without changing data" needs qualification. The tool parses JSON into JavaScript values and serializes those values back into JSON. That can normalize number formatting, escape sequences and object key ordering. Duplicate keys can also be collapsed during parsing, with one value overriding another; extremely large integers may lose precision because JavaScript numbers have finite exact range.
+
+For example, `1.0` may serialize as `1`. The numerical value is the same in ordinary JSON usage, but the original source text is not byte-for-byte preserved.
+
+If you are reviewing signed payloads, cryptographic hashes or configuration diffs where the exact input bytes matter, **keep the original file** and do not use reserialized text as if it were identical to the source.
+
+## Debugging checklist
+
+- Confirm the outermost structure is an object `{ ... }` or array `[ ... ]` when your application requires one.
+- Check whether numeric IDs should be strings to avoid precision loss.
+- Distinguish JSON strings (`"false"`) from booleans (`false`).
+- Look for absent or `null` fields that application code may handle differently.
+- Verify array ordering when the consumer treats order as meaningful.
+- Test the formatted output against the actual application or parser that will use it.
+
+For minified transport output, the [JSON Minifier](/tools/developer/json-minifier/) performs the opposite style transformation. Both formatting and minifying should be understood as parsing and reserialization, not as byte-preserving operations.
