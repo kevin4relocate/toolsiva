@@ -17,30 +17,74 @@ aiAssisted: true
 curatedSeries: true
 ---
 
-A restaurant bill can be split quickly when everyone agrees on three numbers: the bill amount, the tip percentage and the number of people. Most disagreements arise not from multiplication but from whether tax or a service charge was already included.
+The check arrives, somebody offers to leave the tip, and everyone reaches for a phone. You only need three inputs to settle an **equal bill split**: the bill amount, the tip percentage and the number of people sharing the total. The useful part is knowing exactly which amount the percentage applies to.
 
-Use the [Tip Calculator](/tools/calculator/tip-calculator/) to see the tip, combined total and even share per person.
+The illustration demonstrates **$80 with a 15% tip for two people**: the tip is $12, the total is $92 and the equal share is **$46 each**. The separate three-person example below lets you practice a different set of numbers.
 
-## Example: $80 bill, 15% tip, two people
+The [Toolsiva Tip Calculator](/tools/calculator/tip-calculator/) takes **Bill amount**, **Tip (%)**, and **People**. It displays the tip amount, the total after tip and the amount per person. The calculation assumes an equal split; it does not automatically divide the bill by what each diner ordered.
 
-Multiply 80 by 0.15 to calculate a **$12 tip**. Add it to the bill for a **$92 total**. Divide by two diners and the equal share is **$46 per person**. These three figures are a useful cross-check of the calculator output.
+## A real-number example: $84 shared by three diners
 
-If a receipt already contains a mandatory service charge or gratuity, decide whether an additional tip is intended before calculating. The calculator cannot infer the restaurant's policy.
+Assume the bill is **$84.00**, the chosen tip is **18%**, and three people split everything evenly.
 
-## Choose the bill basis deliberately
+| Step | Calculation | Amount |
+| --- | --- | ---: |
+| Original bill | Given | $84.00 |
+| Tip | $84 × 0.18 | $15.12 |
+| Total | $84 + $15.12 | $99.12 |
+| Per person | $99.12 ÷ 3 | **$33.04** |
 
-Some people tip on the pre-tax subtotal; others use the final total. The tool calculates against the number you type, so the answer changes with that choice. Agree on the basis before splitting the payment.
+You can reproduce this in the [Tip Calculator](/tools/calculator/tip-calculator/): enter `84`, `18`, and `3`. The main result should be `33.04`, with the total and tip shown beneath it. No currency selector is involved—the math works in whichever currency all inputs use.
 
-The people count must be a positive whole number. A value of zero is not a valid split; neither is a fractional number of people.
+## The tip formula
 
-## Equal shares are not always fair shares
+A percentage means "per hundred." To turn **18%** into a decimal, divide 18 by 100:
 
-An even split works for groups that chose to share the check. If someone ordered an expensive item or several charges belong to one person, work out individual amounts first. Then apply the group's agreed tipping method.
+`Tip = bill × (percentage ÷ 100)`
 
-You can also calculate a percentage independently with the [Percentage Calculator](/tools/calculator/percentage-calculator/) when there is no group split.
+Then:
 
-## Rounding matters at payment time
+`Total with tip = bill + tip`
 
-Card payments and cash are generally settled to the smallest currency unit. If the per-person amount produces fractions of a cent, choose which share receives the small rounding adjustment so that everyone's payments add up to the actual total.
+`Per-person amount = total with tip ÷ number of people`
 
-Before paying, verify the receipt subtotal, tax, service charges, chosen tip rate and number of diners. Clear inputs are the foundation of a correct result.
+For a quick mental estimate, 10% of $84 is $8.40 and 5% is $4.20. Combining 10%, 5% and 3% gives 18%, but it is usually easier to let the calculator handle the cents.
+
+## Decide what counts as the bill before calculating
+
+A tip percentage on the **pre-tax subtotal** differs from the same percentage on a tax-inclusive total. Restaurants also handle automatic gratuity and service charges differently.
+
+Before entering a number, check:
+
+- Is the amount the subtotal or the final bill after tax?
+- Is there already an automatic gratuity for larger parties?
+- Does the local tipping custom call for any additional tip?
+- Is a delivery fee or service charge already included?
+
+For example, if the restaurant has already added an 18% service charge and you enter another 18% tip, you may unintentionally pay twice. The calculator cannot read the receipt for you.
+
+## When the bill should not be split equally
+
+Suppose one diner ordered a much more expensive meal. A fair split may require calculating each person's food and drink share first, then allocating tax and tip according to the agreement. The Toolsiva calculator gives an **equal split** only.
+
+For unequal shares, one approach is to record each person's subtotal and apply the agreed percentage to each amount separately using the [Percentage Calculator](/tools/calculator/percentage-calculator/). Check that the individual amounts add back to the restaurant's final total.
+
+## What happens when the cents do not divide evenly?
+
+A calculator may display a rounded per-person amount. If the exact result is, for example, $100 divided between three people, each equal mathematical share is $33.3333…; collecting $33.33 from everyone leaves one cent unpaid.
+
+An easy settlement is to let one person pay $33.34 and the others $33.33. After rounding individual contributions, always check their sum against the amount actually due.
+
+Toolsiva's display rounds the main result to two decimal places. The extra cents still have to be allocated between real payments if a split is uneven after rounding.
+
+## Common mistakes to avoid
+
+**Entering 0 people.** A bill cannot be divided by zero. Toolsiva requires a positive whole-number people count.
+
+**Typing 0.18 instead of 18.** The Tip (%) field expects a percentage, so 0.18 means 0.18%, not 18%.
+
+**Applying a discount twice.** If a coupon was already deducted, use the amount you actually decided to tip on. For discount arithmetic, see the [Discount Calculator](/tools/calculator/discount-calculator/).
+
+**Assuming the tool recommends a tip rate.** The calculator performs the math; the percentage is your choice and depends on local customs and service.
+
+A good final check is to read the receipt, confirm the tip basis, calculate the total and make sure the individual payments add up to the same amount.
