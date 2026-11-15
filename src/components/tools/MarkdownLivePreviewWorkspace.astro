@@ -37,6 +37,12 @@
         />
         Sync scroll
       </label>
+      <label class="flex cursor-pointer items-center gap-2" title="Optional: save the editor text in this browser only">
+        <input data-save-draft type="checkbox" class="size-4 accent-brand-500" />
+        Save draft on this device
+      </label>
+      <button data-restore-saved-draft type="button" hidden class="tool-button-small">Restore saved draft</button>
+      <button data-delete-saved-draft type="button" hidden class="tool-button-small">Delete saved draft</button>
 
     </div>
   </div>
@@ -211,6 +217,10 @@ console.log(message);
 
       const STORAGE_KEY =
         "toolsiva:markdown-live-preview:content";
+      const DRAFT_PREF_KEY = "toolsiva:markdown-live-preview:autosave";
+      const draftToggle = root.querySelector<HTMLInputElement>("[data-save-draft]");
+      const restoreDraftButton = root.querySelector<HTMLButtonElement>("[data-restore-saved-draft]");
+      const deleteDraftButton = root.querySelector<HTMLButtonElement>("[data-delete-saved-draft]");
 
       let cleanHtml = "";
       let syncing = false;
@@ -254,19 +264,23 @@ console.log(message);
         }, 0);
       };
 
+      const updateDraftButtons = () => {
+        let hasDraft = false;
+        try { hasDraft = localStorage.getItem(STORAGE_KEY) !== null; } catch {}
+        if (restoreDraftButton) restoreDraftButton.hidden = !hasDraft || Boolean(draftToggle?.checked);
+        if (deleteDraftButton) deleteDraftButton.hidden = !hasDraft;
+      };
+
       const saveDraft = () => {
+        // No silent persistence of user-provided document text.
+        if (!draftToggle?.checked) return;
         try {
-          if (input.value) {
-            localStorage.setItem(
-              STORAGE_KEY,
-              input.value,
-            );
-          } else {
-            localStorage.removeItem(STORAGE_KEY);
-          }
+          if (input.value) localStorage.setItem(STORAGE_KEY, input.value);
+          else localStorage.removeItem(STORAGE_KEY);
         } catch {
           // Storage can be unavailable in private browsing.
         }
+        updateDraftButtons();
       };
 
       const loadDraft = () => {
@@ -483,12 +497,40 @@ ${cleanHtml}
         });
 
       const savedDraft = loadDraft();
+      let draftEnabled = false;
+      try { draftEnabled = localStorage.getItem(DRAFT_PREF_KEY) === "enabled"; } catch {}
+      if (draftToggle) draftToggle.checked = draftEnabled;
 
-      input.value =
-        savedDraft !== null
-          ? savedDraft
-          : SAMPLE_MARKDOWN;
-
+      input.value = draftEnabled && savedDraft !== null ? savedDraft : SAMPLE_MARKDOWN;
+      draftToggle?.addEventListener("change", () => {
+        try {
+          localStorage.setItem(DRAFT_PREF_KEY, draftToggle.checked ? "enabled" : "disabled");
+          if (!draftToggle.checked) localStorage.removeItem(STORAGE_KEY);
+        } catch {}
+        if (draftToggle.checked) saveDraft();
+        updateDraftButtons();
+        showFeedback(draftToggle.checked ? "Local draft saving enabled." : "Local draft saving disabled; saved draft deleted.");
+      });
+      restoreDraftButton?.addEventListener("click", () => {
+        const previous = loadDraft();
+        if (previous === null) return;
+        input.value = previous;
+        if (draftToggle) draftToggle.checked = true;
+        try { localStorage.setItem(DRAFT_PREF_KEY, "enabled"); } catch {}
+        render();
+        updateDraftButtons();
+        showFeedback("Saved draft restored; local saving enabled.");
+      });
+      deleteDraftButton?.addEventListener("click", () => {
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.setItem(DRAFT_PREF_KEY, "disabled");
+        } catch {}
+        if (draftToggle) draftToggle.checked = false;
+        updateDraftButtons();
+        showFeedback("Saved draft deleted from this browser.");
+      });
+      updateDraftButtons();
       render();
     });
 </script>
