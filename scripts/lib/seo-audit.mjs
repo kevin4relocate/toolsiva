@@ -59,7 +59,11 @@ function canonicalLink(html) {
 }
 
 function anchors(html) {
-  return (html.match(/<a\b[^>]*>/gi) ?? []).map((tag) => attr(tag, "href")).filter(Boolean);
+  // Inline bundles sometimes include HTML template literals such as <a href="${...}">.
+  // Those are source-code strings, not rendered anchors: exclude scripts and styles.
+  const visibleMarkup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
+  return (visibleMarkup.match(/<a\b[^>]*>/gi) ?? []).map((tag) => attr(tag, "href")).filter(Boolean);
 }
 
 function jsonLd(html) {
