@@ -17,23 +17,22 @@ const timeMode = mode === "time-duration-calculator";
  </div>
 </section>
 <script>
- document.querySelectorAll<HTMLElement>("[data-calculator]").forEach(root=>{
-  const mode=root.dataset.mode??""; const inputs=[...root.querySelectorAll<HTMLInputElement>("[data-value]")]; const result=root.querySelector<HTMLElement>("[data-result]"); const details=root.querySelector<HTMLElement>("[data-details]");
-  const n=(i:number)=>Number(inputs[i]?.value); const fmt=(v:number,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):"—";
-  const update=()=>{ if(!result||!details)return; let main="Enter values", extra="";
-   if(mode==="percentage-calculator"&&Number.isFinite(n(0))&&Number.isFinite(n(1))) main=fmt(n(1)*n(0)/100);
-   else if(mode==="percentage-change-calculator"&&n(0)!==0&&Number.isFinite(n(1))){const v=(n(1)-n(0))/Math.abs(n(0))*100;main=`${fmt(v)}%`;extra=v>=0?"Increase":"Decrease";}
-   else if(mode==="discount-calculator"&&Number.isFinite(n(0))&&Number.isFinite(n(1))){const save=n(0)*n(1)/100;main=fmt(n(0)-save);extra=`You save ${fmt(save)}`;}
-   else if(mode==="tip-calculator"&&Number.isFinite(n(0))&&Number.isFinite(n(1))){const people=Math.max(1,n(2)||1),tip=n(0)*n(1)/100,total=n(0)+tip;main=fmt(total/people);extra=`Total ${fmt(total)} · Tip ${fmt(tip)} · Per person`;}
-   else if(mode==="bmi-calculator"&&n(0)>0&&n(1)>0){const bmi=n(0)/Math.pow(n(1)/100,2);main=fmt(bmi,1);extra=bmi<18.5?"Underweight":bmi<25?"Healthy range":bmi<30?"Overweight":"Obesity range";}
-   else if(mode==="loan-calculator"&&n(0)>0&&n(2)>0){const r=n(1)/1200,p=n(2)*12,pay=r===0?n(0)/p:n(0)*r*Math.pow(1+r,p)/(Math.pow(1+r,p)-1);main=fmt(pay);extra=`Monthly payment · Total ${fmt(pay*p)} · Interest ${fmt(pay*p-n(0))}`;}
-   else if(mode==="simple-interest-calculator"&&n(0)>=0){const interest=n(0)*n(1)*n(2)/100;main=fmt(n(0)+interest);extra=`Interest ${fmt(interest)}`;}
-   else if(mode==="compound-interest-calculator"&&n(0)>=0){const c=Math.max(1,n(3)||1),amount=n(0)*Math.pow(1+n(1)/100/c,c*n(2));main=fmt(amount);extra=`Interest ${fmt(amount-n(0))}`;}
-   else if(mode==="average-calculator"){const vals=(inputs[0]?.value??"").split(/[\s,]+/).map(Number).filter(Number.isFinite);if(vals.length){const sum=vals.reduce((a,b)=>a+b,0);main=fmt(sum/vals.length);extra=`Count ${vals.length} · Sum ${fmt(sum)} · Min ${fmt(Math.min(...vals))} · Max ${fmt(Math.max(...vals))}`;}}
-   else if(mode==="date-difference-calculator"&&inputs[0]?.value&&inputs[1]?.value){const d=Math.abs(new Date(inputs[1].value).getTime()-new Date(inputs[0].value).getTime())/86400000;main=`${fmt(d,0)} days`;}
-   else if(mode==="age-calculator"&&inputs[0]?.value){const birth=new Date(inputs[0].value),now=new Date();let years=now.getFullYear()-birth.getFullYear();const m=now.getMonth()-birth.getMonth();if(m<0||(m===0&&now.getDate()<birth.getDate()))years--;main=`${Math.max(0,years)} years`;extra=`Born ${birth.toLocaleDateString()}`;}
-   else if(mode==="time-duration-calculator"&&inputs[0]?.value&&inputs[1]?.value){const toMin=(s:string)=>{const [h = 0, m = 0] = s.split(":").map(Number); return h * 60 + m};let d=toMin(inputs[1].value)-toMin(inputs[0].value);if(d<0)d+=1440;main=`${Math.floor(d/60)}h ${d%60}m`;extra=`${d} minutes`;}
-   result.textContent=main;details.textContent=extra;
-  }; root.addEventListener("input",update);update();
- });
+  import { calculateTool } from "@/lib/calculatorEngine";
+
+  document.querySelectorAll<HTMLElement>("[data-calculator]").forEach((root) => {
+    const mode = root.dataset.mode ?? "";
+    const inputs = Array.from(root.querySelectorAll<HTMLInputElement>("[data-value]"));
+    const result = root.querySelector<HTMLElement>("[data-result]");
+    const details = root.querySelector<HTMLElement>("[data-details]");
+    if (!result || !details) return;
+
+    const update = () => {
+      const calculated = calculateTool(mode, inputs.map((input) => input.value));
+      result.textContent = calculated.main;
+      details.textContent = calculated.extra;
+    };
+    root.addEventListener("input", update);
+    root.addEventListener("change", update);
+    update();
+  });
 </script>
