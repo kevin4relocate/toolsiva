@@ -20,7 +20,8 @@
     "seo:audit:strict": "node scripts/production-seo-audit.mjs --strict",
     "launch:check": "npm run check && npm run build && npm run seo:audit",
     "blog:generate": "node scripts/generate-daily-blog.mjs",
-    "blog:validate": "node scripts/validate-blog-links.mjs"
+    "blog:validate": "node scripts/validate-blog-links.mjs",
+    "test:phase1": "node --experimental-strip-types --test tests/phase1.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
