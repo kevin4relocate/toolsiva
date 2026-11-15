@@ -5,7 +5,7 @@ slug: "base64-encode-vs-encryption"
 publishedDate: 2026-12-09
 updatedDate: 2026-12-09
 author: "Toolsiva Editorial"
-primaryTool: "Base64 encoding"
+primaryTool: "Base64 Encode"
 primaryToolPath: "/tools/developer/base64-encode/"
 relatedTools: []
 excerpt: "See why encoding Hi as SGk= is reversible and should never be mistaken for encryption or secure storage."
