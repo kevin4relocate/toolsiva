@@ -21,7 +21,14 @@ const blog = defineCollection({
     imageAlt: z.string().min(25).max(220).optional(),
     imageCaption: z.string().min(35).max(260).optional(),
     curatedSeries: z.boolean().default(false),
-
+  }).superRefine((post, ctx) => {
+    if ((!post.draft || post.curatedSeries) && (!post.featuredImage || !post.imageAlt || !post.imageCaption)) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Published and curated guides require a relevant image, descriptive alt text and a visible caption.",
+        path: ["featuredImage"],
+      });
+    }
   }),
 });
 
