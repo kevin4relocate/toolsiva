@@ -46,7 +46,7 @@ A dash in ordinary typography can be a different Unicode character from the simp
 
 ## Decide whether Morse is the right representation
 
-Morse is a symbolic alphabet code, not an encryption method. Anyone familiar with the mapping can read it. For text-to-binary byte representation, the [Binary Code Translator](/tools/text/binary-code-translator/) is a different workflow.
+Morse is a symbolic alphabet code, not an encryption method. Anyone familiar with the mapping can read it. For text-to-binary byte representation, the [Binary Code Translator](/tools/developer/binary-code-translator/) is a different workflow.
 
 When preparing an educational worksheet, include a note explaining which spacing convention you use between letters and words. That makes the encoded examples reproducible instead of ambiguous.
 
