@@ -5,7 +5,7 @@ slug: "json-formatter-debugging"
 publishedDate: 2026-11-23
 updatedDate: 2026-11-23
 author: "Toolsiva Editorial"
-primaryTool: "JSON formatting"
+primaryTool: "JSON Formatter"
 primaryToolPath: "/tools/developer/json-formatter/"
 relatedTools: []
 excerpt: "Reformat compact JSON for easier debugging while preserving data types and distinguishing formatting from syntax validation."
