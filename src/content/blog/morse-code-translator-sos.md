@@ -51,3 +51,42 @@ Morse is a symbolic alphabet code, not an encryption method. Anyone familiar wit
 When preparing an educational worksheet, include a note explaining which spacing convention you use between letters and words. That makes the encoded examples reproducible instead of ambiguous.
 
 A successful small round trip is a better quality check than trusting a long unverified message.
+
+## Work through the SOS example
+
+In International Morse code, the familiar distress sequence **SOS** is written as:
+
+```text
+... --- ...
+```
+
+Each group represents one letter: `...` for **S**, `---` for **O**, and `...` for **S** again. Try entering `SOS` in **Encode** mode of the [Morse Code Translator](/tools/text/morse-code-translator/). Then switch to **Decode** and paste the three space-separated groups to confirm you get `SOS`.
+
+The tool uses **spaces between letters** and a **forward slash between words**. For example:
+
+```text
+HELLO WORLD
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
+```
+
+This is worth practicing because spacing carries meaning. Removing all spaces merges the letters into a stream that the decoder cannot reliably segment.
+
+## What happens to unsupported characters?
+
+The current implementation has a mapping for English letters, digits and a collection of common punctuation marks. If a character is not found in the mapping, the result uses a **question mark** placeholder. An unsupported accented character or emoji therefore should not be interpreted as a valid Morse symbol.
+
+For a first test, use uppercase A–Z and spaces. Lowercase words are converted to uppercase internally during encoding. If you later need punctuation or numerals, test each symbol individually before embedding it in a longer message.
+
+## Morse code translation is not radio transmission
+
+A dot-and-dash text converter does not specify the timing of a transmitted signal. Real Morse uses distinctions between short and long marks and gaps of different lengths. A plain-text representation only provides the symbolic pattern, not the sound, radio frequency, signal strength, operator practice or emergency communication procedure.
+
+Do not rely on an online translator as a rescue device. Use appropriate emergency channels and equipment in a real emergency.
+
+## Troubleshooting a decoded result
+
+If you see question marks, check that the input contains valid dot/dash groups, and that each letter has a separating space. If two words run together, use ` / ` between them. If the result looks reversed or unreadable, confirm whether the mode is **Encode** or **Decode**.
+
+For testing the output in another format, copy the result into a plain-text document rather than a rich-text field that might replace or normalize punctuation.
+
+The best way to learn a text translator's limits is to test a simple known phrase first, then gradually add spacing, numerals and punctuation.
