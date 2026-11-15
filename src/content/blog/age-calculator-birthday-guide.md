@@ -5,7 +5,7 @@ slug: "age-calculator-birthday-guide"
 publishedDate: 2026-11-16
 updatedDate: 2026-11-16
 author: "Toolsiva Editorial"
-primaryTool: "Age calculation"
+primaryTool: "Age Calculator"
 primaryToolPath: "/tools/calculator/age-calculator/"
 relatedTools: []
 excerpt: "Calculate age in completed years, understand birthday cutoffs and leap-day cases, and avoid common errors in forms and records."
