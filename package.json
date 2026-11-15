@@ -33,7 +33,9 @@
     "test:phase7": "node --test tests/phase7.test.mjs",
     "adsense:audit": "node scripts/adsense-readiness-audit.mjs",
     "test:canonical-routing": "node --test tests/canonical-routing.test.mjs",
-    "seo:canonical": "node scripts/verify-canonical-routing.mjs"
+    "seo:canonical": "node scripts/verify-canonical-routing.mjs",
+    "test:phase8": "node --test tests/phase8.test.mjs",
+    "blog:publish-queue": "node scripts/publish-approved-blog.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
