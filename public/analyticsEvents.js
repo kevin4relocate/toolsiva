@@ -1,16 +1,11 @@
 (() => {
   "use strict";
 
-  const CONSENT_KEY = "toolsiva_analytics_consent";
   const TOOL_PATH = /^\/tools\/([^/]+)\/([^/]+)\/?$/;
   const SAFE_EVENTS = new Set(["tool_run", "tool_copy", "tool_download", "search_used"]);
 
   function hasAnalyticsConsent() {
-    try {
-      return localStorage.getItem(CONSENT_KEY) === "granted";
-    } catch {
-      return false;
-    }
+    return window.toolsivaConsent?.hasAnalyticsConsent() === true;
   }
 
   function currentTool() {
@@ -59,23 +54,13 @@
   }
 
   function actionSource(element) {
-    const dataNames = [
-      "run",
-      "transform",
-      "generate",
-      "calculate",
-      "convert",
-      "pick",
-      "process",
-      "copy",
-      "download",
-      "export",
-    ];
-
-    for (const name of dataNames) {
-      if (element.hasAttribute(`data-${name}`)) return name;
+    // Only static allowlisted action names. Never include button text, labels,
+    // input values, results, search queries or document content in GA4 events.
+    for (const name of ["run", "transform", "generate", "calculate", "convert",
+      "pick", "process", "copy", "download", "export"]) {
+      if (element.hasAttribute("data-" + name)) return name;
     }
-    return buttonLabel(element) || element.tagName.toLowerCase();
+    return element.tagName.toLowerCase() === "a" ? "link" : "button";
   }
 
   function isCopyAction(element) {
@@ -168,6 +153,8 @@
     if (event.key !== "Enter") return;
     const target = event.target;
     if (!(target instanceof HTMLInputElement)) return;
+    // A form submission is tracked by the submit listener; avoid double counts.
+    if (target.closest("form")) return;
     if (
       !target.matches(
         "input[type='search'], input[name='q'], [data-search-input]",
