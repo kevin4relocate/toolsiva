@@ -69,7 +69,7 @@ To reproduce it, enter **3** and **300** for Product A, and **4** and **500** fo
 
 ## Why quantity units must match
 
-If one package is labeled **0.5 kg** and another **300 g**, don't compare the raw numbers \`0.5\` and \`300\`. Convert first: \`0.5 kg = 500 g\`.
+If one package is labeled **0.5 kg** and another **300 g**, don't compare the raw numbers `0.5` and `300`. Convert first: `0.5 kg = 500 g`.
 
 The same issue arises with liters versus milliliters, ounces versus grams and packages sold by count versus weight. A comparison only makes sense when the quantities describe a compatible unit.
 
