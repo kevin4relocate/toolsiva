@@ -40,7 +40,13 @@ test("All 30 prepared guides are distinct practical drafts with SEO figures", ()
     assert.ok(originals.has(entry.primaryToolPath.replace(/\/+$/, "")), entry.slug + ": unknown tool");
     const { data, body } = article(entry);
     assert.equal(data.slug, entry.slug);
-    assert.equal(data.draft, true);
+    assert.equal(typeof data.draft, "boolean", entry.slug + ": draft must be explicit");
+    // Scheduled articles change draft to false one at a time after the queue starts.
+    if (!data.draft) {
+      const published = data.publishedDate instanceof Date
+        ? data.publishedDate.toISOString().slice(0, 10) : String(data.publishedDate).slice(0, 10);
+      assert.ok(published >= entry.date, entry.slug + ": article was published before its scheduled slot");
+    }
     assert.equal(data.aiAssisted, true);
     assert.equal(data.curatedSeries, true);
     assert.equal(data.primaryToolPath, entry.primaryToolPath);
@@ -91,7 +97,13 @@ function fixture() {
   const target = path.join(dir, "src/content/blog");
   fs.mkdirSync(target, { recursive: true });
   for (const entry of dailySchedule) {
-    fs.copyFileSync(path.join(blogDir, entry.slug + ".md"), path.join(target, entry.slug + ".md"));
+    // Reset already-published posts to drafts in the isolated fixture; otherwise
+    // simulated release tests would break after the first actual scheduled release.
+    const source = fs.readFileSync(path.join(blogDir, entry.slug + ".md"), "utf8");
+    const reset = source.replace(/^draft:\s*(?:true|false)\s*$/m, "draft: true")
+      .replace(/^publishedDate:\s*\d{4}-\d{2}-\d{2}\s*$/m, "publishedDate: " + entry.date)
+      .replace(/^updatedDate:\s*\d{4}-\d{2}-\d{2}\s*$/m, "updatedDate: " + entry.date);
+    fs.writeFileSync(path.join(target, entry.slug + ".md"), reset);
   }
   writeGuideImages(path.join(dir, "public/blog/illustrations"));
   return dir;
