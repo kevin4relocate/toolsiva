@@ -47,13 +47,13 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "percentage-calculator":
       ns = get(2);
       if (!ns) return waiting();
-      [a, b] = ns;
+      [a, b] = ns as [number, number];
       return result(fmt(a * b / 100));
 
     case "percentage-change-calculator":
       ns = get(2);
       if (!ns) return waiting();
-      [a, b] = ns;
+      [a, b] = ns as [number, number];
       if (a === 0) return invalid("Original value must not be zero.");
       c = (b - a) / Math.abs(a) * 100;
       return result(fmt(c) + "%", c > 0 ? "Increase" : c < 0 ? "Decrease" : "No change");
@@ -61,7 +61,7 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "discount-calculator":
       ns = get(2);
       if (!ns) return waiting();
-      [a, b] = ns;
+      [a, b] = ns as [number, number];
       if (a < 0 || b < 0 || b > 100) return invalid("Price must be non-negative and discount between 0% and 100%.");
       c = a * b / 100;
       return result(fmt(a - c), "You save " + fmt(c));
@@ -69,7 +69,7 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "tip-calculator":
       ns = get(3);
       if (!ns) return waiting();
-      [a, b, c] = ns;
+      [a, b, c] = ns as [number, number, number];
       if (a < 0 || b < 0 || !Number.isSafeInteger(c) || c < 1) {
         return invalid("Enter a non-negative bill/tip and at least one whole person.");
       }
@@ -79,7 +79,7 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "bmi-calculator":
       ns = get(2);
       if (!ns) return waiting();
-      [a, b] = ns;
+      [a, b] = ns as [number, number];
       if (!(a > 0) || !(b > 0)) return invalid("Weight and height must be greater than zero.");
       c = a / Math.pow(b / 100, 2);
       return result(fmt(c, 1), c < 18.5 ? "Underweight" : c < 25 ? "Healthy range" : c < 30 ? "Overweight" : "Obesity range");
@@ -87,7 +87,7 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "loan-calculator":
       ns = get(3);
       if (!ns) return waiting();
-      [a, b, c] = ns;
+      [a, b, c] = ns as [number, number, number];
       d = c * 12;
       if (!(a > 0) || b < 0 || b > 1000 || !(c > 0) || !Number.isSafeInteger(d) || d > 1200) {
         return invalid("Enter a positive loan, 0–1000% annual rate and a whole number of months (up to 100 years).");
@@ -102,7 +102,7 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "simple-interest-calculator":
       ns = get(3);
       if (!ns) return waiting();
-      [a, b, c] = ns;
+      [a, b, c] = ns as [number, number, number];
       if (a < 0 || b < -100 || c < 0) return invalid("Principal and time must be non-negative; rate must be at least -100%.");
       d = a * b * c / 100;
       return result(fmt(a + d), "Interest " + fmt(d));
@@ -110,7 +110,7 @@ export function calculateTool(mode: string, values: readonly string[], today = n
     case "compound-interest-calculator":
       ns = get(4);
       if (!ns) return waiting();
-      [a, b, c, d] = ns;
+      [a, b, c, d] = ns as [number, number, number, number];
       if (a < 0 || c < 0 || !Number.isSafeInteger(d) || d < 1 || d > 36500 ||
           b <= -100 * d || !Number.isFinite(c * d) || c * d > 100000) {
         return invalid("Use a non-negative principal/time, positive whole compounding frequency, and valid interest rate.");
