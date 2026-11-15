@@ -22,6 +22,7 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
   aria-labelledby="toolsiva-command-title"
 >
   <div class="w-full max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 shadow-2xl shadow-black/60">
+    <h2 id="toolsiva-command-title" class="sr-only">Search Toolsiva tools</h2>
     <div class="flex items-center gap-3 border-b border-white/10 px-4 py-3">
       <input
         id="toolsiva-command-input"
@@ -67,6 +68,7 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
     }
 
     let activeIndex = 0;
+    let previouslyFocused = null;
 
     const readArray = (key) => {
       try {
@@ -178,6 +180,8 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
     };
 
     const openPalette = () => {
+      if (!palette.classList.contains("hidden")) return;
+      previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       palette.classList.remove("hidden");
       palette.classList.add("flex");
       document.documentElement.classList.add("overflow-hidden");
@@ -190,6 +194,8 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
       palette.classList.add("hidden");
       palette.classList.remove("flex");
       document.documentElement.classList.remove("overflow-hidden");
+      previouslyFocused?.focus();
+      previouslyFocused = null;
     };
 
     document.querySelectorAll("[data-open-command-palette]").forEach((button) => {
@@ -205,7 +211,21 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
 
       if (palette.classList.contains("hidden")) return;
 
-      if (event.key === "Escape") closePalette();
+      if (event.key === "Tab") {
+        const focusables = Array.from(palette.querySelectorAll("input, button, a[href], [tabindex]:not([tabindex='-1'])"))
+          .filter((el) => el instanceof HTMLElement && el.getClientRects().length > 0);
+        if (!focusables.length) { event.preventDefault(); input.focus(); return; }
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault(); last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); first.focus();
+        }
+        return;
+      }
+      if (event.key === "Escape") { event.preventDefault(); closePalette(); }
+      else if (event.target === input && (event.key === "ArrowDown" || event.key === "ArrowUp")) return;
       else if (event.key === "ArrowDown") {
         event.preventDefault();
         setActive(activeIndex + 1);
