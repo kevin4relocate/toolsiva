@@ -17,40 +17,99 @@ aiAssisted: true
 curatedSeries: true
 ---
 
-One item per line is comfortable for editing, while another destination might require all items on one line. Joining list items can help with short labels, chat messages and simple data preparation.
+Lists copied from spreadsheets, emails or documents often contain **one item per line**. That format is readable, but a form, message or script may need everything on one line. Instead of manually deleting each line break, you can join the entries with a chosen separator.
 
-Use the [List to Text Converter](/tools/text/list-to-text/) for straightforward line-based lists.
+The illustration uses the input items `alpha`, `beta` and `gamma`. Choosing commas produces `alpha, beta, gamma`, while the worked example below shows the same transformation with color names.
 
-## Example: three items, one sentence
+The [Toolsiva List to Text Converter](/tools/text/list-to-text/) joins line-based items into a single text sequence. The available separator choices include **commas, spaces, pipes and semicolons**.
 
-Start with three lines:
+## From three lines to one line
 
-    alpha
-    beta
-    gamma
+Start with this plain-text list:
 
-Choose a comma-and-space separator. The intended result is:
+```text
+Red
+Blue
+Green
+```
 
-    alpha, beta, gamma
+Choose the **Comma** separator. The result is:
 
-Other separators may be useful, such as spaces, semicolons or a custom symbol. Choose the one your destination expects rather than assuming commas are always appropriate.
+```text
+Red, Blue, Green
+```
 
-## Watch for punctuation inside items
+Choosing a different separator changes the output:
 
-Consider the two entries “New York, NY” and “Boston, MA.” If you join them with ordinary commas, the result contains several commas and may look like four separate values to an application expecting CSV fields.
+| Separator | Example output |
+| --- | --- |
+| Comma | `Red, Blue, Green` |
+| Space | `Red Blue Green` |
+| Pipe | `Red | Blue | Green` |
+| Semicolon | `Red; Blue; Green` |
 
-A text join is not the same as a standards-aware CSV serializer with quotation and escaping rules. If you are building a real spreadsheet file, use a format-specific converter.
+The output is still **plain text**. It is not automatically a validated CSV file or a set of machine-readable records.
 
-## Check blanks and accidental whitespace
+## How the browser tool processes lines
 
-Copied lists can contain blank rows at the beginning, between items or at the end. Decide whether blank lines represent meaningful empty entries. A simple approach is to first use [Remove Empty Lines](/tools/text/remove-empty-lines/) when empty rows are unwanted.
+The tool separates your input at line boundaries, trims surrounding whitespace from each item and removes empty items before joining them with the selected separator.
 
-Before processing a long list, try five records that include punctuation and spaces. Inspect the first, middle and final entries after conversion.
+That behavior is convenient for a quick list, but it matters if blanks carry meaning. Suppose a row of empty text represents an intentionally missing value in a spreadsheet. The list converter may drop that row, shifting the positions of values relative to the original data.
 
-## Reversibility depends on the delimiter
+For records where a blank field must be preserved, use a structured data format and an actual parser rather than a simple line joiner.
 
-Splitting joined text back into rows only works reliably if the delimiter is never part of an item or a separate escaping convention exists. A space-separated list, for example, cannot safely preserve multiword place names without extra rules.
+## Use the List to Text Converter
 
-For readable prose, a simple join is often sufficient. For structured data exchange, use CSV or JSON tools that preserve the boundaries between fields.
+1. Open the [List to Text Converter](/tools/text/list-to-text/).
+2. Paste one item per line into the input area.
+3. Select the output separator from the available choices.
+4. Review the generated text on the right.
+5. Use **Copy** to place the result into your document or application.
 
-A quick final check is to compare item counts before and after the transformation. No unexpected item should vanish or split into several parts.
+If the input already contains several words on one line, those words remain part of the same item. For example, `New York` is one line and will stay together as text, even if you choose commas between list entries.
+
+## A practical example: preparing an email
+
+You have a list of meeting topics:
+
+```text
+Budget review
+Design approval
+Release planning
+```
+
+Joining with semicolons produces:
+
+```text
+Budget review; Design approval; Release planning
+```
+
+You can paste that into a calendar description or message. If the destination uses semicolons as a field separator, however, check whether any individual item contains its own semicolon.
+
+The same issue applies to pipes: a pipe is a useful visual delimiter but is not guaranteed to be safe inside all data formats.
+
+## Why comma-separated text is not necessarily CSV
+
+A list joiner does **not** implement complete CSV quoting rules. If an item contains a comma, line break or double quote, a proper CSV exporter may need to wrap the field in quotation marks and escape embedded quotes.
+
+For example, the item `Smith, Jane` contains a comma that is part of the name. A simple join of `Smith, Jane` and `Alex` produces `Smith, Jane, Alex`, which looks like three comma-separated values rather than two.
+
+If another system expects RFC-style CSV rows, use a CSV-aware tool rather than assuming joined text will parse correctly.
+
+## Going the other direction
+
+Sometimes you have comma-separated text and want one item per line. In that case, use the [Text to List](/tools/text/text-to-list/) tool. It is helpful for simple delimited strings but is not a substitute for a robust CSV parser where values themselves contain quoted separators.
+
+For lists containing stray blank lines, [Remove Empty Lines](/tools/text/remove-empty-lines/) may help before joining, though List to Text already skips empty lines in its current processing flow.
+
+## Common mistakes to avoid
+
+**Pasting entire spreadsheet cells with embedded newlines.** The tool sees line boundaries, not spreadsheet row IDs, so an embedded newline can become a separate item.
+
+**Expecting the tool to keep blank rows.** It filters empty items by design.
+
+**Using the wrong delimiter.** Choose based on the system that will receive the result. Commas are readable; pipes and semicolons may be easier when items themselves contain commas.
+
+**Assuming all whitespace is preserved.** Leading and trailing spaces around each item are trimmed.
+
+A final review of the copied result—especially the number of items and any embedded punctuation—prevents most avoidable data-cleaning mistakes.
