@@ -143,90 +143,11 @@ const isDualPane = dualPaneModes.has(mode);
   const capitalize=(v:string)=>v.replace(/\b\w/g,c=>c.toUpperCase());
   const alternating=(v:string)=>{let i=0;return Array.from(v).map(c=>/[A-Za-z]/.test(c)?(i++%2?c.toUpperCase():c.toLowerCase()):c).join("");};
   const slug=(v:string)=>v.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
-  const lcs = (a: string[], b: string[]) => {
-    const m = a.length;
-    const n = b.length;
-    const dp: number[][] = Array.from(
-      { length: m + 1 },
-      () => Array<number>(n + 1).fill(0),
-    );
-
-    for (let i = m - 1; i >= 0; i -= 1) {
-      for (let j = n - 1; j >= 0; j -= 1) {
-        const diagonal = dp[i + 1]?.[j + 1] ?? 0;
-        const below = dp[i + 1]?.[j] ?? 0;
-        const right = dp[i]?.[j + 1] ?? 0;
-
-        if (a[i] === b[j]) {
-          const currentRow = dp[i];
-          if (currentRow) currentRow[j] = diagonal + 1;
-        } else {
-          const currentRow = dp[i];
-          if (currentRow) currentRow[j] = Math.max(below, right);
-        }
-      }
-    }
-
-    const out: {
-      left: string | null;
-      right: string | null;
-      type: "unchanged" | "removed" | "added";
-    }[] = [];
-
-    let i = 0;
-    let j = 0;
-
-    while (i < m && j < n) {
-      if (a[i] === b[j]) {
-        out.push({
-          left: a[i] ?? "",
-          right: b[j] ?? "",
-          type: "unchanged",
-        });
-        i += 1;
-        j += 1;
-        continue;
-      }
-
-      const below = dp[i + 1]?.[j] ?? 0;
-      const right = dp[i]?.[j + 1] ?? 0;
-
-      if (below >= right) {
-        out.push({
-          left: a[i] ?? "",
-          right: null,
-          type: "removed",
-        });
-        i += 1;
-      } else {
-        out.push({
-          left: null,
-          right: b[j] ?? "",
-          type: "added",
-        });
-        j += 1;
-      }
-    }
-
-    while (i < m) {
-      out.push({
-        left: a[i] ?? "",
-        right: null,
-        type: "removed",
-      });
-      i += 1;
-    }
-
-    while (j < n) {
-      out.push({
-        left: null,
-        right: b[j] ?? "",
-        type: "added",
-      });
-      j += 1;
-    }
-
-    return out;
+  type DiffWorkerResponse = {
+    id: number;
+    rows?: Array<{ kind: "unchanged" | "added" | "removed" | "changed"; leftIndex: number | null; rightIndex: number | null }>;
+    stats?: Record<string, number>;
+    error?: string;
   };
 
   function setup(){document.querySelectorAll<HTMLElement>("[data-text-tool]").forEach(root=>{if(root.dataset.initialized==="true")return;root.dataset.initialized="true";const mode=root.dataset.mode??"";const input=root.querySelector<HTMLTextAreaElement>("[data-input]"),a=root.querySelector<HTMLTextAreaElement>("[data-input-a]"),b=root.querySelector<HTMLTextAreaElement>("[data-input-b]"),output=root.querySelector<HTMLTextAreaElement>("[data-output]"),option=root.querySelector<HTMLSelectElement>("[data-option]"),find=root.querySelector<HTMLInputElement>("[data-find]"),replace=root.querySelector<HTMLInputElement>("[data-replace]"),caseSensitive=root.querySelector<HTMLInputElement>("[data-case-sensitive]"),ignoreCase=root.querySelector<HTMLInputElement>("[data-ignore-case]"),ignoreSpace=root.querySelector<HTMLInputElement>("[data-ignore-space]"),diff=root.querySelector<HTMLElement>("[data-diff-view]"),status=root.querySelector<HTMLElement>("[data-status]");const copies=root.querySelectorAll<HTMLButtonElement>("[data-copy]"),clears=root.querySelectorAll<HTMLButtonElement>("[data-clear]");let history:string[]=[];let timer:ReturnType<typeof setTimeout>|undefined;
@@ -282,7 +203,80 @@ const isDualPane = dualPaneModes.has(mode);
     };
     const stats=()=>{const v=input?.value??"",t=v.trim();const s={words:t?t.split(/\s+/u).length:0,characters:v.length,"without-spaces":v.replace(/\s/gu,"").length,sentences:t.match(/[^.!?]+[.!?]+|[^.!?]+$/gu)?.filter(x=>x.trim()).length??0,paragraphs:t?v.split(/\n\s*\n/u).map(x=>x.trim()).filter(Boolean).length:0};Object.entries(s).forEach(([k,val])=>{const el=root.querySelector<HTMLElement>(`[data-stat="${k}"]`);if(el)el.textContent=val.toLocaleString();});return s;};
     const transform=()=>{if(mode==="word-counter"||mode==="character-counter"){stats();return;}const v=input?.value??"";let r="";if(mode==="remove-duplicate-lines"){const seen=new Set<string>();r=v.split(/\r?\n/u).filter(x=>seen.has(x)?false:(seen.add(x),true)).join("\n");}else if(mode==="sort-lines"){const lines=v.split(/\r?\n/u).sort((x,y)=>x.localeCompare(y,undefined,{sensitivity:"base"}));if(option?.value==="desc")lines.reverse();r=lines.join("\n");}else if(mode==="reverse-text")r=option?.value==="words"?v.trim().split(/\s+/u).reverse().join(" "):option?.value==="lines"?v.split(/\r?\n/u).reverse().join("\n"):Array.from(v).reverse().join("");else if(mode==="remove-extra-spaces")r=v.split(/\r?\n/u).map(x=>x.replace(/[ \t]+/g," ").trim()).join("\n").replace(/\n{3,}/g,"\n\n").trim();else if(mode==="find-and-replace"){const f=find?.value??"";r=f?v.replace(new RegExp(escapeRegExp(f),caseSensitive?.checked?"g":"gi"),replace?.value??""):v;}else if(mode==="slug-generator")r=slug(v);if(output)output.value=r;};
-    const compare=()=>{if(!diff)return;const left=(a?.value??"").split(/\r?\n/u),right=(b?.value??"").split(/\r?\n/u);const norm=(x:string)=>{let y=x;if(ignoreSpace?.checked)y=y.replace(/\s+/g," ").trim();if(ignoreCase?.checked)y=y.toLowerCase();return y;};const rows=lcs(left.map(norm),right.map(norm));let li=0,ri=0,added=0,removed=0,unchanged=0,changed=0;const html:string[]=[];for(let i=0;i<rows.length;i++){const row=rows[i];let type: "unchanged" | "removed" | "added" | "changed" = row?.type ?? "unchanged",l=row?.left??null,r=row?.right??null;if(type==="removed"&&rows[i+1]?.type==="added"){type="changed";r=rows[i+1]?.right??"";i++;changed++;}else if(type==="added")added++;else if(type==="removed")removed++;else unchanged++;if(l!==null)li++;if(r!==null)ri++;const cls=type==="added"?"diff-added":type==="removed"?"diff-removed":type==="changed"?"diff-changed":"diff-unchanged";html.push(`<div class="grid grid-cols-2 border-b border-white/5 ${cls}"><div class="grid grid-cols-[3rem_1fr] px-2 py-1.5"><span class="select-none text-right text-zinc-600">${l!==null?li:""}</span><span class="whitespace-pre-wrap break-words px-3">${l!==null?esc(a?.value.split(/\r?\n/u)[li-1]??""):""}</span></div><div class="grid grid-cols-[3rem_1fr] border-l border-white/5 px-2 py-1.5"><span class="select-none text-right text-zinc-600">${r!==null?ri:""}</span><span class="whitespace-pre-wrap break-words px-3">${r!==null?esc(b?.value.split(/\r?\n/u)[ri-1]??""):""}</span></div></div>`);}diff.innerHTML=html.join("")||'<div class="p-6 text-center text-zinc-600">Paste two texts to compare.</div>';({unchanged,added,removed,changed} as Record<string,number>);Object.entries({unchanged,added,removed,changed}).forEach(([k,v])=>{const el=root.querySelector<HTMLElement>(`[data-diff-stat="${k}"]`);if(el)el.textContent=String(v);});};
+    let compareTimer: ReturnType<typeof setTimeout> | undefined;
+    let compareWorker: Worker | null = null;
+    let compareVersion = 0;
+    const setDiffStats = (stats: Record<string, number>) => {
+      for (const key of ["unchanged", "added", "removed", "changed"]) {
+        const cell = root.querySelector<HTMLElement>('[data-diff-stat="' + key + '"]');
+        if (cell) cell.textContent = String(stats[key] ?? 0);
+      }
+    };
+    const compare = () => {
+      if (!diff) return;
+      const version = ++compareVersion;
+      if (compareTimer !== undefined) clearTimeout(compareTimer);
+      compareWorker?.terminate();
+      compareWorker = null;
+      const left = a?.value ?? "";
+      const right = b?.value ?? "";
+      setDiffStats({});
+      if (!left && !right) {
+        diff.textContent = "Paste two texts to compare.";
+        return;
+      }
+      if (left.length > 200000 || right.length > 200000) {
+        diff.textContent = "Each side must contain 200,000 characters or fewer. Compare a smaller section.";
+        return;
+      }
+      diff.textContent = "Comparing…";
+      compareTimer = setTimeout(() => {
+        try {
+          const worker = new Worker("/textCompareWorker.js", { type: "module" });
+          compareWorker = worker;
+          worker.addEventListener("message", (event: MessageEvent<DiffWorkerResponse>) => {
+            if (version !== compareVersion) return;
+            worker.terminate();
+            compareWorker = null;
+            const { rows, stats, error } = event.data;
+            if (error || !Array.isArray(rows) || !stats) {
+              diff.textContent = error || "Unable to compare this input.";
+              return;
+            }
+            const originals = left.split(/\r?\n/u);
+            const updates = right.split(/\r?\n/u);
+            const html = rows.map((row) => {
+              const li = row.leftIndex, ri = row.rightIndex;
+              const leftNumber = li === null ? "" : String(li + 1);
+              const rightNumber = ri === null ? "" : String(ri + 1);
+              const leftValue = li === null ? "" : esc(originals[li] ?? "");
+              const rightValue = ri === null ? "" : esc(updates[ri] ?? "");
+              return [
+                '<div class="grid grid-cols-2 border-b border-white/5 diff-', row.kind, '">',
+                '<div class="grid grid-cols-[3rem_1fr] px-2 py-1.5">',
+                '<span class="select-none text-right text-zinc-600">', leftNumber, '</span>',
+                '<span class="whitespace-pre-wrap break-words px-3">', leftValue, '</span>',
+                '</div><div class="grid grid-cols-[3rem_1fr] border-l border-white/5 px-2 py-1.5">',
+                '<span class="select-none text-right text-zinc-600">', rightNumber, '</span>',
+                '<span class="whitespace-pre-wrap break-words px-3">', rightValue, '</span>',
+                '</div></div>',
+              ].join("");
+            }).join("");
+            diff.innerHTML = html || '<div class="p-6 text-center text-zinc-600">Paste two texts to compare.</div>';
+            setDiffStats(stats);
+          }, { once: true });
+          worker.addEventListener("error", () => {
+            if (version !== compareVersion) return;
+            worker.terminate();
+            compareWorker = null;
+            diff.textContent = "Comparison unavailable in this browser. Please try again.";
+          }, { once: true });
+          worker.postMessage({ id: version, left, right, ignoreCase: ignoreCase?.checked ?? false, ignoreWhitespace: ignoreSpace?.checked ?? false });
+        } catch {
+          diff.textContent = "Could not start comparison in this browser.";
+        }
+      }, 250);
+    };
     root.querySelectorAll<HTMLButtonElement>("[data-case-action]").forEach(btn=>btn.addEventListener("click",()=>{if(!input||!input.value)return;history.push(input.value);const action=btn.dataset.caseAction;input.value=action==="upper"?input.value.toUpperCase():action==="lower"?input.value.toLowerCase():action==="title"?title(input.value):action==="sentence"?sentence(input.value):action==="capitalize"?capitalize(input.value):alternating(input.value);updateCaseActions();actionFeedback(btn,"Applied!");notify("Converted");}));
     root.querySelector<HTMLButtonElement>("[data-undo]")?.addEventListener("click",()=>{if(!input||!history.length)return;input.value=history.pop()??input.value;const button=root.querySelector<HTMLButtonElement>("[data-undo]");updateCaseActions();actionFeedback(button,"Undone");notify("Undone");});
     root.querySelector<HTMLButtonElement>("[data-copy-editor]")?.addEventListener("click",async()=>{if(!input?.value)return notify("Nothing to copy");const button=root.querySelector<HTMLButtonElement>("[data-copy-editor]");try{await navigator.clipboard.writeText(input.value);actionFeedback(button,"Copied!");notify("Copied");}catch{notify("Copy failed");}});
