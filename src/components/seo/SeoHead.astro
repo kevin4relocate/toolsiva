@@ -25,7 +25,7 @@ const pageTitle = title === siteConfig.title ? title : `${title} | ${siteConfig.
 const rawCanonical = new URL(canonicalPath, siteConfig.url);
 const canonicalPathname = rawCanonical.pathname;
 if (canonicalPathname !== "/" && !canonicalPathname.endsWith(".html")) {
-  rawCanonical.pathname = canonicalPathname.replace(/\\/+$/, "") + "/";
+  rawCanonical.pathname = canonicalPathname.endsWith("/") ? canonicalPathname : canonicalPathname + "/";
 }
 rawCanonical.search = "";
 rawCanonical.hash = "";
