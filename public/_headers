@@ -1,0 +1,13 @@
+# Cloudflare Workers Static Assets security policy.
+# Applies to static assets served by the Workers asset handler, not custom Worker responses.
+# Keep Google tag/Cloudflare RUM compatibility: do not add restrictive script-src without tested consent flows.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'
+
+# Astro emits content-hashed filenames into /_astro/. Stable /toolActions.js is intentionally excluded.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -29,12 +29,14 @@ jobs:
       - run: npm run test:phase3
       - run: npm run test:phase4
       - run: npm run test:phase5
+      - run: npm run test:phase6
       - run: npm run blog:validate
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
       - run: npm run analytics:verify
       - run: npm run seo:audit
+      - run: npm run hardening:verify
       - name: Upload SEO audit report
         if: always()
         uses: actions/upload-artifact@v4

@@ -45,6 +45,7 @@ const organizationSchema = {
   logo: `${siteConfig.url}/favicon.svg`,
   email: siteConfig.contactEmail,
 };
+import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
 ---
 
 <!doctype html>
@@ -59,8 +60,8 @@ const organizationSchema = {
       noindex={noindex}
       image={image}
     />
-<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script is:inline type="application/ld+json" set:html={safeJsonForHtml(websiteSchema)} />
+    <script is:inline type="application/ld+json" set:html={safeJsonForHtml(organizationSchema)} />
   </head>
   <body class="text-zinc-100 antialiased">
     <a
