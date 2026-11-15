@@ -253,12 +253,12 @@ const priorityToolContent: Record<string, PriorityToolContent> = {
   },
   "age-calculator": {
     "overview": [
-      "Age Calculator helps you calculate elapsed years, months and days between two dates.",
+      "Age Calculator reports completed years from a date of birth to the current browser date; it does not separately report elapsed months or days.",
       "It works directly in the browser and is designed for quick, focused tasks without requiring an account."
     ],
     "example": {
-      "input": "Birth: 2000-01-01\nDate: 2026-01-01",
-      "output": "26 years, 0 months, 0 days"
+      "input": "Birth: 2000-01-01; today: 2026-01-01",
+      "output": "26 years"
     },
     "useCases": [
       "Check age on a date",
