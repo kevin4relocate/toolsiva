@@ -23,7 +23,9 @@
     "blog:validate": "node scripts/validate-blog-links.mjs",
     "test:phase1": "node --experimental-strip-types --test tests/phase1.test.mjs",
     "test:phase2": "node --test tests/phase2.test.mjs",
-    "tools:verify": "node scripts/verify-tool-routes.mjs"
+    "tools:verify": "node scripts/verify-tool-routes.mjs",
+    "test:phase3": "node --test tests/phase3.test.mjs",
+    "analytics:verify": "node scripts/verify-analytics.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
