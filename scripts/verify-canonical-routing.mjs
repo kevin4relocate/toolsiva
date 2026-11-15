@@ -28,7 +28,7 @@ function normalized(pathname) {
   return pathname === "/" ? "/" : pathname.replace(/\/+$/, "") + "/";
 }
 
-export function verifyCanonicalBuild(dist = path.resolve("dist"), configFile = path.resolve("wrangler.jsonc")) {
+export function verifyCanonicalBuild(dist = path.resolve("dist"), configFile = path.resolve("wrangler.jsonc"), minimumPages = 100) {
   const errors = [];
   const add = (message) => errors.push(message);
   const config = JSON.parse(fs.readFileSync(configFile, "utf8"));
@@ -39,7 +39,7 @@ export function verifyCanonicalBuild(dist = path.resolve("dist"), configFile = p
     add("Wrangler must return proper 404 statuses for unknown static routes.");
   }
   const htmlFiles = listFiles(dist).filter((file) => file.endsWith(".html"));
-  if (htmlFiles.length < 100) add("Expected a full Astro build, found only " + htmlFiles.length + " HTML pages.");
+  if (htmlFiles.length < minimumPages) add("Expected a full Astro build, found only " + htmlFiles.length + " HTML pages.");
   const routes = new Map(htmlFiles.map((file) => [staticPageRoute(file, dist), file]));
   const canonicalList = new Set();
 
