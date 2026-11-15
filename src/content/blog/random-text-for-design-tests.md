@@ -5,7 +5,7 @@ slug: "random-text-for-design-tests"
 publishedDate: 2026-11-19
 updatedDate: 2026-11-19
 author: "Toolsiva Editorial"
-primaryTool: "Test layout states"
+primaryTool: "Random Text Generator"
 primaryToolPath: "/tools/text/random-text-generator/"
 relatedTools: []
 excerpt: "Use original generated sample text to expose UI problems with long paragraphs, wrapping, empty states and narrow-screen layouts."
