@@ -5,7 +5,7 @@ slug: "proportion-calculator-missing-value"
 publishedDate: 2026-11-17
 updatedDate: 2026-11-17
 author: "Toolsiva Editorial"
-primaryTool: "Equivalent ratios"
+primaryTool: "Proportion Calculator"
 primaryToolPath: "/tools/calculator/proportion-calculator/"
 relatedTools: []
 excerpt: "Solve a missing term in an equivalent proportion, verify the result using 6:9 and 10:x, and recognize cases where ratios do not apply."
