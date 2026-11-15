@@ -63,3 +63,72 @@ If blank rows are also a problem, the [Remove Empty Lines](/tools/text/remove-em
 Look at entries near the beginning and end of the list, plus any with accented letters, punctuation or extra spaces. A successful reduction in line count does not by itself establish that the remaining data is correct.
 
 The best duplicate-removal rule is one you can explain and reproduce.
+
+## How Toolsiva currently decides whether two lines match
+
+The [Remove Duplicate Lines](/tools/text/remove-duplicate-lines/) implementation splits input at line boundaries and keeps the **first occurrence of each exact line string**. It uses exact, case-sensitive comparisons and preserves the order of surviving lines.
+
+For example:
+
+```text
+alpha
+beta
+alpha
+gamma
+beta
+```
+
+The output is:
+
+```text
+alpha
+beta
+gamma
+```
+
+Neither alphabetic sorting nor case folding happens automatically. This matters for data cleanup where order represents priority or original entry order.
+
+| Input lines | Are they treated as duplicates? |
+| --- | --- |
+| `apple` and `apple` | Yes |
+| `Apple` and `apple` | No |
+| `apple` and `apple ` | No (trailing space) |
+| `apple` and ` apple` | No (leading space) |
+| Two completely empty lines | Yes—only one is retained |
+
+The last row is easy to miss: a blank line is still a line string, so repeated blanks are reduced to a single empty line rather than removed altogether.
+
+## Don't assume case-insensitive or trimmed matching
+
+This particular tool does **not** currently expose separate case-sensitivity or trimming settings in its duplicate-removal workspace. If you want all `Apple`, `apple` and `APPLE` entries to count as the same item, you must first choose an explicit normalization policy.
+
+For ordinary names or informal lists, a consistent case style may be useful. For identifiers, usernames, codes or data where uppercase and lowercase have different meanings, blindly lowercasing everything can destroy information.
+
+Similarly, trimming whitespace may help remove accidental duplicates, but leading spaces are meaningful in some formats. The [Trim Each Line](/tools/text/trim-each-line/) tool can remove surrounding whitespace before deduplication when that is appropriate.
+
+## A practical list-cleaning sequence
+
+Suppose you merged two lists of conference attendees. You want one row per person, but not merely one row per repeated name. Two different attendees can share the same name.
+
+A safer process is:
+
+1. Keep an untouched backup of the original lists.
+2. Identify the field that truly defines uniqueness—perhaps a registration ID.
+3. Normalize only fields where formatting inconsistencies are known to be accidental.
+4. Test the deduplication on a short representative sample.
+5. Compare the first and last retained entries to confirm order was preserved.
+6. Review removed values before replacing the source.
+
+For data with multiple columns or repeated business events, use a structured deduplication method keyed by the correct field. A line-based utility cannot know whether two equal-looking entries represent two separate transactions.
+
+## Blank lines versus repeated content
+
+If you want **no empty lines at all**, use [Remove Empty Lines](/tools/text/remove-empty-lines/) as a separate step. Remove Duplicate Lines reduces repeated blank lines to one, but does not guarantee a completely blank-free result.
+
+When cleaning logs, repeated messages may represent repeated failures. Removing those messages changes the frequency information. A deduplicated list is therefore not necessarily an accurate event log or a suitable count of activity.
+
+## Final quality check
+
+Verify that the number of retained lines matches your expectation, inspect entries with unusual spacing or capitalization and ensure that the first-occurrence ordering is meaningful for the destination.
+
+The correct result is not always the *shortest list*. It is the list that applies your stated definition of duplicate without discarding real information.
