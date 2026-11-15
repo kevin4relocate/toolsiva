@@ -5,7 +5,7 @@ slug: "password-generator-best-settings"
 publishedDate: 2026-11-24
 updatedDate: 2026-11-24
 author: "Toolsiva Editorial"
-primaryTool: "Password choices"
+primaryTool: "Password Generator"
 primaryToolPath: "/tools/security/password-generator/"
 relatedTools: []
 excerpt: "Choose safer random password length and character-group settings, and understand local generation, storage and reuse risks."
