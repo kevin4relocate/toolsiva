@@ -3,6 +3,10 @@
 
   const TOOL_PATH = /^\/tools\/([^/]+)\/([^/]+)\/?$/;
   const SAFE_EVENTS = new Set(["tool_run", "tool_copy", "tool_download", "search_used"]);
+  const SAFE_ACTION_SOURCES = new Set([
+    "run", "transform", "generate", "calculate", "convert", "pick",
+    "process", "copy", "download", "export", "button", "link", "custom",
+  ]);
 
   function hasAnalyticsConsent() {
     return window.toolsivaConsent?.hasAnalyticsConsent() === true;
@@ -31,9 +35,10 @@
 
     const safeParameters = {};
     for (const [key, value] of Object.entries(parameters)) {
-      if (
-        ["tool_category", "tool_slug", "action_source", "search_location"].includes(key)
-      ) {
+      if (key === "action_source") {
+        const normalized = cleanValue(value);
+        safeParameters[key] = SAFE_ACTION_SOURCES.has(normalized) ? normalized : "custom";
+      } else if (["tool_category", "tool_slug", "search_location"].includes(key)) {
         safeParameters[key] = cleanValue(value);
       } else if (key === "result_count" && Number.isFinite(Number(value))) {
         safeParameters[key] = Math.max(0, Math.min(1000, Number(value)));
