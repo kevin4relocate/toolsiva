@@ -1,0 +1,58 @@
+{
+  "age-calculator": {
+    "seoTitle": "Age Calculator – Completed Years from Date of Birth",
+    "title": "How completed age changes at a birthday",
+    "introduction": "Age is based on completed birthdays, not the difference between calendar years alone. This tool calculates age against the current browser date.",
+    "input": "Born July 20, 2000; consider July 19 and July 20, 2026.",
+    "output": "25 completed years on July 19; 26 completed years on July 20.",
+    "limitation": "The calculator does not accept a custom as-of date and does not separately report months or days. Leap-day legal conventions may vary."
+  },
+  "proportion-calculator": {
+    "seoTitle": "Proportion Calculator – Solve Missing Ratio Values",
+    "title": "Solve a missing fourth term",
+    "introduction": "A proportion works when both ratios compare quantities in the same order and the rate is constant.",
+    "input": "Six packages cost nine units. What would ten packages cost at the same unit price?",
+    "output": "6/9 = 10/x; multiply across to obtain x = 15.",
+    "limitation": "A zero denominator or a nonlinear relationship makes the simple proportion unsuitable."
+  },
+  "tip-calculator": {
+    "seoTitle": "Tip Calculator – Bill, Tip and Per-Person Split",
+    "title": "Split an eighty-dollar check",
+    "introduction": "Enter the bill basis, percentage and a positive whole number of diners to calculate a transparent even split.",
+    "input": "Bill $80, tip 15%, people 2.",
+    "output": "Tip $12, overall total $92, and $46 per person.",
+    "limitation": "Check whether tax, an existing gratuity or service charges are already included; those are not inferred from the input."
+  },
+  "random-text-generator": {
+    "seoTitle": "Random Text Generator – UI Testing and Placeholder Copy",
+    "title": "Stress-test a responsive layout",
+    "introduction": "Use different lengths of generated text as disposable test data before real content is available.",
+    "input": "Generate a short label and then a much longer paragraph for the same card.",
+    "output": "Compare wrapping, truncation, card height and behavior on narrow screens. Exact generated text varies.",
+    "limitation": "Generated placeholders are not reviewed factual content and should not be published as finished copy."
+  },
+  "morse-code-translator": {
+    "seoTitle": "Morse Code Translator – Encode and Decode Text",
+    "title": "Encode the three-letter SOS example",
+    "introduction": "Morse characters must be separated clearly for reliable text decoding.",
+    "input": "SOS",
+    "output": "... --- ... (three dots, three dashes, three dots).",
+    "limitation": "Written symbols represent codes, not timing or real transmitted signals; unsupported characters may need review."
+  },
+  "list-to-text": {
+    "seoTitle": "List to Text Converter – Join Lines with Separators",
+    "title": "Join three lines with commas",
+    "introduction": "Turn a line-by-line list into a text sequence, choosing a delimiter appropriate to the destination.",
+    "input": "alpha on line one, beta on line two, gamma on line three.",
+    "output": "alpha, beta, gamma",
+    "limitation": "A simple join is not a full CSV serializer; delimiters inside data fields require separate escaping rules."
+  },
+  "word-counter": {
+    "seoTitle": "Word Counter – Count Words, Characters and Lines",
+    "title": "Check a short sentence",
+    "introduction": "Word limits and character limits measure different things; review the requirement before editing a draft to fit.",
+    "input": "A quick example.",
+    "output": "3 words. Character count includes letters, spaces and punctuation.",
+    "limitation": "Hyphens, emoji and scripts without spaces can lead to differences across counting conventions."
+  }
+}
