@@ -1,4 +1,5 @@
 import type { ToolDefinition } from "@/types/tool";
+import toolUsageNotes from "@/data/toolUsageNotes.json";
 
 export interface ToolExample { input: string; output: string; }
 export interface ToolContentSection { heading: string; paragraphs: string[]; }
@@ -76,8 +77,8 @@ const priorityToolContent: Record<string, PriorityToolContent> = {
       "It works directly in the browser and is designed for quick, focused tasks without requiring an account."
     ],
     "example": {
-      "input": "{\"name\":\"Toolsiva\",\"tools\":108}",
-      "output": "{\n  \"name\": \"Toolsiva\",\n  \"tools\": 108\n}"
+      "input": "{\"name\":\"Toolsiva\",\"tools\":123}",
+      "output": "{\n  \"name\": \"Toolsiva\",\n  \"tools\": 123\n}"
     },
     "useCases": [
       "Read API responses",
@@ -412,14 +413,12 @@ const priorityToolContent: Record<string, PriorityToolContent> = {
   }
 };
 
-const categoryContext: Record<ToolDefinition["category"], string> = {
-  text: "Text tools help prepare, clean and transform written content.",
-  developer: "Developer tools support inspection, validation and debugging.",
-  security: "Security utilities support common tasks but do not replace complete security controls.",
-  qr: "QR tools create machine-readable payloads that should be tested before publication.",
-  calculator: "Calculator results are general estimates and should be independently verified.",
-  converter: "Converters use common definitions and may display rounded results.",
-};
+export function getToolGuideCoverage() {
+  return {
+    prioritySlugs: Object.keys(priorityToolContent),
+    usageSlugs: Object.keys(toolUsageNotes),
+  };
+}
 
 export function getPriorityToolContent(slug: string): PriorityToolContent | undefined {
   return priorityToolContent[slug];
@@ -440,23 +439,22 @@ export function getToolContentSections(tool: ToolDefinition): ToolContentSection
     ] }
   ];
 
-  const purpose = tool.shortDescription.replace(/\.$/, "").toLowerCase();
+  // Every current tool has either an independently prepared example or
+  // task-specific usage guidance. Avoid repeating generic "SEO" paragraphs.
+  const note = toolUsageNotes[tool.slug as keyof typeof toolUsageNotes];
+  if (note) {
+    return [
+      { heading: `How ${tool.name} works`, paragraphs: [
+        note.how,
+      ] },
+      { heading: "Try this", paragraphs: [note.tryThis] },
+      { heading: "Before using the result", paragraphs: [note.watch] },
+    ];
+  }
+
+  // Future catalog additions remain usable until their guide is authored.
+  // CI warns about absent coverage so the content is not left generic.
   return [
-    { heading: `What is ${tool.name}?`, paragraphs: [
-      `${tool.name} is a free browser-based utility designed to ${purpose}.`,
-      categoryContext[tool.category]
-    ] },
-    { heading: `When to use ${tool.name}`, paragraphs: [
-      "Use this tool for a quick result without installing a separate application.",
-      "Review important results in the destination system."
-    ] },
-    { heading: "Practical tips", paragraphs: [
-      "Check the input format before relying on the result.",
-      "Keep a copy of important original data."
-    ] },
-    { heading: "Privacy and processing", paragraphs: [
-      "This tool is designed to process its working input in your browser.",
-      "Avoid confidential material on an untrusted device."
-    ] }
+    { heading: `About ${tool.name}`, paragraphs: [tool.shortDescription] },
   ];
 }
