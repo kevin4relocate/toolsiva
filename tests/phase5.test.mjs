@@ -134,8 +134,8 @@ test("Blog metadata and contextual tool-to-blog links are aligned", () => {
   const index = fs.readFileSync("src/pages/blog/index.astro", "utf8");
   const post = fs.readFileSync("src/pages/blog/[slug].astro", "utf8");
   const tool = fs.readFileSync("src/pages/tools/[category]/[slug].astro", "utf8");
-  assert.ok(index.includes('canonicalPath="/blog"'));
-  assert.ok(!index.includes('canonicalPath="/blog/"'));
+  assert.ok(index.includes('canonicalPath="/blog/"'));
+  assert.ok(!index.includes('canonicalPath="/blog"'));
   assert.ok(post.includes("canonicalPath="));
   assert.ok(!post.includes('slug}/"}'));
   assert.match(tool, /getCollection\("blog"\)/);
