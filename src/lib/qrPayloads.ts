@@ -40,7 +40,7 @@ function calendarDateTime(raw: string): string | null {
   date.setUTCHours(0, 0, 0, 0);
   date.setUTCFullYear(y, mo - 1, d);
   if (date.getUTCFullYear() !== y || date.getUTCMonth() !== mo - 1 || date.getUTCDate() !== d) return null;
-  return m[1] + m[2] + m[3] + "T" + m[4] + m[5] + (m[6] ?? "00");
+  return m[1]! + m[2]! + m[3]! + "T" + m[4]! + m[5]! + (m[6] ?? "00");
 }
 
 export function buildQrPayload(
