@@ -16,3 +16,6 @@ reports/production-seo-issues.csv
 # Generated AdSense readiness reports (CI artifacts)
 reports/adsense-readiness.json
 reports/adsense-readiness-issues.csv
+
+# Original blog illustrations are deterministically generated before Astro builds.
+public/blog/illustrations/*.svg
