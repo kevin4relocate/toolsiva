@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { test } from "node:test";
+import { webcrypto } from "node:crypto";
+import { generatePassword, generatePassphrase, passphraseWords, secureIndex } from "../src/lib/securityGenerators.ts";
 import { calculateTool } from "../src/lib/calculatorEngine.ts";
 import { convertToolValue, unitSets } from "../src/lib/converterEngine.ts";
 import { buildQrPayload } from "../src/lib/qrPayloads.ts";
@@ -141,4 +143,35 @@ test("Modified UI components are integrated with the tested engines", () => {
   assert.match(read("QrToolWorkspace"), /buildQrPayload\(mode,/);
   assert.match(read("ExpansionToolWorkspace"), /paceMetrics\(v\)/);
   assert.match(read("ExpansionToolWorkspace"), /fractionOperation\(v\)/);
+});
+
+test("Security: passphrase uses cryptographic word selection with >=64-bit default word entropy", () => {
+  assert.ok(passphraseWords.length >= 100);
+  const generated = generatePassphrase(10, "-", webcrypto);
+  assert.equal(generated.split("-").length, 10);
+  for (const word of generated.split("-")) assert.ok(passphraseWords.includes(word));
+  assert.ok(10 * Math.log2(passphraseWords.length) >= 64);
+  assert.throws(() => generatePassphrase(3, "-", webcrypto), /10/);
+  assert.throws(() => generatePassphrase(17, "-", webcrypto), /10/);
+});
+test("Security: generated passwords include each selected character group", () => {
+  for (let i = 0; i < 30; i++) {
+    const generated = generatePassword(4, {
+      lower: true, upper: true, digits: true, symbols: true,
+    }, webcrypto);
+    assert.equal(generated.length, 4);
+    assert.match(generated, /[a-z]/);
+    assert.match(generated, /[A-Z]/);
+    assert.match(generated, /\d/);
+    assert.match(generated, /[^A-Za-z0-9]/);
+  }
+  assert.throws(() => generatePassword(8, { lower:false, upper:false, digits:false, symbols:false }, webcrypto), /Select/);
+  assert.throws(() => secureIndex(0, webcrypto), RangeError);
+});
+test("Security UI rejects colon in Basic Auth usernames and uses secure generators", () => {
+  const source = fs.readFileSync(new URL("../src/components/tools/SecurityToolWorkspace.astro", import.meta.url), "utf8");
+  assert.match(source, /if\(a\.includes\(":"\)\)/);
+  assert.match(source, /generatePassphrase\(count,/);
+  assert.match(source, /generatePassword\(length,/);
+  assert.match(source, /min="10" max="16" value="10"/);
 });
