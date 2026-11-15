@@ -117,6 +117,7 @@ const breadcrumbSchema = {
     },
   ],
 };
+import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
 ---
 
 <BaseLayout
@@ -124,9 +125,9 @@ const breadcrumbSchema = {
   description={tool.metaDescription}
   canonicalPath={getToolPath(tool)}
 >
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(webApplicationSchema)} />
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={safeJsonForHtml(webApplicationSchema)} />
+  <script is:inline type="application/ld+json" set:html={safeJsonForHtml(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={safeJsonForHtml(faqSchema)} />
 
   <div class="mx-auto grid w-full max-w-[84rem] grid-cols-1 px-4 py-5 sm:px-5 lg:px-6 lg:py-6 min-[1800px]:max-w-[107.5rem] min-[1800px]:grid-cols-[160px_minmax(0,84rem)_160px] min-[1800px]:gap-6">
     <div class="hidden min-[1800px]:block"><AdSlot placement="tool-side-left" minHeight={600} variant="side-rail" /></div>
