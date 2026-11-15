@@ -31,7 +31,9 @@
     "test:phase6": "node --experimental-strip-types --test tests/phase6.test.mjs",
     "hardening:verify": "node scripts/verify-hardening.mjs",
     "test:phase7": "node --test tests/phase7.test.mjs",
-    "adsense:audit": "node scripts/adsense-readiness-audit.mjs"
+    "adsense:audit": "node scripts/adsense-readiness-audit.mjs",
+    "test:canonical-routing": "node --test tests/canonical-routing.test.mjs",
+    "seo:canonical": "node scripts/verify-canonical-routing.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
