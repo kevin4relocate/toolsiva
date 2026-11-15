@@ -13,7 +13,7 @@ const timeMode = mode === "time-duration-calculator";
   <div class="grid gap-3 sm:grid-cols-2">
    {names.map((label,index)=><label class:list={["grid gap-1.5", mode === "average-calculator" && "sm:col-span-2"]}><span class="text-xs font-medium text-zinc-400">{label}</span><input data-value={index} type={dateModes.has(mode)?"date":timeMode?"time":mode==="average-calculator"?"text":"number"} step="any" class="rounded-xl border border-white/10 bg-zinc-950 px-3 py-3 text-sm text-white" /></label>)}
   </div>
-  <div class="rounded-2xl border border-white/10 bg-zinc-950/70 p-4"><p class="text-xs font-semibold uppercase tracking-wider text-zinc-500">Result</p><div data-result class="mt-3 text-2xl font-bold text-white">Enter values</div><div data-details class="mt-2 text-sm leading-6 text-zinc-400"></div></div>
+  <div class="rounded-2xl border border-white/10 bg-zinc-950/70 p-4"><p class="text-xs font-semibold uppercase tracking-wider text-zinc-500">Result</p><div data-result role="status" aria-live="polite" aria-atomic="true" class="mt-3 text-2xl font-bold text-white">Enter values</div><div data-details class="mt-2 text-sm leading-6 text-zinc-400"></div></div>
  </div>
 </section>
 <script>
