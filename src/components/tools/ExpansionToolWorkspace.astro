@@ -45,41 +45,40 @@ const isText = textModes.has(mode);
 </section>
 
 <script>
+  import { simplifiedRatio, fractionOperation, integerGcdLcm, paceMetrics } from "@/lib/expansionMath";
   type Field={key:string;label:string;type?:string;value?:string;options?:string[];min?:string;step?:string};
   type Config={fields:Field[];compute:(v:Record<string,string>)=>Array<[string,string]>};
   const n=(v:string|undefined)=>Number.parseFloat(v??"");
   const fmt=(v:number,d=4)=>Number.isFinite(v)?new Intl.NumberFormat("en-US",{maximumFractionDigits:d}).format(v):"—";
-  const gcd=(a:number,b:number):number=>{a=Math.abs(Math.trunc(a));b=Math.abs(Math.trunc(b));while(b)[a,b]=[b,a%b];return a};
-  const lcm=(a:number,b:number)=>a&&b?Math.abs(a*b)/gcd(a,b):0;
   const esc=(s:string)=>{const e=document.createElement("div");e.textContent=s;return e.innerHTML};
 
   const configs:Record<string,Config>={
     "ratio-calculator":{fields:[
       {key:"a",label:"First value",type:"number",value:"12"},{key:"b",label:"Second value",type:"number",value:"18"}
-    ],compute:v=>{const a=n(v.a),b=n(v.b);if(!Number.isFinite(a)||!Number.isFinite(b)||b===0)return[["Status","Enter valid values; second value cannot be zero."]];const d=gcd(a,b)||1;return[["Simplified ratio",`${a/d}:${b/d}`],["Decimal",fmt(a/b,6)]]}},
+    ],compute:v=>simplifiedRatio(v.a??"",v.b??"")},
     "proportion-calculator":{fields:[
       {key:"a",label:"A",type:"number",value:"2"},{key:"b",label:"B",type:"number",value:"5"},{key:"c",label:"C",type:"number",value:"8"}
-    ],compute:v=>{const a=n(v.a),b=n(v.b),c=n(v.c);return !Number.isFinite(a)||!Number.isFinite(b)||!Number.isFinite(c)||a===0?[["Status","Enter valid values and make A non-zero."]]:[["Missing value D",fmt(b*c/a,8)],["Equation",`${fmt(a)} / ${fmt(b)} = ${fmt(c)} / D`]]}},
+    ],compute:v=>{const a=n(v.a),b=n(v.b),c=n(v.c);return !Number.isFinite(a)||!Number.isFinite(b)||!Number.isFinite(c)||a===0||b===0?[["Status","Enter valid values and make A non-zero."]]:[["Missing value D",fmt(b*c/a,8)],["Equation",`${fmt(a)} / ${fmt(b)} = ${fmt(c)} / D`]]}},
     "fraction-calculator":{fields:[
       {key:"n1",label:"Numerator 1",type:"number",value:"1"},{key:"d1",label:"Denominator 1",type:"number",value:"2"},
       {key:"op",label:"Operation",type:"select",value:"+",options:["+","-","×","÷"]},
       {key:"n2",label:"Numerator 2",type:"number",value:"1"},{key:"d2",label:"Denominator 2",type:"number",value:"3"}
-    ],compute:v=>{const a=n(v.n1),b=n(v.d1),c=n(v.n2),d=n(v.d2);if(![a,b,c,d].every(Number.isFinite)||b===0||d===0)return[["Status","Use valid fractions with non-zero denominators."]];let x=0,y=1;if(v.op==="+"){x=a*d+c*b;y=b*d}if(v.op==="-"){x=a*d-c*b;y=b*d}if(v.op==="×"){x=a*c;y=b*d}if(v.op==="÷"){x=a*d;y=b*c}if(y===0)return[["Status","Division by zero is not allowed."]];const q=gcd(x,y)||1;x/=q;y/=q;if(y<0){x=-x;y=-y}return[["Simplified fraction",`${x}/${y}`],["Decimal",fmt(x/y,8)]]}},
-    "gcd-lcm-calculator":{fields:[{key:"values",label:"Integers separated by commas",value:"12, 18, 30"}],compute:v=>{const xs=(v.values??"").split(/[\s,]+/).filter(Boolean).map(Number).filter(Number.isInteger);return xs.length<2?[["Status","Enter at least two integers."]]:[["GCD",String(xs.reduce(gcd))],["LCM",String(xs.reduce(lcm))]]}},
+    ],compute:v=>fractionOperation(v)},
+    "gcd-lcm-calculator":{fields:[{key:"values",label:"Integers separated by commas",value:"12, 18, 30"}],compute:v=>integerGcdLcm(v.values??"")},
     "pace-calculator":{fields:[
       {key:"distance",label:"Distance",type:"number",value:"5",min:"0"},{key:"hours",label:"Hours",type:"number",value:"0",min:"0"},
       {key:"minutes",label:"Minutes",type:"number",value:"30",min:"0"},{key:"unit",label:"Distance unit",type:"select",value:"km",options:["km","mi"]}
-    ],compute:v=>{const d=n(v.distance),t=n(v.hours)*60+n(v.minutes);if(!(d>0)||!(t>0))return[["Status","Enter a positive distance and duration."]];const p=t/d,m=Math.floor(p),s=Math.round((p-m)*60);return[["Pace",`${m}:${String(s).padStart(2,"0")} min/${v.unit}`],["Speed",`${fmt(d/(t/60),2)} ${v.unit}/h`]]}},
+    ],compute:v=>paceMetrics(v)},
     "unit-price-calculator":{fields:[
       {key:"p1",label:"Product A price",type:"number",value:"5.30",min:"0"},{key:"q1",label:"Product A quantity",type:"number",value:"20",min:"0"},
       {key:"p2",label:"Product B price",type:"number",value:"9.40",min:"0"},{key:"q2",label:"Product B quantity",type:"number",value:"30",min:"0"}
-    ],compute:v=>{const p1=n(v.p1),q1=n(v.q1),p2=n(v.p2),q2=n(v.q2);if(!(q1>0)||!(q2>0)||p1<0||p2<0)return[["Status","Enter valid prices and positive quantities."]];const a=p1/q1,b=p2/q2;return[["Product A per unit",fmt(a,6)],["Product B per unit",fmt(b,6)],["Better value",a<b?"Product A":b<a?"Product B":"Equal"]]}},
+    ],compute:v=>{const p1=n(v.p1),q1=n(v.q1),p2=n(v.p2),q2=n(v.q2);if(![p1,q1,p2,q2].every(Number.isFinite)||!(q1>0)||!(q2>0)||p1<0||p2<0)return[["Status","Enter valid prices and positive quantities."]];const a=p1/q1,b=p2/q2;return[["Product A per unit",fmt(a,6)],["Product B per unit",fmt(b,6)],["Better value",a<b?"Product A":b<a?"Product B":"Equal"]]}},
     "profit-margin-calculator":{fields:[
       {key:"cost",label:"Cost",type:"number",value:"60",min:"0"},{key:"revenue",label:"Selling price",type:"number",value:"100",min:"0"}
-    ],compute:v=>{const c=n(v.cost),r=n(v.revenue);if(!Number.isFinite(c)||!(r>0))return[["Status","Enter valid cost and selling price."]];return[["Profit",fmt(r-c,2)],["Profit margin",`${fmt((r-c)/r*100,2)}%`],["Markup",c>0?`${fmt((r-c)/c*100,2)}%`:"—"]]}},
+    ],compute:v=>{const c=n(v.cost),r=n(v.revenue);if(!Number.isFinite(c)||c<0||!(r>0))return[["Status","Enter valid cost and selling price."]];return[["Profit",fmt(r-c,2)],["Profit margin",`${fmt((r-c)/r*100,2)}%`],["Markup",c>0?`${fmt((r-c)/c*100,2)}%`:"—"]]}},
     "markup-calculator":{fields:[
       {key:"cost",label:"Cost",type:"number",value:"60",min:"0"},{key:"markup",label:"Markup percentage",type:"number",value:"50"}
-    ],compute:v=>{const c=n(v.cost),m=n(v.markup);if(!Number.isFinite(c)||!Number.isFinite(m)||c<0)return[["Status","Enter valid cost and markup."]];const p=c*(1+m/100);return[["Selling price",fmt(p,2)],["Profit",fmt(p-c,2)],["Resulting margin",p?`${fmt((p-c)/p*100,2)}%`:"—"]]}}
+    ],compute:v=>{const c=n(v.cost),m=n(v.markup);if(!Number.isFinite(c)||!Number.isFinite(m)||c<0||m< -100)return[["Status","Enter valid cost and markup."]];const p=c*(1+m/100);return[["Selling price",fmt(p,2)],["Profit",fmt(p-c,2)],["Resulting margin",p?`${fmt((p-c)/p*100,2)}%`:"—"]]}}
   };
 
   document.querySelectorAll<HTMLElement>("[data-expansion-tool]").forEach(root=>{
