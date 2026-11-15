@@ -5,7 +5,7 @@ slug: "percentage-change-increase-decrease"
 publishedDate: 2026-11-27
 updatedDate: 2026-11-27
 author: "Toolsiva Editorial"
-primaryTool: "Relative change"
+primaryTool: "Percentage Change Calculator"
 primaryToolPath: "/tools/calculator/percentage-change-calculator/"
 relatedTools: []
 excerpt: "Measure relative growth and decline using the original value, with 100-to-125 and reverse-change examples."
