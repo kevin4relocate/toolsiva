@@ -6,14 +6,14 @@ publishedDate: 2026-08-06
 updatedDate: 2026-11-15
 author: "Toolsiva Editorial"
 primaryTool: "Markdown Live Preview"
-primaryToolPath: "/tools/developer/markdown-live-preview"
+primaryToolPath: "/tools/developer/markdown-live-preview/"
 relatedTools:
   - name: "Markdown to HTML"
-    path: "/tools/developer/markdown-to-html"
+    path: "/tools/developer/markdown-to-html/"
   - name: "HTML to Markdown"
-    path: "/tools/developer/html-to-markdown"
+    path: "/tools/developer/html-to-markdown/"
   - name: "Markdown Table Generator"
-    path: "/tools/developer/markdown-table-generator"
+    path: "/tools/developer/markdown-table-generator/"
 keywords:
   - "markdown live preview"
   - "markdown editor online"
@@ -24,7 +24,7 @@ aiAssisted: true
 
 Markdown is a useful format for README files, documentation, notes and release instructions. Its plain-text syntax is convenient, but it can be difficult to spot a broken list, an incorrectly nested heading or a table that will not render as expected. A live preview helps you compare what you type with the result your readers will see.
 
-Use the [Toolsiva Markdown Live Preview](/tools/developer/markdown-live-preview) to follow the examples below. The editor renders a side-by-side preview in your browser and provides controls to copy or download the Markdown and generated HTML. No account is needed.
+Use the [Toolsiva Markdown Live Preview](/tools/developer/markdown-live-preview/) to follow the examples below. The editor renders a side-by-side preview in your browser and provides controls to copy or download the Markdown and generated HTML. No account is needed.
 
 ## 1. Start with a heading and short paragraph
 
@@ -83,7 +83,7 @@ A simple Markdown table looks like this:
 | Plain text | Text-only sharing |
 ```
 
-The second row tells the renderer which cells are headers. Missing pipes or separators often cause a table to display as ordinary text instead. For larger tables, try the [Markdown Table Generator](/tools/developer/markdown-table-generator), then paste the result back into the live preview.
+The second row tells the renderer which cells are headers. Missing pipes or separators often cause a table to display as ordinary text instead. For larger tables, try the [Markdown Table Generator](/tools/developer/markdown-table-generator/), then paste the result back into the live preview.
 
 ## 4. Check the document at different widths
 
@@ -97,7 +97,7 @@ When the document looks correct, use **Copy Markdown** or **Download MD** to kee
 
 Toolsiva renders Markdown through a parser and sanitizes the HTML displayed by the preview. Sanitization reduces common HTML injection risks; it does not mean arbitrary exported HTML is suitable for every website or email platform. Review the output and follow the safety requirements of the system in which you plan to use it.
 
-If you only need a direct conversion without the live editor, use [Markdown to HTML](/tools/developer/markdown-to-html). If someone gave you HTML and you need a Markdown approximation, try [HTML to Markdown](/tools/developer/html-to-markdown). HTML-to-Markdown conversion is not always lossless, especially for unusual layouts or custom elements.
+If you only need a direct conversion without the live editor, use [Markdown to HTML](/tools/developer/markdown-to-html/). If someone gave you HTML and you need a Markdown approximation, try [HTML to Markdown](/tools/developer/html-to-markdown/). HTML-to-Markdown conversion is not always lossless, especially for unusual layouts or custom elements.
 
 ## 6. Decide whether to save a local draft
 
