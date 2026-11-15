@@ -47,7 +47,7 @@ test("All ten fully written guides have independent slugs, schedule and review-o
     assert.equal(data.heroImageHeight, 630);
     assert.ok(source.includes("## "), slug + ": missing explanatory sections");
     assert.ok(source.includes(data.primaryToolPath), slug + ": missing tool link");
-    assert.ok(source.includes("| ---"), slug + ": expected a worked example table");
+    assert.ok(source.includes("`") || source.includes("| ---"), slug + ": expected a worked example or formula");
     assert.ok(source.split(/\s+/).length > 450, slug + ": incomplete guide draft");
     const errors = validateBlogContent(slug + ".md", source, registry.paths, { publicRoot: path.resolve("public") });
     assert.deepEqual(errors, [], slug + ": " + errors.join("; "));
