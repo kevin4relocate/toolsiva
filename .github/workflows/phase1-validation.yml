@@ -31,6 +31,7 @@ jobs:
       - run: npm run test:phase5
       - run: npm run test:phase6
       - run: npm run test:phase7
+      - run: npm run test:phase8
       - run: npm run test:canonical-routing
       - run: npm run blog:validate
       - run: npm run check
