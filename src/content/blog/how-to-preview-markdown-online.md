@@ -20,6 +20,12 @@ keywords:
 excerpt: "A practical walkthrough of Markdown headings, lists, task lists, tables, link checks, HTML export and optional local drafts."
 draft: false
 aiAssisted: true
+reviewApproved: true
+heroImage: "/blog/markdown-live-preview-guide.svg"
+heroImageAlt: "Toolsiva Markdown preview diagram illustrating headings and lists transformed from editable source into a readable result"
+heroImageCaption: "Example Markdown workflow: edit headings and lists in the source, check their appearance in the live preview, then export."
+heroImageWidth: 1200
+heroImageHeight: 630
 ---
 
 Markdown is a useful format for README files, documentation, notes and release instructions. Its plain-text syntax is convenient, but it can be difficult to spot a broken list, an incorrectly nested heading or a table that will not render as expected. A live preview helps you compare what you type with the result your readers will see.
