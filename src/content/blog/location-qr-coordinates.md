@@ -52,3 +52,64 @@ Sharing coordinates for a private home, sensitive site or protected natural area
 For a named website or directions page rather than raw coordinates, a [URL QR Code](/tools/qr/qr-url-generator/) may offer a better user experience.
 
 A useful location QR should lead to the intended place on the actual devices people will use.
+
+## Encode a real coordinate pair correctly
+
+The [Location QR Generator](/tools/qr/qr-location-generator/) creates a `geo:` URI from the two fields **Latitude** and **Longitude**. The order matters: a point written as `latitude,longitude` is not interchangeable with `longitude,latitude`.
+
+For a **demonstration only**, use approximate central Hanoi coordinates:
+
+```text
+Latitude: 21.0285
+Longitude: 105.8542
+```
+
+The resulting QR payload is:
+
+```text
+geo:21.0285,105.8542
+```
+
+This is not a guarantee that a particular doorway or landmark lies exactly at that point; it is a sample for verifying coordinate format and a compatible map-app action.
+
+| Input example | Valid? | Reason |
+| --- | --- | --- |
+| Latitude `21.0285`, longitude `105.8542` | Yes | Within supported geographic ranges |
+| Latitude `0`, longitude `0` | Yes | The origin is a real geographic coordinate |
+| Latitude `91`, longitude `0` | No | Latitude must be no greater than 90° |
+| Latitude `20`, longitude `181` | No | Longitude must be no greater than 180° |
+
+The generator accepts ordinary decimal degrees and checks that the numeric values are finite and within the valid ranges. It does **not** check whether the chosen point is accessible, has roads nearby or lies at the entrance your guests need.
+
+## Decimal degrees versus degrees/minutes/seconds
+
+Coordinates can appear in formats such as `21° 1′ 42.6″ N` or decimal degrees like `21.0285`. The Toolsiva inputs expect **decimal numbers**, not text that contains degree symbols or compass letters.
+
+When converting from degrees/minutes/seconds, use:
+
+`Decimal degrees = degrees + minutes/60 + seconds/3600`
+
+South and west values normally use a **negative sign** in decimal degrees. Do not type `N`, `S`, `E` or `W` into a numeric-only field and assume the tool interprets it.
+
+## Precision and accuracy are different
+
+A coordinate with more digits looks more precise, but that does not guarantee the source measurement was accurate. Approximate GPS readings, a manually selected map point and a surveyed reference coordinate have very different reliability.
+
+At many locations, the fourth decimal place of **latitude** corresponds to roughly 11 metres, but longitude spacing varies with latitude. Actual positioning error can exceed that apparent precision.
+
+For an event venue, consider including an entrance description or a public map link rather than relying exclusively on a pin.
+
+## Practical testing checklist
+
+1. Enter a known test coordinate in decimal degrees.
+2. Confirm the resulting payload begins with `geo:`.
+3. Scan the exported QR on another device.
+4. Confirm that the intended map app recognizes the payload.
+5. Inspect the resulting pin and the nearest accessible entrance.
+6. For a public sign, print the QR at a size and contrast that work on a typical phone camera.
+
+Not all scanners open `geo:` URIs automatically. Some show the raw coordinate string. If broad compatibility is more important than using a native geo URI, try the [URL QR Generator](/tools/qr/qr-url-generator/) with a trusted HTTPS map link.
+
+## Share locations responsibly
+
+A coordinate can reveal a home address, a private worksite or a sensitive natural location. Before distributing a QR code, decide whether the location is appropriate to disclose publicly. The tool only builds the code; **you** choose where the encoded location is shared.
