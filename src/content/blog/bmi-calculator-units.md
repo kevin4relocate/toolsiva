@@ -5,7 +5,7 @@ slug: "bmi-calculator-units"
 publishedDate: 2026-11-26
 updatedDate: 2026-11-26
 author: "Toolsiva Editorial"
-primaryTool: "BMI formula"
+primaryTool: "BMI Calculator"
 primaryToolPath: "/tools/calculator/bmi-calculator/"
 relatedTools: []
 excerpt: "Calculate BMI using kilograms and centimetres, see a 70 kg and 170 cm example, and understand the limits of BMI screening."
