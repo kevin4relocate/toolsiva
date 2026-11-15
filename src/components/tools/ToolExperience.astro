@@ -73,7 +73,7 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
     const readArray = (key) => {
       try {
         const value = JSON.parse(localStorage.getItem(key) || "[]");
-        return Array.isArray(value) ? value.filter((item) => typeof item === "string") : [];
+        return Array.isArray(value) ? value.filter((item) => typeof item === "string").map((item) => { const matched = toolIndex.find((tool) => tool.path.replace(/\/+$/, "") === item.replace(/\/+$/, "")); return matched ? matched.path : item; }) : [];
       } catch {
         return [];
       }
