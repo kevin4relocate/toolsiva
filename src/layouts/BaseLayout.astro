@@ -13,6 +13,8 @@ interface Props {
   canonicalPath?: string;
   noindex?: boolean;
   image?: string;
+  imageAlt?: string;
+  type?: "website" | "article";
 }
 
 const {
@@ -21,6 +23,8 @@ const {
   canonicalPath = Astro.url.pathname,
   noindex = false,
   image,
+  imageAlt,
+  type,
 } = Astro.props;
 
 const websiteSchema = {
@@ -54,6 +58,8 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
       canonicalPath={canonicalPath}
       noindex={noindex}
       image={image}
+      imageAlt={imageAlt}
+      type={type}
     />
 <script is:inline type="application/ld+json" set:html={safeJsonForHtml(websiteSchema)} />
     <script is:inline type="application/ld+json" set:html={safeJsonForHtml(organizationSchema)} />
