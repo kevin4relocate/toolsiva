@@ -140,7 +140,7 @@ test("CSV utilities preserve headers and report differences between keyed rows",
  assert.match(run("csv-data-type-profiler","a,b\n1,true\n2,false"),/a: integer/);
  assert.match(run("csv-composite-key-validator","a,b\n---\na,b\n1,2\n1,2"),/Data rows 1 and 2/);
  assert.match(run("csv-keyed-row-diff","id\n---\nid,name\n1,A\n---\nid,name\n1,B"),/Changed: 1/);
- assert.match(run("csv-conditional-column-builder","status|paid|==|yes|1|0\n---\nstatus\nyes\nno"),/paid\n1\n0/);
+ assert.equal(run("csv-conditional-column-builder","status|paid|==|yes|1|0\n---\nstatus\nyes\nno"),"status,paid\nyes,1\nno,0");
  assert.match(run("csv-formula-injection-sanitizer","a,b\nA,=SUM(1+1)"),/A,'=SUM/);
  assert.match(run("csv-numeric-histogram-generator","x|2\n---\nx\n1\n2\n3"),/\[1, 2\)/);
  assert.throws(()=>run("csv-join-by-key","id\n---\nid,name\n1,A\n---\nid,score\n1,1\n1,2"),/not unique/);
