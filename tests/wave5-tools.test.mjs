@@ -50,7 +50,7 @@ test("Text and Markdown transformations return meaningful output",()=>{
  assert.equal(run("line-starts-with-filter","a\n---\nabc\nzab"),"abc");
  assert.equal(run("line-ends-with-filter","b\n---\nab\nac"),"ab");
  assert.equal(run("case-insensitive-line-deduplicator","Hello\nhello"),"Hello");
- assert.equal(run("trim-each-line"," a \n b "),"a\nb");
+ assert.equal(run("indentation-depth-analyzer","  a\n    b\n\tc"),"Line 1: 2 spaces\nLine 2: 4 spaces\nLine 3: 4 spaces");
  assert.equal(run("prefix-every-line","x\n---\na\nb"),"xa\nxb");
  assert.equal(run("suffix-every-line","x\n---\na\nb"),"ax\nbx");
  assert.equal(run("join-lines-with-delimiter","|\n---\na\nb"),"a|b");
