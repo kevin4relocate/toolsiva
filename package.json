@@ -44,7 +44,8 @@
     "test:extra-tools": "node --test tests/extra-simple-tools.test.mjs",
     "test:wave3": "node --test tests/wave3-tools.test.mjs",
     "test:wave4": "node --test tests/wave4-tools.test.mjs",
-    "test:wave5": "node --test tests/wave5-tools.test.mjs"
+    "test:wave5": "node --test tests/wave5-tools.test.mjs",
+    "test:dedup": "node --test tests/deduplicated-catalog.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
