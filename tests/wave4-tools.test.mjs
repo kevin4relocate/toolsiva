@@ -76,7 +76,7 @@ test("URL and cookie utilities handle encoding, repeated parameters, and safe or
  assert.equal(run("url-trailing-slash-normalizer","remove\n---\nhttps://example.com/a/"),"https://example.com/a");
  assert.match(run("cookie-header-parser","a=1; b=2"),/b = 2/);
  assert.match(run("set-cookie-attribute-inspector","x=y; Secure; HttpOnly"),/Secure: true/);
- assert.throws(()=>run("relative-url-resolver","https://example.com\n---\njavascript:alert(1)"),/HTTP and HTTPS/);
+ assert.throws(()=>run("relative-url-resolver","https://example.com\n---\njavascript:alert(1)"),/HTTP (?:and|or) HTTPS/);
 });
 
 test("JSON Lines, field grouping, sorting, slices and numeric summaries work",()=>{
@@ -187,7 +187,7 @@ test("Edge cases reject unsafe values and compare SemVer prerelease correctly",(
  assert.match(run("semver-range-satisfaction-checker","~1.2.0\n---\n1.2.9"),/Satisfies/);
  assert.throws(()=>run("json-array-group-counter","x\n---\n[{\"x\":{}}]"),/primitive/);
  assert.throws(()=>run("csv-column-selector","missing\n---\na,b\n1,2"),/Header not found/);
- assert.throws(()=>run("url-query-parameter-remover","x\n---\nfile:\/\/etc\/passwd"),/HTTP or HTTPS/);
+ assert.throws(()=>run("url-query-parameter-remover","x\n---\nfile:\/\/etc\/passwd"),/HTTP (?:and|or) HTTPS/);
  assert.throws(()=>run("http-retry-after-formatter","-1"),/between 0 and/);
  assert.throws(()=>run("geometric-mean-calculator","0,2"),/positive/);
 });
