@@ -5966,5 +5966,1605 @@
     "example": "20 mx2.example.com\n10 mx1.example.com",
     "ready": true,
     "batch": 5
+  },
+  {
+    "slug": "text-template-variable-filler",
+    "name": "Text Template Variable Filler",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Replace {{variable}} placeholders with values from a pasted JSON object.",
+    "metaDescription": "Replace {{variable}} placeholders with values from a pasted JSON object. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "text template variable filler",
+      "online text template variable filler",
+      "free text template variable filler"
+    ],
+    "example": "{\"name\":\"Ada\",\"date\":\"2026-11-17\"}\n---\nHello {{name}}! Today is {{date}}.",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "anagram-checker",
+    "name": "Anagram Checker",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Check whether two phrases have the same letters after ignoring spaces and capitalization.",
+    "metaDescription": "Check whether two phrases have the same letters after ignoring spaces and capitalization. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "anagram checker",
+      "online anagram checker",
+      "free anagram checker"
+    ],
+    "example": "listen\n---\nsilent",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "pangram-checker",
+    "name": "Pangram Checker",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Check if a phrase contains all 26 letters in the English alphabet.",
+    "metaDescription": "Check if a phrase contains all 26 letters in the English alphabet. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "pangram checker",
+      "online pangram checker",
+      "free pangram checker"
+    ],
+    "example": "The quick brown fox jumps over the lazy dog.",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "text-similarity-metrics-calculator",
+    "name": "Text Similarity Metrics Calculator",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Calculate Levenshtein distance and normalized similarity between two strings.",
+    "metaDescription": "Calculate Levenshtein distance and normalized similarity between two strings. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "text similarity metrics calculator",
+      "online text similarity metrics calculator",
+      "free text similarity metrics calculator"
+    ],
+    "example": "kitten\n---\nsitting",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "english-filler-phrase-finder",
+    "name": "English Filler Phrase Finder",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Locate common English filler words and phrases with counts and positions.",
+    "metaDescription": "Locate common English filler words and phrases with counts and positions. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "english filler phrase finder",
+      "online english filler phrase finder",
+      "free english filler phrase finder"
+    ],
+    "example": "Basically, I actually just think it is very useful.",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "bracket-balance-validator",
+    "name": "Bracket Balance Validator",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Check correct balance and order of round, square and curly brackets.",
+    "metaDescription": "Check correct balance and order of round, square and curly brackets. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "bracket balance validator",
+      "online bracket balance validator",
+      "free bracket balance validator"
+    ],
+    "example": "function example() { return items[0]; }",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "smart-quote-normalizer",
+    "name": "Smart Quote Normalizer",
+    "category": "text",
+    "week": 38,
+    "shortDescription": "Convert curly quotation marks into consistent straight quotation marks.",
+    "metaDescription": "Convert curly quotation marks into consistent straight quotation marks. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "smart quote normalizer",
+      "online smart quote normalizer",
+      "free smart quote normalizer"
+    ],
+    "example": "“Hello,” she said. ‘Welcome!’",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "nato-phonetic-alphabet-translator",
+    "name": "NATO Phonetic Alphabet Translator",
+    "category": "text",
+    "week": 39,
+    "shortDescription": "Spell ASCII letters and digits using the NATO phonetic alphabet.",
+    "metaDescription": "Spell ASCII letters and digits using the NATO phonetic alphabet. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "nato phonetic alphabet translator",
+      "online nato phonetic alphabet translator",
+      "free nato phonetic alphabet translator"
+    ],
+    "example": "SOS",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "a1z26-cipher-translator",
+    "name": "A1Z26 Cipher Translator",
+    "category": "text",
+    "week": 39,
+    "shortDescription": "Encode letters as A1Z26 numbers or decode hyphen-separated numbers.",
+    "metaDescription": "Encode letters as A1Z26 numbers or decode hyphen-separated numbers. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "a1z26 cipher translator",
+      "online a1z26 cipher translator",
+      "free a1z26 cipher translator"
+    ],
+    "example": "HELLO",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "british-american-spelling-converter",
+    "name": "British American Spelling Converter",
+    "category": "text",
+    "week": 39,
+    "shortDescription": "Convert a selected set of common British and American spellings.",
+    "metaDescription": "Convert a selected set of common British and American spellings. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "british american spelling converter",
+      "online british american spelling converter",
+      "free british american spelling converter"
+    ],
+    "example": "UK\n---\nThe colour of the theatre is grey.",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "monthly-nth-weekday-schedule-generator",
+    "name": "Monthly Nth Weekday Schedule Generator",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Find the nth occurrence of a weekday in successive months.",
+    "metaDescription": "Find the nth occurrence of a weekday in successive months. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "monthly nth weekday schedule generator",
+      "online monthly nth weekday schedule generator",
+      "free monthly nth weekday schedule generator"
+    ],
+    "example": "2027-01|6|2|Monday",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "fiscal-year-period-calculator",
+    "name": "Fiscal Year Period Calculator",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Calculate fiscal year and quarter when the fiscal year starts in a chosen month.",
+    "metaDescription": "Calculate fiscal year and quarter when the fiscal year starts in a chosen month. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "fiscal year period calculator",
+      "online fiscal year period calculator",
+      "free fiscal year period calculator"
+    ],
+    "example": "2026-11-16|4",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "timezone-meeting-window-finder",
+    "name": "Timezone Meeting Window Finder",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Find overlapping daytime working-hour windows across IANA time zones.",
+    "metaDescription": "Find overlapping daytime working-hour windows across IANA time zones. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "timezone meeting window finder",
+      "online timezone meeting window finder",
+      "free timezone meeting window finder"
+    ],
+    "example": "2026-11-20|09:00|18:00\n---\nAsia/Ho_Chi_Minh\nEurope/London",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "shift-rotation-planner",
+    "name": "Shift Rotation Planner",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Generate a repeating work/rest shift calendar from starting date and cycle.",
+    "metaDescription": "Generate a repeating work/rest shift calendar from starting date and cycle. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "shift rotation planner",
+      "online shift rotation planner",
+      "free shift rotation planner"
+    ],
+    "example": "2026-11-16|14|4|2",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "business-hours-between-dates-calculator",
+    "name": "Business Hours Between Dates Calculator",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Calculate working hours between local timestamps within weekday office hours.",
+    "metaDescription": "Calculate working hours between local timestamps within weekday office hours. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "business hours between dates calculator",
+      "online business hours between dates calculator",
+      "free business hours between dates calculator"
+    ],
+    "example": "2026-11-16T09:00|2026-11-18T17:00|09:00|17:00",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "daylight-saving-transition-finder",
+    "name": "Daylight Saving Transition Finder",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Find observed UTC-offset changes for a named IANA time zone during a year.",
+    "metaDescription": "Find observed UTC-offset changes for a named IANA time zone during a year. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "daylight saving transition finder",
+      "online daylight saving transition finder",
+      "free daylight saving transition finder"
+    ],
+    "example": "America/New_York|2027",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "icalendar-rrule-validator",
+    "name": "iCalendar RRULE Validator",
+    "category": "calculator",
+    "week": 39,
+    "shortDescription": "Validate a supported subset of iCalendar recurring schedule rule syntax.",
+    "metaDescription": "Validate a supported subset of iCalendar recurring schedule rule syntax. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "icalendar rrule validator",
+      "online icalendar rrule validator",
+      "free icalendar rrule validator"
+    ],
+    "example": "FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "multiple-appointment-conflict-detector",
+    "name": "Multiple Appointment Conflict Detector",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Detect overlapping typed appointment intervals and report conflicting pairs.",
+    "metaDescription": "Detect overlapping typed appointment intervals and report conflicting pairs. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "multiple appointment conflict detector",
+      "online multiple appointment conflict detector",
+      "free multiple appointment conflict detector"
+    ],
+    "example": "09:00,10:00\n09:30,11:00\n13:00,14:00",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "calendar-free-slot-finder",
+    "name": "Calendar Free Slot Finder",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Find free appointment slots outside a pasted list of busy intervals.",
+    "metaDescription": "Find free appointment slots outside a pasted list of busy intervals. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "calendar free slot finder",
+      "online calendar free slot finder",
+      "free calendar free slot finder"
+    ],
+    "example": "09:00|17:00|30\n---\n10:00,11:00\n14:00,14:30",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "ambiguous-date-format-checker",
+    "name": "Ambiguous Date Format Checker",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Check whether a numeric date could use either day-first or month-first ordering.",
+    "metaDescription": "Check whether a numeric date could use either day-first or month-first ordering. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "ambiguous date format checker",
+      "online ambiguous date format checker",
+      "free ambiguous date format checker"
+    ],
+    "example": "03/04/2026",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "binomial-probability-calculator",
+    "name": "Binomial Probability Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Calculate an exact binomial point probability given trials, successes and probability.",
+    "metaDescription": "Calculate an exact binomial point probability given trials, successes and probability. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "binomial probability calculator",
+      "online binomial probability calculator",
+      "free binomial probability calculator"
+    ],
+    "example": "10|4|0.5",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "poisson-probability-calculator",
+    "name": "Poisson Probability Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Calculate a Poisson point probability using event rate and observed count.",
+    "metaDescription": "Calculate a Poisson point probability using event rate and observed count. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "poisson probability calculator",
+      "online poisson probability calculator",
+      "free poisson probability calculator"
+    ],
+    "example": "3|2",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "hypergeometric-probability-calculator",
+    "name": "Hypergeometric Probability Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Calculate an exact hypergeometric probability for sampling without replacement.",
+    "metaDescription": "Calculate an exact hypergeometric probability for sampling without replacement. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "hypergeometric probability calculator",
+      "online hypergeometric probability calculator",
+      "free hypergeometric probability calculator"
+    ],
+    "example": "20|7|5|2",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "normal-distribution-probability-calculator",
+    "name": "Normal Distribution Probability Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Calculate normal-distribution probability between two supplied bounds.",
+    "metaDescription": "Calculate normal-distribution probability between two supplied bounds. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "normal distribution probability calculator",
+      "online normal distribution probability calculator",
+      "free normal distribution probability calculator"
+    ],
+    "example": "0|1|-1|1",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "bayes-theorem-calculator",
+    "name": "Bayes Theorem Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Calculate posterior probability from prior, sensitivity and false positive rate.",
+    "metaDescription": "Calculate posterior probability from prior, sensitivity and false positive rate. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "bayes theorem calculator",
+      "online bayes theorem calculator",
+      "free bayes theorem calculator"
+    ],
+    "example": "0.01|0.95|0.05",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "proportion-confidence-interval-calculator",
+    "name": "Proportion Confidence Interval Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Calculate a Wilson confidence interval for a population proportion.",
+    "metaDescription": "Calculate a Wilson confidence interval for a population proportion. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "proportion confidence interval calculator",
+      "online proportion confidence interval calculator",
+      "free proportion confidence interval calculator"
+    ],
+    "example": "80|100|0.95",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "proportion-sample-size-calculator",
+    "name": "Proportion Sample Size Calculator",
+    "category": "calculator",
+    "week": 40,
+    "shortDescription": "Estimate survey sample size for a target confidence level and error.",
+    "metaDescription": "Estimate survey sample size for a target confidence level and error. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "proportion sample size calculator",
+      "online proportion sample size calculator",
+      "free proportion sample size calculator"
+    ],
+    "example": "0.5|0.05|0.95",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "chi-square-goodness-of-fit-calculator",
+    "name": "Chi Square Goodness of Fit Calculator",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate chi-square goodness-of-fit statistic and approximate p-value.",
+    "metaDescription": "Calculate chi-square goodness-of-fit statistic and approximate p-value. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "chi square goodness of fit calculator",
+      "online chi square goodness of fit calculator",
+      "free chi square goodness of fit calculator"
+    ],
+    "example": "10,20,30\n---\n15,15,30",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "probability-odds-converter",
+    "name": "Probability Odds Converter",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Convert decimal probability to odds, or odds to probability.",
+    "metaDescription": "Convert decimal probability to odds, or odds to probability. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "probability odds converter",
+      "online probability odds converter",
+      "free probability odds converter"
+    ],
+    "example": "0.25",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "random-sample-without-replacement",
+    "name": "Random Sample Without Replacement",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Select a random subset of distinct pasted lines without replacement.",
+    "metaDescription": "Select a random subset of distinct pasted lines without replacement. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "random sample without replacement",
+      "online random sample without replacement",
+      "free random sample without replacement"
+    ],
+    "example": "3\n---\nalpha\nbeta\ngamma\ndelta",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "logarithm-calculator",
+    "name": "Logarithm Calculator",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate the logarithm of a positive value in a chosen base.",
+    "metaDescription": "Calculate the logarithm of a positive value in a chosen base. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "logarithm calculator",
+      "online logarithm calculator",
+      "free logarithm calculator"
+    ],
+    "example": "1000|10",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "modular-arithmetic-toolkit",
+    "name": "Modular Arithmetic Toolkit",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate integer addition, multiplication, exponentiation and inverse modulo N.",
+    "metaDescription": "Calculate integer addition, multiplication, exponentiation and inverse modulo N. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "modular arithmetic toolkit",
+      "online modular arithmetic toolkit",
+      "free modular arithmetic toolkit"
+    ],
+    "example": "pow|7|20|13",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "matrix-multiplication-calculator",
+    "name": "Matrix Multiplication Calculator",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Multiply two finite numeric matrices supplied as semicolon-separated rows.",
+    "metaDescription": "Multiply two finite numeric matrices supplied as semicolon-separated rows. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "matrix multiplication calculator",
+      "online matrix multiplication calculator",
+      "free matrix multiplication calculator"
+    ],
+    "example": "1,2;3,4\n---\n5,6;7,8",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "matrix-determinant-calculator",
+    "name": "Matrix Determinant Calculator",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate the determinant of a square numeric matrix.",
+    "metaDescription": "Calculate the determinant of a square numeric matrix. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "matrix determinant calculator",
+      "online matrix determinant calculator",
+      "free matrix determinant calculator"
+    ],
+    "example": "1,2;3,4",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "vector-angle-calculator",
+    "name": "Vector Angle Calculator",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate the angle in degrees between nonzero numeric vectors.",
+    "metaDescription": "Calculate the angle in degrees between nonzero numeric vectors. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "vector angle calculator",
+      "online vector angle calculator",
+      "free vector angle calculator"
+    ],
+    "example": "1,0\n---\n0,1",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "haversine-distance-calculator",
+    "name": "Haversine Distance Calculator",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate approximate great-circle distance between latitude-longitude pairs.",
+    "metaDescription": "Calculate approximate great-circle distance between latitude-longitude pairs. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "haversine distance calculator",
+      "online haversine distance calculator",
+      "free haversine distance calculator"
+    ],
+    "example": "10.8231,106.6297\n---\n21.0278,105.8342",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "triangle-angle-solver",
+    "name": "Triangle Angle Solver",
+    "category": "calculator",
+    "week": 41,
+    "shortDescription": "Calculate all three interior angles from valid triangle side lengths.",
+    "metaDescription": "Calculate all three interior angles from valid triangle side lengths. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "triangle angle solver",
+      "online triangle angle solver",
+      "free triangle angle solver"
+    ],
+    "example": "3|4|5",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "integer-divisor-finder",
+    "name": "Integer Divisor Finder",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "List positive divisors of a reasonably sized positive integer.",
+    "metaDescription": "List positive divisors of a reasonably sized positive integer. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "integer divisor finder",
+      "online integer divisor finder",
+      "free integer divisor finder"
+    ],
+    "example": "28",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "prime-range-generator",
+    "name": "Prime Range Generator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Generate all primes within an inclusive numeric interval using a sieve.",
+    "metaDescription": "Generate all primes within an inclusive numeric interval using a sieve. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "prime range generator",
+      "online prime range generator",
+      "free prime range generator"
+    ],
+    "example": "10|30",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "number-to-english-words-converter",
+    "name": "Number to English Words Converter",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Spell integer numbers in English words, including negative amounts.",
+    "metaDescription": "Spell integer numbers in English words, including negative amounts. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "number to english words converter",
+      "online number to english words converter",
+      "free number to english words converter"
+    ],
+    "example": "12345",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "effective-annual-rate-calculator",
+    "name": "Effective Annual Rate Calculator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Convert nominal annual interest and compounding frequency to an effective annual rate.",
+    "metaDescription": "Convert nominal annual interest and compounding frequency to an effective annual rate. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "effective annual rate calculator",
+      "online effective annual rate calculator",
+      "free effective annual rate calculator"
+    ],
+    "example": "0.12|12",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "debt-repayment-strategy-planner",
+    "name": "Debt Repayment Strategy Planner",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Compare snowball and avalanche strategies for monthly debt payoff.",
+    "metaDescription": "Compare snowball and avalanche strategies for monthly debt payoff. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "debt repayment strategy planner",
+      "online debt repayment strategy planner",
+      "free debt repayment strategy planner"
+    ],
+    "example": "1500|0.2|70\n800|0.12|40\n---\n150",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "mortgage-refinance-break-even-calculator",
+    "name": "Mortgage Refinance Break Even Calculator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Calculate refinance breakeven from principal, interest rates, fees and term.",
+    "metaDescription": "Calculate refinance breakeven from principal, interest rates, fees and term. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "mortgage refinance break even calculator",
+      "online mortgage refinance break even calculator",
+      "free mortgage refinance break even calculator"
+    ],
+    "example": "250000|0.065|0.0525|3000|300",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "debt-to-income-ratio-calculator",
+    "name": "Debt to Income Ratio Calculator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Calculate monthly debt obligations as a share of gross monthly income.",
+    "metaDescription": "Calculate monthly debt obligations as a share of gross monthly income. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "debt to income ratio calculator",
+      "online debt to income ratio calculator",
+      "free debt to income ratio calculator"
+    ],
+    "example": "1800|6000",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "fire-target-calculator",
+    "name": "FIRE Target Calculator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Calculate target investable assets from annual spending and withdrawal rate.",
+    "metaDescription": "Calculate target investable assets from annual spending and withdrawal rate. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "fire target calculator",
+      "online fire target calculator",
+      "free fire target calculator"
+    ],
+    "example": "40000|0.04",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "savings-withdrawal-runway-simulator",
+    "name": "Savings Withdrawal Runway Simulator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Simulate monthly withdrawals against savings with constant annual growth.",
+    "metaDescription": "Simulate monthly withdrawals against savings with constant annual growth. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "savings withdrawal runway simulator",
+      "online savings withdrawal runway simulator",
+      "free savings withdrawal runway simulator"
+    ],
+    "example": "100000|2500|0.04",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "asset-depreciation-schedule-generator",
+    "name": "Asset Depreciation Schedule Generator",
+    "category": "calculator",
+    "week": 42,
+    "shortDescription": "Generate straight-line annual depreciation from cost, salvage value and years.",
+    "metaDescription": "Generate straight-line annual depreciation from cost, salvage value and years. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "asset depreciation schedule generator",
+      "online asset depreciation schedule generator",
+      "free asset depreciation schedule generator"
+    ],
+    "example": "12000|2000|5",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "invoice-late-fee-calculator",
+    "name": "Invoice Late Fee Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Estimate simple interest on an overdue invoice using monthly rate and overdue days.",
+    "metaDescription": "Estimate simple interest on an overdue invoice using monthly rate and overdue days. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "invoice late fee calculator",
+      "online invoice late fee calculator",
+      "free invoice late fee calculator"
+    ],
+    "example": "1000|0.015|30",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "subscription-proration-calculator",
+    "name": "Subscription Proration Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Calculate subscription charges for usage days out of a billing period.",
+    "metaDescription": "Calculate subscription charges for usage days out of a billing period. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "subscription proration calculator",
+      "online subscription proration calculator",
+      "free subscription proration calculator"
+    ],
+    "example": "30|10|30",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "rent-versus-buy-cost-comparator",
+    "name": "Rent Versus Buy Cost Comparator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Compare simple renting expenses against buying cash cost and estimated resale equity.",
+    "metaDescription": "Compare simple renting expenses against buying cash cost and estimated resale equity. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "rent versus buy cost comparator",
+      "online rent versus buy cost comparator",
+      "free rent versus buy cost comparator"
+    ],
+    "example": "300000|1200|10|0.03|0.01|0.05",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "saas-revenue-retention-calculator",
+    "name": "SaaS Revenue Retention Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Calculate gross and net revenue retention from MRR churn, contraction and expansion.",
+    "metaDescription": "Calculate gross and net revenue retention from MRR churn, contraction and expansion. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "saas revenue retention calculator",
+      "online saas revenue retention calculator",
+      "free saas revenue retention calculator"
+    ],
+    "example": "10000|800|400|600",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "business-cash-burn-runway-calculator",
+    "name": "Business Cash Burn Runway Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Compute monthly net cash burn and cash runway in months.",
+    "metaDescription": "Compute monthly net cash burn and cash runway in months. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "business cash burn runway calculator",
+      "online business cash burn runway calculator",
+      "free business cash burn runway calculator"
+    ],
+    "example": "150000|22000|10000",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "inventory-reorder-point-calculator",
+    "name": "Inventory Reorder Point Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Calculate reorder inventory level using daily demand, lead time and safety stock.",
+    "metaDescription": "Calculate reorder inventory level using daily demand, lead time and safety stock. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "inventory reorder point calculator",
+      "online inventory reorder point calculator",
+      "free inventory reorder point calculator"
+    ],
+    "example": "40|7|100",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "economic-order-quantity-calculator",
+    "name": "Economic Order Quantity Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Compute economic order quantity from demand, order cost and annual carrying cost.",
+    "metaDescription": "Compute economic order quantity from demand, order cost and annual carrying cost. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "economic order quantity calculator",
+      "online economic order quantity calculator",
+      "free economic order quantity calculator"
+    ],
+    "example": "12000|50|2",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "abc-inventory-classifier",
+    "name": "ABC Inventory Classifier",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Group inventory SKUs into A/B/C segments by annual consumption value.",
+    "metaDescription": "Group inventory SKUs into A/B/C segments by annual consumption value. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "abc inventory classifier",
+      "online abc inventory classifier",
+      "free abc inventory classifier"
+    ],
+    "example": "Item A,100,20\nItem B,50,5\nItem C,20,2",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "cash-conversion-cycle-calculator",
+    "name": "Cash Conversion Cycle Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Compute cash conversion cycle from inventory, receivable and payable days.",
+    "metaDescription": "Compute cash conversion cycle from inventory, receivable and payable days. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "cash conversion cycle calculator",
+      "online cash conversion cycle calculator",
+      "free cash conversion cycle calculator"
+    ],
+    "example": "45|30|20",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "weighted-sales-pipeline-forecast-calculator",
+    "name": "Weighted Sales Pipeline Forecast Calculator",
+    "category": "calculator",
+    "week": 43,
+    "shortDescription": "Sum expected weighted revenue from named opportunities and win probabilities.",
+    "metaDescription": "Sum expected weighted revenue from named opportunities and win probabilities. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "weighted sales pipeline forecast calculator",
+      "online weighted sales pipeline forecast calculator",
+      "free weighted sales pipeline forecast calculator"
+    ],
+    "example": "Deal A|20000|0.4\nDeal B|50000|0.2",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "sales-funnel-dropoff-analyzer",
+    "name": "Sales Funnel Dropoff Analyzer",
+    "category": "calculator",
+    "week": 44,
+    "shortDescription": "Report sequential stage conversion and dropoff across a sales funnel.",
+    "metaDescription": "Report sequential stage conversion and dropoff across a sales funnel. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "sales funnel dropoff analyzer",
+      "online sales funnel dropoff analyzer",
+      "free sales funnel dropoff analyzer"
+    ],
+    "example": "1000|500|250|70",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "tiered-commission-calculator",
+    "name": "Tiered Commission Calculator",
+    "category": "calculator",
+    "week": 44,
+    "shortDescription": "Calculate progressive marginal commissions across supplied sales thresholds.",
+    "metaDescription": "Calculate progressive marginal commissions across supplied sales thresholds. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "tiered commission calculator",
+      "online tiered commission calculator",
+      "free tiered commission calculator"
+    ],
+    "example": "150000\n---\n50000,0.04\n100000,0.07\nInfinity,0.1",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "price-elasticity-of-demand-calculator",
+    "name": "Price Elasticity of Demand Calculator",
+    "category": "calculator",
+    "week": 44,
+    "shortDescription": "Calculate arc price elasticity between two prices and corresponding quantities.",
+    "metaDescription": "Calculate arc price elasticity between two prices and corresponding quantities. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "price elasticity of demand calculator",
+      "online price elasticity of demand calculator",
+      "free price elasticity of demand calculator"
+    ],
+    "example": "10|100|12|85",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-join-by-key",
+    "name": "CSV Join by Key",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Left-join two pasted CSV tables by a shared key column.",
+    "metaDescription": "Left-join two pasted CSV tables by a shared key column. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv join by key",
+      "online csv join by key",
+      "free csv join by key"
+    ],
+    "example": "id\n---\nid,name\n1,Ada\n2,Bob\n---\nid,score\n1,90\n3,75",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-group-by-aggregator",
+    "name": "CSV Group By Aggregator",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Aggregate CSV records by a group field with sum, count or mean.",
+    "metaDescription": "Aggregate CSV records by a group field with sum, count or mean. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv group by aggregator",
+      "online csv group by aggregator",
+      "free csv group by aggregator"
+    ],
+    "example": "region|sum|revenue\n---\nregion,revenue\nEast,10\nWest,5\nEast,20",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-pivot-table-builder",
+    "name": "CSV Pivot Table Builder",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Create a two-dimensional CSV pivot table with summed numeric values.",
+    "metaDescription": "Create a two-dimensional CSV pivot table with summed numeric values. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv pivot table builder",
+      "online csv pivot table builder",
+      "free csv pivot table builder"
+    ],
+    "example": "region|product|amount\n---\nregion,product,amount\nEast,A,5\nEast,B,3\nWest,A,7",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-unpivot-table-converter",
+    "name": "CSV Unpivot Table Converter",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Turn many value columns into variable and value rows with identifier fields.",
+    "metaDescription": "Turn many value columns into variable and value rows with identifier fields. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv unpivot table converter",
+      "online csv unpivot table converter",
+      "free csv unpivot table converter"
+    ],
+    "example": "id\n---\nid,q1,q2\nA,10,20\nB,5,8",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-data-type-profiler",
+    "name": "CSV Data Type Profiler",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Infer basic numeric, date, Boolean and text types per CSV column.",
+    "metaDescription": "Infer basic numeric, date, Boolean and text types per CSV column. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv data type profiler",
+      "online csv data type profiler",
+      "free csv data type profiler"
+    ],
+    "example": "id,price,date\n1,3.5,2026-11-16\n2,4.2,2026-11-17",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-composite-key-validator",
+    "name": "CSV Composite Key Validator",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Detect duplicate rows based on a chosen combination of CSV columns.",
+    "metaDescription": "Detect duplicate rows based on a chosen combination of CSV columns. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv composite key validator",
+      "online csv composite key validator",
+      "free csv composite key validator"
+    ],
+    "example": "email,region\n---\nemail,region\nada@example.com,US\nada@example.com,EU\nada@example.com,US",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-keyed-row-diff",
+    "name": "CSV Keyed Row Diff",
+    "category": "developer",
+    "week": 44,
+    "shortDescription": "Report added, removed and modified rows from two keyed CSV datasets.",
+    "metaDescription": "Report added, removed and modified rows from two keyed CSV datasets. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv keyed row diff",
+      "online csv keyed row diff",
+      "free csv keyed row diff"
+    ],
+    "example": "id\n---\nid,name\n1,Ada\n2,Bob\n---\nid,name\n1,Ada\n2,Robert\n3,Cleo",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-conditional-column-builder",
+    "name": "CSV Conditional Column Builder",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Add a new CSV column based on a simple equality, inequality or numeric rule.",
+    "metaDescription": "Add a new CSV column based on a simple equality, inequality or numeric rule. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv conditional column builder",
+      "online csv conditional column builder",
+      "free csv conditional column builder"
+    ],
+    "example": "status|is_paid|==|paid|yes|no\n---\nname,status\nAda,paid\nBob,unpaid",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-formula-injection-sanitizer",
+    "name": "CSV Formula Injection Sanitizer",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Prefix spreadsheet-formula-like CSV cells with a protective apostrophe.",
+    "metaDescription": "Prefix spreadsheet-formula-like CSV cells with a protective apostrophe. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv formula injection sanitizer",
+      "online csv formula injection sanitizer",
+      "free csv formula injection sanitizer"
+    ],
+    "example": "name,note\nAda,=SUM(1+1)\nBob,+CMD",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csv-numeric-histogram-generator",
+    "name": "CSV Numeric Histogram Generator",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Make numeric frequency bins for a selected CSV column.",
+    "metaDescription": "Make numeric frequency bins for a selected CSV column. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csv numeric histogram generator",
+      "online csv numeric histogram generator",
+      "free csv numeric histogram generator"
+    ],
+    "example": "price|5\n---\nitem,price\nA,10\nB,14\nC,22\nD,25",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-schema-generator",
+    "name": "JSON Schema Generator",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Infer a draft-compatible JSON Schema from a sample JSON value.",
+    "metaDescription": "Infer a draft-compatible JSON Schema from a sample JSON value. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json schema generator",
+      "online json schema generator",
+      "free json schema generator"
+    ],
+    "example": "{\"name\":\"Ada\",\"age\":32,\"tags\":[\"a\",\"b\"]}",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-schema-validator",
+    "name": "JSON Schema Validator",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Check pasted JSON values against a documented subset of JSON Schema keywords.",
+    "metaDescription": "Check pasted JSON values against a documented subset of JSON Schema keywords. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json schema validator",
+      "online json schema validator",
+      "free json schema validator"
+    ],
+    "example": "{\"type\":\"object\",\"required\":[\"age\"],\"properties\":{\"age\":{\"type\":\"number\",\"minimum\":0}}}\n---\n{\"age\":32}",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-patch-generator",
+    "name": "JSON Patch Generator",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Generate JSON Patch operations describing a change from old to new JSON.",
+    "metaDescription": "Generate JSON Patch operations describing a change from old to new JSON. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json patch generator",
+      "online json patch generator",
+      "free json patch generator"
+    ],
+    "example": "{\"name\":\"Ada\",\"age\":30}\n---\n{\"name\":\"Ada\",\"age\":31}",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-patch-applier",
+    "name": "JSON Patch Applier",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Apply JSON Patch add, remove, replace, copy, move and test operations safely.",
+    "metaDescription": "Apply JSON Patch add, remove, replace, copy, move and test operations safely. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json patch applier",
+      "online json patch applier",
+      "free json patch applier"
+    ],
+    "example": "{\"name\":\"Ada\",\"age\":30}\n---\n[{\"op\":\"replace\",\"path\":\"/age\",\"value\":31}]",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "jsonpath-query-evaluator",
+    "name": "JSONPath Query Evaluator",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Query pasted JSON with common property, array index and wildcard JSONPath syntax.",
+    "metaDescription": "Query pasted JSON with common property, array index and wildcard JSONPath syntax. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "jsonpath query evaluator",
+      "online jsonpath query evaluator",
+      "free jsonpath query evaluator"
+    ],
+    "example": "$.items[*].name\n---\n{\"items\":[{\"name\":\"Ada\"},{\"name\":\"Bob\"}]}",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-duplicate-key-detector",
+    "name": "JSON Duplicate Key Detector",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Detect duplicate property declarations in raw JSON before JSON.parse silently overwrites them.",
+    "metaDescription": "Detect duplicate property declarations in raw JSON before JSON.parse silently overwrites them. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json duplicate key detector",
+      "online json duplicate key detector",
+      "free json duplicate key detector"
+    ],
+    "example": "{\"a\":1,\"a\":2,\"nested\":{\"b\":1,\"b\":2}}",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "toml-to-json-converter",
+    "name": "TOML to JSON Converter",
+    "category": "developer",
+    "week": 45,
+    "shortDescription": "Parse a documented subset of TOML text into JSON.",
+    "metaDescription": "Parse a documented subset of TOML text into JSON. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "toml to json converter",
+      "online toml to json converter",
+      "free toml to json converter"
+    ],
+    "example": "title = \"Example\"\n[server]\nport = 8080",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "ini-to-json-converter",
+    "name": "INI to JSON Converter",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Convert common INI section and key-value configuration text into JSON.",
+    "metaDescription": "Convert common INI section and key-value configuration text into JSON. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "ini to json converter",
+      "online ini to json converter",
+      "free ini to json converter"
+    ],
+    "example": "[server]\nhost = localhost\nport = 8080",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "dotenv-syntax-validator",
+    "name": "Dotenv Syntax Validator",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Validate variable assignment lines in pasted .env configuration text.",
+    "metaDescription": "Validate variable assignment lines in pasted .env configuration text. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "dotenv syntax validator",
+      "online dotenv syntax validator",
+      "free dotenv syntax validator"
+    ],
+    "example": "APP_NAME=Toolsiva\nPORT=3000\nDEBUG=true",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-to-sql-insert-generator",
+    "name": "JSON to SQL Insert Generator",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Create escaped SQL INSERT statements from flat JSON rows for offline review.",
+    "metaDescription": "Create escaped SQL INSERT statements from flat JSON rows for offline review. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json to sql insert generator",
+      "online json to sql insert generator",
+      "free json to sql insert generator"
+    ],
+    "example": "users\n---\n[{\"id\":1,\"name\":\"Ada\"},{\"id\":2,\"name\":\"Bob\"}]",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "social-meta-tag-auditor",
+    "name": "Social Meta Tag Auditor",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Audit pasted HTML for Open Graph and social-sharing meta fields.",
+    "metaDescription": "Audit pasted HTML for Open Graph and social-sharing meta fields. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "social meta tag auditor",
+      "online social meta tag auditor",
+      "free social meta tag auditor"
+    ],
+    "example": "<meta property=\"og:title\" content=\"Toolsiva\"><meta property=\"og:description\" content=\"Tools\"><meta name=\"twitter:card\" content=\"summary\">",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "json-ld-structured-data-validator",
+    "name": "JSON LD Structured Data Validator",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Validate JSON-LD syntax, basic Schema.org context and required fields for common types.",
+    "metaDescription": "Validate JSON-LD syntax, basic Schema.org context and required fields for common types. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "json ld structured data validator",
+      "online json ld structured data validator",
+      "free json ld structured data validator"
+    ],
+    "example": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Example\",\"author\":{\"@type\":\"Person\",\"name\":\"Ada\"}}",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "hreflang-reciprocity-checker",
+    "name": "Hreflang Reciprocity Checker",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Check reciprocal alternate-language page links supplied as text.",
+    "metaDescription": "Check reciprocal alternate-language page links supplied as text. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "hreflang reciprocity checker",
+      "online hreflang reciprocity checker",
+      "free hreflang reciprocity checker"
+    ],
+    "example": "https://site.test/en|en|https://site.test/fr\nhttps://site.test/fr|fr|https://site.test/en",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "redirect-loop-detector",
+    "name": "Redirect Loop Detector",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Detect redirect chains containing repeated destinations or loops.",
+    "metaDescription": "Detect redirect chains containing repeated destinations or loops. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "redirect loop detector",
+      "online redirect loop detector",
+      "free redirect loop detector"
+    ],
+    "example": "/a|/b\n/b|/c\n/c|/a",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "csp-url-allowlist-tester",
+    "name": "CSP URL Allowlist Tester",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Evaluate whether one URL matches a relevant CSP source list.",
+    "metaDescription": "Evaluate whether one URL matches a relevant CSP source list. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "csp url allowlist tester",
+      "online csp url allowlist tester",
+      "free csp url allowlist tester"
+    ],
+    "example": "default-src 'self'; img-src https://images.test\n---\nimg-src|https://images.test/logo.png|https://site.test",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "cors-preflight-response-tester",
+    "name": "CORS Preflight Response Tester",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Test typed CORS preflight request details against pasted response headers.",
+    "metaDescription": "Test typed CORS preflight request details against pasted response headers. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "cors preflight response tester",
+      "online cors preflight response tester",
+      "free cors preflight response tester"
+    ],
+    "example": "https://app.test|POST|X-Token\n---\nAccess-Control-Allow-Origin: https://app.test\nAccess-Control-Allow-Methods: GET, POST\nAccess-Control-Allow-Headers: X-Token",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "dmarc-record-validator",
+    "name": "DMARC Record Validator",
+    "category": "developer",
+    "week": 46,
+    "shortDescription": "Check pasted DMARC record tags, allowed values and consistency.",
+    "metaDescription": "Check pasted DMARC record tags, allowed values and consistency. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "dmarc record validator",
+      "online dmarc record validator",
+      "free dmarc record validator"
+    ],
+    "example": "v=DMARC1; p=reject; pct=100; rua=mailto:dmarc@example.com",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "dkim-txt-record-inspector",
+    "name": "DKIM TXT Record Inspector",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Inspect common tags and public-key presence in a pasted DKIM TXT record.",
+    "metaDescription": "Inspect common tags and public-key presence in a pasted DKIM TXT record. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "dkim txt record inspector",
+      "online dkim txt record inspector",
+      "free dkim txt record inspector"
+    ],
+    "example": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "html-table-accessibility-checker",
+    "name": "HTML Table Accessibility Checker",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Check pasted HTML tables for captions, header cells and table-header association hints.",
+    "metaDescription": "Check pasted HTML tables for captions, header cells and table-header association hints. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "html table accessibility checker",
+      "online html table accessibility checker",
+      "free html table accessibility checker"
+    ],
+    "example": "<table><caption>Sales</caption><tr><th scope=\"col\">Month</th><th scope=\"col\">Total</th></tr><tr><td>Jan</td><td>5</td></tr></table>",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "robots-txt-rule-conflict-finder",
+    "name": "Robots TXT Rule Conflict Finder",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Flag conflicting or repeated path directives in a pasted robots.txt policy.",
+    "metaDescription": "Flag conflicting or repeated path directives in a pasted robots.txt policy. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "robots txt rule conflict finder",
+      "online robots txt rule conflict finder",
+      "free robots txt rule conflict finder"
+    ],
+    "example": "User-agent: *\nDisallow: /private\nAllow: /private\nDisallow: /admin",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "ipv6-compression-expansion-converter",
+    "name": "IPv6 Compression Expansion Converter",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Normalize typed IPv6 addresses to expanded and compressed representations.",
+    "metaDescription": "Normalize typed IPv6 addresses to expanded and compressed representations. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "ipv6 compression expansion converter",
+      "online ipv6 compression expansion converter",
+      "free ipv6 compression expansion converter"
+    ],
+    "example": "2001:0db8:0000:0000:0000:ff00:0042:8329",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "ipv6-cidr-membership-checker",
+    "name": "IPv6 CIDR Membership Checker",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Check whether an IPv6 address falls within a specified CIDR range.",
+    "metaDescription": "Check whether an IPv6 address falls within a specified CIDR range. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "ipv6 cidr membership checker",
+      "online ipv6 cidr membership checker",
+      "free ipv6 cidr membership checker"
+    ],
+    "example": "2001:db8::1\n---\n2001:db8::/32",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "mac-address-validator-normalizer",
+    "name": "MAC Address Validator Normalizer",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Validate 48-bit MAC address syntax and normalize separators.",
+    "metaDescription": "Validate 48-bit MAC address syntax and normalize separators. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "mac address validator normalizer",
+      "online mac address validator normalizer",
+      "free mac address validator normalizer"
+    ],
+    "example": "AA-BB-CC-DD-EE-FF",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "ip-address-type-classifier",
+    "name": "IP Address Type Classifier",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Classify common IPv4 or IPv6 address types, including private and loopback.",
+    "metaDescription": "Classify common IPv4 or IPv6 address types, including private and loopback. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "ip address type classifier",
+      "online ip address type classifier",
+      "free ip address type classifier"
+    ],
+    "example": "192.168.1.10",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "reverse-dns-pointer-generator",
+    "name": "Reverse DNS Pointer Generator",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Convert an IP address into a reverse DNS lookup name without DNS access.",
+    "metaDescription": "Convert an IP address into a reverse DNS lookup name without DNS access. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "reverse dns pointer generator",
+      "online reverse dns pointer generator",
+      "free reverse dns pointer generator"
+    ],
+    "example": "192.0.2.15",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "luhn-check-digit-toolkit",
+    "name": "Luhn Check Digit Toolkit",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Generate Luhn check digits or validate complete numeric identifiers.",
+    "metaDescription": "Generate Luhn check digits or validate complete numeric identifiers. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "luhn check digit toolkit",
+      "online luhn check digit toolkit",
+      "free luhn check digit toolkit"
+    ],
+    "example": "7992739871",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "isbn-10-and-13-validator",
+    "name": "ISBN 10 and 13 Validator",
+    "category": "developer",
+    "week": 47,
+    "shortDescription": "Validate ISBN-10 or ISBN-13 syntax and checksums.",
+    "metaDescription": "Validate ISBN-10 or ISBN-13 syntax and checksums. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "isbn 10 and 13 validator",
+      "online isbn 10 and 13 validator",
+      "free isbn 10 and 13 validator"
+    ],
+    "example": "9780306406157",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "iban-checksum-validator",
+    "name": "IBAN Checksum Validator",
+    "category": "developer",
+    "week": 48,
+    "shortDescription": "Validate IBAN country length and mod-97 checksum offline.",
+    "metaDescription": "Validate IBAN country length and mod-97 checksum offline. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "iban checksum validator",
+      "online iban checksum validator",
+      "free iban checksum validator"
+    ],
+    "example": "GB82 WEST 1234 5698 7654 32",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "dns-caa-record-generator",
+    "name": "DNS CAA Record Generator",
+    "category": "developer",
+    "week": 48,
+    "shortDescription": "Build a DNS CAA record from host, tag and CA value.",
+    "metaDescription": "Build a DNS CAA record from host, tag and CA value. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "dns caa record generator",
+      "online dns caa record generator",
+      "free dns caa record generator"
+    ],
+    "example": "example.com|issue|letsencrypt.org",
+    "ready": true,
+    "batch": 6
+  },
+  {
+    "slug": "dns-srv-record-generator",
+    "name": "DNS SRV Record Generator",
+    "category": "developer",
+    "week": 48,
+    "shortDescription": "Build an RFC-style DNS SRV priority, weight, port and target record.",
+    "metaDescription": "Build an RFC-style DNS SRV priority, weight, port and target record. Runs locally in your browser with pasted text or numbers. No uploads or registration.",
+    "keywords": [
+      "dns srv record generator",
+      "online dns srv record generator",
+      "free dns srv record generator"
+    ],
+    "example": "_sip._tcp.example.com|10|5|5060|sip.example.com",
+    "ready": true,
+    "batch": 6
   }
 ]
