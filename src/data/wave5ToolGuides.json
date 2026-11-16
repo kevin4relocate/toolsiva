@@ -703,7 +703,7 @@
   },
   "monthly-recurring-revenue-calculator": {
     "explanation": "Calculate MRR from a customer count and monthly subscription prices.",
-    "example": "100|20|35",
+    "example": "100|20|35|15",
     "limitation": "Inputs are repeating count|monthlyPrice pairs.",
     "workflows": [
       "Enter or paste the example format and replace it with your own text or numbers.",
