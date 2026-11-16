@@ -18,13 +18,13 @@ const browserOnly=new Set(["html-data-attribute-extractor","html-external-link-e
 const run=(slug,input)=>{for(const fn of engines){const r=fn(slug,input);if(r!==null)return r;}return null;};
 
 test("All 100 appended tools are unique, documented, safe, executable from samples",()=>{
- assert.equal(queue.length,373);
+ assert.equal(queue.length,473);
  assert.equal(newTools.length,87);
  assert.equal(Object.keys(guides).length,87);
  assert.equal(queue.filter(x=>x.batch===4).at(-1).slug,"csv-formula-injection-detector");
  assert.equal(newTools[0].slug,"line-starts-with-filter");
- assert.equal(queue.at(-1).slug,"dns-mx-record-priority-sorter");
- assert.equal(new Set(queue.map(x=>x.slug)).size,373);
+ assert.equal(queue.filter(x=>x.batch===5).at(-1).slug,"dns-mx-record-priority-sorter");
+ assert.equal(new Set(queue.map(x=>x.slug)).size,473);
  const baseSource=fs.readFileSync("src/data/tools.ts","utf8");
  const baseSlugs=[...baseSource.matchAll(/(?:["']slug["']|slug)\s*:\s*["']([^"']+)["']/g)].map(x=>x[1]);
  assert.equal(baseSlugs.length,123,"Unexpected original registry size");
@@ -134,22 +134,23 @@ test("CSS, HTTP, email, JWT and DNS tools return useful offline output",()=>{
 });
 
 test("373 deduplicated tools release in order over 38 Monday slots",()=>{
+ const phase=queue.filter(x=>x.batch<=5);
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave5-dedup-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const weeks=Math.ceil(queue.length/10);
+  const weeks=Math.ceil(phase.length/10);
   assert.equal(weeks,38);
   for(let i=0;i<weeks;i++){
    const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(result.released.length,Math.min(10,queue.length-i*10),"week "+(i+1));
+   assert.equal(result.released.length,Math.min(10,phase.length-i*10),"week "+(i+1));
   }
   const out=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(out.published,queue.map(x=>x.slug));
+  assert.deepEqual(out.published,phase.map(x=>x.slug));
   assert.equal(out.history.length,weeks);
   assert.equal(out.history.at(-1).slugs.length,3);
-  assert.equal(out.published[queue.findIndex(x=>x.batch===5)],"line-starts-with-filter");
+  assert.equal(out.published[phase.findIndex(x=>x.batch===5)],"line-starts-with-filter");
   assert.equal(out.published.at(-1),"dns-mx-record-priority-sorter");
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });

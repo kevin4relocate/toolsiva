@@ -40,6 +40,16 @@ const timer=mode==="simple-pomodoro-timer";
   import { j5Tools, d5DateTools } from "@/lib/wave5JsonDates.mjs";
   import { n5Math, n5Business } from "@/lib/wave5MathBusiness.mjs";
   import { c5HtmlCss, s5Security } from "@/lib/wave5Web.mjs";
+  import { w6Text } from "@/lib/wave6Text.mjs";
+  import { w6Time } from "@/lib/wave6Time.mjs";
+  import { w6Probability } from "@/lib/wave6Probability.mjs";
+  import { w6Math } from "@/lib/wave6Math.mjs";
+  import { w6Finance } from "@/lib/wave6Finance.mjs";
+  import { w6Business } from "@/lib/wave6Business.mjs";
+  import { w6CsvTools } from "@/lib/wave6Csv.mjs";
+  import { w6ConfigTools } from "@/lib/wave6Config.mjs";
+  import { w6WebTools } from "@/lib/wave6Web.mjs";
+  import { w6Network } from "@/lib/wave6Network.mjs";
   import { parse as parseYaml } from "yaml";
 
   document.querySelectorAll<HTMLElement>("[data-simple-tool]").forEach(root=>{
@@ -64,7 +74,7 @@ const timer=mode==="simple-pomodoro-timer";
         if(!content){output.value="";status.textContent="Enter a value to begin.";return;}
         let result:string|null;
         if(mode==="yaml-to-json"){result=JSON.stringify(parseYaml(content),null,2);}
-        else result=calcSimple(mode,content)??processTextTool(mode,content)??runExtraText(mode,content)??runExtraData(mode,content)??runExtraWeb(mode,content)??thirdText(mode,content)??thirdCsvJson(mode,content)??dateSlots3(mode,content)??math4(mode,content)??web5(mode,content)??t4A(mode,content)??t4B(mode,content)??h4Html(mode,content)??u4Tools(mode,content)??j4Tools(mode,content)??c4Tools(mode,content)??n4Buss(mode,content)??n4Stats(mode,content)??v4Http(mode,content)??v4Validate(mode,content)??t5TextA(mode,content)??t5TextB(mode,content)??m5Process(mode,content)??d5Process(mode,content)??j5Tools(mode,content)??d5DateTools(mode,content)??n5Math(mode,content)??n5Business(mode,content)??c5HtmlCss(mode,content)??s5Security(mode,content);
+        else result=calcSimple(mode,content)??processTextTool(mode,content)??runExtraText(mode,content)??runExtraData(mode,content)??runExtraWeb(mode,content)??thirdText(mode,content)??thirdCsvJson(mode,content)??dateSlots3(mode,content)??math4(mode,content)??web5(mode,content)??t4A(mode,content)??t4B(mode,content)??h4Html(mode,content)??u4Tools(mode,content)??j4Tools(mode,content)??c4Tools(mode,content)??n4Buss(mode,content)??n4Stats(mode,content)??v4Http(mode,content)??v4Validate(mode,content)??t5TextA(mode,content)??t5TextB(mode,content)??m5Process(mode,content)??d5Process(mode,content)??j5Tools(mode,content)??d5DateTools(mode,content)??n5Math(mode,content)??n5Business(mode,content)??c5HtmlCss(mode,content)??s5Security(mode,content)??w6Text(mode,content)??w6Time(mode,content)??w6Probability(mode,content)??w6Math(mode,content)??w6Finance(mode,content)??w6Business(mode,content)??w6CsvTools(mode,content)??w6ConfigTools(mode,content)??w6WebTools(mode,content)??w6Network(mode,content);
         if(result===null)throw Error("This tool mode has no implementation.");
         output.value=String(result);
         status.textContent="Processed locally in your browser.";

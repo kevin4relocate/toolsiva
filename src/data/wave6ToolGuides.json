@@ -1,0 +1,902 @@
+{
+  "text-template-variable-filler": {
+    "explanation": "Replace {{variable}} placeholders with values from a pasted JSON object.",
+    "example": "{\"name\":\"Ada\",\"date\":\"2026-11-17\"}\n---\nHello {{name}}! Today is {{date}}.",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "anagram-checker": {
+    "explanation": "Check whether two phrases have the same letters after ignoring spaces and capitalization.",
+    "example": "listen\n---\nsilent",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "pangram-checker": {
+    "explanation": "Check if a phrase contains all 26 letters in the English alphabet.",
+    "example": "The quick brown fox jumps over the lazy dog.",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "text-similarity-metrics-calculator": {
+    "explanation": "Calculate Levenshtein distance and normalized similarity between two strings.",
+    "example": "kitten\n---\nsitting",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "english-filler-phrase-finder": {
+    "explanation": "Locate common English filler words and phrases with counts and positions.",
+    "example": "Basically, I actually just think it is very useful.",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "bracket-balance-validator": {
+    "explanation": "Check correct balance and order of round, square and curly brackets.",
+    "example": "function example() { return items[0]; }",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "smart-quote-normalizer": {
+    "explanation": "Convert curly quotation marks into consistent straight quotation marks.",
+    "example": "“Hello,” she said. ‘Welcome!’",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "nato-phonetic-alphabet-translator": {
+    "explanation": "Spell ASCII letters and digits using the NATO phonetic alphabet.",
+    "example": "SOS",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "a1z26-cipher-translator": {
+    "explanation": "Encode letters as A1Z26 numbers or decode hyphen-separated numbers.",
+    "example": "HELLO",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "british-american-spelling-converter": {
+    "explanation": "Convert a selected set of common British and American spellings.",
+    "example": "UK\n---\nThe colour of the theatre is grey.",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "monthly-nth-weekday-schedule-generator": {
+    "explanation": "Find the nth occurrence of a weekday in successive months.",
+    "example": "2027-01|6|2|Monday",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "fiscal-year-period-calculator": {
+    "explanation": "Calculate fiscal year and quarter when the fiscal year starts in a chosen month.",
+    "example": "2026-11-16|4",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "timezone-meeting-window-finder": {
+    "explanation": "Find overlapping daytime working-hour windows across IANA time zones.",
+    "example": "2026-11-20|09:00|18:00\n---\nAsia/Ho_Chi_Minh\nEurope/London",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "shift-rotation-planner": {
+    "explanation": "Generate a repeating work/rest shift calendar from starting date and cycle.",
+    "example": "2026-11-16|14|4|2",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "business-hours-between-dates-calculator": {
+    "explanation": "Calculate working hours between local timestamps within weekday office hours.",
+    "example": "2026-11-16T09:00|2026-11-18T17:00|09:00|17:00",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "daylight-saving-transition-finder": {
+    "explanation": "Find observed UTC-offset changes for a named IANA time zone during a year.",
+    "example": "America/New_York|2027",
+    "limitation": "Uses IANA time-zone data available in the browser; historical rules may change.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "icalendar-rrule-validator": {
+    "explanation": "Validate a supported subset of iCalendar recurring schedule rule syntax.",
+    "example": "FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "multiple-appointment-conflict-detector": {
+    "explanation": "Detect overlapping typed appointment intervals and report conflicting pairs.",
+    "example": "09:00,10:00\n09:30,11:00\n13:00,14:00",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "calendar-free-slot-finder": {
+    "explanation": "Find free appointment slots outside a pasted list of busy intervals.",
+    "example": "09:00|17:00|30\n---\n10:00,11:00\n14:00,14:30",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "ambiguous-date-format-checker": {
+    "explanation": "Check whether a numeric date could use either day-first or month-first ordering.",
+    "example": "03/04/2026",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "binomial-probability-calculator": {
+    "explanation": "Calculate an exact binomial point probability given trials, successes and probability.",
+    "example": "10|4|0.5",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "poisson-probability-calculator": {
+    "explanation": "Calculate a Poisson point probability using event rate and observed count.",
+    "example": "3|2",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "hypergeometric-probability-calculator": {
+    "explanation": "Calculate an exact hypergeometric probability for sampling without replacement.",
+    "example": "20|7|5|2",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "normal-distribution-probability-calculator": {
+    "explanation": "Calculate normal-distribution probability between two supplied bounds.",
+    "example": "0|1|-1|1",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "bayes-theorem-calculator": {
+    "explanation": "Calculate posterior probability from prior, sensitivity and false positive rate.",
+    "example": "0.01|0.95|0.05",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "proportion-confidence-interval-calculator": {
+    "explanation": "Calculate a Wilson confidence interval for a population proportion.",
+    "example": "80|100|0.95",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "proportion-sample-size-calculator": {
+    "explanation": "Estimate survey sample size for a target confidence level and error.",
+    "example": "0.5|0.05|0.95",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "chi-square-goodness-of-fit-calculator": {
+    "explanation": "Calculate chi-square goodness-of-fit statistic and approximate p-value.",
+    "example": "10,20,30\n---\n15,15,30",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "probability-odds-converter": {
+    "explanation": "Convert decimal probability to odds, or odds to probability.",
+    "example": "0.25",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "random-sample-without-replacement": {
+    "explanation": "Select a random subset of distinct pasted lines without replacement.",
+    "example": "3\n---\nalpha\nbeta\ngamma\ndelta",
+    "limitation": "Sampling draws lines at random, with no duplicates; original duplicate lines are treated as distinct entries.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "logarithm-calculator": {
+    "explanation": "Calculate the logarithm of a positive value in a chosen base.",
+    "example": "1000|10",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "modular-arithmetic-toolkit": {
+    "explanation": "Calculate integer addition, multiplication, exponentiation and inverse modulo N.",
+    "example": "pow|7|20|13",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "matrix-multiplication-calculator": {
+    "explanation": "Multiply two finite numeric matrices supplied as semicolon-separated rows.",
+    "example": "1,2;3,4\n---\n5,6;7,8",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "matrix-determinant-calculator": {
+    "explanation": "Calculate the determinant of a square numeric matrix.",
+    "example": "1,2;3,4",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "vector-angle-calculator": {
+    "explanation": "Calculate the angle in degrees between nonzero numeric vectors.",
+    "example": "1,0\n---\n0,1",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "haversine-distance-calculator": {
+    "explanation": "Calculate approximate great-circle distance between latitude-longitude pairs.",
+    "example": "10.8231,106.6297\n---\n21.0278,105.8342",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "triangle-angle-solver": {
+    "explanation": "Calculate all three interior angles from valid triangle side lengths.",
+    "example": "3|4|5",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "integer-divisor-finder": {
+    "explanation": "List positive divisors of a reasonably sized positive integer.",
+    "example": "28",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "prime-range-generator": {
+    "explanation": "Generate all primes within an inclusive numeric interval using a sieve.",
+    "example": "10|30",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "number-to-english-words-converter": {
+    "explanation": "Spell integer numbers in English words, including negative amounts.",
+    "example": "12345",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "effective-annual-rate-calculator": {
+    "explanation": "Convert nominal annual interest and compounding frequency to an effective annual rate.",
+    "example": "0.12|12",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "debt-repayment-strategy-planner": {
+    "explanation": "Compare snowball and avalanche strategies for monthly debt payoff.",
+    "example": "1500|0.2|70\n800|0.12|40\n---\n150",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "mortgage-refinance-break-even-calculator": {
+    "explanation": "Calculate refinance breakeven from principal, interest rates, fees and term.",
+    "example": "250000|0.065|0.0525|3000|300",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "debt-to-income-ratio-calculator": {
+    "explanation": "Calculate monthly debt obligations as a share of gross monthly income.",
+    "example": "1800|6000",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "fire-target-calculator": {
+    "explanation": "Calculate target investable assets from annual spending and withdrawal rate.",
+    "example": "40000|0.04",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "savings-withdrawal-runway-simulator": {
+    "explanation": "Simulate monthly withdrawals against savings with constant annual growth.",
+    "example": "100000|2500|0.04",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "asset-depreciation-schedule-generator": {
+    "explanation": "Generate straight-line annual depreciation from cost, salvage value and years.",
+    "example": "12000|2000|5",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "invoice-late-fee-calculator": {
+    "explanation": "Estimate simple interest on an overdue invoice using monthly rate and overdue days.",
+    "example": "1000|0.015|30",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "subscription-proration-calculator": {
+    "explanation": "Calculate subscription charges for usage days out of a billing period.",
+    "example": "30|10|30",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "rent-versus-buy-cost-comparator": {
+    "explanation": "Compare simple renting expenses against buying cash cost and estimated resale equity.",
+    "example": "300000|1200|10|0.03|0.01|0.05",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "saas-revenue-retention-calculator": {
+    "explanation": "Calculate gross and net revenue retention from MRR churn, contraction and expansion.",
+    "example": "10000|800|400|600",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "business-cash-burn-runway-calculator": {
+    "explanation": "Compute monthly net cash burn and cash runway in months.",
+    "example": "150000|22000|10000",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "inventory-reorder-point-calculator": {
+    "explanation": "Calculate reorder inventory level using daily demand, lead time and safety stock.",
+    "example": "40|7|100",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "economic-order-quantity-calculator": {
+    "explanation": "Compute economic order quantity from demand, order cost and annual carrying cost.",
+    "example": "12000|50|2",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "abc-inventory-classifier": {
+    "explanation": "Group inventory SKUs into A/B/C segments by annual consumption value.",
+    "example": "Item A,100,20\nItem B,50,5\nItem C,20,2",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "cash-conversion-cycle-calculator": {
+    "explanation": "Compute cash conversion cycle from inventory, receivable and payable days.",
+    "example": "45|30|20",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "weighted-sales-pipeline-forecast-calculator": {
+    "explanation": "Sum expected weighted revenue from named opportunities and win probabilities.",
+    "example": "Deal A|20000|0.4\nDeal B|50000|0.2",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "sales-funnel-dropoff-analyzer": {
+    "explanation": "Report sequential stage conversion and dropoff across a sales funnel.",
+    "example": "1000|500|250|70",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "tiered-commission-calculator": {
+    "explanation": "Calculate progressive marginal commissions across supplied sales thresholds.",
+    "example": "150000\n---\n50000,0.04\n100000,0.07\nInfinity,0.1",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "price-elasticity-of-demand-calculator": {
+    "explanation": "Calculate arc price elasticity between two prices and corresponding quantities.",
+    "example": "10|100|12|85",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-join-by-key": {
+    "explanation": "Left-join two pasted CSV tables by a shared key column.",
+    "example": "id\n---\nid,name\n1,Ada\n2,Bob\n---\nid,score\n1,90\n3,75",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-group-by-aggregator": {
+    "explanation": "Aggregate CSV records by a group field with sum, count or mean.",
+    "example": "region|sum|revenue\n---\nregion,revenue\nEast,10\nWest,5\nEast,20",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-pivot-table-builder": {
+    "explanation": "Create a two-dimensional CSV pivot table with summed numeric values.",
+    "example": "region|product|amount\n---\nregion,product,amount\nEast,A,5\nEast,B,3\nWest,A,7",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-unpivot-table-converter": {
+    "explanation": "Turn many value columns into variable and value rows with identifier fields.",
+    "example": "id\n---\nid,q1,q2\nA,10,20\nB,5,8",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-data-type-profiler": {
+    "explanation": "Infer basic numeric, date, Boolean and text types per CSV column.",
+    "example": "id,price,date\n1,3.5,2026-11-16\n2,4.2,2026-11-17",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-composite-key-validator": {
+    "explanation": "Detect duplicate rows based on a chosen combination of CSV columns.",
+    "example": "email,region\n---\nemail,region\nada@example.com,US\nada@example.com,EU\nada@example.com,US",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-keyed-row-diff": {
+    "explanation": "Report added, removed and modified rows from two keyed CSV datasets.",
+    "example": "id\n---\nid,name\n1,Ada\n2,Bob\n---\nid,name\n1,Ada\n2,Robert\n3,Cleo",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-conditional-column-builder": {
+    "explanation": "Add a new CSV column based on a simple equality, inequality or numeric rule.",
+    "example": "status|is_paid|==|paid|yes|no\n---\nname,status\nAda,paid\nBob,unpaid",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-formula-injection-sanitizer": {
+    "explanation": "Prefix spreadsheet-formula-like CSV cells with a protective apostrophe.",
+    "example": "name,note\nAda,=SUM(1+1)\nBob,+CMD",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csv-numeric-histogram-generator": {
+    "explanation": "Make numeric frequency bins for a selected CSV column.",
+    "example": "price|5\n---\nitem,price\nA,10\nB,14\nC,22\nD,25",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-schema-generator": {
+    "explanation": "Infer a draft-compatible JSON Schema from a sample JSON value.",
+    "example": "{\"name\":\"Ada\",\"age\":32,\"tags\":[\"a\",\"b\"]}",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-schema-validator": {
+    "explanation": "Check pasted JSON values against a documented subset of JSON Schema keywords.",
+    "example": "{\"type\":\"object\",\"required\":[\"age\"],\"properties\":{\"age\":{\"type\":\"number\",\"minimum\":0}}}\n---\n{\"age\":32}",
+    "limitation": "Supports core JSON Schema keywords; not every feature of the full specification.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-patch-generator": {
+    "explanation": "Generate JSON Patch operations describing a change from old to new JSON.",
+    "example": "{\"name\":\"Ada\",\"age\":30}\n---\n{\"name\":\"Ada\",\"age\":31}",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-patch-applier": {
+    "explanation": "Apply JSON Patch add, remove, replace, copy, move and test operations safely.",
+    "example": "{\"name\":\"Ada\",\"age\":30}\n---\n[{\"op\":\"replace\",\"path\":\"/age\",\"value\":31}]",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "jsonpath-query-evaluator": {
+    "explanation": "Query pasted JSON with common property, array index and wildcard JSONPath syntax.",
+    "example": "$.items[*].name\n---\n{\"items\":[{\"name\":\"Ada\"},{\"name\":\"Bob\"}]}",
+    "limitation": "Supports basic property, index and wildcard paths; no filters or scripted expressions.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-duplicate-key-detector": {
+    "explanation": "Detect duplicate property declarations in raw JSON before JSON.parse silently overwrites them.",
+    "example": "{\"a\":1,\"a\":2,\"nested\":{\"b\":1,\"b\":2}}",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "toml-to-json-converter": {
+    "explanation": "Parse a documented subset of TOML text into JSON.",
+    "example": "title = \"Example\"\n[server]\nport = 8080",
+    "limitation": "Supports simple TOML scalar values, arrays and tables; unsupported advanced syntax returns an error.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "ini-to-json-converter": {
+    "explanation": "Convert common INI section and key-value configuration text into JSON.",
+    "example": "[server]\nhost = localhost\nport = 8080",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "dotenv-syntax-validator": {
+    "explanation": "Validate variable assignment lines in pasted .env configuration text.",
+    "example": "APP_NAME=Toolsiva\nPORT=3000\nDEBUG=true",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-to-sql-insert-generator": {
+    "explanation": "Create escaped SQL INSERT statements from flat JSON rows for offline review.",
+    "example": "users\n---\n[{\"id\":1,\"name\":\"Ada\"},{\"id\":2,\"name\":\"Bob\"}]",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "social-meta-tag-auditor": {
+    "explanation": "Audit pasted HTML for Open Graph and social-sharing meta fields.",
+    "example": "<meta property=\"og:title\" content=\"Toolsiva\"><meta property=\"og:description\" content=\"Tools\"><meta name=\"twitter:card\" content=\"summary\">",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "json-ld-structured-data-validator": {
+    "explanation": "Validate JSON-LD syntax, basic Schema.org context and required fields for common types.",
+    "example": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Example\",\"author\":{\"@type\":\"Person\",\"name\":\"Ada\"}}",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "hreflang-reciprocity-checker": {
+    "explanation": "Check reciprocal alternate-language page links supplied as text.",
+    "example": "https://site.test/en|en|https://site.test/fr\nhttps://site.test/fr|fr|https://site.test/en",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "redirect-loop-detector": {
+    "explanation": "Detect redirect chains containing repeated destinations or loops.",
+    "example": "/a|/b\n/b|/c\n/c|/a",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "csp-url-allowlist-tester": {
+    "explanation": "Evaluate whether one URL matches a relevant CSP source list.",
+    "example": "default-src 'self'; img-src https://images.test\n---\nimg-src|https://images.test/logo.png|https://site.test",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "cors-preflight-response-tester": {
+    "explanation": "Test typed CORS preflight request details against pasted response headers.",
+    "example": "https://app.test|POST|X-Token\n---\nAccess-Control-Allow-Origin: https://app.test\nAccess-Control-Allow-Methods: GET, POST\nAccess-Control-Allow-Headers: X-Token",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "dmarc-record-validator": {
+    "explanation": "Check pasted DMARC record tags, allowed values and consistency.",
+    "example": "v=DMARC1; p=reject; pct=100; rua=mailto:dmarc@example.com",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "dkim-txt-record-inspector": {
+    "explanation": "Inspect common tags and public-key presence in a pasted DKIM TXT record.",
+    "example": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "html-table-accessibility-checker": {
+    "explanation": "Check pasted HTML tables for captions, header cells and table-header association hints.",
+    "example": "<table><caption>Sales</caption><tr><th scope=\"col\">Month</th><th scope=\"col\">Total</th></tr><tr><td>Jan</td><td>5</td></tr></table>",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "robots-txt-rule-conflict-finder": {
+    "explanation": "Flag conflicting or repeated path directives in a pasted robots.txt policy.",
+    "example": "User-agent: *\nDisallow: /private\nAllow: /private\nDisallow: /admin",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "ipv6-compression-expansion-converter": {
+    "explanation": "Normalize typed IPv6 addresses to expanded and compressed representations.",
+    "example": "2001:0db8:0000:0000:0000:ff00:0042:8329",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "ipv6-cidr-membership-checker": {
+    "explanation": "Check whether an IPv6 address falls within a specified CIDR range.",
+    "example": "2001:db8::1\n---\n2001:db8::/32",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "mac-address-validator-normalizer": {
+    "explanation": "Validate 48-bit MAC address syntax and normalize separators.",
+    "example": "AA-BB-CC-DD-EE-FF",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "ip-address-type-classifier": {
+    "explanation": "Classify common IPv4 or IPv6 address types, including private and loopback.",
+    "example": "192.168.1.10",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "reverse-dns-pointer-generator": {
+    "explanation": "Convert an IP address into a reverse DNS lookup name without DNS access.",
+    "example": "192.0.2.15",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "luhn-check-digit-toolkit": {
+    "explanation": "Generate Luhn check digits or validate complete numeric identifiers.",
+    "example": "7992739871",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "isbn-10-and-13-validator": {
+    "explanation": "Validate ISBN-10 or ISBN-13 syntax and checksums.",
+    "example": "9780306406157",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "iban-checksum-validator": {
+    "explanation": "Validate IBAN country length and mod-97 checksum offline.",
+    "example": "GB82 WEST 1234 5698 7654 32",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "dns-caa-record-generator": {
+    "explanation": "Build a DNS CAA record from host, tag and CA value.",
+    "example": "example.com|issue|letsencrypt.org",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  },
+  "dns-srv-record-generator": {
+    "explanation": "Build an RFC-style DNS SRV priority, weight, port and target record.",
+    "example": "_sip._tcp.example.com|10|5|5060|sip.example.com",
+    "limitation": "Uses the input format shown; results reflect only your pasted values and should be verified before high-stakes use.",
+    "workflows": [
+      "Paste or type values following the example.",
+      "Review the computed output, then copy it if useful."
+    ]
+  }
+}

@@ -38,6 +38,7 @@ jobs:
       - run: npm run test:wave4
       - run: npm run test:wave5
       - run: npm run test:dedup
+      - run: npm run test:wave6
       - run: npm run test:canonical-routing
       - run: npm run blog:validate
       - run: npm run check
@@ -60,7 +61,7 @@ jobs:
           npm run build
           npm run tools:verify
           npm run seo:audit
-      - name: Simulate all weekly releases and audit 496 built tool pages
+      - name: Simulate all weekly releases and audit 596 built tool pages
         shell: bash
         run: |
           trap 'git restore -- src/data/simpleToolRelease.json' EXIT
@@ -70,6 +71,7 @@ jobs:
           npm run test:wave4
           npm run test:wave5
           npm run test:dedup
+          npm run test:wave6
           npm run check
           npm run build
           npm run tools:verify
