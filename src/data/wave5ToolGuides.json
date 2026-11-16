@@ -1,0 +1,902 @@
+{
+  "line-starts-with-filter": {
+    "explanation": "Show only pasted lines beginning with a chosen prefix.",
+    "example": "warn\n---\nwarning: disk\ninfo: ready\nwarn: retry",
+    "limitation": "Matches prefixes case-insensitively.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "line-ends-with-filter": {
+    "explanation": "Keep lines ending with a selected suffix.",
+    "example": ".com\n---\na.com\nb.net\nc.com",
+    "limitation": "Matches suffixes case-insensitively.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "case-insensitive-line-deduplicator": {
+    "explanation": "Remove repeated lines without regard to letter case.",
+    "example": "Hello\nhello\nWORLD\nworld",
+    "limitation": "Original capitalization of the first occurrence is retained.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "trim-each-line": {
+    "explanation": "Trim leading and trailing whitespace on every line.",
+    "example": "  alpha  \n  beta \n gamma  ",
+    "limitation": "Whitespace within a line is not changed.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "prefix-every-line": {
+    "explanation": "Prepend a custom prefix to each input line.",
+    "example": "ID-\n---\nalpha\nbeta\ngamma",
+    "limitation": "Blank lines are preserved.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "suffix-every-line": {
+    "explanation": "Append a custom suffix to every input line.",
+    "example": ";\n---\nalpha\nbeta\ngamma",
+    "limitation": "Blank lines are preserved.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "join-lines-with-delimiter": {
+    "explanation": "Join multiple text lines using your own separator.",
+    "example": " | \n---\nalpha\nbeta\ngamma",
+    "limitation": "Line endings are normalized to Unix-style newlines.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "insert-separator-between-lines": {
+    "explanation": "Insert a separator between consecutive lines.",
+    "example": "---\n---\nalpha\nbeta\ngamma",
+    "limitation": "The first line is treated as the separator.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "sort-lines-by-length": {
+    "explanation": "Sort pasted lines from shortest to longest.",
+    "example": "elephant\ncat\ndog\nbutterfly",
+    "limitation": "Line length uses Unicode code points, not visual display width.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "toggle-letter-case": {
+    "explanation": "Swap lowercase and uppercase letters in pasted text.",
+    "example": "HeLLo WoRLD 123!",
+    "limitation": "Case mapping depends on Unicode locale-neutral rules.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "word-initials-extractor": {
+    "explanation": "Collect the first letter of every word.",
+    "example": "Toolsiva makes useful tools",
+    "limitation": "Words without letters do not contribute initials.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "acronym-builder": {
+    "explanation": "Build an uppercase acronym from the words in a phrase.",
+    "example": "Search Engine Optimization",
+    "limitation": "Uses initial letters without interpreting stop words.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "camel-case-to-words": {
+    "explanation": "Insert spaces at camelCase and PascalCase word boundaries.",
+    "example": "mySampleVariableName",
+    "limitation": "Acronym boundaries are estimated from capitalization.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "snake-case-to-words": {
+    "explanation": "Replace underscore word separators with spaces.",
+    "example": "my_sample_variable_name",
+    "limitation": "Repeated underscores are normalized.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "kebab-case-to-words": {
+    "explanation": "Replace hyphen word separators with spaces.",
+    "example": "my-sample-variable-name",
+    "limitation": "Repeated hyphens are normalized.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "words-to-camel-case": {
+    "explanation": "Turn typed words into lower camelCase.",
+    "example": "create user profile",
+    "limitation": "Nonletter delimiters are treated as boundaries.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "words-to-snake-case": {
+    "explanation": "Turn words into lowercase snake_case.",
+    "example": "create user profile",
+    "limitation": "Nonletter delimiters are treated as boundaries.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "words-to-kebab-case": {
+    "explanation": "Turn words into lowercase kebab-case.",
+    "example": "create user profile",
+    "limitation": "Nonletter delimiters are treated as boundaries.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "sentence-capitalization-formatter": {
+    "explanation": "Capitalize the start of each sentence and lowercase other text.",
+    "example": "hello world. this is toolsiva! can it help?",
+    "limitation": "Capitalizing after punctuation is a heuristic.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "paragraph-numbering-tool": {
+    "explanation": "Number paragraphs while retaining each paragraph's text.",
+    "example": "First paragraph.\n\nSecond paragraph.\n\nThird paragraph.",
+    "limitation": "Blank lines delimit paragraphs.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-table-column-counter": {
+    "explanation": "Count columns in a pasted Markdown pipe table.",
+    "example": "| Name | Age |\n| --- | --- |\n| Ada | 30 |",
+    "limitation": "Assumes a conventional pipe table with a header row.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-table-to-csv": {
+    "explanation": "Convert a basic Markdown pipe table to CSV text.",
+    "example": "| Name | Age |\n| --- | --- |\n| Ada | 30 |",
+    "limitation": "Does not implement complex Markdown table extensions.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-blockquote-extractor": {
+    "explanation": "Extract quoted Markdown lines without their leading marker.",
+    "example": "> A highlighted thought.\n> Another line.\nNormal text.",
+    "limitation": "Only lines starting with > are considered.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-link-text-extractor": {
+    "explanation": "Extract the displayed labels of inline Markdown links.",
+    "example": "Read [Toolsiva](https://toolsiva.com) and [Docs](/docs).",
+    "limitation": "Nested links and reference-style links are not fully parsed.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-reference-definition-extractor": {
+    "explanation": "Extract Markdown reference-link definitions.",
+    "example": "[docs]: https://example.com/docs\n[home]: /home \"Homepage\"",
+    "limitation": "Only one-line definitions are supported.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-frontmatter-key-extractor": {
+    "explanation": "List top-level keys in YAML-like Markdown frontmatter.",
+    "example": "---\ntitle: Test Page\nauthor: Ada\n---\n# Content",
+    "limitation": "Does not evaluate nested YAML expressions.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-inline-code-extractor": {
+    "explanation": "Extract single-backtick inline code fragments.",
+    "example": "Run `npm test` and check `node -v`.",
+    "limitation": "Multiline and multiple-backtick constructs are excluded.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-horizontal-rule-counter": {
+    "explanation": "Count Markdown horizontal-rule lines.",
+    "example": "# Heading\n---\nContent\n***\nEnd",
+    "limitation": "Horizontal rules inside fenced code are not counted.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-emphasis-marker-counter": {
+    "explanation": "Count simple Markdown bold and italic delimiters.",
+    "example": "**bold** and *italic* plus __bold__",
+    "limitation": "Does not fully parse escaped or nested Markdown.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "markdown-footnote-reference-extractor": {
+    "explanation": "List unique Markdown footnote reference identifiers.",
+    "example": "See this note[^one] and another[^two].",
+    "limitation": "Does not validate that referenced notes are defined.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "tsv-to-json": {
+    "explanation": "Convert tab-delimited text with header to JSON objects.",
+    "example": "name\tage\nAda\t30\nBob\t25",
+    "limitation": "All output field values are strings.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-to-tsv": {
+    "explanation": "Convert an array of flat JSON objects to TSV text.",
+    "example": "[{\"name\":\"Ada\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]",
+    "limitation": "Nested arrays and objects are JSON-stringified.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "pipe-separated-to-csv": {
+    "explanation": "Convert simple pipe-delimited text into CSV.",
+    "example": "name|age\nAda|30\nBob|25",
+    "limitation": "Quoted pipe escapes are not fully supported.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-to-pipe-separated": {
+    "explanation": "Convert pasted CSV into pipe-delimited text.",
+    "example": "name,age\nAda,30\nBob,25",
+    "limitation": "Values containing pipes are quoted.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-row-count": {
+    "explanation": "Count data rows in pasted CSV, excluding the header.",
+    "example": "name,age\nAda,30\nBob,25",
+    "limitation": "This expects a header row.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-cell-count": {
+    "explanation": "Count all CSV cells and nonempty data cells.",
+    "example": "a,b,c\n1,2,3\n4,5,6",
+    "limitation": "Header cells are included in the total.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-positive-number-row-filter": {
+    "explanation": "Keep CSV rows with a positive number in a chosen column.",
+    "example": "score\n---\nname,score\nA,-1\nB,5\nC,0",
+    "limitation": "Blank and nonnumeric values are excluded.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-column-sum": {
+    "explanation": "Sum finite numeric cells in one CSV column.",
+    "example": "amount\n---\nname,amount\nA,10\nB,25\nC,5",
+    "limitation": "Nonnumeric cells are ignored.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-column-mean": {
+    "explanation": "Calculate the mean of numeric cells in a CSV column.",
+    "example": "amount\n---\nname,amount\nA,10\nB,20\nC,30",
+    "limitation": "Blank and nonnumeric cells are excluded.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "csv-column-minimum-maximum": {
+    "explanation": "Find minimum and maximum numeric values in one CSV column.",
+    "example": "price\n---\nname,price\nA,12\nB,8\nC,22",
+    "limitation": "Nonnumeric cells are ignored.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-boolean-path-finder": {
+    "explanation": "List JSON paths holding true or false values.",
+    "example": "{\"active\":true,\"user\":{\"verified\":false}}",
+    "limitation": "Paths are JSON Pointers; arrays use numbered indexes.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-null-path-finder": {
+    "explanation": "List paths whose values are JSON null.",
+    "example": "{\"a\":null,\"nested\":{\"b\":null}}",
+    "limitation": "A missing property is different from an explicit null.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-primitive-type-map": {
+    "explanation": "Display JSON primitive types for every leaf path.",
+    "example": "{\"name\":\"Ada\",\"age\":30,\"active\":true}",
+    "limitation": "Object and array containers are traversed recursively.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-array-value-index-finder": {
+    "explanation": "Find positions of matching primitive values in a JSON array.",
+    "example": "Ada\n---\n[\"Bob\",\"Ada\",\"Ada\"]",
+    "limitation": "Search is case-sensitive and uses zero-based indexes.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-array-reverser": {
+    "explanation": "Reverse the element order of a JSON array.",
+    "example": "[1,2,3,4]",
+    "limitation": "Nested arrays are not reversed.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-array-rotator": {
+    "explanation": "Rotate array entries to the right by N positions.",
+    "example": "2\n---\n[1,2,3,4,5]",
+    "limitation": "Negative rotation counts rotate left.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-array-chunker": {
+    "explanation": "Split JSON array elements into subarrays of chosen size.",
+    "example": "2\n---\n[1,2,3,4,5]",
+    "limitation": "No nested data is modified.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-array-length-analyzer": {
+    "explanation": "Show lengths of the root and its directly nested arrays.",
+    "example": "[[1,2],[3],[],[4,5,6]]",
+    "limitation": "Does not recursively count arrays deeper than one level.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-number-rounding-tool": {
+    "explanation": "Round numeric JSON values to a chosen number of decimal places.",
+    "example": "2\n---\n{\"rate\":1.2345,\"items\":[3.999,2.222]}",
+    "limitation": "Floating-point rounding may differ for halfway decimal values.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "json-null-property-remover": {
+    "explanation": "Remove object properties whose values are null.",
+    "example": "{\"a\":null,\"b\":2,\"c\":{\"d\":null,\"e\":1}}",
+    "limitation": "Null items inside arrays are preserved to avoid shifting indexes.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "iso-week-date-formatter": {
+    "explanation": "Convert a date to ISO week-year, week number, and weekday.",
+    "example": "2026-11-16",
+    "limitation": "ISO weeks begin Monday and can belong to an adjacent year.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "unix-day-number-calculator": {
+    "explanation": "Calculate whole UTC days since 1970-01-01.",
+    "example": "2026-11-16",
+    "limitation": "Dates before 1970 produce negative day numbers.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "unix-day-number-to-date": {
+    "explanation": "Convert signed Unix day number back to a UTC calendar date.",
+    "example": "20773",
+    "limitation": "Uses the Gregorian calendar.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "date-offset-sequence-generator": {
+    "explanation": "List dates at fixed intervals starting from a given day.",
+    "example": "2026-11-16|3|7",
+    "limitation": "Maximum 365 dates to limit output.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "full-months-between-dates": {
+    "explanation": "Count completed whole calendar months between two dates.",
+    "example": "2025-01-15|2026-04-15",
+    "limitation": "Does not count partial months.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "calendar-quarter-date-range": {
+    "explanation": "Show the first and last dates of a calendar quarter.",
+    "example": "2026-Q4",
+    "limitation": "Calendar quarters start in January.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "weekend-days-between-dates": {
+    "explanation": "Count Saturday and Sunday dates in an inclusive date range.",
+    "example": "2026-11-16|2026-11-30",
+    "limitation": "Local holidays are not considered.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "weekday-occurrence-counter": {
+    "explanation": "Count how often a named weekday occurs between two dates.",
+    "example": "2026-11-01|2026-11-30|Monday",
+    "limitation": "Range endpoints are inclusive.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "first-weekday-of-month": {
+    "explanation": "Find the first chosen weekday in a month.",
+    "example": "2026-11|Monday",
+    "limitation": "Uses the Gregorian calendar.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "last-weekday-of-month": {
+    "explanation": "Find the last occurrence of a weekday within a month.",
+    "example": "2026-11|Friday",
+    "limitation": "Uses the Gregorian calendar.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "arithmetic-series-sum": {
+    "explanation": "Sum N terms of an arithmetic progression.",
+    "example": "2|3|10",
+    "limitation": "Input is first term, common difference and number of terms.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "geometric-series-sum": {
+    "explanation": "Sum N terms of a geometric progression.",
+    "example": "2|3|5",
+    "limitation": "Input is first term, ratio and term count.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "fibonacci-number-finder": {
+    "explanation": "Calculate the Nth Fibonacci number exactly with BigInt.",
+    "example": "30",
+    "limitation": "Index range 0 to 2000.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "fibonacci-sequence-generator": {
+    "explanation": "Generate the first N Fibonacci numbers.",
+    "example": "12",
+    "limitation": "Maximum 100 numbers to keep output small.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "triangle-area-from-base-height": {
+    "explanation": "Calculate area from a triangle's base and perpendicular height.",
+    "example": "10|6",
+    "limitation": "Both lengths must be nonnegative.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "circle-area-from-radius": {
+    "explanation": "Calculate the area of a circle from radius.",
+    "example": "5",
+    "limitation": "Use consistent length units.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "circle-circumference-from-radius": {
+    "explanation": "Calculate circumference from a circle's radius.",
+    "example": "5",
+    "limitation": "Uses π to floating-point precision.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "rectangle-perimeter-calculator": {
+    "explanation": "Calculate a rectangle's perimeter from width and height.",
+    "example": "8|3",
+    "limitation": "Both measurements must be nonnegative.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "trapezoid-area-calculator": {
+    "explanation": "Calculate trapezoid area from two parallel sides and height.",
+    "example": "8|5|4",
+    "limitation": "Height must be perpendicular to the bases.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "cylinder-volume-calculator": {
+    "explanation": "Calculate volume of a cylinder from radius and height.",
+    "example": "3|10",
+    "limitation": "Uses π and consistent length units.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "net-profit-margin-calculator": {
+    "explanation": "Compute after-tax net profit as a percentage of revenue.",
+    "example": "1500|12000",
+    "limitation": "Revenue must be positive.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "contribution-margin-calculator": {
+    "explanation": "Compute unit selling price minus unit variable cost.",
+    "example": "120|75",
+    "limitation": "Fixed costs are excluded.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "contribution-margin-ratio-calculator": {
+    "explanation": "Calculate contribution margin as a percentage of selling price.",
+    "example": "120|75",
+    "limitation": "Price must be positive.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "investment-payback-period-calculator": {
+    "explanation": "Estimate years to recover an initial investment from annual cash inflows.",
+    "example": "10000|2500",
+    "limitation": "Assumes constant annual cash flows and ignores discounting.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "customer-retention-rate-calculator": {
+    "explanation": "Compute retention given ending customers, starting customers and new customers.",
+    "example": "900|1000|100",
+    "limitation": "New customers must be subtracted from end-of-period count.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "repeat-purchase-rate-calculator": {
+    "explanation": "Calculate the share of customers who purchased more than once.",
+    "example": "300|1200",
+    "limitation": "Unique repeat buyers cannot exceed total buyers.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "cart-abandonment-rate-calculator": {
+    "explanation": "Estimate abandoned carts from initiated checkouts and completed orders.",
+    "example": "700|1000",
+    "limitation": "Completed orders cannot exceed initiated checkouts.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "session-bounce-rate-calculator": {
+    "explanation": "Calculate single-page or nonengaged sessions as a percentage of all sessions.",
+    "example": "240|1000",
+    "limitation": "Modern analytics products define bounce differently.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "monthly-recurring-revenue-calculator": {
+    "explanation": "Calculate MRR from a customer count and monthly subscription prices.",
+    "example": "100|20|35",
+    "limitation": "Inputs are repeating count|monthlyPrice pairs.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "annual-recurring-revenue-calculator": {
+    "explanation": "Calculate annualized recurring revenue from monthly recurring revenue.",
+    "example": "4500",
+    "limitation": "ARR is simply 12 times MRR, not recognized annual revenue.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "css-class-name-extractor": {
+    "explanation": "List unique CSS class selector names from pasted CSS.",
+    "example": ".card{color:red}.card.active{display:block}.toolbar{gap:4px}",
+    "limitation": "Does not fully parse advanced escaping or nesting.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "css-selector-rule-counter": {
+    "explanation": "Count simple CSS selector rules and comma-separated selectors.",
+    "example": "h1,p{color:red}.box:hover{display:block}",
+    "limitation": "Selectors inside nested at-rules are counted heuristically.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "css-declaration-counter": {
+    "explanation": "Count declaration-like property:value pairs in CSS blocks.",
+    "example": "a{color:red;background:blue}p{margin:0}",
+    "limitation": "Does not parse CSS syntax inside strings or URLs.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "css-custom-property-extractor": {
+    "explanation": "List CSS custom property names and sample values.",
+    "example": ":root{--brand-color:#333;--gap:8px}",
+    "limitation": "Does not resolve var() substitutions.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "css-unit-frequency-counter": {
+    "explanation": "Count occurrences of common CSS units.",
+    "example": "a{margin:10px;padding:2rem;width:80%;opacity:.8}",
+    "limitation": "Comments and strings may produce false matches.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "html-data-attribute-extractor": {
+    "explanation": "List data-* attributes from pasted HTML.",
+    "example": "<div data-id=\"42\" data-role=\"card\">Hello</div>",
+    "limitation": "Uses browser DOM parsing without executing scripts.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "html-external-link-extractor": {
+    "explanation": "List anchor URLs whose origin differs from a supplied base URL.",
+    "example": "https://example.com\n---\n<a href=\"/about\">Internal</a><a href=\"https://other.com\">External</a>",
+    "limitation": "A different subdomain counts as external.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "html-target-blank-link-checker": {
+    "explanation": "List links opening new tabs and their rel protections.",
+    "example": "<a href=\"https://example.com\" target=\"_blank\">Open</a>",
+    "limitation": "Modern browsers implicitly protect some target=_blank links.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "html-button-type-checker": {
+    "explanation": "Identify buttons without explicit type attributes.",
+    "example": "<form><button>Submit</button><button type=\"button\">Cancel</button></form>",
+    "limitation": "Buttons inside forms default to submit.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "html-empty-anchor-detector": {
+    "explanation": "Find anchors with no readable label text or aria-label.",
+    "example": "<a href=\"/one\"></a><a href=\"/two\">Two</a>",
+    "limitation": "This is a focused heuristic, not a full accessibility audit.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "url-scheme-classifier": {
+    "explanation": "Classify the scheme of a pasted URL without opening it.",
+    "example": "https://example.com/path",
+    "limitation": "Unknown schemes are reported rather than opened.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "jwt-expiration-date-inspector": {
+    "explanation": "Decode the exp claim from a JWT payload and present UTC time.",
+    "example": "eyJhbGciOiJub25lIn0.eyJleHAiOjE4MDAwMDAwMDB9.",
+    "limitation": "No signature verification or authorization is performed.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "bearer-authorization-header-cleaner": {
+    "explanation": "Extract the token text from a pasted Bearer Authorization value.",
+    "example": "Bearer test-token-123",
+    "limitation": "The token is not verified or sent anywhere.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "http-header-alphabetical-sorter": {
+    "explanation": "Sort pasted HTTP header lines by field name.",
+    "example": "X-Test: 2\nAccept: text/html\nCache-Control: max-age=60",
+    "limitation": "Duplicate header lines are preserved.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "http-duplicate-header-detector": {
+    "explanation": "Identify repeated HTTP header names ignoring letter case.",
+    "example": "Cache-Control: max-age=30\ncache-control: no-store\nX-Test: ok",
+    "limitation": "Some repeated headers are legitimate.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "http-header-name-normalizer": {
+    "explanation": "Convert header names to canonical display capitalization.",
+    "example": "content-type: text/plain\nx-content-type-options: nosniff",
+    "limitation": "HTTP header names are case-insensitive regardless of display.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "email-address-syntax-validator": {
+    "explanation": "Validate basic email-address syntax without contacting a mail server.",
+    "example": "hello@example.com",
+    "limitation": "Does not establish deliverability or support every RFC edge case.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "email-address-list-normalizer": {
+    "explanation": "Clean and deduplicate pasted email addresses.",
+    "example": "Alice@Example.com\nbob@example.com\nALICE@example.com",
+    "limitation": "Only the domain part is case-normalized; duplicates are compared case-insensitively.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "dns-mx-record-priority-sorter": {
+    "explanation": "Sort typed MX priority and hostname pairs.",
+    "example": "20 mx2.example.com\n10 mx1.example.com",
+    "limitation": "Does not perform live DNS queries.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "spf-include-domain-extractor": {
+    "explanation": "Extract include: domains from pasted SPF record.",
+    "example": "v=spf1 include:_spf.example.com include:mail.example.net -all",
+    "limitation": "Does not resolve or evaluate DNS includes.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  }
+}
