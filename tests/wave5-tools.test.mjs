@@ -12,19 +12,19 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 import guides from "../src/data/wave5ToolGuides.json" with {type:"json"};
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const newTools=queue.slice(291);
+const newTools=queue.filter(x=>x.batch===5);
 const engines=[t5TextA,t5TextB,m5Process,d5Process,j5Tools,d5DateTools,n5Math,n5Business,c5HtmlCss,s5Security];
 const browserOnly=new Set(["html-data-attribute-extractor","html-external-link-extractor","html-target-blank-link-checker","html-button-type-checker","html-empty-anchor-detector"]);
 const run=(slug,input)=>{for(const fn of engines){const r=fn(slug,input);if(r!==null)return r;}return null;};
 
 test("All 100 appended tools are unique, documented, safe, executable from samples",()=>{
- assert.equal(queue.length,391);
- assert.equal(newTools.length,100);
- assert.equal(Object.keys(guides).length,100);
- assert.equal(queue[290].slug,"csv-formula-injection-detector");
- assert.equal(queue[291].slug,"line-starts-with-filter");
- assert.equal(queue.at(-1).slug,"spf-include-domain-extractor");
- assert.equal(new Set(queue.map(x=>x.slug)).size,391);
+ assert.equal(queue.length,373);
+ assert.equal(newTools.length,87);
+ assert.equal(Object.keys(guides).length,87);
+ assert.equal(queue.filter(x=>x.batch===4).at(-1).slug,"csv-formula-injection-detector");
+ assert.equal(newTools[0].slug,"line-starts-with-filter");
+ assert.equal(queue.at(-1).slug,"dns-mx-record-priority-sorter");
+ assert.equal(new Set(queue.map(x=>x.slug)).size,373);
  const baseSource=fs.readFileSync("src/data/tools.ts","utf8");
  const baseSlugs=[...baseSource.matchAll(/(?:["']slug["']|slug)\s*:\s*["']([^"']+)["']/g)].map(x=>x[1]);
  assert.equal(baseSlugs.length,123,"Unexpected original registry size");
@@ -32,7 +32,7 @@ test("All 100 appended tools are unique, documented, safe, executable from sampl
  const source=["wave5Text","wave5MarkdownData","wave5JsonDates","wave5MathBusiness","wave5Web"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const item of newTools){
   assert.ok(item.ready,item.slug);
-  assert.ok(item.week>=30&&item.week<=40,item.slug+" scheduled week");
+  assert.ok(item.week>=29&&item.week<=38,item.slug+" scheduled week");
   assert.ok(item.metaDescription.length>=60&&item.metaDescription.length<=180,item.slug+" meta length");
   assert.equal(item.example,guides[item.slug]?.example,item.slug+" guide example");
   assert.ok(guides[item.slug]?.limitation.length>=20,item.slug+" limitation");
@@ -55,22 +55,15 @@ test("Text and Markdown transformations return meaningful output",()=>{
  assert.equal(run("line-ends-with-filter","b\n---\nab\nac"),"ab");
  assert.equal(run("case-insensitive-line-deduplicator","Hello\nhello"),"Hello");
  assert.equal(run("indentation-depth-analyzer","  a\n    b\n\tc"),"Line 1: 2 spaces\nLine 2: 4 spaces\nLine 3: 4 spaces");
- assert.equal(run("prefix-every-line","x\n---\na\nb"),"xa\nxb");
- assert.equal(run("suffix-every-line","x\n---\na\nb"),"ax\nbx");
- assert.equal(run("join-lines-with-delimiter","|\n---\na\nb"),"a|b");
  assert.equal(run("insert-separator-between-lines","--\n---\na\nb"),"a\n--\nb");
  assert.equal(run("sort-lines-by-length","three\nx\ntwo"),"x\ntwo\nthree");
  assert.equal(run("toggle-letter-case","AbC"),"aBc");
  assert.equal(run("acronym-builder","Search Engine Optimization"),"SEO");
- assert.equal(run("words-to-camel-case","hello world"),"helloWorld");
- assert.equal(run("words-to-snake-case","Hello World"),"hello_world");
- assert.equal(run("words-to-kebab-case","Hello World"),"hello-world");
  assert.equal(run("paragraph-numbering-tool","One.\n\nTwo."),"1. One.\n\n2. Two.");
  const table="| Name | Age |\n| --- | --- |\n| Ada | 30 |";
  assert.match(run("markdown-table-column-counter",table),/Columns: 2/);
  assert.equal(run("markdown-table-to-csv",table),"Name,Age\nAda,30");
  assert.equal(run("markdown-blockquote-extractor","> hello\nother"),"hello");
- assert.equal(run("markdown-link-text-extractor","[Docs](https://example.com)"),"Docs");
  assert.equal(run("markdown-frontmatter-key-extractor","---\ntitle: Hi\n---\nBody"),"title");
  assert.match(run("markdown-horizontal-rule-counter","Line\n***"),/Horizontal rules: 1/);
  assert.equal(run("markdown-footnote-reference-extractor","[^a] and [^b] and [^a]"),"a\nb");
@@ -85,8 +78,6 @@ test("CSV TSV and JSON text conversions work for values and complex input",()=>{
  assert.match(run("csv-cell-count","a,b\n1,2"),/All cells: 4/);
  assert.equal(run("csv-positive-number-row-filter","score\n---\nname,score\nA,-1\nB,5"),"name,score\nB,5");
  assert.match(run("csv-column-sum","price\n---\nname,price\nA,2\nB,3"),/Sum: 5/);
- assert.match(run("csv-column-mean","price\n---\nname,price\nA,2\nB,4"),/Mean: 3/);
- assert.match(run("csv-column-minimum-maximum","price\n---\nname,price\nA,2\nB,9"),/Max: 9/);
  assert.deepEqual(JSON.parse(run("json-array-reverser","[1,2,3]")),[3,2,1]);
  assert.deepEqual(JSON.parse(run("json-array-rotator","2\n---\n[1,2,3,4,5]")),[4,5,1,2,3]);
  assert.deepEqual(JSON.parse(run("json-array-chunker","2\n---\n[1,2,3]")),[ [1,2],[3] ]);
@@ -136,28 +127,30 @@ test("CSS, HTTP, email, JWT and DNS tools return useful offline output",()=>{
  assert.match(run("jwt-expiration-date-inspector","eyJhbGciOiJub25lIn0.eyJleHAiOjE4MDAwMDAwMDB9."),/Expiration UTC/);
  assert.equal(run("bearer-authorization-header-cleaner","Bearer abc123"),"abc123");
  assert.match(run("http-header-alphabetical-sorter","Z-Test: 1\nAccept: text/html"),/^Accept/);
- assert.equal(run("http-duplicate-header-detector","X-A: 1\nx-a: 2"),"x-a : 2");
  assert.equal(run("http-header-name-normalizer","content-type: text/plain"),"Content-Type: text/plain");
  assert.match(run("email-address-syntax-validator","hello@example.com"),/^Valid/);
  assert.equal(run("email-address-list-normalizer","A@Example.com\na@example.com"),"A@example.com");
  assert.match(run("dns-mx-record-priority-sorter","20 mx2.example.com\n10 mx1.example.com"),/^10 mx1/);
- assert.equal(run("spf-include-domain-extractor","v=spf1 include:_spf.example.com -all"),"_spf.example.com");
 });
 
-test("Original order is preserved and 391 ready tools release over 40 weekly slots",()=>{
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave5-"));
+test("373 deduplicated tools release in order over 38 Monday slots",()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave5-dedup-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
   fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  for(let i=0;i<40;i++){
-   const res=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(res.released.length,i===39?1:10,"week "+(i+1));
+  const weeks=Math.ceil(queue.length/10);
+  assert.equal(weeks,38);
+  for(let i=0;i<weeks;i++){
+   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
+   assert.equal(result.released.length,Math.min(10,queue.length-i*10),"week "+(i+1));
   }
   const out=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
   assert.deepEqual(out.published,queue.map(x=>x.slug));
-  assert.equal(out.history.length,40);
-  assert.equal(out.history[29].slugs[1],queue[291].slug);
+  assert.equal(out.history.length,weeks);
+  assert.equal(out.history.at(-1).slugs.length,3);
+  assert.equal(out.published[queue.findIndex(x=>x.batch===5)],"line-starts-with-filter");
+  assert.equal(out.published.at(-1),"dns-mx-record-priority-sorter");
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
 
