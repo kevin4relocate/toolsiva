@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readToolRegistry } from "./lib/tool-registry.mjs";
 
-export const EXPECTED_TOOL_COUNT = 123;
+export const EXPECTED_TOOL_COUNT = readToolRegistry().tools.length;
 const SITE_ORIGIN = "https://toolsiva.com";
 
 function getHtmlFile(distDir, route) {
@@ -80,7 +80,7 @@ export function verifyBuiltRoutes({ distDir, registry, expectedCount = EXPECTED_
     if (!html.includes("data-markdown-live-preview") || tool.slug !== "markdown-live-preview") {
       const hasMode = html.includes('data-mode="' + tool.slug + '"') ||
         html.includes("data-mode='" + tool.slug + "'");
-      const hasWorkspace = /\bdata-(?:text-tool|developer-tool|security-tool|qr-workspace|calculator|converter|expansion-tool|new-text-tool|high-value-tool|content-tools)\b/.test(html);
+      const hasWorkspace = /\bdata-(?:text-tool|developer-tool|security-tool|qr-workspace|calculator|converter|expansion-tool|new-text-tool|high-value-tool|content-tools|simple-tool)\b/.test(html);
       if (!hasMode || !hasWorkspace) errors.push(tool.path + ": missing interactive workspace.");
     }
   }
