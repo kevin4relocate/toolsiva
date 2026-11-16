@@ -5546,7 +5546,7 @@
       "online monthly recurring revenue calculator",
       "free monthly recurring revenue calculator"
     ],
-    "example": "100|20|35",
+    "example": "100|20|35|15",
     "ready": true
   },
   {
