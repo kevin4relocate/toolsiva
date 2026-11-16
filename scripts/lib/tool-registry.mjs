@@ -94,9 +94,32 @@ export function parseToolRegistry({ toolsSource, categoriesSource, typesSource }
 
 export function readToolRegistry(root = process.cwd()) {
   const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
-  return parseToolRegistry({
+  const base = parseToolRegistry({
     toolsSource: read("src/data/tools.ts"),
     categoriesSource: read("src/data/categories.ts"),
     typesSource: read("src/types/tool.ts"),
   });
+  const queuePath = path.join(root, "src/data/simpleToolQueue.json");
+  const releasePath = path.join(root, "src/data/simpleToolRelease.json");
+  if (!fs.existsSync(queuePath) || !fs.existsSync(releasePath)) return base;
+  const queue = JSON.parse(read("src/data/simpleToolQueue.json"));
+  const released = JSON.parse(read("src/data/simpleToolRelease.json")).published;
+  if (!Array.isArray(queue) || !Array.isArray(released)) throw new Error("Invalid scheduled tool release data.");
+  const queued = new Map(queue.map((item) => [item.slug, item]));
+  const slugs = new Set(base.tools.map((tool) => tool.slug));
+  const paths = new Set(base.paths),tools = [...base.tools],counts={...base.counts};
+  for (const slug of released) {
+    const item = queued.get(slug);
+    if (!item || !item.ready || slugs.has(slug) || !base.categories.includes(item.category)) {
+      throw new Error("Invalid, duplicate or unready published tool: " + slug);
+    }
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.slug)) throw new Error("Invalid scheduled tool slug.");
+    slugs.add(slug);
+    const route = "/tools/" + item.category + "/" + slug;
+    if (paths.has(route)) throw new Error("Duplicate scheduled tool route: " + route);
+    tools.push({slug,category:item.category,name:item.name,path:route});
+    paths.add(route);
+    counts[item.category]++;
+  }
+  return {...base,tools,paths,counts};
 }

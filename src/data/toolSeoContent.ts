@@ -1,5 +1,6 @@
 import type { ToolDefinition } from "@/types/tool";
 import toolUsageNotes from "@/data/toolUsageNotes.json";
+import simpleToolQueue from "@/data/simpleToolQueue.json";
 
 export interface ToolExample { input: string; output: string; }
 export interface ToolContentSection { heading: string; paragraphs: string[]; }
@@ -451,6 +452,22 @@ export function getToolContentSections(tool: ToolDefinition): ToolContentSection
       { heading: "Before using the result", paragraphs: [note.watch] },
     ];
   }
+
+  const scheduled = simpleToolQueue.find((item) => item.slug === tool.slug);
+  if (scheduled) return [
+    { heading: `What does ${tool.name} do?`, paragraphs: [
+      `${tool.name} works with typed or pasted input directly in your browser. It does not require uploading a document or connecting an account.`,
+      `For a quick starting point, enter: ${scheduled.example.replaceAll("\\n", " | ").slice(0, 180)}.`,
+    ] },
+    { heading: "How to get a useful result", paragraphs: [
+      "Use the Load example button to inspect the expected input format, then replace the example with your own values or text.",
+      "The result updates while you type. Copy the result as text when it matches your intended output.",
+    ] },
+    { heading: "Important limitations", paragraphs: [
+      `Check the input format and review the returned ${tool.name.toLowerCase()} result before relying on it for financial, technical, or publishing decisions.`,
+      "This is a focused browser utility. It does not upload files, retrieve live external information, or validate against private systems.",
+    ] },
+  ];
 
   // Future catalog additions remain usable until their guide is authored.
   // CI warns about absent coverage so the content is not left generic.

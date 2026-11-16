@@ -1,0 +1,49 @@
+name: Publish ten tested tools weekly
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: toolsiva-weekly-simple-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run tools:release
+      - name: Validate before publishing
+        run: |
+          npm run test:simple-tools
+          npm run test:phase2
+          npm run test:phase5
+          npm run check
+          npm run build
+          npm run tools:verify
+          npm run seo:audit
+      - name: Commit manifest only after successful build
+        run: |
+          if git diff --quiet -- src/data/simpleToolRelease.json; then
+            echo "No eligible tools for this release slot"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/simpleToolRelease.json
+          git commit -m "chore: publish next tested Toolsiva tool batch"
+          git push origin HEAD:main

@@ -1,5 +1,7 @@
 import type { ToolDefinition } from "@/types/tool";
 import { buildToolFaqs } from "@/data/toolFaqs";
+import simpleToolQueue from "@/data/simpleToolQueue.json";
+import simpleToolRelease from "@/data/simpleToolRelease.json";
 
 const privacyFaq = {
   question: "Does Toolsiva store my text?",
@@ -3169,10 +3171,30 @@ const toolCatalog: ToolDefinition[] = [
 },
 ];
 
-export const tools: ToolDefinition[] = toolCatalog.map((tool) => ({
-  ...tool,
-  faq: buildToolFaqs(tool),
-}));
+const releasedSimpleTools: ToolDefinition[] = simpleToolQueue
+  .filter((tool) => (simpleToolRelease.published as string[]).includes(tool.slug))
+  .map((tool) => ({
+    slug: tool.slug,
+    category: tool.category as ToolDefinition["category"],
+    name: tool.name,
+    shortDescription: tool.shortDescription,
+    metaDescription: tool.metaDescription,
+    keywords: tool.keywords,
+    relatedTools: [],
+    faq: [
+      { question: "Does this tool require an upload?", answer: "No. Enter or paste text and values directly. The result is computed inside your browser." },
+      { question: "Does Toolsiva store my input?", answer: "No. This tool processes your input locally and does not send it to a server." },
+      { question: "Can I use it on mobile?", answer: "Yes. The input and result panels work in modern desktop and mobile browsers." },
+    ],
+  }));
+
+export const tools: ToolDefinition[] = [
+  ...toolCatalog.map((tool) => ({
+    ...tool,
+    faq: buildToolFaqs(tool),
+  })),
+  ...releasedSimpleTools,
+];
 
 export const toolMap = new Map(tools.map((tool) => [`${tool.category}/${tool.slug}`, tool]));
 
