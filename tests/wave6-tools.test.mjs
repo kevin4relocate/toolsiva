@@ -177,6 +177,9 @@ test("IPv6 DNS checksum and identifier tools validate real formats",()=>{
  assert.match(run("ipv6-cidr-membership-checker","2001:db8::1\n---\n2001:db8::/32"),/Inside/);
  assert.match(run("mac-address-validator-normalizer","AA-BB-CC-DD-EE-FF"),/AA:BB:CC:DD:EE:FF/);
  assert.match(run("ip-address-type-classifier","192.168.1.1"),/Private/);
+ assert.match(run("ip-address-type-classifier","fe80::1"),/Link local/);
+ assert.match(run("ip-address-type-classifier","ff02::1"),/Multicast/);
+ assert.match(run("ip-address-type-classifier","fc00::1"),/Unique local/);
  assert.equal(run("reverse-dns-pointer-generator","192.0.2.15"),"15.2.0.192.in-addr.arpa");
  assert.match(run("luhn-check-digit-toolkit","7992739871"),/Check digit to append: 3/);
  assert.match(run("isbn-10-and-13-validator","9780306406157"),/valid/);
