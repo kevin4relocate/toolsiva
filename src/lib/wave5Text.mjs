@@ -4,11 +4,11 @@ function t5Split(input){const s=t5Input(input),i=s.indexOf("\n---\n");return i<0
 
 function t5Words(s){return s.match(/[\p{L}\p{N}]+/gu)||[];}
 
-export function t5TextA(slug,input){if(!["line-starts-with-filter","line-ends-with-filter","case-insensitive-line-deduplicator","trim-each-line","prefix-every-line","suffix-every-line","join-lines-with-delimiter","insert-separator-between-lines","sort-lines-by-length","toggle-letter-case"].includes(slug))return null;const src=t5Input(input),{opt,body}=t5Split(src);switch(slug){
+export function t5TextA(slug,input){if(!["line-starts-with-filter","line-ends-with-filter","case-insensitive-line-deduplicator","indentation-depth-analyzer","prefix-every-line","suffix-every-line","join-lines-with-delimiter","insert-separator-between-lines","sort-lines-by-length","toggle-letter-case"].includes(slug))return null;const src=t5Input(input),{opt,body}=t5Split(src);switch(slug){
 case "line-starts-with-filter":return body.split("\n").filter(x=>x.toLowerCase().startsWith(opt.trim().toLowerCase())).join("\n")||"No matching lines.";
 case "line-ends-with-filter":return body.split("\n").filter(x=>x.toLowerCase().endsWith(opt.trim().toLowerCase())).join("\n")||"No matching lines.";
 case "case-insensitive-line-deduplicator":{const set=new Set();return src.split("\n").filter(x=>{const k=x.toLocaleLowerCase();if(set.has(k))return false;set.add(k);return true;}).join("\n");}
-case "trim-each-line":return src.split("\n").map(x=>x.trim()).join("\n");
+case "indentation-depth-analyzer":return src.split("\n").map((line,i)=>{const prefix=line.match(/^[ \t]*/)?.[0]??"";const depth=[...prefix].reduce((n,c)=>n+(c==="\t"?4:1),0);return "Line "+(i+1)+": "+depth+" spaces";}).join("\n");
 case "prefix-every-line":return body.split("\n").map(x=>opt+x).join("\n");
 case "suffix-every-line":return body.split("\n").map(x=>x+opt).join("\n");
 case "join-lines-with-delimiter":return body.split("\n").join(opt);
