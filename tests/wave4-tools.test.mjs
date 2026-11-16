@@ -178,3 +178,16 @@ test("New engines never upload files, fetch remote endpoints or evaluate user in
  assert.doesNotMatch(workspace,/type=["']file/);
  for(const fn of ["t4A","t4B","h4Html","u4Tools","j4Tools","c4Tools","n4Buss","n4Stats","v4Http","v4Validate"])assert.ok(workspace.includes(fn+"(mode,content)"));
 });
+
+
+test("Edge cases reject unsafe values and compare SemVer prerelease correctly",()=>{
+ assert.match(run("semantic-version-comparator","1.2.3-beta.2\n---\n1.2.3"),/1.2.3-beta.2 < 1.2.3/);
+ assert.match(run("semantic-version-comparator","1.2.3-beta.2\n---\n1.2.3-beta.11"),/beta.2 < 1.2.3-beta.11/);
+ assert.match(run("semver-range-satisfaction-checker","^0.2.0\n---\n0.3.0"),/Does not satisfy/);
+ assert.match(run("semver-range-satisfaction-checker","~1.2.0\n---\n1.2.9"),/Satisfies/);
+ assert.throws(()=>run("json-array-group-counter","x\n---\n[{\"x\":{}}]"),/primitive/);
+ assert.throws(()=>run("csv-column-selector","missing\n---\na,b\n1,2"),/Header not found/);
+ assert.throws(()=>run("url-query-parameter-remover","x\n---\nfile:\/\/etc\/passwd"),/HTTP or HTTPS/);
+ assert.throws(()=>run("http-retry-after-formatter","-1"),/between 0 and/);
+ assert.throws(()=>run("geometric-mean-calculator","0,2"),/positive/);
+});
