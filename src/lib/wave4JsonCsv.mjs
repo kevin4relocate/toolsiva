@@ -1,0 +1,43 @@
+function j4Input(input){const s=String(input??"");if(!s.trim())throw Error("Paste JSON or CSV text.");if(s.length>250000)throw Error("Maximum input size is 250,000 characters.");return s;}
+
+function j4Split(s){const t=j4Input(s),i=t.indexOf("\n---\n");return i<0?{option:"",body:t}:{option:t.slice(0,i).trim(),body:t.slice(i+5)};}
+
+function j4Parse(s){try{return JSON.parse(s)}catch(e){throw Error("Invalid JSON: "+e.message)}}
+
+function j4Field(obj,path){return String(path).split(".").reduce((x,k)=>x!==null&&typeof x==="object"&&Object.hasOwn(x,k)?x[k]:undefined,obj);}
+
+function j4Array(s){const a=j4Parse(s);if(!Array.isArray(a))throw Error("Expected JSON array input.");if(a.length>20000)throw Error("Maximum 20,000 array elements.");return a;}
+
+function j4Deep(value,transform,depth=0){if(depth>75)throw Error("JSON nesting depth exceeds 75 levels.");if(Array.isArray(value))return value.map(x=>j4Deep(x,transform,depth+1));if(value!==null&&typeof value==="object"){const obj=Object.create(null);for(const [k,v]of Object.entries(value))obj[k]=j4Deep(v,transform,depth+1);return transform(obj,false)}return transform(value,true);}
+
+function c4Parse(source){const s=j4Input(source).replace(/\r\n?/g,"\n");const rows=[];let row=[],v="",quoted=false,closed=false;for(let i=0;i<s.length;i++){const c=s[i];if(quoted){if(c==='"'&&s[i+1]==='"'){v+='"';i++;}else if(c==='"'){quoted=false;closed=true;}else v+=c;}else if(c==='"'){if(v!==""||closed)throw Error("Unexpected quote in CSV value.");quoted=true;}else if(c===","||c==="\n"){row.push(v);v="";closed=false;if(c==="\n"){rows.push(row);row=[];}}else{if(closed&&c!==" ")throw Error("Unexpected characters after closing CSV quote.");v+=c;}}if(quoted)throw Error("Unterminated quoted CSV value.");if(row.length||v!==""||closed){row.push(v);rows.push(row);}if(!rows.length)throw Error("No CSV rows found.");if(rows.length>20000||rows[0].length>200)throw Error("CSV exceeds 20,000 rows or 200 columns.");if(rows.some(x=>x.length!==rows[0].length))throw Error("CSV rows have different column counts.");return rows;}
+
+function c4Serialize(rows){return rows.map(row=>row.map(val=>{const s=String(val??"");return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s}).join(",")).join("\n");}
+
+function c4Col(rows,name){const index=rows[0].indexOf(name.trim());if(index<0)throw Error("Header not found: "+name);return index;}
+
+export function j4Tools(slug,input){const s=j4Input(input),{option,body}=j4Split(s);switch(slug){
+case "json-array-field-extractor":{if(!option)throw Error("Enter a property path before --- and a JSON array after.");const arr=j4Array(body);return JSON.stringify(arr.map(x=>j4Field(x,option)??null),null,2);}
+case "json-array-group-counter":{if(!option)throw Error("Enter field path before --- and JSON array after.");const arr=j4Array(body),counter=new Map();for(const x of arr){const val=j4Field(x,option);if(val!==null&&typeof val==="object")throw Error("Group values must be primitive.");const key=JSON.stringify(val??null);counter.set(key,(counter.get(key)||0)+1);}return [...counter].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([key,n])=>key+" : "+n).join("\n")||"No elements found.";}
+case "json-array-numeric-summary":{if(!option)throw Error("Enter numeric field path before --- and JSON array after.");const arr=j4Array(body),nums=arr.map(x=>j4Field(x,option)).filter(x=>typeof x==="number"&&Number.isFinite(x));if(!nums.length)throw Error("No finite numeric values found.");const sum=nums.reduce((a,b)=>a+b,0);return "Count: "+nums.length+"\nIgnored: "+(arr.length-nums.length)+"\nSum: "+sum+"\nMean: "+(sum/nums.length)+"\nMin: "+Math.min(...nums.slice(0,30000))+"\nMax: "+Math.max(...nums.slice(0,30000));}
+case "json-lines-validator":{const lines=s.split(/\r?\n/).filter(x=>x.trim()),failed=[];for(let i=0;i<lines.length;i++){try{JSON.parse(lines[i]);}catch(e){failed.push("Line "+(i+1)+": "+e.message);}}return failed.length?"Invalid NDJSON ("+failed.length+" bad lines):\n"+failed.slice(0,50).join("\n"):"Valid NDJSON: "+lines.length+" lines.";}
+case "json-lines-to-json-array":{const lines=s.split(/\r?\n/).filter(x=>x.trim()),items=lines.map((line,i)=>{try{return JSON.parse(line)}catch(e){throw Error("Invalid JSON at nonempty line "+(i+1)+": "+e.message)}});return JSON.stringify(items,null,2);}
+case "json-array-to-json-lines":return j4Array(s).map(x=>JSON.stringify(x)).join("\n")||"[] (empty JSON array)";
+case "json-object-key-sorter":return JSON.stringify(j4Deep(j4Parse(s),(v,scalar)=>scalar?v:Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]]))),null,2);
+case "json-string-value-trimmer":return JSON.stringify(j4Deep(j4Parse(s),(v,scalar)=>scalar&&typeof v==="string"?v.trim():v),null,2);
+case "json-array-slice":{const [start,end]=option.split("|").map(Number);if(!option||![start,end].every(Number.isInteger)||start<0||end<start)throw Error("Use start|end (zero-based, end exclusive) then --- and a JSON array.");const arr=j4Array(body);if(end>arr.length)throw Error("End exceeds array length.");return JSON.stringify(arr.slice(start,end),null,2);}
+case "json-array-field-presence-checker":{if(!option)throw Error("Enter a field name before --- and a JSON array after.");const arr=j4Array(body),present=arr.filter(x=>x!==null&&typeof x==="object"&&Object.hasOwn(x,option)).length;return "Items: "+arr.length+"\nField present: "+present+"\nField missing: "+(arr.length-present);}
+default:return null;}}
+
+export function c4Tools(slug,input){const s=j4Input(input),{option,body}=j4Split(s);switch(slug){
+case "csv-header-validator":{const head=c4Parse(s)[0],seen=new Map(),issues=[];head.forEach((v,i)=>{const key=v.trim().toLocaleLowerCase();if(!key)issues.push("Blank header at column "+(i+1));else if(seen.has(key))issues.push("Duplicate header "+JSON.stringify(v)+" at columns "+seen.get(key)+" and "+(i+1));else seen.set(key,i+1)});return issues.length?issues.join("\n"):"Valid: "+head.length+" nonempty, unique headers.";}
+case "csv-empty-cell-reporter":{const rows=c4Parse(s),details=[];for(let i=1;i<rows.length;i++)for(let j=0;j<rows[i].length;j++)if(!rows[i][j].trim()&&details.length<200)details.push("Data row "+i+", column "+(j+1)+" ("+rows[0][j]+")");const count=rows.slice(1).reduce((total,row)=>total+row.filter(v=>!v.trim()).length,0);return "Empty data cells: "+count+"\n"+details.join("\n");}
+case "csv-column-unique-values":{if(!option)throw Error("Enter column header then --- and CSV.");const rows=c4Parse(body),col=c4Col(rows,option),values=[...new Set(rows.slice(1).map(r=>r[col]))];return "Unique: "+values.length+"\n"+values.map(JSON.stringify).join("\n");}
+case "csv-column-frequency-table":{if(!option)throw Error("Enter column header then --- and CSV.");const rows=c4Parse(body),col=c4Col(rows,option),freq=new Map();for(const r of rows.slice(1))freq.set(r[col],(freq.get(r[col])||0)+1);return [...freq].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([v,n])=>JSON.stringify(v)+" : "+n).join("\n")||"No data rows found.";}
+case "csv-column-masker":{if(!option)throw Error("Enter column header then --- and CSV.");const rows=c4Parse(body),col=c4Col(rows,option);for(const r of rows.slice(1))if(r[col]!=="")r[col]="*****";return c4Serialize(rows);}
+case "csv-missing-value-filler":{if(!option)throw Error("Enter fallback value then --- and CSV.");const rows=c4Parse(body);return c4Serialize([rows[0],...rows.slice(1).map(row=>row.map(v=>v.trim()?v:option))]);}
+case "csv-transpose":{const rows=c4Parse(s);if(rows.length>200)throw Error("Maximum 200 rows for transpose.");return c4Serialize(Array.from({length:rows[0].length},(_,i)=>rows.map(row=>row[i])));}
+case "csv-column-selector":{if(!option)throw Error("Enter comma-separated headers then --- and CSV.");const rows=c4Parse(body),names=c4Parse(option)[0];if(!names.length||new Set(names).size!==names.length)throw Error("Select distinct column headers.");const indices=names.map(name=>c4Col(rows,name));return c4Serialize(rows.map(row=>indices.map(i=>row[i])));}
+case "csv-to-markdown-table":{const rows=c4Parse(s),escape=x=>x.replace(/\\/g,"\\\\").replace(/\|/g,"\\|").replace(/\r?\n/g," ");return "| "+rows[0].map(escape).join(" | ")+" |\n| "+rows[0].map(()=>"---").join(" | ")+" |\n"+rows.slice(1).map(row=>"| "+row.map(escape).join(" | ")+" |").join("\n");}
+case "csv-numeric-column-normalizer":{const [name,placesText="2"]=option.split("|"),places=Number(placesText);if(!name||!Number.isInteger(places)||places<0||places>8)throw Error("Use header|decimalPlaces(0–8), then --- and CSV.");const rows=c4Parse(body),col=c4Col(rows,name);for(const r of rows.slice(1)){if(r[col].trim()==="")continue;const v=Number(r[col]);if(Number.isFinite(v))r[col]=v.toFixed(places);}return c4Serialize(rows);}
+default:return null;}}

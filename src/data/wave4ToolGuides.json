@@ -1,0 +1,902 @@
+{
+  "line-intersection-finder": {
+    "explanation": "Find lines shared by two pasted lists, preserving the left list's order.",
+    "example": "apple\nbanana\npear\n---\nbanana\nkiwi\npear",
+    "limitation": "Line matches are exact and case-sensitive.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "line-difference-finder": {
+    "explanation": "Find lines present in the first list but absent from the second.",
+    "example": "apple\nbanana\npear\n---\nbanana\nkiwi",
+    "limitation": "Duplicate input lines are collapsed to unique results.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "line-frequency-counter": {
+    "explanation": "Count the occurrence of each complete line.",
+    "example": "apple\nbanana\napple\npear\napple",
+    "limitation": "Case and surrounding spaces affect matches.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "line-shuffler": {
+    "explanation": "Randomize the order of pasted lines locally.",
+    "example": "alpha\nbeta\ngamma\ndelta",
+    "limitation": "Shuffling is nondeterministic and uses secure browser randomness when available.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "line-chunker": {
+    "explanation": "Split pasted lines into numbered groups of a specified size.",
+    "example": "2\n---\na\nb\nc\nd\ne",
+    "limitation": "Each line is treated as one unit, even when it contains spaces.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "delimited-text-column-extractor": {
+    "explanation": "Extract one column from delimiter-separated text.",
+    "example": "2|,\n---\nname,age,city\nAda,30,London\nBob,29,Paris",
+    "limitation": "This lightweight tool does not parse quoted CSV; use the CSV tools for that.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "keyword-context-snippet-extractor": {
+    "explanation": "Show short text snippets around matching keywords.",
+    "example": "error|12\n---\nFirst line has an error and this text continues beyond the match.",
+    "limitation": "Maximum output is capped; keyword matching ignores case.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "word-position-finder": {
+    "explanation": "List word positions for a target term in pasted prose.",
+    "example": "hello\n---\nHello world hello again.",
+    "limitation": "Words are counted using Unicode letter and digit boundaries.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "sentence-length-statistics": {
+    "explanation": "Summarize minimum, maximum and average words per sentence.",
+    "example": "Hello world. This sentence contains five words exactly. Another one!",
+    "limitation": "Sentence splitting is punctuation-based and approximate.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "word-pair-frequency-counter": {
+    "explanation": "Count the most common adjacent word pairs.",
+    "example": "red apple green apple red apple",
+    "limitation": "Word pairs are case-insensitive and are not semantic phrases.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "surround-words-formatter": {
+    "explanation": "Add chosen text before and after every whitespace-delimited word.",
+    "example": "**|**\n---\nhello world again",
+    "limitation": "Whitespace is normalized to single spaces in the result.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "reverse-word-order-tool": {
+    "explanation": "Reverse word order while keeping each word's characters intact.",
+    "example": "The quick brown fox",
+    "limitation": "Punctuation stays attached to its original word.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "reverse-sentence-order-tool": {
+    "explanation": "Reverse the order of sentences, without reversing their characters.",
+    "example": "First sentence. Second sentence! Third sentence?",
+    "limitation": "Sentence splitting uses punctuation and is approximate.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "paragraph-alphabetical-sorter": {
+    "explanation": "Sort whole paragraphs alphabetically.",
+    "example": "Zebra paragraph.\n\nApple paragraph.\n\nMango paragraph.",
+    "limitation": "Paragraphs are separated by blank lines.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "duplicate-paragraph-remover": {
+    "explanation": "Remove repeated paragraphs while preserving the first copy.",
+    "example": "Hello there.\n\nAnother paragraph.\n\nHello there.",
+    "limitation": "Comparison ignores case and repeated whitespace.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "sentence-numberer": {
+    "explanation": "Number sentences in their original order.",
+    "example": "First sentence. Second sentence! Third sentence?",
+    "limitation": "Sentence boundaries are estimated from punctuation.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "punctuation-frequency-counter": {
+    "explanation": "Count common punctuation marks in pasted text.",
+    "example": "Really? Yes! Wait...",
+    "limitation": "Unicode symbols outside a defined punctuation set are not included.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "question-sentence-extractor": {
+    "explanation": "Extract sentences that end with a question mark.",
+    "example": "Is it ready? It is ready. What happens now?",
+    "limitation": "Rhetorical questions without a question mark are not detected.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "exclamation-sentence-extractor": {
+    "explanation": "Extract sentences ending in an exclamation mark.",
+    "example": "Great! This is calm. Watch out!",
+    "limitation": "Exclamation marks within quotations are treated as sentence endings.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "bracket-content-extractor": {
+    "explanation": "Extract text inside parentheses, brackets or braces.",
+    "example": "Use (option A) and [option B] with {notes}.",
+    "limitation": "Nested pairs are treated as simple nonnested segments.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-heading-word-counter": {
+    "explanation": "Count words within each heading tag in pasted HTML.",
+    "example": "<h1>Main Page Title</h1><h2>Detailed Section Heading</h2>",
+    "limitation": "Only elements present in the supplied markup are analyzed.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-paragraph-element-counter": {
+    "explanation": "Count HTML paragraph elements and words inside them.",
+    "example": "<p>Hello world.</p><p>Another paragraph.</p>",
+    "limitation": "Does not count paragraphs represented by non-p elements.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-link-rel-analyzer": {
+    "explanation": "Report rel tokens on links in pasted HTML.",
+    "example": "<a href=\"/about\" rel=\"nofollow noreferrer\">About</a><a href=\"/docs\">Docs</a>",
+    "limitation": "Does not fetch linked pages or verify search-engine behavior.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-meta-description-extractor": {
+    "explanation": "Extract meta description content from HTML.",
+    "example": "<head><meta name=\"description\" content=\"A sample description\"></head>",
+    "limitation": "Uses browser parsing and reports missing values explicitly.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-canonical-link-extractor": {
+    "explanation": "Extract canonical link targets in pasted HTML.",
+    "example": "<link rel=\"canonical\" href=\"https://example.com/page\">",
+    "limitation": "Does not check whether canonical URLs are reachable.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-language-attribute-checker": {
+    "explanation": "Inspect the root HTML language attribute.",
+    "example": "<html lang=\"en-US\"><body>Hello.</body></html>",
+    "limitation": "Does not validate linguistic correctness of the page content.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-title-tag-extractor": {
+    "explanation": "Extract title element text from pasted HTML.",
+    "example": "<html><head><title>Example Page</title></head><body></body></html>",
+    "limitation": "Reports only the first document title in the supplied markup.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-form-field-extractor": {
+    "explanation": "List form inputs, selects and textareas with their names and types.",
+    "example": "<form><input name=\"email\" type=\"email\"><select name=\"size\"></select></form>",
+    "limitation": "Does not submit forms or execute their scripts.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-duplicate-id-detector": {
+    "explanation": "Identify duplicate ID attributes in pasted HTML.",
+    "example": "<div id=\"card\"></div><p id=\"card\">Hello</p>",
+    "limitation": "IDs are compared exactly; duplicate detection does not test interactivity.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-label-association-checker": {
+    "explanation": "Find form controls missing an associated HTML label.",
+    "example": "<label for=\"mail\">Email</label><input id=\"mail\"><input id=\"missing\">",
+    "limitation": "This is a focused heuristic rather than a complete accessibility audit.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-path-segment-extractor": {
+    "explanation": "Extract decoded URL pathname segments into a readable list.",
+    "example": "https://example.com/shop/books/123?ref=home",
+    "limitation": "URLs must use HTTP or HTTPS and be syntactically valid.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-query-parameter-extractor": {
+    "explanation": "Extract all values of a selected URL query parameter.",
+    "example": "q\n---\nhttps://example.com/?q=hello&q=world&page=2",
+    "limitation": "Parameter matching is case-sensitive.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-query-parameter-remover": {
+    "explanation": "Remove specified query parameters from a pasted URL.",
+    "example": "utm_source\n---\nhttps://example.com/?utm_source=x&page=3",
+    "limitation": "Only named parameters are removed; fragments are preserved.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-query-parameter-sorter": {
+    "explanation": "Sort a URL query string by parameter key.",
+    "example": "https://example.com/?z=9&a=1&a=2",
+    "limitation": "Repeated values retain their original relative order.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "relative-url-resolver": {
+    "explanation": "Resolve a relative URL against a base URL.",
+    "example": "https://example.com/articles/one\n---\n../two?x=1",
+    "limitation": "Does not request or validate the destination.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-origin-comparator": {
+    "explanation": "Compare the scheme, hostname and effective port of two URLs.",
+    "example": "https://example.com/a\n---\nhttps://example.com:443/b",
+    "limitation": "Different subdomains or schemes count as different origins.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-percent-encoding-inspector": {
+    "explanation": "List percent-encoded sequences and their decoded text.",
+    "example": "https://example.com/?q=hello%20world&x=%E2%9C%93",
+    "limitation": "Malformed percent encoding is reported rather than silently normalized.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "url-trailing-slash-normalizer": {
+    "explanation": "Add or remove a URL path's trailing slash.",
+    "example": "remove\n---\nhttps://example.com/blog/",
+    "limitation": "Root paths remain / and query/fragment are preserved.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "cookie-header-parser": {
+    "explanation": "Parse name-value pairs from a pasted Cookie request header.",
+    "example": "session=abc123; theme=dark; visited=yes",
+    "limitation": "Quoted cookie values and duplicate-name semantics can vary.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "set-cookie-attribute-inspector": {
+    "explanation": "Inspect common attributes in a pasted Set-Cookie header.",
+    "example": "session=abc; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=3600",
+    "limitation": "This does not validate browser cookie policies or domain ownership.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-array-field-extractor": {
+    "explanation": "Extract values of one property from JSON array elements.",
+    "example": "name\n---\n[{\"name\":\"Ada\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]",
+    "limitation": "Nested property paths use dot notation; missing values become null.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-array-group-counter": {
+    "explanation": "Count JSON array items grouped by one field.",
+    "example": "role\n---\n[{\"role\":\"admin\"},{\"role\":\"user\"},{\"role\":\"admin\"}]",
+    "limitation": "Objects and arrays are not suitable group keys.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-array-numeric-summary": {
+    "explanation": "Compute sum, mean, minimum and maximum for a JSON array field.",
+    "example": "price\n---\n[{\"price\":10},{\"price\":20},{\"price\":30}]",
+    "limitation": "Non-numeric values are excluded and counted separately.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-lines-validator": {
+    "explanation": "Validate each nonempty line as independent JSON.",
+    "example": "{\"id\":1}\n{\"id\":2}\n{\"id\":3}",
+    "limitation": "Each line must be complete JSON; multiline JSON objects are not NDJSON.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-lines-to-json-array": {
+    "explanation": "Combine line-delimited JSON values into an array.",
+    "example": "{\"id\":1}\n{\"id\":2}",
+    "limitation": "Blank lines are ignored; malformed lines produce line-specific errors.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-array-to-json-lines": {
+    "explanation": "Serialize JSON array elements onto separate lines.",
+    "example": "[{\"id\":1},{\"id\":2}]",
+    "limitation": "Only JSON arrays are supported.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-object-key-sorter": {
+    "explanation": "Sort object keys recursively while keeping array order.",
+    "example": "{\"z\":3,\"a\":{\"y\":2,\"b\":1}}",
+    "limitation": "Keys are sorted with simple lexicographic order.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-string-value-trimmer": {
+    "explanation": "Trim leading and trailing whitespace from JSON string values.",
+    "example": "{\"name\":\" Ada \",\"tags\":[\" x \",\" y \"]}",
+    "limitation": "JSON property names are not changed.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-array-slice": {
+    "explanation": "Extract an index range from a JSON array.",
+    "example": "1|3\n---\n[\"a\",\"b\",\"c\",\"d\"]",
+    "limitation": "Start is inclusive, end is exclusive and indexes are zero-based.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "json-array-field-presence-checker": {
+    "explanation": "Report how many JSON array objects have a selected key.",
+    "example": "email\n---\n[{\"email\":\"a@example.com\"},{\"name\":\"B\"}]",
+    "limitation": "A key with null value still counts as present.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-header-validator": {
+    "explanation": "Identify blank or repeated CSV header names.",
+    "example": "name,email,email\nAda,a@example.com,b@example.com",
+    "limitation": "Header comparison is case-insensitive after trimming spaces.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-empty-cell-reporter": {
+    "explanation": "Count empty cells and their row and column positions.",
+    "example": "name,age\nAda,\n,30\nBob,22",
+    "limitation": "Whitespace-only cells count as empty.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-column-unique-values": {
+    "explanation": "List unique values from a selected CSV column.",
+    "example": "city\n---\nname,city\nAda,London\nBob,Paris\nCleo,London",
+    "limitation": "Values are preserved as written and compared exactly.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-column-frequency-table": {
+    "explanation": "Count occurrences of distinct values in one CSV column.",
+    "example": "city\n---\nname,city\nAda,London\nBob,Paris\nCleo,London",
+    "limitation": "Blank values are included as a separate category.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-column-masker": {
+    "explanation": "Replace values in a chosen CSV column with masked tokens.",
+    "example": "email\n---\nname,email\nAda,ada@example.com\nBob,bob@example.com",
+    "limitation": "Masking is not reversible and is not encryption.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-missing-value-filler": {
+    "explanation": "Replace blank CSV data cells with a chosen fallback value.",
+    "example": "N/A\n---\nname,age\nAda,\nBob,28",
+    "limitation": "Header cells are never replaced.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-transpose": {
+    "explanation": "Transpose pasted CSV rows and columns.",
+    "example": "name,age\nAda,30\nBob,25",
+    "limitation": "Large transpositions are limited to 200 columns.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-column-selector": {
+    "explanation": "Select chosen CSV columns and return them in the requested order.",
+    "example": "name,city\n---\nname,age,city\nAda,30,London\nBob,25,Paris",
+    "limitation": "Every selected header must exist and names cannot repeat.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-to-markdown-table": {
+    "explanation": "Convert pasted CSV into a Markdown table with escaped cells.",
+    "example": "name,age\nAda,30\nBob,25",
+    "limitation": "Markdown line breaks inside cells are replaced with spaces.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-numeric-column-normalizer": {
+    "explanation": "Normalize numeric cells in one CSV column to a set decimal precision.",
+    "example": "price|2\n---\nitem,price\nA,1.2\nB,3.456",
+    "limitation": "Non-numeric cells are left unchanged and reported.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "average-order-value-calculator": {
+    "explanation": "Calculate total revenue divided by order count.",
+    "example": "5000, 125",
+    "limitation": "Amounts are unitless; orders must be positive.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "revenue-per-visitor-calculator": {
+    "explanation": "Calculate site revenue generated per visitor.",
+    "example": "12000, 8000",
+    "limitation": "Visitor counts should use a consistent reporting period.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "gross-profit-calculator": {
+    "explanation": "Calculate revenue minus cost of goods sold.",
+    "example": "12000, 7200",
+    "limitation": "Excludes operating, financing and tax costs.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "net-profit-calculator": {
+    "explanation": "Calculate revenue less costs and taxes.",
+    "example": "12000, 9000, 1500",
+    "limitation": "Use total costs excluding taxes to avoid double counting.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "operating-margin-calculator": {
+    "explanation": "Calculate operating income as a percentage of revenue.",
+    "example": "4000, 20000",
+    "limitation": "Revenue must be positive.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "inventory-turnover-calculator": {
+    "explanation": "Calculate cost of goods sold divided by average inventory.",
+    "example": "25000, 5000",
+    "limitation": "Average inventory must be positive.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "days-sales-outstanding-calculator": {
+    "explanation": "Estimate receivables collection days from sales and period length.",
+    "example": "15000, 120000, 365",
+    "limitation": "Credit sales and receivables must use comparable periods.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "email-open-rate-calculator": {
+    "explanation": "Calculate unique opens divided by delivered messages.",
+    "example": "240, 2000",
+    "limitation": "Opens can be distorted by mail privacy features.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "email-click-to-open-rate-calculator": {
+    "explanation": "Calculate unique email clicks as a share of unique opens.",
+    "example": "60, 240",
+    "limitation": "Use consistent unique tracking conventions.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "email-bounce-rate-calculator": {
+    "explanation": "Calculate bounced emails divided by attempted sends.",
+    "example": "30, 2500",
+    "limitation": "Soft and hard bounces may need separate analysis.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "geometric-mean-calculator": {
+    "explanation": "Calculate the geometric mean of positive values.",
+    "example": "2, 8, 4",
+    "limitation": "All values must be greater than zero.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "harmonic-mean-calculator": {
+    "explanation": "Calculate the harmonic mean of positive values.",
+    "example": "2, 3, 6",
+    "limitation": "The harmonic mean is undefined when values are zero.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "data-range-calculator": {
+    "explanation": "Find minimum, maximum and range of numeric data.",
+    "example": "2, 7, -1, 4, 10",
+    "limitation": "This is descriptive range, not statistical confidence interval.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "iqr-outlier-detector": {
+    "explanation": "Flag values outside Tukey's 1.5×IQR fences.",
+    "example": "1, 2, 2, 3, 3, 4, 100",
+    "limitation": "Outliers are statistical flags, not necessarily mistakes.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "pearson-correlation-calculator": {
+    "explanation": "Calculate Pearson correlation for numeric X,Y pairs.",
+    "example": "1,2; 2,4; 3,6; 4,8",
+    "limitation": "Correlation measures linear association, not causation.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "covariance-calculator": {
+    "explanation": "Compute population and sample covariance for X,Y pairs.",
+    "example": "1,2; 2,4; 3,6; 4,8",
+    "limitation": "Both variables must have equal-length numeric observations.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "linear-regression-calculator": {
+    "explanation": "Fit a simple straight-line Y=a+bX regression.",
+    "example": "1,2; 2,4; 3,6; 4,8",
+    "limitation": "Requires nonconstant X values; extrapolation may be unreliable.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "mean-absolute-deviation-calculator": {
+    "explanation": "Compute mean absolute deviation around the mean.",
+    "example": "1, 2, 3, 4, 5",
+    "limitation": "This is not median absolute deviation.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "root-mean-square-calculator": {
+    "explanation": "Compute the root mean square of numbers.",
+    "example": "1, 2, 3, 4",
+    "limitation": "Values are squared before averaging.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "number-sign-distribution-calculator": {
+    "explanation": "Count positive, negative and zero values in numeric data.",
+    "example": "-2, 0, 5, -1, 8, 0",
+    "limitation": "Only finite numbers are accepted.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "ipv4-network-membership-checker": {
+    "explanation": "Check whether a typed IPv4 address belongs to a subnet.",
+    "example": "192.168.1.10\n---\n192.168.1.0/24",
+    "limitation": "Uses CIDR network membership only, not reachability.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "http-basic-auth-decoder": {
+    "explanation": "Decode the username and password from a pasted Basic Authorization header.",
+    "example": "Basic dXNlcjpwYXNz",
+    "limitation": "Basic credentials are not encryption; do not paste sensitive live passwords.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "accept-language-header-parser": {
+    "explanation": "List language preferences and quality weights in an Accept-Language header.",
+    "example": "en-US,en;q=0.8,fr;q=0.5",
+    "limitation": "Complex language-range negotiation is not fully simulated.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "http-date-formatter": {
+    "explanation": "Format an ISO timestamp as an HTTP-date string in GMT.",
+    "example": "2026-11-16T13:00:00Z",
+    "limitation": "Date parsing requires a valid unambiguous ISO timestamp.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "http-content-type-builder": {
+    "explanation": "Build a Content-Type response header from MIME type and charset.",
+    "example": "application/json|utf-8",
+    "limitation": "Only syntactically valid tokens are accepted.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "http-retry-after-formatter": {
+    "explanation": "Build a Retry-After header from a nonnegative number of seconds.",
+    "example": "120",
+    "limitation": "Retry-After values do not guarantee a server will accept retries.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "user-agent-family-detector": {
+    "explanation": "Detect common browser and operating-system hints from a user-agent string.",
+    "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
+    "limitation": "User agents can be spoofed and are increasingly reduced for privacy.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-doctype-inspector": {
+    "explanation": "Identify the document type declaration in pasted HTML.",
+    "example": "<!DOCTYPE html><html><head></head><body>Hello</body></html>",
+    "limitation": "No doctype does not automatically mean an invalid document.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-comment-extractor": {
+    "explanation": "Extract HTML comment text from pasted markup.",
+    "example": "<div>Hello</div><!-- note one --><!-- note two -->",
+    "limitation": "Comments inside scripts or malformed markup may need full parsing.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "html-aria-attribute-audit": {
+    "explanation": "List ARIA and role attributes from pasted HTML.",
+    "example": "<button aria-label=\"Close\">x</button><div role=\"dialog\" aria-modal=\"true\"></div>",
+    "limitation": "An attribute inventory is not a complete accessibility test.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "semantic-version-comparator": {
+    "explanation": "Compare two semantic version strings including prerelease tags.",
+    "example": "1.2.3\n---\n1.3.0",
+    "limitation": "Supports SemVer 2.0 core and prerelease precedence, not dependency ranges.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "semantic-version-bump-calculator": {
+    "explanation": "Calculate the next patch, minor or major semantic version.",
+    "example": "1.2.3|minor",
+    "limitation": "Build metadata and prerelease values are removed on version bump.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "semver-range-satisfaction-checker": {
+    "explanation": "Check a version against a single simple SemVer comparator range.",
+    "example": "^1.2.0\n---\n1.8.3",
+    "limitation": "Supports ^, ~, >=, >, <=, < or exact; not compound npm ranges.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "git-commit-message-linter": {
+    "explanation": "Check whether a commit subject follows common Conventional Commit syntax.",
+    "example": "feat(tools): add new input checker",
+    "limitation": "Custom project-specific commit rules are not included.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "environment-variable-name-validator": {
+    "explanation": "Validate a common uppercase environment variable identifier.",
+    "example": "TOOLSIVA_API_KEY",
+    "limitation": "Different shells and platforms may allow other naming conventions.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "dns-txt-record-parser": {
+    "explanation": "Split a pasted DNS TXT policy into readable tokens.",
+    "example": "v=spf1 include:_spf.example.com -all",
+    "limitation": "This is a text parser and cannot retrieve live DNS records.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "spf-mechanism-inspector": {
+    "explanation": "Identify SPF mechanisms and qualifiers from a pasted record.",
+    "example": "v=spf1 include:_spf.example.com ip4:192.0.2.0/24 -all",
+    "limitation": "Does not perform DNS lookups or evaluate domain authorization.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "cors-header-analyzer": {
+    "explanation": "Inspect pasted CORS response headers for common configuration warnings.",
+    "example": "Access-Control-Allow-Origin: *\nAccess-Control-Allow-Credentials: true",
+    "limitation": "Browser enforcement depends on request origin, credentials and preflight context.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csp-directive-inspector": {
+    "explanation": "List CSP directives and flag potentially unsafe inline/eval policies.",
+    "example": "default-src 'self'; script-src 'self'; object-src 'none'",
+    "limitation": "This is an offline heuristic, not a runtime security scan.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  },
+  "csv-formula-injection-detector": {
+    "explanation": "Flag CSV cells that may be interpreted as formulas in spreadsheets.",
+    "example": "name,note\nAda,=SUM(1+1)\nBob,+CMD|test",
+    "limitation": "The detector identifies risky prefixes; it does not open spreadsheet files.",
+    "workflows": [
+      "Paste or type the input in the format shown by Load example.",
+      "Review the calculated or transformed text, then copy the result if useful."
+    ]
+  }
+}
