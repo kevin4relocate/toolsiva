@@ -10,7 +10,7 @@ function n4Median(sorted){const n=sorted.length;if(!n)throw Error("No data point
 
 function positive4(x){if(x<=0)throw Error("Denominator must be positive.");return x;}
 
-export function n4Buss(slug,input){const x=n4Values(input,2);switch(slug){
+export function n4Buss(slug,input){if(!["average-order-value-calculator","revenue-per-visitor-calculator","gross-profit-calculator","net-profit-calculator","operating-margin-calculator","inventory-turnover-calculator","days-sales-outstanding-calculator","email-open-rate-calculator","email-click-to-open-rate-calculator","email-bounce-rate-calculator"].includes(slug))return null;const x=n4Values(input,2);switch(slug){
 case "average-order-value-calculator":{const [revenue,orders]=x;return n4Format(revenue/positive4(orders))+" revenue per order";}
 case "revenue-per-visitor-calculator":{const [revenue,visitors]=x;return n4Format(revenue/positive4(visitors))+" revenue per visitor";}
 case "gross-profit-calculator":{const [revenue,cogs]=x;if(revenue<0||cogs<0)throw Error("Amounts must be nonnegative.");return "Gross profit: "+n4Format(revenue-cogs);}
