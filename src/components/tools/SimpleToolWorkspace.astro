@@ -1,0 +1,63 @@
+---
+interface Props { mode: string; example: string; }
+const {mode,example}=Astro.props;
+const timer=mode==="simple-pomodoro-timer";
+---
+<section class="rounded-2xl border border-white/10 bg-zinc-900/80 p-4 shadow-xl shadow-black/20 sm:p-5" data-simple-tool data-mode={mode}>
+  <div class="grid gap-4 lg:grid-cols-2">
+    <div class="min-w-0">
+      <div class="mb-2 flex items-center justify-between gap-2"><label for={`simple-input-${mode}`} class="text-sm font-semibold text-white">Input</label><button type="button" data-example class="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-brand-300 hover:bg-white/5">Load example</button></div>
+      <textarea id={`simple-input-${mode}`} data-input rows="10" spellcheck="false" aria-label="Input text or values" class="min-h-56 w-full resize-y rounded-xl border border-white/10 bg-zinc-950 p-4 font-mono text-sm leading-6 text-white outline-none focus:border-brand-400/50" placeholder={example}></textarea>
+      <p class="mt-2 text-xs leading-5 text-zinc-400">Enter or paste text, numbers or dates. No files are uploaded. All processing stays in your browser.</p>
+    </div>
+    <div class="min-w-0">
+      <div class="mb-2 flex items-center justify-between gap-2"><span class="text-sm font-semibold text-white">Result</span><button type="button" data-copy class="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:bg-white/5">Copy text</button></div>
+      <textarea data-output readonly rows="10" aria-label="Calculated result" aria-live="polite" class="min-h-56 w-full resize-y rounded-xl border border-white/10 bg-zinc-950/70 p-4 font-mono text-sm leading-6 text-zinc-100 outline-none" placeholder="Your result appears here..."></textarea>
+      {timer && <div class="mt-3 flex flex-wrap items-center gap-3"><button type="button" data-timer-start class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white">Start / Pause</button><button type="button" data-timer-reset class="rounded-lg border border-white/10 px-4 py-2 text-sm text-white">Reset</button><span data-timer-display class="font-mono text-lg font-semibold text-white" role="timer">25:00</span></div>}
+      <p data-status class="mt-2 text-xs text-zinc-400" role="status" aria-live="polite">Ready.</p>
+    </div>
+  </div>
+</section>
+<script>
+  import { calcSimple } from "@/lib/simpleToolMath.mjs";
+  import { processTextTool } from "@/lib/simpleToolText.mjs";
+  import { parse as parseYaml } from "yaml";
+
+  document.querySelectorAll<HTMLElement>("[data-simple-tool]").forEach(root=>{
+    const mode=root.dataset.mode??"";
+    const input=root.querySelector<HTMLTextAreaElement>("[data-input]");
+    const output=root.querySelector<HTMLTextAreaElement>("[data-output]");
+    const status=root.querySelector<HTMLElement>("[data-status]");
+    if(!input||!output||!status)return;
+    const example=root.querySelector<HTMLButtonElement>("[data-example]");
+    const copy=root.querySelector<HTMLButtonElement>("[data-copy]");
+    const timerDisplay=root.querySelector<HTMLElement>("[data-timer-display]");
+    const start=root.querySelector<HTMLButtonElement>("[data-timer-start]");
+    const reset=root.querySelector<HTMLButtonElement>("[data-timer-reset]");
+    const placeholder=input.placeholder;
+    let deadline=0,remaining=25*60,running=false,intervalId:number|undefined;
+    const renderTimer=()=>{if(timerDisplay)timerDisplay.textContent=String(Math.floor(remaining/60)).padStart(2,"0")+":"+String(Math.ceil(remaining%60)).padStart(2,"0");};
+    const stop=()=>{running=false;if(intervalId!==undefined)window.clearInterval(intervalId);intervalId=undefined;};
+    const update=()=>{
+      try{
+        const content=input.value.trim();
+        if(!content){output.value="";status.textContent="Enter a value to begin.";return;}
+        let result:string|null;
+        if(mode==="yaml-to-json"){result=JSON.stringify(parseYaml(content),null,2);}
+        else result=calcSimple(mode,content)??processTextTool(mode,content);
+        if(result===null)throw Error("This tool mode has no implementation.");
+        output.value=String(result);
+        status.textContent="Processed locally in your browser.";
+        if(mode==="simple-pomodoro-timer"&&!running){remaining=Number(content)*60;renderTimer();}
+      }catch(error){output.value="";status.textContent=error instanceof Error?error.message:String(error);}
+    };
+    input.addEventListener("input",update);
+    example?.addEventListener("click",()=>{input.value=placeholder;update();input.focus();});
+    copy?.addEventListener("click",async()=>{if(!output.value)return;try{await navigator.clipboard.writeText(output.value);status.textContent="Result copied.";}catch{output.focus();output.select();status.textContent="Select and copy the result manually.";}});
+
+    const tick=()=>{remaining=Math.max(0,(deadline-Date.now())/1000);renderTimer();if(remaining<=0){stop();status.textContent="Focus session complete.";}}; 
+    start?.addEventListener("click",()=>{if(running){tick();stop();status.textContent="Timer paused.";return;}if(remaining<=0)remaining=(Number(input.value)||25)*60;deadline=Date.now()+remaining*1000;running=true;intervalId=window.setInterval(tick,250);status.textContent="Timer running. Keep this tab open.";tick();});
+    reset?.addEventListener("click",()=>{stop();remaining=(Number(input.value)||25)*60;renderTimer();status.textContent="Timer reset.";});
+    renderTimer();
+  });
+</script>
