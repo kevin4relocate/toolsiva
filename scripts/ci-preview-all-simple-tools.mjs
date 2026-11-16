@@ -1,16 +1,32 @@
 import fs from "node:fs";
-import {releaseSimpleTools} from "./release-simple-tools.mjs";
-const q=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const state=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
-if(q.length!==141)throw new Error("Expected 141 queued tools.");
-if(state.published.length)throw new Error("Run full-preview only against an unreleased development queue.");
-let total=0;
-for(let i=0;i<15;i++){
- const when=new Date(Date.UTC(2026,10,23+7*i,2));
- const result=releaseSimpleTools({now:when});
- if(result.released.length!==(i===14?1:10))throw new Error("Wrong release count at week "+(i+1)+": "+result.released.length);
- total+=result.released.length;
+import { releaseSimpleTools } from "./release-simple-tools.mjs";
+
+const queue = JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json", "utf8"));
+const state = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
+if (queue.length < 191) throw new Error("Expected at least 191 queued tools.");
+if (new Set(queue.map((tool) => tool.slug)).size !== queue.length) throw new Error("Duplicate scheduled tool slugs.");
+
+const limit = state.weeklyLimit;
+if (!Number.isInteger(limit) || limit !== 10) throw new Error("Release limit must remain ten tools per week.");
+const totalRemaining = queue.filter((tool) => tool.ready && !state.published.includes(tool.slug)).length;
+let date = new Date((state.history.length ? state.history.at(-1).date : state.startDate) + "T02:00:00Z");
+if (state.history.length) date.setUTCDate(date.getUTCDate() + 7);
+let published = 0;
+let weeks = 0;
+
+while (published < totalRemaining) {
+  const expected = Math.min(limit, totalRemaining - published);
+  const release = releaseSimpleTools({ now: date });
+  if (release.released.length !== expected) {
+    throw new Error("Expected " + expected + " tools in week " + (weeks + 1) + " but got " + release.released.length + " (" + release.reason + ")");
+  }
+  published += release.released.length;
+  weeks++;
+  date.setUTCDate(date.getUTCDate() + 7);
 }
-const all=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
-if(total!==141||all.published.some((slug,index)=>slug!==q[index].slug))throw new Error("Publication order changed.");
-console.log("Full scheduled publication simulation: "+total+" tools across "+all.history.length+" Mondays.");
+
+const result = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
+if (result.published.length !== queue.length || result.published.some((slug, index) => slug !== queue[index].slug)) {
+  throw new Error("Scheduled tools were published out of order or omitted.");
+}
+console.log("Full release simulation: " + published + " additional tools, " + weeks + " future Mondays, " + result.published.length + " total queued tools.");
