@@ -10,11 +10,10 @@ function d5Delimited(input,delim=","){const s=String(input).replace(/\r\n?/g,"\n
 
 function d5Serialize(rows,delim=","){return rows.map(row=>row.map(v=>{const s=String(v??"");return s.includes(delim)||s.includes('"')||/[\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s}).join(delim)).join("\n");}
 
-export function m5Process(slug,input){if(!["markdown-table-column-counter","markdown-table-to-csv","markdown-blockquote-extractor","markdown-link-text-extractor","markdown-reference-definition-extractor","markdown-frontmatter-key-extractor","markdown-inline-code-extractor","markdown-horizontal-rule-counter","markdown-emphasis-marker-counter","markdown-footnote-reference-extractor"].includes(slug))return null;const s=m5Input(input);switch(slug){
+export function m5Process(slug,input){if(!["markdown-table-column-counter","markdown-table-to-csv","markdown-blockquote-extractor","markdown-reference-definition-extractor","markdown-frontmatter-key-extractor","markdown-inline-code-extractor","markdown-horizontal-rule-counter","markdown-emphasis-marker-counter","markdown-footnote-reference-extractor"].includes(slug))return null;const s=m5Input(input);switch(slug){
 case "markdown-table-column-counter":{const rows=m5Table(s);return "Columns: "+rows[0].length+"\nData rows: "+(rows.length-1);}
 case "markdown-table-to-csv":return m5Csv(m5Table(s));
 case "markdown-blockquote-extractor":return s.split("\n").filter(x=>/^\s{0,3}>\s?/.test(x)).map(x=>x.replace(/^\s{0,3}>\s?/,"")).join("\n")||"No Markdown blockquotes found.";
-case "markdown-link-text-extractor":return [...s.matchAll(/(?<!!)\[([^\]\n]+)\]\((?:[^)\n]+)\)/g)].map(x=>x[1]).join("\n")||"No inline links.";
 case "markdown-reference-definition-extractor":return [...s.matchAll(/^\s{0,3}\[([^\]\n]+)\]:\s*(<?\S+>?)(?:\s+["'][^"']*["'])?\s*$/gm)].map(x=>x[1]+" → "+x[2]).join("\n")||"No reference definitions.";
 case "markdown-frontmatter-key-extractor":{const match=s.match(/^---\n([\s\S]*?)\n---(?:\n|$)/);if(!match)throw Error("No YAML-style frontmatter delimiters found.");return match[1].split("\n").filter(x=>/^[\w-]+\s*:/.test(x)).map(x=>x.slice(0,x.indexOf(":"))).join("\n")||"No top-level frontmatter keys.";}
 case "markdown-inline-code-extractor":{const withoutFences=s.replace(/(^|\n)(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\2(?=\n|$)/g,"\n");return [...withoutFences.matchAll(/(?<!`)`([^`\n]+)`(?!`)/g)].map(x=>x[1]).join("\n")||"No single-backtick inline code.";}
