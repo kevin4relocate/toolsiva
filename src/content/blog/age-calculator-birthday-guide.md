@@ -12,7 +12,7 @@ excerpt: "Calculate age in completed years, understand birthday cutoffs and leap
 featuredImage: "/blog/illustrations/age-calculator-birthday-guide.svg"
 imageAlt: "Visual walkthrough for how to calculate age correctly around birthdays: Date of birth, Compare month & day, then Completed years."
 imageCaption: "An age changes at a birthday, not simply at the start of a calendar year."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
