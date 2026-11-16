@@ -31,7 +31,7 @@ test("Audit removes exactly 18 functional duplicates without touching 123 public
   assert.ok(entry.originalPosition>=1&&entry.originalPosition<=391);
  }
  assert.deepEqual(Object.fromEntries([1,2,3,4,5].map(n=>[n,queue.filter(x=>x.batch===n).length])),{1:89,2:50,3:50,4:97,5:87});
- const names=[...source.matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"[\s\S]{0,200}?(?:name|"name")\s*:\s*"([^"]+)"/g)].map(x=>x[2]),...queue.map(x=>x.name)];
+ const names=[...[...source.matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"[\s\S]{0,200}?(?:name|"name")\s*:\s*"([^"]+)"/g)].map(x=>x[2]),...queue.map(x=>x.name)];
  assert.equal(new Set(names.map(x=>x.toLowerCase().replace(/[^a-z0-9]+/g,""))).size,names.length);
 });
 
