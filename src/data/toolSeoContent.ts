@@ -3,6 +3,7 @@ import toolUsageNotes from "@/data/toolUsageNotes.json";
 import simpleToolQueue from "@/data/simpleToolQueue.json";
 import extraToolGuides from "@/data/extraSimpleToolGuides.json";
 import wave3ToolGuides from "@/data/wave3ToolGuides.json";
+import wave4ToolGuides from "@/data/wave4ToolGuides.json";
 
 export interface ToolExample { input: string; output: string; }
 export interface ToolContentSection { heading: string; paragraphs: string[]; }
@@ -454,6 +455,19 @@ export function getToolContentSections(tool: ToolDefinition): ToolContentSection
       { heading: "Before using the result", paragraphs: [note.watch] },
     ];
   }
+
+  const wave4 = wave4ToolGuides[tool.slug as keyof typeof wave4ToolGuides];
+  if (wave4) return [
+    { heading: `What does ${tool.name} do?`, paragraphs: [
+      wave4.explanation,
+      `Example: ${wave4.example.replaceAll("\\n", " | ").slice(0, 210)}.`,
+    ] },
+    { heading: `How to use ${tool.name}`, paragraphs: wave4.workflows },
+    { heading: "Accuracy and appropriate use", paragraphs: [
+      wave4.limitation,
+      "Toolsiva processes pasted text and values in your browser; no files, images, paid APIs or external conversion services are required.",
+    ] },
+  ];
 
   const wave3 = wave3ToolGuides[tool.slug as keyof typeof wave3ToolGuides];
   if (wave3) return [
