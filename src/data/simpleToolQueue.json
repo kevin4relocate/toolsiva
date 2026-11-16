@@ -1370,7 +1370,7 @@
     "category": "calculator",
     "week": 10,
     "shortDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate.",
-    "metaDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate. Use this free speaking time calculator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "speaking time calculator",
       "online speaking time calculator",
@@ -1385,7 +1385,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Estimate Flesch Reading Ease and US grade level for English text.",
-    "metaDescription": "Estimate Flesch Reading Ease and US grade level for English text. Use this free readability score checker with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Estimate Flesch Reading Ease and US grade level for English text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "readability score checker",
       "online readability score checker",
@@ -1400,7 +1400,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Estimate English syllables in words and a pasted passage.",
-    "metaDescription": "Estimate English syllables in words and a pasted passage. Use this free syllable counter with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Estimate English syllables in words and a pasted passage. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "syllable counter",
       "online syllable counter",
@@ -1415,7 +1415,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Flag sentences longer than a configurable word-count threshold.",
-    "metaDescription": "Flag sentences longer than a configurable word-count threshold. Use this free long sentence finder with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Flag sentences longer than a configurable word-count threshold. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "long sentence finder",
       "online long sentence finder",
@@ -1430,7 +1430,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Find words accidentally repeated directly next to each other.",
-    "metaDescription": "Find words accidentally repeated directly next to each other. Use this free repeated word detector with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Find words accidentally repeated directly next to each other. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "repeated word detector",
       "online repeated word detector",
@@ -1445,7 +1445,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Count and rank individual characters in pasted text.",
-    "metaDescription": "Count and rank individual characters in pasted text. Use this free character frequency analyzer with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Count and rank individual characters in pasted text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "character frequency analyzer",
       "online character frequency analyzer",
@@ -1460,7 +1460,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Group words by number of letters and show their frequency.",
-    "metaDescription": "Group words by number of letters and show their frequency. Use this free word length distribution with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Group words by number of letters and show their frequency. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "word length distribution",
       "online word length distribution",
@@ -1475,7 +1475,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Determine whether text reads the same backward after normalization.",
-    "metaDescription": "Determine whether text reads the same backward after normalization. Use this free palindrome checker with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Determine whether text reads the same backward after normalization. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "palindrome checker",
       "online palindrome checker",
@@ -1490,7 +1490,7 @@
     "category": "text",
     "week": 10,
     "shortDescription": "Generate word n-grams of a chosen length from text.",
-    "metaDescription": "Generate word n-grams of a chosen length from text. Use this free n-gram generator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Generate word n-grams of a chosen length from text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "n-gram generator",
       "online n-gram generator",
@@ -1505,7 +1505,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Remove common English stop words from a passage.",
-    "metaDescription": "Remove common English stop words from a passage. Use this free stop word remover with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Remove common English stop words from a passage. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "stop word remover",
       "online stop word remover",
@@ -1520,7 +1520,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Locate zero-width, nonbreaking and control characters inside text.",
-    "metaDescription": "Locate zero-width, nonbreaking and control characters inside text. Use this free invisible unicode detector with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Locate zero-width, nonbreaking and control characters inside text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "invisible unicode detector",
       "online invisible unicode detector",
@@ -1535,7 +1535,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Remove selected zero-width Unicode formatting characters.",
-    "metaDescription": "Remove selected zero-width Unicode formatting characters. Use this free zero-width character remover with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Remove selected zero-width Unicode formatting characters. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "zero-width character remover",
       "online zero-width character remover",
@@ -1550,7 +1550,7 @@
     "category": "developer",
     "week": 11,
     "shortDescription": "Show each character or grapheme's Unicode code points and names where available.",
-    "metaDescription": "Show each character or grapheme's Unicode code points and names where available. Use this free unicode code point inspector with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Show each character or grapheme's Unicode code points and names where available. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "unicode code point inspector",
       "online unicode code point inspector",
@@ -1565,7 +1565,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Strip combining accent marks from text.",
-    "metaDescription": "Strip combining accent marks from text. Use this free diacritics remover with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Strip combining accent marks from text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "diacritics remover",
       "online diacritics remover",
@@ -1580,7 +1580,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Remove most emoji sequences while preserving ordinary text.",
-    "metaDescription": "Remove most emoji sequences while preserving ordinary text. Use this free emoji remover with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Remove most emoji sequences while preserving ordinary text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "emoji remover",
       "online emoji remover",
@@ -1595,7 +1595,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Remove code points outside the 7-bit ASCII range.",
-    "metaDescription": "Remove code points outside the 7-bit ASCII range. Use this free non-ascii character remover with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Remove code points outside the 7-bit ASCII range. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "non-ascii character remover",
       "online non-ascii character remover",
@@ -1610,7 +1610,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Truncate text to a maximum number of characters with an ellipsis.",
-    "metaDescription": "Truncate text to a maximum number of characters with an ellipsis. Use this free text truncator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Truncate text to a maximum number of characters with an ellipsis. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "text truncator",
       "online text truncator",
@@ -1625,7 +1625,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Wrap long text into lines at a target width.",
-    "metaDescription": "Wrap long text into lines at a target width. Use this free word wrap formatter with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Wrap long text into lines at a target width. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "word wrap formatter",
       "online word wrap formatter",
@@ -1640,7 +1640,7 @@
     "category": "text",
     "week": 11,
     "shortDescription": "Pad lines to a specified width on the left, right or both sides.",
-    "metaDescription": "Pad lines to a specified width on the left, right or both sides. Use this free string padder with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Pad lines to a specified width on the left, right or both sides. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "string padder",
       "online string padder",
@@ -1655,7 +1655,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Report line lengths, longest line and line numbers.",
-    "metaDescription": "Report line lengths, longest line and line numbers. Use this free line length checker with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Report line lengths, longest line and line numbers. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "line length checker",
       "online line length checker",
@@ -1670,7 +1670,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Extract phone-number-like strings from pasted text.",
-    "metaDescription": "Extract phone-number-like strings from pasted text. Use this free phone number extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract phone-number-like strings from pasted text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "phone number extractor",
       "online phone number extractor",
@@ -1685,7 +1685,7 @@
     "category": "developer",
     "week": 12,
     "shortDescription": "Extract syntactically valid IPv4 addresses from text.",
-    "metaDescription": "Extract syntactically valid IPv4 addresses from text. Use this free ipv4 address extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract syntactically valid IPv4 addresses from text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "ipv4 address extractor",
       "online ipv4 address extractor",
@@ -1700,7 +1700,7 @@
     "category": "developer",
     "week": 12,
     "shortDescription": "Extract valid IPv6 literals, including compressed forms.",
-    "metaDescription": "Extract valid IPv6 literals, including compressed forms. Use this free ipv6 address extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract valid IPv6 literals, including compressed forms. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "ipv6 address extractor",
       "online ipv6 address extractor",
@@ -1715,7 +1715,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Extract hashtag tokens and show unique values.",
-    "metaDescription": "Extract hashtag tokens and show unique values. Use this free hashtag extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract hashtag tokens and show unique values. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "hashtag extractor",
       "online hashtag extractor",
@@ -1730,7 +1730,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Extract social-style @mentions without treating email addresses as mentions.",
-    "metaDescription": "Extract social-style @mentions without treating email addresses as mentions. Use this free social mention extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract social-style @mentions without treating email addresses as mentions. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "social mention extractor",
       "online social mention extractor",
@@ -1745,7 +1745,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Extract integer and decimal numeric values from text.",
-    "metaDescription": "Extract integer and decimal numeric values from text. Use this free number extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract integer and decimal numeric values from text. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "number extractor",
       "online number extractor",
@@ -1760,7 +1760,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Extract common ISO and slash-style date patterns.",
-    "metaDescription": "Extract common ISO and slash-style date patterns. Use this free date pattern extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract common ISO and slash-style date patterns. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "date pattern extractor",
       "online date pattern extractor",
@@ -1775,7 +1775,7 @@
     "category": "text",
     "week": 12,
     "shortDescription": "Extract substrings between matching single or double quotation marks.",
-    "metaDescription": "Extract substrings between matching single or double quotation marks. Use this free quoted text extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract substrings between matching single or double quotation marks. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "quoted text extractor",
       "online quoted text extractor",
@@ -1790,7 +1790,7 @@
     "category": "developer",
     "week": 12,
     "shortDescription": "Extract unique domain names from URLs, bare hosts and email addresses.",
-    "metaDescription": "Extract unique domain names from URLs, bare hosts and email addresses. Use this free domain name extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract unique domain names from URLs, bare hosts and email addresses. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "domain name extractor",
       "online domain name extractor",
@@ -1805,7 +1805,7 @@
     "category": "text",
     "week": 13,
     "shortDescription": "Count unique email addresses by their domain name.",
-    "metaDescription": "Count unique email addresses by their domain name. Use this free email domain counter with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Count unique email addresses by their domain name. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "email domain counter",
       "online email domain counter",
@@ -1820,7 +1820,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "List property paths found in nested JSON objects and arrays.",
-    "metaDescription": "List property paths found in nested JSON objects and arrays. Use this free json key extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "List property paths found in nested JSON objects and arrays. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json key extractor",
       "online json key extractor",
@@ -1835,7 +1835,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Flatten nested JSON into a map of JSON Pointer paths and values.",
-    "metaDescription": "Flatten nested JSON into a map of JSON Pointer paths and values. Use this free json flatten with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Flatten nested JSON into a map of JSON Pointer paths and values. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json flatten",
       "online json flatten",
@@ -1850,7 +1850,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Rebuild nested objects and arrays from JSON Pointer paths.",
-    "metaDescription": "Rebuild nested objects and arrays from JSON Pointer paths. Use this free json unflatten with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Rebuild nested objects and arrays from JSON Pointer paths. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json unflatten",
       "online json unflatten",
@@ -1865,7 +1865,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Sort an array of JSON objects by a chosen field and direction.",
-    "metaDescription": "Sort an array of JSON objects by a chosen field and direction. Use this free json array sorter with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Sort an array of JSON objects by a chosen field and direction. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json array sorter",
       "online json array sorter",
@@ -1880,7 +1880,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Filter JSON array items by a field's exact string value.",
-    "metaDescription": "Filter JSON array items by a field's exact string value. Use this free json array filter with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Filter JSON array items by a field's exact string value. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json array filter",
       "online json array filter",
@@ -1895,7 +1895,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Remove duplicate JSON array entries while preserving their first occurrence.",
-    "metaDescription": "Remove duplicate JSON array entries while preserving their first occurrence. Use this free json array deduplicator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Remove duplicate JSON array entries while preserving their first occurrence. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json array deduplicator",
       "online json array deduplicator",
@@ -1910,7 +1910,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Rename an object key recursively throughout a JSON document.",
-    "metaDescription": "Rename an object key recursively throughout a JSON document. Use this free json key renamer with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Rename an object key recursively throughout a JSON document. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json key renamer",
       "online json key renamer",
@@ -1925,7 +1925,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Find JSON Pointer paths for values containing a search string.",
-    "metaDescription": "Find JSON Pointer paths for values containing a search string. Use this free json value searcher with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Find JSON Pointer paths for values containing a search string. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json value searcher",
       "online json value searcher",
@@ -1940,7 +1940,7 @@
     "category": "developer",
     "week": 13,
     "shortDescription": "Summarize JSON objects, arrays, keys, nesting depth and primitive types.",
-    "metaDescription": "Summarize JSON objects, arrays, keys, nesting depth and primitive types. Use this free json structure summary with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Summarize JSON objects, arrays, keys, nesting depth and primitive types. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "json structure summary",
       "online json structure summary",
@@ -1955,7 +1955,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Calculate basic counts and numeric statistics for one pasted CSV column.",
-    "metaDescription": "Calculate basic counts and numeric statistics for one pasted CSV column. Use this free csv column statistics with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Calculate basic counts and numeric statistics for one pasted CSV column. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "csv column statistics",
       "online csv column statistics",
@@ -1970,7 +1970,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Estimate selector specificity as ID, class and type counts.",
-    "metaDescription": "Estimate selector specificity as ID, class and type counts. Use this free css specificity calculator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Estimate selector specificity as ID, class and type counts. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "css specificity calculator",
       "online css specificity calculator",
@@ -1985,7 +1985,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Count opening HTML elements by tag name from pasted markup.",
-    "metaDescription": "Count opening HTML elements by tag name from pasted markup. Use this free html tag counter with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Count opening HTML elements by tag name from pasted markup. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "html tag counter",
       "online html tag counter",
@@ -2000,7 +2000,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Extract href values and link text from pasted HTML anchors.",
-    "metaDescription": "Extract href values and link text from pasted HTML anchors. Use this free html link extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract href values and link text from pasted HTML anchors. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "html link extractor",
       "online html link extractor",
@@ -2015,7 +2015,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Extract selected attribute values from pasted HTML.",
-    "metaDescription": "Extract selected attribute values from pasted HTML. Use this free html attribute extractor with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Extract selected attribute values from pasted HTML. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "html attribute extractor",
       "online html attribute extractor",
@@ -2030,7 +2030,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Look up HTTP status names and a brief explanation by status code.",
-    "metaDescription": "Look up HTTP status names and a brief explanation by status code. Use this free http status code lookup with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Look up HTTP status names and a brief explanation by status code. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "http status code lookup",
       "online http status code lookup",
@@ -2045,7 +2045,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Look up common MIME types using a typed extension or a type name.",
-    "metaDescription": "Look up common MIME types using a typed extension or a type name. Use this free mime type lookup with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Look up common MIME types using a typed extension or a type name. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "mime type lookup",
       "online mime type lookup",
@@ -2060,7 +2060,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Generate a valid HTML meta robots directive from chosen tokens.",
-    "metaDescription": "Generate a valid HTML meta robots directive from chosen tokens. Use this free meta robots generator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Generate a valid HTML meta robots directive from chosen tokens. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "meta robots generator",
       "online meta robots generator",
@@ -2075,7 +2075,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Validate and compose a Cache-Control HTTP header value.",
-    "metaDescription": "Validate and compose a Cache-Control HTTP header value. Use this free cache-control header generator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Validate and compose a Cache-Control HTTP header value. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "cache-control header generator",
       "online cache-control header generator",
@@ -2090,7 +2090,7 @@
     "category": "developer",
     "week": 14,
     "shortDescription": "Add or replace URL query parameters from text lines.",
-    "metaDescription": "Add or replace URL query parameters from text lines. Use this free url query parameter builder with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Add or replace URL query parameters from text lines. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "url query parameter builder",
       "online url query parameter builder",
@@ -2105,7 +2105,7 @@
     "category": "calculator",
     "week": 15,
     "shortDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR.",
-    "metaDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR. Use this free ipv4 subnet calculator with pasted text or typed values. No uploads or paid APIs.",
+    "metaDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR. Paste text or enter values online with no uploads or account.",
     "keywords": [
       "ipv4 subnet calculator",
       "online ipv4 subnet calculator",
