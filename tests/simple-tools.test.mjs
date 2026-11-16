@@ -22,7 +22,9 @@ test("Exactly 91 distinct text-only tools, with no file, PDF, image, upload or Q
    assert.ok(["text","developer","security","calculator","converter"].includes(q.category));
    assert.ok(q.week>=1&&q.week<=10);
  }
- assert.equal(release.published.length,0);
+ assert.ok(Array.isArray(release.published));
+ assert.equal(new Set(release.published).size,release.published.length);
+ assert.ok(release.published.every(slug=>queue.some(tool=>tool.slug===slug&&tool.ready)));
  assert.equal(release.weeklyLimit,10);
 });
 
