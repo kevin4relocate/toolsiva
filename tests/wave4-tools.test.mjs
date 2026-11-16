@@ -12,18 +12,18 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 import guides from "../src/data/wave4ToolGuides.json" with {type:"json"};
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const added=queue.slice(191);
+const added=queue.slice(191,291);
 const run=(slug,s)=>t4A(slug,s)??t4B(slug,s)??h4Html(slug,s)??u4Tools(slug,s)??j4Tools(slug,s)??c4Tools(slug,s)??n4Buss(slug,s)??n4Stats(slug,s)??v4Http(slug,s)??v4Validate(slug,s);
 const browserOnly=new Set(["html-heading-word-counter","html-paragraph-element-counter","html-link-rel-analyzer","html-meta-description-extractor","html-canonical-link-extractor","html-language-attribute-checker","html-title-tag-extractor","html-form-field-extractor","html-duplicate-id-detector","html-label-association-checker","html-aria-attribute-audit"]);
 
 test("100 new tools follow the 191 original queue entries and provide unique valid text examples",()=>{
- assert.equal(queue.length,291);
+ assert.equal(queue.length,391);
  assert.equal(added.length,100);
  assert.equal(Object.keys(guides).length,100);
  assert.equal(queue[190].slug,"dmarc-record-generator");
  assert.equal(queue[191].slug,"line-intersection-finder");
- assert.equal(queue.at(-1).slug,"csv-formula-injection-detector");
- assert.equal(new Set(queue.map(x=>x.slug)).size,291);
+ assert.equal(queue[290].slug,"csv-formula-injection-detector");
+ assert.equal(new Set(queue.map(x=>x.slug)).size,391);
  const engines=["wave4Text","wave4HtmlUrl","wave4JsonCsv","wave4BusinessStats","wave4WebValidators"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const entry of added){
   assert.ok(entry.ready,entry.slug+" not ready");
@@ -155,7 +155,7 @@ test("Original release dates are retained and all 291 queue entries release in 3
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-291-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue.slice(0,291)));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
   for(let week=0;week<30;week++){
     const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+week*7,2))});
@@ -163,9 +163,9 @@ test("Original release dates are retained and all 291 queue entries release in 3
   }
   const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
   assert.equal(state.history.length,30);
-  assert.deepEqual(state.published,queue.map(x=>x.slug));
+  assert.deepEqual(state.published,queue.slice(0,291).map(x=>x.slug));
   assert.equal(state.history[19].slugs[1],queue[191].slug);
-  assert.equal(state.history.at(-1).slugs[0],queue.at(-1).slug);
+  assert.equal(state.history.at(-1).slugs[0],queue[290].slug);
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
 
