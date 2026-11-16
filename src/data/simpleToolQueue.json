@@ -12,7 +12,8 @@
       "free reading time calculator"
     ],
     "ready": true,
-    "example": "Paste a paragraph of text to estimate its reading time."
+    "example": "Paste a paragraph of text to estimate its reading time.",
+    "batch": 1
   },
   {
     "slug": "median-calculator",
@@ -27,7 +28,8 @@
       "free median calculator"
     ],
     "ready": true,
-    "example": "1, 3, 5, 7, 9"
+    "example": "1, 3, 5, 7, 9",
+    "batch": 1
   },
   {
     "slug": "mode-calculator",
@@ -42,7 +44,8 @@
       "free mode calculator"
     ],
     "ready": true,
-    "example": "2, 3, 3, 4, 4, 4"
+    "example": "2, 3, 3, 4, 4, 4",
+    "batch": 1
   },
   {
     "slug": "square-root-calculator",
@@ -57,7 +60,8 @@
       "free square root calculator"
     ],
     "ready": true,
-    "example": "144"
+    "example": "144",
+    "batch": 1
   },
   {
     "slug": "exponent-calculator",
@@ -72,7 +76,8 @@
       "free exponent calculator"
     ],
     "ready": true,
-    "example": "2, 8"
+    "example": "2, 8",
+    "batch": 1
   },
   {
     "slug": "rounding-calculator",
@@ -87,7 +92,8 @@
       "free rounding calculator"
     ],
     "ready": true,
-    "example": "3.14159, 2"
+    "example": "3.14159, 2",
+    "batch": 1
   },
   {
     "slug": "prime-number-checker",
@@ -102,7 +108,8 @@
       "free prime number checker"
     ],
     "ready": true,
-    "example": "97"
+    "example": "97",
+    "batch": 1
   },
   {
     "slug": "leap-year-checker",
@@ -117,7 +124,8 @@
       "free leap year checker"
     ],
     "ready": true,
-    "example": "2028"
+    "example": "2028",
+    "batch": 1
   },
   {
     "slug": "day-of-year-calculator",
@@ -132,7 +140,8 @@
       "free day of year calculator"
     ],
     "ready": true,
-    "example": "2026-11-16"
+    "example": "2026-11-16",
+    "batch": 1
   },
   {
     "slug": "bytes-to-bits",
@@ -147,7 +156,8 @@
       "free bytes to bits"
     ],
     "ready": true,
-    "example": "1024"
+    "example": "1024",
+    "batch": 1
   },
   {
     "slug": "weighted-average-calculator",
@@ -162,7 +172,8 @@
       "free weighted average calculator"
     ],
     "ready": true,
-    "example": "90:3, 75:2, 80:1"
+    "example": "90:3, 75:2, 80:1",
+    "batch": 1
   },
   {
     "slug": "scientific-notation-converter",
@@ -177,7 +188,8 @@
       "free scientific notation converter"
     ],
     "ready": true,
-    "example": "1230000"
+    "example": "1230000",
+    "batch": 1
   },
   {
     "slug": "number-sequence-generator",
@@ -192,7 +204,8 @@
       "free number sequence generator"
     ],
     "ready": true,
-    "example": "1, 2, 10"
+    "example": "1, 2, 10",
+    "batch": 1
   },
   {
     "slug": "random-number-generator",
@@ -207,7 +220,8 @@
       "free random number generator"
     ],
     "ready": true,
-    "example": "1, 100, 5"
+    "example": "1, 100, 5",
+    "batch": 1
   },
   {
     "slug": "rot13-encoder",
@@ -222,7 +236,8 @@
       "free rot13 encoder"
     ],
     "ready": true,
-    "example": "Hello World"
+    "example": "Hello World",
+    "batch": 1
   },
   {
     "slug": "caesar-cipher-tool",
@@ -237,7 +252,8 @@
       "free caesar cipher tool"
     ],
     "ready": true,
-    "example": "Hello World|3"
+    "example": "Hello World|3",
+    "batch": 1
   },
   {
     "slug": "uuid-validator",
@@ -252,7 +268,8 @@
       "free uuid validator"
     ],
     "ready": true,
-    "example": "550e8400-e29b-41d4-a716-446655440000"
+    "example": "550e8400-e29b-41d4-a716-446655440000",
+    "batch": 1
   },
   {
     "slug": "pixels-to-rem-converter",
@@ -267,7 +284,8 @@
       "free pixels to rem converter"
     ],
     "ready": true,
-    "example": "24, 16"
+    "example": "24, 16",
+    "batch": 1
   },
   {
     "slug": "hours-to-decimal-converter",
@@ -282,7 +300,8 @@
       "free hours to decimal converter"
     ],
     "ready": true,
-    "example": "2:30"
+    "example": "2:30",
+    "batch": 1
   },
   {
     "slug": "decimal-to-hours-converter",
@@ -297,7 +316,8 @@
       "free decimal to hours converter"
     ],
     "ready": true,
-    "example": "2.5"
+    "example": "2.5",
+    "batch": 1
   },
   {
     "slug": "standard-deviation-calculator",
@@ -312,7 +332,8 @@
       "free standard deviation calculator"
     ],
     "ready": true,
-    "example": "2, 4, 4, 4, 5, 5, 7, 9"
+    "example": "2, 4, 4, 4, 5, 5, 7, 9",
+    "batch": 1
   },
   {
     "slug": "prime-factorization-calculator",
@@ -327,7 +348,8 @@
       "free prime factorization calculator"
     ],
     "ready": true,
-    "example": "360"
+    "example": "360",
+    "batch": 1
   },
   {
     "slug": "sales-tax-calculator",
@@ -342,7 +364,8 @@
       "free sales tax calculator"
     ],
     "ready": true,
-    "example": "100, 8.5"
+    "example": "100, 8.5",
+    "batch": 1
   },
   {
     "slug": "vat-calculator",
@@ -357,7 +380,8 @@
       "free vat calculator"
     ],
     "ready": true,
-    "example": "120, 20"
+    "example": "120, 20",
+    "batch": 1
   },
   {
     "slug": "roi-calculator",
@@ -372,7 +396,8 @@
       "free roi calculator"
     ],
     "ready": true,
-    "example": "1200, 1000"
+    "example": "1200, 1000",
+    "batch": 1
   },
   {
     "slug": "commission-calculator",
@@ -387,7 +412,8 @@
       "free commission calculator"
     ],
     "ready": true,
-    "example": "5000, 7"
+    "example": "5000, 7",
+    "batch": 1
   },
   {
     "slug": "bill-split-calculator",
@@ -402,7 +428,8 @@
       "free bill split calculator"
     ],
     "ready": true,
-    "example": "120, 4, 10"
+    "example": "120, 4, 10",
+    "batch": 1
   },
   {
     "slug": "break-even-calculator",
@@ -417,7 +444,8 @@
       "free break-even calculator"
     ],
     "ready": true,
-    "example": "1000, 25, 10"
+    "example": "1000, 25, 10",
+    "batch": 1
   },
   {
     "slug": "hourly-to-salary-calculator",
@@ -432,7 +460,8 @@
       "free hourly to salary calculator"
     ],
     "ready": true,
-    "example": "25, 40, 52"
+    "example": "25, 40, 52",
+    "batch": 1
   },
   {
     "slug": "salary-to-hourly-calculator",
@@ -447,7 +476,8 @@
       "free salary to hourly calculator"
     ],
     "ready": true,
-    "example": "52000, 40, 52"
+    "example": "52000, 40, 52",
+    "batch": 1
   },
   {
     "slug": "freelance-rate-calculator",
@@ -462,7 +492,8 @@
       "free freelance rate calculator"
     ],
     "ready": true,
-    "example": "60000, 1200"
+    "example": "60000, 1200",
+    "batch": 1
   },
   {
     "slug": "savings-goal-calculator",
@@ -477,7 +508,8 @@
       "free savings goal calculator"
     ],
     "ready": true,
-    "example": "10000, 250, 1000"
+    "example": "10000, 250, 1000",
+    "batch": 1
   },
   {
     "slug": "inflation-calculator",
@@ -492,7 +524,8 @@
       "free inflation calculator"
     ],
     "ready": true,
-    "example": "100, 3, 5"
+    "example": "100, 3, 5",
+    "batch": 1
   },
   {
     "slug": "add-days-to-date",
@@ -507,7 +540,8 @@
       "free add days to date"
     ],
     "ready": true,
-    "example": "2026-11-16, 14"
+    "example": "2026-11-16, 14",
+    "batch": 1
   },
   {
     "slug": "subtract-days-from-date",
@@ -522,7 +556,8 @@
       "free subtract days from date"
     ],
     "ready": true,
-    "example": "2026-11-16, 14"
+    "example": "2026-11-16, 14",
+    "batch": 1
   },
   {
     "slug": "week-number-calculator",
@@ -537,7 +572,8 @@
       "free week number calculator"
     ],
     "ready": true,
-    "example": "2026-11-16"
+    "example": "2026-11-16",
+    "batch": 1
   },
   {
     "slug": "countdown-calculator",
@@ -552,7 +588,8 @@
       "free countdown calculator"
     ],
     "ready": true,
-    "example": "2027-01-01"
+    "example": "2027-01-01",
+    "batch": 1
   },
   {
     "slug": "time-addition-calculator",
@@ -567,7 +604,8 @@
       "free time addition calculator"
     ],
     "ready": true,
-    "example": "02:30, 01:45"
+    "example": "02:30, 01:45",
+    "batch": 1
   },
   {
     "slug": "time-subtraction-calculator",
@@ -582,7 +620,8 @@
       "free time subtraction calculator"
     ],
     "ready": true,
-    "example": "05:00, 02:15"
+    "example": "05:00, 02:15",
+    "batch": 1
   },
   {
     "slug": "iso-date-converter",
@@ -597,7 +636,8 @@
       "free iso date converter"
     ],
     "ready": true,
-    "example": "2026-11-16"
+    "example": "2026-11-16",
+    "batch": 1
   },
   {
     "slug": "business-days-calculator",
@@ -612,7 +652,8 @@
       "free business days calculator"
     ],
     "ready": true,
-    "example": "2026-11-16, 2026-11-30"
+    "example": "2026-11-16, 2026-11-30",
+    "batch": 1
   },
   {
     "slug": "timezone-offset-calculator",
@@ -627,7 +668,8 @@
       "free timezone offset calculator"
     ],
     "ready": true,
-    "example": "2026-11-16T10:00, 7, -5"
+    "example": "2026-11-16T10:00, 7, -5",
+    "batch": 1
   },
   {
     "slug": "calendar-generator",
@@ -642,7 +684,8 @@
       "free calendar generator"
     ],
     "ready": true,
-    "example": "2026-11"
+    "example": "2026-11",
+    "batch": 1
   },
   {
     "slug": "work-hours-calculator",
@@ -657,7 +700,8 @@
       "free work hours calculator"
     ],
     "ready": true,
-    "example": "09:00, 17:30, 30"
+    "example": "09:00, 17:30, 30",
+    "batch": 1
   },
   {
     "slug": "number-base-converter",
@@ -672,37 +716,8 @@
       "free number base converter"
     ],
     "ready": true,
-    "example": "FF, 16, 10"
-  },
-  {
-    "slug": "binary-to-decimal",
-    "name": "Binary to Decimal",
-    "category": "converter",
-    "week": 5,
-    "shortDescription": "Binary to Decimal — enter or paste values to get an instant result directly in your browser.",
-    "metaDescription": "Use this free binary to decimal online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
-    "keywords": [
-      "binary to decimal",
-      "binary to decimal online",
-      "free binary to decimal"
-    ],
-    "ready": true,
-    "example": "101010"
-  },
-  {
-    "slug": "hex-to-decimal",
-    "name": "Hex to Decimal",
-    "category": "converter",
-    "week": 5,
-    "shortDescription": "Hex to Decimal — enter or paste values to get an instant result directly in your browser.",
-    "metaDescription": "Use this free hex to decimal online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
-    "keywords": [
-      "hex to decimal",
-      "hex to decimal online",
-      "free hex to decimal"
-    ],
-    "ready": true,
-    "example": "FF"
+    "example": "FF, 16, 10",
+    "batch": 1
   },
   {
     "slug": "roman-numeral-converter",
@@ -717,7 +732,8 @@
       "free roman numeral converter"
     ],
     "ready": true,
-    "example": "2026"
+    "example": "2026",
+    "batch": 1
   },
   {
     "slug": "unicode-escape-converter",
@@ -732,7 +748,8 @@
       "free unicode escape converter"
     ],
     "ready": true,
-    "example": "Hello ☺"
+    "example": "Hello ☺",
+    "batch": 1
   },
   {
     "slug": "md5-checksum-generator",
@@ -747,13 +764,14 @@
       "free md5 checksum generator"
     ],
     "ready": true,
-    "example": "hello"
+    "example": "hello",
+    "batch": 1
   },
   {
     "slug": "meta-title-length-checker",
     "name": "Meta Title Length Checker",
     "category": "developer",
-    "week": 6,
+    "week": 5,
     "shortDescription": "Meta Title Length Checker — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free meta title length checker online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -762,13 +780,14 @@
       "free meta title length checker"
     ],
     "ready": true,
-    "example": "Best Online Tools for Developers | Toolsiva"
+    "example": "Best Online Tools for Developers | Toolsiva",
+    "batch": 1
   },
   {
     "slug": "meta-description-length-checker",
     "name": "Meta Description Length Checker",
     "category": "developer",
-    "week": 6,
+    "week": 5,
     "shortDescription": "Meta Description Length Checker — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free meta description length checker online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -777,7 +796,8 @@
       "free meta description length checker"
     ],
     "ready": true,
-    "example": "Use free online tools for text, coding, calculators, and more."
+    "example": "Use free online tools for text, coding, calculators, and more.",
+    "batch": 1
   },
   {
     "slug": "meta-tag-generator",
@@ -792,7 +812,8 @@
       "free meta tag generator"
     ],
     "ready": true,
-    "example": "Title|Description|https://example.com/page"
+    "example": "Title|Description|https://example.com/page",
+    "batch": 1
   },
   {
     "slug": "open-graph-generator",
@@ -807,7 +828,8 @@
       "free open graph generator"
     ],
     "ready": true,
-    "example": "Title|Description|https://example.com/page"
+    "example": "Title|Description|https://example.com/page",
+    "batch": 1
   },
   {
     "slug": "open-graph-preview",
@@ -822,7 +844,8 @@
       "free open graph preview"
     ],
     "ready": true,
-    "example": "Title|Description|https://example.com/page"
+    "example": "Title|Description|https://example.com/page",
+    "batch": 1
   },
   {
     "slug": "twitter-card-generator",
@@ -837,7 +860,8 @@
       "free twitter card generator"
     ],
     "ready": true,
-    "example": "Title|Description|https://example.com/page"
+    "example": "Title|Description|https://example.com/page",
+    "batch": 1
   },
   {
     "slug": "canonical-url-generator",
@@ -852,7 +876,8 @@
       "free canonical url generator"
     ],
     "ready": true,
-    "example": "https://example.com/page?utm_source=x"
+    "example": "https://example.com/page?utm_source=x",
+    "batch": 1
   },
   {
     "slug": "hreflang-tag-generator",
@@ -867,7 +892,8 @@
       "free hreflang tag generator"
     ],
     "ready": true,
-    "example": "en=https://example.com/en/\nvi=https://example.com/vi/"
+    "example": "en=https://example.com/en/\nvi=https://example.com/vi/",
+    "batch": 1
   },
   {
     "slug": "keyword-density-checker",
@@ -882,7 +908,8 @@
       "free keyword density checker"
     ],
     "ready": true,
-    "example": "keyword|This keyword appears twice: keyword."
+    "example": "keyword|This keyword appears twice: keyword.",
+    "batch": 1
   },
   {
     "slug": "heading-structure-checker",
@@ -897,13 +924,14 @@
       "free heading structure checker"
     ],
     "ready": true,
-    "example": "<h1>Title</h1><h2>Section</h2><h3>Details</h3>"
+    "example": "<h1>Title</h1><h2>Section</h2><h3>Details</h3>",
+    "batch": 1
   },
   {
     "slug": "robots-txt-generator",
     "name": "Robots.txt Generator",
     "category": "developer",
-    "week": 7,
+    "week": 6,
     "shortDescription": "Robots.txt Generator — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free robots.txt generator online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -912,13 +940,14 @@
       "free robots.txt generator"
     ],
     "ready": true,
-    "example": "https://example.com/sitemap.xml"
+    "example": "https://example.com/sitemap.xml",
+    "batch": 1
   },
   {
     "slug": "robots-txt-tester",
     "name": "Robots.txt Tester",
     "category": "developer",
-    "week": 7,
+    "week": 6,
     "shortDescription": "Robots.txt Tester — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free robots.txt tester online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -927,7 +956,8 @@
       "free robots.txt tester"
     ],
     "ready": true,
-    "example": "User-agent: *\nDisallow: /private/\nAllow: /\n---\n/private/test"
+    "example": "User-agent: *\nDisallow: /private/\nAllow: /\n---\n/private/test",
+    "batch": 1
   },
   {
     "slug": "xml-sitemap-generator",
@@ -942,7 +972,8 @@
       "free xml sitemap generator"
     ],
     "ready": true,
-    "example": "https://example.com/\nhttps://example.com/about/"
+    "example": "https://example.com/\nhttps://example.com/about/",
+    "batch": 1
   },
   {
     "slug": "xml-sitemap-validator",
@@ -957,7 +988,8 @@
       "free xml sitemap validator"
     ],
     "ready": true,
-    "example": "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://example.com/</loc></url></urlset>"
+    "example": "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://example.com/</loc></url></urlset>",
+    "batch": 1
   },
   {
     "slug": "schema-faq-generator",
@@ -972,7 +1004,8 @@
       "free schema faq generator"
     ],
     "ready": true,
-    "example": "What is Toolsiva?|A set of free online tools.\nIs it free?|Yes."
+    "example": "What is Toolsiva?|A set of free online tools.\nIs it free?|Yes.",
+    "batch": 1
   },
   {
     "slug": "schema-breadcrumb-generator",
@@ -987,7 +1020,8 @@
       "free schema breadcrumb generator"
     ],
     "ready": true,
-    "example": "Home|https://example.com/\nTools|https://example.com/tools/"
+    "example": "Home|https://example.com/\nTools|https://example.com/tools/",
+    "batch": 1
   },
   {
     "slug": "schema-article-generator",
@@ -1002,7 +1036,8 @@
       "free schema article generator"
     ],
     "ready": true,
-    "example": "Title|Author|https://example.com/post"
+    "example": "Title|Author|https://example.com/post",
+    "batch": 1
   },
   {
     "slug": "redirect-rule-generator",
@@ -1017,7 +1052,8 @@
       "free redirect rule generator"
     ],
     "ready": true,
-    "example": "/old /new 301\n/previous /latest 302"
+    "example": "/old /new 301\n/previous /latest 302",
+    "batch": 1
   },
   {
     "slug": "url-parser",
@@ -1032,7 +1068,8 @@
       "free url parser"
     ],
     "ready": true,
-    "example": "https://example.com:8080/path?a=1&b=2#section"
+    "example": "https://example.com:8080/path?a=1&b=2#section",
+    "batch": 1
   },
   {
     "slug": "cron-expression-explainer",
@@ -1047,13 +1084,14 @@
       "free cron expression explainer"
     ],
     "ready": true,
-    "example": "0 9 * * 1"
+    "example": "0 9 * * 1",
+    "batch": 1
   },
   {
     "slug": "json-diff",
     "name": "JSON Diff",
     "category": "developer",
-    "week": 8,
+    "week": 7,
     "shortDescription": "JSON Diff — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free json diff online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1062,13 +1100,14 @@
       "free json diff"
     ],
     "ready": true,
-    "example": "{\"a\":1,\"b\":2}\n---\n{\"a\":1,\"b\":3}"
+    "example": "{\"a\":1,\"b\":2}\n---\n{\"a\":1,\"b\":3}",
+    "batch": 1
   },
   {
     "slug": "yaml-to-json",
     "name": "YAML to JSON",
     "category": "converter",
-    "week": 8,
+    "week": 7,
     "shortDescription": "YAML to JSON — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free yaml to json online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1077,7 +1116,8 @@
       "free yaml to json"
     ],
     "ready": true,
-    "example": "name: Toolsiva\ncount: 123"
+    "example": "name: Toolsiva\ncount: 123",
+    "batch": 1
   },
   {
     "slug": "xml-to-json",
@@ -1092,7 +1132,8 @@
       "free xml to json"
     ],
     "ready": true,
-    "example": "<root><name>Toolsiva</name></root>"
+    "example": "<root><name>Toolsiva</name></root>",
+    "batch": 1
   },
   {
     "slug": "html-formatter",
@@ -1107,7 +1148,8 @@
       "free html formatter"
     ],
     "ready": true,
-    "example": "<div><p>Hello</p></div>"
+    "example": "<div><p>Hello</p></div>",
+    "batch": 1
   },
   {
     "slug": "html-minifier",
@@ -1122,7 +1164,8 @@
       "free html minifier"
     ],
     "ready": true,
-    "example": "<div>  Hello </div>"
+    "example": "<div>  Hello </div>",
+    "batch": 1
   },
   {
     "slug": "css-formatter",
@@ -1137,7 +1180,8 @@
       "free css formatter"
     ],
     "ready": true,
-    "example": "body{color:red;background:white;}"
+    "example": "body{color:red;background:white;}",
+    "batch": 1
   },
   {
     "slug": "css-minifier",
@@ -1152,7 +1196,8 @@
       "free css minifier"
     ],
     "ready": true,
-    "example": "body { color: red; }"
+    "example": "body { color: red; }",
+    "batch": 1
   },
   {
     "slug": "sql-formatter",
@@ -1167,7 +1212,8 @@
       "free sql formatter"
     ],
     "ready": true,
-    "example": "select id,name from users where id=1 order by name"
+    "example": "select id,name from users where id=1 order by name",
+    "batch": 1
   },
   {
     "slug": "sql-minifier",
@@ -1182,7 +1228,8 @@
       "free sql minifier"
     ],
     "ready": true,
-    "example": "SELECT id, name FROM users WHERE id = 1;"
+    "example": "SELECT id, name FROM users WHERE id = 1;",
+    "batch": 1
   },
   {
     "slug": "text-to-html",
@@ -1197,13 +1244,14 @@
       "free text to html"
     ],
     "ready": true,
-    "example": "Hello <world>\nSecond line"
+    "example": "Hello <world>\nSecond line",
+    "batch": 1
   },
   {
     "slug": "javascript-formatter",
     "name": "JavaScript Formatter",
     "category": "developer",
-    "week": 9,
+    "week": 8,
     "shortDescription": "JavaScript Formatter — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free javascript formatter online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1212,13 +1260,14 @@
       "free javascript formatter"
     ],
     "ready": true,
-    "example": "function add(a,b){return a+b;}"
+    "example": "function add(a,b){return a+b;}",
+    "batch": 1
   },
   {
     "slug": "javascript-minifier",
     "name": "JavaScript Minifier",
     "category": "developer",
-    "week": 9,
+    "week": 8,
     "shortDescription": "JavaScript Minifier — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free javascript minifier online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1227,7 +1276,8 @@
       "free javascript minifier"
     ],
     "ready": true,
-    "example": "function add(a, b) { return a + b; }"
+    "example": "function add(a, b) { return a + b; }",
+    "batch": 1
   },
   {
     "slug": "csv-to-json",
@@ -1242,7 +1292,8 @@
       "free csv to json"
     ],
     "ready": true,
-    "example": "name,age\nAlice,30\nBob,25"
+    "example": "name,age\nAlice,30\nBob,25",
+    "batch": 1
   },
   {
     "slug": "csv-viewer",
@@ -1257,7 +1308,8 @@
       "free csv viewer"
     ],
     "ready": true,
-    "example": "name,age\nAlice,30\nBob,25"
+    "example": "name,age\nAlice,30\nBob,25",
+    "batch": 1
   },
   {
     "slug": "csv-column-extractor",
@@ -1272,7 +1324,8 @@
       "free csv column extractor"
     ],
     "ready": true,
-    "example": "age\n---\nname,age\nAlice,30\nBob,25"
+    "example": "age\n---\nname,age\nAlice,30\nBob,25",
+    "batch": 1
   },
   {
     "slug": "csv-row-filter",
@@ -1287,7 +1340,8 @@
       "free csv row filter"
     ],
     "ready": true,
-    "example": "Alice\n---\nname,age\nAlice,30\nBob,25"
+    "example": "Alice\n---\nname,age\nAlice,30\nBob,25",
+    "batch": 1
   },
   {
     "slug": "csv-sorter",
@@ -1302,7 +1356,8 @@
       "free csv sorter"
     ],
     "ready": true,
-    "example": "name\n---\nname,age\nBob,25\nAlice,30"
+    "example": "name\n---\nname,age\nBob,25\nAlice,30",
+    "batch": 1
   },
   {
     "slug": "csv-duplicate-remover",
@@ -1317,13 +1372,14 @@
       "free csv duplicate remover"
     ],
     "ready": true,
-    "example": "name,age\nAlice,30\nAlice,30\nBob,25"
+    "example": "name,age\nAlice,30\nAlice,30\nBob,25",
+    "batch": 1
   },
   {
     "slug": "tsv-to-csv",
     "name": "TSV to CSV",
     "category": "converter",
-    "week": 10,
+    "week": 9,
     "shortDescription": "TSV to CSV — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free tsv to csv online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1332,13 +1388,14 @@
       "free tsv to csv"
     ],
     "ready": true,
-    "example": "name\tage\nAlice\t30"
+    "example": "name\tage\nAlice\t30",
+    "batch": 1
   },
   {
     "slug": "checklist-generator",
     "name": "Checklist Generator",
     "category": "text",
-    "week": 10,
+    "week": 9,
     "shortDescription": "Checklist Generator — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free checklist generator online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1347,13 +1404,14 @@
       "free checklist generator"
     ],
     "ready": true,
-    "example": "Review code\nRun tests\nDeploy"
+    "example": "Review code\nRun tests\nDeploy",
+    "batch": 1
   },
   {
     "slug": "simple-pomodoro-timer",
     "name": "Simple Pomodoro Timer",
     "category": "text",
-    "week": 10,
+    "week": 9,
     "shortDescription": "Simple Pomodoro Timer — enter or paste values to get an instant result directly in your browser.",
     "metaDescription": "Use this free simple pomodoro timer online. Paste text or enter values to calculate or generate results instantly, with no file upload or account.",
     "keywords": [
@@ -1362,13 +1420,14 @@
       "free simple pomodoro timer"
     ],
     "ready": true,
-    "example": "25"
+    "example": "25",
+    "batch": 1
   },
   {
     "slug": "speaking-time-calculator",
     "name": "Speaking Time Calculator",
     "category": "calculator",
-    "week": 10,
+    "week": 9,
     "shortDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate.",
     "metaDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1377,7 +1436,8 @@
       "free speaking time calculator"
     ],
     "example": "Hello everyone. Welcome to today's presentation. We will explore useful tools for everyday tasks.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "readability-score-checker",
@@ -1392,7 +1452,8 @@
       "free readability score checker"
     ],
     "example": "The cat sits on the mat. It likes the sun.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "syllable-counter",
@@ -1407,7 +1468,8 @@
       "free syllable counter"
     ],
     "example": "Beautiful elephants wander slowly.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "long-sentence-finder",
@@ -1422,7 +1484,8 @@
       "free long sentence finder"
     ],
     "example": "12\n---\nShort sentence. This is a much longer sentence that contains a great many words and needs a second look before publishing.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "repeated-word-detector",
@@ -1437,7 +1500,8 @@
       "free repeated word detector"
     ],
     "example": "This is is an example of the the problem.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "character-frequency-analyzer",
@@ -1452,7 +1516,8 @@
       "free character frequency analyzer"
     ],
     "example": "Banana banana!",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "word-length-distribution",
@@ -1467,7 +1532,8 @@
       "free word length distribution"
     ],
     "example": "A little bird sings a bright song.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "palindrome-checker",
@@ -1482,7 +1548,8 @@
       "free palindrome checker"
     ],
     "example": "A man, a plan, a canal: Panama!",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "n-gram-generator",
@@ -1497,13 +1564,14 @@
       "free n-gram generator"
     ],
     "example": "2\n---\nThe quick brown fox jumps over the lazy dog.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "stop-word-remover",
     "name": "Stop Word Remover",
     "category": "text",
-    "week": 11,
+    "week": 10,
     "shortDescription": "Remove common English stop words from a passage.",
     "metaDescription": "Remove common English stop words from a passage. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1512,13 +1580,14 @@
       "free stop word remover"
     ],
     "example": "This is a simple test of the tool and its results.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "invisible-unicode-detector",
     "name": "Invisible Unicode Detector",
     "category": "text",
-    "week": 11,
+    "week": 10,
     "shortDescription": "Locate zero-width, nonbreaking and control characters inside text.",
     "metaDescription": "Locate zero-width, nonbreaking and control characters inside text. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1527,7 +1596,8 @@
       "free invisible unicode detector"
     ],
     "example": "Hello​World again",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "zero-width-character-remover",
@@ -1542,7 +1612,8 @@
       "free zero-width character remover"
     ],
     "example": "Hello​World‍Again",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "unicode-code-point-inspector",
@@ -1557,7 +1628,8 @@
       "free unicode code point inspector"
     ],
     "example": "A 😊 é",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "diacritics-remover",
@@ -1572,7 +1644,8 @@
       "free diacritics remover"
     ],
     "example": "Crème brûlée déjà vu, São Paulo.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "emoji-remover",
@@ -1587,7 +1660,8 @@
       "free emoji remover"
     ],
     "example": "Hello 👋 world 🌍! Keep #tags and 123.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "non-ascii-character-remover",
@@ -1602,7 +1676,8 @@
       "free non-ascii character remover"
     ],
     "example": "Café, naïve, 東京, emoji 😊",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "text-truncator",
@@ -1617,7 +1692,8 @@
       "free text truncator"
     ],
     "example": "35\n---\nA long product description that must be shortened for a UI card while keeping a readable ending.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "word-wrap-formatter",
@@ -1632,7 +1708,8 @@
       "free word wrap formatter"
     ],
     "example": "24\n---\nThis is a sentence that should be wrapped into readable lines without cutting words in the middle.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "string-padder",
@@ -1647,13 +1724,14 @@
       "free string padder"
     ],
     "example": "12|right|.\n---\nToolsiva",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "line-length-checker",
     "name": "Line Length Checker",
     "category": "text",
-    "week": 12,
+    "week": 11,
     "shortDescription": "Report line lengths, longest line and line numbers.",
     "metaDescription": "Report line lengths, longest line and line numbers. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1662,13 +1740,14 @@
       "free line length checker"
     ],
     "example": "First line\nA much longer second line\nLast",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "phone-number-extractor",
     "name": "Phone Number Extractor",
     "category": "text",
-    "week": 12,
+    "week": 11,
     "shortDescription": "Extract phone-number-like strings from pasted text.",
     "metaDescription": "Extract phone-number-like strings from pasted text. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1677,7 +1756,8 @@
       "free phone number extractor"
     ],
     "example": "Call +1 (415) 555-0142 or +44 20 7946 0958 for assistance.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "ipv4-address-extractor",
@@ -1692,7 +1772,8 @@
       "free ipv4 address extractor"
     ],
     "example": "192.168.1.10 and 8.8.8.8 are valid; 999.2.3.4 is not.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "ipv6-address-extractor",
@@ -1707,7 +1788,8 @@
       "free ipv6 address extractor"
     ],
     "example": "2001:db8::1, ::1 and fe80::abcd are IPv6 addresses.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "hashtag-extractor",
@@ -1722,7 +1804,8 @@
       "free hashtag extractor"
     ],
     "example": "Share #Toolsiva #SEO2026 and #web_tools!",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "social-mention-extractor",
@@ -1737,7 +1820,8 @@
       "free social mention extractor"
     ],
     "example": "Thanks @alice and @bob for the update. Email admin@example.com.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "number-extractor",
@@ -1752,7 +1836,8 @@
       "free number extractor"
     ],
     "example": "Revenue: $1,250.50, change -3.2%, and quantity 40.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "date-pattern-extractor",
@@ -1767,7 +1852,8 @@
       "free date pattern extractor"
     ],
     "example": "The event is 2026-11-16; another is on 11/20/2026.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "quoted-text-extractor",
@@ -1782,7 +1868,8 @@
       "free quoted text extractor"
     ],
     "example": "He said \"hello world\" and she replied 'goodbye'.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "domain-name-extractor",
@@ -1797,13 +1884,14 @@
       "free domain name extractor"
     ],
     "example": "Visit https://example.org/path, www.toolsiva.com or email info@company.net.",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "email-domain-counter",
     "name": "Email Domain Counter",
     "category": "text",
-    "week": 13,
+    "week": 12,
     "shortDescription": "Count unique email addresses by their domain name.",
     "metaDescription": "Count unique email addresses by their domain name. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1812,13 +1900,14 @@
       "free email domain counter"
     ],
     "example": "alice@example.com bob@example.com user@toolsiva.com",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-key-extractor",
     "name": "JSON Key Extractor",
     "category": "developer",
-    "week": 13,
+    "week": 12,
     "shortDescription": "List property paths found in nested JSON objects and arrays.",
     "metaDescription": "List property paths found in nested JSON objects and arrays. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1827,7 +1916,8 @@
       "free json key extractor"
     ],
     "example": "{\"user\":{\"name\":\"Ada\",\"age\":32},\"active\":true}",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-flatten",
@@ -1842,7 +1932,8 @@
       "free json flatten"
     ],
     "example": "{\"user\":{\"name\":\"Ada\",\"age\":32},\"tags\":[\"a\",\"b\"]}",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-unflatten",
@@ -1857,7 +1948,8 @@
       "free json unflatten"
     ],
     "example": "{\"/user/name\":\"Ada\",\"/user/age\":32,\"/tags/0\":\"a\",\"/tags/1\":\"b\"}",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-array-sorter",
@@ -1872,7 +1964,8 @@
       "free json array sorter"
     ],
     "example": "score|desc\n---\n[{\"name\":\"Ada\",\"score\":8},{\"name\":\"Bob\",\"score\":12}]",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-array-filter",
@@ -1887,7 +1980,8 @@
       "free json array filter"
     ],
     "example": "role=admin\n---\n[{\"role\":\"admin\",\"name\":\"A\"},{\"role\":\"user\",\"name\":\"B\"}]",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-array-deduplicator",
@@ -1902,7 +1996,8 @@
       "free json array deduplicator"
     ],
     "example": "[{\"id\":1,\"name\":\"Ada\"},{\"id\":1,\"name\":\"Ada\"},{\"id\":2,\"name\":\"Bob\"}]",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-key-renamer",
@@ -1917,7 +2012,8 @@
       "free json key renamer"
     ],
     "example": "old|new\n---\n{\"old\":1,\"nested\":{\"old\":2}}",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-value-searcher",
@@ -1932,7 +2028,8 @@
       "free json value searcher"
     ],
     "example": "Ada\n---\n{\"name\":\"Ada\",\"contacts\":[{\"name\":\"Bob\"}]}",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "json-structure-summary",
@@ -1947,13 +2044,14 @@
       "free json structure summary"
     ],
     "example": "{\"team\":[{\"name\":\"Ada\"},{\"name\":\"Bob\"}],\"active\":true}",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "csv-column-statistics",
     "name": "CSV Column Statistics",
     "category": "developer",
-    "week": 14,
+    "week": 13,
     "shortDescription": "Calculate basic counts and numeric statistics for one pasted CSV column.",
     "metaDescription": "Calculate basic counts and numeric statistics for one pasted CSV column. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1962,13 +2060,14 @@
       "free csv column statistics"
     ],
     "example": "age\n---\nname,age\nAda,30\nBob,35\nCleo,25",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "css-specificity-calculator",
     "name": "CSS Specificity Calculator",
     "category": "developer",
-    "week": 14,
+    "week": 13,
     "shortDescription": "Estimate selector specificity as ID, class and type counts.",
     "metaDescription": "Estimate selector specificity as ID, class and type counts. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -1977,7 +2076,8 @@
       "free css specificity calculator"
     ],
     "example": "#app .card:hover > p",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "html-tag-counter",
@@ -1992,7 +2092,8 @@
       "free html tag counter"
     ],
     "example": "<div><p>Hello</p><p>World</p><br></div>",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "html-link-extractor",
@@ -2007,7 +2108,8 @@
       "free html link extractor"
     ],
     "example": "<a href=\"https://example.com\">Example</a><a href=\"/about\">About</a>",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "html-attribute-extractor",
@@ -2022,7 +2124,8 @@
       "free html attribute extractor"
     ],
     "example": "href\n---\n<a href=\"/about\" title=\"About\">About</a>",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "http-status-code-lookup",
@@ -2037,7 +2140,8 @@
       "free http status code lookup"
     ],
     "example": "404",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "mime-type-lookup",
@@ -2052,7 +2156,8 @@
       "free mime type lookup"
     ],
     "example": ".html",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "meta-robots-generator",
@@ -2067,7 +2172,8 @@
       "free meta robots generator"
     ],
     "example": "noindex,nofollow,noarchive",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "cache-control-header-generator",
@@ -2082,7 +2188,8 @@
       "free cache-control header generator"
     ],
     "example": "public, max-age=3600, immutable",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "url-query-parameter-builder",
@@ -2097,13 +2204,14 @@
       "free url query parameter builder"
     ],
     "example": "https://example.com/search\n---\nq=hello world\npage=2",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "ipv4-subnet-calculator",
     "name": "IPv4 Subnet Calculator",
     "category": "calculator",
-    "week": 15,
+    "week": 14,
     "shortDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR.",
     "metaDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR. Paste text or enter values online with no uploads or account.",
     "keywords": [
@@ -2112,13 +2220,14 @@
       "free ipv4 subnet calculator"
     ],
     "example": "192.168.1.10/24",
-    "ready": true
+    "ready": true,
+    "batch": 2
   },
   {
     "slug": "text-line-includes-filter",
     "name": "Text Line Includes Filter",
     "category": "text",
-    "week": 15,
+    "week": 14,
     "shortDescription": "Keep only lines containing a chosen keyword.",
     "metaDescription": "Keep only lines containing a chosen keyword. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2127,7 +2236,8 @@
       "free text line includes filter"
     ],
     "example": "error\n---\ninfo: started\nerror: bad value\nwarning: retry",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "text-line-excludes-filter",
@@ -2142,7 +2252,8 @@
       "free text line excludes filter"
     ],
     "example": "debug\n---\ndebug: cache hit\ninfo: started\nerror: failed",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "text-between-delimiters-extractor",
@@ -2157,7 +2268,8 @@
       "free text between delimiters extractor"
     ],
     "example": "[|]\n---\nHello [world] and [Toolsiva].",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "duplicate-sentence-remover",
@@ -2172,7 +2284,8 @@
       "free duplicate sentence remover"
     ],
     "example": "One sentence. Another sentence! One sentence. Final thought?",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "sentence-alphabetical-sorter",
@@ -2187,7 +2300,8 @@
       "free sentence alphabetical sorter"
     ],
     "example": "Zebra is here. Apple comes first. Mango grows.",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "markdown-link-extractor",
@@ -2202,7 +2316,8 @@
       "free markdown link extractor"
     ],
     "example": "See [Toolsiva](https://toolsiva.com) and [docs](/docs).",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "markdown-heading-outline-generator",
@@ -2217,7 +2332,8 @@
       "free markdown heading outline generator"
     ],
     "example": "# Main heading\n## Overview\n### Details\n## Summary",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "markdown-code-block-extractor",
@@ -2232,7 +2348,8 @@
       "free markdown code block extractor"
     ],
     "example": "Intro\n```js\nconst a = 1;\n```\n```json\n{\"ok\":true}\n```",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "markdown-checklist-progress-calculator",
@@ -2247,13 +2364,14 @@
       "free markdown checklist progress calculator"
     ],
     "example": "- [x] Build tool\n- [ ] Write docs\n- [X] Run tests",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "markdown-special-character-escaper",
     "name": "Markdown Special Character Escaper",
     "category": "text",
-    "week": 16,
+    "week": 15,
     "shortDescription": "Escape Markdown syntax characters for literal rendering.",
     "metaDescription": "Escape Markdown syntax characters for literal rendering. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2262,13 +2380,14 @@
       "free markdown special character escaper"
     ],
     "example": "*Bold* [link](https://example.com) # Header",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "csv-to-tsv",
     "name": "CSV to TSV",
     "category": "developer",
-    "week": 16,
+    "week": 15,
     "shortDescription": "Convert pasted CSV into tab-delimited text.",
     "metaDescription": "Convert pasted CSV into tab-delimited text. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2277,7 +2396,8 @@
       "free csv to tsv"
     ],
     "example": "name,score\nAlice,12\n\"Bob, Jr.\",15",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "csv-to-html-table",
@@ -2292,7 +2412,8 @@
       "free csv to html table"
     ],
     "example": "name,score\nAlice,12\nBob,15",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "html-table-to-csv",
@@ -2307,7 +2428,8 @@
       "free html table to csv"
     ],
     "example": "<table><tr><th>Name</th><th>Score</th></tr><tr><td>Ada</td><td>5</td></tr></table>",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "csv-header-renamer",
@@ -2322,7 +2444,8 @@
       "free csv header renamer"
     ],
     "example": "name|full_name\n---\nname,age\nAda,33\nBob,28",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "csv-column-reorder",
@@ -2337,7 +2460,8 @@
       "free csv column reorder"
     ],
     "example": "age,name\n---\nname,age\nAda,33\nBob,28",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "csv-row-numberer",
@@ -2352,7 +2476,8 @@
       "free csv row numberer"
     ],
     "example": "name,age\nAda,33\nBob,28",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "json-to-typescript-type",
@@ -2367,7 +2492,8 @@
       "free json to typescript type"
     ],
     "example": "{\"name\":\"Ada\",\"active\":true,\"score\":12,\"tags\":[\"a\",\"b\"]}",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "json-pointer-lookup",
@@ -2382,7 +2508,8 @@
       "free json pointer lookup"
     ],
     "example": "/user/name\n---\n{\"user\":{\"name\":\"Ada\"}}",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "json-deep-merge",
@@ -2397,13 +2524,14 @@
       "free json deep merge"
     ],
     "example": "{\"a\":1,\"nested\":{\"x\":2}}\n---\n{\"b\":3,\"nested\":{\"y\":4}}",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "json-to-url-query-parameters",
     "name": "JSON to URL Query Parameters",
     "category": "developer",
-    "week": 17,
+    "week": 16,
     "shortDescription": "Encode flat JSON properties as URL query parameters.",
     "metaDescription": "Encode flat JSON properties as URL query parameters. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2412,13 +2540,14 @@
       "free json to url query parameters"
     ],
     "example": "{\"q\":\"hello world\",\"page\":2,\"tags\":[\"a\",\"b\"]}",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "day-of-week-finder",
     "name": "Day of Week Finder",
     "category": "calculator",
-    "week": 17,
+    "week": 16,
     "shortDescription": "Find the weekday for a specified calendar date.",
     "metaDescription": "Find the weekday for a specified calendar date. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2427,7 +2556,8 @@
       "free day of week finder"
     ],
     "example": "2026-11-16",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "days-in-month-calculator",
@@ -2442,7 +2572,8 @@
       "free days in month calculator"
     ],
     "example": "2028-02",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "date-range-list-generator",
@@ -2457,7 +2588,8 @@
       "free date range list generator"
     ],
     "example": "2026-11-16, 2026-11-21",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "date-range-overlap-checker",
@@ -2472,7 +2604,8 @@
       "free date range overlap checker"
     ],
     "example": "2026-11-01, 2026-11-15\n---\n2026-11-10, 2026-11-20",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "next-weekday-calculator",
@@ -2487,7 +2620,8 @@
       "free next weekday calculator"
     ],
     "example": "2026-11-16, Friday",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "add-business-days-calculator",
@@ -2502,7 +2636,8 @@
       "free add business days calculator"
     ],
     "example": "2026-11-16, 10",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "quarter-of-year-finder",
@@ -2517,7 +2652,8 @@
       "free quarter of year finder"
     ],
     "example": "2026-11-16",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "month-end-date-calculator",
@@ -2532,7 +2668,8 @@
       "free month end date calculator"
     ],
     "example": "2028-02",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "time-slot-generator",
@@ -2547,13 +2684,14 @@
       "free time slot generator"
     ],
     "example": "09:00, 12:00, 30",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "time-interval-overlap-checker",
     "name": "Time Interval Overlap Checker",
     "category": "calculator",
-    "week": 18,
+    "week": 17,
     "shortDescription": "Check whether two time intervals overlap.",
     "metaDescription": "Check whether two time intervals overlap. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2562,13 +2700,14 @@
       "free time interval overlap checker"
     ],
     "example": "09:00, 10:30\n---\n10:00, 11:00",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "quartile-calculator",
     "name": "Quartile Calculator",
     "category": "calculator",
-    "week": 18,
+    "week": 17,
     "shortDescription": "Calculate median, lower quartile and upper quartile.",
     "metaDescription": "Calculate median, lower quartile and upper quartile. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2577,7 +2716,8 @@
       "free quartile calculator"
     ],
     "example": "1, 3, 5, 7, 9, 11, 13",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "percentile-calculator",
@@ -2592,7 +2732,8 @@
       "free percentile calculator"
     ],
     "example": "90\n---\n1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "variance-calculator",
@@ -2607,7 +2748,8 @@
       "free variance calculator"
     ],
     "example": "2, 4, 4, 4, 5, 5, 7, 9",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "z-score-calculator",
@@ -2622,7 +2764,8 @@
       "free z-score calculator"
     ],
     "example": "85, 70, 10",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "coefficient-of-variation-calculator",
@@ -2637,7 +2780,8 @@
       "free coefficient of variation calculator"
     ],
     "example": "10, 12, 13, 15",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "factorial-calculator",
@@ -2652,7 +2796,8 @@
       "free factorial calculator"
     ],
     "example": "12",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "permutation-calculator",
@@ -2667,7 +2812,8 @@
       "free permutation calculator"
     ],
     "example": "10, 3",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "combination-calculator",
@@ -2682,7 +2828,8 @@
       "free combination calculator"
     ],
     "example": "10, 3",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "quadratic-equation-solver",
@@ -2697,13 +2844,14 @@
       "free quadratic equation solver"
     ],
     "example": "1, -3, 2",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "pythagorean-theorem-calculator",
     "name": "Pythagorean Theorem Calculator",
     "category": "calculator",
-    "week": 19,
+    "week": 18,
     "shortDescription": "Calculate a right triangle hypotenuse from two legs.",
     "metaDescription": "Calculate a right triangle hypotenuse from two legs. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2712,13 +2860,14 @@
       "free pythagorean theorem calculator"
     ],
     "example": "3, 4",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "click-through-rate-calculator",
     "name": "Click Through Rate Calculator",
     "category": "calculator",
-    "week": 19,
+    "week": 18,
     "shortDescription": "Calculate clicks divided by impressions as a percentage.",
     "metaDescription": "Calculate clicks divided by impressions as a percentage. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2727,7 +2876,8 @@
       "free click through rate calculator"
     ],
     "example": "120, 10000",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "cost-per-click-calculator",
@@ -2742,7 +2892,8 @@
       "free cost per click calculator"
     ],
     "example": "150, 75",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "cost-per-mille-calculator",
@@ -2757,7 +2908,8 @@
       "free cost per mille calculator"
     ],
     "example": "50, 25000",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "return-on-ad-spend-calculator",
@@ -2772,7 +2924,8 @@
       "free return on ad spend calculator"
     ],
     "example": "1200, 300",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "customer-acquisition-cost-calculator",
@@ -2787,7 +2940,8 @@
       "free customer acquisition cost calculator"
     ],
     "example": "2500, 50",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "customer-lifetime-value-calculator",
@@ -2802,7 +2956,8 @@
       "free customer lifetime value calculator"
     ],
     "example": "40, 12, 24",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "churn-rate-calculator",
@@ -2817,7 +2972,8 @@
       "free churn rate calculator"
     ],
     "example": "150, 3000",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "landing-page-conversion-rate-calculator",
@@ -2832,7 +2988,8 @@
       "free landing page conversion rate calculator"
     ],
     "example": "35, 1400",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "http-header-analyzer",
@@ -2847,13 +3004,14 @@
       "free http header analyzer"
     ],
     "example": "HTTP/1.1 200 OK\nContent-Type: text/html\nCache-Control: public, max-age=3600\nX-Content-Type-Options: nosniff",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "dmarc-record-generator",
     "name": "DMARC Record Generator",
     "category": "developer",
-    "week": 20,
+    "week": 19,
     "shortDescription": "Generate a basic DMARC DNS TXT policy from typed options.",
     "metaDescription": "Generate a basic DMARC DNS TXT policy from typed options. Enter text or numbers to get results instantly with no file uploads.",
     "keywords": [
@@ -2862,13 +3020,14 @@
       "free dmarc record generator"
     ],
     "example": "reject,100,mailto:dmarc@example.com",
-    "ready": true
+    "ready": true,
+    "batch": 3
   },
   {
     "slug": "line-intersection-finder",
     "name": "Line Intersection Finder",
     "category": "text",
-    "week": 20,
+    "week": 19,
     "shortDescription": "Find lines shared by two pasted lists, preserving the left list's order.",
     "metaDescription": "Find lines shared by two pasted lists, preserving the left list's order. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -2877,7 +3036,8 @@
       "free line intersection finder"
     ],
     "example": "apple\nbanana\npear\n---\nbanana\nkiwi\npear",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "line-difference-finder",
@@ -2892,7 +3052,8 @@
       "free line difference finder"
     ],
     "example": "apple\nbanana\npear\n---\nbanana\nkiwi",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "line-frequency-counter",
@@ -2907,7 +3068,8 @@
       "free line frequency counter"
     ],
     "example": "apple\nbanana\napple\npear\napple",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "line-shuffler",
@@ -2922,7 +3084,8 @@
       "free line shuffler"
     ],
     "example": "alpha\nbeta\ngamma\ndelta",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "line-chunker",
@@ -2937,7 +3100,8 @@
       "free line chunker"
     ],
     "example": "2\n---\na\nb\nc\nd\ne",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "delimited-text-column-extractor",
@@ -2952,7 +3116,8 @@
       "free delimited text column extractor"
     ],
     "example": "2|,\n---\nname,age,city\nAda,30,London\nBob,29,Paris",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "keyword-context-snippet-extractor",
@@ -2967,7 +3132,8 @@
       "free keyword context snippet extractor"
     ],
     "example": "error|12\n---\nFirst line has an error and this text continues beyond the match.",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "word-position-finder",
@@ -2982,7 +3148,8 @@
       "free word position finder"
     ],
     "example": "hello\n---\nHello world hello again.",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "sentence-length-statistics",
@@ -2997,28 +3164,14 @@
       "free sentence length statistics"
     ],
     "example": "Hello world. This sentence contains five words exactly. Another one!",
-    "ready": true
-  },
-  {
-    "slug": "word-pair-frequency-counter",
-    "name": "Word Pair Frequency Counter",
-    "category": "text",
-    "week": 21,
-    "shortDescription": "Count the most common adjacent word pairs.",
-    "metaDescription": "Count the most common adjacent word pairs. Paste text or numbers in your browser with no uploads or registration.",
-    "keywords": [
-      "word pair frequency counter",
-      "online word pair frequency counter",
-      "free word pair frequency counter"
-    ],
-    "example": "red apple green apple red apple",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "surround-words-formatter",
     "name": "Surround Words Formatter",
     "category": "text",
-    "week": 21,
+    "week": 20,
     "shortDescription": "Add chosen text before and after every whitespace-delimited word.",
     "metaDescription": "Add chosen text before and after every whitespace-delimited word. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3027,28 +3180,14 @@
       "free surround words formatter"
     ],
     "example": "**|**\n---\nhello world again",
-    "ready": true
-  },
-  {
-    "slug": "reverse-word-order-tool",
-    "name": "Reverse Word Order Tool",
-    "category": "text",
-    "week": 21,
-    "shortDescription": "Reverse word order while keeping each word's characters intact.",
-    "metaDescription": "Reverse word order while keeping each word's characters intact. Paste text or numbers in your browser with no uploads or registration.",
-    "keywords": [
-      "reverse word order tool",
-      "online reverse word order tool",
-      "free reverse word order tool"
-    ],
-    "example": "The quick brown fox",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "reverse-sentence-order-tool",
     "name": "Reverse Sentence Order Tool",
     "category": "text",
-    "week": 21,
+    "week": 20,
     "shortDescription": "Reverse the order of sentences, without reversing their characters.",
     "metaDescription": "Reverse the order of sentences, without reversing their characters. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3057,7 +3196,8 @@
       "free reverse sentence order tool"
     ],
     "example": "First sentence. Second sentence! Third sentence?",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "paragraph-alphabetical-sorter",
@@ -3072,7 +3212,8 @@
       "free paragraph alphabetical sorter"
     ],
     "example": "Zebra paragraph.\n\nApple paragraph.\n\nMango paragraph.",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "duplicate-paragraph-remover",
@@ -3087,7 +3228,8 @@
       "free duplicate paragraph remover"
     ],
     "example": "Hello there.\n\nAnother paragraph.\n\nHello there.",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "sentence-numberer",
@@ -3102,22 +3244,8 @@
       "free sentence numberer"
     ],
     "example": "First sentence. Second sentence! Third sentence?",
-    "ready": true
-  },
-  {
-    "slug": "punctuation-frequency-counter",
-    "name": "Punctuation Frequency Counter",
-    "category": "text",
-    "week": 21,
-    "shortDescription": "Count common punctuation marks in pasted text.",
-    "metaDescription": "Count common punctuation marks in pasted text. Paste text or numbers in your browser with no uploads or registration.",
-    "keywords": [
-      "punctuation frequency counter",
-      "online punctuation frequency counter",
-      "free punctuation frequency counter"
-    ],
-    "example": "Really? Yes! Wait...",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "question-sentence-extractor",
@@ -3132,7 +3260,8 @@
       "free question sentence extractor"
     ],
     "example": "Is it ready? It is ready. What happens now?",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "exclamation-sentence-extractor",
@@ -3147,13 +3276,14 @@
       "free exclamation sentence extractor"
     ],
     "example": "Great! This is calm. Watch out!",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "bracket-content-extractor",
     "name": "Bracket Content Extractor",
     "category": "text",
-    "week": 22,
+    "week": 21,
     "shortDescription": "Extract text inside parentheses, brackets or braces.",
     "metaDescription": "Extract text inside parentheses, brackets or braces. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3162,13 +3292,14 @@
       "free bracket content extractor"
     ],
     "example": "Use (option A) and [option B] with {notes}.",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-heading-word-counter",
     "name": "HTML Heading Word Counter",
     "category": "developer",
-    "week": 22,
+    "week": 21,
     "shortDescription": "Count words within each heading tag in pasted HTML.",
     "metaDescription": "Count words within each heading tag in pasted HTML. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3177,13 +3308,14 @@
       "free html heading word counter"
     ],
     "example": "<h1>Main Page Title</h1><h2>Detailed Section Heading</h2>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-paragraph-element-counter",
     "name": "HTML Paragraph Element Counter",
     "category": "developer",
-    "week": 22,
+    "week": 21,
     "shortDescription": "Count HTML paragraph elements and words inside them.",
     "metaDescription": "Count HTML paragraph elements and words inside them. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3192,13 +3324,14 @@
       "free html paragraph element counter"
     ],
     "example": "<p>Hello world.</p><p>Another paragraph.</p>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-link-rel-analyzer",
     "name": "HTML Link Rel Analyzer",
     "category": "developer",
-    "week": 22,
+    "week": 21,
     "shortDescription": "Report rel tokens on links in pasted HTML.",
     "metaDescription": "Report rel tokens on links in pasted HTML. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3207,13 +3340,14 @@
       "free html link rel analyzer"
     ],
     "example": "<a href=\"/about\" rel=\"nofollow noreferrer\">About</a><a href=\"/docs\">Docs</a>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-meta-description-extractor",
     "name": "HTML Meta Description Extractor",
     "category": "developer",
-    "week": 22,
+    "week": 21,
     "shortDescription": "Extract meta description content from HTML.",
     "metaDescription": "Extract meta description content from HTML. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3222,7 +3356,8 @@
       "free html meta description extractor"
     ],
     "example": "<head><meta name=\"description\" content=\"A sample description\"></head>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-canonical-link-extractor",
@@ -3237,7 +3372,8 @@
       "free html canonical link extractor"
     ],
     "example": "<link rel=\"canonical\" href=\"https://example.com/page\">",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-language-attribute-checker",
@@ -3252,7 +3388,8 @@
       "free html language attribute checker"
     ],
     "example": "<html lang=\"en-US\"><body>Hello.</body></html>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-title-tag-extractor",
@@ -3267,7 +3404,8 @@
       "free html title tag extractor"
     ],
     "example": "<html><head><title>Example Page</title></head><body></body></html>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-form-field-extractor",
@@ -3282,7 +3420,8 @@
       "free html form field extractor"
     ],
     "example": "<form><input name=\"email\" type=\"email\"><select name=\"size\"></select></form>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-duplicate-id-detector",
@@ -3297,13 +3436,14 @@
       "free html duplicate id detector"
     ],
     "example": "<div id=\"card\"></div><p id=\"card\">Hello</p>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-label-association-checker",
     "name": "HTML Label Association Checker",
     "category": "developer",
-    "week": 23,
+    "week": 22,
     "shortDescription": "Find form controls missing an associated HTML label.",
     "metaDescription": "Find form controls missing an associated HTML label. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3312,13 +3452,14 @@
       "free html label association checker"
     ],
     "example": "<label for=\"mail\">Email</label><input id=\"mail\"><input id=\"missing\">",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-path-segment-extractor",
     "name": "URL Path Segment Extractor",
     "category": "developer",
-    "week": 23,
+    "week": 22,
     "shortDescription": "Extract decoded URL pathname segments into a readable list.",
     "metaDescription": "Extract decoded URL pathname segments into a readable list. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3327,13 +3468,14 @@
       "free url path segment extractor"
     ],
     "example": "https://example.com/shop/books/123?ref=home",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-query-parameter-extractor",
     "name": "URL Query Parameter Extractor",
     "category": "developer",
-    "week": 23,
+    "week": 22,
     "shortDescription": "Extract all values of a selected URL query parameter.",
     "metaDescription": "Extract all values of a selected URL query parameter. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3342,13 +3484,14 @@
       "free url query parameter extractor"
     ],
     "example": "q\n---\nhttps://example.com/?q=hello&q=world&page=2",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-query-parameter-remover",
     "name": "URL Query Parameter Remover",
     "category": "developer",
-    "week": 23,
+    "week": 22,
     "shortDescription": "Remove specified query parameters from a pasted URL.",
     "metaDescription": "Remove specified query parameters from a pasted URL. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3357,13 +3500,14 @@
       "free url query parameter remover"
     ],
     "example": "utm_source\n---\nhttps://example.com/?utm_source=x&page=3",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-query-parameter-sorter",
     "name": "URL Query Parameter Sorter",
     "category": "developer",
-    "week": 23,
+    "week": 22,
     "shortDescription": "Sort a URL query string by parameter key.",
     "metaDescription": "Sort a URL query string by parameter key. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3372,7 +3516,8 @@
       "free url query parameter sorter"
     ],
     "example": "https://example.com/?z=9&a=1&a=2",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "relative-url-resolver",
@@ -3387,7 +3532,8 @@
       "free relative url resolver"
     ],
     "example": "https://example.com/articles/one\n---\n../two?x=1",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-origin-comparator",
@@ -3402,7 +3548,8 @@
       "free url origin comparator"
     ],
     "example": "https://example.com/a\n---\nhttps://example.com:443/b",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-percent-encoding-inspector",
@@ -3417,7 +3564,8 @@
       "free url percent encoding inspector"
     ],
     "example": "https://example.com/?q=hello%20world&x=%E2%9C%93",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "url-trailing-slash-normalizer",
@@ -3432,7 +3580,8 @@
       "free url trailing slash normalizer"
     ],
     "example": "remove\n---\nhttps://example.com/blog/",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "cookie-header-parser",
@@ -3447,13 +3596,14 @@
       "free cookie header parser"
     ],
     "example": "session=abc123; theme=dark; visited=yes",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "set-cookie-attribute-inspector",
     "name": "Set-Cookie Attribute Inspector",
     "category": "developer",
-    "week": 24,
+    "week": 23,
     "shortDescription": "Inspect common attributes in a pasted Set-Cookie header.",
     "metaDescription": "Inspect common attributes in a pasted Set-Cookie header. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3462,13 +3612,14 @@
       "free set-cookie attribute inspector"
     ],
     "example": "session=abc; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=3600",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-array-field-extractor",
     "name": "JSON Array Field Extractor",
     "category": "developer",
-    "week": 24,
+    "week": 23,
     "shortDescription": "Extract values of one property from JSON array elements.",
     "metaDescription": "Extract values of one property from JSON array elements. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3477,13 +3628,14 @@
       "free json array field extractor"
     ],
     "example": "name\n---\n[{\"name\":\"Ada\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-array-group-counter",
     "name": "JSON Array Group Counter",
     "category": "developer",
-    "week": 24,
+    "week": 23,
     "shortDescription": "Count JSON array items grouped by one field.",
     "metaDescription": "Count JSON array items grouped by one field. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3492,13 +3644,14 @@
       "free json array group counter"
     ],
     "example": "role\n---\n[{\"role\":\"admin\"},{\"role\":\"user\"},{\"role\":\"admin\"}]",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-array-numeric-summary",
     "name": "JSON Array Numeric Summary",
     "category": "developer",
-    "week": 24,
+    "week": 23,
     "shortDescription": "Compute sum, mean, minimum and maximum for a JSON array field.",
     "metaDescription": "Compute sum, mean, minimum and maximum for a JSON array field. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3507,13 +3660,14 @@
       "free json array numeric summary"
     ],
     "example": "price\n---\n[{\"price\":10},{\"price\":20},{\"price\":30}]",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-lines-validator",
     "name": "JSON Lines Validator",
     "category": "developer",
-    "week": 24,
+    "week": 23,
     "shortDescription": "Validate each nonempty line as independent JSON.",
     "metaDescription": "Validate each nonempty line as independent JSON. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3522,7 +3676,8 @@
       "free json lines validator"
     ],
     "example": "{\"id\":1}\n{\"id\":2}\n{\"id\":3}",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-lines-to-json-array",
@@ -3537,7 +3692,8 @@
       "free json lines to json array"
     ],
     "example": "{\"id\":1}\n{\"id\":2}",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-array-to-json-lines",
@@ -3552,7 +3708,8 @@
       "free json array to json lines"
     ],
     "example": "[{\"id\":1},{\"id\":2}]",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-object-key-sorter",
@@ -3567,7 +3724,8 @@
       "free json object key sorter"
     ],
     "example": "{\"z\":3,\"a\":{\"y\":2,\"b\":1}}",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-string-value-trimmer",
@@ -3582,7 +3740,8 @@
       "free json string value trimmer"
     ],
     "example": "{\"name\":\" Ada \",\"tags\":[\" x \",\" y \"]}",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-array-slice",
@@ -3597,13 +3756,14 @@
       "free json array slice"
     ],
     "example": "1|3\n---\n[\"a\",\"b\",\"c\",\"d\"]",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "json-array-field-presence-checker",
     "name": "JSON Array Field Presence Checker",
     "category": "developer",
-    "week": 25,
+    "week": 24,
     "shortDescription": "Report how many JSON array objects have a selected key.",
     "metaDescription": "Report how many JSON array objects have a selected key. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3612,13 +3772,14 @@
       "free json array field presence checker"
     ],
     "example": "email\n---\n[{\"email\":\"a@example.com\"},{\"name\":\"B\"}]",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-header-validator",
     "name": "CSV Header Validator",
     "category": "developer",
-    "week": 25,
+    "week": 24,
     "shortDescription": "Identify blank or repeated CSV header names.",
     "metaDescription": "Identify blank or repeated CSV header names. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3627,13 +3788,14 @@
       "free csv header validator"
     ],
     "example": "name,email,email\nAda,a@example.com,b@example.com",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-empty-cell-reporter",
     "name": "CSV Empty Cell Reporter",
     "category": "developer",
-    "week": 25,
+    "week": 24,
     "shortDescription": "Count empty cells and their row and column positions.",
     "metaDescription": "Count empty cells and their row and column positions. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3642,13 +3804,14 @@
       "free csv empty cell reporter"
     ],
     "example": "name,age\nAda,\n,30\nBob,22",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-column-unique-values",
     "name": "CSV Column Unique Values",
     "category": "developer",
-    "week": 25,
+    "week": 24,
     "shortDescription": "List unique values from a selected CSV column.",
     "metaDescription": "List unique values from a selected CSV column. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3657,13 +3820,14 @@
       "free csv column unique values"
     ],
     "example": "city\n---\nname,city\nAda,London\nBob,Paris\nCleo,London",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-column-frequency-table",
     "name": "CSV Column Frequency Table",
     "category": "developer",
-    "week": 25,
+    "week": 24,
     "shortDescription": "Count occurrences of distinct values in one CSV column.",
     "metaDescription": "Count occurrences of distinct values in one CSV column. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3672,7 +3836,8 @@
       "free csv column frequency table"
     ],
     "example": "city\n---\nname,city\nAda,London\nBob,Paris\nCleo,London",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-column-masker",
@@ -3687,7 +3852,8 @@
       "free csv column masker"
     ],
     "example": "email\n---\nname,email\nAda,ada@example.com\nBob,bob@example.com",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-missing-value-filler",
@@ -3702,7 +3868,8 @@
       "free csv missing value filler"
     ],
     "example": "N/A\n---\nname,age\nAda,\nBob,28",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-transpose",
@@ -3717,7 +3884,8 @@
       "free csv transpose"
     ],
     "example": "name,age\nAda,30\nBob,25",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-column-selector",
@@ -3732,7 +3900,8 @@
       "free csv column selector"
     ],
     "example": "name,city\n---\nname,age,city\nAda,30,London\nBob,25,Paris",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-to-markdown-table",
@@ -3747,13 +3916,14 @@
       "free csv to markdown table"
     ],
     "example": "name,age\nAda,30\nBob,25",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-numeric-column-normalizer",
     "name": "CSV Numeric Column Normalizer",
     "category": "developer",
-    "week": 26,
+    "week": 25,
     "shortDescription": "Normalize numeric cells in one CSV column to a set decimal precision.",
     "metaDescription": "Normalize numeric cells in one CSV column to a set decimal precision. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3762,13 +3932,14 @@
       "free csv numeric column normalizer"
     ],
     "example": "price|2\n---\nitem,price\nA,1.2\nB,3.456",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "average-order-value-calculator",
     "name": "Average Order Value Calculator",
     "category": "calculator",
-    "week": 26,
+    "week": 25,
     "shortDescription": "Calculate total revenue divided by order count.",
     "metaDescription": "Calculate total revenue divided by order count. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3777,13 +3948,14 @@
       "free average order value calculator"
     ],
     "example": "5000, 125",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "revenue-per-visitor-calculator",
     "name": "Revenue Per Visitor Calculator",
     "category": "calculator",
-    "week": 26,
+    "week": 25,
     "shortDescription": "Calculate site revenue generated per visitor.",
     "metaDescription": "Calculate site revenue generated per visitor. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3792,13 +3964,14 @@
       "free revenue per visitor calculator"
     ],
     "example": "12000, 8000",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "gross-profit-calculator",
     "name": "Gross Profit Calculator",
     "category": "calculator",
-    "week": 26,
+    "week": 25,
     "shortDescription": "Calculate revenue minus cost of goods sold.",
     "metaDescription": "Calculate revenue minus cost of goods sold. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3807,13 +3980,14 @@
       "free gross profit calculator"
     ],
     "example": "12000, 7200",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "net-profit-calculator",
     "name": "Net Profit Calculator",
     "category": "calculator",
-    "week": 26,
+    "week": 25,
     "shortDescription": "Calculate revenue less costs and taxes.",
     "metaDescription": "Calculate revenue less costs and taxes. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3822,7 +3996,8 @@
       "free net profit calculator"
     ],
     "example": "12000, 9000, 1500",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "operating-margin-calculator",
@@ -3837,7 +4012,8 @@
       "free operating margin calculator"
     ],
     "example": "4000, 20000",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "inventory-turnover-calculator",
@@ -3852,7 +4028,8 @@
       "free inventory turnover calculator"
     ],
     "example": "25000, 5000",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "days-sales-outstanding-calculator",
@@ -3867,7 +4044,8 @@
       "free days sales outstanding calculator"
     ],
     "example": "15000, 120000, 365",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "email-open-rate-calculator",
@@ -3882,7 +4060,8 @@
       "free email open rate calculator"
     ],
     "example": "240, 2000",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "email-click-to-open-rate-calculator",
@@ -3897,13 +4076,14 @@
       "free email click-to-open rate calculator"
     ],
     "example": "60, 240",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "email-bounce-rate-calculator",
     "name": "Email Bounce Rate Calculator",
     "category": "calculator",
-    "week": 27,
+    "week": 26,
     "shortDescription": "Calculate bounced emails divided by attempted sends.",
     "metaDescription": "Calculate bounced emails divided by attempted sends. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3912,13 +4092,14 @@
       "free email bounce rate calculator"
     ],
     "example": "30, 2500",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "geometric-mean-calculator",
     "name": "Geometric Mean Calculator",
     "category": "calculator",
-    "week": 27,
+    "week": 26,
     "shortDescription": "Calculate the geometric mean of positive values.",
     "metaDescription": "Calculate the geometric mean of positive values. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3927,13 +4108,14 @@
       "free geometric mean calculator"
     ],
     "example": "2, 8, 4",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "harmonic-mean-calculator",
     "name": "Harmonic Mean Calculator",
     "category": "calculator",
-    "week": 27,
+    "week": 26,
     "shortDescription": "Calculate the harmonic mean of positive values.",
     "metaDescription": "Calculate the harmonic mean of positive values. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3942,13 +4124,14 @@
       "free harmonic mean calculator"
     ],
     "example": "2, 3, 6",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "data-range-calculator",
     "name": "Data Range Calculator",
     "category": "calculator",
-    "week": 27,
+    "week": 26,
     "shortDescription": "Find minimum, maximum and range of numeric data.",
     "metaDescription": "Find minimum, maximum and range of numeric data. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3957,13 +4140,14 @@
       "free data range calculator"
     ],
     "example": "2, 7, -1, 4, 10",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "iqr-outlier-detector",
     "name": "IQR Outlier Detector",
     "category": "calculator",
-    "week": 27,
+    "week": 26,
     "shortDescription": "Flag values outside Tukey's 1.5×IQR fences.",
     "metaDescription": "Flag values outside Tukey's 1.5×IQR fences. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -3972,7 +4156,8 @@
       "free iqr outlier detector"
     ],
     "example": "1, 2, 2, 3, 3, 4, 100",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "pearson-correlation-calculator",
@@ -3987,7 +4172,8 @@
       "free pearson correlation calculator"
     ],
     "example": "1,2; 2,4; 3,6; 4,8",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "covariance-calculator",
@@ -4002,7 +4188,8 @@
       "free covariance calculator"
     ],
     "example": "1,2; 2,4; 3,6; 4,8",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "linear-regression-calculator",
@@ -4017,7 +4204,8 @@
       "free linear regression calculator"
     ],
     "example": "1,2; 2,4; 3,6; 4,8",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "mean-absolute-deviation-calculator",
@@ -4032,7 +4220,8 @@
       "free mean absolute deviation calculator"
     ],
     "example": "1, 2, 3, 4, 5",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "root-mean-square-calculator",
@@ -4047,13 +4236,14 @@
       "free root mean square calculator"
     ],
     "example": "1, 2, 3, 4",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "number-sign-distribution-calculator",
     "name": "Number Sign Distribution Calculator",
     "category": "calculator",
-    "week": 28,
+    "week": 27,
     "shortDescription": "Count positive, negative and zero values in numeric data.",
     "metaDescription": "Count positive, negative and zero values in numeric data. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4062,13 +4252,14 @@
       "free number sign distribution calculator"
     ],
     "example": "-2, 0, 5, -1, 8, 0",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "ipv4-network-membership-checker",
     "name": "IPv4 Network Membership Checker",
     "category": "developer",
-    "week": 28,
+    "week": 27,
     "shortDescription": "Check whether a typed IPv4 address belongs to a subnet.",
     "metaDescription": "Check whether a typed IPv4 address belongs to a subnet. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4077,13 +4268,14 @@
       "free ipv4 network membership checker"
     ],
     "example": "192.168.1.10\n---\n192.168.1.0/24",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "http-basic-auth-decoder",
     "name": "HTTP Basic Auth Decoder",
     "category": "developer",
-    "week": 28,
+    "week": 27,
     "shortDescription": "Decode the username and password from a pasted Basic Authorization header.",
     "metaDescription": "Decode the username and password from a pasted Basic Authorization header. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4092,13 +4284,14 @@
       "free http basic auth decoder"
     ],
     "example": "Basic dXNlcjpwYXNz",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "accept-language-header-parser",
     "name": "Accept-Language Header Parser",
     "category": "developer",
-    "week": 28,
+    "week": 27,
     "shortDescription": "List language preferences and quality weights in an Accept-Language header.",
     "metaDescription": "List language preferences and quality weights in an Accept-Language header. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4107,13 +4300,14 @@
       "free accept-language header parser"
     ],
     "example": "en-US,en;q=0.8,fr;q=0.5",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "http-date-formatter",
     "name": "HTTP Date Formatter",
     "category": "developer",
-    "week": 28,
+    "week": 27,
     "shortDescription": "Format an ISO timestamp as an HTTP-date string in GMT.",
     "metaDescription": "Format an ISO timestamp as an HTTP-date string in GMT. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4122,7 +4316,8 @@
       "free http date formatter"
     ],
     "example": "2026-11-16T13:00:00Z",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "http-content-type-builder",
@@ -4137,7 +4332,8 @@
       "free http content-type builder"
     ],
     "example": "application/json|utf-8",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "http-retry-after-formatter",
@@ -4152,7 +4348,8 @@
       "free http retry-after formatter"
     ],
     "example": "120",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "user-agent-family-detector",
@@ -4167,7 +4364,8 @@
       "free user agent family detector"
     ],
     "example": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-doctype-inspector",
@@ -4182,7 +4380,8 @@
       "free html doctype inspector"
     ],
     "example": "<!DOCTYPE html><html><head></head><body>Hello</body></html>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-comment-extractor",
@@ -4197,13 +4396,14 @@
       "free html comment extractor"
     ],
     "example": "<div>Hello</div><!-- note one --><!-- note two -->",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "html-aria-attribute-audit",
     "name": "HTML ARIA Attribute Audit",
     "category": "developer",
-    "week": 29,
+    "week": 28,
     "shortDescription": "List ARIA and role attributes from pasted HTML.",
     "metaDescription": "List ARIA and role attributes from pasted HTML. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4212,13 +4412,14 @@
       "free html aria attribute audit"
     ],
     "example": "<button aria-label=\"Close\">x</button><div role=\"dialog\" aria-modal=\"true\"></div>",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "semantic-version-comparator",
     "name": "Semantic Version Comparator",
     "category": "developer",
-    "week": 29,
+    "week": 28,
     "shortDescription": "Compare two semantic version strings including prerelease tags.",
     "metaDescription": "Compare two semantic version strings including prerelease tags. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4227,13 +4428,14 @@
       "free semantic version comparator"
     ],
     "example": "1.2.3\n---\n1.3.0",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "semantic-version-bump-calculator",
     "name": "Semantic Version Bump Calculator",
     "category": "developer",
-    "week": 29,
+    "week": 28,
     "shortDescription": "Calculate the next patch, minor or major semantic version.",
     "metaDescription": "Calculate the next patch, minor or major semantic version. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4242,13 +4444,14 @@
       "free semantic version bump calculator"
     ],
     "example": "1.2.3|minor",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "semver-range-satisfaction-checker",
     "name": "SemVer Range Satisfaction Checker",
     "category": "developer",
-    "week": 29,
+    "week": 28,
     "shortDescription": "Check a version against a single simple SemVer comparator range.",
     "metaDescription": "Check a version against a single simple SemVer comparator range. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4257,13 +4460,14 @@
       "free semver range satisfaction checker"
     ],
     "example": "^1.2.0\n---\n1.8.3",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "git-commit-message-linter",
     "name": "Git Commit Message Linter",
     "category": "developer",
-    "week": 29,
+    "week": 28,
     "shortDescription": "Check whether a commit subject follows common Conventional Commit syntax.",
     "metaDescription": "Check whether a commit subject follows common Conventional Commit syntax. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4272,7 +4476,8 @@
       "free git commit message linter"
     ],
     "example": "feat(tools): add new input checker",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "environment-variable-name-validator",
@@ -4287,7 +4492,8 @@
       "free environment variable name validator"
     ],
     "example": "TOOLSIVA_API_KEY",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "dns-txt-record-parser",
@@ -4302,7 +4508,8 @@
       "free dns txt record parser"
     ],
     "example": "v=spf1 include:_spf.example.com -all",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "spf-mechanism-inspector",
@@ -4317,7 +4524,8 @@
       "free spf mechanism inspector"
     ],
     "example": "v=spf1 include:_spf.example.com ip4:192.0.2.0/24 -all",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "cors-header-analyzer",
@@ -4332,7 +4540,8 @@
       "free cors header analyzer"
     ],
     "example": "Access-Control-Allow-Origin: *\nAccess-Control-Allow-Credentials: true",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csp-directive-inspector",
@@ -4347,13 +4556,14 @@
       "free csp directive inspector"
     ],
     "example": "default-src 'self'; script-src 'self'; object-src 'none'",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "csv-formula-injection-detector",
     "name": "CSV Formula Injection Detector",
     "category": "developer",
-    "week": 30,
+    "week": 29,
     "shortDescription": "Flag CSV cells that may be interpreted as formulas in spreadsheets.",
     "metaDescription": "Flag CSV cells that may be interpreted as formulas in spreadsheets. Paste text or numbers in your browser with no uploads or registration.",
     "keywords": [
@@ -4362,13 +4572,14 @@
       "free csv formula injection detector"
     ],
     "example": "name,note\nAda,=SUM(1+1)\nBob,+CMD|test",
-    "ready": true
+    "ready": true,
+    "batch": 4
   },
   {
     "slug": "line-starts-with-filter",
     "name": "Line Starts With Filter",
     "category": "text",
-    "week": 30,
+    "week": 29,
     "shortDescription": "Show only pasted lines beginning with a chosen prefix.",
     "metaDescription": "Show only pasted lines beginning with a chosen prefix. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4377,13 +4588,14 @@
       "free line starts with filter"
     ],
     "example": "warn\n---\nwarning: disk\ninfo: ready\nwarn: retry",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "line-ends-with-filter",
     "name": "Line Ends With Filter",
     "category": "text",
-    "week": 30,
+    "week": 29,
     "shortDescription": "Keep lines ending with a selected suffix.",
     "metaDescription": "Keep lines ending with a selected suffix. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4392,13 +4604,14 @@
       "free line ends with filter"
     ],
     "example": ".com\n---\na.com\nb.net\nc.com",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "case-insensitive-line-deduplicator",
     "name": "Case Insensitive Line Deduplicator",
     "category": "text",
-    "week": 30,
+    "week": 29,
     "shortDescription": "Remove repeated lines without regard to letter case.",
     "metaDescription": "Remove repeated lines without regard to letter case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4407,13 +4620,14 @@
       "free case insensitive line deduplicator"
     ],
     "example": "Hello\nhello\nWORLD\nworld",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "indentation-depth-analyzer",
     "name": "Indentation Depth Analyzer",
     "category": "text",
-    "week": 30,
+    "week": 29,
     "shortDescription": "Measure leading spaces and tab indentation on each pasted line.",
     "metaDescription": "Measure leading spaces and tab indentation on each pasted line. See indentation levels directly in your browser without uploading files.",
     "keywords": [
@@ -4422,52 +4636,8 @@
       "indent level by line"
     ],
     "example": "  alpha\n    beta\n\tgamma",
-    "ready": true
-  },
-  {
-    "slug": "prefix-every-line",
-    "name": "Prefix Every Line",
-    "category": "text",
-    "week": 30,
-    "shortDescription": "Prepend a custom prefix to each input line.",
-    "metaDescription": "Prepend a custom prefix to each input line. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "prefix every line",
-      "online prefix every line",
-      "free prefix every line"
-    ],
-    "example": "ID-\n---\nalpha\nbeta\ngamma",
-    "ready": true
-  },
-  {
-    "slug": "suffix-every-line",
-    "name": "Suffix Every Line",
-    "category": "text",
-    "week": 30,
-    "shortDescription": "Append a custom suffix to every input line.",
-    "metaDescription": "Append a custom suffix to every input line. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "suffix every line",
-      "online suffix every line",
-      "free suffix every line"
-    ],
-    "example": ";\n---\nalpha\nbeta\ngamma",
-    "ready": true
-  },
-  {
-    "slug": "join-lines-with-delimiter",
-    "name": "Join Lines With Delimiter",
-    "category": "text",
-    "week": 30,
-    "shortDescription": "Join multiple text lines using your own separator.",
-    "metaDescription": "Join multiple text lines using your own separator. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "join lines with delimiter",
-      "online join lines with delimiter",
-      "free join lines with delimiter"
-    ],
-    "example": " | \n---\nalpha\nbeta\ngamma",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "insert-separator-between-lines",
@@ -4482,7 +4652,8 @@
       "free insert separator between lines"
     ],
     "example": "---\n---\nalpha\nbeta\ngamma",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "sort-lines-by-length",
@@ -4497,13 +4668,14 @@
       "free sort lines by length"
     ],
     "example": "elephant\ncat\ndog\nbutterfly",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "toggle-letter-case",
     "name": "Toggle Letter Case",
     "category": "text",
-    "week": 31,
+    "week": 30,
     "shortDescription": "Swap lowercase and uppercase letters in pasted text.",
     "metaDescription": "Swap lowercase and uppercase letters in pasted text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4512,28 +4684,14 @@
       "free toggle letter case"
     ],
     "example": "HeLLo WoRLD 123!",
-    "ready": true
-  },
-  {
-    "slug": "word-initials-extractor",
-    "name": "Word Initials Extractor",
-    "category": "text",
-    "week": 31,
-    "shortDescription": "Collect the first letter of every word.",
-    "metaDescription": "Collect the first letter of every word. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "word initials extractor",
-      "online word initials extractor",
-      "free word initials extractor"
-    ],
-    "example": "Toolsiva makes useful tools",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "acronym-builder",
     "name": "Acronym Builder",
     "category": "text",
-    "week": 31,
+    "week": 30,
     "shortDescription": "Build an uppercase acronym from the words in a phrase.",
     "metaDescription": "Build an uppercase acronym from the words in a phrase. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4542,13 +4700,14 @@
       "free acronym builder"
     ],
     "example": "Search Engine Optimization",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "camel-case-to-words",
     "name": "Camel Case To Words",
     "category": "text",
-    "week": 31,
+    "week": 30,
     "shortDescription": "Insert spaces at camelCase and PascalCase word boundaries.",
     "metaDescription": "Insert spaces at camelCase and PascalCase word boundaries. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4557,13 +4716,14 @@
       "free camel case to words"
     ],
     "example": "mySampleVariableName",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "snake-case-to-words",
     "name": "Snake Case To Words",
     "category": "text",
-    "week": 31,
+    "week": 30,
     "shortDescription": "Replace underscore word separators with spaces.",
     "metaDescription": "Replace underscore word separators with spaces. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4572,13 +4732,14 @@
       "free snake case to words"
     ],
     "example": "my_sample_variable_name",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "kebab-case-to-words",
     "name": "Kebab Case To Words",
     "category": "text",
-    "week": 31,
+    "week": 30,
     "shortDescription": "Replace hyphen word separators with spaces.",
     "metaDescription": "Replace hyphen word separators with spaces. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4587,73 +4748,14 @@
       "free kebab case to words"
     ],
     "example": "my-sample-variable-name",
-    "ready": true
-  },
-  {
-    "slug": "words-to-camel-case",
-    "name": "Words To Camel Case",
-    "category": "text",
-    "week": 31,
-    "shortDescription": "Turn typed words into lower camelCase.",
-    "metaDescription": "Turn typed words into lower camelCase. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "words to camel case",
-      "online words to camel case",
-      "free words to camel case"
-    ],
-    "example": "create user profile",
-    "ready": true
-  },
-  {
-    "slug": "words-to-snake-case",
-    "name": "Words To Snake Case",
-    "category": "text",
-    "week": 31,
-    "shortDescription": "Turn words into lowercase snake_case.",
-    "metaDescription": "Turn words into lowercase snake_case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "words to snake case",
-      "online words to snake case",
-      "free words to snake case"
-    ],
-    "example": "create user profile",
-    "ready": true
-  },
-  {
-    "slug": "words-to-kebab-case",
-    "name": "Words To Kebab Case",
-    "category": "text",
-    "week": 31,
-    "shortDescription": "Turn words into lowercase kebab-case.",
-    "metaDescription": "Turn words into lowercase kebab-case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "words to kebab case",
-      "online words to kebab case",
-      "free words to kebab case"
-    ],
-    "example": "create user profile",
-    "ready": true
-  },
-  {
-    "slug": "sentence-capitalization-formatter",
-    "name": "Sentence Capitalization Formatter",
-    "category": "text",
-    "week": 31,
-    "shortDescription": "Capitalize the start of each sentence and lowercase other text.",
-    "metaDescription": "Capitalize the start of each sentence and lowercase other text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "sentence capitalization formatter",
-      "online sentence capitalization formatter",
-      "free sentence capitalization formatter"
-    ],
-    "example": "hello world. this is toolsiva! can it help?",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "paragraph-numbering-tool",
     "name": "Paragraph Numbering Tool",
     "category": "text",
-    "week": 32,
+    "week": 30,
     "shortDescription": "Number paragraphs while retaining each paragraph's text.",
     "metaDescription": "Number paragraphs while retaining each paragraph's text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4662,13 +4764,14 @@
       "free paragraph numbering tool"
     ],
     "example": "First paragraph.\n\nSecond paragraph.\n\nThird paragraph.",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-table-column-counter",
     "name": "Markdown Table Column Counter",
     "category": "developer",
-    "week": 32,
+    "week": 30,
     "shortDescription": "Count columns in a pasted Markdown pipe table.",
     "metaDescription": "Count columns in a pasted Markdown pipe table. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4677,13 +4780,14 @@
       "free markdown table column counter"
     ],
     "example": "| Name | Age |\n| --- | --- |\n| Ada | 30 |",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-table-to-csv",
     "name": "Markdown Table To CSV",
     "category": "developer",
-    "week": 32,
+    "week": 30,
     "shortDescription": "Convert a basic Markdown pipe table to CSV text.",
     "metaDescription": "Convert a basic Markdown pipe table to CSV text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4692,13 +4796,14 @@
       "free markdown table to csv"
     ],
     "example": "| Name | Age |\n| --- | --- |\n| Ada | 30 |",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-blockquote-extractor",
     "name": "Markdown Blockquote Extractor",
     "category": "developer",
-    "week": 32,
+    "week": 31,
     "shortDescription": "Extract quoted Markdown lines without their leading marker.",
     "metaDescription": "Extract quoted Markdown lines without their leading marker. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4707,28 +4812,14 @@
       "free markdown blockquote extractor"
     ],
     "example": "> A highlighted thought.\n> Another line.\nNormal text.",
-    "ready": true
-  },
-  {
-    "slug": "markdown-link-text-extractor",
-    "name": "Markdown Link Text Extractor",
-    "category": "developer",
-    "week": 32,
-    "shortDescription": "Extract the displayed labels of inline Markdown links.",
-    "metaDescription": "Extract the displayed labels of inline Markdown links. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "markdown link text extractor",
-      "online markdown link text extractor",
-      "free markdown link text extractor"
-    ],
-    "example": "Read [Toolsiva](https://toolsiva.com) and [Docs](/docs).",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-reference-definition-extractor",
     "name": "Markdown Reference Definition Extractor",
     "category": "developer",
-    "week": 32,
+    "week": 31,
     "shortDescription": "Extract Markdown reference-link definitions.",
     "metaDescription": "Extract Markdown reference-link definitions. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4737,13 +4828,14 @@
       "free markdown reference definition extractor"
     ],
     "example": "[docs]: https://example.com/docs\n[home]: /home \"Homepage\"",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-frontmatter-key-extractor",
     "name": "Markdown Frontmatter Key Extractor",
     "category": "developer",
-    "week": 32,
+    "week": 31,
     "shortDescription": "List top-level keys in YAML-like Markdown frontmatter.",
     "metaDescription": "List top-level keys in YAML-like Markdown frontmatter. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4752,13 +4844,14 @@
       "free markdown frontmatter key extractor"
     ],
     "example": "---\ntitle: Test Page\nauthor: Ada\n---\n# Content",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-inline-code-extractor",
     "name": "Markdown Inline Code Extractor",
     "category": "developer",
-    "week": 32,
+    "week": 31,
     "shortDescription": "Extract single-backtick inline code fragments.",
     "metaDescription": "Extract single-backtick inline code fragments. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4767,13 +4860,14 @@
       "free markdown inline code extractor"
     ],
     "example": "Run `npm test` and check `node -v`.",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-horizontal-rule-counter",
     "name": "Markdown Horizontal Rule Counter",
     "category": "developer",
-    "week": 32,
+    "week": 31,
     "shortDescription": "Count Markdown horizontal-rule lines.",
     "metaDescription": "Count Markdown horizontal-rule lines. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4782,13 +4876,14 @@
       "free markdown horizontal rule counter"
     ],
     "example": "# Heading\n---\nContent\n***\nEnd",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-emphasis-marker-counter",
     "name": "Markdown Emphasis Marker Counter",
     "category": "developer",
-    "week": 32,
+    "week": 31,
     "shortDescription": "Count simple Markdown bold and italic delimiters.",
     "metaDescription": "Count simple Markdown bold and italic delimiters. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4797,13 +4892,14 @@
       "free markdown emphasis marker counter"
     ],
     "example": "**bold** and *italic* plus __bold__",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "markdown-footnote-reference-extractor",
     "name": "Markdown Footnote Reference Extractor",
     "category": "developer",
-    "week": 33,
+    "week": 31,
     "shortDescription": "List unique Markdown footnote reference identifiers.",
     "metaDescription": "List unique Markdown footnote reference identifiers. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4812,13 +4908,14 @@
       "free markdown footnote reference extractor"
     ],
     "example": "See this note[^one] and another[^two].",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "tsv-to-json",
     "name": "TSV To JSON",
     "category": "developer",
-    "week": 33,
+    "week": 31,
     "shortDescription": "Convert tab-delimited text with header to JSON objects.",
     "metaDescription": "Convert tab-delimited text with header to JSON objects. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4827,13 +4924,14 @@
       "free tsv to json"
     ],
     "example": "name\tage\nAda\t30\nBob\t25",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-to-tsv",
     "name": "JSON To TSV",
     "category": "developer",
-    "week": 33,
+    "week": 31,
     "shortDescription": "Convert an array of flat JSON objects to TSV text.",
     "metaDescription": "Convert an array of flat JSON objects to TSV text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4842,13 +4940,14 @@
       "free json to tsv"
     ],
     "example": "[{\"name\":\"Ada\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "pipe-separated-to-csv",
     "name": "Pipe Separated To CSV",
     "category": "developer",
-    "week": 33,
+    "week": 31,
     "shortDescription": "Convert simple pipe-delimited text into CSV.",
     "metaDescription": "Convert simple pipe-delimited text into CSV. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4857,13 +4956,14 @@
       "free pipe separated to csv"
     ],
     "example": "name|age\nAda|30\nBob|25",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "csv-to-pipe-separated",
     "name": "CSV To Pipe Separated",
     "category": "developer",
-    "week": 33,
+    "week": 32,
     "shortDescription": "Convert pasted CSV into pipe-delimited text.",
     "metaDescription": "Convert pasted CSV into pipe-delimited text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4872,13 +4972,14 @@
       "free csv to pipe separated"
     ],
     "example": "name,age\nAda,30\nBob,25",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "csv-row-count",
     "name": "CSV Row Count",
     "category": "developer",
-    "week": 33,
+    "week": 32,
     "shortDescription": "Count data rows in pasted CSV, excluding the header.",
     "metaDescription": "Count data rows in pasted CSV, excluding the header. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4887,13 +4988,14 @@
       "free csv row count"
     ],
     "example": "name,age\nAda,30\nBob,25",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "csv-cell-count",
     "name": "CSV Cell Count",
     "category": "developer",
-    "week": 33,
+    "week": 32,
     "shortDescription": "Count all CSV cells and nonempty data cells.",
     "metaDescription": "Count all CSV cells and nonempty data cells. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4902,13 +5004,14 @@
       "free csv cell count"
     ],
     "example": "a,b,c\n1,2,3\n4,5,6",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "csv-positive-number-row-filter",
     "name": "CSV Positive Number Row Filter",
     "category": "developer",
-    "week": 33,
+    "week": 32,
     "shortDescription": "Keep CSV rows with a positive number in a chosen column.",
     "metaDescription": "Keep CSV rows with a positive number in a chosen column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4917,13 +5020,14 @@
       "free csv positive number row filter"
     ],
     "example": "score\n---\nname,score\nA,-1\nB,5\nC,0",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "csv-column-sum",
     "name": "CSV Column Sum",
     "category": "developer",
-    "week": 33,
+    "week": 32,
     "shortDescription": "Sum finite numeric cells in one CSV column.",
     "metaDescription": "Sum finite numeric cells in one CSV column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4932,43 +5036,14 @@
       "free csv column sum"
     ],
     "example": "amount\n---\nname,amount\nA,10\nB,25\nC,5",
-    "ready": true
-  },
-  {
-    "slug": "csv-column-mean",
-    "name": "CSV Column Mean",
-    "category": "developer",
-    "week": 33,
-    "shortDescription": "Calculate the mean of numeric cells in a CSV column.",
-    "metaDescription": "Calculate the mean of numeric cells in a CSV column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "csv column mean",
-      "online csv column mean",
-      "free csv column mean"
-    ],
-    "example": "amount\n---\nname,amount\nA,10\nB,20\nC,30",
-    "ready": true
-  },
-  {
-    "slug": "csv-column-minimum-maximum",
-    "name": "CSV Column Minimum Maximum",
-    "category": "developer",
-    "week": 34,
-    "shortDescription": "Find minimum and maximum numeric values in one CSV column.",
-    "metaDescription": "Find minimum and maximum numeric values in one CSV column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "csv column minimum maximum",
-      "online csv column minimum maximum",
-      "free csv column minimum maximum"
-    ],
-    "example": "price\n---\nname,price\nA,12\nB,8\nC,22",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-boolean-path-finder",
     "name": "JSON Boolean Path Finder",
     "category": "developer",
-    "week": 34,
+    "week": 32,
     "shortDescription": "List JSON paths holding true or false values.",
     "metaDescription": "List JSON paths holding true or false values. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4977,13 +5052,14 @@
       "free json boolean path finder"
     ],
     "example": "{\"active\":true,\"user\":{\"verified\":false}}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-null-path-finder",
     "name": "JSON Null Path Finder",
     "category": "developer",
-    "week": 34,
+    "week": 32,
     "shortDescription": "List paths whose values are JSON null.",
     "metaDescription": "List paths whose values are JSON null. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -4992,13 +5068,14 @@
       "free json null path finder"
     ],
     "example": "{\"a\":null,\"nested\":{\"b\":null}}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-primitive-type-map",
     "name": "JSON Primitive Type Map",
     "category": "developer",
-    "week": 34,
+    "week": 32,
     "shortDescription": "Display JSON primitive types for every leaf path.",
     "metaDescription": "Display JSON primitive types for every leaf path. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5007,13 +5084,14 @@
       "free json primitive type map"
     ],
     "example": "{\"name\":\"Ada\",\"age\":30,\"active\":true}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-array-value-index-finder",
     "name": "JSON Array Value Index Finder",
     "category": "developer",
-    "week": 34,
+    "week": 32,
     "shortDescription": "Find positions of matching primitive values in a JSON array.",
     "metaDescription": "Find positions of matching primitive values in a JSON array. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5022,13 +5100,14 @@
       "free json array value index finder"
     ],
     "example": "Ada\n---\n[\"Bob\",\"Ada\",\"Ada\"]",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-array-reverser",
     "name": "JSON Array Reverser",
     "category": "developer",
-    "week": 34,
+    "week": 32,
     "shortDescription": "Reverse the element order of a JSON array.",
     "metaDescription": "Reverse the element order of a JSON array. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5037,13 +5116,14 @@
       "free json array reverser"
     ],
     "example": "[1,2,3,4]",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-array-rotator",
     "name": "JSON Array Rotator",
     "category": "developer",
-    "week": 34,
+    "week": 33,
     "shortDescription": "Rotate array entries to the right by N positions.",
     "metaDescription": "Rotate array entries to the right by N positions. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5052,13 +5132,14 @@
       "free json array rotator"
     ],
     "example": "2\n---\n[1,2,3,4,5]",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-array-chunker",
     "name": "JSON Array Chunker",
     "category": "developer",
-    "week": 34,
+    "week": 33,
     "shortDescription": "Split JSON array elements into subarrays of chosen size.",
     "metaDescription": "Split JSON array elements into subarrays of chosen size. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5067,13 +5148,14 @@
       "free json array chunker"
     ],
     "example": "2\n---\n[1,2,3,4,5]",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-array-length-analyzer",
     "name": "JSON Array Length Analyzer",
     "category": "developer",
-    "week": 34,
+    "week": 33,
     "shortDescription": "Show lengths of the root and its directly nested arrays.",
     "metaDescription": "Show lengths of the root and its directly nested arrays. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5082,13 +5164,14 @@
       "free json array length analyzer"
     ],
     "example": "[[1,2],[3],[],[4,5,6]]",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-number-rounding-tool",
     "name": "JSON Number Rounding Tool",
     "category": "developer",
-    "week": 34,
+    "week": 33,
     "shortDescription": "Round numeric JSON values to a chosen number of decimal places.",
     "metaDescription": "Round numeric JSON values to a chosen number of decimal places. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5097,13 +5180,14 @@
       "free json number rounding tool"
     ],
     "example": "2\n---\n{\"rate\":1.2345,\"items\":[3.999,2.222]}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "json-null-property-remover",
     "name": "JSON Null Property Remover",
     "category": "developer",
-    "week": 35,
+    "week": 33,
     "shortDescription": "Remove object properties whose values are null.",
     "metaDescription": "Remove object properties whose values are null. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5112,13 +5196,14 @@
       "free json null property remover"
     ],
     "example": "{\"a\":null,\"b\":2,\"c\":{\"d\":null,\"e\":1}}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "iso-week-date-formatter",
     "name": "ISO Week Date Formatter",
     "category": "calculator",
-    "week": 35,
+    "week": 33,
     "shortDescription": "Convert a date to ISO week-year, week number, and weekday.",
     "metaDescription": "Convert a date to ISO week-year, week number, and weekday. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5127,13 +5212,14 @@
       "free iso week date formatter"
     ],
     "example": "2026-11-16",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "unix-day-number-calculator",
     "name": "Unix Day Number Calculator",
     "category": "calculator",
-    "week": 35,
+    "week": 33,
     "shortDescription": "Calculate whole UTC days since 1970-01-01.",
     "metaDescription": "Calculate whole UTC days since 1970-01-01. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5142,13 +5228,14 @@
       "free unix day number calculator"
     ],
     "example": "2026-11-16",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "unix-day-number-to-date",
     "name": "Unix Day Number To Date",
     "category": "calculator",
-    "week": 35,
+    "week": 33,
     "shortDescription": "Convert signed Unix day number back to a UTC calendar date.",
     "metaDescription": "Convert signed Unix day number back to a UTC calendar date. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5157,13 +5244,14 @@
       "free unix day number to date"
     ],
     "example": "20773",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "date-offset-sequence-generator",
     "name": "Date Offset Sequence Generator",
     "category": "calculator",
-    "week": 35,
+    "week": 33,
     "shortDescription": "List dates at fixed intervals starting from a given day.",
     "metaDescription": "List dates at fixed intervals starting from a given day. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5172,13 +5260,14 @@
       "free date offset sequence generator"
     ],
     "example": "2026-11-16|3|7",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "full-months-between-dates",
     "name": "Full Months Between Dates",
     "category": "calculator",
-    "week": 35,
+    "week": 33,
     "shortDescription": "Count completed whole calendar months between two dates.",
     "metaDescription": "Count completed whole calendar months between two dates. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5187,13 +5276,14 @@
       "free full months between dates"
     ],
     "example": "2025-01-15|2026-04-15",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "calendar-quarter-date-range",
     "name": "Calendar Quarter Date Range",
     "category": "calculator",
-    "week": 35,
+    "week": 34,
     "shortDescription": "Show the first and last dates of a calendar quarter.",
     "metaDescription": "Show the first and last dates of a calendar quarter. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5202,13 +5292,14 @@
       "free calendar quarter date range"
     ],
     "example": "2026-Q4",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "weekend-days-between-dates",
     "name": "Weekend Days Between Dates",
     "category": "calculator",
-    "week": 35,
+    "week": 34,
     "shortDescription": "Count Saturday and Sunday dates in an inclusive date range.",
     "metaDescription": "Count Saturday and Sunday dates in an inclusive date range. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5217,13 +5308,14 @@
       "free weekend days between dates"
     ],
     "example": "2026-11-16|2026-11-30",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "weekday-occurrence-counter",
     "name": "Weekday Occurrence Counter",
     "category": "calculator",
-    "week": 35,
+    "week": 34,
     "shortDescription": "Count how often a named weekday occurs between two dates.",
     "metaDescription": "Count how often a named weekday occurs between two dates. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5232,13 +5324,14 @@
       "free weekday occurrence counter"
     ],
     "example": "2026-11-01|2026-11-30|Monday",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "first-weekday-of-month",
     "name": "First Weekday Of Month",
     "category": "calculator",
-    "week": 35,
+    "week": 34,
     "shortDescription": "Find the first chosen weekday in a month.",
     "metaDescription": "Find the first chosen weekday in a month. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5247,13 +5340,14 @@
       "free first weekday of month"
     ],
     "example": "2026-11|Monday",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "last-weekday-of-month",
     "name": "Last Weekday Of Month",
     "category": "calculator",
-    "week": 36,
+    "week": 34,
     "shortDescription": "Find the last occurrence of a weekday within a month.",
     "metaDescription": "Find the last occurrence of a weekday within a month. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5262,13 +5356,14 @@
       "free last weekday of month"
     ],
     "example": "2026-11|Friday",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "arithmetic-series-sum",
     "name": "Arithmetic Series Sum",
     "category": "calculator",
-    "week": 36,
+    "week": 34,
     "shortDescription": "Sum N terms of an arithmetic progression.",
     "metaDescription": "Sum N terms of an arithmetic progression. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5277,13 +5372,14 @@
       "free arithmetic series sum"
     ],
     "example": "2|3|10",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "geometric-series-sum",
     "name": "Geometric Series Sum",
     "category": "calculator",
-    "week": 36,
+    "week": 34,
     "shortDescription": "Sum N terms of a geometric progression.",
     "metaDescription": "Sum N terms of a geometric progression. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5292,13 +5388,14 @@
       "free geometric series sum"
     ],
     "example": "2|3|5",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "fibonacci-number-finder",
     "name": "Fibonacci Number Finder",
     "category": "calculator",
-    "week": 36,
+    "week": 34,
     "shortDescription": "Calculate the Nth Fibonacci number exactly with BigInt.",
     "metaDescription": "Calculate the Nth Fibonacci number exactly with BigInt. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5307,13 +5404,14 @@
       "free fibonacci number finder"
     ],
     "example": "30",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "fibonacci-sequence-generator",
     "name": "Fibonacci Sequence Generator",
     "category": "calculator",
-    "week": 36,
+    "week": 34,
     "shortDescription": "Generate the first N Fibonacci numbers.",
     "metaDescription": "Generate the first N Fibonacci numbers. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5322,13 +5420,14 @@
       "free fibonacci sequence generator"
     ],
     "example": "12",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "triangle-area-from-base-height",
     "name": "Triangle Area From Base Height",
     "category": "calculator",
-    "week": 36,
+    "week": 34,
     "shortDescription": "Calculate area from a triangle's base and perpendicular height.",
     "metaDescription": "Calculate area from a triangle's base and perpendicular height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5337,13 +5436,14 @@
       "free triangle area from base height"
     ],
     "example": "10|6",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "circle-area-from-radius",
     "name": "Circle Area From Radius",
     "category": "calculator",
-    "week": 36,
+    "week": 35,
     "shortDescription": "Calculate the area of a circle from radius.",
     "metaDescription": "Calculate the area of a circle from radius. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5352,13 +5452,14 @@
       "free circle area from radius"
     ],
     "example": "5",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "circle-circumference-from-radius",
     "name": "Circle Circumference From Radius",
     "category": "calculator",
-    "week": 36,
+    "week": 35,
     "shortDescription": "Calculate circumference from a circle's radius.",
     "metaDescription": "Calculate circumference from a circle's radius. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5367,13 +5468,14 @@
       "free circle circumference from radius"
     ],
     "example": "5",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "rectangle-perimeter-calculator",
     "name": "Rectangle Perimeter Calculator",
     "category": "calculator",
-    "week": 36,
+    "week": 35,
     "shortDescription": "Calculate a rectangle's perimeter from width and height.",
     "metaDescription": "Calculate a rectangle's perimeter from width and height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5382,13 +5484,14 @@
       "free rectangle perimeter calculator"
     ],
     "example": "8|3",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "trapezoid-area-calculator",
     "name": "Trapezoid Area Calculator",
     "category": "calculator",
-    "week": 36,
+    "week": 35,
     "shortDescription": "Calculate trapezoid area from two parallel sides and height.",
     "metaDescription": "Calculate trapezoid area from two parallel sides and height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5397,13 +5500,14 @@
       "free trapezoid area calculator"
     ],
     "example": "8|5|4",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "cylinder-volume-calculator",
     "name": "Cylinder Volume Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 35,
     "shortDescription": "Calculate volume of a cylinder from radius and height.",
     "metaDescription": "Calculate volume of a cylinder from radius and height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5412,13 +5516,14 @@
       "free cylinder volume calculator"
     ],
     "example": "3|10",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "net-profit-margin-calculator",
     "name": "Net Profit Margin Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 35,
     "shortDescription": "Compute after-tax net profit as a percentage of revenue.",
     "metaDescription": "Compute after-tax net profit as a percentage of revenue. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5427,13 +5532,14 @@
       "free net profit margin calculator"
     ],
     "example": "1500|12000",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "contribution-margin-calculator",
     "name": "Contribution Margin Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 35,
     "shortDescription": "Compute unit selling price minus unit variable cost.",
     "metaDescription": "Compute unit selling price minus unit variable cost. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5442,13 +5548,14 @@
       "free contribution margin calculator"
     ],
     "example": "120|75",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "contribution-margin-ratio-calculator",
     "name": "Contribution Margin Ratio Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 35,
     "shortDescription": "Calculate contribution margin as a percentage of selling price.",
     "metaDescription": "Calculate contribution margin as a percentage of selling price. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5457,13 +5564,14 @@
       "free contribution margin ratio calculator"
     ],
     "example": "120|75",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "investment-payback-period-calculator",
     "name": "Investment Payback Period Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 35,
     "shortDescription": "Estimate years to recover an initial investment from annual cash inflows.",
     "metaDescription": "Estimate years to recover an initial investment from annual cash inflows. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5472,13 +5580,14 @@
       "free investment payback period calculator"
     ],
     "example": "10000|2500",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "customer-retention-rate-calculator",
     "name": "Customer Retention Rate Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 35,
     "shortDescription": "Compute retention given ending customers, starting customers and new customers.",
     "metaDescription": "Compute retention given ending customers, starting customers and new customers. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5487,13 +5596,14 @@
       "free customer retention rate calculator"
     ],
     "example": "900|1000|100",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "repeat-purchase-rate-calculator",
     "name": "Repeat Purchase Rate Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 36,
     "shortDescription": "Calculate the share of customers who purchased more than once.",
     "metaDescription": "Calculate the share of customers who purchased more than once. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5502,13 +5612,14 @@
       "free repeat purchase rate calculator"
     ],
     "example": "300|1200",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "cart-abandonment-rate-calculator",
     "name": "Cart Abandonment Rate Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 36,
     "shortDescription": "Estimate abandoned carts from initiated checkouts and completed orders.",
     "metaDescription": "Estimate abandoned carts from initiated checkouts and completed orders. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5517,13 +5628,14 @@
       "free cart abandonment rate calculator"
     ],
     "example": "700|1000",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "session-bounce-rate-calculator",
     "name": "Session Bounce Rate Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 36,
     "shortDescription": "Calculate single-page or nonengaged sessions as a percentage of all sessions.",
     "metaDescription": "Calculate single-page or nonengaged sessions as a percentage of all sessions. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5532,13 +5644,14 @@
       "free session bounce rate calculator"
     ],
     "example": "240|1000",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "monthly-recurring-revenue-calculator",
     "name": "Monthly Recurring Revenue Calculator",
     "category": "calculator",
-    "week": 37,
+    "week": 36,
     "shortDescription": "Calculate MRR from a customer count and monthly subscription prices.",
     "metaDescription": "Calculate MRR from a customer count and monthly subscription prices. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5547,13 +5660,14 @@
       "free monthly recurring revenue calculator"
     ],
     "example": "100|20|35|15",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "annual-recurring-revenue-calculator",
     "name": "Annual Recurring Revenue Calculator",
     "category": "calculator",
-    "week": 38,
+    "week": 36,
     "shortDescription": "Calculate annualized recurring revenue from monthly recurring revenue.",
     "metaDescription": "Calculate annualized recurring revenue from monthly recurring revenue. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5562,13 +5676,14 @@
       "free annual recurring revenue calculator"
     ],
     "example": "4500",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "css-class-name-extractor",
     "name": "CSS Class Name Extractor",
     "category": "developer",
-    "week": 38,
+    "week": 36,
     "shortDescription": "List unique CSS class selector names from pasted CSS.",
     "metaDescription": "List unique CSS class selector names from pasted CSS. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5577,13 +5692,14 @@
       "free css class name extractor"
     ],
     "example": ".card{color:red}.card.active{display:block}.toolbar{gap:4px}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "css-selector-rule-counter",
     "name": "CSS Selector Rule Counter",
     "category": "developer",
-    "week": 38,
+    "week": 36,
     "shortDescription": "Count simple CSS selector rules and comma-separated selectors.",
     "metaDescription": "Count simple CSS selector rules and comma-separated selectors. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5592,13 +5708,14 @@
       "free css selector rule counter"
     ],
     "example": "h1,p{color:red}.box:hover{display:block}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "css-declaration-counter",
     "name": "CSS Declaration Counter",
     "category": "developer",
-    "week": 38,
+    "week": 36,
     "shortDescription": "Count declaration-like property:value pairs in CSS blocks.",
     "metaDescription": "Count declaration-like property:value pairs in CSS blocks. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5607,13 +5724,14 @@
       "free css declaration counter"
     ],
     "example": "a{color:red;background:blue}p{margin:0}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "css-custom-property-extractor",
     "name": "CSS Custom Property Extractor",
     "category": "developer",
-    "week": 38,
+    "week": 36,
     "shortDescription": "List CSS custom property names and sample values.",
     "metaDescription": "List CSS custom property names and sample values. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5622,13 +5740,14 @@
       "free css custom property extractor"
     ],
     "example": ":root{--brand-color:#333;--gap:8px}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "css-unit-frequency-counter",
     "name": "CSS Unit Frequency Counter",
     "category": "developer",
-    "week": 38,
+    "week": 36,
     "shortDescription": "Count occurrences of common CSS units.",
     "metaDescription": "Count occurrences of common CSS units. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5637,13 +5756,14 @@
       "free css unit frequency counter"
     ],
     "example": "a{margin:10px;padding:2rem;width:80%;opacity:.8}",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "html-data-attribute-extractor",
     "name": "HTML Data Attribute Extractor",
     "category": "developer",
-    "week": 38,
+    "week": 37,
     "shortDescription": "List data-* attributes from pasted HTML.",
     "metaDescription": "List data-* attributes from pasted HTML. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5652,13 +5772,14 @@
       "free html data attribute extractor"
     ],
     "example": "<div data-id=\"42\" data-role=\"card\">Hello</div>",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "html-external-link-extractor",
     "name": "HTML External Link Extractor",
     "category": "developer",
-    "week": 38,
+    "week": 37,
     "shortDescription": "List anchor URLs whose origin differs from a supplied base URL.",
     "metaDescription": "List anchor URLs whose origin differs from a supplied base URL. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5667,13 +5788,14 @@
       "free html external link extractor"
     ],
     "example": "https://example.com\n---\n<a href=\"/about\">Internal</a><a href=\"https://other.com\">External</a>",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "html-target-blank-link-checker",
     "name": "HTML Target Blank Link Checker",
     "category": "developer",
-    "week": 38,
+    "week": 37,
     "shortDescription": "List links opening new tabs and their rel protections.",
     "metaDescription": "List links opening new tabs and their rel protections. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5682,13 +5804,14 @@
       "free html target blank link checker"
     ],
     "example": "<a href=\"https://example.com\" target=\"_blank\">Open</a>",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "html-button-type-checker",
     "name": "HTML Button Type Checker",
     "category": "developer",
-    "week": 38,
+    "week": 37,
     "shortDescription": "Identify buttons without explicit type attributes.",
     "metaDescription": "Identify buttons without explicit type attributes. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5697,13 +5820,14 @@
       "free html button type checker"
     ],
     "example": "<form><button>Submit</button><button type=\"button\">Cancel</button></form>",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "html-empty-anchor-detector",
     "name": "HTML Empty Anchor Detector",
     "category": "developer",
-    "week": 39,
+    "week": 37,
     "shortDescription": "Find anchors with no readable label text or aria-label.",
     "metaDescription": "Find anchors with no readable label text or aria-label. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5712,13 +5836,14 @@
       "free html empty anchor detector"
     ],
     "example": "<a href=\"/one\"></a><a href=\"/two\">Two</a>",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "url-scheme-classifier",
     "name": "URL Scheme Classifier",
     "category": "developer",
-    "week": 39,
+    "week": 37,
     "shortDescription": "Classify the scheme of a pasted URL without opening it.",
     "metaDescription": "Classify the scheme of a pasted URL without opening it. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5727,13 +5852,14 @@
       "free url scheme classifier"
     ],
     "example": "https://example.com/path",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "jwt-expiration-date-inspector",
     "name": "JWT Expiration Date Inspector",
     "category": "developer",
-    "week": 39,
+    "week": 37,
     "shortDescription": "Decode the exp claim from a JWT payload and present UTC time.",
     "metaDescription": "Decode the exp claim from a JWT payload and present UTC time. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5742,13 +5868,14 @@
       "free jwt expiration date inspector"
     ],
     "example": "eyJhbGciOiJub25lIn0.eyJleHAiOjE4MDAwMDAwMDB9.",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "bearer-authorization-header-cleaner",
     "name": "Bearer Authorization Header Cleaner",
     "category": "developer",
-    "week": 39,
+    "week": 37,
     "shortDescription": "Extract the token text from a pasted Bearer Authorization value.",
     "metaDescription": "Extract the token text from a pasted Bearer Authorization value. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5757,13 +5884,14 @@
       "free bearer authorization header cleaner"
     ],
     "example": "Bearer test-token-123",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "http-header-alphabetical-sorter",
     "name": "HTTP Header Alphabetical Sorter",
     "category": "developer",
-    "week": 39,
+    "week": 37,
     "shortDescription": "Sort pasted HTTP header lines by field name.",
     "metaDescription": "Sort pasted HTTP header lines by field name. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5772,28 +5900,14 @@
       "free http header alphabetical sorter"
     ],
     "example": "X-Test: 2\nAccept: text/html\nCache-Control: max-age=60",
-    "ready": true
-  },
-  {
-    "slug": "http-duplicate-header-detector",
-    "name": "HTTP Duplicate Header Detector",
-    "category": "developer",
-    "week": 39,
-    "shortDescription": "Identify repeated HTTP header names ignoring letter case.",
-    "metaDescription": "Identify repeated HTTP header names ignoring letter case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "http duplicate header detector",
-      "online http duplicate header detector",
-      "free http duplicate header detector"
-    ],
-    "example": "Cache-Control: max-age=30\ncache-control: no-store\nX-Test: ok",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "http-header-name-normalizer",
     "name": "HTTP Header Name Normalizer",
     "category": "developer",
-    "week": 39,
+    "week": 37,
     "shortDescription": "Convert header names to canonical display capitalization.",
     "metaDescription": "Convert header names to canonical display capitalization. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5802,13 +5916,14 @@
       "free http header name normalizer"
     ],
     "example": "content-type: text/plain\nx-content-type-options: nosniff",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "email-address-syntax-validator",
     "name": "Email Address Syntax Validator",
     "category": "developer",
-    "week": 39,
+    "week": 38,
     "shortDescription": "Validate basic email-address syntax without contacting a mail server.",
     "metaDescription": "Validate basic email-address syntax without contacting a mail server. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5817,13 +5932,14 @@
       "free email address syntax validator"
     ],
     "example": "hello@example.com",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "email-address-list-normalizer",
     "name": "Email Address List Normalizer",
     "category": "developer",
-    "week": 39,
+    "week": 38,
     "shortDescription": "Clean and deduplicate pasted email addresses.",
     "metaDescription": "Clean and deduplicate pasted email addresses. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5832,13 +5948,14 @@
       "free email address list normalizer"
     ],
     "example": "Alice@Example.com\nbob@example.com\nALICE@example.com",
-    "ready": true
+    "ready": true,
+    "batch": 5
   },
   {
     "slug": "dns-mx-record-priority-sorter",
     "name": "DNS MX Record Priority Sorter",
     "category": "developer",
-    "week": 39,
+    "week": 38,
     "shortDescription": "Sort typed MX priority and hostname pairs.",
     "metaDescription": "Sort typed MX priority and hostname pairs. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
     "keywords": [
@@ -5847,21 +5964,7 @@
       "free dns mx record priority sorter"
     ],
     "example": "20 mx2.example.com\n10 mx1.example.com",
-    "ready": true
-  },
-  {
-    "slug": "spf-include-domain-extractor",
-    "name": "SPF Include Domain Extractor",
-    "category": "developer",
-    "week": 40,
-    "shortDescription": "Extract include: domains from pasted SPF record.",
-    "metaDescription": "Extract include: domains from pasted SPF record. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
-    "keywords": [
-      "spf include domain extractor",
-      "online spf include domain extractor",
-      "free spf include domain extractor"
-    ],
-    "example": "v=spf1 include:_spf.example.com include:mail.example.net -all",
-    "ready": true
+    "ready": true,
+    "batch": 5
   }
 ]
