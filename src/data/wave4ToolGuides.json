@@ -80,28 +80,10 @@
       "Review the calculated or transformed text, then copy the result if useful."
     ]
   },
-  "word-pair-frequency-counter": {
-    "explanation": "Count the most common adjacent word pairs.",
-    "example": "red apple green apple red apple",
-    "limitation": "Word pairs are case-insensitive and are not semantic phrases.",
-    "workflows": [
-      "Paste or type the input in the format shown by Load example.",
-      "Review the calculated or transformed text, then copy the result if useful."
-    ]
-  },
   "surround-words-formatter": {
     "explanation": "Add chosen text before and after every whitespace-delimited word.",
     "example": "**|**\n---\nhello world again",
     "limitation": "Whitespace is normalized to single spaces in the result.",
-    "workflows": [
-      "Paste or type the input in the format shown by Load example.",
-      "Review the calculated or transformed text, then copy the result if useful."
-    ]
-  },
-  "reverse-word-order-tool": {
-    "explanation": "Reverse word order while keeping each word's characters intact.",
-    "example": "The quick brown fox",
-    "limitation": "Punctuation stays attached to its original word.",
     "workflows": [
       "Paste or type the input in the format shown by Load example.",
       "Review the calculated or transformed text, then copy the result if useful."
@@ -138,15 +120,6 @@
     "explanation": "Number sentences in their original order.",
     "example": "First sentence. Second sentence! Third sentence?",
     "limitation": "Sentence boundaries are estimated from punctuation.",
-    "workflows": [
-      "Paste or type the input in the format shown by Load example.",
-      "Review the calculated or transformed text, then copy the result if useful."
-    ]
-  },
-  "punctuation-frequency-counter": {
-    "explanation": "Count common punctuation marks in pasted text.",
-    "example": "Really? Yes! Wait...",
-    "limitation": "Unicode symbols outside a defined punctuation set are not included.",
     "workflows": [
       "Paste or type the input in the format shown by Load example.",
       "Review the calculated or transformed text, then copy the result if useful."
