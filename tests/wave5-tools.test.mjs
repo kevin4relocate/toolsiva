@@ -39,8 +39,10 @@ test("All 100 appended tools are unique, documented, safe, executable from sampl
   assert.ok(output.trim().length>0,item.slug+" output content");
  }
  const state=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
- assert.deepEqual(state.published,[]);
- assert.deepEqual(state.history,[]);
+ assert.ok(Array.isArray(state.published)&&Array.isArray(state.history));
+ assert.equal(new Set(state.published).size,state.published.length);
+ assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
+ assert.ok(state.history.every(event=>Array.isArray(event.slugs)&&event.slugs.length>0&&event.slugs.length<=10));
  assert.equal(state.weeklyLimit,10);
 });
 
