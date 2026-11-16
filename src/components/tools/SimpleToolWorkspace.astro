@@ -21,6 +21,9 @@ const timer=mode==="simple-pomodoro-timer";
 <script>
   import { calcSimple } from "@/lib/simpleToolMath.mjs";
   import { processTextTool } from "@/lib/simpleToolText.mjs";
+  import { runExtraText } from "@/lib/extraTextEngine.mjs";
+  import { runExtraData } from "@/lib/extraDataEngine.mjs";
+  import { runExtraWeb } from "@/lib/extraWebEngine.mjs";
   import { parse as parseYaml } from "yaml";
 
   document.querySelectorAll<HTMLElement>("[data-simple-tool]").forEach(root=>{
@@ -44,7 +47,7 @@ const timer=mode==="simple-pomodoro-timer";
         if(!content){output.value="";status.textContent="Enter a value to begin.";return;}
         let result:string|null;
         if(mode==="yaml-to-json"){result=JSON.stringify(parseYaml(content),null,2);}
-        else result=calcSimple(mode,content)??processTextTool(mode,content);
+        else result=calcSimple(mode,content)??processTextTool(mode,content)??runExtraText(mode,content)??runExtraData(mode,content)??runExtraWeb(mode,content);
         if(result===null)throw Error("This tool mode has no implementation.");
         output.value=String(result);
         status.textContent="Processed locally in your browser.";
