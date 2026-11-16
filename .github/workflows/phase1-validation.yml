@@ -43,6 +43,18 @@ jobs:
       - run: npm run seo:canonical
       - run: npm run hardening:verify
       - run: npm run adsense:audit
+      - name: Simulate next weekly tool publication and verify public pages
+        shell: bash
+        run: |
+          trap 'git restore -- src/data/simpleToolRelease.json' EXIT
+          node scripts/ci-preview-simple-release.mjs
+          npm run test:simple-tools
+          npm run test:phase2
+          npm run test:phase5
+          npm run check
+          npm run build
+          npm run tools:verify
+          npm run seo:audit
       - name: Upload SEO audit report
         if: always()
         uses: actions/upload-artifact@v4
