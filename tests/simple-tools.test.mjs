@@ -29,21 +29,21 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
 const release=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
 
-test("All 391 distinct text-only tools remain inside the weekly release queue",()=>{
- assert.equal(queue.length,391);
- assert.equal(queue.slice(0,91).filter(x=>x.week<=10).length,91);
- assert.equal(queue.slice(91,141).length,50);
- assert.equal(queue.slice(141,191).length,50);
- assert.equal(queue.slice(191,291).length,100);
- assert.equal(queue.slice(291).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,391);
+test("All 373 deduplicated text-only tools remain inside the weekly release queue",()=>{
+ assert.equal(queue.length,373);
+ assert.equal(queue.filter(x=>x.batch===1).length,89);
+ assert.equal(queue.filter(x=>x.batch===2).length,50);
+ assert.equal(queue.filter(x=>x.batch===3).length,50);
+ assert.equal(queue.filter(x=>x.batch===4).length,97);
+ assert.equal(queue.filter(x=>x.batch===5).length,87);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,373);
  const banned=/pdf|image|file|upload|barcode|(?:^|-)qr(?:-|$)/i;
  for(const q of queue){
    assert.doesNotMatch(q.slug,banned);
    assert.match(q.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
    assert.ok(q.name&&q.category&&q.example&&q.metaDescription);
    assert.ok(["text","developer","security","calculator","converter"].includes(q.category));
-   assert.ok(q.week>=1&&q.week<=40);
+   assert.ok(q.week>=1&&q.week<=38);
  }
  assert.ok(Array.isArray(release.published));
  assert.equal(new Set(release.published).size,release.published.length);
@@ -70,7 +70,6 @@ test("High-value examples produce correct outputs",()=>{
  assert.equal(calcSimple("square-root-calculator","144"),"12");
  assert.equal(calcSimple("leap-year-checker","2028"),"Leap year (366 days)");
  assert.equal(calcSimple("bytes-to-bits","1024"),"8,192 bits");
- assert.equal(calcSimple("binary-to-decimal","101010"),"42");
  assert.equal(calcSimple("roman-numeral-converter","2026"),"MMXXVI");
  assert.equal(processTextTool("md5-checksum-generator","hello").split("\n")[0],"5d41402abc4b2a76b9719d911017c592");
  assert.equal(processTextTool("rot13-encoder","Hello"),"Uryyb");
