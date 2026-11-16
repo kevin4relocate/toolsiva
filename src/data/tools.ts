@@ -3172,7 +3172,7 @@ const toolCatalog: ToolDefinition[] = [
 ];
 
 const releasedSimpleTools: ToolDefinition[] = simpleToolQueue
-  .filter((tool) => simpleToolRelease.published.includes(tool.slug))
+  .filter((tool) => (simpleToolRelease.published as string[]).includes(tool.slug))
   .map((tool) => ({
     slug: tool.slug,
     category: tool.category as ToolDefinition["category"],
