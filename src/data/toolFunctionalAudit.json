@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "auditedAt": "2026-11-16",
+  "goal": "Prevent functionally redundant public pages while preserving distinct workflows and release pace",
+  "baseline": {
+    "public": 123,
+    "queued": 391,
+    "total": 514
+  },
+  "after": {
+    "public": 123,
+    "queued": 373,
+    "total": 496,
+    "weeklyLimit": 10
+  },
+  "retired": [
+    {
+      "slug": "binary-to-decimal",
+      "keptAs": "number-base-converter",
+      "name": "Binary to Decimal",
+      "originalPosition": 46
+    },
+    {
+      "slug": "hex-to-decimal",
+      "keptAs": "number-base-converter",
+      "name": "Hex to Decimal",
+      "originalPosition": 47
+    },
+    {
+      "slug": "word-pair-frequency-counter",
+      "keptAs": "n-gram-generator",
+      "name": "Word Pair Frequency Counter",
+      "originalPosition": 201
+    },
+    {
+      "slug": "reverse-word-order-tool",
+      "keptAs": "reverse-text",
+      "name": "Reverse Word Order Tool",
+      "originalPosition": 203
+    },
+    {
+      "slug": "punctuation-frequency-counter",
+      "keptAs": "character-frequency-analyzer",
+      "name": "Punctuation Frequency Counter",
+      "originalPosition": 208
+    },
+    {
+      "slug": "prefix-every-line",
+      "keptAs": "add-prefix-suffix-to-lines",
+      "name": "Prefix Every Line",
+      "originalPosition": 296
+    },
+    {
+      "slug": "suffix-every-line",
+      "keptAs": "add-prefix-suffix-to-lines",
+      "name": "Suffix Every Line",
+      "originalPosition": 297
+    },
+    {
+      "slug": "join-lines-with-delimiter",
+      "keptAs": "remove-line-breaks",
+      "name": "Join Lines With Delimiter",
+      "originalPosition": 298
+    },
+    {
+      "slug": "word-initials-extractor",
+      "keptAs": "acronym-builder",
+      "name": "Word Initials Extractor",
+      "originalPosition": 302
+    },
+    {
+      "slug": "words-to-camel-case",
+      "keptAs": "programming-case-converter",
+      "name": "Words To Camel Case",
+      "originalPosition": 307
+    },
+    {
+      "slug": "words-to-snake-case",
+      "keptAs": "programming-case-converter",
+      "name": "Words To Snake Case",
+      "originalPosition": 308
+    },
+    {
+      "slug": "words-to-kebab-case",
+      "keptAs": "programming-case-converter",
+      "name": "Words To Kebab Case",
+      "originalPosition": 309
+    },
+    {
+      "slug": "sentence-capitalization-formatter",
+      "keptAs": "case-converter",
+      "name": "Sentence Capitalization Formatter",
+      "originalPosition": 310
+    },
+    {
+      "slug": "markdown-link-text-extractor",
+      "keptAs": "markdown-link-extractor",
+      "name": "Markdown Link Text Extractor",
+      "originalPosition": 315
+    },
+    {
+      "slug": "csv-column-mean",
+      "keptAs": "csv-column-statistics",
+      "name": "CSV Column Mean",
+      "originalPosition": 330
+    },
+    {
+      "slug": "csv-column-minimum-maximum",
+      "keptAs": "csv-column-statistics",
+      "name": "CSV Column Minimum Maximum",
+      "originalPosition": 331
+    },
+    {
+      "slug": "http-duplicate-header-detector",
+      "keptAs": "http-header-analyzer",
+      "name": "HTTP Duplicate Header Detector",
+      "originalPosition": 386
+    },
+    {
+      "slug": "spf-include-domain-extractor",
+      "keptAs": "spf-mechanism-inspector",
+      "name": "SPF Include Domain Extractor",
+      "originalPosition": 391
+    }
+  ],
+  "keptDistinct": [
+    {
+      "left": "sales-tax-calculator",
+      "right": "vat-calculator",
+      "reason": "VAT additionally computes the tax portion already included in a tax-inclusive price"
+    },
+    {
+      "left": "csv-row-filter",
+      "right": "csv-positive-number-row-filter",
+      "reason": "Text matching anywhere is distinct from numeric greater-than-zero matching of one column"
+    },
+    {
+      "left": "csv-column-reorder",
+      "right": "csv-column-selector",
+      "reason": "Reordering all original columns differs from selecting and dropping columns"
+    },
+    {
+      "left": "html-attribute-extractor",
+      "right": "html-data-attribute-extractor",
+      "reason": "Named attribute lookup differs from bulk data-* attribute inspection"
+    },
+    {
+      "left": "http-header-analyzer",
+      "right": "http-header-alphabetical-sorter",
+      "reason": "Security/duplicate report differs from sorted header output"
+    },
+    {
+      "left": "markdown-to-html",
+      "right": "html-to-markdown",
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
+    },
+    {
+      "left": "csv-to-tsv",
+      "right": "tsv-to-csv",
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
+    },
+    {
+      "left": "hourly-to-salary-calculator",
+      "right": "salary-to-hourly-calculator",
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
+    },
+    {
+      "left": "unix-day-number-calculator",
+      "right": "unix-day-number-to-date",
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
+    },
+    {
+      "left": "iso-week-date-formatter",
+      "right": "week-number-calculator",
+      "reason": "Full ISO week date (including weekday) is not just week-year"
+    },
+    {
+      "left": "json-array-length-analyzer",
+      "right": "json-structure-summary",
+      "reason": "Reports individual nested array sizes, not aggregate JSON node counts"
+    },
+    {
+      "left": "html-link-extractor",
+      "right": "html-external-link-extractor",
+      "reason": "Origin-specific external link selection requires base URL"
+    },
+    {
+      "left": "fibonacci-number-finder",
+      "right": "fibonacci-sequence-generator",
+      "reason": "Single exact large-index result vs bounded sequence generation"
+    }
+  ]
+}

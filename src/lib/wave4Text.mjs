@@ -18,17 +18,14 @@ case "delimited-text-column-extractor":{const [num,delimiter=","]=a.split("|"),i
 case "keyword-context-snippet-extractor":{const [keyword,radiusStr="30"]=a.split("|"),radius=Number(radiusStr);if(!keyword||!Number.isInteger(radius)||radius<5||radius>500)throw Error("Use keyword|contextLength(5–500), then ---, then text.");const out=[],src=b.toLocaleLowerCase(),key=keyword.toLocaleLowerCase();let at=0;while(out.length<100){const i=src.indexOf(key,at);if(i<0)break;out.push("…"+b.slice(Math.max(0,i-radius),Math.min(b.length,i+keyword.length+radius))+"…");at=i+keyword.length;}return out.join("\n")||"Keyword not found.";}
 case "word-position-finder":{if(!a)throw Error("Enter target word, ---, then text.");const needle=a.toLocaleLowerCase(),wordList=t4Tokens(b),matches=[];for(let i=0;i<wordList.length;i++)if(wordList[i].toLocaleLowerCase()===needle)matches.push(i+1);return matches.length+" matches in "+wordList.length+" words\nPositions: "+(matches.join(", ")||"(none)");}
 case "sentence-length-statistics":{const sentences=t4Sentences(s),counts=sentences.map(x=>t4Tokens(x).length);if(!counts.length)throw Error("No sentence content.");const n=counts.length,total=counts.reduce((x,y)=>x+y,0);return "Sentences: "+n+"\nWords: "+total+"\nShortest: "+Math.min(...counts)+" words\nLongest: "+Math.max(...counts)+" words\nAverage: "+(total/n).toFixed(2)+" words";}
-case "word-pair-frequency-counter":{const words=t4Tokens(s).map(x=>x.toLocaleLowerCase()),freq=new Map();for(let i=1;i<words.length;i++){const pair=words[i-1]+" "+words[i];freq.set(pair,(freq.get(pair)||0)+1)}return [...freq].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,100).map(x=>x[0]+" : "+x[1]).join("\n")||"At least two words are required.";}
 default:return null;}}
 
 export function t4B(slug,input){const s=t4Input(input),{a,b}=t4Split(s);switch(slug){
 case "surround-words-formatter":{const [prefix="",suffix=""]=a.split("|");if(!a)throw Error("Enter prefix|suffix, ---, then text.");return b.trim().split(/\s+/).filter(Boolean).map(x=>prefix+x+suffix).join(" ");}
-case "reverse-word-order-tool":return s.trim().split(/\s+/).reverse().join(" ");
 case "reverse-sentence-order-tool":return t4Sentences(s).reverse().join(" ");
 case "paragraph-alphabetical-sorter":return s.trim().split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean).sort((x,y)=>x.localeCompare(y,undefined,{sensitivity:"base"})).join("\n\n");
 case "duplicate-paragraph-remover":{const seen=new Set(),out=[];for(const part of s.trim().split(/\n\s*\n/)){const key=part.trim().toLocaleLowerCase().replace(/\s+/g," ");if(key&&!seen.has(key)){seen.add(key);out.push(part.trim())}}return out.join("\n\n");}
 case "sentence-numberer":return t4Sentences(s).map((x,i)=>(i+1)+". "+x).join("\n");
-case "punctuation-frequency-counter":{const map=new Map();for(const ch of s)if(/[.,!?;:()[\]{}'"—–\-]/.test(ch))map.set(ch,(map.get(ch)||0)+1);return [...map].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(x=>JSON.stringify(x[0])+" : "+x[1]).join("\n")||"No common punctuation found.";}
 case "question-sentence-extractor":return t4Sentences(s).filter(x=>x.endsWith("?")).join("\n")||"No question-mark sentences found.";
 case "exclamation-sentence-extractor":return t4Sentences(s).filter(x=>x.endsWith("!")).join("\n")||"No exclamation-mark sentences found.";
 case "bracket-content-extractor":{const values=[...s.matchAll(/\(([^()]*)\)|\[([^[\]]*)\]|\{([^{}]*)\}/g)].map(m=>m[1]??m[2]??m[3]);return values.join("\n")||"No simple bracketed content found.";}

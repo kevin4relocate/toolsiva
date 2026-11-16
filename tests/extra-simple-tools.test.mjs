@@ -10,13 +10,13 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 import guides from "../src/data/extraSimpleToolGuides.json" with {type:"json"};
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const extra=queue.slice(91,141);
+const extra=queue.filter(x=>x.batch===2);
 const run=(slug,value)=>runExtraText(slug,value)??runExtraData(slug,value)??runExtraWeb(slug,value);
 
 test("50 extra tools are appended after the original 91 without changing their schedule",()=>{
  assert.equal(extra.length,50);
- assert.equal(queue.length,391);
- assert.equal(new Set(queue.map(x=>x.slug)).size,391);
+ assert.equal(queue.length,373);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,373);
  assert.equal(Object.keys(guides).length,50);
  for(const x of extra){
   assert.ok(x.ready);
@@ -24,9 +24,9 @@ test("50 extra tools are appended after the original 91 without changing their s
   assert.equal(guides[x.slug].example,x.example);
   assert.ok(guides[x.slug].limitation.length>35);
   assert.ok(x.metaDescription.length>=50 && x.metaDescription.length<=180);
-  assert.ok(x.week>=10 && x.week<=15);
+  assert.ok(x.week>=9 && x.week<=14);
  }
- assert.equal(queue[90].slug,"simple-pomodoro-timer");
+ assert.equal(queue.filter(x=>x.batch===1).at(-1).slug,"simple-pomodoro-timer");
  assert.equal(extra[0].slug,"speaking-time-calculator");
  assert.equal(extra.at(-1).slug,"ipv4-subnet-calculator");
 });
@@ -106,24 +106,22 @@ test("HTML, status, cache and network tools reject incorrect input and produce u
  assert.throws(()=>run("ipv4-subnet-calculator","999.0.1.1/24"),/Invalid/);
 });
 
-test("Only 10 tools release weekly, preserving old queue before any new tools",()=>{
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-141-release-"));
+test("Original phase and 50 extra tools release in order at ten per Monday",()=>{
+ const phase=queue.filter(x=>x.batch<=2),weeks=Math.ceil(phase.length/10);
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-dedup-extra-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue.slice(0,141)));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  for(let i=0;i<15;i++){
-   const day=new Date(Date.UTC(2026,10,23+7*i,2));
-   const result=releaseSimpleTools({root,now:day});
-   assert.equal(result.released.length,i===14?1:10);
+  for(let i=0;i<weeks;i++){
+   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
+   assert.equal(result.released.length,Math.min(10,phase.length-i*10));
   }
   const saved=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(saved.published,queue.slice(0,141).map(x=>x.slug));
-  assert.equal(saved.history.length,15);
-  assert.deepEqual(saved.history[9].slugs,queue.slice(90,100).map(x=>x.slug));
-  assert.equal(saved.history[9].slugs[0],"simple-pomodoro-timer");
-  assert.equal(saved.history[9].slugs[1],"speaking-time-calculator");
-  assert.equal(releaseSimpleTools({root,now:new Date("2027-03-08T02:00:00Z")}).released.length,0);
+  assert.deepEqual(saved.published,phase.map(x=>x.slug));
+  assert.equal(saved.history.length,weeks);
+  assert.equal(saved.published[phase.findIndex(x=>x.batch===2)],"speaking-time-calculator");
+  assert.equal(releaseSimpleTools({root,now:new Date(Date.UTC(2027,2,8,2))}).released.length,0);
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
 

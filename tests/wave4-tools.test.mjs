@@ -12,25 +12,25 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 import guides from "../src/data/wave4ToolGuides.json" with {type:"json"};
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const added=queue.slice(191,291);
+const added=queue.filter(x=>x.batch===4);
 const run=(slug,s)=>t4A(slug,s)??t4B(slug,s)??h4Html(slug,s)??u4Tools(slug,s)??j4Tools(slug,s)??c4Tools(slug,s)??n4Buss(slug,s)??n4Stats(slug,s)??v4Http(slug,s)??v4Validate(slug,s);
 const browserOnly=new Set(["html-heading-word-counter","html-paragraph-element-counter","html-link-rel-analyzer","html-meta-description-extractor","html-canonical-link-extractor","html-language-attribute-checker","html-title-tag-extractor","html-form-field-extractor","html-duplicate-id-detector","html-label-association-checker","html-aria-attribute-audit"]);
 
 test("100 new tools follow the 191 original queue entries and provide unique valid text examples",()=>{
- assert.equal(queue.length,391);
- assert.equal(added.length,100);
- assert.equal(Object.keys(guides).length,100);
- assert.equal(queue[190].slug,"dmarc-record-generator");
- assert.equal(queue[191].slug,"line-intersection-finder");
- assert.equal(queue[290].slug,"csv-formula-injection-detector");
- assert.equal(new Set(queue.map(x=>x.slug)).size,391);
+ assert.equal(queue.length,373);
+ assert.equal(added.length,97);
+ assert.equal(Object.keys(guides).length,97);
+ assert.equal(queue.filter(x=>x.batch===3).at(-1).slug,"dmarc-record-generator");
+ assert.equal(added[0].slug,"line-intersection-finder");
+ assert.equal(added.at(-1).slug,"csv-formula-injection-detector");
+ assert.equal(new Set(queue.map(x=>x.slug)).size,373);
  const engines=["wave4Text","wave4HtmlUrl","wave4JsonCsv","wave4BusinessStats","wave4WebValidators"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const entry of added){
   assert.ok(entry.ready,entry.slug+" not ready");
   assert.equal(guides[entry.slug].example,entry.example);
   assert.ok(guides[entry.slug].limitation.length>20);
   assert.ok(entry.metaDescription.length>65&&entry.metaDescription.length<=180,entry.slug+" meta");
-  assert.ok(entry.week>=20&&entry.week<=30,entry.slug+" release week");
+  assert.ok(entry.week>=19&&entry.week<=29,entry.slug+" release week");
   assert.match(entry.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
   assert.doesNotMatch(entry.slug,/pdf|image|file-upload|barcode|qr-code/i);
   assert.ok(engines.includes('case "'+entry.slug+'"'),entry.slug+" lacks implementation");
@@ -52,14 +52,11 @@ test("Text collection and formatting utilities preserve meaningful data",()=>{
  assert.match(run("keyword-context-snippet-extractor","error|5\n---\nthis error appears"),/error/);
  assert.match(run("word-position-finder","hello\n---\nhello there hello"),/Positions: 1, 3/);
  assert.match(run("sentence-length-statistics","One. Two words."),/Sentences: 2/);
- assert.match(run("word-pair-frequency-counter","red apple blue red apple"),/red apple : 2/);
  assert.equal(run("surround-words-formatter","*|!\n---\nhi there"),"*hi! *there!");
- assert.equal(run("reverse-word-order-tool","one two three"),"three two one");
  assert.equal(run("reverse-sentence-order-tool","One. Two!"),"Two! One.");
  assert.match(run("paragraph-alphabetical-sorter","Zebra.\n\nApple."),/^Apple.\n\nZebra./);
  assert.equal(run("duplicate-paragraph-remover","Hello.\n\nOther.\n\nhello."),"Hello.\n\nOther.");
  assert.match(run("sentence-numberer","One. Two."),/1. One.\n2. Two./);
- assert.match(run("punctuation-frequency-counter","Hi!!!"),/"!" : 3/);
  assert.equal(run("question-sentence-extractor","Why? Good."),"Why?");
  assert.equal(run("exclamation-sentence-extractor","Wow! Okay."),"Wow!");
  assert.equal(run("bracket-content-extractor","(one) [two] {three}"),"one\ntwo\nthree");
@@ -151,21 +148,22 @@ test("HTTP, SemVer and DNS header utilities produce meaningful results",()=>{
  assert.throws(()=>run("semantic-version-comparator","01.2.3\n---\n1.2.3"),/valid SemVer/);
 });
 
-test("Original release dates are retained and all 291 queue entries release in 30 slots",()=>{
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-291-"));
+test("First 286 deduplicated tools simulate publication over 29 Mondays",()=>{
+ const phase=queue.filter(x=>x.batch<=4),weeks=Math.ceil(phase.length/10);
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave4-dedup-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue.slice(0,291)));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  for(let week=0;week<30;week++){
-    const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+week*7,2))});
-    assert.equal(result.released.length,week===29?1:10,"week "+week);
+  for(let i=0;i<weeks;i++){
+   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
+   assert.equal(result.released.length,Math.min(10,phase.length-i*10),"week "+(i+1));
   }
   const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.equal(state.history.length,30);
-  assert.deepEqual(state.published,queue.slice(0,291).map(x=>x.slug));
-  assert.equal(state.history[19].slugs[1],queue[191].slug);
-  assert.equal(state.history.at(-1).slugs[0],queue[290].slug);
+  assert.deepEqual(state.published,phase.map(x=>x.slug));
+  assert.equal(state.history.length,weeks);
+  assert.equal(state.published[phase.findIndex(x=>x.batch===4)],"line-intersection-finder");
+  assert.equal(state.published.at(-1),"csv-formula-injection-detector");
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
 
