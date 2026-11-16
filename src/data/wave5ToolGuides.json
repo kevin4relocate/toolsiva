@@ -26,15 +26,6 @@
       "Review the browser-computed output and copy it if appropriate."
     ]
   },
-  "trim-each-line": {
-    "explanation": "Trim leading and trailing whitespace on every line.",
-    "example": "  alpha  \n  beta \n gamma  ",
-    "limitation": "Whitespace within a line is not changed.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
   "prefix-every-line": {
     "explanation": "Prepend a custom prefix to each input line.",
     "example": "ID-\n---\nalpha\nbeta\ngamma",
@@ -894,6 +885,15 @@
     "explanation": "Extract include: domains from pasted SPF record.",
     "example": "v=spf1 include:_spf.example.com include:mail.example.net -all",
     "limitation": "Does not resolve or evaluate DNS includes.",
+    "workflows": [
+      "Enter or paste the example format and replace it with your own text or numbers.",
+      "Review the browser-computed output and copy it if appropriate."
+    ]
+  },
+  "indentation-depth-analyzer": {
+    "explanation": "Measure leading spaces and tab indentation on each pasted line.",
+    "example": "  alpha\n    beta\n\tgamma",
+    "limitation": "Tabs are counted as four spaces; this is a simple indentation report rather than syntax analysis.",
     "workflows": [
       "Enter or paste the example format and replace it with your own text or numbers.",
       "Review the browser-computed output and copy it if appropriate."
