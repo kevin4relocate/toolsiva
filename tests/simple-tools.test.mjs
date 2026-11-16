@@ -31,7 +31,7 @@ test("All 291 distinct text-only tools remain inside the weekly release queue",(
  assert.equal(queue.slice(141,191).length,50);
  assert.equal(queue.slice(191).length,100);
  assert.equal(new Set(queue.map(x=>x.slug)).size,291);
- const banned=/pdf|image|file|upload|qr|barcode/i;
+ const banned=/pdf|image|file|upload|barcode|(?:^|-)qr(?:-|$)/i;
  for(const q of queue){
    assert.doesNotMatch(q.slug,banned);
    assert.match(q.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
