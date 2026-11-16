@@ -76,7 +76,7 @@ test("URL and cookie utilities handle encoding, repeated parameters, and safe or
  assert.equal(run("url-trailing-slash-normalizer","remove\n---\nhttps://example.com/a/"),"https://example.com/a");
  assert.match(run("cookie-header-parser","a=1; b=2"),/b = 2/);
  assert.match(run("set-cookie-attribute-inspector","x=y; Secure; HttpOnly"),/Secure: true/);
- assert.throws(()=>run("relative-url-resolver","https://example.com\n---\njavascript:alert(1)"),/HTTP or HTTPS/);
+ assert.throws(()=>run("relative-url-resolver","https://example.com\n---\njavascript:alert(1)"),/HTTP and HTTPS/);
 });
 
 test("JSON Lines, field grouping, sorting, slices and numeric summaries work",()=>{
