@@ -48,7 +48,16 @@ export function processTextTool(slug,input){
  case "keyword-density-checker":{const key=first.toLowerCase(),body=parts.slice(1).join("|");if(!body||!key)throw Error("Use keyword|body text.");const terms=body.toLowerCase().match(/[\p{L}\p{N}]+/gu)||[];const target=key.match(/[\p{L}\p{N}]+/gu)||[];const t=target.join(" "),words=terms.join(" ");const count=t?words.split(t).length-1:0;return `${count} occurrences · ${terms.length} words · ${((count/Math.max(1,terms.length))*100).toFixed(2)}% phrase occurrence rate (approximate)`;}
  case "heading-structure-checker":{const matches=[...s.matchAll(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi)].map(m=>({level:+m[1],text:m[2].replace(/<[^>]+>/g,"").trim()}));if(!matches.length)return "No HTML heading tags found.";const warnings=[];if(matches.filter(x=>x.level===1).length!==1)warnings.push("Consider one main H1.");for(let i=1;i<matches.length;i++)if(matches[i].level>matches[i-1].level+1)warnings.push("Heading jump: H"+matches[i-1].level+" → H"+matches[i].level);return matches.map(x=>"  ".repeat(x.level-1)+"H"+x.level+": "+x.text).join("\n")+(warnings.length?"\nWarnings: "+warnings.join("; "):"");}
  case "robots-txt-generator":return "User-agent: *\nAllow: /\n"+(s.startsWith("http")?"\nSitemap: "+ensureUrl(s).href:"");
- case "robots-txt-tester":{const lines=s.split(/\r?\n/).map(x=>x.replace(/#.*/,"").trim()).filter(Boolean),rules=lines.filter(x=>/^(allow|disallow|user-agent|sitemap):/i.test(x));return `${rules.length} recognized directives\n`+rules.join("\n")+(rules.length!==lines.length?"\nSome unrecognized directives omitted.":"");}
+ case "robots-txt-tester":{
+ const blocks=s.split(/\r?\n---\r?\n/),robots=blocks[0],pathToCheck=blocks[1]?.trim()||"/";
+ const lines=robots.split(/\r?\n/).map(x=>x.replace(/#.*/,"").trim()).filter(Boolean);
+ const rules=lines.filter(x=>/^(allow|disallow|user-agent|sitemap):/i.test(x));
+ if(!rules.length)throw Error("No recognized robots.txt directives.");
+ let agent="*",matches=[];
+ for(const line of rules){const [key,...rest]=line.split(":"),value=rest.join(":").trim();if(key.toLowerCase()==="user-agent")agent=value;else if(["allow","disallow"].includes(key.toLowerCase())&&agent==="*"&&value&&pathToCheck.startsWith(value.replace(/\*$/,"")))matches.push({allowed:key.toLowerCase()==="allow",length:value.length,value});}
+ matches.sort((a,b)=>b.length-a.length);
+ return `${rules.length} directives recognized\nPath: ${pathToCheck}\nBasic wildcard-agent result: ${matches.length?(matches[0].allowed?"Allowed":"Disallowed")+" by "+matches[0].value:"Allowed (no matching rule)"}\nThis is a simple prefix check, not a complete search-engine robots.txt simulator.`;
+}
  case "xml-sitemap-generator":{const links=s.split(/\s+/).filter(Boolean).map(link=>ensureUrl(link).href);if(links.length>200)throw Error("Maximum 200 URLs per input.");return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${links.map(link=>`  <url><loc>${safeXml(link)}</loc></url>`).join("\n")}\n</urlset>`;}
  case "xml-sitemap-validator":{if(typeof DOMParser==="undefined")throw Error("Requires a modern browser.");const doc=new DOMParser().parseFromString(s,"application/xml");if(doc.getElementsByTagName("parsererror").length)throw Error("Invalid XML syntax.");const links=[...doc.getElementsByTagName("loc")].map(n=>n.textContent?.trim()||"");for(const link of links)ensureUrl(link);return `Valid XML · ${links.length} URL locations found${doc.documentElement.localName==="urlset"?" · URL set":" · check root element"}`;}
  case "schema-faq-generator":{const main=s.split(/\r?\n/).map(x=>parsePairs(x)).filter(x=>x[0]&&x[1]).map(x=>({"@type":"Question",name:x[0],acceptedAnswer:{"@type":"Answer",text:x.slice(1).join("|")}}));if(!main.length)throw Error("Use question|answer per line.");return JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:main},null,2);}
@@ -71,9 +80,25 @@ export function processTextTool(slug,input){
  case "javascript-minifier":return jsCompact(s);
  case "csv-to-json":{const rows=csvData(s),headers=rows.shift();if(headers.some((h,i)=>!h||headers.indexOf(h)!==i))throw Error("CSV headers must be unique and nonempty.");return JSON.stringify(rows.map(row=>Object.fromEntries(headers.map((h,i)=>[h,row[i]]))),null,2);}
  case "csv-viewer":{const rows=csvData(s);const widths=rows[0].map((_,i)=>Math.min(32,Math.max(...rows.map(row=>String(row[i]??"").length))));return rows.map((r,i)=>r.map((cell,j)=>String(cell).slice(0,32).padEnd(widths[j])).join(" | ")).join("\n");}
- case "csv-column-extractor":{const rows=csvData(s),headers=rows[0],idx=0;return rows.map(row=>row[idx]).join("\n")+"\n(First column; paste CSV with the desired column first.)";}
- case "csv-row-filter":{const rows=csvData(s),term=(rows[0][0]||"").toLowerCase();return toCsv([rows[0],...rows.slice(1).filter(row=>row.some(col=>col.toLowerCase().includes(term)))]);}
- case "csv-sorter":{const rows=csvData(s);return toCsv([rows[0],...rows.slice(1).sort((a,b)=>a[0].localeCompare(b[0],undefined,{numeric:true}))]);}
+ case "csv-column-extractor":{
+ const bits=s.split(/\r?\n---\r?\n/),name=bits.length===2?bits[0].trim():"",rows=csvData(bits.length===2?bits[1]:s);
+ const index=name?rows[0].indexOf(name):0;
+ if(index<0)throw Error("CSV column not found: "+name);
+ return rows.map(row=>row[index]).join("\n");
+}
+ case "csv-row-filter":{
+ const bits=s.split(/\r?\n---\r?\n/);
+ if(bits.length!==2)throw Error("Use search term, then a line containing ---, then CSV.");
+ const term=bits[0].trim().toLowerCase(),rows=csvData(bits[1]);
+ if(!term)throw Error("Enter the filter term.");
+ return toCsv([rows[0],...rows.slice(1).filter(row=>row.some(col=>col.toLowerCase().includes(term)))]);
+}
+ case "csv-sorter":{
+ const bits=s.split(/\r?\n---\r?\n/),header=bits.length===2?bits[0].trim():"",rows=csvData(bits.length===2?bits[1]:s);
+ const index=header?rows[0].indexOf(header):0;
+ if(index<0)throw Error("CSV sort column not found: "+header);
+ return toCsv([rows[0],...rows.slice(1).sort((a,b)=>a[index].localeCompare(b[index],undefined,{numeric:true}))]);
+}
  case "csv-duplicate-remover":{const rows=csvData(s),set=new Set();return toCsv(rows.filter((r,i)=>{const key=JSON.stringify(r);if(i===0)return true;if(set.has(key))return false;set.add(key);return true}));}
  case "tsv-to-csv":return toCsv(parseRows(s,"\t"));
  case "checklist-generator":return s.split(/\r?\n/).filter(Boolean).map(x=>"- [ ] "+x.replace(/^- \[[ x]\]\s*/,"")).join("\n");
