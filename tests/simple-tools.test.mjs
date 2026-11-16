@@ -9,23 +9,29 @@ import {processTextTool} from "../src/lib/simpleToolText.mjs";
 import {runExtraText} from "../src/lib/extraTextEngine.mjs";
 import {runExtraData} from "../src/lib/extraDataEngine.mjs";
 import {runExtraWeb} from "../src/lib/extraWebEngine.mjs";
+import {thirdText} from "../src/lib/wave3Text.mjs";
+import {thirdCsvJson} from "../src/lib/wave3Data.mjs";
+import {dateSlots3} from "../src/lib/wave3Dates.mjs";
+import {math4} from "../src/lib/wave3Math.mjs";
+import {web5} from "../src/lib/wave3Web.mjs";
 import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
 const release=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
 
-test("All 141 distinct text-only tools remain inside the weekly release queue",()=>{
- assert.equal(queue.length,141);
+test("All 191 distinct text-only tools remain inside the weekly release queue",()=>{
+ assert.equal(queue.length,191);
  assert.equal(queue.slice(0,91).filter(x=>x.week<=10).length,91);
- assert.equal(queue.slice(91).length,50);
- assert.equal(new Set(queue.map(x=>x.slug)).size,141);
+ assert.equal(queue.slice(91,141).length,50);
+ assert.equal(queue.slice(141).length,50);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,191);
  const banned=/pdf|image|file|upload|qr|barcode/i;
  for(const q of queue){
    assert.doesNotMatch(q.slug,banned);
    assert.match(q.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
    assert.ok(q.name&&q.category&&q.example&&q.metaDescription);
    assert.ok(["text","developer","security","calculator","converter"].includes(q.category));
-   assert.ok(q.week>=1&&q.week<=15);
+   assert.ok(q.week>=1&&q.week<=20);
  }
  assert.ok(Array.isArray(release.published));
  assert.equal(new Set(release.published).size,release.published.length);
@@ -36,12 +42,12 @@ test("All 141 distinct text-only tools remain inside the weekly release queue",(
 test("Every queued tool has an engine case, and sample inputs produce useful results",()=>{
  const math=fs.readFileSync("src/lib/simpleToolMath.mjs","utf8");
  const txt=fs.readFileSync("src/lib/simpleToolText.mjs","utf8");
- const extra= ["src/lib/extraTextEngine.mjs","src/lib/extraDataEngine.mjs","src/lib/extraWebEngine.mjs"].map(file=>fs.readFileSync(file,"utf8")).join("\n");
+ const extra= ["src/lib/extraTextEngine.mjs","src/lib/extraDataEngine.mjs","src/lib/extraWebEngine.mjs","src/lib/wave3Text.mjs","src/lib/wave3Data.mjs","src/lib/wave3Dates.mjs","src/lib/wave3Math.mjs","src/lib/wave3Web.mjs"].map(file=>fs.readFileSync(file,"utf8")).join("\n");
  for(const q of queue){
    assert.ok(math.includes('case "'+q.slug+'"')||txt.includes('case "'+q.slug+'"')||extra.includes('case "'+q.slug+'"'),q.slug+" missing implementation");
-   if(["xml-to-json","xml-sitemap-validator","html-tag-counter","html-link-extractor","html-attribute-extractor"].includes(q.slug))continue; // Browser DOMParser is not available in Node.
+   if(["xml-to-json","xml-sitemap-validator","html-tag-counter","html-link-extractor","html-attribute-extractor","html-table-to-csv"].includes(q.slug))continue; // Browser DOMParser is not available in Node.
    const output=q.slug==="yaml-to-json"?JSON.stringify(parseYaml(q.example),null,2):
-     calcSimple(q.slug,q.example)??processTextTool(q.slug,q.example)??runExtraText(q.slug,q.example)??runExtraData(q.slug,q.example)??runExtraWeb(q.slug,q.example);
+     calcSimple(q.slug,q.example)??processTextTool(q.slug,q.example)??runExtraText(q.slug,q.example)??runExtraData(q.slug,q.example)??runExtraWeb(q.slug,q.example)??thirdText(q.slug,q.example)??thirdCsvJson(q.slug,q.example)??dateSlots3(q.slug,q.example)??math4(q.slug,q.example)??web5(q.slug,q.example);
    assert.equal(typeof output,"string",q.slug+" missing output");
    assert.ok(output.trim().length>0,q.slug+" empty output");
  }

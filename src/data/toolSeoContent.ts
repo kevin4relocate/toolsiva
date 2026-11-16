@@ -2,6 +2,7 @@ import type { ToolDefinition } from "@/types/tool";
 import toolUsageNotes from "@/data/toolUsageNotes.json";
 import simpleToolQueue from "@/data/simpleToolQueue.json";
 import extraToolGuides from "@/data/extraSimpleToolGuides.json";
+import wave3ToolGuides from "@/data/wave3ToolGuides.json";
 
 export interface ToolExample { input: string; output: string; }
 export interface ToolContentSection { heading: string; paragraphs: string[]; }
@@ -453,6 +454,19 @@ export function getToolContentSections(tool: ToolDefinition): ToolContentSection
       { heading: "Before using the result", paragraphs: [note.watch] },
     ];
   }
+
+  const wave3 = wave3ToolGuides[tool.slug as keyof typeof wave3ToolGuides];
+  if (wave3) return [
+    { heading: `What is ${tool.name}?`, paragraphs: [
+      wave3.explanation,
+      `Sample input: ${wave3.example.replaceAll("\\n", " | ").slice(0, 200)}.`,
+    ] },
+    { heading: `How to use ${tool.name}`, paragraphs: wave3.workflows },
+    { heading: "Accuracy and limitations", paragraphs: [
+      wave3.limitation,
+      "Results are produced from your browser input. No local files are opened and no external processing API is contacted.",
+    ] },
+  ];
 
   const extra = extraToolGuides[tool.slug as keyof typeof extraToolGuides];
   if (extra) return [

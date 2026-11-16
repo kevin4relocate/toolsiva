@@ -10,13 +10,13 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 import guides from "../src/data/extraSimpleToolGuides.json" with {type:"json"};
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const extra=queue.slice(91);
+const extra=queue.slice(91,141);
 const run=(slug,value)=>runExtraText(slug,value)??runExtraData(slug,value)??runExtraWeb(slug,value);
 
 test("50 extra tools are appended after the original 91 without changing their schedule",()=>{
  assert.equal(extra.length,50);
- assert.equal(queue.length,141);
- assert.equal(new Set(queue.map(x=>x.slug)).size,141);
+ assert.equal(queue.length,191);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,191);
  assert.equal(Object.keys(guides).length,50);
  for(const x of extra){
   assert.ok(x.ready);
@@ -110,7 +110,7 @@ test("Only 10 tools release weekly, preserving old queue before any new tools",(
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-141-release-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue.slice(0,141)));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
   for(let i=0;i<15;i++){
    const day=new Date(Date.UTC(2026,10,23+7*i,2));
@@ -118,7 +118,7 @@ test("Only 10 tools release weekly, preserving old queue before any new tools",(
    assert.equal(result.released.length,i===14?1:10);
   }
   const saved=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(saved.published,queue.map(x=>x.slug));
+  assert.deepEqual(saved.published,queue.slice(0,141).map(x=>x.slug));
   assert.equal(saved.history.length,15);
   assert.deepEqual(saved.history[9].slugs,queue.slice(90,100).map(x=>x.slug));
   assert.equal(saved.history[9].slugs[0],"simple-pomodoro-timer");

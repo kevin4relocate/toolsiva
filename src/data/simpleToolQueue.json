@@ -2113,5 +2113,755 @@
     ],
     "example": "192.168.1.10/24",
     "ready": true
+  },
+  {
+    "slug": "text-line-includes-filter",
+    "name": "Text Line Includes Filter",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Keep only lines containing a chosen keyword.",
+    "metaDescription": "Keep only lines containing a chosen keyword. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "text line includes filter",
+      "online text line includes filter",
+      "free text line includes filter"
+    ],
+    "example": "error\n---\ninfo: started\nerror: bad value\nwarning: retry",
+    "ready": true
+  },
+  {
+    "slug": "text-line-excludes-filter",
+    "name": "Text Line Excludes Filter",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Remove lines containing a chosen keyword.",
+    "metaDescription": "Remove lines containing a chosen keyword. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "text line excludes filter",
+      "online text line excludes filter",
+      "free text line excludes filter"
+    ],
+    "example": "debug\n---\ndebug: cache hit\ninfo: started\nerror: failed",
+    "ready": true
+  },
+  {
+    "slug": "text-between-delimiters-extractor",
+    "name": "Text Between Delimiters Extractor",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Extract portions of text between custom start and end delimiters.",
+    "metaDescription": "Extract portions of text between custom start and end delimiters. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "text between delimiters extractor",
+      "online text between delimiters extractor",
+      "free text between delimiters extractor"
+    ],
+    "example": "[|]\n---\nHello [world] and [Toolsiva].",
+    "ready": true
+  },
+  {
+    "slug": "duplicate-sentence-remover",
+    "name": "Duplicate Sentence Remover",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Remove repeated sentences, keeping their first occurrence.",
+    "metaDescription": "Remove repeated sentences, keeping their first occurrence. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "duplicate sentence remover",
+      "online duplicate sentence remover",
+      "free duplicate sentence remover"
+    ],
+    "example": "One sentence. Another sentence! One sentence. Final thought?",
+    "ready": true
+  },
+  {
+    "slug": "sentence-alphabetical-sorter",
+    "name": "Sentence Alphabetical Sorter",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Sort sentences alphabetically without sorting words inside them.",
+    "metaDescription": "Sort sentences alphabetically without sorting words inside them. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "sentence alphabetical sorter",
+      "online sentence alphabetical sorter",
+      "free sentence alphabetical sorter"
+    ],
+    "example": "Zebra is here. Apple comes first. Mango grows.",
+    "ready": true
+  },
+  {
+    "slug": "markdown-link-extractor",
+    "name": "Markdown Link Extractor",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Extract the label and target URL from Markdown inline links.",
+    "metaDescription": "Extract the label and target URL from Markdown inline links. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "markdown link extractor",
+      "online markdown link extractor",
+      "free markdown link extractor"
+    ],
+    "example": "See [Toolsiva](https://toolsiva.com) and [docs](/docs).",
+    "ready": true
+  },
+  {
+    "slug": "markdown-heading-outline-generator",
+    "name": "Markdown Heading Outline Generator",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Extract Markdown heading hierarchy into an outline.",
+    "metaDescription": "Extract Markdown heading hierarchy into an outline. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "markdown heading outline generator",
+      "online markdown heading outline generator",
+      "free markdown heading outline generator"
+    ],
+    "example": "# Main heading\n## Overview\n### Details\n## Summary",
+    "ready": true
+  },
+  {
+    "slug": "markdown-code-block-extractor",
+    "name": "Markdown Code Block Extractor",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Extract fenced Markdown code blocks and their languages.",
+    "metaDescription": "Extract fenced Markdown code blocks and their languages. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "markdown code block extractor",
+      "online markdown code block extractor",
+      "free markdown code block extractor"
+    ],
+    "example": "Intro\n```js\nconst a = 1;\n```\n```json\n{\"ok\":true}\n```",
+    "ready": true
+  },
+  {
+    "slug": "markdown-checklist-progress-calculator",
+    "name": "Markdown Checklist Progress Calculator",
+    "category": "text",
+    "week": 15,
+    "shortDescription": "Count completed and pending Markdown checklist items.",
+    "metaDescription": "Count completed and pending Markdown checklist items. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "markdown checklist progress calculator",
+      "online markdown checklist progress calculator",
+      "free markdown checklist progress calculator"
+    ],
+    "example": "- [x] Build tool\n- [ ] Write docs\n- [X] Run tests",
+    "ready": true
+  },
+  {
+    "slug": "markdown-special-character-escaper",
+    "name": "Markdown Special Character Escaper",
+    "category": "text",
+    "week": 16,
+    "shortDescription": "Escape Markdown syntax characters for literal rendering.",
+    "metaDescription": "Escape Markdown syntax characters for literal rendering. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "markdown special character escaper",
+      "online markdown special character escaper",
+      "free markdown special character escaper"
+    ],
+    "example": "*Bold* [link](https://example.com) # Header",
+    "ready": true
+  },
+  {
+    "slug": "csv-to-tsv",
+    "name": "CSV to TSV",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Convert pasted CSV into tab-delimited text.",
+    "metaDescription": "Convert pasted CSV into tab-delimited text. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "csv to tsv",
+      "online csv to tsv",
+      "free csv to tsv"
+    ],
+    "example": "name,score\nAlice,12\n\"Bob, Jr.\",15",
+    "ready": true
+  },
+  {
+    "slug": "csv-to-html-table",
+    "name": "CSV to HTML Table",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Generate safe HTML table markup from CSV text.",
+    "metaDescription": "Generate safe HTML table markup from CSV text. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "csv to html table",
+      "online csv to html table",
+      "free csv to html table"
+    ],
+    "example": "name,score\nAlice,12\nBob,15",
+    "ready": true
+  },
+  {
+    "slug": "html-table-to-csv",
+    "name": "HTML Table to CSV",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Extract tabular data from pasted HTML into CSV.",
+    "metaDescription": "Extract tabular data from pasted HTML into CSV. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "html table to csv",
+      "online html table to csv",
+      "free html table to csv"
+    ],
+    "example": "<table><tr><th>Name</th><th>Score</th></tr><tr><td>Ada</td><td>5</td></tr></table>",
+    "ready": true
+  },
+  {
+    "slug": "csv-header-renamer",
+    "name": "CSV Header Renamer",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Rename one CSV header without changing cell values.",
+    "metaDescription": "Rename one CSV header without changing cell values. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "csv header renamer",
+      "online csv header renamer",
+      "free csv header renamer"
+    ],
+    "example": "name|full_name\n---\nname,age\nAda,33\nBob,28",
+    "ready": true
+  },
+  {
+    "slug": "csv-column-reorder",
+    "name": "CSV Column Reorder",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Reorder pasted CSV columns using a desired header list.",
+    "metaDescription": "Reorder pasted CSV columns using a desired header list. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "csv column reorder",
+      "online csv column reorder",
+      "free csv column reorder"
+    ],
+    "example": "age,name\n---\nname,age\nAda,33\nBob,28",
+    "ready": true
+  },
+  {
+    "slug": "csv-row-numberer",
+    "name": "CSV Row Numberer",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Add a row-number column to CSV text.",
+    "metaDescription": "Add a row-number column to CSV text. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "csv row numberer",
+      "online csv row numberer",
+      "free csv row numberer"
+    ],
+    "example": "name,age\nAda,33\nBob,28",
+    "ready": true
+  },
+  {
+    "slug": "json-to-typescript-type",
+    "name": "JSON to TypeScript Type",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Generate TypeScript types from representative JSON values.",
+    "metaDescription": "Generate TypeScript types from representative JSON values. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "json to typescript type",
+      "online json to typescript type",
+      "free json to typescript type"
+    ],
+    "example": "{\"name\":\"Ada\",\"active\":true,\"score\":12,\"tags\":[\"a\",\"b\"]}",
+    "ready": true
+  },
+  {
+    "slug": "json-pointer-lookup",
+    "name": "JSON Pointer Lookup",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Retrieve a JSON value at a JSON Pointer path.",
+    "metaDescription": "Retrieve a JSON value at a JSON Pointer path. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "json pointer lookup",
+      "online json pointer lookup",
+      "free json pointer lookup"
+    ],
+    "example": "/user/name\n---\n{\"user\":{\"name\":\"Ada\"}}",
+    "ready": true
+  },
+  {
+    "slug": "json-deep-merge",
+    "name": "JSON Deep Merge",
+    "category": "developer",
+    "week": 16,
+    "shortDescription": "Merge two pasted JSON objects recursively.",
+    "metaDescription": "Merge two pasted JSON objects recursively. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "json deep merge",
+      "online json deep merge",
+      "free json deep merge"
+    ],
+    "example": "{\"a\":1,\"nested\":{\"x\":2}}\n---\n{\"b\":3,\"nested\":{\"y\":4}}",
+    "ready": true
+  },
+  {
+    "slug": "json-to-url-query-parameters",
+    "name": "JSON to URL Query Parameters",
+    "category": "developer",
+    "week": 17,
+    "shortDescription": "Encode flat JSON properties as URL query parameters.",
+    "metaDescription": "Encode flat JSON properties as URL query parameters. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "json to url query parameters",
+      "online json to url query parameters",
+      "free json to url query parameters"
+    ],
+    "example": "{\"q\":\"hello world\",\"page\":2,\"tags\":[\"a\",\"b\"]}",
+    "ready": true
+  },
+  {
+    "slug": "day-of-week-finder",
+    "name": "Day of Week Finder",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Find the weekday for a specified calendar date.",
+    "metaDescription": "Find the weekday for a specified calendar date. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "day of week finder",
+      "online day of week finder",
+      "free day of week finder"
+    ],
+    "example": "2026-11-16",
+    "ready": true
+  },
+  {
+    "slug": "days-in-month-calculator",
+    "name": "Days in Month Calculator",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Find how many days are in a selected calendar month.",
+    "metaDescription": "Find how many days are in a selected calendar month. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "days in month calculator",
+      "online days in month calculator",
+      "free days in month calculator"
+    ],
+    "example": "2028-02",
+    "ready": true
+  },
+  {
+    "slug": "date-range-list-generator",
+    "name": "Date Range List Generator",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Generate each date between two dates, inclusive.",
+    "metaDescription": "Generate each date between two dates, inclusive. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "date range list generator",
+      "online date range list generator",
+      "free date range list generator"
+    ],
+    "example": "2026-11-16, 2026-11-21",
+    "ready": true
+  },
+  {
+    "slug": "date-range-overlap-checker",
+    "name": "Date Range Overlap Checker",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Check whether two inclusive date ranges overlap.",
+    "metaDescription": "Check whether two inclusive date ranges overlap. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "date range overlap checker",
+      "online date range overlap checker",
+      "free date range overlap checker"
+    ],
+    "example": "2026-11-01, 2026-11-15\n---\n2026-11-10, 2026-11-20",
+    "ready": true
+  },
+  {
+    "slug": "next-weekday-calculator",
+    "name": "Next Weekday Calculator",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Find the next specified weekday after a given date.",
+    "metaDescription": "Find the next specified weekday after a given date. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "next weekday calculator",
+      "online next weekday calculator",
+      "free next weekday calculator"
+    ],
+    "example": "2026-11-16, Friday",
+    "ready": true
+  },
+  {
+    "slug": "add-business-days-calculator",
+    "name": "Add Business Days Calculator",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Add a count of weekdays to a starting date.",
+    "metaDescription": "Add a count of weekdays to a starting date. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "add business days calculator",
+      "online add business days calculator",
+      "free add business days calculator"
+    ],
+    "example": "2026-11-16, 10",
+    "ready": true
+  },
+  {
+    "slug": "quarter-of-year-finder",
+    "name": "Quarter of Year Finder",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Find the calendar quarter containing a date.",
+    "metaDescription": "Find the calendar quarter containing a date. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "quarter of year finder",
+      "online quarter of year finder",
+      "free quarter of year finder"
+    ],
+    "example": "2026-11-16",
+    "ready": true
+  },
+  {
+    "slug": "month-end-date-calculator",
+    "name": "Month End Date Calculator",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Return the last day of the specified calendar month.",
+    "metaDescription": "Return the last day of the specified calendar month. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "month end date calculator",
+      "online month end date calculator",
+      "free month end date calculator"
+    ],
+    "example": "2028-02",
+    "ready": true
+  },
+  {
+    "slug": "time-slot-generator",
+    "name": "Time Slot Generator",
+    "category": "calculator",
+    "week": 17,
+    "shortDescription": "Create evenly spaced times between start and end.",
+    "metaDescription": "Create evenly spaced times between start and end. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "time slot generator",
+      "online time slot generator",
+      "free time slot generator"
+    ],
+    "example": "09:00, 12:00, 30",
+    "ready": true
+  },
+  {
+    "slug": "time-interval-overlap-checker",
+    "name": "Time Interval Overlap Checker",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Check whether two time intervals overlap.",
+    "metaDescription": "Check whether two time intervals overlap. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "time interval overlap checker",
+      "online time interval overlap checker",
+      "free time interval overlap checker"
+    ],
+    "example": "09:00, 10:30\n---\n10:00, 11:00",
+    "ready": true
+  },
+  {
+    "slug": "quartile-calculator",
+    "name": "Quartile Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate median, lower quartile and upper quartile.",
+    "metaDescription": "Calculate median, lower quartile and upper quartile. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "quartile calculator",
+      "online quartile calculator",
+      "free quartile calculator"
+    ],
+    "example": "1, 3, 5, 7, 9, 11, 13",
+    "ready": true
+  },
+  {
+    "slug": "percentile-calculator",
+    "name": "Percentile Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate a percentile using linear interpolation.",
+    "metaDescription": "Calculate a percentile using linear interpolation. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "percentile calculator",
+      "online percentile calculator",
+      "free percentile calculator"
+    ],
+    "example": "90\n---\n1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+    "ready": true
+  },
+  {
+    "slug": "variance-calculator",
+    "name": "Variance Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate population and sample variances.",
+    "metaDescription": "Calculate population and sample variances. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "variance calculator",
+      "online variance calculator",
+      "free variance calculator"
+    ],
+    "example": "2, 4, 4, 4, 5, 5, 7, 9",
+    "ready": true
+  },
+  {
+    "slug": "z-score-calculator",
+    "name": "Z-Score Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate a standard Z-score from value, mean and deviation.",
+    "metaDescription": "Calculate a standard Z-score from value, mean and deviation. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "z-score calculator",
+      "online z-score calculator",
+      "free z-score calculator"
+    ],
+    "example": "85, 70, 10",
+    "ready": true
+  },
+  {
+    "slug": "coefficient-of-variation-calculator",
+    "name": "Coefficient of Variation Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate relative variability using population deviation.",
+    "metaDescription": "Calculate relative variability using population deviation. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "coefficient of variation calculator",
+      "online coefficient of variation calculator",
+      "free coefficient of variation calculator"
+    ],
+    "example": "10, 12, 13, 15",
+    "ready": true
+  },
+  {
+    "slug": "factorial-calculator",
+    "name": "Factorial Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate a factorial as an exact large integer.",
+    "metaDescription": "Calculate a factorial as an exact large integer. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "factorial calculator",
+      "online factorial calculator",
+      "free factorial calculator"
+    ],
+    "example": "12",
+    "ready": true
+  },
+  {
+    "slug": "permutation-calculator",
+    "name": "Permutation Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate ordered arrangements P(n,r) exactly.",
+    "metaDescription": "Calculate ordered arrangements P(n,r) exactly. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "permutation calculator",
+      "online permutation calculator",
+      "free permutation calculator"
+    ],
+    "example": "10, 3",
+    "ready": true
+  },
+  {
+    "slug": "combination-calculator",
+    "name": "Combination Calculator",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Calculate unordered combinations C(n,r) exactly.",
+    "metaDescription": "Calculate unordered combinations C(n,r) exactly. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "combination calculator",
+      "online combination calculator",
+      "free combination calculator"
+    ],
+    "example": "10, 3",
+    "ready": true
+  },
+  {
+    "slug": "quadratic-equation-solver",
+    "name": "Quadratic Equation Solver",
+    "category": "calculator",
+    "week": 18,
+    "shortDescription": "Solve ax² + bx + c = 0 for real or complex roots.",
+    "metaDescription": "Solve ax² + bx + c = 0 for real or complex roots. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "quadratic equation solver",
+      "online quadratic equation solver",
+      "free quadratic equation solver"
+    ],
+    "example": "1, -3, 2",
+    "ready": true
+  },
+  {
+    "slug": "pythagorean-theorem-calculator",
+    "name": "Pythagorean Theorem Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate a right triangle hypotenuse from two legs.",
+    "metaDescription": "Calculate a right triangle hypotenuse from two legs. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "pythagorean theorem calculator",
+      "online pythagorean theorem calculator",
+      "free pythagorean theorem calculator"
+    ],
+    "example": "3, 4",
+    "ready": true
+  },
+  {
+    "slug": "click-through-rate-calculator",
+    "name": "Click Through Rate Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate clicks divided by impressions as a percentage.",
+    "metaDescription": "Calculate clicks divided by impressions as a percentage. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "click through rate calculator",
+      "online click through rate calculator",
+      "free click through rate calculator"
+    ],
+    "example": "120, 10000",
+    "ready": true
+  },
+  {
+    "slug": "cost-per-click-calculator",
+    "name": "Cost Per Click Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate advertising spend divided by clicks.",
+    "metaDescription": "Calculate advertising spend divided by clicks. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "cost per click calculator",
+      "online cost per click calculator",
+      "free cost per click calculator"
+    ],
+    "example": "150, 75",
+    "ready": true
+  },
+  {
+    "slug": "cost-per-mille-calculator",
+    "name": "Cost Per Mille Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate advertising cost per 1,000 impressions.",
+    "metaDescription": "Calculate advertising cost per 1,000 impressions. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "cost per mille calculator",
+      "online cost per mille calculator",
+      "free cost per mille calculator"
+    ],
+    "example": "50, 25000",
+    "ready": true
+  },
+  {
+    "slug": "return-on-ad-spend-calculator",
+    "name": "Return on Ad Spend Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate revenue divided by ad spend as ROAS.",
+    "metaDescription": "Calculate revenue divided by ad spend as ROAS. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "return on ad spend calculator",
+      "online return on ad spend calculator",
+      "free return on ad spend calculator"
+    ],
+    "example": "1200, 300",
+    "ready": true
+  },
+  {
+    "slug": "customer-acquisition-cost-calculator",
+    "name": "Customer Acquisition Cost Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate marketing and sales cost per acquired customer.",
+    "metaDescription": "Calculate marketing and sales cost per acquired customer. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "customer acquisition cost calculator",
+      "online customer acquisition cost calculator",
+      "free customer acquisition cost calculator"
+    ],
+    "example": "2500, 50",
+    "ready": true
+  },
+  {
+    "slug": "customer-lifetime-value-calculator",
+    "name": "Customer Lifetime Value Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Estimate value from average order, purchase frequency and customer lifetime.",
+    "metaDescription": "Estimate value from average order, purchase frequency and customer lifetime. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "customer lifetime value calculator",
+      "online customer lifetime value calculator",
+      "free customer lifetime value calculator"
+    ],
+    "example": "40, 12, 24",
+    "ready": true
+  },
+  {
+    "slug": "churn-rate-calculator",
+    "name": "Churn Rate Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate lost customers relative to starting customers.",
+    "metaDescription": "Calculate lost customers relative to starting customers. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "churn rate calculator",
+      "online churn rate calculator",
+      "free churn rate calculator"
+    ],
+    "example": "150, 3000",
+    "ready": true
+  },
+  {
+    "slug": "landing-page-conversion-rate-calculator",
+    "name": "Landing Page Conversion Rate Calculator",
+    "category": "calculator",
+    "week": 19,
+    "shortDescription": "Calculate goal completions per landing-page visit.",
+    "metaDescription": "Calculate goal completions per landing-page visit. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "landing page conversion rate calculator",
+      "online landing page conversion rate calculator",
+      "free landing page conversion rate calculator"
+    ],
+    "example": "35, 1400",
+    "ready": true
+  },
+  {
+    "slug": "http-header-analyzer",
+    "name": "HTTP Header Analyzer",
+    "category": "developer",
+    "week": 19,
+    "shortDescription": "Inspect pasted HTTP headers for common cache and security directives.",
+    "metaDescription": "Inspect pasted HTTP headers for common cache and security directives. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "http header analyzer",
+      "online http header analyzer",
+      "free http header analyzer"
+    ],
+    "example": "HTTP/1.1 200 OK\nContent-Type: text/html\nCache-Control: public, max-age=3600\nX-Content-Type-Options: nosniff",
+    "ready": true
+  },
+  {
+    "slug": "dmarc-record-generator",
+    "name": "DMARC Record Generator",
+    "category": "developer",
+    "week": 20,
+    "shortDescription": "Generate a basic DMARC DNS TXT policy from typed options.",
+    "metaDescription": "Generate a basic DMARC DNS TXT policy from typed options. Enter text or numbers to get results instantly with no file uploads.",
+    "keywords": [
+      "dmarc record generator",
+      "online dmarc record generator",
+      "free dmarc record generator"
+    ],
+    "example": "reject,100,mailto:dmarc@example.com",
+    "ready": true
   }
 ]

@@ -1,0 +1,452 @@
+{
+  "text-line-includes-filter": {
+    "explanation": "Keep only lines containing a chosen keyword.",
+    "example": "error\n---\ninfo: started\nerror: bad value\nwarning: retry",
+    "limitation": "Optional case sensitivity is not supported; searches ignore case.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "text-line-excludes-filter": {
+    "explanation": "Remove lines containing a chosen keyword.",
+    "example": "debug\n---\ndebug: cache hit\ninfo: started\nerror: failed",
+    "limitation": "Search is case-insensitive; original line formatting is preserved.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "text-between-delimiters-extractor": {
+    "explanation": "Extract portions of text between custom start and end delimiters.",
+    "example": "[|]\n---\nHello [world] and [Toolsiva].",
+    "limitation": "Nested delimiters are not interpreted; extraction is left-to-right.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "duplicate-sentence-remover": {
+    "explanation": "Remove repeated sentences, keeping their first occurrence.",
+    "example": "One sentence. Another sentence! One sentence. Final thought?",
+    "limitation": "Sentence detection uses punctuation and whitespace boundaries.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "sentence-alphabetical-sorter": {
+    "explanation": "Sort sentences alphabetically without sorting words inside them.",
+    "example": "Zebra is here. Apple comes first. Mango grows.",
+    "limitation": "Punctuation determines sentence boundaries.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "markdown-link-extractor": {
+    "explanation": "Extract the label and target URL from Markdown inline links.",
+    "example": "See [Toolsiva](https://toolsiva.com) and [docs](/docs).",
+    "limitation": "Reference-style link definitions and nested brackets are not fully parsed.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "markdown-heading-outline-generator": {
+    "explanation": "Extract Markdown heading hierarchy into an outline.",
+    "example": "# Main heading\n## Overview\n### Details\n## Summary",
+    "limitation": "Does not inspect HTML headings; fenced code is skipped.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "markdown-code-block-extractor": {
+    "explanation": "Extract fenced Markdown code blocks and their languages.",
+    "example": "Intro\n```js\nconst a = 1;\n```\n```json\n{\"ok\":true}\n```",
+    "limitation": "Supports backtick and tilde fences, not arbitrarily nested Markdown.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "markdown-checklist-progress-calculator": {
+    "explanation": "Count completed and pending Markdown checklist items.",
+    "example": "- [x] Build tool\n- [ ] Write docs\n- [X] Run tests",
+    "limitation": "Only Markdown task-list syntax with checkboxes is counted.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "markdown-special-character-escaper": {
+    "explanation": "Escape Markdown syntax characters for literal rendering.",
+    "example": "*Bold* [link](https://example.com) # Header",
+    "limitation": "Escaping is for Markdown text, not HTML, code or URLs.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "csv-to-tsv": {
+    "explanation": "Convert pasted CSV into tab-delimited text.",
+    "example": "name,score\nAlice,12\n\"Bob, Jr.\",15",
+    "limitation": "Embedded tabs and line breaks in values remain quoted.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "csv-to-html-table": {
+    "explanation": "Generate safe HTML table markup from CSV text.",
+    "example": "name,score\nAlice,12\nBob,15",
+    "limitation": "Generated HTML is displayed as text and is not executed.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "html-table-to-csv": {
+    "explanation": "Extract tabular data from pasted HTML into CSV.",
+    "example": "<table><tr><th>Name</th><th>Score</th></tr><tr><td>Ada</td><td>5</td></tr></table>",
+    "limitation": "Spanning rows and columns are not expanded into grid cells.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "csv-header-renamer": {
+    "explanation": "Rename one CSV header without changing cell values.",
+    "example": "name|full_name\n---\nname,age\nAda,33\nBob,28",
+    "limitation": "The requested target header must not already exist.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "csv-column-reorder": {
+    "explanation": "Reorder pasted CSV columns using a desired header list.",
+    "example": "age,name\n---\nname,age\nAda,33\nBob,28",
+    "limitation": "All original columns must appear exactly once.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "csv-row-numberer": {
+    "explanation": "Add a row-number column to CSV text.",
+    "example": "name,age\nAda,33\nBob,28",
+    "limitation": "The new column is named row_number and must not already exist.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "json-to-typescript-type": {
+    "explanation": "Generate TypeScript types from representative JSON values.",
+    "example": "{\"name\":\"Ada\",\"active\":true,\"score\":12,\"tags\":[\"a\",\"b\"]}",
+    "limitation": "Types are inferred from the sample and may not cover every real input.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "json-pointer-lookup": {
+    "explanation": "Retrieve a JSON value at a JSON Pointer path.",
+    "example": "/user/name\n---\n{\"user\":{\"name\":\"Ada\"}}",
+    "limitation": "Uses RFC 6901-style pointer syntax and zero-based array indexes.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "json-deep-merge": {
+    "explanation": "Merge two pasted JSON objects recursively.",
+    "example": "{\"a\":1,\"nested\":{\"x\":2}}\n---\n{\"b\":3,\"nested\":{\"y\":4}}",
+    "limitation": "Arrays are replaced as whole values rather than concatenated.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "json-to-url-query-parameters": {
+    "explanation": "Encode flat JSON properties as URL query parameters.",
+    "example": "{\"q\":\"hello world\",\"page\":2,\"tags\":[\"a\",\"b\"]}",
+    "limitation": "Nested objects are rejected; arrays use repeated parameter keys.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "day-of-week-finder": {
+    "explanation": "Find the weekday for a specified calendar date.",
+    "example": "2026-11-16",
+    "limitation": "Uses the Gregorian calendar and UTC for stable results.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "days-in-month-calculator": {
+    "explanation": "Find how many days are in a selected calendar month.",
+    "example": "2028-02",
+    "limitation": "Uses Gregorian leap-year rules.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "date-range-list-generator": {
+    "explanation": "Generate each date between two dates, inclusive.",
+    "example": "2026-11-16, 2026-11-21",
+    "limitation": "Limits output to 366 dates to keep browser output manageable.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "date-range-overlap-checker": {
+    "explanation": "Check whether two inclusive date ranges overlap.",
+    "example": "2026-11-01, 2026-11-15\n---\n2026-11-10, 2026-11-20",
+    "limitation": "Date endpoints are inclusive; a shared endpoint counts as overlap.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "next-weekday-calculator": {
+    "explanation": "Find the next specified weekday after a given date.",
+    "example": "2026-11-16, Friday",
+    "limitation": "Returns the following occurrence, not the same day.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "add-business-days-calculator": {
+    "explanation": "Add a count of weekdays to a starting date.",
+    "example": "2026-11-16, 10",
+    "limitation": "Weekends are excluded; national holidays are not considered.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "quarter-of-year-finder": {
+    "explanation": "Find the calendar quarter containing a date.",
+    "example": "2026-11-16",
+    "limitation": "Calendar quarters start in January; fiscal quarters may differ.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "month-end-date-calculator": {
+    "explanation": "Return the last day of the specified calendar month.",
+    "example": "2028-02",
+    "limitation": "Uses Gregorian calendar rules.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "time-slot-generator": {
+    "explanation": "Create evenly spaced times between start and end.",
+    "example": "09:00, 12:00, 30",
+    "limitation": "Times use a single day, with an end-exclusive interval.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "time-interval-overlap-checker": {
+    "explanation": "Check whether two time intervals overlap.",
+    "example": "09:00, 10:30\n---\n10:00, 11:00",
+    "limitation": "Touching boundaries alone are not considered overlapping.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "quartile-calculator": {
+    "explanation": "Calculate median, lower quartile and upper quartile.",
+    "example": "1, 3, 5, 7, 9, 11, 13",
+    "limitation": "Uses the median-of-halves method; quartile conventions vary.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "percentile-calculator": {
+    "explanation": "Calculate a percentile using linear interpolation.",
+    "example": "90\n---\n1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+    "limitation": "Uses the (n−1) interpolation convention.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "variance-calculator": {
+    "explanation": "Calculate population and sample variances.",
+    "example": "2, 4, 4, 4, 5, 5, 7, 9",
+    "limitation": "Sample variance requires at least two values.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "z-score-calculator": {
+    "explanation": "Calculate a standard Z-score from value, mean and deviation.",
+    "example": "85, 70, 10",
+    "limitation": "Standard deviation must be positive.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "coefficient-of-variation-calculator": {
+    "explanation": "Calculate relative variability using population deviation.",
+    "example": "10, 12, 13, 15",
+    "limitation": "The mean must be nonzero; negative means may need contextual interpretation.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "factorial-calculator": {
+    "explanation": "Calculate a factorial as an exact large integer.",
+    "example": "12",
+    "limitation": "Input must be a nonnegative integer no greater than 500.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "permutation-calculator": {
+    "explanation": "Calculate ordered arrangements P(n,r) exactly.",
+    "example": "10, 3",
+    "limitation": "Requires whole numbers with 0 ≤ r ≤ n ≤ 500.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "combination-calculator": {
+    "explanation": "Calculate unordered combinations C(n,r) exactly.",
+    "example": "10, 3",
+    "limitation": "Requires whole numbers with 0 ≤ r ≤ n ≤ 500.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "quadratic-equation-solver": {
+    "explanation": "Solve ax² + bx + c = 0 for real or complex roots.",
+    "example": "1, -3, 2",
+    "limitation": "Coefficients must be finite and a must be nonzero.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "pythagorean-theorem-calculator": {
+    "explanation": "Calculate a right triangle hypotenuse from two legs.",
+    "example": "3, 4",
+    "limitation": "Both leg lengths must be positive.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "click-through-rate-calculator": {
+    "explanation": "Calculate clicks divided by impressions as a percentage.",
+    "example": "120, 10000",
+    "limitation": "Impressions must be positive; invalid counts are rejected.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "cost-per-click-calculator": {
+    "explanation": "Calculate advertising spend divided by clicks.",
+    "example": "150, 75",
+    "limitation": "Click count must be positive.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "cost-per-mille-calculator": {
+    "explanation": "Calculate advertising cost per 1,000 impressions.",
+    "example": "50, 25000",
+    "limitation": "Impression count must be positive.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "return-on-ad-spend-calculator": {
+    "explanation": "Calculate revenue divided by ad spend as ROAS.",
+    "example": "1200, 300",
+    "limitation": "Revenue is not profit, and ROAS excludes other costs.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "customer-acquisition-cost-calculator": {
+    "explanation": "Calculate marketing and sales cost per acquired customer.",
+    "example": "2500, 50",
+    "limitation": "Counts are rounded only for display.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "customer-lifetime-value-calculator": {
+    "explanation": "Estimate value from average order, purchase frequency and customer lifetime.",
+    "example": "40, 12, 24",
+    "limitation": "This simplified model excludes margins, discounting and retention changes.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "churn-rate-calculator": {
+    "explanation": "Calculate lost customers relative to starting customers.",
+    "example": "150, 3000",
+    "limitation": "Does not adjust for new customers added during the period.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "landing-page-conversion-rate-calculator": {
+    "explanation": "Calculate goal completions per landing-page visit.",
+    "example": "35, 1400",
+    "limitation": "One visit may produce more than one conversion in some analytics systems.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "http-header-analyzer": {
+    "explanation": "Inspect pasted HTTP headers for common cache and security directives.",
+    "example": "HTTP/1.1 200 OK\nContent-Type: text/html\nCache-Control: public, max-age=3600\nX-Content-Type-Options: nosniff",
+    "limitation": "This analyzes only pasted headers; it never contacts the website.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  },
+  "dmarc-record-generator": {
+    "explanation": "Generate a basic DMARC DNS TXT policy from typed options.",
+    "example": "reject,100,mailto:dmarc@example.com",
+    "limitation": "Publishing a DMARC record without proper SPF/DKIM alignment can block legitimate mail.",
+    "workflows": [
+      "Enter or paste text or values in the sample input format.",
+      "Review the live result, then copy it if appropriate."
+    ]
+  }
+}
