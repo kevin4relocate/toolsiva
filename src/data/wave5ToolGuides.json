@@ -26,33 +26,6 @@
       "Review the browser-computed output and copy it if appropriate."
     ]
   },
-  "prefix-every-line": {
-    "explanation": "Prepend a custom prefix to each input line.",
-    "example": "ID-\n---\nalpha\nbeta\ngamma",
-    "limitation": "Blank lines are preserved.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "suffix-every-line": {
-    "explanation": "Append a custom suffix to every input line.",
-    "example": ";\n---\nalpha\nbeta\ngamma",
-    "limitation": "Blank lines are preserved.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "join-lines-with-delimiter": {
-    "explanation": "Join multiple text lines using your own separator.",
-    "example": " | \n---\nalpha\nbeta\ngamma",
-    "limitation": "Line endings are normalized to Unix-style newlines.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
   "insert-separator-between-lines": {
     "explanation": "Insert a separator between consecutive lines.",
     "example": "---\n---\nalpha\nbeta\ngamma",
@@ -75,15 +48,6 @@
     "explanation": "Swap lowercase and uppercase letters in pasted text.",
     "example": "HeLLo WoRLD 123!",
     "limitation": "Case mapping depends on Unicode locale-neutral rules.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "word-initials-extractor": {
-    "explanation": "Collect the first letter of every word.",
-    "example": "Toolsiva makes useful tools",
-    "limitation": "Words without letters do not contribute initials.",
     "workflows": [
       "Enter or paste the example format and replace it with your own text or numbers.",
       "Review the browser-computed output and copy it if appropriate."
@@ -125,42 +89,6 @@
       "Review the browser-computed output and copy it if appropriate."
     ]
   },
-  "words-to-camel-case": {
-    "explanation": "Turn typed words into lower camelCase.",
-    "example": "create user profile",
-    "limitation": "Nonletter delimiters are treated as boundaries.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "words-to-snake-case": {
-    "explanation": "Turn words into lowercase snake_case.",
-    "example": "create user profile",
-    "limitation": "Nonletter delimiters are treated as boundaries.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "words-to-kebab-case": {
-    "explanation": "Turn words into lowercase kebab-case.",
-    "example": "create user profile",
-    "limitation": "Nonletter delimiters are treated as boundaries.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "sentence-capitalization-formatter": {
-    "explanation": "Capitalize the start of each sentence and lowercase other text.",
-    "example": "hello world. this is toolsiva! can it help?",
-    "limitation": "Capitalizing after punctuation is a heuristic.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
   "paragraph-numbering-tool": {
     "explanation": "Number paragraphs while retaining each paragraph's text.",
     "example": "First paragraph.\n\nSecond paragraph.\n\nThird paragraph.",
@@ -192,15 +120,6 @@
     "explanation": "Extract quoted Markdown lines without their leading marker.",
     "example": "> A highlighted thought.\n> Another line.\nNormal text.",
     "limitation": "Only lines starting with > are considered.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "markdown-link-text-extractor": {
-    "explanation": "Extract the displayed labels of inline Markdown links.",
-    "example": "Read [Toolsiva](https://toolsiva.com) and [Docs](/docs).",
-    "limitation": "Nested links and reference-style links are not fully parsed.",
     "workflows": [
       "Enter or paste the example format and replace it with your own text or numbers.",
       "Review the browser-computed output and copy it if appropriate."
@@ -326,24 +245,6 @@
   "csv-column-sum": {
     "explanation": "Sum finite numeric cells in one CSV column.",
     "example": "amount\n---\nname,amount\nA,10\nB,25\nC,5",
-    "limitation": "Nonnumeric cells are ignored.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "csv-column-mean": {
-    "explanation": "Calculate the mean of numeric cells in a CSV column.",
-    "example": "amount\n---\nname,amount\nA,10\nB,20\nC,30",
-    "limitation": "Blank and nonnumeric cells are excluded.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "csv-column-minimum-maximum": {
-    "explanation": "Find minimum and maximum numeric values in one CSV column.",
-    "example": "price\n---\nname,price\nA,12\nB,8\nC,22",
     "limitation": "Nonnumeric cells are ignored.",
     "workflows": [
       "Enter or paste the example format and replace it with your own text or numbers.",
@@ -836,15 +737,6 @@
       "Review the browser-computed output and copy it if appropriate."
     ]
   },
-  "http-duplicate-header-detector": {
-    "explanation": "Identify repeated HTTP header names ignoring letter case.",
-    "example": "Cache-Control: max-age=30\ncache-control: no-store\nX-Test: ok",
-    "limitation": "Some repeated headers are legitimate.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
   "http-header-name-normalizer": {
     "explanation": "Convert header names to canonical display capitalization.",
     "example": "content-type: text/plain\nx-content-type-options: nosniff",
@@ -876,15 +768,6 @@
     "explanation": "Sort typed MX priority and hostname pairs.",
     "example": "20 mx2.example.com\n10 mx1.example.com",
     "limitation": "Does not perform live DNS queries.",
-    "workflows": [
-      "Enter or paste the example format and replace it with your own text or numbers.",
-      "Review the browser-computed output and copy it if appropriate."
-    ]
-  },
-  "spf-include-domain-extractor": {
-    "explanation": "Extract include: domains from pasted SPF record.",
-    "example": "v=spf1 include:_spf.example.com include:mail.example.net -all",
-    "limitation": "Does not resolve or evaluate DNS includes.",
     "workflows": [
       "Enter or paste the example format and replace it with your own text or numbers.",
       "Review the browser-computed output and copy it if appropriate."
