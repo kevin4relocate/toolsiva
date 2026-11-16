@@ -1,0 +1,1276 @@
+[
+  {
+    "slug": "reading-time-calculator",
+    "name": "Reading Time Calculator",
+    "category": "text",
+    "week": 1,
+    "shortDescription": "Use reading time calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free reading time calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "reading time calculator",
+      "reading time calculator online",
+      "free reading time calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "median-calculator",
+    "name": "Median Calculator",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use median calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free median calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "median calculator",
+      "median calculator online",
+      "free median calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "mode-calculator",
+    "name": "Mode Calculator",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use mode calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free mode calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "mode calculator",
+      "mode calculator online",
+      "free mode calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "square-root-calculator",
+    "name": "Square Root Calculator",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use square root calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free square root calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "square root calculator",
+      "square root calculator online",
+      "free square root calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "exponent-calculator",
+    "name": "Exponent Calculator",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use exponent calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free exponent calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "exponent calculator",
+      "exponent calculator online",
+      "free exponent calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "rounding-calculator",
+    "name": "Rounding Calculator",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use rounding calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free rounding calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "rounding calculator",
+      "rounding calculator online",
+      "free rounding calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "prime-number-checker",
+    "name": "Prime Number Checker",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use prime number checker with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free prime number checker online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "prime number checker",
+      "prime number checker online",
+      "free prime number checker"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "leap-year-checker",
+    "name": "Leap Year Checker",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use leap year checker with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free leap year checker online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "leap year checker",
+      "leap year checker online",
+      "free leap year checker"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "day-of-year-calculator",
+    "name": "Day of Year Calculator",
+    "category": "calculator",
+    "week": 1,
+    "shortDescription": "Use day of year calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free day of year calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "day of year calculator",
+      "day of year calculator online",
+      "free day of year calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "bytes-to-bits",
+    "name": "Bytes to Bits",
+    "category": "converter",
+    "week": 1,
+    "shortDescription": "Use bytes to bits with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free bytes to bits online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "bytes to bits",
+      "bytes to bits online",
+      "free bytes to bits"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "weighted-average-calculator",
+    "name": "Weighted Average Calculator",
+    "category": "calculator",
+    "week": 2,
+    "shortDescription": "Use weighted average calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free weighted average calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "weighted average calculator",
+      "weighted average calculator online",
+      "free weighted average calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "scientific-notation-converter",
+    "name": "Scientific Notation Converter",
+    "category": "converter",
+    "week": 2,
+    "shortDescription": "Use scientific notation converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free scientific notation converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "scientific notation converter",
+      "scientific notation converter online",
+      "free scientific notation converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "number-sequence-generator",
+    "name": "Number Sequence Generator",
+    "category": "calculator",
+    "week": 2,
+    "shortDescription": "Use number sequence generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free number sequence generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "number sequence generator",
+      "number sequence generator online",
+      "free number sequence generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "random-number-generator",
+    "name": "Random Number Generator",
+    "category": "calculator",
+    "week": 2,
+    "shortDescription": "Use random number generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free random number generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "random number generator",
+      "random number generator online",
+      "free random number generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "rot13-encoder",
+    "name": "ROT13 Encoder",
+    "category": "security",
+    "week": 2,
+    "shortDescription": "Use rot13 encoder with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free rot13 encoder online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "rot13 encoder",
+      "rot13 encoder online",
+      "free rot13 encoder"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "caesar-cipher-tool",
+    "name": "Caesar Cipher Tool",
+    "category": "security",
+    "week": 2,
+    "shortDescription": "Use caesar cipher tool with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free caesar cipher tool online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "caesar cipher tool",
+      "caesar cipher tool online",
+      "free caesar cipher tool"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "uuid-validator",
+    "name": "UUID Validator",
+    "category": "security",
+    "week": 2,
+    "shortDescription": "Use uuid validator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free uuid validator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "uuid validator",
+      "uuid validator online",
+      "free uuid validator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "pixels-to-rem-converter",
+    "name": "Pixels to REM Converter",
+    "category": "converter",
+    "week": 2,
+    "shortDescription": "Use pixels to rem converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free pixels to rem converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "pixels to rem converter",
+      "pixels to rem converter online",
+      "free pixels to rem converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "hours-to-decimal-converter",
+    "name": "Hours to Decimal Converter",
+    "category": "converter",
+    "week": 2,
+    "shortDescription": "Use hours to decimal converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free hours to decimal converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "hours to decimal converter",
+      "hours to decimal converter online",
+      "free hours to decimal converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "decimal-to-hours-converter",
+    "name": "Decimal to Hours Converter",
+    "category": "converter",
+    "week": 2,
+    "shortDescription": "Use decimal to hours converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free decimal to hours converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "decimal to hours converter",
+      "decimal to hours converter online",
+      "free decimal to hours converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "standard-deviation-calculator",
+    "name": "Standard Deviation Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use standard deviation calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free standard deviation calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "standard deviation calculator",
+      "standard deviation calculator online",
+      "free standard deviation calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "prime-factorization-calculator",
+    "name": "Prime Factorization Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use prime factorization calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free prime factorization calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "prime factorization calculator",
+      "prime factorization calculator online",
+      "free prime factorization calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "sales-tax-calculator",
+    "name": "Sales Tax Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use sales tax calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free sales tax calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "sales tax calculator",
+      "sales tax calculator online",
+      "free sales tax calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "vat-calculator",
+    "name": "VAT Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use vat calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free vat calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "vat calculator",
+      "vat calculator online",
+      "free vat calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "roi-calculator",
+    "name": "ROI Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use roi calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free roi calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "roi calculator",
+      "roi calculator online",
+      "free roi calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "commission-calculator",
+    "name": "Commission Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use commission calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free commission calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "commission calculator",
+      "commission calculator online",
+      "free commission calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "bill-split-calculator",
+    "name": "Bill Split Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use bill split calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free bill split calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "bill split calculator",
+      "bill split calculator online",
+      "free bill split calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "break-even-calculator",
+    "name": "Break-even Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use break-even calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free break-even calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "break-even calculator",
+      "break-even calculator online",
+      "free break-even calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "hourly-to-salary-calculator",
+    "name": "Hourly to Salary Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use hourly to salary calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free hourly to salary calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "hourly to salary calculator",
+      "hourly to salary calculator online",
+      "free hourly to salary calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "salary-to-hourly-calculator",
+    "name": "Salary to Hourly Calculator",
+    "category": "calculator",
+    "week": 3,
+    "shortDescription": "Use salary to hourly calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free salary to hourly calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "salary to hourly calculator",
+      "salary to hourly calculator online",
+      "free salary to hourly calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "freelance-rate-calculator",
+    "name": "Freelance Rate Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use freelance rate calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free freelance rate calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "freelance rate calculator",
+      "freelance rate calculator online",
+      "free freelance rate calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "savings-goal-calculator",
+    "name": "Savings Goal Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use savings goal calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free savings goal calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "savings goal calculator",
+      "savings goal calculator online",
+      "free savings goal calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "inflation-calculator",
+    "name": "Inflation Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use inflation calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free inflation calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "inflation calculator",
+      "inflation calculator online",
+      "free inflation calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "add-days-to-date",
+    "name": "Add Days to Date",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use add days to date with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free add days to date online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "add days to date",
+      "add days to date online",
+      "free add days to date"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "subtract-days-from-date",
+    "name": "Subtract Days from Date",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use subtract days from date with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free subtract days from date online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "subtract days from date",
+      "subtract days from date online",
+      "free subtract days from date"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "week-number-calculator",
+    "name": "Week Number Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use week number calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free week number calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "week number calculator",
+      "week number calculator online",
+      "free week number calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "countdown-calculator",
+    "name": "Countdown Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use countdown calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free countdown calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "countdown calculator",
+      "countdown calculator online",
+      "free countdown calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "time-addition-calculator",
+    "name": "Time Addition Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use time addition calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free time addition calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "time addition calculator",
+      "time addition calculator online",
+      "free time addition calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "time-subtraction-calculator",
+    "name": "Time Subtraction Calculator",
+    "category": "calculator",
+    "week": 4,
+    "shortDescription": "Use time subtraction calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free time subtraction calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "time subtraction calculator",
+      "time subtraction calculator online",
+      "free time subtraction calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "iso-date-converter",
+    "name": "ISO Date Converter",
+    "category": "converter",
+    "week": 4,
+    "shortDescription": "Use iso date converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free iso date converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "iso date converter",
+      "iso date converter online",
+      "free iso date converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "business-days-calculator",
+    "name": "Business Days Calculator",
+    "category": "calculator",
+    "week": 5,
+    "shortDescription": "Use business days calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free business days calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "business days calculator",
+      "business days calculator online",
+      "free business days calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "timezone-offset-calculator",
+    "name": "Timezone Offset Calculator",
+    "category": "calculator",
+    "week": 5,
+    "shortDescription": "Use timezone offset calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free timezone offset calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "timezone offset calculator",
+      "timezone offset calculator online",
+      "free timezone offset calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "calendar-generator",
+    "name": "Calendar Generator",
+    "category": "calculator",
+    "week": 5,
+    "shortDescription": "Use calendar generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free calendar generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "calendar generator",
+      "calendar generator online",
+      "free calendar generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "work-hours-calculator",
+    "name": "Work Hours Calculator",
+    "category": "calculator",
+    "week": 5,
+    "shortDescription": "Use work hours calculator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free work hours calculator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "work hours calculator",
+      "work hours calculator online",
+      "free work hours calculator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "number-base-converter",
+    "name": "Number Base Converter",
+    "category": "converter",
+    "week": 5,
+    "shortDescription": "Use number base converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free number base converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "number base converter",
+      "number base converter online",
+      "free number base converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "binary-to-decimal",
+    "name": "Binary to Decimal",
+    "category": "converter",
+    "week": 5,
+    "shortDescription": "Use binary to decimal with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free binary to decimal online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "binary to decimal",
+      "binary to decimal online",
+      "free binary to decimal"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "hex-to-decimal",
+    "name": "Hex to Decimal",
+    "category": "converter",
+    "week": 5,
+    "shortDescription": "Use hex to decimal with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free hex to decimal online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "hex to decimal",
+      "hex to decimal online",
+      "free hex to decimal"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "roman-numeral-converter",
+    "name": "Roman Numeral Converter",
+    "category": "converter",
+    "week": 5,
+    "shortDescription": "Use roman numeral converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free roman numeral converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "roman numeral converter",
+      "roman numeral converter online",
+      "free roman numeral converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "unicode-escape-converter",
+    "name": "Unicode Escape Converter",
+    "category": "converter",
+    "week": 5,
+    "shortDescription": "Use unicode escape converter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free unicode escape converter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "unicode escape converter",
+      "unicode escape converter online",
+      "free unicode escape converter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "md5-checksum-generator",
+    "name": "MD5 Checksum Generator",
+    "category": "security",
+    "week": 5,
+    "shortDescription": "Use md5 checksum generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free md5 checksum generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "md5 checksum generator",
+      "md5 checksum generator online",
+      "free md5 checksum generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "meta-title-length-checker",
+    "name": "Meta Title Length Checker",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use meta title length checker with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free meta title length checker online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "meta title length checker",
+      "meta title length checker online",
+      "free meta title length checker"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "meta-description-length-checker",
+    "name": "Meta Description Length Checker",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use meta description length checker with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free meta description length checker online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "meta description length checker",
+      "meta description length checker online",
+      "free meta description length checker"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "meta-tag-generator",
+    "name": "Meta Tag Generator",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use meta tag generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free meta tag generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "meta tag generator",
+      "meta tag generator online",
+      "free meta tag generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "open-graph-generator",
+    "name": "Open Graph Generator",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use open graph generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free open graph generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "open graph generator",
+      "open graph generator online",
+      "free open graph generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "open-graph-preview",
+    "name": "Open Graph Preview",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use open graph preview with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free open graph preview online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "open graph preview",
+      "open graph preview online",
+      "free open graph preview"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "twitter-card-generator",
+    "name": "Twitter Card Generator",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use twitter card generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free twitter card generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "twitter card generator",
+      "twitter card generator online",
+      "free twitter card generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "canonical-url-generator",
+    "name": "Canonical URL Generator",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use canonical url generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free canonical url generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "canonical url generator",
+      "canonical url generator online",
+      "free canonical url generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "hreflang-tag-generator",
+    "name": "Hreflang Tag Generator",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use hreflang tag generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free hreflang tag generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "hreflang tag generator",
+      "hreflang tag generator online",
+      "free hreflang tag generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "keyword-density-checker",
+    "name": "Keyword Density Checker",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use keyword density checker with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free keyword density checker online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "keyword density checker",
+      "keyword density checker online",
+      "free keyword density checker"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "heading-structure-checker",
+    "name": "Heading Structure Checker",
+    "category": "developer",
+    "week": 6,
+    "shortDescription": "Use heading structure checker with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free heading structure checker online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "heading structure checker",
+      "heading structure checker online",
+      "free heading structure checker"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "robots-txt-generator",
+    "name": "Robots.txt Generator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use robots.txt generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free robots.txt generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "robots.txt generator",
+      "robots.txt generator online",
+      "free robots.txt generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "robots-txt-tester",
+    "name": "Robots.txt Tester",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use robots.txt tester with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free robots.txt tester online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "robots.txt tester",
+      "robots.txt tester online",
+      "free robots.txt tester"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "xml-sitemap-generator",
+    "name": "XML Sitemap Generator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use xml sitemap generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free xml sitemap generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "xml sitemap generator",
+      "xml sitemap generator online",
+      "free xml sitemap generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "xml-sitemap-validator",
+    "name": "XML Sitemap Validator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use xml sitemap validator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free xml sitemap validator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "xml sitemap validator",
+      "xml sitemap validator online",
+      "free xml sitemap validator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "schema-faq-generator",
+    "name": "Schema FAQ Generator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use schema faq generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free schema faq generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "schema faq generator",
+      "schema faq generator online",
+      "free schema faq generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "schema-breadcrumb-generator",
+    "name": "Schema Breadcrumb Generator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use schema breadcrumb generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free schema breadcrumb generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "schema breadcrumb generator",
+      "schema breadcrumb generator online",
+      "free schema breadcrumb generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "schema-article-generator",
+    "name": "Schema Article Generator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use schema article generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free schema article generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "schema article generator",
+      "schema article generator online",
+      "free schema article generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "redirect-rule-generator",
+    "name": "Redirect Rule Generator",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use redirect rule generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free redirect rule generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "redirect rule generator",
+      "redirect rule generator online",
+      "free redirect rule generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "url-parser",
+    "name": "URL Parser",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use url parser with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free url parser online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "url parser",
+      "url parser online",
+      "free url parser"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "cron-expression-explainer",
+    "name": "Cron Expression Explainer",
+    "category": "developer",
+    "week": 7,
+    "shortDescription": "Use cron expression explainer with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free cron expression explainer online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "cron expression explainer",
+      "cron expression explainer online",
+      "free cron expression explainer"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "json-diff",
+    "name": "JSON Diff",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use json diff with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free json diff online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "json diff",
+      "json diff online",
+      "free json diff"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "yaml-to-json",
+    "name": "YAML to JSON",
+    "category": "converter",
+    "week": 8,
+    "shortDescription": "Use yaml to json with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free yaml to json online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "yaml to json",
+      "yaml to json online",
+      "free yaml to json"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "xml-to-json",
+    "name": "XML to JSON",
+    "category": "converter",
+    "week": 8,
+    "shortDescription": "Use xml to json with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free xml to json online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "xml to json",
+      "xml to json online",
+      "free xml to json"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "html-formatter",
+    "name": "HTML Formatter",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use html formatter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free html formatter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "html formatter",
+      "html formatter online",
+      "free html formatter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "html-minifier",
+    "name": "HTML Minifier",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use html minifier with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free html minifier online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "html minifier",
+      "html minifier online",
+      "free html minifier"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "css-formatter",
+    "name": "CSS Formatter",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use css formatter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free css formatter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "css formatter",
+      "css formatter online",
+      "free css formatter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "css-minifier",
+    "name": "CSS Minifier",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use css minifier with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free css minifier online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "css minifier",
+      "css minifier online",
+      "free css minifier"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "sql-formatter",
+    "name": "SQL Formatter",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use sql formatter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free sql formatter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "sql formatter",
+      "sql formatter online",
+      "free sql formatter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "sql-minifier",
+    "name": "SQL Minifier",
+    "category": "developer",
+    "week": 8,
+    "shortDescription": "Use sql minifier with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free sql minifier online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "sql minifier",
+      "sql minifier online",
+      "free sql minifier"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "text-to-html",
+    "name": "Text to HTML",
+    "category": "text",
+    "week": 8,
+    "shortDescription": "Use text to html with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free text to html online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "text to html",
+      "text to html online",
+      "free text to html"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "javascript-formatter",
+    "name": "JavaScript Formatter",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use javascript formatter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free javascript formatter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "javascript formatter",
+      "javascript formatter online",
+      "free javascript formatter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "javascript-minifier",
+    "name": "JavaScript Minifier",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use javascript minifier with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free javascript minifier online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "javascript minifier",
+      "javascript minifier online",
+      "free javascript minifier"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "csv-to-json",
+    "name": "CSV to JSON",
+    "category": "converter",
+    "week": 9,
+    "shortDescription": "Use csv to json with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free csv to json online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "csv to json",
+      "csv to json online",
+      "free csv to json"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "csv-viewer",
+    "name": "CSV Viewer",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use csv viewer with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free csv viewer online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "csv viewer",
+      "csv viewer online",
+      "free csv viewer"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "csv-column-extractor",
+    "name": "CSV Column Extractor",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use csv column extractor with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free csv column extractor online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "csv column extractor",
+      "csv column extractor online",
+      "free csv column extractor"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "csv-row-filter",
+    "name": "CSV Row Filter",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use csv row filter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free csv row filter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "csv row filter",
+      "csv row filter online",
+      "free csv row filter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "csv-sorter",
+    "name": "CSV Sorter",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use csv sorter with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free csv sorter online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "csv sorter",
+      "csv sorter online",
+      "free csv sorter"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "csv-duplicate-remover",
+    "name": "CSV Duplicate Remover",
+    "category": "developer",
+    "week": 9,
+    "shortDescription": "Use csv duplicate remover with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free csv duplicate remover online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "csv duplicate remover",
+      "csv duplicate remover online",
+      "free csv duplicate remover"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "tsv-to-csv",
+    "name": "TSV to CSV",
+    "category": "converter",
+    "week": 10,
+    "shortDescription": "Use tsv to csv with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free tsv to csv online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "tsv to csv",
+      "tsv to csv online",
+      "free tsv to csv"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "checklist-generator",
+    "name": "Checklist Generator",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Use checklist generator with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free checklist generator online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "checklist generator",
+      "checklist generator online",
+      "free checklist generator"
+    ],
+    "ready": false
+  },
+  {
+    "slug": "simple-pomodoro-timer",
+    "name": "Simple Pomodoro Timer",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Use simple pomodoro timer with typed or pasted inputs and instant browser-based results.",
+    "metaDescription": "Free simple pomodoro timer online. Enter text, numbers, or dates to get useful results privately in your browser with no uploads or account.",
+    "keywords": [
+      "simple pomodoro timer",
+      "simple pomodoro timer online",
+      "free simple pomodoro timer"
+    ],
+    "ready": false
+  }
+]
