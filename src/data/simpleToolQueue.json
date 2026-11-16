@@ -4410,18 +4410,18 @@
     "ready": true
   },
   {
-    "slug": "trim-each-line",
-    "name": "Trim Each Line",
+    "slug": "indentation-depth-analyzer",
+    "name": "Indentation Depth Analyzer",
     "category": "text",
     "week": 30,
-    "shortDescription": "Trim leading and trailing whitespace on every line.",
-    "metaDescription": "Trim leading and trailing whitespace on every line. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "shortDescription": "Measure leading spaces and tab indentation on each pasted line.",
+    "metaDescription": "Measure leading spaces and tab indentation on each pasted line. See indentation levels directly in your browser without uploading files.",
     "keywords": [
-      "trim each line",
-      "online trim each line",
-      "free trim each line"
+      "indentation depth analyzer",
+      "leading whitespace count",
+      "indent level by line"
     ],
-    "example": "  alpha  \n  beta \n gamma  ",
+    "example": "  alpha\n    beta\n\tgamma",
     "ready": true
   },
   {
