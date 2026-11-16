@@ -1363,5 +1363,755 @@
     ],
     "ready": true,
     "example": "25"
+  },
+  {
+    "slug": "speaking-time-calculator",
+    "name": "Speaking Time Calculator",
+    "category": "calculator",
+    "week": 10,
+    "shortDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate.",
+    "metaDescription": "Estimate speaking duration from word count and a chosen words-per-minute rate. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "speaking time calculator",
+      "online speaking time calculator",
+      "free speaking time calculator"
+    ],
+    "example": "Hello everyone. Welcome to today's presentation. We will explore useful tools for everyday tasks.",
+    "ready": true
+  },
+  {
+    "slug": "readability-score-checker",
+    "name": "Readability Score Checker",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Estimate Flesch Reading Ease and US grade level for English text.",
+    "metaDescription": "Estimate Flesch Reading Ease and US grade level for English text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "readability score checker",
+      "online readability score checker",
+      "free readability score checker"
+    ],
+    "example": "The cat sits on the mat. It likes the sun.",
+    "ready": true
+  },
+  {
+    "slug": "syllable-counter",
+    "name": "Syllable Counter",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Estimate English syllables in words and a pasted passage.",
+    "metaDescription": "Estimate English syllables in words and a pasted passage. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "syllable counter",
+      "online syllable counter",
+      "free syllable counter"
+    ],
+    "example": "Beautiful elephants wander slowly.",
+    "ready": true
+  },
+  {
+    "slug": "long-sentence-finder",
+    "name": "Long Sentence Finder",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Flag sentences longer than a configurable word-count threshold.",
+    "metaDescription": "Flag sentences longer than a configurable word-count threshold. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "long sentence finder",
+      "online long sentence finder",
+      "free long sentence finder"
+    ],
+    "example": "12\n---\nShort sentence. This is a much longer sentence that contains a great many words and needs a second look before publishing.",
+    "ready": true
+  },
+  {
+    "slug": "repeated-word-detector",
+    "name": "Repeated Word Detector",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Find words accidentally repeated directly next to each other.",
+    "metaDescription": "Find words accidentally repeated directly next to each other. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "repeated word detector",
+      "online repeated word detector",
+      "free repeated word detector"
+    ],
+    "example": "This is is an example of the the problem.",
+    "ready": true
+  },
+  {
+    "slug": "character-frequency-analyzer",
+    "name": "Character Frequency Analyzer",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Count and rank individual characters in pasted text.",
+    "metaDescription": "Count and rank individual characters in pasted text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "character frequency analyzer",
+      "online character frequency analyzer",
+      "free character frequency analyzer"
+    ],
+    "example": "Banana banana!",
+    "ready": true
+  },
+  {
+    "slug": "word-length-distribution",
+    "name": "Word Length Distribution",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Group words by number of letters and show their frequency.",
+    "metaDescription": "Group words by number of letters and show their frequency. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "word length distribution",
+      "online word length distribution",
+      "free word length distribution"
+    ],
+    "example": "A little bird sings a bright song.",
+    "ready": true
+  },
+  {
+    "slug": "palindrome-checker",
+    "name": "Palindrome Checker",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Determine whether text reads the same backward after normalization.",
+    "metaDescription": "Determine whether text reads the same backward after normalization. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "palindrome checker",
+      "online palindrome checker",
+      "free palindrome checker"
+    ],
+    "example": "A man, a plan, a canal: Panama!",
+    "ready": true
+  },
+  {
+    "slug": "n-gram-generator",
+    "name": "N-Gram Generator",
+    "category": "text",
+    "week": 10,
+    "shortDescription": "Generate word n-grams of a chosen length from text.",
+    "metaDescription": "Generate word n-grams of a chosen length from text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "n-gram generator",
+      "online n-gram generator",
+      "free n-gram generator"
+    ],
+    "example": "2\n---\nThe quick brown fox jumps over the lazy dog.",
+    "ready": true
+  },
+  {
+    "slug": "stop-word-remover",
+    "name": "Stop Word Remover",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Remove common English stop words from a passage.",
+    "metaDescription": "Remove common English stop words from a passage. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "stop word remover",
+      "online stop word remover",
+      "free stop word remover"
+    ],
+    "example": "This is a simple test of the tool and its results.",
+    "ready": true
+  },
+  {
+    "slug": "invisible-unicode-detector",
+    "name": "Invisible Unicode Detector",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Locate zero-width, nonbreaking and control characters inside text.",
+    "metaDescription": "Locate zero-width, nonbreaking and control characters inside text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "invisible unicode detector",
+      "online invisible unicode detector",
+      "free invisible unicode detector"
+    ],
+    "example": "Hello​World again",
+    "ready": true
+  },
+  {
+    "slug": "zero-width-character-remover",
+    "name": "Zero-Width Character Remover",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Remove selected zero-width Unicode formatting characters.",
+    "metaDescription": "Remove selected zero-width Unicode formatting characters. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "zero-width character remover",
+      "online zero-width character remover",
+      "free zero-width character remover"
+    ],
+    "example": "Hello​World‍Again",
+    "ready": true
+  },
+  {
+    "slug": "unicode-code-point-inspector",
+    "name": "Unicode Code Point Inspector",
+    "category": "developer",
+    "week": 11,
+    "shortDescription": "Show each character or grapheme's Unicode code points and names where available.",
+    "metaDescription": "Show each character or grapheme's Unicode code points and names where available. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "unicode code point inspector",
+      "online unicode code point inspector",
+      "free unicode code point inspector"
+    ],
+    "example": "A 😊 é",
+    "ready": true
+  },
+  {
+    "slug": "diacritics-remover",
+    "name": "Diacritics Remover",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Strip combining accent marks from text.",
+    "metaDescription": "Strip combining accent marks from text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "diacritics remover",
+      "online diacritics remover",
+      "free diacritics remover"
+    ],
+    "example": "Crème brûlée déjà vu, São Paulo.",
+    "ready": true
+  },
+  {
+    "slug": "emoji-remover",
+    "name": "Emoji Remover",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Remove most emoji sequences while preserving ordinary text.",
+    "metaDescription": "Remove most emoji sequences while preserving ordinary text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "emoji remover",
+      "online emoji remover",
+      "free emoji remover"
+    ],
+    "example": "Hello 👋 world 🌍! Keep #tags and 123.",
+    "ready": true
+  },
+  {
+    "slug": "non-ascii-character-remover",
+    "name": "Non-ASCII Character Remover",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Remove code points outside the 7-bit ASCII range.",
+    "metaDescription": "Remove code points outside the 7-bit ASCII range. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "non-ascii character remover",
+      "online non-ascii character remover",
+      "free non-ascii character remover"
+    ],
+    "example": "Café, naïve, 東京, emoji 😊",
+    "ready": true
+  },
+  {
+    "slug": "text-truncator",
+    "name": "Text Truncator",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Truncate text to a maximum number of characters with an ellipsis.",
+    "metaDescription": "Truncate text to a maximum number of characters with an ellipsis. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "text truncator",
+      "online text truncator",
+      "free text truncator"
+    ],
+    "example": "35\n---\nA long product description that must be shortened for a UI card while keeping a readable ending.",
+    "ready": true
+  },
+  {
+    "slug": "word-wrap-formatter",
+    "name": "Word Wrap Formatter",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Wrap long text into lines at a target width.",
+    "metaDescription": "Wrap long text into lines at a target width. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "word wrap formatter",
+      "online word wrap formatter",
+      "free word wrap formatter"
+    ],
+    "example": "24\n---\nThis is a sentence that should be wrapped into readable lines without cutting words in the middle.",
+    "ready": true
+  },
+  {
+    "slug": "string-padder",
+    "name": "String Padder",
+    "category": "text",
+    "week": 11,
+    "shortDescription": "Pad lines to a specified width on the left, right or both sides.",
+    "metaDescription": "Pad lines to a specified width on the left, right or both sides. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "string padder",
+      "online string padder",
+      "free string padder"
+    ],
+    "example": "12|right|.\n---\nToolsiva",
+    "ready": true
+  },
+  {
+    "slug": "line-length-checker",
+    "name": "Line Length Checker",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Report line lengths, longest line and line numbers.",
+    "metaDescription": "Report line lengths, longest line and line numbers. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "line length checker",
+      "online line length checker",
+      "free line length checker"
+    ],
+    "example": "First line\nA much longer second line\nLast",
+    "ready": true
+  },
+  {
+    "slug": "phone-number-extractor",
+    "name": "Phone Number Extractor",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Extract phone-number-like strings from pasted text.",
+    "metaDescription": "Extract phone-number-like strings from pasted text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "phone number extractor",
+      "online phone number extractor",
+      "free phone number extractor"
+    ],
+    "example": "Call +1 (415) 555-0142 or +44 20 7946 0958 for assistance.",
+    "ready": true
+  },
+  {
+    "slug": "ipv4-address-extractor",
+    "name": "IPv4 Address Extractor",
+    "category": "developer",
+    "week": 12,
+    "shortDescription": "Extract syntactically valid IPv4 addresses from text.",
+    "metaDescription": "Extract syntactically valid IPv4 addresses from text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "ipv4 address extractor",
+      "online ipv4 address extractor",
+      "free ipv4 address extractor"
+    ],
+    "example": "192.168.1.10 and 8.8.8.8 are valid; 999.2.3.4 is not.",
+    "ready": true
+  },
+  {
+    "slug": "ipv6-address-extractor",
+    "name": "IPv6 Address Extractor",
+    "category": "developer",
+    "week": 12,
+    "shortDescription": "Extract valid IPv6 literals, including compressed forms.",
+    "metaDescription": "Extract valid IPv6 literals, including compressed forms. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "ipv6 address extractor",
+      "online ipv6 address extractor",
+      "free ipv6 address extractor"
+    ],
+    "example": "2001:db8::1, ::1 and fe80::abcd are IPv6 addresses.",
+    "ready": true
+  },
+  {
+    "slug": "hashtag-extractor",
+    "name": "Hashtag Extractor",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Extract hashtag tokens and show unique values.",
+    "metaDescription": "Extract hashtag tokens and show unique values. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "hashtag extractor",
+      "online hashtag extractor",
+      "free hashtag extractor"
+    ],
+    "example": "Share #Toolsiva #SEO2026 and #web_tools!",
+    "ready": true
+  },
+  {
+    "slug": "social-mention-extractor",
+    "name": "Social Mention Extractor",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Extract social-style @mentions without treating email addresses as mentions.",
+    "metaDescription": "Extract social-style @mentions without treating email addresses as mentions. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "social mention extractor",
+      "online social mention extractor",
+      "free social mention extractor"
+    ],
+    "example": "Thanks @alice and @bob for the update. Email admin@example.com.",
+    "ready": true
+  },
+  {
+    "slug": "number-extractor",
+    "name": "Number Extractor",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Extract integer and decimal numeric values from text.",
+    "metaDescription": "Extract integer and decimal numeric values from text. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "number extractor",
+      "online number extractor",
+      "free number extractor"
+    ],
+    "example": "Revenue: $1,250.50, change -3.2%, and quantity 40.",
+    "ready": true
+  },
+  {
+    "slug": "date-pattern-extractor",
+    "name": "Date Pattern Extractor",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Extract common ISO and slash-style date patterns.",
+    "metaDescription": "Extract common ISO and slash-style date patterns. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "date pattern extractor",
+      "online date pattern extractor",
+      "free date pattern extractor"
+    ],
+    "example": "The event is 2026-11-16; another is on 11/20/2026.",
+    "ready": true
+  },
+  {
+    "slug": "quoted-text-extractor",
+    "name": "Quoted Text Extractor",
+    "category": "text",
+    "week": 12,
+    "shortDescription": "Extract substrings between matching single or double quotation marks.",
+    "metaDescription": "Extract substrings between matching single or double quotation marks. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "quoted text extractor",
+      "online quoted text extractor",
+      "free quoted text extractor"
+    ],
+    "example": "He said \"hello world\" and she replied 'goodbye'.",
+    "ready": true
+  },
+  {
+    "slug": "domain-name-extractor",
+    "name": "Domain Name Extractor",
+    "category": "developer",
+    "week": 12,
+    "shortDescription": "Extract unique domain names from URLs, bare hosts and email addresses.",
+    "metaDescription": "Extract unique domain names from URLs, bare hosts and email addresses. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "domain name extractor",
+      "online domain name extractor",
+      "free domain name extractor"
+    ],
+    "example": "Visit https://example.org/path, www.toolsiva.com or email info@company.net.",
+    "ready": true
+  },
+  {
+    "slug": "email-domain-counter",
+    "name": "Email Domain Counter",
+    "category": "text",
+    "week": 13,
+    "shortDescription": "Count unique email addresses by their domain name.",
+    "metaDescription": "Count unique email addresses by their domain name. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "email domain counter",
+      "online email domain counter",
+      "free email domain counter"
+    ],
+    "example": "alice@example.com bob@example.com user@toolsiva.com",
+    "ready": true
+  },
+  {
+    "slug": "json-key-extractor",
+    "name": "JSON Key Extractor",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "List property paths found in nested JSON objects and arrays.",
+    "metaDescription": "List property paths found in nested JSON objects and arrays. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json key extractor",
+      "online json key extractor",
+      "free json key extractor"
+    ],
+    "example": "{\"user\":{\"name\":\"Ada\",\"age\":32},\"active\":true}",
+    "ready": true
+  },
+  {
+    "slug": "json-flatten",
+    "name": "JSON Flatten",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Flatten nested JSON into a map of JSON Pointer paths and values.",
+    "metaDescription": "Flatten nested JSON into a map of JSON Pointer paths and values. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json flatten",
+      "online json flatten",
+      "free json flatten"
+    ],
+    "example": "{\"user\":{\"name\":\"Ada\",\"age\":32},\"tags\":[\"a\",\"b\"]}",
+    "ready": true
+  },
+  {
+    "slug": "json-unflatten",
+    "name": "JSON Unflatten",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Rebuild nested objects and arrays from JSON Pointer paths.",
+    "metaDescription": "Rebuild nested objects and arrays from JSON Pointer paths. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json unflatten",
+      "online json unflatten",
+      "free json unflatten"
+    ],
+    "example": "{\"/user/name\":\"Ada\",\"/user/age\":32,\"/tags/0\":\"a\",\"/tags/1\":\"b\"}",
+    "ready": true
+  },
+  {
+    "slug": "json-array-sorter",
+    "name": "JSON Array Sorter",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Sort an array of JSON objects by a chosen field and direction.",
+    "metaDescription": "Sort an array of JSON objects by a chosen field and direction. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json array sorter",
+      "online json array sorter",
+      "free json array sorter"
+    ],
+    "example": "score|desc\n---\n[{\"name\":\"Ada\",\"score\":8},{\"name\":\"Bob\",\"score\":12}]",
+    "ready": true
+  },
+  {
+    "slug": "json-array-filter",
+    "name": "JSON Array Filter",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Filter JSON array items by a field's exact string value.",
+    "metaDescription": "Filter JSON array items by a field's exact string value. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json array filter",
+      "online json array filter",
+      "free json array filter"
+    ],
+    "example": "role=admin\n---\n[{\"role\":\"admin\",\"name\":\"A\"},{\"role\":\"user\",\"name\":\"B\"}]",
+    "ready": true
+  },
+  {
+    "slug": "json-array-deduplicator",
+    "name": "JSON Array Deduplicator",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Remove duplicate JSON array entries while preserving their first occurrence.",
+    "metaDescription": "Remove duplicate JSON array entries while preserving their first occurrence. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json array deduplicator",
+      "online json array deduplicator",
+      "free json array deduplicator"
+    ],
+    "example": "[{\"id\":1,\"name\":\"Ada\"},{\"id\":1,\"name\":\"Ada\"},{\"id\":2,\"name\":\"Bob\"}]",
+    "ready": true
+  },
+  {
+    "slug": "json-key-renamer",
+    "name": "JSON Key Renamer",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Rename an object key recursively throughout a JSON document.",
+    "metaDescription": "Rename an object key recursively throughout a JSON document. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json key renamer",
+      "online json key renamer",
+      "free json key renamer"
+    ],
+    "example": "old|new\n---\n{\"old\":1,\"nested\":{\"old\":2}}",
+    "ready": true
+  },
+  {
+    "slug": "json-value-searcher",
+    "name": "JSON Value Searcher",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Find JSON Pointer paths for values containing a search string.",
+    "metaDescription": "Find JSON Pointer paths for values containing a search string. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json value searcher",
+      "online json value searcher",
+      "free json value searcher"
+    ],
+    "example": "Ada\n---\n{\"name\":\"Ada\",\"contacts\":[{\"name\":\"Bob\"}]}",
+    "ready": true
+  },
+  {
+    "slug": "json-structure-summary",
+    "name": "JSON Structure Summary",
+    "category": "developer",
+    "week": 13,
+    "shortDescription": "Summarize JSON objects, arrays, keys, nesting depth and primitive types.",
+    "metaDescription": "Summarize JSON objects, arrays, keys, nesting depth and primitive types. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "json structure summary",
+      "online json structure summary",
+      "free json structure summary"
+    ],
+    "example": "{\"team\":[{\"name\":\"Ada\"},{\"name\":\"Bob\"}],\"active\":true}",
+    "ready": true
+  },
+  {
+    "slug": "csv-column-statistics",
+    "name": "CSV Column Statistics",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Calculate basic counts and numeric statistics for one pasted CSV column.",
+    "metaDescription": "Calculate basic counts and numeric statistics for one pasted CSV column. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "csv column statistics",
+      "online csv column statistics",
+      "free csv column statistics"
+    ],
+    "example": "age\n---\nname,age\nAda,30\nBob,35\nCleo,25",
+    "ready": true
+  },
+  {
+    "slug": "css-specificity-calculator",
+    "name": "CSS Specificity Calculator",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Estimate selector specificity as ID, class and type counts.",
+    "metaDescription": "Estimate selector specificity as ID, class and type counts. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "css specificity calculator",
+      "online css specificity calculator",
+      "free css specificity calculator"
+    ],
+    "example": "#app .card:hover > p",
+    "ready": true
+  },
+  {
+    "slug": "html-tag-counter",
+    "name": "HTML Tag Counter",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Count opening HTML elements by tag name from pasted markup.",
+    "metaDescription": "Count opening HTML elements by tag name from pasted markup. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "html tag counter",
+      "online html tag counter",
+      "free html tag counter"
+    ],
+    "example": "<div><p>Hello</p><p>World</p><br></div>",
+    "ready": true
+  },
+  {
+    "slug": "html-link-extractor",
+    "name": "HTML Link Extractor",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Extract href values and link text from pasted HTML anchors.",
+    "metaDescription": "Extract href values and link text from pasted HTML anchors. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "html link extractor",
+      "online html link extractor",
+      "free html link extractor"
+    ],
+    "example": "<a href=\"https://example.com\">Example</a><a href=\"/about\">About</a>",
+    "ready": true
+  },
+  {
+    "slug": "html-attribute-extractor",
+    "name": "HTML Attribute Extractor",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Extract selected attribute values from pasted HTML.",
+    "metaDescription": "Extract selected attribute values from pasted HTML. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "html attribute extractor",
+      "online html attribute extractor",
+      "free html attribute extractor"
+    ],
+    "example": "href\n---\n<a href=\"/about\" title=\"About\">About</a>",
+    "ready": true
+  },
+  {
+    "slug": "http-status-code-lookup",
+    "name": "HTTP Status Code Lookup",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Look up HTTP status names and a brief explanation by status code.",
+    "metaDescription": "Look up HTTP status names and a brief explanation by status code. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "http status code lookup",
+      "online http status code lookup",
+      "free http status code lookup"
+    ],
+    "example": "404",
+    "ready": true
+  },
+  {
+    "slug": "mime-type-lookup",
+    "name": "MIME Type Lookup",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Look up common MIME types using a typed extension or a type name.",
+    "metaDescription": "Look up common MIME types using a typed extension or a type name. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "mime type lookup",
+      "online mime type lookup",
+      "free mime type lookup"
+    ],
+    "example": ".html",
+    "ready": true
+  },
+  {
+    "slug": "meta-robots-generator",
+    "name": "Meta Robots Generator",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Generate a valid HTML meta robots directive from chosen tokens.",
+    "metaDescription": "Generate a valid HTML meta robots directive from chosen tokens. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "meta robots generator",
+      "online meta robots generator",
+      "free meta robots generator"
+    ],
+    "example": "noindex,nofollow,noarchive",
+    "ready": true
+  },
+  {
+    "slug": "cache-control-header-generator",
+    "name": "Cache-Control Header Generator",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Validate and compose a Cache-Control HTTP header value.",
+    "metaDescription": "Validate and compose a Cache-Control HTTP header value. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "cache-control header generator",
+      "online cache-control header generator",
+      "free cache-control header generator"
+    ],
+    "example": "public, max-age=3600, immutable",
+    "ready": true
+  },
+  {
+    "slug": "url-query-parameter-builder",
+    "name": "URL Query Parameter Builder",
+    "category": "developer",
+    "week": 14,
+    "shortDescription": "Add or replace URL query parameters from text lines.",
+    "metaDescription": "Add or replace URL query parameters from text lines. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "url query parameter builder",
+      "online url query parameter builder",
+      "free url query parameter builder"
+    ],
+    "example": "https://example.com/search\n---\nq=hello world\npage=2",
+    "ready": true
+  },
+  {
+    "slug": "ipv4-subnet-calculator",
+    "name": "IPv4 Subnet Calculator",
+    "category": "calculator",
+    "week": 15,
+    "shortDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR.",
+    "metaDescription": "Calculate IPv4 network, broadcast, mask and address range from CIDR. Paste text or enter values online with no uploads or account.",
+    "keywords": [
+      "ipv4 subnet calculator",
+      "online ipv4 subnet calculator",
+      "free ipv4 subnet calculator"
+    ],
+    "example": "192.168.1.10/24",
+    "ready": true
   }
 ]

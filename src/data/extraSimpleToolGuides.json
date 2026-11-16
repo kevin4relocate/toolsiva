@@ -1,0 +1,452 @@
+{
+  "speaking-time-calculator": {
+    "explanation": "Estimate speaking duration from word count and a chosen words-per-minute rate.",
+    "limitation": "Actual delivery varies with pauses and presentation style.",
+    "example": "Hello everyone. Welcome to today's presentation. We will explore useful tools for everyday tasks.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "readability-score-checker": {
+    "explanation": "Estimate Flesch Reading Ease and US grade level for English text.",
+    "limitation": "The scores are English-language heuristics, not definitive measures of reading ability.",
+    "example": "The cat sits on the mat. It likes the sun.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "syllable-counter": {
+    "explanation": "Estimate English syllables in words and a pasted passage.",
+    "limitation": "English syllable heuristics will miscount some names, loanwords and irregular spellings.",
+    "example": "Beautiful elephants wander slowly.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "long-sentence-finder": {
+    "explanation": "Flag sentences longer than a configurable word-count threshold.",
+    "limitation": "Punctuation-based sentence boundaries are approximate.",
+    "example": "12\n---\nShort sentence. This is a much longer sentence that contains a great many words and needs a second look before publishing.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "repeated-word-detector": {
+    "explanation": "Find words accidentally repeated directly next to each other.",
+    "limitation": "Focuses on adjacent repeated words, not general word frequency.",
+    "example": "This is is an example of the the problem.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "character-frequency-analyzer": {
+    "explanation": "Count and rank individual characters in pasted text.",
+    "limitation": "Character comparisons are case-sensitive unless your input is normalized.",
+    "example": "Banana banana!",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "word-length-distribution": {
+    "explanation": "Group words by number of letters and show their frequency.",
+    "limitation": "Unicode letters are counted; punctuation is ignored.",
+    "example": "A little bird sings a bright song.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "palindrome-checker": {
+    "explanation": "Determine whether text reads the same backward after normalization.",
+    "limitation": "Ignore spaces, punctuation and capitalization; does not infer linguistic meaning.",
+    "example": "A man, a plan, a canal: Panama!",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "n-gram-generator": {
+    "explanation": "Generate word n-grams of a chosen length from text.",
+    "limitation": "N-grams are contiguous words; no semantic analysis is performed.",
+    "example": "2\n---\nThe quick brown fox jumps over the lazy dog.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "stop-word-remover": {
+    "explanation": "Remove common English stop words from a passage.",
+    "limitation": "The stop-word list is fixed and may remove words important to context.",
+    "example": "This is a simple test of the tool and its results.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "invisible-unicode-detector": {
+    "explanation": "Locate zero-width, nonbreaking and control characters inside text.",
+    "limitation": "Not every invisible character is harmful; some are needed for typography.",
+    "example": "Hello​World again",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "zero-width-character-remover": {
+    "explanation": "Remove selected zero-width Unicode formatting characters.",
+    "limitation": "Removing joiners may change emoji sequences and some writing systems.",
+    "example": "Hello​World‍Again",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "unicode-code-point-inspector": {
+    "explanation": "Show each character or grapheme's Unicode code points and names where available.",
+    "limitation": "Names are provided for common categories; this is not a full Unicode database.",
+    "example": "A 😊 é",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "diacritics-remover": {
+    "explanation": "Strip combining accent marks from text.",
+    "limitation": "Some characters such as ł or ø do not decompose into unaccented Latin letters.",
+    "example": "Crème brûlée déjà vu, São Paulo.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "emoji-remover": {
+    "explanation": "Remove most emoji sequences while preserving ordinary text.",
+    "limitation": "Unicode emoji is evolving and some edge cases may remain.",
+    "example": "Hello 👋 world 🌍! Keep #tags and 123.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "non-ascii-character-remover": {
+    "explanation": "Remove code points outside the 7-bit ASCII range.",
+    "limitation": "All non-English scripts and accented letters will be removed.",
+    "example": "Café, naïve, 東京, emoji 😊",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "text-truncator": {
+    "explanation": "Truncate text to a maximum number of characters with an ellipsis.",
+    "limitation": "Character length is measured by grapheme clusters, not storage bytes.",
+    "example": "35\n---\nA long product description that must be shortened for a UI card while keeping a readable ending.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "word-wrap-formatter": {
+    "explanation": "Wrap long text into lines at a target width.",
+    "limitation": "Very long unbroken words can exceed the requested width.",
+    "example": "24\n---\nThis is a sentence that should be wrapped into readable lines without cutting words in the middle.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "string-padder": {
+    "explanation": "Pad lines to a specified width on the left, right or both sides.",
+    "limitation": "Padding works in Unicode characters, not visual font pixel widths.",
+    "example": "12|right|.\n---\nToolsiva",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "line-length-checker": {
+    "explanation": "Report line lengths, longest line and line numbers.",
+    "limitation": "Lengths use Unicode code points and do not represent display width.",
+    "example": "First line\nA much longer second line\nLast",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "phone-number-extractor": {
+    "explanation": "Extract phone-number-like strings from pasted text.",
+    "limitation": "Pattern matching does not verify that numbers are real or callable.",
+    "example": "Call +1 (415) 555-0142 or +44 20 7946 0958 for assistance.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "ipv4-address-extractor": {
+    "explanation": "Extract syntactically valid IPv4 addresses from text.",
+    "limitation": "Validation checks the dotted-decimal address, not whether it is reachable.",
+    "example": "192.168.1.10 and 8.8.8.8 are valid; 999.2.3.4 is not.",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "ipv6-address-extractor": {
+    "explanation": "Extract valid IPv6 literals, including compressed forms.",
+    "limitation": "Zone identifiers and all uncommon IPv4-embedded representations are not supported.",
+    "example": "2001:db8::1, ::1 and fe80::abcd are IPv6 addresses.",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "hashtag-extractor": {
+    "explanation": "Extract hashtag tokens and show unique values.",
+    "limitation": "Only text hashtags are detected; no social platform API is contacted.",
+    "example": "Share #Toolsiva #SEO2026 and #web_tools!",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "social-mention-extractor": {
+    "explanation": "Extract social-style @mentions without treating email addresses as mentions.",
+    "limitation": "Platform-specific mention rules differ; results are approximate.",
+    "example": "Thanks @alice and @bob for the update. Email admin@example.com.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "number-extractor": {
+    "explanation": "Extract integer and decimal numeric values from text.",
+    "limitation": "Locale-specific thousands and decimal separators can vary.",
+    "example": "Revenue: $1,250.50, change -3.2%, and quantity 40.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "date-pattern-extractor": {
+    "explanation": "Extract common ISO and slash-style date patterns.",
+    "limitation": "Pattern matches are not a substitute for validating calendar dates.",
+    "example": "The event is 2026-11-16; another is on 11/20/2026.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "quoted-text-extractor": {
+    "explanation": "Extract substrings between matching single or double quotation marks.",
+    "limitation": "Designed for simple quotations, not a full programming-language string parser.",
+    "example": "He said \"hello world\" and she replied 'goodbye'.",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "domain-name-extractor": {
+    "explanation": "Extract unique domain names from URLs, bare hosts and email addresses.",
+    "limitation": "Matches syntactic domains, not domain registration or ownership.",
+    "example": "Visit https://example.org/path, www.toolsiva.com or email info@company.net.",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "email-domain-counter": {
+    "explanation": "Count unique email addresses by their domain name.",
+    "limitation": "Only common email address patterns are recognized.",
+    "example": "alice@example.com bob@example.com user@toolsiva.com",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  },
+  "json-key-extractor": {
+    "explanation": "List property paths found in nested JSON objects and arrays.",
+    "limitation": "Paths use JSON Pointer notation; arrays are traversed by indices.",
+    "example": "{\"user\":{\"name\":\"Ada\",\"age\":32},\"active\":true}",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-flatten": {
+    "explanation": "Flatten nested JSON into a map of JSON Pointer paths and values.",
+    "limitation": "Empty containers are retained as values to preserve round trips.",
+    "example": "{\"user\":{\"name\":\"Ada\",\"age\":32},\"tags\":[\"a\",\"b\"]}",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-unflatten": {
+    "explanation": "Rebuild nested objects and arrays from JSON Pointer paths.",
+    "limitation": "Paths must be valid and nonconflicting; root containers are inferred.",
+    "example": "{\"/user/name\":\"Ada\",\"/user/age\":32,\"/tags/0\":\"a\",\"/tags/1\":\"b\"}",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-array-sorter": {
+    "explanation": "Sort an array of JSON objects by a chosen field and direction.",
+    "limitation": "Nested sorting keys use dot paths; missing fields sort last.",
+    "example": "score|desc\n---\n[{\"name\":\"Ada\",\"score\":8},{\"name\":\"Bob\",\"score\":12}]",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-array-filter": {
+    "explanation": "Filter JSON array items by a field's exact string value.",
+    "limitation": "Filters perform exact value comparisons, not a complete query language.",
+    "example": "role=admin\n---\n[{\"role\":\"admin\",\"name\":\"A\"},{\"role\":\"user\",\"name\":\"B\"}]",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-array-deduplicator": {
+    "explanation": "Remove duplicate JSON array entries while preserving their first occurrence.",
+    "limitation": "Objects are compared by normalized JSON structure, not identity.",
+    "example": "[{\"id\":1,\"name\":\"Ada\"},{\"id\":1,\"name\":\"Ada\"},{\"id\":2,\"name\":\"Bob\"}]",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-key-renamer": {
+    "explanation": "Rename an object key recursively throughout a JSON document.",
+    "limitation": "A rename that would overwrite an existing key is rejected.",
+    "example": "old|new\n---\n{\"old\":1,\"nested\":{\"old\":2}}",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-value-searcher": {
+    "explanation": "Find JSON Pointer paths for values containing a search string.",
+    "limitation": "Search compares primitive values as text and is case-insensitive.",
+    "example": "Ada\n---\n{\"name\":\"Ada\",\"contacts\":[{\"name\":\"Bob\"}]}",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "json-structure-summary": {
+    "explanation": "Summarize JSON objects, arrays, keys, nesting depth and primitive types.",
+    "limitation": "Counts describe parsed structure, not the meaning of the data.",
+    "example": "{\"team\":[{\"name\":\"Ada\"},{\"name\":\"Bob\"}],\"active\":true}",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "csv-column-statistics": {
+    "explanation": "Calculate basic counts and numeric statistics for one pasted CSV column.",
+    "limitation": "Non-numeric cells are excluded from numeric measures.",
+    "example": "age\n---\nname,age\nAda,30\nBob,35\nCleo,25",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "css-specificity-calculator": {
+    "explanation": "Estimate selector specificity as ID, class and type counts.",
+    "limitation": "Complex nesting and advanced pseudo-classes may need a full CSS parser.",
+    "example": "#app .card:hover > p",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "html-tag-counter": {
+    "explanation": "Count opening HTML elements by tag name from pasted markup.",
+    "limitation": "Uses browser HTML parsing; malformed markup is normalized.",
+    "example": "<div><p>Hello</p><p>World</p><br></div>",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "html-link-extractor": {
+    "explanation": "Extract href values and link text from pasted HTML anchors.",
+    "limitation": "Relative links remain relative; no external pages are fetched.",
+    "example": "<a href=\"https://example.com\">Example</a><a href=\"/about\">About</a>",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "html-attribute-extractor": {
+    "explanation": "Extract selected attribute values from pasted HTML.",
+    "limitation": "Only markup that you paste is processed; scripts are not executed.",
+    "example": "href\n---\n<a href=\"/about\" title=\"About\">About</a>",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "http-status-code-lookup": {
+    "explanation": "Look up HTTP status names and a brief explanation by status code.",
+    "limitation": "Reference descriptions do not substitute for server-specific diagnostics.",
+    "example": "404",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "mime-type-lookup": {
+    "explanation": "Look up common MIME types using a typed extension or a type name.",
+    "limitation": "This uses a local mapping; no file is opened or detected.",
+    "example": ".html",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "meta-robots-generator": {
+    "explanation": "Generate a valid HTML meta robots directive from chosen tokens.",
+    "limitation": "Search engines may interpret directives differently.",
+    "example": "noindex,nofollow,noarchive",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "cache-control-header-generator": {
+    "explanation": "Validate and compose a Cache-Control HTTP header value.",
+    "limitation": "Caching depends on response context and intermediary behavior.",
+    "example": "public, max-age=3600, immutable",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "url-query-parameter-builder": {
+    "explanation": "Add or replace URL query parameters from text lines.",
+    "limitation": "No HTTP requests are made; only the resulting URL string is built.",
+    "example": "https://example.com/search\n---\nq=hello world\npage=2",
+    "workflows": [
+      "Paste code or structured text in the input area.",
+      "Review the output and copy the resulting text."
+    ]
+  },
+  "ipv4-subnet-calculator": {
+    "explanation": "Calculate IPv4 network, broadcast, mask and address range from CIDR.",
+    "limitation": "This is IPv4-only; usable-host counts use conventional subnet assumptions.",
+    "example": "192.168.1.10/24",
+    "workflows": [
+      "Enter or paste the example format, then change it to your own input.",
+      "Review the updated result and copy it when ready."
+    ]
+  }
+}

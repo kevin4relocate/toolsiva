@@ -40,7 +40,8 @@
     "test:phase8": "node --test tests/phase8.test.mjs",
     "tools:release": "node scripts/release-simple-tools.mjs",
     "tools:release:dry": "node scripts/release-simple-tools.mjs --dry-run",
-    "test:simple-tools": "node --test tests/simple-tools.test.mjs"
+    "test:simple-tools": "node --test tests/simple-tools.test.mjs",
+    "test:extra-tools": "node --test tests/extra-simple-tools.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",

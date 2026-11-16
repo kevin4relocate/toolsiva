@@ -1,6 +1,7 @@
 import type { ToolDefinition } from "@/types/tool";
 import toolUsageNotes from "@/data/toolUsageNotes.json";
 import simpleToolQueue from "@/data/simpleToolQueue.json";
+import extraToolGuides from "@/data/extraSimpleToolGuides.json";
 
 export interface ToolExample { input: string; output: string; }
 export interface ToolContentSection { heading: string; paragraphs: string[]; }
@@ -452,6 +453,19 @@ export function getToolContentSections(tool: ToolDefinition): ToolContentSection
       { heading: "Before using the result", paragraphs: [note.watch] },
     ];
   }
+
+  const extra = extraToolGuides[tool.slug as keyof typeof extraToolGuides];
+  if (extra) return [
+    { heading: `What is ${tool.name}?`, paragraphs: [
+      extra.explanation,
+      `Try this sample input: ${extra.example.replaceAll("\\n", " | ").slice(0, 200)}.`,
+    ] },
+    { heading: `How to use ${tool.name}`, paragraphs: extra.workflows },
+    { heading: "Limitations and accuracy", paragraphs: [
+      extra.limitation,
+      "Inputs are processed inside your browser. The tool neither opens local files nor sends the submitted text to an external conversion or AI service.",
+    ] },
+  ];
 
   const scheduled = simpleToolQueue.find((item) => item.slug === tool.slug);
   if (scheduled) return [
