@@ -25,6 +25,10 @@ test("All 100 appended tools are unique, documented, safe, executable from sampl
  assert.equal(queue[291].slug,"line-starts-with-filter");
  assert.equal(queue.at(-1).slug,"spf-include-domain-extractor");
  assert.equal(new Set(queue.map(x=>x.slug)).size,391);
+ const baseSource=fs.readFileSync("src/data/tools.ts","utf8");
+ const baseSlugs=[...baseSource.matchAll(/(?:["']slug["']|slug)\s*:\s*["']([^"']+)["']/g)].map(x=>x[1]);
+ assert.equal(baseSlugs.length,123,"Unexpected original registry size");
+ assert.deepEqual(queue.filter(x=>baseSlugs.includes(x.slug)).map(x=>x.slug),[],"Scheduled tools must not duplicate publicly available slugs");
  const source=["wave5Text","wave5MarkdownData","wave5JsonDates","wave5MathBusiness","wave5Web"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const item of newTools){
   assert.ok(item.ready,item.slug);
