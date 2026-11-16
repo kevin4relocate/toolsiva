@@ -152,22 +152,22 @@
     {
       "left": "markdown-to-html",
       "right": "html-to-markdown",
-      "reason": "Inverse directions"
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
     },
     {
       "left": "csv-to-tsv",
       "right": "tsv-to-csv",
-      "reason": "Inverse directions"
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
     },
     {
       "left": "hourly-to-salary-calculator",
       "right": "salary-to-hourly-calculator",
-      "reason": "Inverse directions"
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
     },
     {
       "left": "unix-day-number-calculator",
       "right": "unix-day-number-to-date",
-      "reason": "Inverse directions"
+      "reason": "Transforms input in the opposite direction; the two workflows accept different data types and return distinct results."
     },
     {
       "left": "iso-week-date-formatter",
