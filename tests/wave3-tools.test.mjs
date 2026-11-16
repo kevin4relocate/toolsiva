@@ -12,16 +12,16 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 import guides from "../src/data/wave3ToolGuides.json" with {type:"json"};
 
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
-const added=queue.slice(141);
+const added=queue.slice(141,191);
 const run=(slug,value)=>thirdText(slug,value)??thirdCsvJson(slug,value)??dateSlots3(slug,value)??math4(slug,value)??web5(slug,value);
 
 test("Exactly 50 new tools follow the prior 141 and all have working examples",()=>{
- assert.equal(queue.length,191);
+ assert.equal(queue.length,291);
  assert.equal(added.length,50);
  assert.equal(queue[140].slug,"ipv4-subnet-calculator");
  assert.equal(queue[141].slug,"text-line-includes-filter");
- assert.equal(queue.at(-1).slug,"dmarc-record-generator");
- assert.equal(new Set(queue.map(x=>x.slug)).size,191);
+ assert.equal(queue[190].slug,"dmarc-record-generator");
+ assert.equal(new Set(queue.map(x=>x.slug)).size,291);
  assert.equal(Object.keys(guides).length,50);
  const sources=["wave3Text","wave3Data","wave3Dates","wave3Math","wave3Web"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const tool of added){
@@ -109,14 +109,14 @@ test("Queue releases 10 each Monday for 19 weeks, then the last one",()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave3-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue.slice(0,191)));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
   for(let i=0;i<20;i++){
    const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
    assert.equal(result.released.length,i===19?1:10);
   }
   const out=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(out.published,queue.map(x=>x.slug));
+  assert.deepEqual(out.published,queue.slice(0,191).map(x=>x.slug));
   assert.equal(out.history.length,20);
   assert.equal(out.history[14].slugs[0],queue[140].slug);
   assert.equal(out.history[14].slugs[1],queue[141].slug);
