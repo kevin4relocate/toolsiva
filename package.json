@@ -41,7 +41,8 @@
     "tools:release": "node scripts/release-simple-tools.mjs",
     "tools:release:dry": "node scripts/release-simple-tools.mjs --dry-run",
     "test:simple-tools": "node --test tests/simple-tools.test.mjs",
-    "test:extra-tools": "node --test tests/extra-simple-tools.test.mjs"
+    "test:extra-tools": "node --test tests/extra-simple-tools.test.mjs",
+    "test:wave3": "node --test tests/wave3-tools.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
