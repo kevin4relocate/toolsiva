@@ -15,8 +15,8 @@ const run=(slug,value)=>runExtraText(slug,value)??runExtraData(slug,value)??runE
 
 test("50 extra tools are appended after the original 91 without changing their schedule",()=>{
  assert.equal(extra.length,50);
- assert.equal(queue.length,291);
- assert.equal(new Set(queue.map(x=>x.slug)).size,291);
+ assert.equal(queue.length,391);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,391);
  assert.equal(Object.keys(guides).length,50);
  for(const x of extra){
   assert.ok(x.ready);

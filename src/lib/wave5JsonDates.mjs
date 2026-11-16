@@ -1,0 +1,39 @@
+function j5Split(input){const s=String(input??"");if(!s.trim())throw Error("Enter JSON input.");if(s.length>250000)throw Error("Maximum input size is 250,000 characters.");const i=s.indexOf("\n---\n");return i<0?{opt:"",body:s}:{opt:s.slice(0,i).trim(),body:s.slice(i+5)};}
+
+function j5Parse(raw){try{return JSON.parse(raw);}catch(e){throw Error("Invalid JSON: "+e.message);}}
+
+function j5Array(raw){const arr=j5Parse(raw);if(!Array.isArray(arr))throw Error("Enter a JSON array.");if(arr.length>20000)throw Error("Maximum 20,000 array elements.");return arr;}
+
+function j5Walk(value,visit,path="",depth=0){if(depth>60)throw Error("JSON nesting too deep.");visit(value,path);if(value&&typeof value==="object"){for(const [key,child]of Object.entries(value))j5Walk(child,visit,path+"/"+key.replace(/~/g,"~0").replace(/\//g,"~1"),depth+1);}}
+
+function j5Transform(value,mapper,depth=0,inArray=false){if(depth>60)throw Error("JSON nesting too deep.");if(Array.isArray(value))return value.map(x=>j5Transform(x,mapper,depth+1,true));if(value!==null&&typeof value==="object"){const o=Object.create(null);for(const [k,v]of Object.entries(value)){if(v===null&&mapper==="remove-null")continue;o[k]=j5Transform(v,mapper,depth+1,false);}return o;}if(mapper&&typeof mapper==="number"&&typeof value==="number")return Number(value.toFixed(mapper));return value;}
+
+function d5Date(raw){const m=String(raw).trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)throw Error("Enter YYYY-MM-DD.");const [y,mon,day]=m.slice(1).map(Number);const d=new Date(0);d.setUTCHours(0,0,0,0);d.setUTCFullYear(y,mon-1,day);if(d.getUTCFullYear()!==y||d.getUTCMonth()!==mon-1||d.getUTCDate()!==day)throw Error("Invalid Gregorian date.");return d;}
+
+function d5Format(d){return String(d.getUTCFullYear()).padStart(4,"0")+"-"+String(d.getUTCMonth()+1).padStart(2,"0")+"-"+String(d.getUTCDate()).padStart(2,"0");}
+
+function d5Month(raw){const m=String(raw).trim().match(/^(\d{4})-(\d{2})$/);if(!m||Number(m[2])<1||Number(m[2])>12)throw Error("Use YYYY-MM with valid month.");return [Number(m[1]),Number(m[2])];}
+
+function d5Weekday(raw){const names=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"],i=names.indexOf(String(raw).trim().toLowerCase());if(i<0)throw Error("Enter full weekday such as Monday.");return i;}
+
+export function j5Tools(slug,input){if(!["json-boolean-path-finder","json-null-path-finder","json-primitive-type-map","json-array-value-index-finder","json-array-reverser","json-array-rotator","json-array-chunker","json-array-length-analyzer","json-number-rounding-tool","json-null-property-remover"].includes(slug))return null;const {opt,body}=j5Split(input);switch(slug){
+case "json-boolean-path-finder":case "json-null-path-finder":case "json-primitive-type-map":{const obj=j5Parse(body),lines=[];j5Walk(obj,(v,p)=>{if(slug==="json-boolean-path-finder"&&typeof v==="boolean")lines.push((p||"/")+" = "+v);if(slug==="json-null-path-finder"&&v===null)lines.push(p||"/");if(slug==="json-primitive-type-map"&&(v===null||typeof v!=="object"))lines.push((p||"/")+" : "+(v===null?"null":typeof v));});return lines.join("\n")||"No matching JSON leaves found.";}
+case "json-array-value-index-finder":{if(!opt)throw Error("Enter a search value before ---.");const a=j5Array(body),indices=[];for(let i=0;i<a.length;i++){const x=a[i];if((x===null||typeof x!=="object")&&String(x)===opt)indices.push(i);}return "Matches: "+indices.length+"\nIndexes: "+(indices.join(", ")||"(none)");}
+case "json-array-reverser":return JSON.stringify(j5Array(body).reverse(),null,2);
+case "json-array-rotator":{if(!opt)throw Error("Enter the rotation count then --- and a JSON array.");const n=Number(opt),a=j5Array(body);if(!Number.isSafeInteger(n))throw Error("Rotation count must be a whole number.");if(!a.length)return "[]";const shift=((n%a.length)+a.length)%a.length;return JSON.stringify(shift?[...a.slice(-shift),...a.slice(0,-shift)]:a,null,2);}
+case "json-array-chunker":{const n=Number(opt);if(!Number.isSafeInteger(n)||n<1||n>10000)throw Error("Enter chunk size from 1 to 10000 before ---.");const a=j5Array(body),groups=[];for(let i=0;i<a.length;i+=n)groups.push(a.slice(i,i+n));return JSON.stringify(groups,null,2);}
+case "json-array-length-analyzer":{const a=j5Array(body);return "Root array length: "+a.length+"\n"+a.map((x,i)=>Array.isArray(x)?"Index "+i+": "+x.length+" elements":null).filter(Boolean).join("\n");}
+case "json-number-rounding-tool":{const n=Number(opt);if(!Number.isInteger(n)||n<0||n>12)throw Error("Enter decimal places 0 to 12, then ---, then JSON.");return JSON.stringify(j5Transform(j5Parse(body),n),null,2);}
+case "json-null-property-remover":return JSON.stringify(j5Transform(j5Parse(body),"remove-null"),null,2);
+default:return null;}}
+
+export function d5DateTools(slug,input){if(!["iso-week-date-formatter","unix-day-number-calculator","unix-day-number-to-date","date-offset-sequence-generator","full-months-between-dates","calendar-quarter-date-range","weekend-days-between-dates","weekday-occurrence-counter","first-weekday-of-month","last-weekday-of-month"].includes(slug))return null;const s=String(input??"").trim();if(!s)throw Error("Enter a date or date range.");const parts=s.split("|").map(x=>x.trim());switch(slug){
+case "iso-week-date-formatter":{const d=d5Date(s),date=new Date(d);const weekday=(date.getUTCDay()+6)%7+1;date.setUTCDate(date.getUTCDate()+4-weekday);const weekYear=date.getUTCFullYear();const jan1=new Date(0);jan1.setUTCFullYear(weekYear,0,1);const week=Math.ceil(((date-jan1)/86400000+1)/7);return String(weekYear)+"-W"+String(week).padStart(2,"0")+"-"+weekday;}
+case "unix-day-number-calculator":return String(Math.round(d5Date(s).getTime()/86400000));
+case "unix-day-number-to-date":{const n=Number(s);if(!Number.isSafeInteger(n)||n<-700000||n>2800000)throw Error("Enter an integer day index within supported dates.");return d5Format(new Date(n*86400000));}
+case "date-offset-sequence-generator":{const d=d5Date(parts[0]),count=Number(parts[1]),step=Number(parts[2]);if(!Number.isInteger(count)||count<1||count>365||!Number.isInteger(step)||step===0||Math.abs(step)>3650)throw Error("Use date|count(1-365)|step(nonzero days).");const out=[];for(let i=0;i<count;i++){const next=new Date(d);next.setUTCDate(next.getUTCDate()+i*step);out.push(d5Format(next));}return out.join("\n");}
+case "full-months-between-dates":{const a=d5Date(parts[0]),b=d5Date(parts[1]);if(b<a)throw Error("End date must be on or after start date.");let months=(b.getUTCFullYear()-a.getUTCFullYear())*12+b.getUTCMonth()-a.getUTCMonth();if(b.getUTCDate()<a.getUTCDate())months--;return "Completed calendar months: "+months;}
+case "calendar-quarter-date-range":{const m=s.match(/^(\d{4})-Q([1-4])$/i);if(!m)throw Error("Use YYYY-Q1 through YYYY-Q4.");const y=+m[1],q=+m[2],start=new Date(0),end=new Date(0);start.setUTCFullYear(y,(q-1)*3,1);end.setUTCFullYear(y,q*3,0);return "Start: "+d5Format(start)+"\nEnd: "+d5Format(end);}
+case "weekend-days-between-dates":case "weekday-occurrence-counter":{const a=d5Date(parts[0]),b=d5Date(parts[1]);if(b<a||(b-a)/86400000>36600)throw Error("Range must be ascending and at most 100 years.");const target=slug==="weekday-occurrence-counter"?d5Weekday(parts[2]):-1;let count=0;for(let date=new Date(a);date<=b;date.setUTCDate(date.getUTCDate()+1))if(target<0?[0,6].includes(date.getUTCDay()):date.getUTCDay()===target)count++;return (target<0?"Weekend days: ":"Weekday occurrences: ")+count;}
+case "first-weekday-of-month":case "last-weekday-of-month":{const [y,m]=d5Month(parts[0]),wanted=d5Weekday(parts[1]),d=new Date(0);d.setUTCFullYear(y,m-1,slug==="first-weekday-of-month"?1:new Date(Date.UTC(y,m,0)).getUTCDate());const forward=slug==="first-weekday-of-month";let offset=forward?(wanted-d.getUTCDay()+7)%7:(d.getUTCDay()-wanted+7)%7;d.setUTCDate(d.getUTCDate()+(forward?offset:-offset));return d5Format(d);}
+default:return null;}}

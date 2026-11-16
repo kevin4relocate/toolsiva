@@ -4363,5 +4363,1505 @@
     ],
     "example": "name,note\nAda,=SUM(1+1)\nBob,+CMD|test",
     "ready": true
+  },
+  {
+    "slug": "line-starts-with-filter",
+    "name": "Line Starts With Filter",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Show only pasted lines beginning with a chosen prefix.",
+    "metaDescription": "Show only pasted lines beginning with a chosen prefix. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "line starts with filter",
+      "online line starts with filter",
+      "free line starts with filter"
+    ],
+    "example": "warn\n---\nwarning: disk\ninfo: ready\nwarn: retry",
+    "ready": true
+  },
+  {
+    "slug": "line-ends-with-filter",
+    "name": "Line Ends With Filter",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Keep lines ending with a selected suffix.",
+    "metaDescription": "Keep lines ending with a selected suffix. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "line ends with filter",
+      "online line ends with filter",
+      "free line ends with filter"
+    ],
+    "example": ".com\n---\na.com\nb.net\nc.com",
+    "ready": true
+  },
+  {
+    "slug": "case-insensitive-line-deduplicator",
+    "name": "Case Insensitive Line Deduplicator",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Remove repeated lines without regard to letter case.",
+    "metaDescription": "Remove repeated lines without regard to letter case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "case insensitive line deduplicator",
+      "online case insensitive line deduplicator",
+      "free case insensitive line deduplicator"
+    ],
+    "example": "Hello\nhello\nWORLD\nworld",
+    "ready": true
+  },
+  {
+    "slug": "indentation-depth-analyzer",
+    "name": "Indentation Depth Analyzer",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Measure leading spaces and tab indentation on each pasted line.",
+    "metaDescription": "Measure leading spaces and tab indentation on each pasted line. See indentation levels directly in your browser without uploading files.",
+    "keywords": [
+      "indentation depth analyzer",
+      "leading whitespace count",
+      "indent level by line"
+    ],
+    "example": "  alpha\n    beta\n\tgamma",
+    "ready": true
+  },
+  {
+    "slug": "prefix-every-line",
+    "name": "Prefix Every Line",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Prepend a custom prefix to each input line.",
+    "metaDescription": "Prepend a custom prefix to each input line. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "prefix every line",
+      "online prefix every line",
+      "free prefix every line"
+    ],
+    "example": "ID-\n---\nalpha\nbeta\ngamma",
+    "ready": true
+  },
+  {
+    "slug": "suffix-every-line",
+    "name": "Suffix Every Line",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Append a custom suffix to every input line.",
+    "metaDescription": "Append a custom suffix to every input line. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "suffix every line",
+      "online suffix every line",
+      "free suffix every line"
+    ],
+    "example": ";\n---\nalpha\nbeta\ngamma",
+    "ready": true
+  },
+  {
+    "slug": "join-lines-with-delimiter",
+    "name": "Join Lines With Delimiter",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Join multiple text lines using your own separator.",
+    "metaDescription": "Join multiple text lines using your own separator. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "join lines with delimiter",
+      "online join lines with delimiter",
+      "free join lines with delimiter"
+    ],
+    "example": " | \n---\nalpha\nbeta\ngamma",
+    "ready": true
+  },
+  {
+    "slug": "insert-separator-between-lines",
+    "name": "Insert Separator Between Lines",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Insert a separator between consecutive lines.",
+    "metaDescription": "Insert a separator between consecutive lines. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "insert separator between lines",
+      "online insert separator between lines",
+      "free insert separator between lines"
+    ],
+    "example": "---\n---\nalpha\nbeta\ngamma",
+    "ready": true
+  },
+  {
+    "slug": "sort-lines-by-length",
+    "name": "Sort Lines By Length",
+    "category": "text",
+    "week": 30,
+    "shortDescription": "Sort pasted lines from shortest to longest.",
+    "metaDescription": "Sort pasted lines from shortest to longest. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "sort lines by length",
+      "online sort lines by length",
+      "free sort lines by length"
+    ],
+    "example": "elephant\ncat\ndog\nbutterfly",
+    "ready": true
+  },
+  {
+    "slug": "toggle-letter-case",
+    "name": "Toggle Letter Case",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Swap lowercase and uppercase letters in pasted text.",
+    "metaDescription": "Swap lowercase and uppercase letters in pasted text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "toggle letter case",
+      "online toggle letter case",
+      "free toggle letter case"
+    ],
+    "example": "HeLLo WoRLD 123!",
+    "ready": true
+  },
+  {
+    "slug": "word-initials-extractor",
+    "name": "Word Initials Extractor",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Collect the first letter of every word.",
+    "metaDescription": "Collect the first letter of every word. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "word initials extractor",
+      "online word initials extractor",
+      "free word initials extractor"
+    ],
+    "example": "Toolsiva makes useful tools",
+    "ready": true
+  },
+  {
+    "slug": "acronym-builder",
+    "name": "Acronym Builder",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Build an uppercase acronym from the words in a phrase.",
+    "metaDescription": "Build an uppercase acronym from the words in a phrase. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "acronym builder",
+      "online acronym builder",
+      "free acronym builder"
+    ],
+    "example": "Search Engine Optimization",
+    "ready": true
+  },
+  {
+    "slug": "camel-case-to-words",
+    "name": "Camel Case To Words",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Insert spaces at camelCase and PascalCase word boundaries.",
+    "metaDescription": "Insert spaces at camelCase and PascalCase word boundaries. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "camel case to words",
+      "online camel case to words",
+      "free camel case to words"
+    ],
+    "example": "mySampleVariableName",
+    "ready": true
+  },
+  {
+    "slug": "snake-case-to-words",
+    "name": "Snake Case To Words",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Replace underscore word separators with spaces.",
+    "metaDescription": "Replace underscore word separators with spaces. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "snake case to words",
+      "online snake case to words",
+      "free snake case to words"
+    ],
+    "example": "my_sample_variable_name",
+    "ready": true
+  },
+  {
+    "slug": "kebab-case-to-words",
+    "name": "Kebab Case To Words",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Replace hyphen word separators with spaces.",
+    "metaDescription": "Replace hyphen word separators with spaces. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "kebab case to words",
+      "online kebab case to words",
+      "free kebab case to words"
+    ],
+    "example": "my-sample-variable-name",
+    "ready": true
+  },
+  {
+    "slug": "words-to-camel-case",
+    "name": "Words To Camel Case",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Turn typed words into lower camelCase.",
+    "metaDescription": "Turn typed words into lower camelCase. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "words to camel case",
+      "online words to camel case",
+      "free words to camel case"
+    ],
+    "example": "create user profile",
+    "ready": true
+  },
+  {
+    "slug": "words-to-snake-case",
+    "name": "Words To Snake Case",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Turn words into lowercase snake_case.",
+    "metaDescription": "Turn words into lowercase snake_case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "words to snake case",
+      "online words to snake case",
+      "free words to snake case"
+    ],
+    "example": "create user profile",
+    "ready": true
+  },
+  {
+    "slug": "words-to-kebab-case",
+    "name": "Words To Kebab Case",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Turn words into lowercase kebab-case.",
+    "metaDescription": "Turn words into lowercase kebab-case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "words to kebab case",
+      "online words to kebab case",
+      "free words to kebab case"
+    ],
+    "example": "create user profile",
+    "ready": true
+  },
+  {
+    "slug": "sentence-capitalization-formatter",
+    "name": "Sentence Capitalization Formatter",
+    "category": "text",
+    "week": 31,
+    "shortDescription": "Capitalize the start of each sentence and lowercase other text.",
+    "metaDescription": "Capitalize the start of each sentence and lowercase other text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "sentence capitalization formatter",
+      "online sentence capitalization formatter",
+      "free sentence capitalization formatter"
+    ],
+    "example": "hello world. this is toolsiva! can it help?",
+    "ready": true
+  },
+  {
+    "slug": "paragraph-numbering-tool",
+    "name": "Paragraph Numbering Tool",
+    "category": "text",
+    "week": 32,
+    "shortDescription": "Number paragraphs while retaining each paragraph's text.",
+    "metaDescription": "Number paragraphs while retaining each paragraph's text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "paragraph numbering tool",
+      "online paragraph numbering tool",
+      "free paragraph numbering tool"
+    ],
+    "example": "First paragraph.\n\nSecond paragraph.\n\nThird paragraph.",
+    "ready": true
+  },
+  {
+    "slug": "markdown-table-column-counter",
+    "name": "Markdown Table Column Counter",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Count columns in a pasted Markdown pipe table.",
+    "metaDescription": "Count columns in a pasted Markdown pipe table. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown table column counter",
+      "online markdown table column counter",
+      "free markdown table column counter"
+    ],
+    "example": "| Name | Age |\n| --- | --- |\n| Ada | 30 |",
+    "ready": true
+  },
+  {
+    "slug": "markdown-table-to-csv",
+    "name": "Markdown Table To CSV",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Convert a basic Markdown pipe table to CSV text.",
+    "metaDescription": "Convert a basic Markdown pipe table to CSV text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown table to csv",
+      "online markdown table to csv",
+      "free markdown table to csv"
+    ],
+    "example": "| Name | Age |\n| --- | --- |\n| Ada | 30 |",
+    "ready": true
+  },
+  {
+    "slug": "markdown-blockquote-extractor",
+    "name": "Markdown Blockquote Extractor",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Extract quoted Markdown lines without their leading marker.",
+    "metaDescription": "Extract quoted Markdown lines without their leading marker. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown blockquote extractor",
+      "online markdown blockquote extractor",
+      "free markdown blockquote extractor"
+    ],
+    "example": "> A highlighted thought.\n> Another line.\nNormal text.",
+    "ready": true
+  },
+  {
+    "slug": "markdown-link-text-extractor",
+    "name": "Markdown Link Text Extractor",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Extract the displayed labels of inline Markdown links.",
+    "metaDescription": "Extract the displayed labels of inline Markdown links. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown link text extractor",
+      "online markdown link text extractor",
+      "free markdown link text extractor"
+    ],
+    "example": "Read [Toolsiva](https://toolsiva.com) and [Docs](/docs).",
+    "ready": true
+  },
+  {
+    "slug": "markdown-reference-definition-extractor",
+    "name": "Markdown Reference Definition Extractor",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Extract Markdown reference-link definitions.",
+    "metaDescription": "Extract Markdown reference-link definitions. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown reference definition extractor",
+      "online markdown reference definition extractor",
+      "free markdown reference definition extractor"
+    ],
+    "example": "[docs]: https://example.com/docs\n[home]: /home \"Homepage\"",
+    "ready": true
+  },
+  {
+    "slug": "markdown-frontmatter-key-extractor",
+    "name": "Markdown Frontmatter Key Extractor",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "List top-level keys in YAML-like Markdown frontmatter.",
+    "metaDescription": "List top-level keys in YAML-like Markdown frontmatter. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown frontmatter key extractor",
+      "online markdown frontmatter key extractor",
+      "free markdown frontmatter key extractor"
+    ],
+    "example": "---\ntitle: Test Page\nauthor: Ada\n---\n# Content",
+    "ready": true
+  },
+  {
+    "slug": "markdown-inline-code-extractor",
+    "name": "Markdown Inline Code Extractor",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Extract single-backtick inline code fragments.",
+    "metaDescription": "Extract single-backtick inline code fragments. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown inline code extractor",
+      "online markdown inline code extractor",
+      "free markdown inline code extractor"
+    ],
+    "example": "Run `npm test` and check `node -v`.",
+    "ready": true
+  },
+  {
+    "slug": "markdown-horizontal-rule-counter",
+    "name": "Markdown Horizontal Rule Counter",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Count Markdown horizontal-rule lines.",
+    "metaDescription": "Count Markdown horizontal-rule lines. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown horizontal rule counter",
+      "online markdown horizontal rule counter",
+      "free markdown horizontal rule counter"
+    ],
+    "example": "# Heading\n---\nContent\n***\nEnd",
+    "ready": true
+  },
+  {
+    "slug": "markdown-emphasis-marker-counter",
+    "name": "Markdown Emphasis Marker Counter",
+    "category": "developer",
+    "week": 32,
+    "shortDescription": "Count simple Markdown bold and italic delimiters.",
+    "metaDescription": "Count simple Markdown bold and italic delimiters. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown emphasis marker counter",
+      "online markdown emphasis marker counter",
+      "free markdown emphasis marker counter"
+    ],
+    "example": "**bold** and *italic* plus __bold__",
+    "ready": true
+  },
+  {
+    "slug": "markdown-footnote-reference-extractor",
+    "name": "Markdown Footnote Reference Extractor",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "List unique Markdown footnote reference identifiers.",
+    "metaDescription": "List unique Markdown footnote reference identifiers. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "markdown footnote reference extractor",
+      "online markdown footnote reference extractor",
+      "free markdown footnote reference extractor"
+    ],
+    "example": "See this note[^one] and another[^two].",
+    "ready": true
+  },
+  {
+    "slug": "tsv-to-json",
+    "name": "TSV To JSON",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Convert tab-delimited text with header to JSON objects.",
+    "metaDescription": "Convert tab-delimited text with header to JSON objects. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "tsv to json",
+      "online tsv to json",
+      "free tsv to json"
+    ],
+    "example": "name\tage\nAda\t30\nBob\t25",
+    "ready": true
+  },
+  {
+    "slug": "json-to-tsv",
+    "name": "JSON To TSV",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Convert an array of flat JSON objects to TSV text.",
+    "metaDescription": "Convert an array of flat JSON objects to TSV text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json to tsv",
+      "online json to tsv",
+      "free json to tsv"
+    ],
+    "example": "[{\"name\":\"Ada\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]",
+    "ready": true
+  },
+  {
+    "slug": "pipe-separated-to-csv",
+    "name": "Pipe Separated To CSV",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Convert simple pipe-delimited text into CSV.",
+    "metaDescription": "Convert simple pipe-delimited text into CSV. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "pipe separated to csv",
+      "online pipe separated to csv",
+      "free pipe separated to csv"
+    ],
+    "example": "name|age\nAda|30\nBob|25",
+    "ready": true
+  },
+  {
+    "slug": "csv-to-pipe-separated",
+    "name": "CSV To Pipe Separated",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Convert pasted CSV into pipe-delimited text.",
+    "metaDescription": "Convert pasted CSV into pipe-delimited text. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv to pipe separated",
+      "online csv to pipe separated",
+      "free csv to pipe separated"
+    ],
+    "example": "name,age\nAda,30\nBob,25",
+    "ready": true
+  },
+  {
+    "slug": "csv-row-count",
+    "name": "CSV Row Count",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Count data rows in pasted CSV, excluding the header.",
+    "metaDescription": "Count data rows in pasted CSV, excluding the header. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv row count",
+      "online csv row count",
+      "free csv row count"
+    ],
+    "example": "name,age\nAda,30\nBob,25",
+    "ready": true
+  },
+  {
+    "slug": "csv-cell-count",
+    "name": "CSV Cell Count",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Count all CSV cells and nonempty data cells.",
+    "metaDescription": "Count all CSV cells and nonempty data cells. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv cell count",
+      "online csv cell count",
+      "free csv cell count"
+    ],
+    "example": "a,b,c\n1,2,3\n4,5,6",
+    "ready": true
+  },
+  {
+    "slug": "csv-positive-number-row-filter",
+    "name": "CSV Positive Number Row Filter",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Keep CSV rows with a positive number in a chosen column.",
+    "metaDescription": "Keep CSV rows with a positive number in a chosen column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv positive number row filter",
+      "online csv positive number row filter",
+      "free csv positive number row filter"
+    ],
+    "example": "score\n---\nname,score\nA,-1\nB,5\nC,0",
+    "ready": true
+  },
+  {
+    "slug": "csv-column-sum",
+    "name": "CSV Column Sum",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Sum finite numeric cells in one CSV column.",
+    "metaDescription": "Sum finite numeric cells in one CSV column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv column sum",
+      "online csv column sum",
+      "free csv column sum"
+    ],
+    "example": "amount\n---\nname,amount\nA,10\nB,25\nC,5",
+    "ready": true
+  },
+  {
+    "slug": "csv-column-mean",
+    "name": "CSV Column Mean",
+    "category": "developer",
+    "week": 33,
+    "shortDescription": "Calculate the mean of numeric cells in a CSV column.",
+    "metaDescription": "Calculate the mean of numeric cells in a CSV column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv column mean",
+      "online csv column mean",
+      "free csv column mean"
+    ],
+    "example": "amount\n---\nname,amount\nA,10\nB,20\nC,30",
+    "ready": true
+  },
+  {
+    "slug": "csv-column-minimum-maximum",
+    "name": "CSV Column Minimum Maximum",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Find minimum and maximum numeric values in one CSV column.",
+    "metaDescription": "Find minimum and maximum numeric values in one CSV column. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "csv column minimum maximum",
+      "online csv column minimum maximum",
+      "free csv column minimum maximum"
+    ],
+    "example": "price\n---\nname,price\nA,12\nB,8\nC,22",
+    "ready": true
+  },
+  {
+    "slug": "json-boolean-path-finder",
+    "name": "JSON Boolean Path Finder",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "List JSON paths holding true or false values.",
+    "metaDescription": "List JSON paths holding true or false values. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json boolean path finder",
+      "online json boolean path finder",
+      "free json boolean path finder"
+    ],
+    "example": "{\"active\":true,\"user\":{\"verified\":false}}",
+    "ready": true
+  },
+  {
+    "slug": "json-null-path-finder",
+    "name": "JSON Null Path Finder",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "List paths whose values are JSON null.",
+    "metaDescription": "List paths whose values are JSON null. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json null path finder",
+      "online json null path finder",
+      "free json null path finder"
+    ],
+    "example": "{\"a\":null,\"nested\":{\"b\":null}}",
+    "ready": true
+  },
+  {
+    "slug": "json-primitive-type-map",
+    "name": "JSON Primitive Type Map",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Display JSON primitive types for every leaf path.",
+    "metaDescription": "Display JSON primitive types for every leaf path. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json primitive type map",
+      "online json primitive type map",
+      "free json primitive type map"
+    ],
+    "example": "{\"name\":\"Ada\",\"age\":30,\"active\":true}",
+    "ready": true
+  },
+  {
+    "slug": "json-array-value-index-finder",
+    "name": "JSON Array Value Index Finder",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Find positions of matching primitive values in a JSON array.",
+    "metaDescription": "Find positions of matching primitive values in a JSON array. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json array value index finder",
+      "online json array value index finder",
+      "free json array value index finder"
+    ],
+    "example": "Ada\n---\n[\"Bob\",\"Ada\",\"Ada\"]",
+    "ready": true
+  },
+  {
+    "slug": "json-array-reverser",
+    "name": "JSON Array Reverser",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Reverse the element order of a JSON array.",
+    "metaDescription": "Reverse the element order of a JSON array. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json array reverser",
+      "online json array reverser",
+      "free json array reverser"
+    ],
+    "example": "[1,2,3,4]",
+    "ready": true
+  },
+  {
+    "slug": "json-array-rotator",
+    "name": "JSON Array Rotator",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Rotate array entries to the right by N positions.",
+    "metaDescription": "Rotate array entries to the right by N positions. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json array rotator",
+      "online json array rotator",
+      "free json array rotator"
+    ],
+    "example": "2\n---\n[1,2,3,4,5]",
+    "ready": true
+  },
+  {
+    "slug": "json-array-chunker",
+    "name": "JSON Array Chunker",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Split JSON array elements into subarrays of chosen size.",
+    "metaDescription": "Split JSON array elements into subarrays of chosen size. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json array chunker",
+      "online json array chunker",
+      "free json array chunker"
+    ],
+    "example": "2\n---\n[1,2,3,4,5]",
+    "ready": true
+  },
+  {
+    "slug": "json-array-length-analyzer",
+    "name": "JSON Array Length Analyzer",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Show lengths of the root and its directly nested arrays.",
+    "metaDescription": "Show lengths of the root and its directly nested arrays. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json array length analyzer",
+      "online json array length analyzer",
+      "free json array length analyzer"
+    ],
+    "example": "[[1,2],[3],[],[4,5,6]]",
+    "ready": true
+  },
+  {
+    "slug": "json-number-rounding-tool",
+    "name": "JSON Number Rounding Tool",
+    "category": "developer",
+    "week": 34,
+    "shortDescription": "Round numeric JSON values to a chosen number of decimal places.",
+    "metaDescription": "Round numeric JSON values to a chosen number of decimal places. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json number rounding tool",
+      "online json number rounding tool",
+      "free json number rounding tool"
+    ],
+    "example": "2\n---\n{\"rate\":1.2345,\"items\":[3.999,2.222]}",
+    "ready": true
+  },
+  {
+    "slug": "json-null-property-remover",
+    "name": "JSON Null Property Remover",
+    "category": "developer",
+    "week": 35,
+    "shortDescription": "Remove object properties whose values are null.",
+    "metaDescription": "Remove object properties whose values are null. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "json null property remover",
+      "online json null property remover",
+      "free json null property remover"
+    ],
+    "example": "{\"a\":null,\"b\":2,\"c\":{\"d\":null,\"e\":1}}",
+    "ready": true
+  },
+  {
+    "slug": "iso-week-date-formatter",
+    "name": "ISO Week Date Formatter",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Convert a date to ISO week-year, week number, and weekday.",
+    "metaDescription": "Convert a date to ISO week-year, week number, and weekday. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "iso week date formatter",
+      "online iso week date formatter",
+      "free iso week date formatter"
+    ],
+    "example": "2026-11-16",
+    "ready": true
+  },
+  {
+    "slug": "unix-day-number-calculator",
+    "name": "Unix Day Number Calculator",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Calculate whole UTC days since 1970-01-01.",
+    "metaDescription": "Calculate whole UTC days since 1970-01-01. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "unix day number calculator",
+      "online unix day number calculator",
+      "free unix day number calculator"
+    ],
+    "example": "2026-11-16",
+    "ready": true
+  },
+  {
+    "slug": "unix-day-number-to-date",
+    "name": "Unix Day Number To Date",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Convert signed Unix day number back to a UTC calendar date.",
+    "metaDescription": "Convert signed Unix day number back to a UTC calendar date. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "unix day number to date",
+      "online unix day number to date",
+      "free unix day number to date"
+    ],
+    "example": "20773",
+    "ready": true
+  },
+  {
+    "slug": "date-offset-sequence-generator",
+    "name": "Date Offset Sequence Generator",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "List dates at fixed intervals starting from a given day.",
+    "metaDescription": "List dates at fixed intervals starting from a given day. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "date offset sequence generator",
+      "online date offset sequence generator",
+      "free date offset sequence generator"
+    ],
+    "example": "2026-11-16|3|7",
+    "ready": true
+  },
+  {
+    "slug": "full-months-between-dates",
+    "name": "Full Months Between Dates",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Count completed whole calendar months between two dates.",
+    "metaDescription": "Count completed whole calendar months between two dates. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "full months between dates",
+      "online full months between dates",
+      "free full months between dates"
+    ],
+    "example": "2025-01-15|2026-04-15",
+    "ready": true
+  },
+  {
+    "slug": "calendar-quarter-date-range",
+    "name": "Calendar Quarter Date Range",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Show the first and last dates of a calendar quarter.",
+    "metaDescription": "Show the first and last dates of a calendar quarter. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "calendar quarter date range",
+      "online calendar quarter date range",
+      "free calendar quarter date range"
+    ],
+    "example": "2026-Q4",
+    "ready": true
+  },
+  {
+    "slug": "weekend-days-between-dates",
+    "name": "Weekend Days Between Dates",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Count Saturday and Sunday dates in an inclusive date range.",
+    "metaDescription": "Count Saturday and Sunday dates in an inclusive date range. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "weekend days between dates",
+      "online weekend days between dates",
+      "free weekend days between dates"
+    ],
+    "example": "2026-11-16|2026-11-30",
+    "ready": true
+  },
+  {
+    "slug": "weekday-occurrence-counter",
+    "name": "Weekday Occurrence Counter",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Count how often a named weekday occurs between two dates.",
+    "metaDescription": "Count how often a named weekday occurs between two dates. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "weekday occurrence counter",
+      "online weekday occurrence counter",
+      "free weekday occurrence counter"
+    ],
+    "example": "2026-11-01|2026-11-30|Monday",
+    "ready": true
+  },
+  {
+    "slug": "first-weekday-of-month",
+    "name": "First Weekday Of Month",
+    "category": "calculator",
+    "week": 35,
+    "shortDescription": "Find the first chosen weekday in a month.",
+    "metaDescription": "Find the first chosen weekday in a month. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "first weekday of month",
+      "online first weekday of month",
+      "free first weekday of month"
+    ],
+    "example": "2026-11|Monday",
+    "ready": true
+  },
+  {
+    "slug": "last-weekday-of-month",
+    "name": "Last Weekday Of Month",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Find the last occurrence of a weekday within a month.",
+    "metaDescription": "Find the last occurrence of a weekday within a month. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "last weekday of month",
+      "online last weekday of month",
+      "free last weekday of month"
+    ],
+    "example": "2026-11|Friday",
+    "ready": true
+  },
+  {
+    "slug": "arithmetic-series-sum",
+    "name": "Arithmetic Series Sum",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Sum N terms of an arithmetic progression.",
+    "metaDescription": "Sum N terms of an arithmetic progression. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "arithmetic series sum",
+      "online arithmetic series sum",
+      "free arithmetic series sum"
+    ],
+    "example": "2|3|10",
+    "ready": true
+  },
+  {
+    "slug": "geometric-series-sum",
+    "name": "Geometric Series Sum",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Sum N terms of a geometric progression.",
+    "metaDescription": "Sum N terms of a geometric progression. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "geometric series sum",
+      "online geometric series sum",
+      "free geometric series sum"
+    ],
+    "example": "2|3|5",
+    "ready": true
+  },
+  {
+    "slug": "fibonacci-number-finder",
+    "name": "Fibonacci Number Finder",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Calculate the Nth Fibonacci number exactly with BigInt.",
+    "metaDescription": "Calculate the Nth Fibonacci number exactly with BigInt. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "fibonacci number finder",
+      "online fibonacci number finder",
+      "free fibonacci number finder"
+    ],
+    "example": "30",
+    "ready": true
+  },
+  {
+    "slug": "fibonacci-sequence-generator",
+    "name": "Fibonacci Sequence Generator",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Generate the first N Fibonacci numbers.",
+    "metaDescription": "Generate the first N Fibonacci numbers. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "fibonacci sequence generator",
+      "online fibonacci sequence generator",
+      "free fibonacci sequence generator"
+    ],
+    "example": "12",
+    "ready": true
+  },
+  {
+    "slug": "triangle-area-from-base-height",
+    "name": "Triangle Area From Base Height",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Calculate area from a triangle's base and perpendicular height.",
+    "metaDescription": "Calculate area from a triangle's base and perpendicular height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "triangle area from base height",
+      "online triangle area from base height",
+      "free triangle area from base height"
+    ],
+    "example": "10|6",
+    "ready": true
+  },
+  {
+    "slug": "circle-area-from-radius",
+    "name": "Circle Area From Radius",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Calculate the area of a circle from radius.",
+    "metaDescription": "Calculate the area of a circle from radius. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "circle area from radius",
+      "online circle area from radius",
+      "free circle area from radius"
+    ],
+    "example": "5",
+    "ready": true
+  },
+  {
+    "slug": "circle-circumference-from-radius",
+    "name": "Circle Circumference From Radius",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Calculate circumference from a circle's radius.",
+    "metaDescription": "Calculate circumference from a circle's radius. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "circle circumference from radius",
+      "online circle circumference from radius",
+      "free circle circumference from radius"
+    ],
+    "example": "5",
+    "ready": true
+  },
+  {
+    "slug": "rectangle-perimeter-calculator",
+    "name": "Rectangle Perimeter Calculator",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Calculate a rectangle's perimeter from width and height.",
+    "metaDescription": "Calculate a rectangle's perimeter from width and height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "rectangle perimeter calculator",
+      "online rectangle perimeter calculator",
+      "free rectangle perimeter calculator"
+    ],
+    "example": "8|3",
+    "ready": true
+  },
+  {
+    "slug": "trapezoid-area-calculator",
+    "name": "Trapezoid Area Calculator",
+    "category": "calculator",
+    "week": 36,
+    "shortDescription": "Calculate trapezoid area from two parallel sides and height.",
+    "metaDescription": "Calculate trapezoid area from two parallel sides and height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "trapezoid area calculator",
+      "online trapezoid area calculator",
+      "free trapezoid area calculator"
+    ],
+    "example": "8|5|4",
+    "ready": true
+  },
+  {
+    "slug": "cylinder-volume-calculator",
+    "name": "Cylinder Volume Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Calculate volume of a cylinder from radius and height.",
+    "metaDescription": "Calculate volume of a cylinder from radius and height. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "cylinder volume calculator",
+      "online cylinder volume calculator",
+      "free cylinder volume calculator"
+    ],
+    "example": "3|10",
+    "ready": true
+  },
+  {
+    "slug": "net-profit-margin-calculator",
+    "name": "Net Profit Margin Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Compute after-tax net profit as a percentage of revenue.",
+    "metaDescription": "Compute after-tax net profit as a percentage of revenue. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "net profit margin calculator",
+      "online net profit margin calculator",
+      "free net profit margin calculator"
+    ],
+    "example": "1500|12000",
+    "ready": true
+  },
+  {
+    "slug": "contribution-margin-calculator",
+    "name": "Contribution Margin Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Compute unit selling price minus unit variable cost.",
+    "metaDescription": "Compute unit selling price minus unit variable cost. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "contribution margin calculator",
+      "online contribution margin calculator",
+      "free contribution margin calculator"
+    ],
+    "example": "120|75",
+    "ready": true
+  },
+  {
+    "slug": "contribution-margin-ratio-calculator",
+    "name": "Contribution Margin Ratio Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Calculate contribution margin as a percentage of selling price.",
+    "metaDescription": "Calculate contribution margin as a percentage of selling price. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "contribution margin ratio calculator",
+      "online contribution margin ratio calculator",
+      "free contribution margin ratio calculator"
+    ],
+    "example": "120|75",
+    "ready": true
+  },
+  {
+    "slug": "investment-payback-period-calculator",
+    "name": "Investment Payback Period Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Estimate years to recover an initial investment from annual cash inflows.",
+    "metaDescription": "Estimate years to recover an initial investment from annual cash inflows. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "investment payback period calculator",
+      "online investment payback period calculator",
+      "free investment payback period calculator"
+    ],
+    "example": "10000|2500",
+    "ready": true
+  },
+  {
+    "slug": "customer-retention-rate-calculator",
+    "name": "Customer Retention Rate Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Compute retention given ending customers, starting customers and new customers.",
+    "metaDescription": "Compute retention given ending customers, starting customers and new customers. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "customer retention rate calculator",
+      "online customer retention rate calculator",
+      "free customer retention rate calculator"
+    ],
+    "example": "900|1000|100",
+    "ready": true
+  },
+  {
+    "slug": "repeat-purchase-rate-calculator",
+    "name": "Repeat Purchase Rate Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Calculate the share of customers who purchased more than once.",
+    "metaDescription": "Calculate the share of customers who purchased more than once. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "repeat purchase rate calculator",
+      "online repeat purchase rate calculator",
+      "free repeat purchase rate calculator"
+    ],
+    "example": "300|1200",
+    "ready": true
+  },
+  {
+    "slug": "cart-abandonment-rate-calculator",
+    "name": "Cart Abandonment Rate Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Estimate abandoned carts from initiated checkouts and completed orders.",
+    "metaDescription": "Estimate abandoned carts from initiated checkouts and completed orders. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "cart abandonment rate calculator",
+      "online cart abandonment rate calculator",
+      "free cart abandonment rate calculator"
+    ],
+    "example": "700|1000",
+    "ready": true
+  },
+  {
+    "slug": "session-bounce-rate-calculator",
+    "name": "Session Bounce Rate Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Calculate single-page or nonengaged sessions as a percentage of all sessions.",
+    "metaDescription": "Calculate single-page or nonengaged sessions as a percentage of all sessions. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "session bounce rate calculator",
+      "online session bounce rate calculator",
+      "free session bounce rate calculator"
+    ],
+    "example": "240|1000",
+    "ready": true
+  },
+  {
+    "slug": "monthly-recurring-revenue-calculator",
+    "name": "Monthly Recurring Revenue Calculator",
+    "category": "calculator",
+    "week": 37,
+    "shortDescription": "Calculate MRR from a customer count and monthly subscription prices.",
+    "metaDescription": "Calculate MRR from a customer count and monthly subscription prices. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "monthly recurring revenue calculator",
+      "online monthly recurring revenue calculator",
+      "free monthly recurring revenue calculator"
+    ],
+    "example": "100|20|35|15",
+    "ready": true
+  },
+  {
+    "slug": "annual-recurring-revenue-calculator",
+    "name": "Annual Recurring Revenue Calculator",
+    "category": "calculator",
+    "week": 38,
+    "shortDescription": "Calculate annualized recurring revenue from monthly recurring revenue.",
+    "metaDescription": "Calculate annualized recurring revenue from monthly recurring revenue. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "annual recurring revenue calculator",
+      "online annual recurring revenue calculator",
+      "free annual recurring revenue calculator"
+    ],
+    "example": "4500",
+    "ready": true
+  },
+  {
+    "slug": "css-class-name-extractor",
+    "name": "CSS Class Name Extractor",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "List unique CSS class selector names from pasted CSS.",
+    "metaDescription": "List unique CSS class selector names from pasted CSS. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "css class name extractor",
+      "online css class name extractor",
+      "free css class name extractor"
+    ],
+    "example": ".card{color:red}.card.active{display:block}.toolbar{gap:4px}",
+    "ready": true
+  },
+  {
+    "slug": "css-selector-rule-counter",
+    "name": "CSS Selector Rule Counter",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "Count simple CSS selector rules and comma-separated selectors.",
+    "metaDescription": "Count simple CSS selector rules and comma-separated selectors. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "css selector rule counter",
+      "online css selector rule counter",
+      "free css selector rule counter"
+    ],
+    "example": "h1,p{color:red}.box:hover{display:block}",
+    "ready": true
+  },
+  {
+    "slug": "css-declaration-counter",
+    "name": "CSS Declaration Counter",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "Count declaration-like property:value pairs in CSS blocks.",
+    "metaDescription": "Count declaration-like property:value pairs in CSS blocks. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "css declaration counter",
+      "online css declaration counter",
+      "free css declaration counter"
+    ],
+    "example": "a{color:red;background:blue}p{margin:0}",
+    "ready": true
+  },
+  {
+    "slug": "css-custom-property-extractor",
+    "name": "CSS Custom Property Extractor",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "List CSS custom property names and sample values.",
+    "metaDescription": "List CSS custom property names and sample values. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "css custom property extractor",
+      "online css custom property extractor",
+      "free css custom property extractor"
+    ],
+    "example": ":root{--brand-color:#333;--gap:8px}",
+    "ready": true
+  },
+  {
+    "slug": "css-unit-frequency-counter",
+    "name": "CSS Unit Frequency Counter",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "Count occurrences of common CSS units.",
+    "metaDescription": "Count occurrences of common CSS units. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "css unit frequency counter",
+      "online css unit frequency counter",
+      "free css unit frequency counter"
+    ],
+    "example": "a{margin:10px;padding:2rem;width:80%;opacity:.8}",
+    "ready": true
+  },
+  {
+    "slug": "html-data-attribute-extractor",
+    "name": "HTML Data Attribute Extractor",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "List data-* attributes from pasted HTML.",
+    "metaDescription": "List data-* attributes from pasted HTML. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "html data attribute extractor",
+      "online html data attribute extractor",
+      "free html data attribute extractor"
+    ],
+    "example": "<div data-id=\"42\" data-role=\"card\">Hello</div>",
+    "ready": true
+  },
+  {
+    "slug": "html-external-link-extractor",
+    "name": "HTML External Link Extractor",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "List anchor URLs whose origin differs from a supplied base URL.",
+    "metaDescription": "List anchor URLs whose origin differs from a supplied base URL. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "html external link extractor",
+      "online html external link extractor",
+      "free html external link extractor"
+    ],
+    "example": "https://example.com\n---\n<a href=\"/about\">Internal</a><a href=\"https://other.com\">External</a>",
+    "ready": true
+  },
+  {
+    "slug": "html-target-blank-link-checker",
+    "name": "HTML Target Blank Link Checker",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "List links opening new tabs and their rel protections.",
+    "metaDescription": "List links opening new tabs and their rel protections. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "html target blank link checker",
+      "online html target blank link checker",
+      "free html target blank link checker"
+    ],
+    "example": "<a href=\"https://example.com\" target=\"_blank\">Open</a>",
+    "ready": true
+  },
+  {
+    "slug": "html-button-type-checker",
+    "name": "HTML Button Type Checker",
+    "category": "developer",
+    "week": 38,
+    "shortDescription": "Identify buttons without explicit type attributes.",
+    "metaDescription": "Identify buttons without explicit type attributes. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "html button type checker",
+      "online html button type checker",
+      "free html button type checker"
+    ],
+    "example": "<form><button>Submit</button><button type=\"button\">Cancel</button></form>",
+    "ready": true
+  },
+  {
+    "slug": "html-empty-anchor-detector",
+    "name": "HTML Empty Anchor Detector",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Find anchors with no readable label text or aria-label.",
+    "metaDescription": "Find anchors with no readable label text or aria-label. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "html empty anchor detector",
+      "online html empty anchor detector",
+      "free html empty anchor detector"
+    ],
+    "example": "<a href=\"/one\"></a><a href=\"/two\">Two</a>",
+    "ready": true
+  },
+  {
+    "slug": "url-scheme-classifier",
+    "name": "URL Scheme Classifier",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Classify the scheme of a pasted URL without opening it.",
+    "metaDescription": "Classify the scheme of a pasted URL without opening it. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "url scheme classifier",
+      "online url scheme classifier",
+      "free url scheme classifier"
+    ],
+    "example": "https://example.com/path",
+    "ready": true
+  },
+  {
+    "slug": "jwt-expiration-date-inspector",
+    "name": "JWT Expiration Date Inspector",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Decode the exp claim from a JWT payload and present UTC time.",
+    "metaDescription": "Decode the exp claim from a JWT payload and present UTC time. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "jwt expiration date inspector",
+      "online jwt expiration date inspector",
+      "free jwt expiration date inspector"
+    ],
+    "example": "eyJhbGciOiJub25lIn0.eyJleHAiOjE4MDAwMDAwMDB9.",
+    "ready": true
+  },
+  {
+    "slug": "bearer-authorization-header-cleaner",
+    "name": "Bearer Authorization Header Cleaner",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Extract the token text from a pasted Bearer Authorization value.",
+    "metaDescription": "Extract the token text from a pasted Bearer Authorization value. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "bearer authorization header cleaner",
+      "online bearer authorization header cleaner",
+      "free bearer authorization header cleaner"
+    ],
+    "example": "Bearer test-token-123",
+    "ready": true
+  },
+  {
+    "slug": "http-header-alphabetical-sorter",
+    "name": "HTTP Header Alphabetical Sorter",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Sort pasted HTTP header lines by field name.",
+    "metaDescription": "Sort pasted HTTP header lines by field name. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "http header alphabetical sorter",
+      "online http header alphabetical sorter",
+      "free http header alphabetical sorter"
+    ],
+    "example": "X-Test: 2\nAccept: text/html\nCache-Control: max-age=60",
+    "ready": true
+  },
+  {
+    "slug": "http-duplicate-header-detector",
+    "name": "HTTP Duplicate Header Detector",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Identify repeated HTTP header names ignoring letter case.",
+    "metaDescription": "Identify repeated HTTP header names ignoring letter case. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "http duplicate header detector",
+      "online http duplicate header detector",
+      "free http duplicate header detector"
+    ],
+    "example": "Cache-Control: max-age=30\ncache-control: no-store\nX-Test: ok",
+    "ready": true
+  },
+  {
+    "slug": "http-header-name-normalizer",
+    "name": "HTTP Header Name Normalizer",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Convert header names to canonical display capitalization.",
+    "metaDescription": "Convert header names to canonical display capitalization. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "http header name normalizer",
+      "online http header name normalizer",
+      "free http header name normalizer"
+    ],
+    "example": "content-type: text/plain\nx-content-type-options: nosniff",
+    "ready": true
+  },
+  {
+    "slug": "email-address-syntax-validator",
+    "name": "Email Address Syntax Validator",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Validate basic email-address syntax without contacting a mail server.",
+    "metaDescription": "Validate basic email-address syntax without contacting a mail server. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "email address syntax validator",
+      "online email address syntax validator",
+      "free email address syntax validator"
+    ],
+    "example": "hello@example.com",
+    "ready": true
+  },
+  {
+    "slug": "email-address-list-normalizer",
+    "name": "Email Address List Normalizer",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Clean and deduplicate pasted email addresses.",
+    "metaDescription": "Clean and deduplicate pasted email addresses. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "email address list normalizer",
+      "online email address list normalizer",
+      "free email address list normalizer"
+    ],
+    "example": "Alice@Example.com\nbob@example.com\nALICE@example.com",
+    "ready": true
+  },
+  {
+    "slug": "dns-mx-record-priority-sorter",
+    "name": "DNS MX Record Priority Sorter",
+    "category": "developer",
+    "week": 39,
+    "shortDescription": "Sort typed MX priority and hostname pairs.",
+    "metaDescription": "Sort typed MX priority and hostname pairs. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "dns mx record priority sorter",
+      "online dns mx record priority sorter",
+      "free dns mx record priority sorter"
+    ],
+    "example": "20 mx2.example.com\n10 mx1.example.com",
+    "ready": true
+  },
+  {
+    "slug": "spf-include-domain-extractor",
+    "name": "SPF Include Domain Extractor",
+    "category": "developer",
+    "week": 40,
+    "shortDescription": "Extract include: domains from pasted SPF record.",
+    "metaDescription": "Extract include: domains from pasted SPF record. Use this free browser tool by typing or pasting text; no files, logins or paid APIs.",
+    "keywords": [
+      "spf include domain extractor",
+      "online spf include domain extractor",
+      "free spf include domain extractor"
+    ],
+    "example": "v=spf1 include:_spf.example.com include:mail.example.net -all",
+    "ready": true
   }
 ]
