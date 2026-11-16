@@ -14,6 +14,8 @@ import NewTextToolsWorkspace from "@/components/tools/NewTextToolsWorkspace.astr
 import HighValueToolsWorkspace from "@/components/tools/HighValueToolsWorkspace.astro";
 import ContentGenerationWorkspace from "@/components/tools/ContentGenerationWorkspace.astro";
 import MarkdownLivePreviewWorkspace from "@/components/tools/MarkdownLivePreviewWorkspace.astro";
+import SimpleToolWorkspace from "@/components/tools/SimpleToolWorkspace.astro";
+import simpleToolQueue from "@/data/simpleToolQueue.json";
 import { tools, getRelatedTools } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { getToolPath } from "@/types/tool";
@@ -32,6 +34,8 @@ export function getStaticPaths() {
 }
 
 const { tool } = Astro.props;
+const simpleTool = simpleToolQueue.find((entry) => entry.slug === tool.slug);
+const isQueuedSimpleTool = Boolean(simpleTool);
 const category = categoryMap.get(tool.category);
 const relatedTools = getRelatedTools(tool);
 const instructions = getToolInstructions(tool);
@@ -152,17 +156,18 @@ import { safeJsonForHtml } from "@/lib/safeJsonForHtml";
 
     <AdSlot placement="tool-top" minHeight={0} />
 
+    {isQueuedSimpleTool && simpleTool && <SimpleToolWorkspace mode={tool.slug} example={simpleTool.example} />}
     {newTextToolSlugs.has(tool.slug) && <NewTextToolsWorkspace mode={tool.slug} />}
     {contentGenerationToolSlugs.has(tool.slug) && <ContentGenerationWorkspace mode={tool.slug} />}
     {markdownLivePreviewSlugs.has(tool.slug) && <MarkdownLivePreviewWorkspace />}
     {highValueToolSlugs.has(tool.slug) && <HighValueToolsWorkspace mode={tool.slug} />}
     {expansionToolSlugs.has(tool.slug) && <ExpansionToolWorkspace mode={tool.slug} />}
-    {!contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && !newTextToolSlugs.has(tool.slug) && !expansionToolSlugs.has(tool.slug) && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
-    {!markdownLivePreviewSlugs.has(tool.slug) && !contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
-    {!highValueToolSlugs.has(tool.slug) && tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
+    {!contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && !newTextToolSlugs.has(tool.slug) && !expansionToolSlugs.has(tool.slug) && !isQueuedSimpleTool && tool.category === "text" && <TextToolWorkspace mode={tool.slug} />}
+    {!markdownLivePreviewSlugs.has(tool.slug) && !contentGenerationToolSlugs.has(tool.slug) && !highValueToolSlugs.has(tool.slug) && !isQueuedSimpleTool && tool.category === "developer" && <DeveloperToolWorkspace mode={tool.slug} />}
+    {!highValueToolSlugs.has(tool.slug) && !isQueuedSimpleTool && tool.category === "security" && <SecurityToolWorkspace mode={tool.slug} />}
     {tool.category === "qr" && <QrToolWorkspace mode={tool.slug} />}
-    {!expansionToolSlugs.has(tool.slug) && tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}
-    {tool.category === "converter" && <ConverterToolWorkspace mode={tool.slug} />}
+    {!expansionToolSlugs.has(tool.slug) && !isQueuedSimpleTool && tool.category === "calculator" && <CalculatorToolWorkspace mode={tool.slug} />}
+    {!isQueuedSimpleTool && tool.category === "converter" && <ConverterToolWorkspace mode={tool.slug} />}
 
     <section class="mt-10">
       <h2 class="text-xl font-bold text-white">How to use this tool</h2>
