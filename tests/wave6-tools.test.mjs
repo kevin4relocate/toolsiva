@@ -162,7 +162,7 @@ test("JSON schema, Patch and configuration parsers work without executing input"
 });
 
 test("Web and security text checks detect common issues",()=>{
- assert.match(run("json-ld-structured-data-validator",'{"@context":"https://schema.org","@type":"Person","name":"Ada"}'),/No/); // valid context/required checks message
+ assert.match(run("json-ld-structured-data-validator",'{"@context":"https://schema.org","@type":"Person","name":"Ada"}'),/Valid basic JSON-LD/);
  assert.match(run("hreflang-reciprocity-checker","https://a.test/en|en|https://a.test/fr"),/Missing reciprocal/);
  assert.match(run("redirect-loop-detector","/a|/b\n/b|/a"),/a/);
  assert.match(run("csp-url-allowlist-tester","default-src 'self'; img-src https://img.test\n---\nimg-src|https://img.test/a.png|https://app.test"),/Allowed/);
