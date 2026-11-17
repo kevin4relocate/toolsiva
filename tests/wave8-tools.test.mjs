@@ -137,7 +137,7 @@ test("JSON, web and calendar tools work for typed values",()=>{
  assert.match(run("holiday-aware-business-day-counter","2026-11-16|2026-11-20\n---\n2026-11-18"),/business days.*4/i);
  assert.match(run("monthly-anniversary-date-generator","2026-01-31|1"),/2026-02-28/);
  assert.match(run("annual-leave-accrual-calculator","1.5|6|2"),/balance: 7/);
- assert.match(run("overtime-tier-wage-calculator","45|20|40|1.5|2"),/1050/);
+ assert.match(run("overtime-tier-wage-calculator","45|20|40|1.5|2"),/950/);
  assert.match(run("shift-coverage-gap-analyzer","09:00|17:00\n---\n09:00,12:00\n13:00,17:00"),/12:00–13:00/);
  assert.match(run("project-pert-estimate-calculator","2|5|14"),/expected duration: 6/);
  assert.match(run("project-earned-value-metrics-calculator","10000|6000|5000"),/SPI.*0.6/);
