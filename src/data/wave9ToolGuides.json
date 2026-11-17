@@ -611,15 +611,6 @@
     ],
     "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
   },
-  "json-pointer-batch-lookup": {
-    "explanation": "Resolve multiple JSON Pointers against pasted JSON at once.",
-    "example": "/a\n/b/c\n---\n{\"a\":1,\"b\":{\"c\":2}}",
-    "workflows": [
-      "Paste text or numerical values using the documented example format.",
-      "Review the generated output, check assumptions and copy the result as needed."
-    ],
-    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
-  },
   "json-pointer-batch-setter": {
     "explanation": "Set multiple existing JSON paths using JSON literal assignments.",
     "example": "/a|10\n/b/c|\"new\"\n---\n{\"a\":1,\"b\":{\"c\":\"old\"}}",
@@ -827,15 +818,6 @@
     ],
     "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
   },
-  "iso-week-date-to-calendar-date": {
-    "explanation": "Convert ISO week year/number/weekday into Gregorian date.",
-    "example": "2026-W47-1",
-    "workflows": [
-      "Paste text or numerical values using the documented example format.",
-      "Review the generated output, check assumptions and copy the result as needed."
-    ],
-    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
-  },
   "retail-445-fiscal-calendar-generator": {
     "explanation": "Generate 4-4-5 retail fiscal period boundaries from a start.",
     "example": "2026-02-01|2",
@@ -898,5 +880,23 @@
       "Review the generated output, check assumptions and copy the result as needed."
     ],
     "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-schema-constraint-coverage-reporter": {
+    "explanation": "Audit an object JSON Schema and measure its required fields and validation constraint coverage.",
+    "example": "{\"type\":\"object\",\"required\":[\"name\"],\"properties\":{\"name\":{\"type\":\"string\",\"minLength\":2},\"age\":{\"type\":\"integer\",\"minimum\":0},\"city\":{\"type\":\"string\"}}}",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Review locally calculated output and any warnings or limitations."
+    ],
+    "limitation": "This is a lightweight coverage audit of schema constraints and does not replace comprehensive JSON Schema validation or enforce the schema."
+  },
+  "gregorian-easter-date-calculator": {
+    "explanation": "Calculate Easter Sunday and Easter Monday dates using the Gregorian computus algorithm.",
+    "example": "2027",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Review locally calculated output and any warnings or limitations."
+    ],
+    "limitation": "Uses the Gregorian calendar and Western Easter computus for years 1583–4099; regional Eastern Orthodox observances may differ."
   }
 }
