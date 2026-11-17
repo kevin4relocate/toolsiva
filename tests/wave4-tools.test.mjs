@@ -17,13 +17,13 @@ const run=(slug,s)=>t4A(slug,s)??t4B(slug,s)??h4Html(slug,s)??u4Tools(slug,s)??j
 const browserOnly=new Set(["html-heading-word-counter","html-paragraph-element-counter","html-link-rel-analyzer","html-meta-description-extractor","html-canonical-link-extractor","html-language-attribute-checker","html-title-tag-extractor","html-form-field-extractor","html-duplicate-id-detector","html-label-association-checker","html-aria-attribute-audit"]);
 
 test("100 new tools follow the 191 original queue entries and provide unique valid text examples",()=>{
- assert.equal(queue.length,968);
+ assert.equal(queue.length,967);
  assert.equal(added.length,97);
  assert.equal(Object.keys(guides).length,97);
  assert.equal(queue.filter(x=>x.batch===3).at(-1).slug,"dmarc-record-generator");
  assert.equal(added[0].slug,"line-intersection-finder");
  assert.equal(added.at(-1).slug,"csv-formula-injection-detector");
- assert.equal(new Set(queue.map(x=>x.slug)).size,968);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,967);
  const engines=["wave4Text","wave4HtmlUrl","wave4JsonCsv","wave4BusinessStats","wave4WebValidators"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const entry of added){
   assert.ok(entry.ready,entry.slug+" not ready");
