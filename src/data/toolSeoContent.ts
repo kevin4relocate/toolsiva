@@ -8,6 +8,7 @@ import wave5ToolGuides from "@/data/wave5ToolGuides.json";
 import wave6ToolGuides from "@/data/wave6ToolGuides.json";
 import wave7ToolGuides from "@/data/wave7ToolGuides.json";
 import wave8ToolGuides from "@/data/wave8ToolGuides.json";
+import wave9ToolGuides from "@/data/wave9ToolGuides.json";
 
 export interface ToolExample { input: string; output: string; }
 export interface ToolContentSection { heading: string; paragraphs: string[]; }
@@ -459,6 +460,19 @@ export function getToolContentSections(tool: ToolDefinition): ToolContentSection
       { heading: "Before using the result", paragraphs: [note.watch] },
     ];
   }
+
+  const wave9 = wave9ToolGuides[tool.slug as keyof typeof wave9ToolGuides];
+  if (wave9) return [
+    { heading: `How ${tool.name} works`, paragraphs: [
+      wave9.explanation,
+      `Example input: ${wave9.example.replaceAll("\\n", " | ").slice(0, 180)}.`
+    ] },
+    { heading: `How to use ${tool.name}`, paragraphs: wave9.workflows },
+    { heading: "Accuracy and privacy", paragraphs: [
+      wave9.limitation,
+      "This browser-only utility accepts text or numbers entered or pasted directly. No file upload or paid API is necessary."
+    ] },
+  ];
 
   const wave8 = wave8ToolGuides[tool.slug as keyof typeof wave8ToolGuides];
   if (wave8) return [

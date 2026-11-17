@@ -10766,5 +10766,1605 @@
     "example": "1,2,3,4,50,6|3",
     "ready": true,
     "batch": 8
+  },
+  {
+    "slug": "dna-reverse-complement-tool",
+    "name": "DNA Reverse Complement Tool",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Reverse DNA and complement A/T, C/G using IUPAC codes.",
+    "metaDescription": "Reverse DNA and complement A/T, C/G using IUPAC codes. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "dna reverse complement tool",
+      "free dna reverse complement tool",
+      "online dna reverse complement tool"
+    ],
+    "example": "ATGCCGTA",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "dna-gc-content-calculator",
+    "name": "DNA GC Content Calculator",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Calculate GC percentage and nucleotide counts in pasted DNA.",
+    "metaDescription": "Calculate GC percentage and nucleotide counts in pasted DNA. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "dna gc content calculator",
+      "free dna gc content calculator",
+      "online dna gc content calculator"
+    ],
+    "example": "ATGCGCGTAA",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "dna-rna-transcription-converter",
+    "name": "DNA RNA Transcription Converter",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Transcribe DNA coding-strand nucleotides into RNA.",
+    "metaDescription": "Transcribe DNA coding-strand nucleotides into RNA. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "dna rna transcription converter",
+      "free dna rna transcription converter",
+      "online dna rna transcription converter"
+    ],
+    "example": "ATGCTTACG",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "rna-codon-translator",
+    "name": "RNA Codon Translator",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Translate RNA codons into standard amino acid letters.",
+    "metaDescription": "Translate RNA codons into standard amino acid letters. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "rna codon translator",
+      "free rna codon translator",
+      "online rna codon translator"
+    ],
+    "example": "AUGGCCUUUUAA",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "fasta-sequence-validator",
+    "name": "FASTA Sequence Validator",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Validate nucleotide FASTA text with multiple sequence records.",
+    "metaDescription": "Validate nucleotide FASTA text with multiple sequence records. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "fasta sequence validator",
+      "free fasta sequence validator",
+      "online fasta sequence validator"
+    ],
+    "example": ">seq1\nACGTACGT\n>seq2\nGGCTA",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "dna-motif-position-finder",
+    "name": "DNA Motif Position Finder",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Locate every one-based exact DNA motif match, including overlaps.",
+    "metaDescription": "Locate every one-based exact DNA motif match, including overlaps. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "dna motif position finder",
+      "free dna motif position finder",
+      "online dna motif position finder"
+    ],
+    "example": "ATATCGATAT\n---\nATAT",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "dna-oligo-melting-temperature-calculator",
+    "name": "DNA Oligo Melting Temperature Calculator",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Estimate short DNA oligonucleotide melting temperature using the approximate Wallace rule.",
+    "metaDescription": "Estimate short DNA oligonucleotide melting temperature using the approximate Wallace rule. Works entirely offline from pasted text; no uploads or paid APIs.",
+    "keywords": [
+      "dna oligo melting temperature calculator",
+      "free dna oligo melting temperature calculator",
+      "online dna oligo melting temperature calculator"
+    ],
+    "example": "ATGCCGTA",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "protein-amino-acid-composition",
+    "name": "Protein Amino Acid Composition",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Count amino acid residues and their percentages in a protein.",
+    "metaDescription": "Count amino acid residues and their percentages in a protein. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "protein amino acid composition",
+      "free protein amino acid composition",
+      "online protein amino acid composition"
+    ],
+    "example": "MKWVTFISLLFLFSSAYS",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "protein-molecular-weight-estimator",
+    "name": "Protein Molecular Weight Estimator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Estimate average protein molecular mass from residue weights.",
+    "metaDescription": "Estimate average protein molecular mass from residue weights. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "protein molecular weight estimator",
+      "free protein molecular weight estimator",
+      "online protein molecular weight estimator"
+    ],
+    "example": "ACDEFGHIK",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "dna-open-reading-frame-finder",
+    "name": "DNA Open Reading Frame Finder",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Find complete forward reading frames between start and stop codons.",
+    "metaDescription": "Find complete forward reading frames between start and stop codons. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "dna open reading frame finder",
+      "free dna open reading frame finder",
+      "online dna open reading frame finder"
+    ],
+    "example": "ATGAAATAGCCCATGCCCTAA",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "empirical-chemical-formula-calculator",
+    "name": "Empirical Chemical Formula Calculator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Approximate empirical molecular formula from element mass percentages.",
+    "metaDescription": "Approximate empirical molecular formula from element mass percentages. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "empirical chemical formula calculator",
+      "free empirical chemical formula calculator",
+      "online empirical chemical formula calculator"
+    ],
+    "example": "C:40.0,H:6.7,O:53.3",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "molecular-formula-mass-multiplier",
+    "name": "Molecular Formula Mass Multiplier",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Scale empirical chemical formula to a target molar mass.",
+    "metaDescription": "Scale empirical chemical formula to a target molar mass. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "molecular formula mass multiplier",
+      "free molecular formula mass multiplier",
+      "online molecular formula mass multiplier"
+    ],
+    "example": "CH2O|180.16",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "limiting-reactant-mole-calculator",
+    "name": "Limiting Reactant Mole Calculator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Determine limiting reagent and extent from mole/coefficient pairs.",
+    "metaDescription": "Determine limiting reagent and extent from mole/coefficient pairs. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "limiting reactant mole calculator",
+      "free limiting reactant mole calculator",
+      "online limiting reactant mole calculator"
+    ],
+    "example": "2|3|1|1",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "reaction-theoretical-yield-calculator",
+    "name": "Reaction Theoretical Yield Calculator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Calculate product mass from stoichiometry and molecular weight.",
+    "metaDescription": "Calculate product mass from stoichiometry and molecular weight. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "reaction theoretical yield calculator",
+      "free reaction theoretical yield calculator",
+      "online reaction theoretical yield calculator"
+    ],
+    "example": "0.5|1|2|18.015",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "reaction-percent-yield-calculator",
+    "name": "Reaction Percent Yield Calculator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Calculate observed versus theoretical product yield percent.",
+    "metaDescription": "Calculate observed versus theoretical product yield percent. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "reaction percent yield calculator",
+      "free reaction percent yield calculator",
+      "online reaction percent yield calculator"
+    ],
+    "example": "8.2|10",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "solution-molality-calculator",
+    "name": "Solution Molality Calculator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Compute solute moles per kilogram of solvent.",
+    "metaDescription": "Compute solute moles per kilogram of solvent. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "solution molality calculator",
+      "free solution molality calculator",
+      "online solution molality calculator"
+    ],
+    "example": "0.5|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "solution-mass-percent-calculator",
+    "name": "Solution Mass Percent Calculator",
+    "category": "calculator",
+    "week": 69,
+    "shortDescription": "Compute solute weight percentage of mixed solution.",
+    "metaDescription": "Compute solute weight percentage of mixed solution. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "solution mass percent calculator",
+      "free solution mass percent calculator",
+      "online solution mass percent calculator"
+    ],
+    "example": "15|85",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "hydroxide-ion-poh-calculator",
+    "name": "Hydroxide Ion pOH Calculator",
+    "category": "calculator",
+    "week": 70,
+    "shortDescription": "Calculate idealized pOH from hydroxide concentration.",
+    "metaDescription": "Calculate idealized pOH from hydroxide concentration. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "hydroxide ion poh calculator",
+      "free hydroxide ion poh calculator",
+      "online hydroxide ion poh calculator"
+    ],
+    "example": "0.001",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "henderson-hasselbalch-ph-calculator",
+    "name": "Henderson Hasselbalch pH Calculator",
+    "category": "calculator",
+    "week": 70,
+    "shortDescription": "Estimate acid/base buffer pH using Henderson-Hasselbalch.",
+    "metaDescription": "Estimate acid/base buffer pH using Henderson-Hasselbalch. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "henderson hasselbalch ph calculator",
+      "free henderson hasselbalch ph calculator",
+      "online henderson hasselbalch ph calculator"
+    ],
+    "example": "4.76|0.2|0.1",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "osmotic-pressure-calculator",
+    "name": "Osmotic Pressure Calculator",
+    "category": "calculator",
+    "week": 70,
+    "shortDescription": "Estimate osmotic pressure by van 't Hoff's ideal law.",
+    "metaDescription": "Estimate osmotic pressure by van 't Hoff's ideal law. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "osmotic pressure calculator",
+      "free osmotic pressure calculator",
+      "online osmotic pressure calculator"
+    ],
+    "example": "0.1|298.15|1",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "base32-text-encoder-decoder",
+    "name": "Base32 Text Encoder Decoder",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Encode or decode UTF-8 text using RFC4648 Base32.",
+    "metaDescription": "Encode or decode UTF-8 text using RFC4648 Base32. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "base32 text encoder decoder",
+      "free base32 text encoder decoder",
+      "online base32 text encoder decoder"
+    ],
+    "example": "encode|Hello world",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "base58-text-encoder-decoder",
+    "name": "Base58 Text Encoder Decoder",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Encode/decode UTF-8 text with Bitcoin Base58 alphabet.",
+    "metaDescription": "Encode/decode UTF-8 text with Bitcoin Base58 alphabet. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "base58 text encoder decoder",
+      "free base58 text encoder decoder",
+      "online base58 text encoder decoder"
+    ],
+    "example": "encode|Hello world",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "ascii85-text-encoder-decoder",
+    "name": "Ascii85 Text Encoder Decoder",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Encode/decode UTF-8 with Adobe ASCII85 text representation.",
+    "metaDescription": "Encode/decode UTF-8 with Adobe ASCII85 text representation. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "ascii85 text encoder decoder",
+      "free ascii85 text encoder decoder",
+      "online ascii85 text encoder decoder"
+    ],
+    "example": "encode|Hello world",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "utf8-hex-encoder-decoder",
+    "name": "UTF8 Hex Encoder Decoder",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Convert UTF-8 text to hexadecimal byte text or back.",
+    "metaDescription": "Convert UTF-8 text to hexadecimal byte text or back. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "utf8 hex encoder decoder",
+      "free utf8 hex encoder decoder",
+      "online utf8 hex encoder decoder"
+    ],
+    "example": "encode|Hello 🌎",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "crc32-text-checksum",
+    "name": "CRC32 Text Checksum",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Calculate ISO-HDLC CRC-32 over pasted UTF-8 bytes.",
+    "metaDescription": "Calculate ISO-HDLC CRC-32 over pasted UTF-8 bytes. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "crc32 text checksum",
+      "free crc32 text checksum",
+      "online crc32 text checksum"
+    ],
+    "example": "123456789",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "adler32-text-checksum",
+    "name": "Adler32 Text Checksum",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Calculate Adler-32 checksum from typed UTF-8 text.",
+    "metaDescription": "Calculate Adler-32 checksum from typed UTF-8 text. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "adler32 text checksum",
+      "free adler32 text checksum",
+      "online adler32 text checksum"
+    ],
+    "example": "Wikipedia",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "fnv1a-32-bit-hash",
+    "name": "FNV1a 32 Bit Hash",
+    "category": "developer",
+    "week": 70,
+    "shortDescription": "Calculate non-cryptographic FNV1a 32-bit UTF-8 hash.",
+    "metaDescription": "Calculate non-cryptographic FNV1a 32-bit UTF-8 hash. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "fnv1a 32 bit hash",
+      "free fnv1a 32 bit hash",
+      "online fnv1a 32 bit hash"
+    ],
+    "example": "hello",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "djb2-string-hash",
+    "name": "DJB2 String Hash",
+    "category": "developer",
+    "week": 71,
+    "shortDescription": "Calculate classic unsigned 32-bit DJB2 hash from text bytes.",
+    "metaDescription": "Calculate classic unsigned 32-bit DJB2 hash from text bytes. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "djb2 string hash",
+      "free djb2 string hash",
+      "online djb2 string hash"
+    ],
+    "example": "hello",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "unicode-confusable-character-detector",
+    "name": "Unicode Confusable Character Detector",
+    "category": "developer",
+    "week": 71,
+    "shortDescription": "Identify selected cross-script Unicode homoglyphs in text.",
+    "metaDescription": "Identify selected cross-script Unicode homoglyphs in text. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "unicode confusable character detector",
+      "free unicode confusable character detector",
+      "online unicode confusable character detector"
+    ],
+    "example": "раypal",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "text-encoding-byte-size-comparator",
+    "name": "Text Encoding Byte Size Comparator",
+    "category": "developer",
+    "week": 71,
+    "shortDescription": "Compare UTF-8 and UTF-16LE sizes and Latin-1 representability.",
+    "metaDescription": "Compare UTF-8 and UTF-16LE sizes and Latin-1 representability. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "text encoding byte size comparator",
+      "free text encoding byte size comparator",
+      "online text encoding byte size comparator"
+    ],
+    "example": "Hello 🌎",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "polynomial-horner-evaluator",
+    "name": "Polynomial Horner Evaluator",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Evaluate highest-first polynomial coefficients via Horner's rule.",
+    "metaDescription": "Evaluate highest-first polynomial coefficients via Horner's rule. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "polynomial horner evaluator",
+      "free polynomial horner evaluator",
+      "online polynomial horner evaluator"
+    ],
+    "example": "1,-3,2|5",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "polynomial-synthetic-division",
+    "name": "Polynomial Synthetic Division",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Divide polynomial by x minus a root and report quotient and remainder.",
+    "metaDescription": "Divide polynomial by x minus a root and report quotient and remainder. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "polynomial synthetic division",
+      "free polynomial synthetic division",
+      "online polynomial synthetic division"
+    ],
+    "example": "1,-3,2|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "polynomial-derivative-coefficients",
+    "name": "Polynomial Derivative Coefficients",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Generate numeric derivative coefficients from a polynomial.",
+    "metaDescription": "Generate numeric derivative coefficients from a polynomial. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "polynomial derivative coefficients",
+      "free polynomial derivative coefficients",
+      "online polynomial derivative coefficients"
+    ],
+    "example": "3,2,-1,5",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "polynomial-integral-coefficients",
+    "name": "Polynomial Integral Coefficients",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Generate antiderivative coefficients plus an integration constant.",
+    "metaDescription": "Generate antiderivative coefficients plus an integration constant. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "polynomial integral coefficients",
+      "free polynomial integral coefficients",
+      "online polynomial integral coefficients"
+    ],
+    "example": "3,2,-1|4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "quadratic-vertex-calculator",
+    "name": "Quadratic Vertex Calculator",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Calculate quadratic vertex and discriminant from coefficients.",
+    "metaDescription": "Calculate quadratic vertex and discriminant from coefficients. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "quadratic vertex calculator",
+      "free quadratic vertex calculator",
+      "online quadratic vertex calculator"
+    ],
+    "example": "1|-4|3",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "cubic-real-roots-calculator",
+    "name": "Cubic Real Roots Calculator",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Approximate real cubic polynomial roots and multiplicities.",
+    "metaDescription": "Approximate real cubic polynomial roots and multiplicities. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "cubic real roots calculator",
+      "free cubic real roots calculator",
+      "online cubic real roots calculator"
+    ],
+    "example": "1|-6|11|-6",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "matrix-trace-calculator",
+    "name": "Matrix Trace Calculator",
+    "category": "calculator",
+    "week": 71,
+    "shortDescription": "Sum diagonal of a numeric square matrix.",
+    "metaDescription": "Sum diagonal of a numeric square matrix. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "matrix trace calculator",
+      "free matrix trace calculator",
+      "online matrix trace calculator"
+    ],
+    "example": "1,2;3,4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "matrix-transpose-calculator",
+    "name": "Matrix Transpose Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Transpose rows and columns of a numeric matrix.",
+    "metaDescription": "Transpose rows and columns of a numeric matrix. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "matrix transpose calculator",
+      "free matrix transpose calculator",
+      "online matrix transpose calculator"
+    ],
+    "example": "1,2,3;4,5,6",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "matrix-frobenius-norm-calculator",
+    "name": "Matrix Frobenius Norm Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Find square-root sum of squared matrix elements.",
+    "metaDescription": "Find square-root sum of squared matrix elements. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "matrix frobenius norm calculator",
+      "free matrix frobenius norm calculator",
+      "online matrix frobenius norm calculator"
+    ],
+    "example": "1,2;3,4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "two-by-two-matrix-eigenvalues",
+    "name": "Two By Two Matrix Eigenvalues",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Find complex or real eigenvalues of a 2x2 matrix.",
+    "metaDescription": "Find complex or real eigenvalues of a 2x2 matrix. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "two by two matrix eigenvalues",
+      "free two by two matrix eigenvalues",
+      "online two by two matrix eigenvalues"
+    ],
+    "example": "2,1;1,2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "irregular-cash-flow-xnpv-calculator",
+    "name": "Irregular Cash Flow XNPV Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Discount exact-date cash flows with a 365-day day-count basis.",
+    "metaDescription": "Discount exact-date cash flows with a 365-day day-count basis. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "irregular cash flow xnpv calculator",
+      "free irregular cash flow xnpv calculator",
+      "online irregular cash flow xnpv calculator"
+    ],
+    "example": "0.1\n---\n2026-01-01|-1000\n2026-07-01|600\n2027-01-01|600",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "irregular-cash-flow-xirr-calculator",
+    "name": "Irregular Cash Flow XIRR Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Find dated internal rate of return for conventional cash flows.",
+    "metaDescription": "Find dated internal rate of return for conventional cash flows. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "irregular cash flow xirr calculator",
+      "free irregular cash flow xirr calculator",
+      "online irregular cash flow xirr calculator"
+    ],
+    "example": "2026-01-01|-1000\n2027-01-01|1100",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "variable-deposit-savings-forecast",
+    "name": "Variable Deposit Savings Forecast",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Forecast compounded balance with varying monthly deposits.",
+    "metaDescription": "Forecast compounded balance with varying monthly deposits. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "variable deposit savings forecast",
+      "free variable deposit savings forecast",
+      "online variable deposit savings forecast"
+    ],
+    "example": "1000|0.06\n---\n100,200,300",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "loan-amortization-table-generator",
+    "name": "Loan Amortization Table Generator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Produce installment schedule showing principal, interest and balance.",
+    "metaDescription": "Produce installment schedule showing principal, interest and balance. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "loan amortization table generator",
+      "free loan amortization table generator",
+      "online loan amortization table generator"
+    ],
+    "example": "100000|0.06|12",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "balloon-loan-payment-calculator",
+    "name": "Balloon Loan Payment Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Solve monthly loan payment with a final balloon balance.",
+    "metaDescription": "Solve monthly loan payment with a final balloon balance. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "balloon loan payment calculator",
+      "free balloon loan payment calculator",
+      "online balloon loan payment calculator"
+    ],
+    "example": "100000|0.06|60|20000",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "bond-yield-to-maturity-calculator",
+    "name": "Bond Yield To Maturity Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Numerically solve fixed-coupon bond yield from purchase price.",
+    "metaDescription": "Numerically solve fixed-coupon bond yield from purchase price. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "bond yield to maturity calculator",
+      "free bond yield to maturity calculator",
+      "online bond yield to maturity calculator"
+    ],
+    "example": "950|1000|0.05|5|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "bond-convexity-calculator",
+    "name": "Bond Convexity Calculator",
+    "category": "calculator",
+    "week": 72,
+    "shortDescription": "Calculate fixed-coupon bond price convexity to interest-rate changes.",
+    "metaDescription": "Calculate fixed-coupon bond price convexity to interest-rate changes. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "bond convexity calculator",
+      "free bond convexity calculator",
+      "online bond convexity calculator"
+    ],
+    "example": "1000|0.05|0.06|5|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "bond-modified-duration-calculator",
+    "name": "Bond Modified Duration Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Convert bond Macaulay duration to yield-sensitive modified duration.",
+    "metaDescription": "Convert bond Macaulay duration to yield-sensitive modified duration. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "bond modified duration calculator",
+      "free bond modified duration calculator",
+      "online bond modified duration calculator"
+    ],
+    "example": "1000|0.05|0.06|5|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "loan-fee-adjusted-apr-calculator",
+    "name": "Loan Fee Adjusted APR Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Estimate effective loan APR including upfront origination fees.",
+    "metaDescription": "Estimate effective loan APR including upfront origination fees. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "loan fee adjusted apr calculator",
+      "free loan fee adjusted apr calculator",
+      "online loan fee adjusted apr calculator"
+    ],
+    "example": "10000|500|0.1|24",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "double-declining-depreciation-schedule",
+    "name": "Double Declining Depreciation Schedule",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Schedule accelerated double-declining depreciation subject to salvage.",
+    "metaDescription": "Schedule accelerated double-declining depreciation subject to salvage. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "double declining depreciation schedule",
+      "free double declining depreciation schedule",
+      "online double declining depreciation schedule"
+    ],
+    "example": "10000|1000|5",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "mm1-queue-waiting-time-calculator",
+    "name": "MM1 Queue Waiting Time Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Calculate M/M/1 utilization, queue wait and service-system time.",
+    "metaDescription": "Calculate M/M/1 utilization, queue wait and service-system time. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "mm1 queue waiting time calculator",
+      "free mm1 queue waiting time calculator",
+      "online mm1 queue waiting time calculator"
+    ],
+    "example": "5|8",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "littles-law-work-in-progress-calculator",
+    "name": "Littles Law Work In Progress Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Estimate average WIP from throughput rate and flow time.",
+    "metaDescription": "Estimate average WIP from throughput rate and flow time. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "littles law work in progress calculator",
+      "free littles law work in progress calculator",
+      "online littles law work in progress calculator"
+    ],
+    "example": "5|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "six-sigma-dpmo-calculator",
+    "name": "Six Sigma DPMO Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Calculate defects per million opportunities.",
+    "metaDescription": "Calculate defects per million opportunities. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "six sigma dpmo calculator",
+      "free six sigma dpmo calculator",
+      "online six sigma dpmo calculator"
+    ],
+    "example": "10|1000|4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "process-capability-cp-calculator",
+    "name": "Process Capability Cp Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Estimate Cp using specification limits and standard deviation.",
+    "metaDescription": "Estimate Cp using specification limits and standard deviation. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "process capability cp calculator",
+      "free process capability cp calculator",
+      "online process capability cp calculator"
+    ],
+    "example": "90|110|4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "process-capability-cpk-calculator",
+    "name": "Process Capability Cpk Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Estimate process Cpk from mean, specification limits and sigma.",
+    "metaDescription": "Estimate process Cpk from mean, specification limits and sigma. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "process capability cpk calculator",
+      "free process capability cpk calculator",
+      "online process capability cpk calculator"
+    ],
+    "example": "90|110|101|4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "overall-equipment-effectiveness-calculator",
+    "name": "Overall Equipment Effectiveness Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Multiply availability, performance and quality components into OEE.",
+    "metaDescription": "Multiply availability, performance and quality components into OEE. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "overall equipment effectiveness calculator",
+      "free overall equipment effectiveness calculator",
+      "online overall equipment effectiveness calculator"
+    ],
+    "example": "0.9|0.85|0.98",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "takt-time-calculator",
+    "name": "Takt Time Calculator",
+    "category": "calculator",
+    "week": 73,
+    "shortDescription": "Divide available production minutes by customer demand units.",
+    "metaDescription": "Divide available production minutes by customer demand units. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "takt time calculator",
+      "free takt time calculator",
+      "online takt time calculator"
+    ],
+    "example": "480|240",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "first-pass-throughput-yield-calculator",
+    "name": "First Pass Throughput Yield Calculator",
+    "category": "calculator",
+    "week": 74,
+    "shortDescription": "Measure good first-pass output divided by input units.",
+    "metaDescription": "Measure good first-pass output divided by input units. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "first pass throughput yield calculator",
+      "free first pass throughput yield calculator",
+      "online first pass throughput yield calculator"
+    ],
+    "example": "950|1000",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "rolled-throughput-yield-calculator",
+    "name": "Rolled Throughput Yield Calculator",
+    "category": "calculator",
+    "week": 74,
+    "shortDescription": "Multiply first-pass yields of sequential production stages.",
+    "metaDescription": "Multiply first-pass yields of sequential production stages. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "rolled throughput yield calculator",
+      "free rolled throughput yield calculator",
+      "online rolled throughput yield calculator"
+    ],
+    "example": "0.95,0.9,0.98",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "simple-exponential-smoothing-forecaster",
+    "name": "Simple Exponential Smoothing Forecaster",
+    "category": "calculator",
+    "week": 74,
+    "shortDescription": "Calculate a next-period forecast from an exponential smoothing factor.",
+    "metaDescription": "Calculate a next-period forecast from an exponential smoothing factor. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "simple exponential smoothing forecaster",
+      "free simple exponential smoothing forecaster",
+      "online simple exponential smoothing forecaster"
+    ],
+    "example": "0.3|100,120,110,130",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-composite-identifier-validator",
+    "name": "JSON Composite Identifier Validator",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Verify composite tuple uniqueness among JSON object records.",
+    "metaDescription": "Verify composite tuple uniqueness among JSON object records. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json composite identifier validator",
+      "free json composite identifier validator",
+      "online json composite identifier validator"
+    ],
+    "example": "id,region\n---\n[{\"id\":1,\"region\":\"A\"},{\"id\":1,\"region\":\"B\"}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-rolling-sum-column-builder",
+    "name": "JSON Rolling Sum Column Builder",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Append an N-record rolling sum field to JSON objects.",
+    "metaDescription": "Append an N-record rolling sum field to JSON objects. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json rolling sum column builder",
+      "free json rolling sum column builder",
+      "online json rolling sum column builder"
+    ],
+    "example": "value|2\n---\n[{\"value\":2},{\"value\":3},{\"value\":4}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-two-field-crosstab-builder",
+    "name": "JSON Two Field Crosstab Builder",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Count record combinations across two JSON category fields.",
+    "metaDescription": "Count record combinations across two JSON category fields. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json two field crosstab builder",
+      "free json two field crosstab builder",
+      "online json two field crosstab builder"
+    ],
+    "example": "region|status\n---\n[{\"region\":\"N\",\"status\":\"new\"},{\"region\":\"N\",\"status\":\"done\"}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-monthly-date-bucket-summary",
+    "name": "JSON Monthly Date Bucket Summary",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Sum numeric JSON properties by ISO year-month.",
+    "metaDescription": "Sum numeric JSON properties by ISO year-month. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json monthly date bucket summary",
+      "free json monthly date bucket summary",
+      "online json monthly date bucket summary"
+    ],
+    "example": "date|amount\n---\n[{\"date\":\"2026-01-01\",\"amount\":2},{\"date\":\"2026-01-20\",\"amount\":3}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-numeric-field-clamp",
+    "name": "JSON Numeric Field Clamp",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Clamp a numeric JSON property into an inclusive fixed range.",
+    "metaDescription": "Clamp a numeric JSON property into an inclusive fixed range. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json numeric field clamp",
+      "free json numeric field clamp",
+      "online json numeric field clamp"
+    ],
+    "example": "score|0|100\n---\n[{\"score\":-5},{\"score\":120}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-value-type-coercion-auditor",
+    "name": "JSON Value Type Coercion Auditor",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Find columns whose JSON records mix typed values and number/boolean strings.",
+    "metaDescription": "Find columns whose JSON records mix typed values and number/boolean strings. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json value type coercion auditor",
+      "free json value type coercion auditor",
+      "online json value type coercion auditor"
+    ],
+    "example": "[{\"id\":\"2\",\"active\":\"true\"},{\"id\":3,\"active\":false}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-property-case-collision-scanner",
+    "name": "JSON Property Case Collision Scanner",
+    "category": "developer",
+    "week": 74,
+    "shortDescription": "Find object keys differing only by case at each nested JSON level.",
+    "metaDescription": "Find object keys differing only by case at each nested JSON level. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json property case collision scanner",
+      "free json property case collision scanner",
+      "online json property case collision scanner"
+    ],
+    "example": "{\"Name\":\"Ada\",\"name\":\"Bob\"}",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-array-field-sparsity-matrix",
+    "name": "JSON Array Field Sparsity Matrix",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Report each JSON record's present/missing field matrix.",
+    "metaDescription": "Report each JSON record's present/missing field matrix. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json array field sparsity matrix",
+      "free json array field sparsity matrix",
+      "online json array field sparsity matrix"
+    ],
+    "example": "[{\"a\":1,\"b\":2},{\"a\":2},{\"b\":3}]",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-schema-constraint-coverage-reporter",
+    "name": "JSON Schema Constraint Coverage Reporter",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Audit an object JSON Schema and measure its required fields and validation constraint coverage.",
+    "metaDescription": "Audit an object JSON Schema and measure its required fields and validation constraint coverage. Runs offline using typed values; no upload or paid API.",
+    "keywords": [
+      "json schema constraint coverage reporter",
+      "free json schema constraint coverage reporter",
+      "online json schema constraint coverage reporter"
+    ],
+    "example": "{\"type\":\"object\",\"required\":[\"name\"],\"properties\":{\"name\":{\"type\":\"string\",\"minLength\":2},\"age\":{\"type\":\"integer\",\"minimum\":0},\"city\":{\"type\":\"string\"}}}",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "json-pointer-batch-setter",
+    "name": "JSON Pointer Batch Setter",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Set multiple existing JSON paths using JSON literal assignments.",
+    "metaDescription": "Set multiple existing JSON paths using JSON literal assignments. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "json pointer batch setter",
+      "free json pointer batch setter",
+      "online json pointer batch setter"
+    ],
+    "example": "/a|10\n/b/c|\"new\"\n---\n{\"a\":1,\"b\":{\"c\":\"old\"}}",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-iso-week-sales-aggregator",
+    "name": "CSV ISO Week Sales Aggregator",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Aggregate numeric CSV rows by ISO calendar week.",
+    "metaDescription": "Aggregate numeric CSV rows by ISO calendar week. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv iso week sales aggregator",
+      "free csv iso week sales aggregator",
+      "online csv iso week sales aggregator"
+    ],
+    "example": "date|amount\n---\ndate,amount\n2026-11-16,20\n2026-11-17,10",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-rolling-standard-deviation",
+    "name": "CSV Rolling Standard Deviation",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Append rolling population standard deviations to CSV.",
+    "metaDescription": "Append rolling population standard deviations to CSV. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv rolling standard deviation",
+      "free csv rolling standard deviation",
+      "online csv rolling standard deviation"
+    ],
+    "example": "value|3\n---\nvalue\n1\n2\n3\n4",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-maximum-drawdown-reporter",
+    "name": "CSV Maximum Drawdown Reporter",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Calculate maximum peak-to-trough percentage drawdown of a CSV series.",
+    "metaDescription": "Calculate maximum peak-to-trough percentage drawdown of a CSV series. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv maximum drawdown reporter",
+      "free csv maximum drawdown reporter",
+      "online csv maximum drawdown reporter"
+    ],
+    "example": "price\n---\nprice\n100\n120\n90\n130",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-exponential-moving-average",
+    "name": "CSV Exponential Moving Average",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Append exponentially weighted moving averages to numeric CSV.",
+    "metaDescription": "Append exponentially weighted moving averages to numeric CSV. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv exponential moving average",
+      "free csv exponential moving average",
+      "online csv exponential moving average"
+    ],
+    "example": "value|0.5\n---\nvalue\n10\n20\n30",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-linear-trend-slope",
+    "name": "CSV Linear Trend Slope",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Estimate CSV series linear slope against observation index.",
+    "metaDescription": "Estimate CSV series linear slope against observation index. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv linear trend slope",
+      "free csv linear trend slope",
+      "online csv linear trend slope"
+    ],
+    "example": "value\n---\nvalue\n2\n4\n6\n8",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-index-rebasing-tool",
+    "name": "CSV Index Rebasing Tool",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Rebase an index column to a supplied starting index level.",
+    "metaDescription": "Rebase an index column to a supplied starting index level. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv index rebasing tool",
+      "free csv index rebasing tool",
+      "online csv index rebasing tool"
+    ],
+    "example": "price|100\n---\nprice\n40\n44\n42",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-conditional-distinct-counter",
+    "name": "CSV Conditional Distinct Counter",
+    "category": "developer",
+    "week": 75,
+    "shortDescription": "Count unique CSV values within groups matching a filter.",
+    "metaDescription": "Count unique CSV values within groups matching a filter. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv conditional distinct counter",
+      "free csv conditional distinct counter",
+      "online csv conditional distinct counter"
+    ],
+    "example": "team|status|active|user\n---\nteam,status,user\nA,active,u1\nA,active,u1\nA,closed,u2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-numeric-zero-crossing-detector",
+    "name": "CSV Numeric Zero Crossing Detector",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Detect consecutive positive-to-negative and negative-to-positive transitions in ordered numeric CSV values.",
+    "metaDescription": "Detect consecutive positive-to-negative and negative-to-positive transitions in ordered numeric CSV values. Works entirely offline from pasted text; no uploads or paid APIs.",
+    "keywords": [
+      "csv numeric zero crossing detector",
+      "free csv numeric zero crossing detector",
+      "online csv numeric zero crossing detector"
+    ],
+    "example": "value\n-2\n1\n-1\n3",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-numeric-quantile-summary",
+    "name": "CSV Numeric Quantile Summary",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Summarize CSV P10, quartiles, median, P90 and extrema.",
+    "metaDescription": "Summarize CSV P10, quartiles, median, P90 and extrema. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv numeric quantile summary",
+      "free csv numeric quantile summary",
+      "online csv numeric quantile summary"
+    ],
+    "example": "price\n---\nprice\n1\n2\n3\n4\n5",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "csv-consecutive-value-run-detector",
+    "name": "CSV Consecutive Value Run Detector",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Locate same-value consecutive runs and their CSV rows.",
+    "metaDescription": "Locate same-value consecutive runs and their CSV rows. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "csv consecutive value run detector",
+      "free csv consecutive value run detector",
+      "online csv consecutive value run detector"
+    ],
+    "example": "status\n---\nstatus\nnew\nnew\ndone\ndone\ndone\nnew",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "javascript-import-dependency-grapher",
+    "name": "JavaScript Import Dependency Grapher",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Build a directed adjacency inventory from module import pairs.",
+    "metaDescription": "Build a directed adjacency inventory from module import pairs. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "javascript import dependency grapher",
+      "free javascript import dependency grapher",
+      "online javascript import dependency grapher"
+    ],
+    "example": "a.js|b.js\nb.js|c.js\nc.js|d.js",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "javascript-circular-module-detector",
+    "name": "JavaScript Circular Module Detector",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Find cycles in a pasted module dependency graph.",
+    "metaDescription": "Find cycles in a pasted module dependency graph. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "javascript circular module detector",
+      "free javascript circular module detector",
+      "online javascript circular module detector"
+    ],
+    "example": "a.js|b.js\nb.js|c.js\nc.js|a.js",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "graphql-query-depth-calculator",
+    "name": "GraphQL Query Depth Calculator",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Count nested GraphQL selection sets in a pasted operation.",
+    "metaDescription": "Count nested GraphQL selection sets in a pasted operation. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "graphql query depth calculator",
+      "free graphql query depth calculator",
+      "online graphql query depth calculator"
+    ],
+    "example": "query X { user { posts { id title } } }",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "graphql-operation-name-extractor",
+    "name": "GraphQL Operation Name Extractor",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Extract GraphQL named queries and mutations.",
+    "metaDescription": "Extract GraphQL named queries and mutations. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "graphql operation name extractor",
+      "free graphql operation name extractor",
+      "online graphql operation name extractor"
+    ],
+    "example": "query GetUsers { users { id } }\nmutation AddUser { addUser { id } }",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "graphql-variable-usage-auditor",
+    "name": "GraphQL Variable Usage Auditor",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Compare GraphQL variable declarations to uses in a query body.",
+    "metaDescription": "Compare GraphQL variable declarations to uses in a query body. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "graphql variable usage auditor",
+      "free graphql variable usage auditor",
+      "online graphql variable usage auditor"
+    ],
+    "example": "query GetUser($id: ID!, $unused: Int) { user(id:$id) { name } }",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "sql-create-table-column-inspector",
+    "name": "SQL Create Table Column Inspector",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Inspect column names/types in basic SQL CREATE TABLE text.",
+    "metaDescription": "Inspect column names/types in basic SQL CREATE TABLE text. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "sql create table column inspector",
+      "free sql create table column inspector",
+      "online sql create table column inspector"
+    ],
+    "example": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL);",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "sql-insert-tuple-counter",
+    "name": "SQL Insert Tuple Counter",
+    "category": "developer",
+    "week": 76,
+    "shortDescription": "Count top-level SQL INSERT VALUES record tuples.",
+    "metaDescription": "Count top-level SQL INSERT VALUES record tuples. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "sql insert tuple counter",
+      "free sql insert tuple counter",
+      "online sql insert tuple counter"
+    ],
+    "example": "INSERT INTO t(a,b) VALUES (1,'x'),(2,'y'),(3,'z');",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "sql-duplicate-index-inspector",
+    "name": "SQL Duplicate Index Inspector",
+    "category": "developer",
+    "week": 77,
+    "shortDescription": "Flag repeated indexed column sets for the same SQL table.",
+    "metaDescription": "Flag repeated indexed column sets for the same SQL table. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "sql duplicate index inspector",
+      "free sql duplicate index inspector",
+      "online sql duplicate index inspector"
+    ],
+    "example": "CREATE INDEX idx_a ON t(a);\nCREATE INDEX idx_b ON t(a);",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "css-media-breakpoint-inventory",
+    "name": "CSS Media Breakpoint Inventory",
+    "category": "developer",
+    "week": 77,
+    "shortDescription": "List min/max-width CSS media query breakpoints.",
+    "metaDescription": "List min/max-width CSS media query breakpoints. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "css media breakpoint inventory",
+      "free css media breakpoint inventory",
+      "online css media breakpoint inventory"
+    ],
+    "example": "@media (min-width: 768px) {a{color:red}}\n@media (max-width: 1200px){b{display:none}}",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "css-variable-fallback-inspector",
+    "name": "CSS Variable Fallback Inspector",
+    "category": "developer",
+    "week": 77,
+    "shortDescription": "Find CSS var() references with or without fallback values.",
+    "metaDescription": "Find CSS var() references with or without fallback values. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "css variable fallback inspector",
+      "free css variable fallback inspector",
+      "online css variable fallback inspector"
+    ],
+    "example": "color: var(--brand, red); background: var(--missing);",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "iso-duration-breakdown-parser",
+    "name": "ISO Duration Breakdown Parser",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Inspect ISO duration fields and approximate total seconds.",
+    "metaDescription": "Inspect ISO duration fields and approximate total seconds. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "iso duration breakdown parser",
+      "free iso duration breakdown parser",
+      "online iso duration breakdown parser"
+    ],
+    "example": "P2DT3H4M5S",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "iso-duration-composer",
+    "name": "ISO Duration Composer",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Compose day/hour/minute/second values into ISO 8601 duration.",
+    "metaDescription": "Compose day/hour/minute/second values into ISO 8601 duration. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "iso duration composer",
+      "free iso duration composer",
+      "online iso duration composer"
+    ],
+    "example": "0|2|3|4|5",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "gregorian-easter-date-calculator",
+    "name": "Gregorian Easter Date Calculator",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Calculate Easter Sunday and Easter Monday dates using the Gregorian computus algorithm.",
+    "metaDescription": "Calculate Easter Sunday and Easter Monday dates using the Gregorian computus algorithm. Runs offline using typed values; no upload or paid API.",
+    "keywords": [
+      "gregorian easter date calculator",
+      "free gregorian easter date calculator",
+      "online gregorian easter date calculator"
+    ],
+    "example": "2027",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "retail-445-fiscal-calendar-generator",
+    "name": "Retail 445 Fiscal Calendar Generator",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Generate 4-4-5 retail fiscal period boundaries from a start.",
+    "metaDescription": "Generate 4-4-5 retail fiscal period boundaries from a start. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "retail 445 fiscal calendar generator",
+      "free retail 445 fiscal calendar generator",
+      "online retail 445 fiscal calendar generator"
+    ],
+    "example": "2026-02-01|2",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "holiday-aware-business-date-adder",
+    "name": "Holiday Aware Business Date Adder",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Advance by weekdays while skipping explicitly supplied holiday dates.",
+    "metaDescription": "Advance by weekdays while skipping explicitly supplied holiday dates. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "holiday aware business date adder",
+      "free holiday aware business date adder",
+      "online holiday aware business date adder"
+    ],
+    "example": "2026-11-16|5\n---\n2026-11-18",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "timezone-offset-at-date-calculator",
+    "name": "Timezone Offset At Date Calculator",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Calculate named IANA time zone offset at a typed UTC timestamp.",
+    "metaDescription": "Calculate named IANA time zone offset at a typed UTC timestamp. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "timezone offset at date calculator",
+      "free timezone offset at date calculator",
+      "online timezone offset at date calculator"
+    ],
+    "example": "Asia/Ho_Chi_Minh|2026-11-17T12:00",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "custom-weekday-schedule-counter",
+    "name": "Custom Weekday Schedule Counter",
+    "category": "calculator",
+    "week": 77,
+    "shortDescription": "Count chosen weekdays in an inclusive date range.",
+    "metaDescription": "Count chosen weekdays in an inclusive date range. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "custom weekday schedule counter",
+      "free custom weekday schedule counter",
+      "online custom weekday schedule counter"
+    ],
+    "example": "2026-11-01|2026-11-30|MO,WE,FR",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "recurring-meeting-conflict-finder",
+    "name": "Recurring Meeting Conflict Finder",
+    "category": "calculator",
+    "week": 78,
+    "shortDescription": "Locate collision of two dated recurring fixed-time meeting series.",
+    "metaDescription": "Locate collision of two dated recurring fixed-time meeting series. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "recurring meeting conflict finder",
+      "free recurring meeting conflict finder",
+      "online recurring meeting conflict finder"
+    ],
+    "example": "2026-11-16|7|09:00|10:00\n---\n2026-11-16|7|09:30|11:00",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "shift-roster-coverage-matrix",
+    "name": "Shift Roster Coverage Matrix",
+    "category": "calculator",
+    "week": 78,
+    "shortDescription": "Summarize minute/hour staffing coverage by person and shift.",
+    "metaDescription": "Summarize minute/hour staffing coverage by person and shift. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "shift roster coverage matrix",
+      "free shift roster coverage matrix",
+      "online shift roster coverage matrix"
+    ],
+    "example": "09:00|12:00\n---\nAlice|09:00|11:00\nBob|10:00|12:00",
+    "ready": true,
+    "batch": 9
+  },
+  {
+    "slug": "annual-working-hours-estimator",
+    "name": "Annual Working Hours Estimator",
+    "category": "calculator",
+    "week": 78,
+    "shortDescription": "Estimate annual working hours from weekdays, weekly hours and leave.",
+    "metaDescription": "Estimate annual working hours from weekdays, weekly hours and leave. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "keywords": [
+      "annual working hours estimator",
+      "free annual working hours estimator",
+      "online annual working hours estimator"
+    ],
+    "example": "2027|40|15",
+    "ready": true,
+    "batch": 9
   }
 ]

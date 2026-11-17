@@ -1,0 +1,902 @@
+{
+  "dna-reverse-complement-tool": {
+    "explanation": "Reverse DNA and complement A/T, C/G using IUPAC codes.",
+    "example": "ATGCCGTA",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "dna-gc-content-calculator": {
+    "explanation": "Calculate GC percentage and nucleotide counts in pasted DNA.",
+    "example": "ATGCGCGTAA",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "dna-rna-transcription-converter": {
+    "explanation": "Transcribe DNA coding-strand nucleotides into RNA.",
+    "example": "ATGCTTACG",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "rna-codon-translator": {
+    "explanation": "Translate RNA codons into standard amino acid letters.",
+    "example": "AUGGCCUUUUAA",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "fasta-sequence-validator": {
+    "explanation": "Validate nucleotide FASTA text with multiple sequence records.",
+    "example": ">seq1\nACGTACGT\n>seq2\nGGCTA",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "dna-motif-position-finder": {
+    "explanation": "Locate every one-based exact DNA motif match, including overlaps.",
+    "example": "ATATCGATAT\n---\nATAT",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "protein-amino-acid-composition": {
+    "explanation": "Count amino acid residues and their percentages in a protein.",
+    "example": "MKWVTFISLLFLFSSAYS",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "protein-molecular-weight-estimator": {
+    "explanation": "Estimate average protein molecular mass from residue weights.",
+    "example": "ACDEFGHIK",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "dna-open-reading-frame-finder": {
+    "explanation": "Find complete forward reading frames between start and stop codons.",
+    "example": "ATGAAATAGCCCATGCCCTAA",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "empirical-chemical-formula-calculator": {
+    "explanation": "Approximate empirical molecular formula from element mass percentages.",
+    "example": "C:40.0,H:6.7,O:53.3",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "molecular-formula-mass-multiplier": {
+    "explanation": "Scale empirical chemical formula to a target molar mass.",
+    "example": "CH2O|180.16",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "limiting-reactant-mole-calculator": {
+    "explanation": "Determine limiting reagent and extent from mole/coefficient pairs.",
+    "example": "2|3|1|1",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "reaction-theoretical-yield-calculator": {
+    "explanation": "Calculate product mass from stoichiometry and molecular weight.",
+    "example": "0.5|1|2|18.015",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "reaction-percent-yield-calculator": {
+    "explanation": "Calculate observed versus theoretical product yield percent.",
+    "example": "8.2|10",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "solution-molality-calculator": {
+    "explanation": "Compute solute moles per kilogram of solvent.",
+    "example": "0.5|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "solution-mass-percent-calculator": {
+    "explanation": "Compute solute weight percentage of mixed solution.",
+    "example": "15|85",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "hydroxide-ion-poh-calculator": {
+    "explanation": "Calculate idealized pOH from hydroxide concentration.",
+    "example": "0.001",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "henderson-hasselbalch-ph-calculator": {
+    "explanation": "Estimate acid/base buffer pH using Henderson-Hasselbalch.",
+    "example": "4.76|0.2|0.1",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "osmotic-pressure-calculator": {
+    "explanation": "Estimate osmotic pressure by van 't Hoff's ideal law.",
+    "example": "0.1|298.15|1",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "base32-text-encoder-decoder": {
+    "explanation": "Encode or decode UTF-8 text using RFC4648 Base32.",
+    "example": "encode|Hello world",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "base58-text-encoder-decoder": {
+    "explanation": "Encode/decode UTF-8 text with Bitcoin Base58 alphabet.",
+    "example": "encode|Hello world",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "ascii85-text-encoder-decoder": {
+    "explanation": "Encode/decode UTF-8 with Adobe ASCII85 text representation.",
+    "example": "encode|Hello world",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "utf8-hex-encoder-decoder": {
+    "explanation": "Convert UTF-8 text to hexadecimal byte text or back.",
+    "example": "encode|Hello 🌎",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "crc32-text-checksum": {
+    "explanation": "Calculate ISO-HDLC CRC-32 over pasted UTF-8 bytes.",
+    "example": "123456789",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "adler32-text-checksum": {
+    "explanation": "Calculate Adler-32 checksum from typed UTF-8 text.",
+    "example": "Wikipedia",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "fnv1a-32-bit-hash": {
+    "explanation": "Calculate non-cryptographic FNV1a 32-bit UTF-8 hash.",
+    "example": "hello",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "djb2-string-hash": {
+    "explanation": "Calculate classic unsigned 32-bit DJB2 hash from text bytes.",
+    "example": "hello",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "unicode-confusable-character-detector": {
+    "explanation": "Identify selected cross-script Unicode homoglyphs in text.",
+    "example": "раypal",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "text-encoding-byte-size-comparator": {
+    "explanation": "Compare UTF-8 and UTF-16LE sizes and Latin-1 representability.",
+    "example": "Hello 🌎",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "polynomial-horner-evaluator": {
+    "explanation": "Evaluate highest-first polynomial coefficients via Horner's rule.",
+    "example": "1,-3,2|5",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "polynomial-synthetic-division": {
+    "explanation": "Divide polynomial by x minus a root and report quotient and remainder.",
+    "example": "1,-3,2|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "polynomial-derivative-coefficients": {
+    "explanation": "Generate numeric derivative coefficients from a polynomial.",
+    "example": "3,2,-1,5",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "polynomial-integral-coefficients": {
+    "explanation": "Generate antiderivative coefficients plus an integration constant.",
+    "example": "3,2,-1|4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "quadratic-vertex-calculator": {
+    "explanation": "Calculate quadratic vertex and discriminant from coefficients.",
+    "example": "1|-4|3",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "cubic-real-roots-calculator": {
+    "explanation": "Approximate real cubic polynomial roots and multiplicities.",
+    "example": "1|-6|11|-6",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "matrix-trace-calculator": {
+    "explanation": "Sum diagonal of a numeric square matrix.",
+    "example": "1,2;3,4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "matrix-transpose-calculator": {
+    "explanation": "Transpose rows and columns of a numeric matrix.",
+    "example": "1,2,3;4,5,6",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "matrix-frobenius-norm-calculator": {
+    "explanation": "Find square-root sum of squared matrix elements.",
+    "example": "1,2;3,4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "two-by-two-matrix-eigenvalues": {
+    "explanation": "Find complex or real eigenvalues of a 2x2 matrix.",
+    "example": "2,1;1,2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "irregular-cash-flow-xnpv-calculator": {
+    "explanation": "Discount exact-date cash flows with a 365-day day-count basis.",
+    "example": "0.1\n---\n2026-01-01|-1000\n2026-07-01|600\n2027-01-01|600",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "irregular-cash-flow-xirr-calculator": {
+    "explanation": "Find dated internal rate of return for conventional cash flows.",
+    "example": "2026-01-01|-1000\n2027-01-01|1100",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "variable-deposit-savings-forecast": {
+    "explanation": "Forecast compounded balance with varying monthly deposits.",
+    "example": "1000|0.06\n---\n100,200,300",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "loan-amortization-table-generator": {
+    "explanation": "Produce installment schedule showing principal, interest and balance.",
+    "example": "100000|0.06|12",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "balloon-loan-payment-calculator": {
+    "explanation": "Solve monthly loan payment with a final balloon balance.",
+    "example": "100000|0.06|60|20000",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "bond-yield-to-maturity-calculator": {
+    "explanation": "Numerically solve fixed-coupon bond yield from purchase price.",
+    "example": "950|1000|0.05|5|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "bond-convexity-calculator": {
+    "explanation": "Calculate fixed-coupon bond price convexity to interest-rate changes.",
+    "example": "1000|0.05|0.06|5|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "bond-modified-duration-calculator": {
+    "explanation": "Convert bond Macaulay duration to yield-sensitive modified duration.",
+    "example": "1000|0.05|0.06|5|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "loan-fee-adjusted-apr-calculator": {
+    "explanation": "Estimate effective loan APR including upfront origination fees.",
+    "example": "10000|500|0.1|24",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "double-declining-depreciation-schedule": {
+    "explanation": "Schedule accelerated double-declining depreciation subject to salvage.",
+    "example": "10000|1000|5",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "mm1-queue-waiting-time-calculator": {
+    "explanation": "Calculate M/M/1 utilization, queue wait and service-system time.",
+    "example": "5|8",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "littles-law-work-in-progress-calculator": {
+    "explanation": "Estimate average WIP from throughput rate and flow time.",
+    "example": "5|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "six-sigma-dpmo-calculator": {
+    "explanation": "Calculate defects per million opportunities.",
+    "example": "10|1000|4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "process-capability-cp-calculator": {
+    "explanation": "Estimate Cp using specification limits and standard deviation.",
+    "example": "90|110|4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "process-capability-cpk-calculator": {
+    "explanation": "Estimate process Cpk from mean, specification limits and sigma.",
+    "example": "90|110|101|4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "overall-equipment-effectiveness-calculator": {
+    "explanation": "Multiply availability, performance and quality components into OEE.",
+    "example": "0.9|0.85|0.98",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "takt-time-calculator": {
+    "explanation": "Divide available production minutes by customer demand units.",
+    "example": "480|240",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "first-pass-throughput-yield-calculator": {
+    "explanation": "Measure good first-pass output divided by input units.",
+    "example": "950|1000",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "rolled-throughput-yield-calculator": {
+    "explanation": "Multiply first-pass yields of sequential production stages.",
+    "example": "0.95,0.9,0.98",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "simple-exponential-smoothing-forecaster": {
+    "explanation": "Calculate a next-period forecast from an exponential smoothing factor.",
+    "example": "0.3|100,120,110,130",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-composite-identifier-validator": {
+    "explanation": "Verify composite tuple uniqueness among JSON object records.",
+    "example": "id,region\n---\n[{\"id\":1,\"region\":\"A\"},{\"id\":1,\"region\":\"B\"}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-rolling-sum-column-builder": {
+    "explanation": "Append an N-record rolling sum field to JSON objects.",
+    "example": "value|2\n---\n[{\"value\":2},{\"value\":3},{\"value\":4}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-two-field-crosstab-builder": {
+    "explanation": "Count record combinations across two JSON category fields.",
+    "example": "region|status\n---\n[{\"region\":\"N\",\"status\":\"new\"},{\"region\":\"N\",\"status\":\"done\"}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-monthly-date-bucket-summary": {
+    "explanation": "Sum numeric JSON properties by ISO year-month.",
+    "example": "date|amount\n---\n[{\"date\":\"2026-01-01\",\"amount\":2},{\"date\":\"2026-01-20\",\"amount\":3}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-numeric-field-clamp": {
+    "explanation": "Clamp a numeric JSON property into an inclusive fixed range.",
+    "example": "score|0|100\n---\n[{\"score\":-5},{\"score\":120}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-value-type-coercion-auditor": {
+    "explanation": "Find columns whose JSON records mix typed values and number/boolean strings.",
+    "example": "[{\"id\":\"2\",\"active\":\"true\"},{\"id\":3,\"active\":false}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-property-case-collision-scanner": {
+    "explanation": "Find object keys differing only by case at each nested JSON level.",
+    "example": "{\"Name\":\"Ada\",\"name\":\"Bob\"}",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-array-field-sparsity-matrix": {
+    "explanation": "Report each JSON record's present/missing field matrix.",
+    "example": "[{\"a\":1,\"b\":2},{\"a\":2},{\"b\":3}]",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-pointer-batch-setter": {
+    "explanation": "Set multiple existing JSON paths using JSON literal assignments.",
+    "example": "/a|10\n/b/c|\"new\"\n---\n{\"a\":1,\"b\":{\"c\":\"old\"}}",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-iso-week-sales-aggregator": {
+    "explanation": "Aggregate numeric CSV rows by ISO calendar week.",
+    "example": "date|amount\n---\ndate,amount\n2026-11-16,20\n2026-11-17,10",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-rolling-standard-deviation": {
+    "explanation": "Append rolling population standard deviations to CSV.",
+    "example": "value|3\n---\nvalue\n1\n2\n3\n4",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-maximum-drawdown-reporter": {
+    "explanation": "Calculate maximum peak-to-trough percentage drawdown of a CSV series.",
+    "example": "price\n---\nprice\n100\n120\n90\n130",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-exponential-moving-average": {
+    "explanation": "Append exponentially weighted moving averages to numeric CSV.",
+    "example": "value|0.5\n---\nvalue\n10\n20\n30",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-linear-trend-slope": {
+    "explanation": "Estimate CSV series linear slope against observation index.",
+    "example": "value\n---\nvalue\n2\n4\n6\n8",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-index-rebasing-tool": {
+    "explanation": "Rebase an index column to a supplied starting index level.",
+    "example": "price|100\n---\nprice\n40\n44\n42",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-conditional-distinct-counter": {
+    "explanation": "Count unique CSV values within groups matching a filter.",
+    "example": "team|status|active|user\n---\nteam,status,user\nA,active,u1\nA,active,u1\nA,closed,u2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-numeric-quantile-summary": {
+    "explanation": "Summarize CSV P10, quartiles, median, P90 and extrema.",
+    "example": "price\n---\nprice\n1\n2\n3\n4\n5",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "csv-consecutive-value-run-detector": {
+    "explanation": "Locate same-value consecutive runs and their CSV rows.",
+    "example": "status\n---\nstatus\nnew\nnew\ndone\ndone\ndone\nnew",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "javascript-import-dependency-grapher": {
+    "explanation": "Build a directed adjacency inventory from module import pairs.",
+    "example": "a.js|b.js\nb.js|c.js\nc.js|d.js",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "javascript-circular-module-detector": {
+    "explanation": "Find cycles in a pasted module dependency graph.",
+    "example": "a.js|b.js\nb.js|c.js\nc.js|a.js",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "graphql-query-depth-calculator": {
+    "explanation": "Count nested GraphQL selection sets in a pasted operation.",
+    "example": "query X { user { posts { id title } } }",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "graphql-operation-name-extractor": {
+    "explanation": "Extract GraphQL named queries and mutations.",
+    "example": "query GetUsers { users { id } }\nmutation AddUser { addUser { id } }",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "graphql-variable-usage-auditor": {
+    "explanation": "Compare GraphQL variable declarations to uses in a query body.",
+    "example": "query GetUser($id: ID!, $unused: Int) { user(id:$id) { name } }",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "sql-create-table-column-inspector": {
+    "explanation": "Inspect column names/types in basic SQL CREATE TABLE text.",
+    "example": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL);",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "sql-insert-tuple-counter": {
+    "explanation": "Count top-level SQL INSERT VALUES record tuples.",
+    "example": "INSERT INTO t(a,b) VALUES (1,'x'),(2,'y'),(3,'z');",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "sql-duplicate-index-inspector": {
+    "explanation": "Flag repeated indexed column sets for the same SQL table.",
+    "example": "CREATE INDEX idx_a ON t(a);\nCREATE INDEX idx_b ON t(a);",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "css-media-breakpoint-inventory": {
+    "explanation": "List min/max-width CSS media query breakpoints.",
+    "example": "@media (min-width: 768px) {a{color:red}}\n@media (max-width: 1200px){b{display:none}}",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "css-variable-fallback-inspector": {
+    "explanation": "Find CSS var() references with or without fallback values.",
+    "example": "color: var(--brand, red); background: var(--missing);",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "iso-duration-breakdown-parser": {
+    "explanation": "Inspect ISO duration fields and approximate total seconds.",
+    "example": "P2DT3H4M5S",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "iso-duration-composer": {
+    "explanation": "Compose day/hour/minute/second values into ISO 8601 duration.",
+    "example": "0|2|3|4|5",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "retail-445-fiscal-calendar-generator": {
+    "explanation": "Generate 4-4-5 retail fiscal period boundaries from a start.",
+    "example": "2026-02-01|2",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "holiday-aware-business-date-adder": {
+    "explanation": "Advance by weekdays while skipping explicitly supplied holiday dates.",
+    "example": "2026-11-16|5\n---\n2026-11-18",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "timezone-offset-at-date-calculator": {
+    "explanation": "Calculate named IANA time zone offset at a typed UTC timestamp.",
+    "example": "Asia/Ho_Chi_Minh|2026-11-17T12:00",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "custom-weekday-schedule-counter": {
+    "explanation": "Count chosen weekdays in an inclusive date range.",
+    "example": "2026-11-01|2026-11-30|MO,WE,FR",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "recurring-meeting-conflict-finder": {
+    "explanation": "Locate collision of two dated recurring fixed-time meeting series.",
+    "example": "2026-11-16|7|09:00|10:00\n---\n2026-11-16|7|09:30|11:00",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "shift-roster-coverage-matrix": {
+    "explanation": "Summarize minute/hour staffing coverage by person and shift.",
+    "example": "09:00|12:00\n---\nAlice|09:00|11:00\nBob|10:00|12:00",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "annual-working-hours-estimator": {
+    "explanation": "Estimate annual working hours from weekdays, weekly hours and leave.",
+    "example": "2027|40|15",
+    "workflows": [
+      "Paste text or numerical values using the documented example format.",
+      "Review the generated output, check assumptions and copy the result as needed."
+    ],
+    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
+  },
+  "json-schema-constraint-coverage-reporter": {
+    "explanation": "Audit an object JSON Schema and measure its required fields and validation constraint coverage.",
+    "example": "{\"type\":\"object\",\"required\":[\"name\"],\"properties\":{\"name\":{\"type\":\"string\",\"minLength\":2},\"age\":{\"type\":\"integer\",\"minimum\":0},\"city\":{\"type\":\"string\"}}}",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Review locally calculated output and any warnings or limitations."
+    ],
+    "limitation": "This is a lightweight coverage audit of schema constraints and does not replace comprehensive JSON Schema validation or enforce the schema."
+  },
+  "gregorian-easter-date-calculator": {
+    "explanation": "Calculate Easter Sunday and Easter Monday dates using the Gregorian computus algorithm.",
+    "example": "2027",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Review locally calculated output and any warnings or limitations."
+    ],
+    "limitation": "Uses the Gregorian calendar and Western Easter computus for years 1583–4099; regional Eastern Orthodox observances may differ."
+  },
+  "dna-oligo-melting-temperature-calculator": {
+    "explanation": "Estimate short DNA oligonucleotide melting temperature using the approximate Wallace rule.",
+    "example": "ATGCCGTA",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Read the locally calculated result and apply the documented assumptions."
+    ],
+    "limitation": "The Wallace 2×(A+T)+4×(G+C) °C approximation is most suitable for short unmodified oligonucleotides. Salt, concentration, mismatches and chemical conditions can change melting temperature substantially."
+  },
+  "csv-numeric-zero-crossing-detector": {
+    "explanation": "Detect consecutive positive-to-negative and negative-to-positive transitions in ordered numeric CSV values.",
+    "example": "value\n-2\n1\n-1\n3",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Read the locally calculated result and apply the documented assumptions."
+    ],
+    "limitation": "Only sign flips between adjacent nonzero numeric observations are counted. Zero-valued observations separate runs; row order is preserved as pasted."
+  }
+}

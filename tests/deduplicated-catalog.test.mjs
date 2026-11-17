@@ -17,8 +17,8 @@ const active=new Set([...publicSlugs,...queue.map(x=>x.slug)]);
 
 test("Audit removes exactly 18 functional duplicates without touching 123 public tools",()=>{
  assert.equal(publicSlugs.length,123);
- assert.equal(queue.length,673);
- assert.equal(active.size,796);
+ assert.equal(queue.length,773);
+ assert.equal(active.size,896);
  assert.equal(audit.baseline.public,123);
  assert.equal(audit.baseline.queued,391);
  assert.equal(audit.after.queued,373);
@@ -30,7 +30,7 @@ test("Audit removes exactly 18 functional duplicates without touching 123 public
   assert.ok(active.has(entry.keptAs),"Canonical tool not available: "+entry.keptAs);
   assert.ok(entry.originalPosition>=1&&entry.originalPosition<=391);
  }
- assert.deepEqual(Object.fromEntries([1,2,3,4,5,6,7,8].map(n=>[n,queue.filter(x=>x.batch===n).length])),{1:89,2:50,3:50,4:97,5:87,6:100,7:100,8:100});
+ assert.deepEqual(Object.fromEntries([1,2,3,4,5,6,7,8,9].map(n=>[n,queue.filter(x=>x.batch===n).length])),{1:89,2:50,3:50,4:97,5:87,6:100,7:100,8:100,9:100});
  const names=[...[...source.matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"[\s\S]{0,200}?(?:name|"name")\s*:\s*"([^"]+)"/g)].map(x=>x[2]),...queue.map(x=>x.name)];
  assert.equal(new Set(names.map(x=>x.toLowerCase().replace(/[^a-z0-9]+/g,""))).size,names.length);
 });
@@ -87,7 +87,7 @@ test("38-week release cadence and SEO blog schedule are unaffected",()=>{
  assert.ok(Array.isArray(state.published));
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  assert.equal(new Set(state.published).size,state.published.length);
- assert.equal(queue.at(-1).week,68);
+ assert.equal(queue.at(-1).week,78);
  for(let i=0;i<queue.length;i++)assert.equal(queue[i].week,Math.floor(i/10)+1,"week ordering at "+i);
  const toolWorkflow=fs.readFileSync(".github/workflows/publish-simple-tools.yml","utf8");
  const blogWorkflow=fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8");
