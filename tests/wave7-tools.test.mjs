@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -33,7 +34,7 @@ test("100 unique tools are queued, have complete metadata and produce real outpu
  for(const t of JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired)assert.ok(!all.has(t.slug),"Retired duplicate "+t.slug);
  for(const t of latest){
   assert.equal(t.example,guides[t.slug]?.example,t.slug+" guide example mismatch");
-  assert.ok(t.ready&&t.week>=48&&t.week<=58,t.slug+" scheduling error");
+  assert.ok(t.ready&&t.week===Math.floor(queue.findIndex(z=>z.slug===t.slug)/20)+1,t.slug+" scheduling error");
   assert.ok(t.metaDescription.length>60&&t.metaDescription.length<=180,t.slug+" SEO description");
   assert.ok(guides[t.slug]?.limitation.length>=40,t.slug+" missing limits");
   assert.ok(sources.includes('case "'+t.slug+'"'),"Unimplemented case "+t.slug);
@@ -119,24 +120,12 @@ test("Scheduling and networking preserve dates, financial units, and CIDR behavi
  assert.match(run("ipv4-range-to-cidr-calculator","192.168.1.0|192.168.1.255"),/192.168.1.0\/24/);
  assert.equal(run("network-port-range-merger","80,443,1000-1005,1003-1010"),"80,443,1000-1010");
 });
-test("Release of 573 queued tools is strictly limited to 10 per Monday over 58 weeks",()=>{
- const phase=queue.filter(x=>x.batch<=7);
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave7-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  assert.equal(Math.ceil(phase.length/10),58);
-  for(let i=0;i<58;i++){
-   const out=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(out.released.length,Math.min(10,phase.length-10*i),"week "+(i+1));
-  }
-  const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,phase.map(x=>x.slug));
-  assert.equal(state.history.length,58);
-  assert.equal(state.history.at(-1).slugs.length,3);
-  assert.equal(state.published[473],"common-prefix-finder");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 7 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,7);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[473],"common-prefix-finder");
 });
 test("All ten engines are offline and integrated without changing the SEO blog workflow",()=>{
  const modes=["Text","Markdown","CsvQuality","CsvAnalytics","Json","Stats","Math","Business","Schedule","Web"];
@@ -149,7 +138,7 @@ test("All ten engines are offline and integrated without changing the SEO blog w
   assert.ok(workspace.includes(fn+"(mode,content)"),fn+" dispatch is missing");
  const state=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
  assert.equal(state.startDate,"2026-11-23");
- assert.equal(state.weeklyLimit,10);
+ assert.equal(state.weeklyLimit,20);
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  assert.match(fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8"),/blog:release/);
 });

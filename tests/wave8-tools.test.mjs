@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -35,7 +36,7 @@ test("Wave eight adds 100 unique implemented tools without exposing them prematu
  for(const t of retired)assert.ok(!active.has(t.slug),t.slug+" reintroduced");
  const code=modules.map(m=>fs.readFileSync("src/lib/wave8"+m+".mjs","utf8")).join("\n");
  for(const tool of wave){
-  assert.ok(tool.ready&&tool.week>=58&&tool.week<=68,tool.slug+" week");
+  assert.ok(tool.ready&&tool.week===Math.floor(queue.findIndex(z=>z.slug===tool.slug)/20)+1,tool.slug+" week");
   assert.ok(tool.metaDescription.length>=60&&tool.metaDescription.length<=180,tool.slug+" meta");
   assert.ok(guides[tool.slug]?.limitation.length>50,tool.slug+" limitations");
   assert.equal(guides[tool.slug]?.example,tool.example,tool.slug+" example mismatch");
@@ -156,25 +157,12 @@ test("Robust descriptive statistics produce expected observations",()=>{
  assert.match(run("paired-sample-difference-summary","10,20\n---\n8,21"),/Mean difference: 0.5/);
  assert.match(run("median-of-means-calculator","1,2,3,4,50,6|3"),/Median of means:/);
 });
-test("Scheduled release stays 10 tools per Monday with 68-week simulation",()=>{
- const phase=queue.filter(x=>x.batch<=8);
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave8-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const weeks=Math.ceil(phase.length/10);
-  assert.equal(weeks,68);
-  for(let i=0;i<weeks;i++){
-   const r=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+7*i,2))});
-   assert.equal(r.released.length,Math.min(10,phase.length-10*i),"week "+(i+1));
-  }
-  const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,phase.map(x=>x.slug));
-  assert.equal(state.history.length,68);
-  assert.equal(state.history.at(-1).slugs.length,3);
-  assert.equal(state.published[573],"euler-totient-calculator");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 8 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,8);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[573],"euler-totient-calculator");
 });
 test("New engines use no file uploads, remote APIs or dynamic evaluation",()=>{
  for(const m of modules){
@@ -186,7 +174,7 @@ test("New engines use no file uploads, remote APIs or dynamic evaluation",()=>{
   assert.ok(workspace.includes(fn+"(mode,content)"),fn+" not mounted");
  const state=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
  assert.equal(state.startDate,"2026-11-23");
- assert.equal(state.weeklyLimit,10);
+ assert.equal(state.weeklyLimit,20);
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  const blog=fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8");
  assert.match(blog,/blog:release/);

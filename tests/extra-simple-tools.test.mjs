@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -13,7 +14,7 @@ const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
 const extra=queue.filter(x=>x.batch===2);
 const run=(slug,value)=>runExtraText(slug,value)??runExtraData(slug,value)??runExtraWeb(slug,value);
 
-test("50 extra tools are appended after the original 91 without changing their schedule",()=>{
+test("50 extra tools are appended after the original 91 with revised twice-weekly schedule",()=>{
  assert.equal(extra.length,50);
  assert.equal(queue.length,967);
  assert.equal(new Set(queue.map(x=>x.slug)).size,967);
@@ -24,7 +25,7 @@ test("50 extra tools are appended after the original 91 without changing their s
   assert.equal(guides[x.slug].example,x.example);
   assert.ok(guides[x.slug].limitation.length>35);
   assert.ok(x.metaDescription.length>=50 && x.metaDescription.length<=180);
-  assert.ok(x.week>=9 && x.week<=14);
+  assert.ok(x.week===Math.floor(queue.findIndex(z=>z.slug===x.slug)/20)+1);
  }
  assert.equal(queue.filter(x=>x.batch===1).at(-1).slug,"simple-pomodoro-timer");
  assert.equal(extra[0].slug,"speaking-time-calculator");
@@ -106,23 +107,12 @@ test("HTML, status, cache and network tools reject incorrect input and produce u
  assert.throws(()=>run("ipv4-subnet-calculator","999.0.1.1/24"),/Invalid/);
 });
 
-test("Original phase and 50 extra tools release in order at ten per Monday",()=>{
- const phase=queue.filter(x=>x.batch<=2),weeks=Math.ceil(phase.length/10);
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-dedup-extra-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  for(let i=0;i<weeks;i++){
-   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(result.released.length,Math.min(10,phase.length-i*10));
-  }
-  const saved=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(saved.published,phase.map(x=>x.slug));
-  assert.equal(saved.history.length,weeks);
-  assert.equal(saved.published[phase.findIndex(x=>x.batch===2)],"speaking-time-calculator");
-  assert.equal(releaseSimpleTools({root,now:new Date(Date.UTC(2027,2,8,2))}).released.length,0);
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 2 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,2);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[phase.findIndex(x=>x.batch===2)],"speaking-time-calculator");
 });
 
 test("New browser engines do not upload, fetch or execute supplied input",()=>{

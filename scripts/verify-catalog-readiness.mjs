@@ -19,11 +19,12 @@ check(duplicates(active.map(x => x.replace(/[^a-z0-9]/gi, "").toLowerCase())).le
 check(duplicates(queue.map(t => t.name.trim().toLowerCase().replace(/[^a-z0-9]/g, ""))).length === 0, "Duplicated scheduled tool names.");
 check(new Set(queue.map(t => `/tools/${t.category}/${t.slug}/`)).size === queue.length, "Scheduled routes are duplicated.");
 check(state.startDate === "2026-11-23", "Unexpected first eligible tool publication date.");
-check(state.weeklyLimit === 10, "Release limit must be exactly 10.");
+check(state.weeklyLimit === 20, "Weekly release limit must be 20.");
+check(state.perSlotLimit === 10, "Each Monday/Thursday slot must release at most ten tools.");
 check(Array.isArray(state.published) && Array.isArray(state.history), "Invalid release manifest arrays.");
 check(state.published.length === new Set(state.published).size, "Previously published tool is repeated.");
 check(state.published.every((slug, i) => slug === queue[i]?.slug), "Published tools must form the beginning of the audited queue.");
-check(queue.every((t, i) => t.ready === true && t.week === Math.floor(i / 10) + 1), "A queued tool is unready or in the wrong scheduled week.");
+check(queue.every((t, i) => t.ready === true && t.week === Math.floor(i / 20) + 1), "A queued tool is unready or in the wrong scheduled week.");
 check(new Set(retired.map(x => x.slug)).size === retired.length, "Retired audit contains duplicate entries.");
 check(retired.every(x => !active.includes(x.slug)), "Retired functional duplicates were reintroduced.");
 check(retired.every(x => active.includes(x.keptAs)), "A retired tool lost its canonical replacement.");
@@ -48,11 +49,25 @@ const equivalences = [
  ["vector-angle-calculator", "vector3-angle-between"],
 ];
 for (const [canonical, alias] of equivalences) check(active.includes(canonical) && !active.includes(alias), "Known redundant capability is still queued: " + alias);
-const weekdays = state.history.map(h => {
- const d = new Date(h.date + "T02:00:00Z");
- return Number.isFinite(d.getTime()) && d.getUTCDay() === 1 && Array.isArray(h.slugs) && h.slugs.length <= 10;
+const weeklyCounts=new Map();
+const historyDates=new Set();
+const weekdays=state.history.map(h=>{
+ const d=new Date(h.date+"T00:00:00Z");
+ const valid=Number.isFinite(d.getTime())&&d.toISOString().slice(0,10)===h.date;
+ const weekday=valid?d.getUTCDay():-1;
+ const onSlot=valid&&(weekday===1||weekday===4)&&h.date>=state.startDate;
+ const quantity=Array.isArray(h.slugs)?h.slugs.length:0;
+ if(historyDates.has(h.date))errors.push("Duplicate release on the same date: "+h.date);
+ historyDates.add(h.date);
+ if(onSlot){
+   d.setUTCDate(d.getUTCDate()-(weekday+6)%7);
+   const key=d.toISOString().slice(0,10);
+   weeklyCounts.set(key,(weeklyCounts.get(key)||0)+quantity);
+ }
+ return onSlot&&quantity>0&&quantity<=10;
 });
-check(weekdays.every(Boolean), "Release history contains invalid publication dates or excessive batches.");
+check(weekdays.every(Boolean),"History contains a non-slot date or over-limit batch.");
+check([...weeklyCounts.values()].every(n=>n<=20),"Weekly release exceeds 20 tools.");
 check(state.history.flatMap(h => h.slugs).join("|") === state.published.join("|"), "Release history disagrees with published order.");
 const result = {
  status: errors.length === 0 ? "PASS" : "FAIL",

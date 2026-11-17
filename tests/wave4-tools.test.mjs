@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -30,7 +31,7 @@ test("100 new tools follow the 191 original queue entries and provide unique val
   assert.equal(guides[entry.slug].example,entry.example);
   assert.ok(guides[entry.slug].limitation.length>20);
   assert.ok(entry.metaDescription.length>65&&entry.metaDescription.length<=180,entry.slug+" meta");
-  assert.ok(entry.week>=19&&entry.week<=29,entry.slug+" release week");
+  assert.ok(entry.week===Math.floor(queue.findIndex(z=>z.slug===entry.slug)/20)+1,entry.slug+" release week");
   assert.match(entry.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
   assert.doesNotMatch(entry.slug,/pdf|image|file-upload|barcode|qr-code/i);
   assert.ok(engines.includes('case "'+entry.slug+'"'),entry.slug+" lacks implementation");
@@ -148,23 +149,13 @@ test("HTTP, SemVer and DNS header utilities produce meaningful results",()=>{
  assert.throws(()=>run("semantic-version-comparator","01.2.3\n---\n1.2.3"),/valid SemVer/);
 });
 
-test("First 286 deduplicated tools simulate publication over 29 Mondays",()=>{
- const phase=queue.filter(x=>x.batch<=4),weeks=Math.ceil(phase.length/10);
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave4-dedup-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  for(let i=0;i<weeks;i++){
-   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(result.released.length,Math.min(10,phase.length-i*10),"week "+(i+1));
-  }
-  const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,phase.map(x=>x.slug));
-  assert.equal(state.history.length,weeks);
-  assert.equal(state.published[phase.findIndex(x=>x.batch===4)],"line-intersection-finder");
-  assert.equal(state.published.at(-1),"csv-formula-injection-detector");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 4 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,4);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[phase.findIndex(x=>x.batch===4)],"line-intersection-finder");
+ assert.equal(state.published.at(-1),"csv-formula-injection-detector");
 });
 
 test("New engines never upload files, fetch remote endpoints or evaluate user input as code",()=>{

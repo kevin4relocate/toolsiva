@@ -1,8 +1,8 @@
-name: Publish ten tested tools weekly
+name: Publish 20 tested tools weekly (10 Monday and Thursday)
 
 on:
   schedule:
-    - cron: "0 2 * * 1"
+    - cron: "0 2 * * 1,4"
   workflow_dispatch:
 
 permissions:
@@ -37,6 +37,7 @@ jobs:
           npm run check
           npm run build
           npm run tools:verify
+          npm run tools:visibility:verify
           npm run catalog:audit
           npm run seo:audit
       - name: Commit manifest only after successful build

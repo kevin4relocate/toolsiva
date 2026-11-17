@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -36,7 +37,7 @@ test("All 100 wave-six tools have unique slugs, real implementations, detailed e
  const source=["Text","Time","Probability","Math","Finance","Business","Csv","Config","Web","Network"].map(n=>fs.readFileSync("src/lib/wave6"+n+".mjs","utf8")).join("\n");
  for(const item of tools){
   assert.ok(item.ready,item.slug+" not ready");
-  assert.ok(item.week>=38&&item.week<=48,item.slug+" week");
+  assert.ok(item.week===Math.floor(queue.findIndex(z=>z.slug===item.slug)/20)+1,item.slug+" week");
   assert.ok(item.metaDescription.length>=65&&item.metaDescription.length<=180,item.slug+" SEO meta");
   assert.equal(guides[item.slug]?.example,item.example,item.slug+" guide mismatch");
   assert.ok(guides[item.slug]?.limitation.length>20,item.slug+" missing limitation");
@@ -189,26 +190,12 @@ test("IPv6 DNS checksum and identifier tools validate real formats",()=>{
  assert.throws(()=>run("ipv6-cidr-membership-checker","2001:db8::1\n---\n2001:db8::/129"),/0–128/);
 });
 
-test("Publication preserves old order and simulates 473 tools in 48 Monday releases",()=>{
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave6-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const phase=queue.filter(x=>x.batch<=6);
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  const weeks=Math.ceil(phase.length/10);
-  assert.equal(weeks,48);
-  for(let i=0;i<weeks;i++){
-   const r=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(r.released.length,Math.min(10,phase.length-i*10));
-  }
-  const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,phase.map(x=>x.slug));
-  assert.equal(state.history.length,48);
-  assert.equal(state.history.at(-1).slugs.length,3);
-  assert.equal(state.published[373],"text-template-variable-filler");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 6 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,6);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[373],"text-template-variable-filler");
 });
 
 test("All ten wave-six engines use no remote requests, file uploads or eval",()=>{

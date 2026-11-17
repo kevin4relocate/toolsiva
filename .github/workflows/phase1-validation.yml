@@ -50,12 +50,13 @@ jobs:
       - run: npm run check
       - run: npm run build
       - run: npm run tools:verify
+      - run: npm run tools:visibility:verify
       - run: npm run analytics:verify
       - run: npm run seo:audit
       - run: npm run seo:canonical
       - run: npm run hardening:verify
       - run: npm run adsense:audit
-      - name: Simulate next weekly tool publication and verify public pages
+      - name: Simulate next Monday/Thursday tool slot, homepage counter and sitemap
         shell: bash
         run: |
           trap 'git restore -- src/data/simpleToolRelease.json' EXIT
@@ -66,9 +67,10 @@ jobs:
           npm run check
           npm run build
           npm run tools:verify
+          npm run tools:visibility:verify
           npm run catalog:audit
           npm run seo:audit
-      - name: Simulate all weekly releases and audit 1090 built tool pages
+      - name: Simulate all Monday/Thursday slots and audit 1090 built tool pages
         shell: bash
         run: |
           trap 'git restore -- src/data/simpleToolRelease.json' EXIT
@@ -87,6 +89,7 @@ jobs:
           npm run check
           npm run build
           npm run tools:verify
+          npm run tools:visibility:verify
           npm run catalog:audit
           npm run seo:audit
       - name: Upload catalog audit report

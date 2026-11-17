@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -31,7 +32,7 @@ test("100 new unique Wave 9 modes have real handlers, examples, SEO and privacy 
  for(const retired of JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired)assert.ok(!queue.some(x=>x.slug===retired.slug),"Retired duplicate reintroduced");
  const source=["Bio","Chem","Enc","Poly","Finance","Ops","Json","Csv","Dev","Dates"].map(n=>fs.readFileSync("src/lib/wave9"+n+".mjs","utf8")).join("\n");
  for(const tool of wave){
-  assert.ok(tool.ready&&tool.week>=68&&tool.week<=88,tool.slug+" schedule");
+  assert.ok(tool.ready&&tool.week===Math.floor(queue.findIndex(z=>z.slug===tool.slug)/20)+1,tool.slug+" schedule");
   assert.ok(tool.metaDescription.length>60&&tool.metaDescription.length<=180,tool.slug+" metadata");
   assert.equal(tool.example,guides[tool.slug]?.example,tool.slug+" example mismatch");
   assert.ok(guides[tool.slug]?.limitation?.length>70,tool.slug+" missing limitation");
@@ -156,23 +157,12 @@ test("Graph/code inspections and date tools return non-overlapping specialist re
  assert.match(run("shift-roster-coverage-matrix","09:00|12:00\n---\nA|09:00|10:00"),/interval,staff_at_start/);
  assert.match(run("annual-working-hours-estimator","2027|40|15"),/hours:/);
 });
-test("Full schedule preserves queue order and caps publication at 10 for 97 weeks",()=>{
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave9-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  assert.equal(Math.ceil(queue.length/10),97);
-  for(let i=0;i<97;i++){
-   const r=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+7*i,2))});
-   assert.equal(r.released.length,Math.min(10,queue.length-10*i),"week "+(i+1));
-  }
-  const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,queue.map(x=>x.slug));
-  assert.equal(state.history.length,97);
-  assert.equal(state.history.at(-1).slugs.length,7);
-  assert.equal(state.published[673],"dna-reverse-complement-tool");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 11 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,Infinity);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[673],"dna-reverse-complement-tool");
 });
 test("Engines use no uploads, network or code evaluation and are wired into the UI",()=>{
  const modules=["Bio","Chem","Enc","Poly","Finance","Ops","Json","Csv","Dev","Dates"];
@@ -184,7 +174,7 @@ test("Engines use no uploads, network or code evaluation and are wired into the 
  for(const f of ["w9Bio","w9Chem","w9Enc","w9Poly","w9Finance","w9Ops","w9Json","w9Csv","w9Dev","w9Dates"])assert.ok(workspace.includes(f+"(mode,content)"));
  const published=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
  assert.equal(published.startDate,"2026-11-23");
- assert.equal(published.weeklyLimit,10);
+ assert.equal(published.weeklyLimit,20);
  assert.deepEqual(published.published,queue.slice(0,published.published.length).map(x=>x.slug));
  assert.match(fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8"),/blog:release/);
 });
