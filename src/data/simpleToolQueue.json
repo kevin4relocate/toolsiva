@@ -7566,5 +7566,1605 @@
     "example": "_sip._tcp.example.com|10|5|5060|sip.example.com",
     "ready": true,
     "batch": 6
+  },
+  {
+    "slug": "common-prefix-finder",
+    "name": "Common Prefix Finder",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Find the longest shared starting substring between two inputs.",
+    "metaDescription": "Find the longest shared starting substring between two inputs. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "common prefix finder",
+      "online common prefix finder",
+      "free common prefix finder"
+    ],
+    "example": "international\n---\ninterstellar",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "common-suffix-finder",
+    "name": "Common Suffix Finder",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Find the longest shared ending substring between two strings.",
+    "metaDescription": "Find the longest shared ending substring between two strings. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "common suffix finder",
+      "online common suffix finder",
+      "free common suffix finder"
+    ],
+    "example": "generation\n---\noperation",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "longest-common-subsequence-finder",
+    "name": "Longest Common Subsequence Finder",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Find a longest ordered subsequence that need not be contiguous.",
+    "metaDescription": "Find a longest ordered subsequence that need not be contiguous. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "longest common subsequence finder",
+      "online longest common subsequence finder",
+      "free longest common subsequence finder"
+    ],
+    "example": "ABCBDAB\n---\nBDCABA",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "longest-common-substring-finder",
+    "name": "Longest Common Substring Finder",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Find the longest contiguous substring shared by two inputs.",
+    "metaDescription": "Find the longest contiguous substring shared by two inputs. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "longest common substring finder",
+      "online longest common substring finder",
+      "free longest common substring finder"
+    ],
+    "example": "pineapple\n---\nsnapple",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "jaccard-word-set-similarity",
+    "name": "Jaccard Word Set Similarity",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Measure overlap of unique normalized words between two texts.",
+    "metaDescription": "Measure overlap of unique normalized words between two texts. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "jaccard word set similarity",
+      "online jaccard word set similarity",
+      "free jaccard word set similarity"
+    ],
+    "example": "cat dog bird\n---\ndog bird fish",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "dice-character-bigram-similarity",
+    "name": "Dice Character Bigram Similarity",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Measure Sørensen–Dice similarity of overlapping character bigrams.",
+    "metaDescription": "Measure Sørensen–Dice similarity of overlapping character bigrams. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "dice character bigram similarity",
+      "online dice character bigram similarity",
+      "free dice character bigram similarity"
+    ],
+    "example": "night\n---\nnacht",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "text-shannon-entropy-calculator",
+    "name": "Text Shannon Entropy Calculator",
+    "category": "text",
+    "week": 48,
+    "shortDescription": "Compute Shannon information entropy in bits per character.",
+    "metaDescription": "Compute Shannon information entropy in bits per character. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "text shannon entropy calculator",
+      "online text shannon entropy calculator",
+      "free text shannon entropy calculator"
+    ],
+    "example": "banana",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "unicode-normalization-comparator",
+    "name": "Unicode Normalization Comparator",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Compare NFC, NFD, NFKC and NFKD forms of two strings.",
+    "metaDescription": "Compare NFC, NFD, NFKC and NFKD forms of two strings. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "unicode normalization comparator",
+      "online unicode normalization comparator",
+      "free unicode normalization comparator"
+    ],
+    "example": "é\n---\né",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "unicode-grapheme-cluster-inspector",
+    "name": "Unicode Grapheme Cluster Inspector",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Count and inspect Unicode grapheme clusters with Intl.Segmenter.",
+    "metaDescription": "Count and inspect Unicode grapheme clusters with Intl.Segmenter. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "unicode grapheme cluster inspector",
+      "online unicode grapheme cluster inspector",
+      "free unicode grapheme cluster inspector"
+    ],
+    "example": "A👩‍💻é",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "mixed-script-text-detector",
+    "name": "Mixed Script Text Detector",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Report Latin, Cyrillic, Greek and Han script mixes in pasted text.",
+    "metaDescription": "Report Latin, Cyrillic, Greek and Han script mixes in pasted text. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "mixed script text detector",
+      "online mixed script text detector",
+      "free mixed script text detector"
+    ],
+    "example": "hello раypal 日本語",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "soundex-name-comparator",
+    "name": "Soundex Name Comparator",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Compare English-oriented Soundex phonetic codes of two names.",
+    "metaDescription": "Compare English-oriented Soundex phonetic codes of two names. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "soundex name comparator",
+      "online soundex name comparator",
+      "free soundex name comparator"
+    ],
+    "example": "Robert\n---\nRupert",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "keyword-cooccurrence-window-counter",
+    "name": "Keyword Cooccurrence Window Counter",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Count token windows containing both requested keywords.",
+    "metaDescription": "Count token windows containing both requested keywords. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "keyword cooccurrence window counter",
+      "online keyword cooccurrence window counter",
+      "free keyword cooccurrence window counter"
+    ],
+    "example": "cat|dog|3\n---\ncat jumps over dog and cat sleeps",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "sentence-opening-word-distribution",
+    "name": "Sentence Opening Word Distribution",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Count the opening words of sentences and identify repetitive starts.",
+    "metaDescription": "Count the opening words of sentences and identify repetitive starts. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "sentence opening word distribution",
+      "online sentence opening word distribution",
+      "free sentence opening word distribution"
+    ],
+    "example": "Today we work. Tomorrow we rest. Today we learn.",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "markdown-broken-anchor-finder",
+    "name": "Markdown Broken Anchor Finder",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Detect local Markdown heading links without matching anchors.",
+    "metaDescription": "Detect local Markdown heading links without matching anchors. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "markdown broken anchor finder",
+      "online markdown broken anchor finder",
+      "free markdown broken anchor finder"
+    ],
+    "example": "# Hello World\n[Jump](#missing-section)",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "markdown-fence-language-inventory",
+    "name": "Markdown Fence Language Inventory",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Count fenced code blocks by declared language.",
+    "metaDescription": "Count fenced code blocks by declared language. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "markdown fence language inventory",
+      "online markdown fence language inventory",
+      "free markdown fence language inventory"
+    ],
+    "example": "```js\nlet x=1;\n```\n```python\nprint(1)\n```",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "markdown-table-alignment-auditor",
+    "name": "Markdown Table Alignment Auditor",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Validate Markdown table separator and cell column alignment.",
+    "metaDescription": "Validate Markdown table separator and cell column alignment. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "markdown table alignment auditor",
+      "online markdown table alignment auditor",
+      "free markdown table alignment auditor"
+    ],
+    "example": "| Name | Age |\n| :--- | ---: |\n| Ada | 30 |",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "markdown-duplicate-heading-slug-detector",
+    "name": "Markdown Duplicate Heading Slug Detector",
+    "category": "text",
+    "week": 49,
+    "shortDescription": "Find repeated Markdown heading slugs and suggest unique anchors.",
+    "metaDescription": "Find repeated Markdown heading slugs and suggest unique anchors. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "markdown duplicate heading slug detector",
+      "online markdown duplicate heading slug detector",
+      "free markdown duplicate heading slug detector"
+    ],
+    "example": "# Intro\n## Intro\n# Intro",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "repeated-punctuation-pattern-finder",
+    "name": "Repeated Punctuation Pattern Finder",
+    "category": "text",
+    "week": 50,
+    "shortDescription": "Identify repeated exclamation, question and period punctuation runs.",
+    "metaDescription": "Identify repeated exclamation, question and period punctuation runs. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "repeated punctuation pattern finder",
+      "online repeated punctuation pattern finder",
+      "free repeated punctuation pattern finder"
+    ],
+    "example": "Wow!!! Really?? ... okay",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "text-case-consistency-reporter",
+    "name": "Text Case Consistency Reporter",
+    "category": "text",
+    "week": 50,
+    "shortDescription": "Find words appearing with multiple capitalization variants.",
+    "metaDescription": "Find words appearing with multiple capitalization variants. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "text case consistency reporter",
+      "online text case consistency reporter",
+      "free text case consistency reporter"
+    ],
+    "example": "Toolsiva toolsiva TOOLSIVA Another",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "acronym-definition-extractor",
+    "name": "Acronym Definition Extractor",
+    "category": "text",
+    "week": 50,
+    "shortDescription": "Extract acronym expansions written as phrase followed by (ACRONYM).",
+    "metaDescription": "Extract acronym expansions written as phrase followed by (ACRONYM). Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "acronym definition extractor",
+      "online acronym definition extractor",
+      "free acronym definition extractor"
+    ],
+    "example": "Search Engine Optimization (SEO) improves the web.",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-foreign-key-validator",
+    "name": "CSV Foreign Key Validator",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Report foreign-key values absent from a pasted parent CSV table.",
+    "metaDescription": "Report foreign-key values absent from a pasted parent CSV table. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv foreign key validator",
+      "online csv foreign key validator",
+      "free csv foreign key validator"
+    ],
+    "example": "customer_id\n---\nid,customer_id\n1,AA\n2,BB\n---\ncustomer_id,name\nAA,Ada",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-column-regex-validator",
+    "name": "CSV Column Regex Validator",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Check each cell in a CSV column against a regular expression.",
+    "metaDescription": "Check each cell in a CSV column against a regular expression. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv column regex validator",
+      "online csv column regex validator",
+      "free csv column regex validator"
+    ],
+    "example": "email|^[^@]+@[^@]+$\n---\nemail\na@example.com\ninvalid",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-date-column-validator",
+    "name": "CSV Date Column Validator",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Identify invalid ISO calendar dates in a named CSV column.",
+    "metaDescription": "Identify invalid ISO calendar dates in a named CSV column. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv date column validator",
+      "online csv date column validator",
+      "free csv date column validator"
+    ],
+    "example": "date\n---\ndate\n2026-11-17\n2026-02-30",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-numeric-range-validator",
+    "name": "CSV Numeric Range Validator",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Report numeric CSV cells outside a specified inclusive range.",
+    "metaDescription": "Report numeric CSV cells outside a specified inclusive range. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv numeric range validator",
+      "online csv numeric range validator",
+      "free csv numeric range validator"
+    ],
+    "example": "score|0|100\n---\nname,score\nA,95\nB,120",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-cross-column-comparison-validator",
+    "name": "CSV Cross Column Comparison Validator",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Check cross-field numeric comparisons for every CSV row.",
+    "metaDescription": "Check cross-field numeric comparisons for every CSV row. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv cross column comparison validator",
+      "online csv cross column comparison validator",
+      "free csv cross column comparison validator"
+    ],
+    "example": "start|<=|end\n---\nstart,end\n1,2\n5,3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-dataset-schema-comparator",
+    "name": "CSV Dataset Schema Comparator",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Compare CSV column headers across two pasted datasets.",
+    "metaDescription": "Compare CSV column headers across two pasted datasets. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv dataset schema comparator",
+      "online csv dataset schema comparator",
+      "free csv dataset schema comparator"
+    ],
+    "example": "id,name\n1,A\n---\nid,email\n1,a@example.com",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-null-token-normalizer",
+    "name": "CSV Null Token Normalizer",
+    "category": "developer",
+    "week": 50,
+    "shortDescription": "Replace explicitly configured null-like tokens with empty CSV cells.",
+    "metaDescription": "Replace explicitly configured null-like tokens with empty CSV cells. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv null token normalizer",
+      "online csv null token normalizer",
+      "free csv null token normalizer"
+    ],
+    "example": "N/A|NULL|-\n---\na,b\nN/A,1\n2,NULL",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-value-mapping-replacer",
+    "name": "CSV Value Mapping Replacer",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Replace selected CSV column values according to an explicit mapping.",
+    "metaDescription": "Replace selected CSV column values according to an explicit mapping. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv value mapping replacer",
+      "online csv value mapping replacer",
+      "free csv value mapping replacer"
+    ],
+    "example": "status|open=active;closed=inactive\n---\nid,status\n1,open\n2,closed",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-header-case-collision-detector",
+    "name": "CSV Header Case Collision Detector",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Find CSV headers that collide after case-insensitive normalization.",
+    "metaDescription": "Find CSV headers that collide after case-insensitive normalization. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv header case collision detector",
+      "online csv header case collision detector",
+      "free csv header case collision detector"
+    ],
+    "example": "Name,name,AGE\nAda,Bob,30",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-row-completeness-ranker",
+    "name": "CSV Row Completeness Ranker",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Rank CSV rows by their count of nonempty field values.",
+    "metaDescription": "Rank CSV rows by their count of nonempty field values. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv row completeness ranker",
+      "online csv row completeness ranker",
+      "free csv row completeness ranker"
+    ],
+    "example": "a,b,c\n1,,3\n2,4,5",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-rolling-average-column",
+    "name": "CSV Rolling Average Column",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Append a rolling mean column for a numeric CSV series.",
+    "metaDescription": "Append a rolling mean column for a numeric CSV series. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv rolling average column",
+      "online csv rolling average column",
+      "free csv rolling average column"
+    ],
+    "example": "value|2\n---\nvalue\n2\n4\n6\n8",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-cumulative-sum-column",
+    "name": "CSV Cumulative Sum Column",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Append a running total column to a pasted CSV table.",
+    "metaDescription": "Append a running total column to a pasted CSV table. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv cumulative sum column",
+      "online csv cumulative sum column",
+      "free csv cumulative sum column"
+    ],
+    "example": "value\n---\nvalue\n2\n4\n6",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-percent-change-column",
+    "name": "CSV Percent Change Column",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Append period-over-period percentage changes in a CSV column.",
+    "metaDescription": "Append period-over-period percentage changes in a CSV column. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv percent change column",
+      "online csv percent change column",
+      "free csv percent change column"
+    ],
+    "example": "value\n---\nvalue\n100\n120\n90",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-correlation-matrix",
+    "name": "CSV Correlation Matrix",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Calculate pairwise Pearson correlation for all numeric CSV columns.",
+    "metaDescription": "Calculate pairwise Pearson correlation for all numeric CSV columns. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv correlation matrix",
+      "online csv correlation matrix",
+      "free csv correlation matrix"
+    ],
+    "example": "a,b,c\n1,2,5\n2,4,4\n3,6,3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-group-distinct-counter",
+    "name": "CSV Group Distinct Counter",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Count unique target values within each group of CSV rows.",
+    "metaDescription": "Count unique target values within each group of CSV rows. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv group distinct counter",
+      "online csv group distinct counter",
+      "free csv group distinct counter"
+    ],
+    "example": "team|user\n---\nteam,user\nA,u1\nA,u2\nA,u1\nB,u3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-numeric-z-score-reporter",
+    "name": "CSV Numeric Z Score Reporter",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Find CSV rows whose numeric value exceeds an absolute z-score.",
+    "metaDescription": "Find CSV rows whose numeric value exceeds an absolute z-score. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv numeric z score reporter",
+      "online csv numeric z score reporter",
+      "free csv numeric z score reporter"
+    ],
+    "example": "value|1.5\n---\nvalue\n1\n2\n3\n10",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-percentile-rank-column",
+    "name": "CSV Percentile Rank Column",
+    "category": "developer",
+    "week": 51,
+    "shortDescription": "Append percentile ranks with average ranks for ties.",
+    "metaDescription": "Append percentile ranks with average ranks for ties. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv percentile rank column",
+      "online csv percentile rank column",
+      "free csv percentile rank column"
+    ],
+    "example": "value\n---\nvalue\n10\n20\n20\n30",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-numerical-winsorizer",
+    "name": "CSV Numerical Winsorizer",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Clamp numeric CSV values to chosen quantile boundaries.",
+    "metaDescription": "Clamp numeric CSV values to chosen quantile boundaries. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv numerical winsorizer",
+      "online csv numerical winsorizer",
+      "free csv numerical winsorizer"
+    ],
+    "example": "value|0.1|0.9\n---\nvalue\n1\n2\n3\n100",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-category-transition-matrix",
+    "name": "CSV Category Transition Matrix",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Count transitions between adjacent categories in a CSV series.",
+    "metaDescription": "Count transitions between adjacent categories in a CSV series. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv category transition matrix",
+      "online csv category transition matrix",
+      "free csv category transition matrix"
+    ],
+    "example": "status\n---\nstatus\nnew\nactive\nactive\nclosed",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "csv-text-length-summary",
+    "name": "CSV Text Length Summary",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Compute min, max and average grapheme lengths in a CSV column.",
+    "metaDescription": "Compute min, max and average grapheme lengths in a CSV column. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "csv text length summary",
+      "online csv text length summary",
+      "free csv text length summary"
+    ],
+    "example": "name\n---\nname\nAda\nBenjamin\nLi",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-merge-patch-generator",
+    "name": "JSON Merge Patch Generator",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Generate RFC 7396 JSON Merge Patch objects from before/after JSON.",
+    "metaDescription": "Generate RFC 7396 JSON Merge Patch objects from before/after JSON. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json merge patch generator",
+      "online json merge patch generator",
+      "free json merge patch generator"
+    ],
+    "example": "{ \"a\":1,\"b\":2 }\n---\n{ \"a\":1,\"b\":3 }",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-merge-patch-applier",
+    "name": "JSON Merge Patch Applier",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Apply an RFC 7396 merge-patch document to a pasted JSON value.",
+    "metaDescription": "Apply an RFC 7396 merge-patch document to a pasted JSON value. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json merge patch applier",
+      "online json merge patch applier",
+      "free json merge patch applier"
+    ],
+    "example": "{ \"a\":1,\"b\":2 }\n---\n{ \"b\":3 }",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-sensitive-key-scanner",
+    "name": "JSON Sensitive Key Scanner",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Find potentially sensitive JSON key names at nested paths.",
+    "metaDescription": "Find potentially sensitive JSON key names at nested paths. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json sensitive key scanner",
+      "online json sensitive key scanner",
+      "free json sensitive key scanner"
+    ],
+    "example": "{ \"apiKey\":\"demo\",\"profile\":{\"password\":\"x\",\"name\":\"Ada\"} }",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-path-redactor",
+    "name": "JSON Path Redactor",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Replace values at specified JSON Pointer paths with redaction markers.",
+    "metaDescription": "Replace values at specified JSON Pointer paths with redaction markers. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json path redactor",
+      "online json path redactor",
+      "free json path redactor"
+    ],
+    "example": "/profile/email\n---\n{\"profile\":{\"email\":\"ada@example.com\",\"name\":\"Ada\"}}",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-array-key-coverage-report",
+    "name": "JSON Array Key Coverage Report",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Report how often each object key occurs across an array of records.",
+    "metaDescription": "Report how often each object key occurs across an array of records. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json array key coverage report",
+      "online json array key coverage report",
+      "free json array key coverage report"
+    ],
+    "example": "[{\"a\":1,\"b\":2},{\"a\":2},{\"b\":4}]",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-nested-key-frequency-counter",
+    "name": "JSON Nested Key Frequency Counter",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Count repeated property names throughout a JSON tree.",
+    "metaDescription": "Count repeated property names throughout a JSON tree. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json nested key frequency counter",
+      "online json nested key frequency counter",
+      "free json nested key frequency counter"
+    ],
+    "example": "{\"name\":\"A\",\"child\":{\"name\":\"B\",\"age\":3}}",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-unsafe-number-literal-detector",
+    "name": "JSON Unsafe Number Literal Detector",
+    "category": "developer",
+    "week": 52,
+    "shortDescription": "Detect JSON integer literals that exceed IEEE-754 safe integer precision.",
+    "metaDescription": "Detect JSON integer literals that exceed IEEE-754 safe integer precision. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json unsafe number literal detector",
+      "online json unsafe number literal detector",
+      "free json unsafe number literal detector"
+    ],
+    "example": "{\"safe\":12,\"unsafe\":9007199254740993}",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-multi-field-array-sort",
+    "name": "JSON Multi Field Array Sort",
+    "category": "developer",
+    "week": 53,
+    "shortDescription": "Sort JSON object arrays by multiple ordered key and direction rules.",
+    "metaDescription": "Sort JSON object arrays by multiple ordered key and direction rules. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json multi field array sort",
+      "online json multi field array sort",
+      "free json multi field array sort"
+    ],
+    "example": "score:desc,name:asc\n---\n[{\"name\":\"B\",\"score\":3},{\"name\":\"A\",\"score\":3},{\"name\":\"C\",\"score\":5}]",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-object-schema-drift-report",
+    "name": "JSON Object Schema Drift Report",
+    "category": "developer",
+    "week": 53,
+    "shortDescription": "Compare property/type structure between two JSON example objects.",
+    "metaDescription": "Compare property/type structure between two JSON example objects. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json object schema drift report",
+      "online json object schema drift report",
+      "free json object schema drift report"
+    ],
+    "example": "{ \"id\":1,\"name\":\"A\" }\n---\n{ \"id\":\"1\",\"active\":true }",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "json-string-pattern-violation-scanner",
+    "name": "JSON String Pattern Violation Scanner",
+    "category": "developer",
+    "week": 53,
+    "shortDescription": "Find JSON array records where a chosen string field fails a regex.",
+    "metaDescription": "Find JSON array records where a chosen string field fails a regex. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "json string pattern violation scanner",
+      "online json string pattern violation scanner",
+      "free json string pattern violation scanner"
+    ],
+    "example": "email|^[^@]+@[^@]+$\n---\n[{\"email\":\"a@example.com\"},{\"email\":\"bad\"}]",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "geometric-distribution-probability-calculator",
+    "name": "Geometric Distribution Probability Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Compute probability that first success occurs on trial k.",
+    "metaDescription": "Compute probability that first success occurs on trial k. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "geometric distribution probability calculator",
+      "online geometric distribution probability calculator",
+      "free geometric distribution probability calculator"
+    ],
+    "example": "0.25|3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "negative-binomial-probability-calculator",
+    "name": "Negative Binomial Probability Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Compute probability of the kth trial completing r successes.",
+    "metaDescription": "Compute probability of the kth trial completing r successes. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "negative binomial probability calculator",
+      "online negative binomial probability calculator",
+      "free negative binomial probability calculator"
+    ],
+    "example": "3|5|0.4",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "exponential-distribution-probability-calculator",
+    "name": "Exponential Distribution Probability Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Calculate exponential-distribution probability over a time interval.",
+    "metaDescription": "Calculate exponential-distribution probability over a time interval. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "exponential distribution probability calculator",
+      "online exponential distribution probability calculator",
+      "free exponential distribution probability calculator"
+    ],
+    "example": "0.5|0|3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "weibull-survival-probability-calculator",
+    "name": "Weibull Survival Probability Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Calculate survival probability with Weibull shape, scale and time.",
+    "metaDescription": "Calculate survival probability with Weibull shape, scale and time. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "weibull survival probability calculator",
+      "online weibull survival probability calculator",
+      "free weibull survival probability calculator"
+    ],
+    "example": "2|10|8",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "two-proportion-z-test-calculator",
+    "name": "Two Proportion Z Test Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Calculate two-sided pooled two-proportion Z statistic and approximate p-value.",
+    "metaDescription": "Calculate two-sided pooled two-proportion Z statistic and approximate p-value. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "two proportion z test calculator",
+      "online two proportion z test calculator",
+      "free two proportion z test calculator"
+    ],
+    "example": "60|100|45|100",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "one-proportion-z-test-calculator",
+    "name": "One Proportion Z Test Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Test observed successes against a hypothesized population proportion.",
+    "metaDescription": "Test observed successes against a hypothesized population proportion. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "one proportion z test calculator",
+      "online one proportion z test calculator",
+      "free one proportion z test calculator"
+    ],
+    "example": "55|100|0.5",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "spearman-rank-correlation-calculator",
+    "name": "Spearman Rank Correlation Calculator",
+    "category": "calculator",
+    "week": 53,
+    "shortDescription": "Calculate Spearman rank correlation with averaged tied ranks.",
+    "metaDescription": "Calculate Spearman rank correlation with averaged tied ranks. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "spearman rank correlation calculator",
+      "online spearman rank correlation calculator",
+      "free spearman rank correlation calculator"
+    ],
+    "example": "1,2,3,4\n---\n1,3,2,4",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "kendall-rank-correlation-calculator",
+    "name": "Kendall Rank Correlation Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Calculate Kendall's tau-b rank correlation including ties.",
+    "metaDescription": "Calculate Kendall's tau-b rank correlation including ties. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "kendall rank correlation calculator",
+      "online kendall rank correlation calculator",
+      "free kendall rank correlation calculator"
+    ],
+    "example": "1,2,3,4\n---\n1,3,2,4",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "cohen-d-effect-size-calculator",
+    "name": "Cohen D Effect Size Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Estimate standardized difference between two independent sample means.",
+    "metaDescription": "Estimate standardized difference between two independent sample means. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "cohen d effect size calculator",
+      "online cohen d effect size calculator",
+      "free cohen d effect size calculator"
+    ],
+    "example": "5|1.2|30|4|1.0|30",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "weighted-median-calculator",
+    "name": "Weighted Median Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Find the median of value–weight pairs without expanding observations.",
+    "metaDescription": "Find the median of value–weight pairs without expanding observations. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "weighted median calculator",
+      "online weighted median calculator",
+      "free weighted median calculator"
+    ],
+    "example": "1,2\n2,3\n10,1",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "matrix-inverse-calculator",
+    "name": "Matrix Inverse Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Calculate the inverse of a small nonsingular square numeric matrix.",
+    "metaDescription": "Calculate the inverse of a small nonsingular square numeric matrix. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "matrix inverse calculator",
+      "online matrix inverse calculator",
+      "free matrix inverse calculator"
+    ],
+    "example": "4,7;2,6",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "linear-equation-system-solver",
+    "name": "Linear Equation System Solver",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Solve a square linear system using Gaussian elimination.",
+    "metaDescription": "Solve a square linear system using Gaussian elimination. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "linear equation system solver",
+      "online linear equation system solver",
+      "free linear equation system solver"
+    ],
+    "example": "2,1|5\n1,-1|1",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "matrix-rank-calculator",
+    "name": "Matrix Rank Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Calculate numeric matrix rank by row reduction.",
+    "metaDescription": "Calculate numeric matrix rank by row reduction. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "matrix rank calculator",
+      "online matrix rank calculator",
+      "free matrix rank calculator"
+    ],
+    "example": "1,2;2,4",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "euclidean-vector-distance-calculator",
+    "name": "Euclidean Vector Distance Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Compute straight-line Euclidean distance between two vectors.",
+    "metaDescription": "Compute straight-line Euclidean distance between two vectors. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "euclidean vector distance calculator",
+      "online euclidean vector distance calculator",
+      "free euclidean vector distance calculator"
+    ],
+    "example": "1,2,3\n---\n4,6,3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "manhattan-vector-distance-calculator",
+    "name": "Manhattan Vector Distance Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Compute L1 city-block distance between two numeric vectors.",
+    "metaDescription": "Compute L1 city-block distance between two numeric vectors. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "manhattan vector distance calculator",
+      "online manhattan vector distance calculator",
+      "free manhattan vector distance calculator"
+    ],
+    "example": "1,2,3\n---\n4,6,3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "polygon-shoelace-area-calculator",
+    "name": "Polygon Shoelace Area Calculator",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Find the planar area of a simple polygon from ordered vertices.",
+    "metaDescription": "Find the planar area of a simple polygon from ordered vertices. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "polygon shoelace area calculator",
+      "online polygon shoelace area calculator",
+      "free polygon shoelace area calculator"
+    ],
+    "example": "0,0\n4,0\n4,3\n0,3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "point-in-polygon-tester",
+    "name": "Point In Polygon Tester",
+    "category": "calculator",
+    "week": 54,
+    "shortDescription": "Check whether a point is inside, outside or on the boundary of a polygon.",
+    "metaDescription": "Check whether a point is inside, outside or on the boundary of a polygon. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "point in polygon tester",
+      "online point in polygon tester",
+      "free point in polygon tester"
+    ],
+    "example": "2,1\n---\n0,0\n4,0\n4,3\n0,3",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "initial-great-circle-bearing-calculator",
+    "name": "Initial Great Circle Bearing Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Calculate initial geographic bearing from one coordinate to another.",
+    "metaDescription": "Calculate initial geographic bearing from one coordinate to another. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "initial great circle bearing calculator",
+      "online initial great circle bearing calculator",
+      "free initial great circle bearing calculator"
+    ],
+    "example": "10.8231,106.6297\n---\n21.0278,105.8342",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "linear-interpolation-calculator",
+    "name": "Linear Interpolation Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Linearly interpolate y at x between two known points.",
+    "metaDescription": "Linearly interpolate y at x between two known points. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "linear interpolation calculator",
+      "online linear interpolation calculator",
+      "free linear interpolation calculator"
+    ],
+    "example": "0|10|100|30|5",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "compound-annual-growth-rate-calculator",
+    "name": "Compound Annual Growth Rate Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Calculate CAGR from starting value, ending value and number of years.",
+    "metaDescription": "Calculate CAGR from starting value, ending value and number of years. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "compound annual growth rate calculator",
+      "online compound annual growth rate calculator",
+      "free compound annual growth rate calculator"
+    ],
+    "example": "1000|1500|5",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "net-promoter-score-calculator",
+    "name": "Net Promoter Score Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Calculate net promoter score from promoter, passive and detractor counts.",
+    "metaDescription": "Calculate net promoter score from promoter, passive and detractor counts. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "net promoter score calculator",
+      "online net promoter score calculator",
+      "free net promoter score calculator"
+    ],
+    "example": "30|50|20",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "customer-satisfaction-score-calculator",
+    "name": "Customer Satisfaction Score Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Calculate satisfied response rate from 1–5 customer ratings.",
+    "metaDescription": "Calculate satisfied response rate from 1–5 customer ratings. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "customer satisfaction score calculator",
+      "online customer satisfaction score calculator",
+      "free customer satisfaction score calculator"
+    ],
+    "example": "4,5,3,4,2,5",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "saas-rule-of-forty-calculator",
+    "name": "SaaS Rule of Forty Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Add revenue growth and EBITDA margin to evaluate Rule of Forty.",
+    "metaDescription": "Add revenue growth and EBITDA margin to evaluate Rule of Forty. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "saas rule of forty calculator",
+      "online saas rule of forty calculator",
+      "free saas rule of forty calculator"
+    ],
+    "example": "0.25|0.18",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "customer-acquisition-payback-calculator",
+    "name": "Customer Acquisition Payback Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Calculate months to recover CAC using monthly gross margin per customer.",
+    "metaDescription": "Calculate months to recover CAC using monthly gross margin per customer. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "customer acquisition payback calculator",
+      "online customer acquisition payback calculator",
+      "free customer acquisition payback calculator"
+    ],
+    "example": "400|60|0.8",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "saas-burn-multiple-calculator",
+    "name": "SaaS Burn Multiple Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Compare cash burn against net new ARR.",
+    "metaDescription": "Compare cash burn against net new ARR. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "saas burn multiple calculator",
+      "online saas burn multiple calculator",
+      "free saas burn multiple calculator"
+    ],
+    "example": "150000|50000",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "inventory-safety-stock-calculator",
+    "name": "Inventory Safety Stock Calculator",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Estimate safety stock from daily demand deviation, lead time and Z score.",
+    "metaDescription": "Estimate safety stock from daily demand deviation, lead time and Z score. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "inventory safety stock calculator",
+      "online inventory safety stock calculator",
+      "free inventory safety stock calculator"
+    ],
+    "example": "12|7|1.65",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "forecast-mean-absolute-percentage-error",
+    "name": "Forecast Mean Absolute Percentage Error",
+    "category": "calculator",
+    "week": 55,
+    "shortDescription": "Calculate MAPE between actual and forecast series.",
+    "metaDescription": "Calculate MAPE between actual and forecast series. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "forecast mean absolute percentage error",
+      "online forecast mean absolute percentage error",
+      "free forecast mean absolute percentage error"
+    ],
+    "example": "100,120,80\n---\n110,100,90",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "forecast-tracking-signal-calculator",
+    "name": "Forecast Tracking Signal Calculator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Compute forecast bias tracking signal using cumulative error and MAD.",
+    "metaDescription": "Compute forecast bias tracking signal using cumulative error and MAD. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "forecast tracking signal calculator",
+      "online forecast tracking signal calculator",
+      "free forecast tracking signal calculator"
+    ],
+    "example": "100,120,80\n---\n110,100,90",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "inventory-gmroi-calculator",
+    "name": "Inventory GMROI Calculator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Calculate gross margin return on average inventory investment.",
+    "metaDescription": "Calculate gross margin return on average inventory investment. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "inventory gmroi calculator",
+      "online inventory gmroi calculator",
+      "free inventory gmroi calculator"
+    ],
+    "example": "40000|10000",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "marketing-lead-velocity-rate-calculator",
+    "name": "Marketing Lead Velocity Rate Calculator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Measure month-over-month growth in qualified sales leads.",
+    "metaDescription": "Measure month-over-month growth in qualified sales leads. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "marketing lead velocity rate calculator",
+      "online marketing lead velocity rate calculator",
+      "free marketing lead velocity rate calculator"
+    ],
+    "example": "120|100",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "project-critical-path-calculator",
+    "name": "Project Critical Path Calculator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Compute earliest completion, slack and critical path from a task dependency DAG.",
+    "metaDescription": "Compute earliest completion, slack and critical path from a task dependency DAG. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "project critical path calculator",
+      "online project critical path calculator",
+      "free project critical path calculator"
+    ],
+    "example": "A|3|\nB|2|A\nC|4|A\nD|1|B,C",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "biweekly-pay-period-generator",
+    "name": "Biweekly Pay Period Generator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Generate consecutive 14-day pay period start/end dates.",
+    "metaDescription": "Generate consecutive 14-day pay period start/end dates. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "biweekly pay period generator",
+      "online biweekly pay period generator",
+      "free biweekly pay period generator"
+    ],
+    "example": "2026-11-16|4",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "nth-business-day-of-month-finder",
+    "name": "Nth Business Day Of Month Finder",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Find a specified ordinal Monday–Friday business day of a month.",
+    "metaDescription": "Find a specified ordinal Monday–Friday business day of a month. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "nth business day of month finder",
+      "online nth business day of month finder",
+      "free nth business day of month finder"
+    ],
+    "example": "2026-11|5",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "monthly-working-days-report",
+    "name": "Monthly Working Days Report",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Count Monday–Friday working days for consecutive months from a chosen start.",
+    "metaDescription": "Count Monday–Friday working days for consecutive months from a chosen start. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "monthly working days report",
+      "online monthly working days report",
+      "free monthly working days report"
+    ],
+    "example": "2026|11",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "overnight-shift-wage-calculator",
+    "name": "Overnight Shift Wage Calculator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Calculate overnight shift pay with enhanced premium for selected hours.",
+    "metaDescription": "Calculate overnight shift pay with enhanced premium for selected hours. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "overnight shift wage calculator",
+      "online overnight shift wage calculator",
+      "free overnight shift wage calculator"
+    ],
+    "example": "22:00|06:00|18|1.5|00:00|06:00",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "meeting-attendee-cost-calculator",
+    "name": "Meeting Attendee Cost Calculator",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Estimate meeting cost from minutes and attendee counts with hourly rates.",
+    "metaDescription": "Estimate meeting cost from minutes and attendee counts with hourly rates. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "meeting attendee cost calculator",
+      "online meeting attendee cost calculator",
+      "free meeting attendee cost calculator"
+    ],
+    "example": "60\n---\n2|45\n1|80",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "date-range-gap-finder",
+    "name": "Date Range Gap Finder",
+    "category": "calculator",
+    "week": 56,
+    "shortDescription": "Find uncovered date intervals between pasted scheduled date ranges.",
+    "metaDescription": "Find uncovered date intervals between pasted scheduled date ranges. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "date range gap finder",
+      "online date range gap finder",
+      "free date range gap finder"
+    ],
+    "example": "2026-11-01|2026-11-30\n---\n2026-11-05|2026-11-08\n2026-11-10|2026-11-20",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "cron-next-runs-calculator",
+    "name": "Cron Next Runs Calculator",
+    "category": "calculator",
+    "week": 57,
+    "shortDescription": "Preview upcoming UTC execution times for standard five-field cron expressions.",
+    "metaDescription": "Preview upcoming UTC execution times for standard five-field cron expressions. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "cron next runs calculator",
+      "online cron next runs calculator",
+      "free cron next runs calculator"
+    ],
+    "example": "0 9 * * 1\n---\n2026-11-16T00:00",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "fiscal-quarter-boundary-finder",
+    "name": "Fiscal Quarter Boundary Finder",
+    "category": "calculator",
+    "week": 57,
+    "shortDescription": "Return current fiscal quarter start and end dates for a custom fiscal year.",
+    "metaDescription": "Return current fiscal quarter start and end dates for a custom fiscal year. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "fiscal quarter boundary finder",
+      "online fiscal quarter boundary finder",
+      "free fiscal quarter boundary finder"
+    ],
+    "example": "2026-11-17|4",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "calendar-event-ics-text-builder",
+    "name": "Calendar Event ICS Text Builder",
+    "category": "calculator",
+    "week": 57,
+    "shortDescription": "Generate escaped iCalendar VEVENT text for a typed local-time appointment.",
+    "metaDescription": "Generate escaped iCalendar VEVENT text for a typed local-time appointment. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "calendar event ics text builder",
+      "online calendar event ics text builder",
+      "free calendar event ics text builder"
+    ],
+    "example": "2026-12-01T09:00|2026-12-01T10:00|Team Sync|Discuss plans",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "http-accept-header-quality-parser",
+    "name": "HTTP Accept Header Quality Parser",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Sort MIME preferences using quality weights from an HTTP Accept header.",
+    "metaDescription": "Sort MIME preferences using quality weights from an HTTP Accept header. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "http accept header quality parser",
+      "online http accept header quality parser",
+      "free http accept header quality parser"
+    ],
+    "example": "text/html;q=0.8, application/json, */*;q=0.1",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "http-cache-freshness-evaluator",
+    "name": "HTTP Cache Freshness Evaluator",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Evaluate cache freshness using max-age, response age and elapsed seconds.",
+    "metaDescription": "Evaluate cache freshness using max-age, response age and elapsed seconds. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "http cache freshness evaluator",
+      "online http cache freshness evaluator",
+      "free http cache freshness evaluator"
+    ],
+    "example": "max-age=3600|1200|100",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "http-conditional-etag-tester",
+    "name": "HTTP Conditional ETag Tester",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Check whether a supplied If-None-Match value matches an ETag for conditional HTTP requests.",
+    "metaDescription": "Check whether a supplied If-None-Match value matches an ETag for conditional HTTP requests. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "http conditional etag tester",
+      "online http conditional etag tester",
+      "free http conditional etag tester"
+    ],
+    "example": "W/\"abc\"|W/\"abc\"|GET",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "http-range-request-parser",
+    "name": "HTTP Range Request Parser",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Convert valid HTTP byte ranges into concrete start/end offsets for an entity size.",
+    "metaDescription": "Convert valid HTTP byte ranges into concrete start/end offsets for an entity size. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "http range request parser",
+      "online http range request parser",
+      "free http range request parser"
+    ],
+    "example": "bytes=0-499,1000-1499|2000",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "http-permissions-policy-inspector",
+    "name": "HTTP Permissions Policy Inspector",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Summarize Permissions-Policy directives and their declared allowlists.",
+    "metaDescription": "Summarize Permissions-Policy directives and their declared allowlists. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "http permissions policy inspector",
+      "online http permissions policy inspector",
+      "free http permissions policy inspector"
+    ],
+    "example": "geolocation=(), camera=(self), microphone=(\"https://app.test\")",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "html-landmark-accessibility-auditor",
+    "name": "HTML Landmark Accessibility Auditor",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Audit pasted HTML landmark duplication and missing main region.",
+    "metaDescription": "Audit pasted HTML landmark duplication and missing main region. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "html landmark accessibility auditor",
+      "online html landmark accessibility auditor",
+      "free html landmark accessibility auditor"
+    ],
+    "example": "<main><nav></nav><main></main></main>",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "css-variable-dependency-resolver",
+    "name": "CSS Variable Dependency Resolver",
+    "category": "developer",
+    "week": 57,
+    "shortDescription": "Resolve CSS custom-property chains and report missing references or cycles.",
+    "metaDescription": "Resolve CSS custom-property chains and report missing references or cycles. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "css variable dependency resolver",
+      "online css variable dependency resolver",
+      "free css variable dependency resolver"
+    ],
+    "example": "--primary: #222;\n--accent: var(--primary);\n--button: var(--accent);",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "ipv4-cidr-overlap-checker",
+    "name": "IPv4 CIDR Overlap Checker",
+    "category": "developer",
+    "week": 58,
+    "shortDescription": "Check whether two IPv4 CIDR subnets overlap and provide the intersection.",
+    "metaDescription": "Check whether two IPv4 CIDR subnets overlap and provide the intersection. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "ipv4 cidr overlap checker",
+      "online ipv4 cidr overlap checker",
+      "free ipv4 cidr overlap checker"
+    ],
+    "example": "192.168.1.0/24\n---\n192.168.1.128/25",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "ipv4-range-to-cidr-calculator",
+    "name": "IPv4 Range To CIDR Calculator",
+    "category": "developer",
+    "week": 58,
+    "shortDescription": "Summarize an inclusive IPv4 start-end address range into minimal CIDR blocks.",
+    "metaDescription": "Summarize an inclusive IPv4 start-end address range into minimal CIDR blocks. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "ipv4 range to cidr calculator",
+      "online ipv4 range to cidr calculator",
+      "free ipv4 range to cidr calculator"
+    ],
+    "example": "192.168.1.10|192.168.1.20",
+    "ready": true,
+    "batch": 7
+  },
+  {
+    "slug": "network-port-range-merger",
+    "name": "Network Port Range Merger",
+    "category": "developer",
+    "week": 58,
+    "shortDescription": "Merge overlapping or adjacent TCP/UDP port number ranges.",
+    "metaDescription": "Merge overlapping or adjacent TCP/UDP port number ranges. Runs locally on text you paste; no upload or paid APIs.",
+    "keywords": [
+      "network port range merger",
+      "online network port range merger",
+      "free network port range merger"
+    ],
+    "example": "80,443,1000-1005,1003-1010",
+    "ready": true,
+    "batch": 7
   }
 ]
