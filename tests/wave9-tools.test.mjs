@@ -121,7 +121,7 @@ test("JSON and CSV modes perform typed integrity and time-series tasks",()=>{
  assert.match(run("json-value-type-coercion-auditor",'[{"a":"1"},{"a":1}]'),/numeric string/);
  assert.match(run("json-property-case-collision-scanner",'{"Name":"A","name":"B"}'),/Name vs name/);
  assert.match(run("json-array-field-sparsity-matrix",'[{"a":1},{"b":2}]'),/record,a,b/);
- assert.match(run("json-pointer-batch-lookup",'/a\n/b\n---\n{"a":1,"b":2}'),/\/a = 1/);
+ assert.match(run("json-schema-constraint-coverage-reporter",'{"type":"object","properties":{"a":{"type":"integer","minimum":0},"b":{"type":"string"}}}'),/Properties with validation constraints: 1\/2/);
  assert.match(run("json-pointer-batch-setter",'/a|2\n---\n{"a":1}'),/"a": 2/);
  assert.match(run("csv-iso-week-sales-aggregator","date|amount\n---\ndate,amount\n2026-11-16,20\n2026-11-17,10"),/2026-W47,30/);
  assert.match(run("csv-rolling-standard-deviation","x|2\n---\nx\n1\n3"),/1/);
@@ -147,7 +147,7 @@ test("Graph/code inspections and date tools return non-overlapping specialist re
  assert.match(run("css-variable-fallback-inspector","color: var(--brand, red);"),/fallback red/);
  assert.match(run("iso-duration-breakdown-parser","P2DT3H4M5S"),/Days: 2/);
  assert.match(run("iso-duration-composer","0|2|3|4|5"),/P2DT3H4M5S/);
- assert.match(run("iso-week-date-to-calendar-date","2026-W47-1"),/2026-11-16/);
+ assert.match(run("gregorian-easter-date-calculator","2027"),/2027-03-28/);
  assert.match(run("retail-445-fiscal-calendar-generator","2026-02-01|2"),/Period 2/);
  assert.match(run("holiday-aware-business-date-adder","2026-11-16|5\n---\n2026-11-18"),/2026-11-24/);
  assert.match(run("timezone-offset-at-date-calculator","Asia/Ho_Chi_Minh|2026-11-17T12:00"),/UTC\+07:00/);
