@@ -1,32 +1,32 @@
 import fs from "node:fs";
-import { releaseSimpleTools } from "./release-simple-tools.mjs";
+import { releaseSimpleTools, nextScheduledToolSlot } from "./release-simple-tools.mjs";
 
 const queue = JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json", "utf8"));
 const state = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
-if (queue.length < 967) throw new Error("Expected at least 967 queued tools.");
-if (new Set(queue.map((tool) => tool.slug)).size !== queue.length) throw new Error("Duplicate scheduled tool slugs.");
+if (queue.length < 967) throw Error("Expected at least 967 queued tools.");
+if (new Set(queue.map(tool => tool.slug)).size !== queue.length) throw Error("Duplicate tool slugs.");
+if (state.weeklyLimit !== 20 || state.perSlotLimit !== 10) throw Error("Expected 20 tools/week, 10 per Mon/Thu slot.");
 
-const limit = state.weeklyLimit;
-if (!Number.isInteger(limit) || limit !== 10) throw new Error("Release limit must remain ten tools per week.");
-const totalRemaining = queue.filter((tool) => tool.ready && !state.published.includes(tool.slug)).length;
-let date = new Date((state.history.length ? state.history.at(-1).date : state.startDate) + "T02:00:00Z");
-if (state.history.length) date.setUTCDate(date.getUTCDate() + 7);
-let published = 0;
-let weeks = 0;
-
-while (published < totalRemaining) {
-  const expected = Math.min(limit, totalRemaining - published);
-  const release = releaseSimpleTools({ now: date });
-  if (release.released.length !== expected) {
-    throw new Error("Expected " + expected + " tools in week " + (weeks + 1) + " but got " + release.released.length + " (" + release.reason + ")");
-  }
-  published += release.released.length;
-  weeks++;
-  date.setUTCDate(date.getUTCDate() + 7);
+const remaining = queue.filter(tool => tool.ready && !state.published.includes(tool.slug)).length;
+let count = 0;
+let slots = 0;
+const weeks = new Set();
+while (count < remaining) {
+ const latest = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
+ const slot = nextScheduledToolSlot(latest);
+ const expected = Math.min(latest.perSlotLimit, remaining - count);
+ const released = releaseSimpleTools({ now: slot });
+ if (released.released.length !== expected) {
+   throw Error("Expected " + expected + " in slot " + (slots + 1) + " but got " + released.released.length + " (" + released.reason + ")");
+ }
+ count += released.released.length;
+ slots += 1;
+ const day = new Date(released.date + "T00:00:00Z");
+ day.setUTCDate(day.getUTCDate() - ((day.getUTCDay()+6)%7));
+ weeks.add(day.toISOString().slice(0,10));
 }
-
-const result = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
-if (result.published.length !== queue.length || result.published.some((slug, index) => slug !== queue[index].slug)) {
-  throw new Error("Scheduled tools were published out of order or omitted.");
+const published = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
+if (published.published.length !== queue.length || published.published.some((slug,i) => slug!==queue[i].slug)) {
+ throw Error("Published tools were out of queue order or omitted.");
 }
-console.log("Full release simulation: " + published + " additional tools, " + weeks + " future Mondays, " + result.published.length + " total queued tools.");
+console.log("Full release simulation: " + count + " additional tools across " + slots + " slots in " + weeks.size + " weeks (Monday and Thursday), " + published.published.length + " queued tools published.");
