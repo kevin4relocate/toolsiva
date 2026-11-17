@@ -19,12 +19,12 @@ test("Wave 11 schedules 100 distinct, implemented and explained browser calculat
  assert.equal(specs.length,100);
  assert.equal(Object.keys(guides).length,100);
  assert.equal(new Set(queue.map(x=>x.slug)).size,973);
- const legacySlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\\s*:\\s*"([^"]+)"/g)].map(x=>x[1]);
+ const legacySlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(legacySlugs.length,123);
  assert.equal(new Set([...legacySlugs,...queue.map(x=>x.slug)]).size,1096);
  const retired=JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired.map(x=>x.slug);
  assert.ok(specs.every(s=>!retired.includes(s.slug)));
- const implemented=engines.map((_,i)=>fs.readFileSync("src/lib/wave11"+["Geometry","Physics","Science","Statistics","Business"][i]+".mjs","utf8")).join("\\n");
+ const implemented=engines.map((_,i)=>fs.readFileSync("src/lib/wave11"+["Geometry","Physics","Science","Statistics","Business"][i]+".mjs","utf8")).join("\n");
  for(let i=0;i<specs.length;i++){
   const s=specs[i],tool=wave[i],guide=guides[s.slug];
   assert.equal(tool.slug,s.slug,"queue order");
@@ -88,7 +88,7 @@ test("Business metrics validate accounting and operations inputs",()=>{
 });
 test("All Wave 11 engines are local and guarded against malformed input",()=>{
  const files=["Core","Geometry","Physics","Science","Statistics","Business"].map(x=>fs.readFileSync("src/lib/wave11"+x+".mjs","utf8"));
- for(const src of files)assert.doesNotMatch(src,/fetch\\s*\\(|XMLHttpRequest|FileReader|eval\\s*\\(|new Function\\s*\\(/);
+ for(const src of files)assert.doesNotMatch(src,/fetch\s*\(|XMLHttpRequest|FileReader|eval\s*\(|new Function\s*\(/);
  const workspace=fs.readFileSync("src/components/tools/SimpleToolWorkspace.astro","utf8");
  for(const m of ["Geometry","Physics","Science","Statistics","Business"])assert.ok(workspace.includes("w11"+m+"(mode,content)"));
  assert.throws(()=>run("triangle-height-from-base-area","1|2|3"),/exactly 2/);
