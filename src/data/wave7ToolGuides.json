@@ -1,0 +1,902 @@
+{
+  "common-prefix-finder": {
+    "explanation": "Find the longest shared starting substring between two inputs.",
+    "example": "international\n---\ninterstellar",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "common-suffix-finder": {
+    "explanation": "Find the longest shared ending substring between two strings.",
+    "example": "generation\n---\noperation",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "longest-common-subsequence-finder": {
+    "explanation": "Find a longest ordered subsequence that need not be contiguous.",
+    "example": "ABCBDAB\n---\nBDCABA",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "longest-common-substring-finder": {
+    "explanation": "Find the longest contiguous substring shared by two inputs.",
+    "example": "pineapple\n---\nsnapple",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "jaccard-word-set-similarity": {
+    "explanation": "Measure overlap of unique normalized words between two texts.",
+    "example": "cat dog bird\n---\ndog bird fish",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "dice-character-bigram-similarity": {
+    "explanation": "Measure Sørensen–Dice similarity of overlapping character bigrams.",
+    "example": "night\n---\nnacht",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "text-shannon-entropy-calculator": {
+    "explanation": "Compute Shannon information entropy in bits per character.",
+    "example": "banana",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "unicode-normalization-comparator": {
+    "explanation": "Compare NFC, NFD, NFKC and NFKD forms of two strings.",
+    "example": "é\n---\né",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "unicode-grapheme-cluster-inspector": {
+    "explanation": "Count and inspect Unicode grapheme clusters with Intl.Segmenter.",
+    "example": "A👩‍💻é",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "mixed-script-text-detector": {
+    "explanation": "Report Latin, Cyrillic, Greek and Han script mixes in pasted text.",
+    "example": "hello раypal 日本語",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "soundex-name-comparator": {
+    "explanation": "Compare English-oriented Soundex phonetic codes of two names.",
+    "example": "Robert\n---\nRupert",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "keyword-cooccurrence-window-counter": {
+    "explanation": "Count token windows containing both requested keywords.",
+    "example": "cat|dog|3\n---\ncat jumps over dog and cat sleeps",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "sentence-opening-word-distribution": {
+    "explanation": "Count the opening words of sentences and identify repetitive starts.",
+    "example": "Today we work. Tomorrow we rest. Today we learn.",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "markdown-broken-anchor-finder": {
+    "explanation": "Detect local Markdown heading links without matching anchors.",
+    "example": "# Hello World\n[Jump](#missing-section)",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "markdown-fence-language-inventory": {
+    "explanation": "Count fenced code blocks by declared language.",
+    "example": "```js\nlet x=1;\n```\n```python\nprint(1)\n```",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "markdown-table-alignment-auditor": {
+    "explanation": "Validate Markdown table separator and cell column alignment.",
+    "example": "| Name | Age |\n| :--- | ---: |\n| Ada | 30 |",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "markdown-duplicate-heading-slug-detector": {
+    "explanation": "Find repeated Markdown heading slugs and suggest unique anchors.",
+    "example": "# Intro\n## Intro\n# Intro",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "repeated-punctuation-pattern-finder": {
+    "explanation": "Identify repeated exclamation, question and period punctuation runs.",
+    "example": "Wow!!! Really?? ... okay",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "text-case-consistency-reporter": {
+    "explanation": "Find words appearing with multiple capitalization variants.",
+    "example": "Toolsiva toolsiva TOOLSIVA Another",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "acronym-definition-extractor": {
+    "explanation": "Extract acronym expansions written as phrase followed by (ACRONYM).",
+    "example": "Search Engine Optimization (SEO) improves the web.",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-foreign-key-validator": {
+    "explanation": "Report foreign-key values absent from a pasted parent CSV table.",
+    "example": "customer_id\n---\nid,customer_id\n1,AA\n2,BB\n---\ncustomer_id,name\nAA,Ada",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-column-regex-validator": {
+    "explanation": "Check each cell in a CSV column against a regular expression.",
+    "example": "email|^[^@]+@[^@]+$\n---\nemail\na@example.com\ninvalid",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-date-column-validator": {
+    "explanation": "Identify invalid ISO calendar dates in a named CSV column.",
+    "example": "date\n---\ndate\n2026-11-17\n2026-02-30",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-numeric-range-validator": {
+    "explanation": "Report numeric CSV cells outside a specified inclusive range.",
+    "example": "score|0|100\n---\nname,score\nA,95\nB,120",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-cross-column-comparison-validator": {
+    "explanation": "Check cross-field numeric comparisons for every CSV row.",
+    "example": "start|<=|end\n---\nstart,end\n1,2\n5,3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-dataset-schema-comparator": {
+    "explanation": "Compare CSV column headers across two pasted datasets.",
+    "example": "id,name\n1,A\n---\nid,email\n1,a@example.com",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-null-token-normalizer": {
+    "explanation": "Replace explicitly configured null-like tokens with empty CSV cells.",
+    "example": "N/A|NULL|-\n---\na,b\nN/A,1\n2,NULL",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-value-mapping-replacer": {
+    "explanation": "Replace selected CSV column values according to an explicit mapping.",
+    "example": "status|open=active;closed=inactive\n---\nid,status\n1,open\n2,closed",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-header-case-collision-detector": {
+    "explanation": "Find CSV headers that collide after case-insensitive normalization.",
+    "example": "Name,name,AGE\nAda,Bob,30",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-row-completeness-ranker": {
+    "explanation": "Rank CSV rows by their count of nonempty field values.",
+    "example": "a,b,c\n1,,3\n2,4,5",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-rolling-average-column": {
+    "explanation": "Append a rolling mean column for a numeric CSV series.",
+    "example": "value|2\n---\nvalue\n2\n4\n6\n8",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-cumulative-sum-column": {
+    "explanation": "Append a running total column to a pasted CSV table.",
+    "example": "value\n---\nvalue\n2\n4\n6",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-percent-change-column": {
+    "explanation": "Append period-over-period percentage changes in a CSV column.",
+    "example": "value\n---\nvalue\n100\n120\n90",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-correlation-matrix": {
+    "explanation": "Calculate pairwise Pearson correlation for all numeric CSV columns.",
+    "example": "a,b,c\n1,2,5\n2,4,4\n3,6,3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-group-distinct-counter": {
+    "explanation": "Count unique target values within each group of CSV rows.",
+    "example": "team|user\n---\nteam,user\nA,u1\nA,u2\nA,u1\nB,u3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-numeric-z-score-reporter": {
+    "explanation": "Find CSV rows whose numeric value exceeds an absolute z-score.",
+    "example": "value|1.5\n---\nvalue\n1\n2\n3\n10",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-percentile-rank-column": {
+    "explanation": "Append percentile ranks with average ranks for ties.",
+    "example": "value\n---\nvalue\n10\n20\n20\n30",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-numerical-winsorizer": {
+    "explanation": "Clamp numeric CSV values to chosen quantile boundaries.",
+    "example": "value|0.1|0.9\n---\nvalue\n1\n2\n3\n100",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-category-transition-matrix": {
+    "explanation": "Count transitions between adjacent categories in a CSV series.",
+    "example": "status\n---\nstatus\nnew\nactive\nactive\nclosed",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "csv-text-length-summary": {
+    "explanation": "Compute min, max and average grapheme lengths in a CSV column.",
+    "example": "name\n---\nname\nAda\nBenjamin\nLi",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-merge-patch-generator": {
+    "explanation": "Generate RFC 7396 JSON Merge Patch objects from before/after JSON.",
+    "example": "{ \"a\":1,\"b\":2 }\n---\n{ \"a\":1,\"b\":3 }",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-merge-patch-applier": {
+    "explanation": "Apply an RFC 7396 merge-patch document to a pasted JSON value.",
+    "example": "{ \"a\":1,\"b\":2 }\n---\n{ \"b\":3 }",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-sensitive-key-scanner": {
+    "explanation": "Find potentially sensitive JSON key names at nested paths.",
+    "example": "{ \"apiKey\":\"demo\",\"profile\":{\"password\":\"x\",\"name\":\"Ada\"} }",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-path-redactor": {
+    "explanation": "Replace values at specified JSON Pointer paths with redaction markers.",
+    "example": "/profile/email\n---\n{\"profile\":{\"email\":\"ada@example.com\",\"name\":\"Ada\"}}",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-array-key-coverage-report": {
+    "explanation": "Report how often each object key occurs across an array of records.",
+    "example": "[{\"a\":1,\"b\":2},{\"a\":2},{\"b\":4}]",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-nested-key-frequency-counter": {
+    "explanation": "Count repeated property names throughout a JSON tree.",
+    "example": "{\"name\":\"A\",\"child\":{\"name\":\"B\",\"age\":3}}",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-unsafe-number-literal-detector": {
+    "explanation": "Detect JSON integer literals that exceed IEEE-754 safe integer precision.",
+    "example": "{\"safe\":12,\"unsafe\":9007199254740993}",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-multi-field-array-sort": {
+    "explanation": "Sort JSON object arrays by multiple ordered key and direction rules.",
+    "example": "score:desc,name:asc\n---\n[{\"name\":\"B\",\"score\":3},{\"name\":\"A\",\"score\":3},{\"name\":\"C\",\"score\":5}]",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-object-schema-drift-report": {
+    "explanation": "Compare property/type structure between two JSON example objects.",
+    "example": "{ \"id\":1,\"name\":\"A\" }\n---\n{ \"id\":\"1\",\"active\":true }",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "json-string-pattern-violation-scanner": {
+    "explanation": "Find JSON array records where a chosen string field fails a regex.",
+    "example": "email|^[^@]+@[^@]+$\n---\n[{\"email\":\"a@example.com\"},{\"email\":\"bad\"}]",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "geometric-distribution-probability-calculator": {
+    "explanation": "Compute probability that first success occurs on trial k.",
+    "example": "0.25|3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "negative-binomial-probability-calculator": {
+    "explanation": "Compute probability of the kth trial completing r successes.",
+    "example": "3|5|0.4",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "exponential-distribution-probability-calculator": {
+    "explanation": "Calculate exponential-distribution probability over a time interval.",
+    "example": "0.5|0|3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "weibull-survival-probability-calculator": {
+    "explanation": "Calculate survival probability with Weibull shape, scale and time.",
+    "example": "2|10|8",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "two-proportion-z-test-calculator": {
+    "explanation": "Calculate two-sided pooled two-proportion Z statistic and approximate p-value.",
+    "example": "60|100|45|100",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "one-proportion-z-test-calculator": {
+    "explanation": "Test observed successes against a hypothesized population proportion.",
+    "example": "55|100|0.5",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "spearman-rank-correlation-calculator": {
+    "explanation": "Calculate Spearman rank correlation with averaged tied ranks.",
+    "example": "1,2,3,4\n---\n1,3,2,4",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "kendall-rank-correlation-calculator": {
+    "explanation": "Calculate Kendall's tau-b rank correlation including ties.",
+    "example": "1,2,3,4\n---\n1,3,2,4",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "cohen-d-effect-size-calculator": {
+    "explanation": "Estimate standardized difference between two independent sample means.",
+    "example": "5|1.2|30|4|1.0|30",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "weighted-median-calculator": {
+    "explanation": "Find the median of value–weight pairs without expanding observations.",
+    "example": "1,2\n2,3\n10,1",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "matrix-inverse-calculator": {
+    "explanation": "Calculate the inverse of a small nonsingular square numeric matrix.",
+    "example": "4,7;2,6",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "linear-equation-system-solver": {
+    "explanation": "Solve a square linear system using Gaussian elimination.",
+    "example": "2,1|5\n1,-1|1",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "matrix-rank-calculator": {
+    "explanation": "Calculate numeric matrix rank by row reduction.",
+    "example": "1,2;2,4",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "euclidean-vector-distance-calculator": {
+    "explanation": "Compute straight-line Euclidean distance between two vectors.",
+    "example": "1,2,3\n---\n4,6,3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "manhattan-vector-distance-calculator": {
+    "explanation": "Compute L1 city-block distance between two numeric vectors.",
+    "example": "1,2,3\n---\n4,6,3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "polygon-shoelace-area-calculator": {
+    "explanation": "Find the planar area of a simple polygon from ordered vertices.",
+    "example": "0,0\n4,0\n4,3\n0,3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "point-in-polygon-tester": {
+    "explanation": "Check whether a point is inside, outside or on the boundary of a polygon.",
+    "example": "2,1\n---\n0,0\n4,0\n4,3\n0,3",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "initial-great-circle-bearing-calculator": {
+    "explanation": "Calculate initial geographic bearing from one coordinate to another.",
+    "example": "10.8231,106.6297\n---\n21.0278,105.8342",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "linear-interpolation-calculator": {
+    "explanation": "Linearly interpolate y at x between two known points.",
+    "example": "0|10|100|30|5",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "compound-annual-growth-rate-calculator": {
+    "explanation": "Calculate CAGR from starting value, ending value and number of years.",
+    "example": "1000|1500|5",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "net-promoter-score-calculator": {
+    "explanation": "Calculate net promoter score from promoter, passive and detractor counts.",
+    "example": "30|50|20",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "customer-satisfaction-score-calculator": {
+    "explanation": "Calculate satisfied response rate from 1–5 customer ratings.",
+    "example": "4,5,3,4,2,5",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "saas-rule-of-forty-calculator": {
+    "explanation": "Add revenue growth and EBITDA margin to evaluate Rule of Forty.",
+    "example": "0.25|0.18",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "customer-acquisition-payback-calculator": {
+    "explanation": "Calculate months to recover CAC using monthly gross margin per customer.",
+    "example": "400|60|0.8",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "saas-burn-multiple-calculator": {
+    "explanation": "Compare cash burn against net new ARR.",
+    "example": "150000|50000",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "inventory-safety-stock-calculator": {
+    "explanation": "Estimate safety stock from daily demand deviation, lead time and Z score.",
+    "example": "12|7|1.65",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "forecast-mean-absolute-percentage-error": {
+    "explanation": "Calculate MAPE between actual and forecast series.",
+    "example": "100,120,80\n---\n110,100,90",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "forecast-tracking-signal-calculator": {
+    "explanation": "Compute forecast bias tracking signal using cumulative error and MAD.",
+    "example": "100,120,80\n---\n110,100,90",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "inventory-gmroi-calculator": {
+    "explanation": "Calculate gross margin return on average inventory investment.",
+    "example": "40000|10000",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "marketing-lead-velocity-rate-calculator": {
+    "explanation": "Measure month-over-month growth in qualified sales leads.",
+    "example": "120|100",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "project-critical-path-calculator": {
+    "explanation": "Compute earliest completion, slack and critical path from a task dependency DAG.",
+    "example": "A|3|\nB|2|A\nC|4|A\nD|1|B,C",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "biweekly-pay-period-generator": {
+    "explanation": "Generate consecutive 14-day pay period start/end dates.",
+    "example": "2026-11-16|4",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "nth-business-day-of-month-finder": {
+    "explanation": "Find a specified ordinal Monday–Friday business day of a month.",
+    "example": "2026-11|5",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "monthly-working-days-report": {
+    "explanation": "Count Monday–Friday working days for consecutive months from a chosen start.",
+    "example": "2026|11",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "overnight-shift-wage-calculator": {
+    "explanation": "Calculate overnight shift pay with enhanced premium for selected hours.",
+    "example": "22:00|06:00|18|1.5|00:00|06:00",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "meeting-attendee-cost-calculator": {
+    "explanation": "Estimate meeting cost from minutes and attendee counts with hourly rates.",
+    "example": "60\n---\n2|45\n1|80",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "date-range-gap-finder": {
+    "explanation": "Find uncovered date intervals between pasted scheduled date ranges.",
+    "example": "2026-11-01|2026-11-30\n---\n2026-11-05|2026-11-08\n2026-11-10|2026-11-20",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "cron-next-runs-calculator": {
+    "explanation": "Preview upcoming UTC execution times for standard five-field cron expressions.",
+    "example": "0 9 * * 1\n---\n2026-11-16T00:00",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "fiscal-quarter-boundary-finder": {
+    "explanation": "Return current fiscal quarter start and end dates for a custom fiscal year.",
+    "example": "2026-11-17|4",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "calendar-event-ics-text-builder": {
+    "explanation": "Generate escaped iCalendar VEVENT text for a typed local-time appointment.",
+    "example": "2026-12-01T09:00|2026-12-01T10:00|Team Sync|Discuss plans",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "http-accept-header-quality-parser": {
+    "explanation": "Sort MIME preferences using quality weights from an HTTP Accept header.",
+    "example": "text/html;q=0.8, application/json, */*;q=0.1",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "http-cache-freshness-evaluator": {
+    "explanation": "Evaluate cache freshness using max-age, response age and elapsed seconds.",
+    "example": "max-age=3600|1200|100",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "http-conditional-etag-tester": {
+    "explanation": "Check whether a supplied If-None-Match value matches an ETag for conditional HTTP requests.",
+    "example": "W/\"abc\"|W/\"abc\"|GET",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "http-range-request-parser": {
+    "explanation": "Convert valid HTTP byte ranges into concrete start/end offsets for an entity size.",
+    "example": "bytes=0-499,1000-1499|2000",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "http-permissions-policy-inspector": {
+    "explanation": "Summarize Permissions-Policy directives and their declared allowlists.",
+    "example": "geolocation=(), camera=(self), microphone=(\"https://app.test\")",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "html-landmark-accessibility-auditor": {
+    "explanation": "Audit pasted HTML landmark duplication and missing main region.",
+    "example": "<main><nav></nav><main></main></main>",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "css-variable-dependency-resolver": {
+    "explanation": "Resolve CSS custom-property chains and report missing references or cycles.",
+    "example": "--primary: #222;\n--accent: var(--primary);\n--button: var(--accent);",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "ipv4-cidr-overlap-checker": {
+    "explanation": "Check whether two IPv4 CIDR subnets overlap and provide the intersection.",
+    "example": "192.168.1.0/24\n---\n192.168.1.128/25",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "ipv4-range-to-cidr-calculator": {
+    "explanation": "Summarize an inclusive IPv4 start-end address range into minimal CIDR blocks.",
+    "example": "192.168.1.10|192.168.1.20",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  },
+  "network-port-range-merger": {
+    "explanation": "Merge overlapping or adjacent TCP/UDP port number ranges.",
+    "example": "80,443,1000-1005,1003-1010",
+    "limitation": "Results depend on the input format, precision and explicitly documented assumptions. Review values before business or security decisions.",
+    "workflows": [
+      "Enter or paste your text or numeric values following the example.",
+      "Review the locally generated results and copy any output you need."
+    ]
+  }
+}
