@@ -170,15 +170,6 @@
     ],
     "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
   },
-  "vector3-angle-between": {
-    "explanation": "3D Vector Angle computes degrees from Ax, Ay, Az, Bx, By, Bz. Enter all numerical parameters in the same order as the sample and read the labeled result.",
-    "example": "1|0|0|0|1|0",
-    "workflows": [
-      "Enter 6 finite numeric values in this order: Ax, Ay, Az, Bx, By, Bz. Separate inputs with a vertical bar (|).",
-      "Load the example 1|0|0|0|1|0, replace with your own inputs, and check the unit (degrees) before copying."
-    ],
-    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
-  },
   "projectile-range-level-ground": {
     "explanation": "Projectile Range on Level Ground computes meters from launch speed m/s, launch angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
     "example": "20|45",
