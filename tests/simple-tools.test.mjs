@@ -40,21 +40,22 @@ const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
 const release=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
 
 test("All 473 distinct queued browser tools remain inside the weekly release queue",()=>{
- assert.equal(queue.length,473);
+ assert.equal(queue.length,573);
  assert.equal(queue.filter(x=>x.batch===1).length,89);
  assert.equal(queue.filter(x=>x.batch===2).length,50);
  assert.equal(queue.filter(x=>x.batch===3).length,50);
  assert.equal(queue.filter(x=>x.batch===4).length,97);
  assert.equal(queue.filter(x=>x.batch===5).length,87);
  assert.equal(queue.filter(x=>x.batch===6).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,473);
+ assert.equal(queue.filter(x=>x.batch===7).length,100);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,573);
  const banned=/(?:^|-)(?:pdf|image|file|upload|barcode|qr)(?:-|$)/i;
  for(const q of queue){
    assert.doesNotMatch(q.slug,banned);
    assert.match(q.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
    assert.ok(q.name&&q.category&&q.example&&q.metaDescription);
    assert.ok(["text","developer","security","calculator","converter"].includes(q.category));
-   assert.ok(q.week>=1&&q.week<=48);
+   assert.ok(q.week>=1&&q.week<=58);
  }
  assert.ok(Array.isArray(release.published));
  assert.equal(new Set(release.published).size,release.published.length);
