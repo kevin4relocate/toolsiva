@@ -156,20 +156,20 @@ test("Graph/code inspections and date tools return non-overlapping specialist re
  assert.match(run("shift-roster-coverage-matrix","09:00|12:00\n---\nA|09:00|10:00"),/interval,staff_at_start/);
  assert.match(run("annual-working-hours-estimator","2027|40|15"),/hours:/);
 });
-test("Full schedule preserves queue order and caps publication at 10 for 78 weeks",()=>{
+test("Full schedule preserves queue order and caps publication at 10 for 88 weeks",()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave9-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
   fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  assert.equal(Math.ceil(queue.length/10),78);
-  for(let i=0;i<78;i++){
+  assert.equal(Math.ceil(queue.length/10),88);
+  for(let i=0;i<88;i++){
    const r=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+7*i,2))});
    assert.equal(r.released.length,Math.min(10,queue.length-10*i),"week "+(i+1));
   }
   const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
   assert.deepEqual(state.published,queue.map(x=>x.slug));
-  assert.equal(state.history.length,78);
+  assert.equal(state.history.length,88);
   assert.equal(state.history.at(-1).slugs.length,3);
   assert.equal(state.published[673],"dna-reverse-complement-tool");
  }finally{fs.rmSync(root,{recursive:true,force:true});}
