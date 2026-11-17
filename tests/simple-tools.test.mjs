@@ -69,8 +69,8 @@ import {releaseSimpleTools} from "../scripts/release-simple-tools.mjs";
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
 const release=JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json","utf8"));
 
-test("All 773 distinct queued browser tools remain inside the weekly release queue",()=>{
- assert.equal(queue.length,773);
+test("All 873 distinct queued browser tools remain inside the weekly release queue",()=>{
+ assert.equal(queue.length,873);
  assert.equal(queue.filter(x=>x.batch===1).length,89);
  assert.equal(queue.filter(x=>x.batch===2).length,50);
  assert.equal(queue.filter(x=>x.batch===3).length,50);
@@ -80,7 +80,7 @@ test("All 773 distinct queued browser tools remain inside the weekly release que
  assert.equal(queue.filter(x=>x.batch===7).length,100);
  assert.equal(queue.filter(x=>x.batch===8).length,100);
  assert.equal(queue.filter(x=>x.batch===9).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,773);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,873);
  const banned=/(?:^|-)(?:pdf|image|file|upload|barcode|qr)(?:-|$)/i;
  for(const q of queue){
    assert.doesNotMatch(q.slug,banned);
