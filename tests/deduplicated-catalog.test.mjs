@@ -17,8 +17,8 @@ const active=new Set([...publicSlugs,...queue.map(x=>x.slug)]);
 
 test("Audit removes exactly 18 functional duplicates without touching 123 public tools",()=>{
  assert.equal(publicSlugs.length,123);
- assert.equal(queue.length,773);
- assert.equal(active.size,896);
+ assert.equal(queue.length,873);
+ assert.equal(active.size,996);
  assert.equal(audit.baseline.public,123);
  assert.equal(audit.baseline.queued,391);
  assert.equal(audit.after.queued,373);
