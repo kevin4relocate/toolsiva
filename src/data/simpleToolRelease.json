@@ -1,6 +1,7 @@
 {
   "startDate": "2026-11-23",
-  "weeklyLimit": 10,
+  "weeklyLimit": 20,
   "published": [],
-  "history": []
+  "history": [],
+  "perSlotLimit": 10
 }
