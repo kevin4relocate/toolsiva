@@ -51,7 +51,8 @@
     "test:wave8": "node --test tests/wave8-tools.test.mjs",
     "test:wave9": "node --test tests/wave9-tools.test.mjs",
     "test:wave10": "node --test tests/wave10-tools.test.mjs",
-    "test:wave11": "node --test tests/wave11-tools.test.mjs"
+    "test:wave11": "node --test tests/wave11-tools.test.mjs",
+    "catalog:audit": "node scripts/verify-catalog-readiness.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
