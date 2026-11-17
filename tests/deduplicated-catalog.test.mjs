@@ -15,16 +15,16 @@ const source=fs.readFileSync("src/data/tools.ts","utf8");
 const publicSlugs=[...source.matchAll(/(?:["']slug["']|slug)\s*:\s*["']([^"']+)["']/g)].map(x=>x[1]);
 const active=new Set([...publicSlugs,...queue.map(x=>x.slug)]);
 
-test("Audit removes 23 functional duplicates without touching 123 public tools",()=>{
+test("Audit removes 24 functional duplicates without touching 123 public tools",()=>{
  assert.equal(publicSlugs.length,123);
- assert.equal(queue.length,968);
- assert.equal(active.size,1091);
+ assert.equal(queue.length,967);
+ assert.equal(active.size,1090);
  assert.equal(audit.baseline.public,123);
  assert.equal(audit.baseline.queued,391);
- assert.equal(audit.after.queued,968);
- assert.equal(audit.after.total,1091);
- assert.equal(audit.retired.length,23);
- assert.equal(new Set(audit.retired.map(x=>x.slug)).size,23);
+ assert.equal(audit.after.queued,967);
+ assert.equal(audit.after.total,1090);
+ assert.equal(audit.retired.length,24);
+ assert.equal(new Set(audit.retired.map(x=>x.slug)).size,24);
  for(const entry of audit.retired){
   assert.ok(!active.has(entry.slug),"Retired tool remained available: "+entry.slug);
   assert.ok(active.has(entry.keptAs),"Canonical tool not available: "+entry.keptAs);
