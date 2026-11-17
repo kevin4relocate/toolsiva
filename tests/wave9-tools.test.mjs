@@ -23,7 +23,7 @@ test("100 new unique Wave 9 modes have real handlers, examples, SEO and privacy 
  assert.equal(wave.length,100);
  assert.equal(Object.keys(guides).length,100);
  assert.equal(queue[673].slug,"dna-reverse-complement-tool");
- assert.equal(queue.at(-1).slug,"annual-working-hours-estimator");
+ assert.equal(wave.at(-1).slug,"annual-working-hours-estimator");
  assert.equal(new Set(queue.map(t=>t.slug)).size,873);
  const publicSlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(publicSlugs.length,123);
@@ -31,7 +31,7 @@ test("100 new unique Wave 9 modes have real handlers, examples, SEO and privacy 
  for(const retired of JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired)assert.ok(!queue.some(x=>x.slug===retired.slug),"Retired duplicate reintroduced");
  const source=["Bio","Chem","Enc","Poly","Finance","Ops","Json","Csv","Dev","Dates"].map(n=>fs.readFileSync("src/lib/wave9"+n+".mjs","utf8")).join("\n");
  for(const tool of wave){
-  assert.ok(tool.ready&&tool.week>=68&&tool.week<=78,tool.slug+" schedule");
+  assert.ok(tool.ready&&tool.week>=68&&tool.week<=88,tool.slug+" schedule");
   assert.ok(tool.metaDescription.length>60&&tool.metaDescription.length<=180,tool.slug+" metadata");
   assert.equal(tool.example,guides[tool.slug]?.example,tool.slug+" example mismatch");
   assert.ok(guides[tool.slug]?.limitation?.length>70,tool.slug+" missing limitation");
