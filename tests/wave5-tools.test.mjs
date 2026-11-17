@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -32,7 +33,7 @@ test("All 100 appended tools are unique, documented, safe, executable from sampl
  const source=["wave5Text","wave5MarkdownData","wave5JsonDates","wave5MathBusiness","wave5Web"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const item of newTools){
   assert.ok(item.ready,item.slug);
-  assert.ok(item.week>=29&&item.week<=38,item.slug+" scheduled week");
+  assert.ok(item.week===Math.floor(queue.findIndex(z=>z.slug===item.slug)/20)+1,item.slug+" scheduled week");
   assert.ok(item.metaDescription.length>=60&&item.metaDescription.length<=180,item.slug+" meta length");
   assert.equal(item.example,guides[item.slug]?.example,item.slug+" guide example");
   assert.ok(guides[item.slug]?.limitation.length>=20,item.slug+" limitation");
@@ -47,7 +48,7 @@ test("All 100 appended tools are unique, documented, safe, executable from sampl
  assert.equal(new Set(state.published).size,state.published.length);
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  assert.ok(state.history.every(event=>Array.isArray(event.slugs)&&event.slugs.length>0&&event.slugs.length<=10));
- assert.equal(state.weeklyLimit,10);
+ assert.equal(state.weeklyLimit,20);
 });
 
 test("Text and Markdown transformations return meaningful output",()=>{
@@ -133,26 +134,13 @@ test("CSS, HTTP, email, JWT and DNS tools return useful offline output",()=>{
  assert.match(run("dns-mx-record-priority-sorter","20 mx2.example.com\n10 mx1.example.com"),/^10 mx1/);
 });
 
-test("373 deduplicated tools release in order over 38 Monday slots",()=>{
- const phase=queue.filter(x=>x.batch<=5);
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave5-dedup-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const weeks=Math.ceil(phase.length/10);
-  assert.equal(weeks,38);
-  for(let i=0;i<weeks;i++){
-   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(result.released.length,Math.min(10,phase.length-i*10),"week "+(i+1));
-  }
-  const out=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(out.published,phase.map(x=>x.slug));
-  assert.equal(out.history.length,weeks);
-  assert.equal(out.history.at(-1).slugs.length,3);
-  assert.equal(out.published[phase.findIndex(x=>x.batch===5)],"line-starts-with-filter");
-  assert.equal(out.published.at(-1),"dns-mx-record-priority-sorter");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 5 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,5);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[phase.findIndex(x=>x.batch===5)],"line-starts-with-filter");
+ assert.equal(state.published.at(-1),"dns-mx-record-priority-sorter");
 });
 
 test("Browser processing engines do not upload, call APIs or execute user code",()=>{
