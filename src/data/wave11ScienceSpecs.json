@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "moles-from-mass-molar-mass",
+    "name": "Moles from Mass and Molar Mass",
+    "example": "18|18",
+    "expression": "a[0]/a[1]",
+    "unit": "mol",
+    "inputs": "mass grams | molar mass g/mol",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "mass-from-moles-molar-mass",
+    "name": "Mass from Moles and Molar Mass",
+    "example": "2|18",
+    "expression": "a[0]*a[1]",
+    "unit": "grams",
+    "inputs": "amount mol | molar mass g/mol",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "solution-volume-percent",
+    "name": "Solution Volume Percent",
+    "example": "20|200",
+    "expression": "100*a[0]/a[1]",
+    "unit": "percent",
+    "inputs": "solute volume mL | final solution volume mL",
+    "valid": "a[0]>=0&&a[1]>0&&a[0]<=a[1]",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "dilute-water-ppm-mg-l",
+    "name": "Approximate Water Concentration in ppm",
+    "example": "10|2",
+    "expression": "a[0]/a[1]",
+    "unit": "ppm approx",
+    "inputs": "dissolved mass mg | water solution volume L",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "ideal-gas-density-calculator",
+    "name": "Ideal Gas Density",
+    "example": "101325|0.02897|293.15",
+    "expression": "a[0]*a[1]/(8.314462618*a[2])",
+    "unit": "kg/m³",
+    "inputs": "pressure Pa | molar mass kg/mol | Kelvin",
+    "valid": "a.every(x=>x>0)",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "dalton-partial-pressure",
+    "name": "Dalton Partial Pressure",
+    "example": "101325|0.2",
+    "expression": "a[0]*a[1]",
+    "unit": "pascals",
+    "inputs": "total pressure pascals | species mole fraction",
+    "valid": "a[0]>=0&&a[1]>=0&&a[1]<=1",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "mole-fraction-two-components",
+    "name": "Mole Fraction of Component A",
+    "example": "2|3",
+    "expression": "a[0]/(a[0]+a[1])",
+    "unit": "ratio",
+    "inputs": "component A mol | component B mol",
+    "valid": "a.every(x=>x>=0)&&a[0]+a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "ideal-gas-rms-molecular-speed",
+    "name": "Ideal Gas RMS Molecular Speed",
+    "example": "300|0.02897",
+    "expression": "Math.sqrt(3*8.314462618*a[0]/a[1])",
+    "unit": "m/s",
+    "inputs": "gas temperature Kelvin | molar mass kg/mol",
+    "valid": "a.every(x=>x>0)",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "gas-molecule-mean-kinetic-energy",
+    "name": "Gas Molecule Mean Translational Energy",
+    "example": "300",
+    "expression": "1.5*1.380649e-23*a[0]",
+    "unit": "joules per molecule",
+    "inputs": "gas temperature Kelvin",
+    "valid": "a[0]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "coulomb-electric-force-magnitude",
+    "name": "Electrostatic Force Magnitude",
+    "example": "0.000001|-0.000001|0.1",
+    "expression": "8.9875517923e9*Math.abs(a[0]*a[1])/a[2]**2",
+    "unit": "newtons",
+    "inputs": "charge Q1 coulombs | charge Q2 coulombs | separation meters",
+    "valid": "a[2]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "point-charge-electric-field",
+    "name": "Point Charge Electric Field Magnitude",
+    "example": "0.000001|0.1",
+    "expression": "8.9875517923e9*Math.abs(a[0])/a[1]**2",
+    "unit": "N/C",
+    "inputs": "point charge coulombs | radial distance meters",
+    "valid": "a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "point-charge-electric-potential",
+    "name": "Point Charge Electric Potential",
+    "example": "0.000001|0.1",
+    "expression": "8.9875517923e9*a[0]/a[1]",
+    "unit": "volts",
+    "inputs": "point charge coulombs | radial distance meters",
+    "valid": "a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "resistive-wire-resistance",
+    "name": "Wire Resistance from Resistivity",
+    "example": "0.0000000172|10|0.000001",
+    "expression": "a[0]*a[1]/a[2]",
+    "unit": "ohms",
+    "inputs": "material resistivity ohm m | wire length meters | cross section m²",
+    "valid": "a[0]>=0&&a[1]>0&&a[2]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "electric-conductance-from-resistance",
+    "name": "Electrical Conductance",
+    "example": "5",
+    "expression": "1/a[0]",
+    "unit": "siemens",
+    "inputs": "resistance ohms",
+    "valid": "a[0]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "photon-energy-from-wavelength",
+    "name": "Photon Energy from Wavelength",
+    "example": "500",
+    "expression": "6.62607015e-34*299792458/(a[0]*1e-9*1.602176634e-19)",
+    "unit": "eV",
+    "inputs": "vacuum wavelength nanometers",
+    "valid": "a[0]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "photon-frequency-from-wavelength",
+    "name": "Photon Frequency from Wavelength",
+    "example": "500",
+    "expression": "299792458/(a[0]*1e-9)",
+    "unit": "hertz",
+    "inputs": "vacuum wavelength nanometers",
+    "valid": "a[0]>0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "thin-lens-focal-length",
+    "name": "Thin Lens Focal Length",
+    "example": "30|60",
+    "expression": "1/(1/a[0]+1/a[1])",
+    "unit": "distance units",
+    "inputs": "object distance | image distance",
+    "valid": "a[0]!==0&&a[1]!==0&&Math.abs(1/a[0]+1/a[1])>1e-15",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "thin-lens-lateral-magnification",
+    "name": "Thin Lens Lateral Magnification",
+    "example": "30|60",
+    "expression": "-a[1]/a[0]",
+    "unit": "ratio",
+    "inputs": "object distance | image distance",
+    "valid": "a[0]!==0",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "snells-law-refraction-angle",
+    "name": "Snell's Law Refracted Angle",
+    "example": "1|1.5|30",
+    "expression": "Math.asin(a[0]*Math.sin(a[2]*Math.PI/180)/a[1])*180/Math.PI",
+    "unit": "degrees",
+    "inputs": "incident index n1 | transmitted index n2 | incident angle degrees",
+    "valid": "a[0]>0&&a[1]>0&&a[2]>=0&&a[2]<=90&&a[0]*Math.sin(a[2]*Math.PI/180)<=a[1]+1e-12",
+    "group": "Chemistry, electronics and optics"
+  },
+  {
+    "slug": "total-internal-reflection-critical-angle",
+    "name": "Critical Angle for Total Internal Reflection",
+    "example": "1.5|1",
+    "expression": "Math.asin(a[1]/a[0])*180/Math.PI",
+    "unit": "degrees",
+    "inputs": "higher refractive index | lower refractive index",
+    "valid": "a[0]>a[1]&&a[1]>0",
+    "group": "Chemistry, electronics and optics"
+  }
+]
