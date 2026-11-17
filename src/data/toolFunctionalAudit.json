@@ -9,8 +9,8 @@
   },
   "after": {
     "public": 123,
-    "queued": 968,
-    "total": 1091,
+    "queued": 967,
+    "total": 1090,
     "weeklyLimit": 10
   },
   "retired": [
@@ -156,6 +156,13 @@
       "name": "Revenue Growth Between Periods",
       "originalPosition": 854,
       "reason": "Growth percentage for two positive revenues is identical to the existing percentage-change calculation."
+    },
+    {
+      "slug": "vector3-angle-between",
+      "keptAs": "vector-angle-calculator",
+      "name": "3D Vector Angle",
+      "originalPosition": 887,
+      "reason": "3D angle between two nonzero vectors is already computed by vector-angle-calculator, which supports any equal vector dimension from 2 through 100, including 3D and signed components."
     }
   ],
   "keptDistinct": [
@@ -237,5 +244,16 @@
       "revenue-growth-from-two-periods"
     ],
     "summary": "Removed five additional overlap utilities before first scheduled publication. Kept more general existing tools, preserved exact 10/week release cadence and no early publication."
+  },
+  "semanticAudit": {
+    "auditedAt": "2026-11-17",
+    "queuedBefore": 968,
+    "queuedAfter": 967,
+    "totalAfter": 1090,
+    "newFunctionalDuplicatesRetired": [
+      "vector3-angle-between"
+    ],
+    "reviewMethod": "Reviewed 1,090 catalog items, high lexical-similarity pairs, source equations, input domains, output units, and generalized versus specialized coverage.",
+    "note": "Identical algebraic expressions across unrelated physical/business domains are not automatically equivalent features. Reversible transformations and different metrics also remain separate."
   }
 }
