@@ -19,7 +19,7 @@ const engines=[w9Bio,w9Chem,w9Enc,w9Poly,w9Finance,w9Ops,w9Json,w9Csv,w9Dev,w9Da
 const run=(slug,input)=>{for(const handler of engines){const value=handler(slug,input);if(value!==null)return value;}throw Error("Missing engine "+slug);};
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8")),wave=queue.filter(x=>x.batch===9);
 test("100 new unique Wave 9 modes have real handlers, examples, SEO and privacy constraints",()=>{
- assert.equal(queue.length,773);
+ assert.equal(queue.length,873);
  assert.equal(wave.length,100);
  assert.equal(Object.keys(guides).length,100);
  assert.equal(queue[673].slug,"dna-reverse-complement-tool");
@@ -27,7 +27,7 @@ test("100 new unique Wave 9 modes have real handlers, examples, SEO and privacy 
  assert.equal(new Set(queue.map(t=>t.slug)).size,773);
  const publicSlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(publicSlugs.length,123);
- assert.equal(new Set([...queue.map(t=>t.slug),...publicSlugs]).size,896);
+ assert.equal(new Set([...queue.map(t=>t.slug),...publicSlugs]).size,996);
  for(const retired of JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired)assert.ok(!queue.some(x=>x.slug===retired.slug),"Retired duplicate reintroduced");
  const source=["Bio","Chem","Enc","Poly","Finance","Ops","Json","Csv","Dev","Dates"].map(n=>fs.readFileSync("src/lib/wave9"+n+".mjs","utf8")).join("\n");
  for(const tool of wave){
