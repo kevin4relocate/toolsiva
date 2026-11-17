@@ -13934,5 +13934,37 @@
       "spherical cap volume online",
       "free spherical cap volume"
     ]
+  },
+  {
+    "slug": "trapezoid-midsegment-length",
+    "name": "Trapezoid Midsegment Length",
+    "category": "calculator",
+    "week": 88,
+    "batch": 10,
+    "ready": true,
+    "shortDescription": "Trapezoid Midsegment Length computes a geometric value from typed numeric parameters.",
+    "metaDescription": "Calculate trapezoid midsegment length instantly with a simple browser formula and clearly labeled results. No upload, registration or API required.",
+    "keywords": [
+      "trapezoid midsegment length",
+      "free trapezoid midsegment length",
+      "trapezoid midsegment length online"
+    ],
+    "example": "8|4"
+  },
+  {
+    "slug": "hemisphere-surface-area-total",
+    "name": "Hemisphere Total Surface Area",
+    "category": "calculator",
+    "week": 88,
+    "batch": 10,
+    "ready": true,
+    "shortDescription": "Hemisphere Total Surface Area computes a geometric value from typed numeric parameters.",
+    "metaDescription": "Calculate hemisphere total surface area instantly with a simple browser formula and clearly labeled results. No upload, registration or API required.",
+    "keywords": [
+      "hemisphere total surface area",
+      "free hemisphere total surface area",
+      "hemisphere total surface area online"
+    ],
+    "example": "3"
   }
 ]
