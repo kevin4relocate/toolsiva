@@ -24,7 +24,7 @@ test("100 new unique Wave 9 modes have real handlers, examples, SEO and privacy 
  assert.equal(Object.keys(guides).length,100);
  assert.equal(queue[673].slug,"dna-reverse-complement-tool");
  assert.equal(queue.at(-1).slug,"annual-working-hours-estimator");
- assert.equal(new Set(queue.map(t=>t.slug)).size,773);
+ assert.equal(new Set(queue.map(t=>t.slug)).size,873);
  const publicSlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(publicSlugs.length,123);
  assert.equal(new Set([...queue.map(t=>t.slug),...publicSlugs]).size,996);
