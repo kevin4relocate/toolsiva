@@ -220,3 +220,12 @@ test("All ten wave-six engines use no remote requests, file uploads or eval",()=
  for(const name of ["w6Text","w6Time","w6Probability","w6Math","w6Finance","w6Business","w6CsvTools","w6ConfigTools","w6WebTools","w6Network"])
   assert.ok(workspace.includes(name+"(mode,content)"),name+" not mounted");
 });
+
+test("Canonical vector angle supports 3D signed vectors formerly served by the retired tool",()=>{
+ const angle3d=w6Math("vector-angle-calculator","1,0,0\n---\n0,1,0");
+ assert.match(angle3d,/90/);
+ const opposite=w6Math("vector-angle-calculator","-1,0,0\n---\n1,0,0");
+ assert.match(opposite,/180/);
+ const queued=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
+ assert.ok(!queued.some(x=>x.slug==="vector3-angle-between"));
+});
