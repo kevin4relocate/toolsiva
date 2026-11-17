@@ -10,7 +10,7 @@ export function w11Statistics(slug,input){switch(slug){
     const a=w11Parse(input,4,"Normal Mean Confidence Bounds");
     if(!(a[1]>=0&&Number.isSafeInteger(a[2])&&a[2]>=2&&a[3]>0))throw Error("Normal Mean Confidence Bounds input out of domain. Expected sample mean | standard deviation | sample size | normal z critical value");
     const value=a[3]*a[1]/Math.sqrt(a[2]);
-    return "Normal Mean Confidence Bounds:\\nLower: "+w11Format(a[0]-value)+"\\nUpper: "+w11Format(a[0]+value)+"\\nMargin of error: "+w11Format(value);
+    return "Normal Mean Confidence Bounds:\nLower: "+w11Format(a[0]-value)+"\nUpper: "+w11Format(a[0]+value)+"\nMargin of error: "+w11Format(value);
   }
  case "adjusted-r-squared-calculator": {
     const a=w11Parse(input,3,"Adjusted R Squared");
