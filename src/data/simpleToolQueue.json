@@ -12366,5 +12366,1605 @@
     "example": "2027|40|15",
     "ready": true,
     "batch": 9
+  },
+  {
+    "slug": "rectangle-diagonal-calculator",
+    "name": "Rectangle Diagonal",
+    "example": "3|4",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Rectangle Diagonal: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free rectangle diagonal with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "rectangle diagonal",
+      "rectangle diagonal online",
+      "free rectangle diagonal"
+    ]
+  },
+  {
+    "slug": "rhombus-area-from-diagonals",
+    "name": "Rhombus Area",
+    "example": "6|8",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Rhombus Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free rhombus area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "rhombus area",
+      "rhombus area online",
+      "free rhombus area"
+    ]
+  },
+  {
+    "slug": "parallelogram-area-from-vectors",
+    "name": "Parallelogram Vector Area",
+    "example": "3|0|0|4",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Parallelogram Vector Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free parallelogram vector area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "parallelogram vector area",
+      "parallelogram vector area online",
+      "free parallelogram vector area"
+    ]
+  },
+  {
+    "slug": "triangle-area-heron-formula",
+    "name": "Triangle Area by Heron's Formula",
+    "example": "3|4|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Triangle Area by Heron's Formula: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free triangle area by heron's formula with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "triangle area by heron's formula",
+      "triangle area by heron's formula online",
+      "free triangle area by heron's formula"
+    ]
+  },
+  {
+    "slug": "triangle-inradius-calculator",
+    "name": "Triangle Inradius",
+    "example": "3|4|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Triangle Inradius: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free triangle inradius with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "triangle inradius",
+      "triangle inradius online",
+      "free triangle inradius"
+    ]
+  },
+  {
+    "slug": "triangle-circumradius-calculator",
+    "name": "Triangle Circumradius",
+    "example": "3|4|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Triangle Circumradius: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free triangle circumradius with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "triangle circumradius",
+      "triangle circumradius online",
+      "free triangle circumradius"
+    ]
+  },
+  {
+    "slug": "regular-polygon-interior-angle",
+    "name": "Regular Polygon Interior Angle",
+    "example": "6",
+    "category": "calculator",
+    "batch": 10,
+    "week": 78,
+    "ready": true,
+    "shortDescription": "Regular Polygon Interior Angle: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free regular polygon interior angle with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "regular polygon interior angle",
+      "regular polygon interior angle online",
+      "free regular polygon interior angle"
+    ]
+  },
+  {
+    "slug": "regular-polygon-area-calculator",
+    "name": "Regular Polygon Area",
+    "example": "6|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Regular Polygon Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free regular polygon area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "regular polygon area",
+      "regular polygon area online",
+      "free regular polygon area"
+    ]
+  },
+  {
+    "slug": "ellipse-area-calculator",
+    "name": "Ellipse Area",
+    "example": "3|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Ellipse Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free ellipse area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "ellipse area",
+      "ellipse area online",
+      "free ellipse area"
+    ]
+  },
+  {
+    "slug": "ellipse-eccentricity-calculator",
+    "name": "Ellipse Eccentricity",
+    "example": "5|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Ellipse Eccentricity: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free ellipse eccentricity with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "ellipse eccentricity",
+      "ellipse eccentricity online",
+      "free ellipse eccentricity"
+    ]
+  },
+  {
+    "slug": "sphere-volume-calculator",
+    "name": "Sphere Volume",
+    "example": "3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Sphere Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free sphere volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "sphere volume",
+      "sphere volume online",
+      "free sphere volume"
+    ]
+  },
+  {
+    "slug": "sphere-surface-area-calculator",
+    "name": "Sphere Surface Area",
+    "example": "3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Sphere Surface Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free sphere surface area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "sphere surface area",
+      "sphere surface area online",
+      "free sphere surface area"
+    ]
+  },
+  {
+    "slug": "cone-volume-calculator",
+    "name": "Cone Volume",
+    "example": "3|4",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Cone Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free cone volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "cone volume",
+      "cone volume online",
+      "free cone volume"
+    ]
+  },
+  {
+    "slug": "cone-lateral-area-calculator",
+    "name": "Cone Lateral Area",
+    "example": "3|4",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Cone Lateral Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free cone lateral area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "cone lateral area",
+      "cone lateral area online",
+      "free cone lateral area"
+    ]
+  },
+  {
+    "slug": "frustum-volume-calculator",
+    "name": "Frustum Volume",
+    "example": "4|2|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Frustum Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free frustum volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "frustum volume",
+      "frustum volume online",
+      "free frustum volume"
+    ]
+  },
+  {
+    "slug": "torus-volume-calculator",
+    "name": "Torus Volume",
+    "example": "5|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Torus Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free torus volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "torus volume",
+      "torus volume online",
+      "free torus volume"
+    ]
+  },
+  {
+    "slug": "pyramid-volume-calculator",
+    "name": "Pyramid Volume",
+    "example": "20|6",
+    "category": "calculator",
+    "batch": 10,
+    "week": 79,
+    "ready": true,
+    "shortDescription": "Pyramid Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free pyramid volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "pyramid volume",
+      "pyramid volume online",
+      "free pyramid volume"
+    ]
+  },
+  {
+    "slug": "prism-volume-calculator",
+    "name": "Prism Volume",
+    "example": "20|6",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Prism Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free prism volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "prism volume",
+      "prism volume online",
+      "free prism volume"
+    ]
+  },
+  {
+    "slug": "circular-arc-length-calculator",
+    "name": "Circular Arc Length",
+    "example": "3|60",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Circular Arc Length: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free circular arc length with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "circular arc length",
+      "circular arc length online",
+      "free circular arc length"
+    ]
+  },
+  {
+    "slug": "circular-sector-area-calculator",
+    "name": "Circular Sector Area",
+    "example": "3|60",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Circular Sector Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free circular sector area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "circular sector area",
+      "circular sector area online",
+      "free circular sector area"
+    ]
+  },
+  {
+    "slug": "circle-chord-length-calculator",
+    "name": "Circle Chord Length",
+    "example": "3|60",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Circle Chord Length: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free circle chord length with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "circle chord length",
+      "circle chord length online",
+      "free circle chord length"
+    ]
+  },
+  {
+    "slug": "circle-segment-area-calculator",
+    "name": "Circle Segment Area",
+    "example": "3|60",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Circle Segment Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free circle segment area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "circle segment area",
+      "circle segment area online",
+      "free circle segment area"
+    ]
+  },
+  {
+    "slug": "distance-between-points-3d",
+    "name": "3D Point Distance",
+    "example": "1|2|3|4|6|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "3D Point Distance: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free 3d point distance with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "3d point distance",
+      "3d point distance online",
+      "free 3d point distance"
+    ]
+  },
+  {
+    "slug": "slope-between-two-points",
+    "name": "Line Slope Between Two Points",
+    "example": "1|2|3|6",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Line Slope Between Two Points: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free line slope between two points with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "line slope between two points",
+      "line slope between two points online",
+      "free line slope between two points"
+    ]
+  },
+  {
+    "slug": "degrees-to-radians-calculator",
+    "name": "Degrees to Radians",
+    "example": "180",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Degrees to Radians: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free degrees to radians with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "degrees to radians",
+      "degrees to radians online",
+      "free degrees to radians"
+    ]
+  },
+  {
+    "slug": "radians-to-degrees-calculator",
+    "name": "Radians to Degrees",
+    "example": "3.141592653589793",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "Radians to Degrees: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free radians to degrees with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "radians to degrees",
+      "radians to degrees online",
+      "free radians to degrees"
+    ]
+  },
+  {
+    "slug": "rpm-to-angular-velocity",
+    "name": "RPM to Angular Velocity",
+    "example": "60",
+    "category": "calculator",
+    "batch": 10,
+    "week": 80,
+    "ready": true,
+    "shortDescription": "RPM to Angular Velocity: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free rpm to angular velocity with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "rpm to angular velocity",
+      "rpm to angular velocity online",
+      "free rpm to angular velocity"
+    ]
+  },
+  {
+    "slug": "angular-displacement-calculator",
+    "name": "Angular Displacement",
+    "example": "2|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Angular Displacement: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free angular displacement with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "angular displacement",
+      "angular displacement online",
+      "free angular displacement"
+    ]
+  },
+  {
+    "slug": "velocity-from-displacement-time",
+    "name": "Average Velocity",
+    "example": "100|20",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Average Velocity: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free average velocity with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "average velocity",
+      "average velocity online",
+      "free average velocity"
+    ]
+  },
+  {
+    "slug": "acceleration-from-velocity-change",
+    "name": "Average Acceleration",
+    "example": "0|20|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Average Acceleration: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free average acceleration with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "average acceleration",
+      "average acceleration online",
+      "free average acceleration"
+    ]
+  },
+  {
+    "slug": "distance-under-constant-acceleration",
+    "name": "Distance Under Constant Acceleration",
+    "example": "5|2|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Distance Under Constant Acceleration: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free distance under constant acceleration with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "distance under constant acceleration",
+      "distance under constant acceleration online",
+      "free distance under constant acceleration"
+    ]
+  },
+  {
+    "slug": "final-velocity-under-acceleration",
+    "name": "Final Velocity Under Acceleration",
+    "example": "5|2|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Final Velocity Under Acceleration: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free final velocity under acceleration with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "final velocity under acceleration",
+      "final velocity under acceleration online",
+      "free final velocity under acceleration"
+    ]
+  },
+  {
+    "slug": "kinetic-energy-calculator",
+    "name": "Kinetic Energy",
+    "example": "2|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Kinetic Energy: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free kinetic energy with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "kinetic energy",
+      "kinetic energy online",
+      "free kinetic energy"
+    ]
+  },
+  {
+    "slug": "gravitational-potential-energy",
+    "name": "Gravitational Potential Energy",
+    "example": "2|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Gravitational Potential Energy: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free gravitational potential energy with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "gravitational potential energy",
+      "gravitational potential energy online",
+      "free gravitational potential energy"
+    ]
+  },
+  {
+    "slug": "linear-momentum-calculator",
+    "name": "Linear Momentum",
+    "example": "2|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Linear Momentum: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free linear momentum with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "linear momentum",
+      "linear momentum online",
+      "free linear momentum"
+    ]
+  },
+  {
+    "slug": "impulse-from-force-time",
+    "name": "Impulse from Force and Time",
+    "example": "10|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Impulse from Force and Time: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free impulse from force and time with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "impulse from force and time",
+      "impulse from force and time online",
+      "free impulse from force and time"
+    ]
+  },
+  {
+    "slug": "force-from-mass-acceleration",
+    "name": "Force from Mass and Acceleration",
+    "example": "3|4",
+    "category": "calculator",
+    "batch": 10,
+    "week": 81,
+    "ready": true,
+    "shortDescription": "Force from Mass and Acceleration: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free force from mass and acceleration with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "force from mass and acceleration",
+      "force from mass and acceleration online",
+      "free force from mass and acceleration"
+    ]
+  },
+  {
+    "slug": "centripetal-force-calculator",
+    "name": "Centripetal Force",
+    "example": "2|4|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Centripetal Force: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free centripetal force with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "centripetal force",
+      "centripetal force online",
+      "free centripetal force"
+    ]
+  },
+  {
+    "slug": "centripetal-acceleration-calculator",
+    "name": "Centripetal Acceleration",
+    "example": "4|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Centripetal Acceleration: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free centripetal acceleration with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "centripetal acceleration",
+      "centripetal acceleration online",
+      "free centripetal acceleration"
+    ]
+  },
+  {
+    "slug": "work-done-at-angle",
+    "name": "Work Done at Angle",
+    "example": "10|5|60",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Work Done at Angle: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free work done at angle with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "work done at angle",
+      "work done at angle online",
+      "free work done at angle"
+    ]
+  },
+  {
+    "slug": "power-from-work-time",
+    "name": "Mechanical Power from Work and Time",
+    "example": "100|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Mechanical Power from Work and Time: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free mechanical power from work and time with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "mechanical power from work and time",
+      "mechanical power from work and time online",
+      "free mechanical power from work and time"
+    ]
+  },
+  {
+    "slug": "spring-force-hookes-law",
+    "name": "Spring Force from Hooke's Law",
+    "example": "100|0.2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Spring Force from Hooke's Law: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free spring force from hooke's law with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "spring force from hooke's law",
+      "spring force from hooke's law online",
+      "free spring force from hooke's law"
+    ]
+  },
+  {
+    "slug": "spring-potential-energy",
+    "name": "Spring Potential Energy",
+    "example": "100|0.2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Spring Potential Energy: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free spring potential energy with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "spring potential energy",
+      "spring potential energy online",
+      "free spring potential energy"
+    ]
+  },
+  {
+    "slug": "pendulum-small-angle-period",
+    "name": "Simple Pendulum Period",
+    "example": "1",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Simple Pendulum Period: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free simple pendulum period with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "simple pendulum period",
+      "simple pendulum period online",
+      "free simple pendulum period"
+    ]
+  },
+  {
+    "slug": "wave-speed-frequency-wavelength",
+    "name": "Wave Speed",
+    "example": "50|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Wave Speed: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free wave speed with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "wave speed",
+      "wave speed online",
+      "free wave speed"
+    ]
+  },
+  {
+    "slug": "wave-frequency-from-period",
+    "name": "Wave Frequency from Period",
+    "example": "0.02",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Wave Frequency from Period: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free wave frequency from period with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "wave frequency from period",
+      "wave frequency from period online",
+      "free wave frequency from period"
+    ]
+  },
+  {
+    "slug": "reynolds-number-calculator",
+    "name": "Reynolds Number",
+    "example": "1000|2|0.1|0.001",
+    "category": "calculator",
+    "batch": 10,
+    "week": 82,
+    "ready": true,
+    "shortDescription": "Reynolds Number: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free reynolds number with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "reynolds number",
+      "reynolds number online",
+      "free reynolds number"
+    ]
+  },
+  {
+    "slug": "pressure-from-force-area",
+    "name": "Pressure from Force and Area",
+    "example": "500|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Pressure from Force and Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free pressure from force and area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "pressure from force and area",
+      "pressure from force and area online",
+      "free pressure from force and area"
+    ]
+  },
+  {
+    "slug": "hydrostatic-pressure-calculator",
+    "name": "Hydrostatic Gauge Pressure",
+    "example": "1000|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Hydrostatic Gauge Pressure: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free hydrostatic gauge pressure with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "hydrostatic gauge pressure",
+      "hydrostatic gauge pressure online",
+      "free hydrostatic gauge pressure"
+    ]
+  },
+  {
+    "slug": "buoyant-force-calculator",
+    "name": "Buoyant Force",
+    "example": "1000|0.2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Buoyant Force: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free buoyant force with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "buoyant force",
+      "buoyant force online",
+      "free buoyant force"
+    ]
+  },
+  {
+    "slug": "density-from-mass-volume",
+    "name": "Density from Mass and Volume",
+    "example": "10|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Density from Mass and Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free density from mass and volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "density from mass and volume",
+      "density from mass and volume online",
+      "free density from mass and volume"
+    ]
+  },
+  {
+    "slug": "specific-heat-energy-calculator",
+    "name": "Heating Energy from Specific Heat",
+    "example": "2|4184|10",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Heating Energy from Specific Heat: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free heating energy from specific heat with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "heating energy from specific heat",
+      "heating energy from specific heat online",
+      "free heating energy from specific heat"
+    ]
+  },
+  {
+    "slug": "linear-thermal-expansion",
+    "name": "Linear Thermal Expansion",
+    "example": "2|0.000012|40",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Linear Thermal Expansion: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free linear thermal expansion with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "linear thermal expansion",
+      "linear thermal expansion online",
+      "free linear thermal expansion"
+    ]
+  },
+  {
+    "slug": "conduction-heat-flow-rate",
+    "name": "Conduction Heat Flow Rate",
+    "example": "0.8|2|20|0.1",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Conduction Heat Flow Rate: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free conduction heat flow rate with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "conduction heat flow rate",
+      "conduction heat flow rate online",
+      "free conduction heat flow rate"
+    ]
+  },
+  {
+    "slug": "carnot-engine-efficiency",
+    "name": "Carnot Engine Efficiency",
+    "example": "600|300",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Carnot Engine Efficiency: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free carnot engine efficiency with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "carnot engine efficiency",
+      "carnot engine efficiency online",
+      "free carnot engine efficiency"
+    ]
+  },
+  {
+    "slug": "ideal-gas-volume-calculator",
+    "name": "Ideal Gas Volume",
+    "example": "1|298|101325",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Ideal Gas Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free ideal gas volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "ideal gas volume",
+      "ideal gas volume online",
+      "free ideal gas volume"
+    ]
+  },
+  {
+    "slug": "gas-moles-from-pvt",
+    "name": "Gas Moles from PV/T",
+    "example": "101325|0.024|298",
+    "category": "calculator",
+    "batch": 10,
+    "week": 83,
+    "ready": true,
+    "shortDescription": "Gas Moles from PV/T: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free gas moles from pv/t with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "gas moles from pv/t",
+      "gas moles from pv/t online",
+      "free gas moles from pv/t"
+    ]
+  },
+  {
+    "slug": "boyles-law-final-volume",
+    "name": "Boyle's Law Final Volume",
+    "example": "100|2|200",
+    "category": "calculator",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Boyle's Law Final Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free boyle's law final volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "boyle's law final volume",
+      "boyle's law final volume online",
+      "free boyle's law final volume"
+    ]
+  },
+  {
+    "slug": "charles-law-final-volume",
+    "name": "Charles's Law Final Volume",
+    "example": "2|300|450",
+    "category": "calculator",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Charles's Law Final Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free charles's law final volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "charles's law final volume",
+      "charles's law final volume online",
+      "free charles's law final volume"
+    ]
+  },
+  {
+    "slug": "combined-gas-law-pressure",
+    "name": "Combined Gas Law Pressure",
+    "example": "100|2|300|1|450",
+    "category": "calculator",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Combined Gas Law Pressure: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free combined gas law pressure with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "combined gas law pressure",
+      "combined gas law pressure online",
+      "free combined gas law pressure"
+    ]
+  },
+  {
+    "slug": "electric-charge-from-current-time",
+    "name": "Electric Charge",
+    "example": "3|5",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Electric Charge: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free electric charge with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "electric charge",
+      "electric charge online",
+      "free electric charge"
+    ]
+  },
+  {
+    "slug": "electrical-energy-from-power-time",
+    "name": "Electrical Energy",
+    "example": "100|2",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Electrical Energy: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free electrical energy with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "electrical energy",
+      "electrical energy online",
+      "free electrical energy"
+    ]
+  },
+  {
+    "slug": "electric-power-voltage-current",
+    "name": "Electrical Power",
+    "example": "12|2",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Electrical Power: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free electrical power with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "electrical power",
+      "electrical power online",
+      "free electrical power"
+    ]
+  },
+  {
+    "slug": "resistance-from-voltage-current",
+    "name": "Electrical Resistance",
+    "example": "12|2",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Electrical Resistance: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free electrical resistance with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "electrical resistance",
+      "electrical resistance online",
+      "free electrical resistance"
+    ]
+  },
+  {
+    "slug": "capacitor-charge-calculator",
+    "name": "Capacitor Charge",
+    "example": "0.000001|12",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Capacitor Charge: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free capacitor charge with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "capacitor charge",
+      "capacitor charge online",
+      "free capacitor charge"
+    ]
+  },
+  {
+    "slug": "capacitor-stored-energy",
+    "name": "Capacitor Stored Energy",
+    "example": "0.000001|12",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Capacitor Stored Energy: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free capacitor stored energy with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "capacitor stored energy",
+      "capacitor stored energy online",
+      "free capacitor stored energy"
+    ]
+  },
+  {
+    "slug": "inductor-stored-energy",
+    "name": "Inductor Stored Energy",
+    "example": "0.1|2",
+    "category": "converter",
+    "batch": 10,
+    "week": 84,
+    "ready": true,
+    "shortDescription": "Inductor Stored Energy: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free inductor stored energy with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "inductor stored energy",
+      "inductor stored energy online",
+      "free inductor stored energy"
+    ]
+  },
+  {
+    "slug": "resistor-power-dissipation",
+    "name": "Resistor Power Dissipation",
+    "example": "2|5",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Resistor Power Dissipation: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free resistor power dissipation with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "resistor power dissipation",
+      "resistor power dissipation online",
+      "free resistor power dissipation"
+    ]
+  },
+  {
+    "slug": "parallel-resistance-two-resistors",
+    "name": "Parallel Resistance for Two Resistors",
+    "example": "100|200",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Parallel Resistance for Two Resistors: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free parallel resistance for two resistors with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "parallel resistance for two resistors",
+      "parallel resistance for two resistors online",
+      "free parallel resistance for two resistors"
+    ]
+  },
+  {
+    "slug": "capacitive-reactance-calculator",
+    "name": "Capacitive Reactance",
+    "example": "50|0.0001",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Capacitive Reactance: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free capacitive reactance with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "capacitive reactance",
+      "capacitive reactance online",
+      "free capacitive reactance"
+    ]
+  },
+  {
+    "slug": "inductive-reactance-calculator",
+    "name": "Inductive Reactance",
+    "example": "50|0.1",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Inductive Reactance: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free inductive reactance with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "inductive reactance",
+      "inductive reactance online",
+      "free inductive reactance"
+    ]
+  },
+  {
+    "slug": "resonant-frequency-lc",
+    "name": "LC Resonant Frequency",
+    "example": "0.1|0.000001",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "LC Resonant Frequency: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free lc resonant frequency with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "lc resonant frequency",
+      "lc resonant frequency online",
+      "free lc resonant frequency"
+    ]
+  },
+  {
+    "slug": "transformer-voltage-ratio",
+    "name": "Ideal Transformer Output Voltage",
+    "example": "230|1000|100",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Ideal Transformer Output Voltage: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free ideal transformer output voltage with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "ideal transformer output voltage",
+      "ideal transformer output voltage online",
+      "free ideal transformer output voltage"
+    ]
+  },
+  {
+    "slug": "series-capacitance-two-capacitors",
+    "name": "Two Capacitors in Series",
+    "example": "10|20",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Two Capacitors in Series: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free two capacitors in series with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "two capacitors in series",
+      "two capacitors in series online",
+      "free two capacitors in series"
+    ]
+  },
+  {
+    "slug": "compounded-discount-calculator",
+    "name": "Sequential Discount Price",
+    "example": "100|10|20",
+    "category": "converter",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Sequential Discount Price: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free sequential discount price with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "sequential discount price",
+      "sequential discount price online",
+      "free sequential discount price"
+    ]
+  },
+  {
+    "slug": "profit-after-transaction-fee",
+    "name": "Profit After Transaction Fee",
+    "example": "120|80|2.5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Profit After Transaction Fee: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free profit after transaction fee with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "profit after transaction fee",
+      "profit after transaction fee online",
+      "free profit after transaction fee"
+    ]
+  },
+  {
+    "slug": "discount-required-for-target-price",
+    "name": "Discount for Target Price",
+    "example": "100|75",
+    "category": "calculator",
+    "batch": 10,
+    "week": 85,
+    "ready": true,
+    "shortDescription": "Discount for Target Price: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free discount for target price with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "discount for target price",
+      "discount for target price online",
+      "free discount for target price"
+    ]
+  },
+  {
+    "slug": "price-after-markup-then-tax",
+    "name": "Price After Markup and Tax",
+    "example": "100|20|8",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Price After Markup and Tax: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free price after markup and tax with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "price after markup and tax",
+      "price after markup and tax online",
+      "free price after markup and tax"
+    ]
+  },
+  {
+    "slug": "weighted-unit-cost-from-purchases",
+    "name": "Weighted Unit Cost",
+    "example": "10|2|20|3",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Weighted Unit Cost: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free weighted unit cost with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "weighted unit cost",
+      "weighted unit cost online",
+      "free weighted unit cost"
+    ]
+  },
+  {
+    "slug": "net-revenue-after-refunds",
+    "name": "Net Revenue After Refunds",
+    "example": "1000|50|20",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Net Revenue After Refunds: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free net revenue after refunds with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "net revenue after refunds",
+      "net revenue after refunds online",
+      "free net revenue after refunds"
+    ]
+  },
+  {
+    "slug": "gross-revenue-from-unit-economics",
+    "name": "Gross Revenue from Units and Price",
+    "example": "12|45",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Gross Revenue from Units and Price: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free gross revenue from units and price with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "gross revenue from units and price",
+      "gross revenue from units and price online",
+      "free gross revenue from units and price"
+    ]
+  },
+  {
+    "slug": "revenue-growth-from-two-periods",
+    "name": "Revenue Growth Between Periods",
+    "example": "100|125",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Revenue Growth Between Periods: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free revenue growth between periods with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "revenue growth between periods",
+      "revenue growth between periods online",
+      "free revenue growth between periods"
+    ]
+  },
+  {
+    "slug": "employee-cost-with-burden-rate",
+    "name": "Loaded Employee Cost",
+    "example": "50000|25",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Loaded Employee Cost: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free loaded employee cost with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "loaded employee cost",
+      "loaded employee cost online",
+      "free loaded employee cost"
+    ]
+  },
+  {
+    "slug": "inventory-weeks-of-supply",
+    "name": "Inventory Weeks of Supply",
+    "example": "800|100",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Inventory Weeks of Supply: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free inventory weeks of supply with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "inventory weeks of supply",
+      "inventory weeks of supply online",
+      "free inventory weeks of supply"
+    ]
+  },
+  {
+    "slug": "material-scrap-rate-calculator",
+    "name": "Material Scrap Rate",
+    "example": "20|500",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Material Scrap Rate: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free material scrap rate with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "material scrap rate",
+      "material scrap rate online",
+      "free material scrap rate"
+    ]
+  },
+  {
+    "slug": "production-utilization-calculator",
+    "name": "Production Capacity Utilization",
+    "example": "800|1000",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Production Capacity Utilization: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free production capacity utilization with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "production capacity utilization",
+      "production capacity utilization online",
+      "free production capacity utilization"
+    ]
+  },
+  {
+    "slug": "average-handling-time-calculator",
+    "name": "Average Handling Time",
+    "example": "300|120|50",
+    "category": "calculator",
+    "batch": 10,
+    "week": 86,
+    "ready": true,
+    "shortDescription": "Average Handling Time: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free average handling time with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "average handling time",
+      "average handling time online",
+      "free average handling time"
+    ]
+  },
+  {
+    "slug": "agent-occupancy-rate-calculator",
+    "name": "Agent Occupancy Rate",
+    "example": "400|500",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Agent Occupancy Rate: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free agent occupancy rate with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "agent occupancy rate",
+      "agent occupancy rate online",
+      "free agent occupancy rate"
+    ]
+  },
+  {
+    "slug": "first-contact-resolution-rate",
+    "name": "First Contact Resolution Rate",
+    "example": "85|100",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "First Contact Resolution Rate: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free first contact resolution rate with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "first contact resolution rate",
+      "first contact resolution rate online",
+      "free first contact resolution rate"
+    ]
+  },
+  {
+    "slug": "ticket-backlog-change-calculator",
+    "name": "Ticket Backlog Change",
+    "example": "100|125",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Ticket Backlog Change: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free ticket backlog change with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "ticket backlog change",
+      "ticket backlog change online",
+      "free ticket backlog change"
+    ]
+  },
+  {
+    "slug": "defect-escape-rate-calculator",
+    "name": "Defect Escape Rate",
+    "example": "3|27",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Defect Escape Rate: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free defect escape rate with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "defect escape rate",
+      "defect escape rate online",
+      "free defect escape rate"
+    ]
+  },
+  {
+    "slug": "mean-time-between-failures",
+    "name": "Mean Time Between Failures",
+    "example": "1000|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Mean Time Between Failures: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free mean time between failures with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "mean time between failures",
+      "mean time between failures online",
+      "free mean time between failures"
+    ]
+  },
+  {
+    "slug": "mean-time-to-repair",
+    "name": "Mean Time to Repair",
+    "example": "100|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Mean Time to Repair: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free mean time to repair with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "mean time to repair",
+      "mean time to repair online",
+      "free mean time to repair"
+    ]
+  },
+  {
+    "slug": "equipment-availability-from-mtbf-mttr",
+    "name": "Equipment Availability from MTBF and MTTR",
+    "example": "100|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Equipment Availability from MTBF and MTTR: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free equipment availability from mtbf and mttr with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "equipment availability from mtbf and mttr",
+      "equipment availability from mtbf and mttr online",
+      "free equipment availability from mtbf and mttr"
+    ]
+  },
+  {
+    "slug": "rectangle-perimeter-from-area-ratio",
+    "name": "Rectangle Perimeter from Area and Aspect Ratio",
+    "example": "24|1.5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Rectangle Perimeter from Area and Aspect Ratio: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free rectangle perimeter from area and aspect ratio with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "rectangle perimeter from area and aspect ratio",
+      "rectangle perimeter from area and aspect ratio online",
+      "free rectangle perimeter from area and aspect ratio"
+    ]
+  },
+  {
+    "slug": "right-triangle-hypotenuse-height",
+    "name": "Right Triangle Altitude to Hypotenuse",
+    "example": "3|4",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Right Triangle Altitude to Hypotenuse: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free right triangle altitude to hypotenuse with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "right triangle altitude to hypotenuse",
+      "right triangle altitude to hypotenuse online",
+      "free right triangle altitude to hypotenuse"
+    ]
+  },
+  {
+    "slug": "cylinder-lateral-area-calculator",
+    "name": "Cylinder Lateral Surface Area",
+    "example": "2|5",
+    "category": "calculator",
+    "batch": 10,
+    "week": 87,
+    "ready": true,
+    "shortDescription": "Cylinder Lateral Surface Area: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free cylinder lateral surface area with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "cylinder lateral surface area",
+      "cylinder lateral surface area online",
+      "free cylinder lateral surface area"
+    ]
+  },
+  {
+    "slug": "spherical-cap-volume-calculator",
+    "name": "Spherical Cap Volume",
+    "example": "5|2",
+    "category": "calculator",
+    "batch": 10,
+    "week": 88,
+    "ready": true,
+    "shortDescription": "Spherical Cap Volume: calculate a distinct result from typed numerical inputs.",
+    "metaDescription": "Use this free spherical cap volume with clear input examples and immediate browser-only results. No upload, account or paid API is required.",
+    "keywords": [
+      "spherical cap volume",
+      "spherical cap volume online",
+      "free spherical cap volume"
+    ]
+  },
+  {
+    "slug": "trapezoid-midsegment-length",
+    "name": "Trapezoid Midsegment Length",
+    "category": "calculator",
+    "week": 88,
+    "batch": 10,
+    "ready": true,
+    "shortDescription": "Trapezoid Midsegment Length computes a geometric value from typed numeric parameters.",
+    "metaDescription": "Calculate trapezoid midsegment length instantly with a simple browser formula and clearly labeled results. No upload, registration or API required.",
+    "keywords": [
+      "trapezoid midsegment length",
+      "free trapezoid midsegment length",
+      "trapezoid midsegment length online"
+    ],
+    "example": "8|4"
+  },
+  {
+    "slug": "hemisphere-surface-area-total",
+    "name": "Hemisphere Total Surface Area",
+    "category": "calculator",
+    "week": 88,
+    "batch": 10,
+    "ready": true,
+    "shortDescription": "Hemisphere Total Surface Area computes a geometric value from typed numeric parameters.",
+    "metaDescription": "Calculate hemisphere total surface area instantly with a simple browser formula and clearly labeled results. No upload, registration or API required.",
+    "keywords": [
+      "hemisphere total surface area",
+      "free hemisphere total surface area",
+      "hemisphere total surface area online"
+    ],
+    "example": "3"
   }
 ]

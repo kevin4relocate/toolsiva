@@ -1,0 +1,902 @@
+{
+  "rectangle-diagonal-calculator": {
+    "explanation": "Rectangle Diagonal computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "rhombus-area-from-diagonals": {
+    "explanation": "Rhombus Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "6|8",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "parallelogram-area-from-vectors": {
+    "explanation": "Parallelogram Vector Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|0|0|4",
+    "workflows": [
+      "Enter 4 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "triangle-area-heron-formula": {
+    "explanation": "Triangle Area by Heron's Formula computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4|5",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "triangle-inradius-calculator": {
+    "explanation": "Triangle Inradius computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4|5",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "triangle-circumradius-calculator": {
+    "explanation": "Triangle Circumradius computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4|5",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "regular-polygon-interior-angle": {
+    "explanation": "Regular Polygon Interior Angle computes degrees using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "6",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "regular-polygon-area-calculator": {
+    "explanation": "Regular Polygon Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "6|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "ellipse-area-calculator": {
+    "explanation": "Ellipse Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "ellipse-eccentricity-calculator": {
+    "explanation": "Ellipse Eccentricity computes ratio using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "5|3",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "sphere-volume-calculator": {
+    "explanation": "Sphere Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "sphere-surface-area-calculator": {
+    "explanation": "Sphere Surface Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "cone-volume-calculator": {
+    "explanation": "Cone Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "cone-lateral-area-calculator": {
+    "explanation": "Cone Lateral Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "frustum-volume-calculator": {
+    "explanation": "Frustum Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "4|2|3",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "torus-volume-calculator": {
+    "explanation": "Torus Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "5|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "pyramid-volume-calculator": {
+    "explanation": "Pyramid Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "20|6",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "prism-volume-calculator": {
+    "explanation": "Prism Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "20|6",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "circular-arc-length-calculator": {
+    "explanation": "Circular Arc Length computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|60",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "circular-sector-area-calculator": {
+    "explanation": "Circular Sector Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|60",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "circle-chord-length-calculator": {
+    "explanation": "Circle Chord Length computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|60",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "circle-segment-area-calculator": {
+    "explanation": "Circle Segment Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|60",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "distance-between-points-3d": {
+    "explanation": "3D Point Distance computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1|2|3|4|6|3",
+    "workflows": [
+      "Enter 6 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "slope-between-two-points": {
+    "explanation": "Line Slope Between Two Points computes slope using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1|2|3|6",
+    "workflows": [
+      "Enter 4 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "degrees-to-radians-calculator": {
+    "explanation": "Degrees to Radians computes radians using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "180",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "radians-to-degrees-calculator": {
+    "explanation": "Radians to Degrees computes degrees using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3.141592653589793",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "rpm-to-angular-velocity": {
+    "explanation": "RPM to Angular Velocity computes rad/s using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "60",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "angular-displacement-calculator": {
+    "explanation": "Angular Displacement computes radians using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "velocity-from-displacement-time": {
+    "explanation": "Average Velocity computes m/s using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|20",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "acceleration-from-velocity-change": {
+    "explanation": "Average Acceleration computes m/s² using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0|20|5",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "distance-under-constant-acceleration": {
+    "explanation": "Distance Under Constant Acceleration computes m using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "5|2|3",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "final-velocity-under-acceleration": {
+    "explanation": "Final Velocity Under Acceleration computes m/s using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "5|2|3",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "kinetic-energy-calculator": {
+    "explanation": "Kinetic Energy computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "gravitational-potential-energy": {
+    "explanation": "Gravitational Potential Energy computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "linear-momentum-calculator": {
+    "explanation": "Linear Momentum computes kg·m/s using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "impulse-from-force-time": {
+    "explanation": "Impulse from Force and Time computes N·s using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "10|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "force-from-mass-acceleration": {
+    "explanation": "Force from Mass and Acceleration computes newtons using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "centripetal-force-calculator": {
+    "explanation": "Centripetal Force computes newtons using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|4|3",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "centripetal-acceleration-calculator": {
+    "explanation": "Centripetal Acceleration computes m/s² using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "4|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "work-done-at-angle": {
+    "explanation": "Work Done at Angle computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "10|5|60",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "power-from-work-time": {
+    "explanation": "Mechanical Power from Work and Time computes watts using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "spring-force-hookes-law": {
+    "explanation": "Spring Force from Hooke's Law computes newtons using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|0.2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "spring-potential-energy": {
+    "explanation": "Spring Potential Energy computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|0.2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "pendulum-small-angle-period": {
+    "explanation": "Simple Pendulum Period computes seconds using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "wave-speed-frequency-wavelength": {
+    "explanation": "Wave Speed computes m/s using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "50|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "wave-frequency-from-period": {
+    "explanation": "Wave Frequency from Period computes hertz using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0.02",
+    "workflows": [
+      "Enter 1 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "reynolds-number-calculator": {
+    "explanation": "Reynolds Number computes ratio using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1000|2|0.1|0.001",
+    "workflows": [
+      "Enter 4 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "pressure-from-force-area": {
+    "explanation": "Pressure from Force and Area computes pascals using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "500|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "hydrostatic-pressure-calculator": {
+    "explanation": "Hydrostatic Gauge Pressure computes pascals using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1000|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "buoyant-force-calculator": {
+    "explanation": "Buoyant Force computes newtons using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1000|0.2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "density-from-mass-volume": {
+    "explanation": "Density from Mass and Volume computes kg/m³ using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "10|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "specific-heat-energy-calculator": {
+    "explanation": "Heating Energy from Specific Heat computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|4184|10",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "linear-thermal-expansion": {
+    "explanation": "Linear Thermal Expansion computes m using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|0.000012|40",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "conduction-heat-flow-rate": {
+    "explanation": "Conduction Heat Flow Rate computes watts using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0.8|2|20|0.1",
+    "workflows": [
+      "Enter 4 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "carnot-engine-efficiency": {
+    "explanation": "Carnot Engine Efficiency computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "600|300",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "ideal-gas-volume-calculator": {
+    "explanation": "Ideal Gas Volume computes m³ using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1|298|101325",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "gas-moles-from-pvt": {
+    "explanation": "Gas Moles from PV/T computes moles using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "101325|0.024|298",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "boyles-law-final-volume": {
+    "explanation": "Boyle's Law Final Volume computes volume units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|2|200",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "charles-law-final-volume": {
+    "explanation": "Charles's Law Final Volume computes volume units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|300|450",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "combined-gas-law-pressure": {
+    "explanation": "Combined Gas Law Pressure computes pressure units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|2|300|1|450",
+    "workflows": [
+      "Enter 5 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "electric-charge-from-current-time": {
+    "explanation": "Electric Charge computes coulombs using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "electrical-energy-from-power-time": {
+    "explanation": "Electrical Energy computes watt-hours using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "electric-power-voltage-current": {
+    "explanation": "Electrical Power computes watts using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "12|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "resistance-from-voltage-current": {
+    "explanation": "Electrical Resistance computes ohms using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "12|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "capacitor-charge-calculator": {
+    "explanation": "Capacitor Charge computes coulombs using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0.000001|12",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "capacitor-stored-energy": {
+    "explanation": "Capacitor Stored Energy computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0.000001|12",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "inductor-stored-energy": {
+    "explanation": "Inductor Stored Energy computes joules using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0.1|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "resistor-power-dissipation": {
+    "explanation": "Resistor Power Dissipation computes watts using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "parallel-resistance-two-resistors": {
+    "explanation": "Parallel Resistance for Two Resistors computes ohms using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|200",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "capacitive-reactance-calculator": {
+    "explanation": "Capacitive Reactance computes ohms using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "50|0.0001",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "inductive-reactance-calculator": {
+    "explanation": "Inductive Reactance computes ohms using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "50|0.1",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "resonant-frequency-lc": {
+    "explanation": "LC Resonant Frequency computes hertz using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "0.1|0.000001",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "transformer-voltage-ratio": {
+    "explanation": "Ideal Transformer Output Voltage computes volts using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "230|1000|100",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "series-capacitance-two-capacitors": {
+    "explanation": "Two Capacitors in Series computes capacitance units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "10|20",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "compounded-discount-calculator": {
+    "explanation": "Sequential Discount Price computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|10|20",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "profit-after-transaction-fee": {
+    "explanation": "Profit After Transaction Fee computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "120|80|2.5",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "discount-required-for-target-price": {
+    "explanation": "Discount for Target Price computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|75",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "price-after-markup-then-tax": {
+    "explanation": "Price After Markup and Tax computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|20|8",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "weighted-unit-cost-from-purchases": {
+    "explanation": "Weighted Unit Cost computes currency/unit using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "10|2|20|3",
+    "workflows": [
+      "Enter 4 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "net-revenue-after-refunds": {
+    "explanation": "Net Revenue After Refunds computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1000|50|20",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "gross-revenue-from-unit-economics": {
+    "explanation": "Gross Revenue from Units and Price computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "12|45",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "revenue-growth-from-two-periods": {
+    "explanation": "Revenue Growth Between Periods computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|125",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "employee-cost-with-burden-rate": {
+    "explanation": "Loaded Employee Cost computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "50000|25",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "inventory-weeks-of-supply": {
+    "explanation": "Inventory Weeks of Supply computes weeks using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "800|100",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "material-scrap-rate-calculator": {
+    "explanation": "Material Scrap Rate computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "20|500",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "production-utilization-calculator": {
+    "explanation": "Production Capacity Utilization computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "800|1000",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "average-handling-time-calculator": {
+    "explanation": "Average Handling Time computes time units/contact using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "300|120|50",
+    "workflows": [
+      "Enter 3 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "agent-occupancy-rate-calculator": {
+    "explanation": "Agent Occupancy Rate computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "400|500",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "first-contact-resolution-rate": {
+    "explanation": "First Contact Resolution Rate computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "85|100",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "ticket-backlog-change-calculator": {
+    "explanation": "Ticket Backlog Change computes tickets using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|125",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "defect-escape-rate-calculator": {
+    "explanation": "Defect Escape Rate computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|27",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "mean-time-between-failures": {
+    "explanation": "Mean Time Between Failures computes hours/failure using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "1000|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "mean-time-to-repair": {
+    "explanation": "Mean Time to Repair computes hours/repair using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "equipment-availability-from-mtbf-mttr": {
+    "explanation": "Equipment Availability from MTBF and MTTR computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "100|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "rectangle-perimeter-from-area-ratio": {
+    "explanation": "Rectangle Perimeter from Area and Aspect Ratio computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "24|1.5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "right-triangle-hypotenuse-height": {
+    "explanation": "Right Triangle Altitude to Hypotenuse computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "cylinder-lateral-area-calculator": {
+    "explanation": "Cylinder Lateral Surface Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "2|5",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "spherical-cap-volume-calculator": {
+    "explanation": "Spherical Cap Volume computes cubic units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
+    "example": "5|2",
+    "workflows": [
+      "Enter 2 numerical input value(s) separated by |.",
+      "Read the labeled result and unit, then copy the result for your calculation."
+    ],
+    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "trapezoid-midsegment-length": {
+    "explanation": "Trapezoid Midsegment Length produces the specified geometric measurement from pasted numerical inputs in consistent units.",
+    "example": "8|4",
+    "workflows": [
+      "Enter the numeric dimensions separated with |.",
+      "Review the calculation and unit in the output."
+    ],
+    "limitation": "This calculator assumes ideal geometric shapes and consistent measurement units. Verify specifications independently for engineering and safety-critical applications."
+  },
+  "hemisphere-surface-area-total": {
+    "explanation": "Hemisphere Total Surface Area produces the specified geometric measurement from pasted numerical inputs in consistent units.",
+    "example": "3",
+    "workflows": [
+      "Enter the numeric dimensions separated with |.",
+      "Review the calculation and unit in the output."
+    ],
+    "limitation": "This calculator assumes ideal geometric shapes and consistent measurement units. Verify specifications independently for engineering and safety-critical applications."
+  }
+}

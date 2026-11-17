@@ -23,10 +23,10 @@ const run=(slug,input)=>{for(const fn of engines){const output=fn(slug,input);if
 const browserOnly=new Set(["social-meta-tag-auditor","html-table-accessibility-checker"]);
 
 test("All 100 wave-six tools have unique slugs, real implementations, detailed examples and no forbidden categories",()=>{
- assert.equal(queue.length,773);
+ assert.equal(queue.length,873);
  assert.equal(tools.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,773);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,873);
  assert.equal(queue[373].slug,"text-template-variable-filler");
  assert.equal(queue.filter(x=>x.batch===6).at(-1).slug,"dns-srv-record-generator");
  const priorSlugs=fs.readFileSync("src/data/tools.ts","utf8").match(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)||[];
