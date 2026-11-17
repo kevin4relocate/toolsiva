@@ -1,13 +1,4 @@
 {
-  "rectangle-diagonal-calculator": {
-    "explanation": "Rectangle Diagonal computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
-    "example": "3|4",
-    "workflows": [
-      "Enter 2 numerical input value(s) separated by |.",
-      "Read the labeled result and unit, then copy the result for your calculation."
-    ],
-    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
-  },
   "rhombus-area-from-diagonals": {
     "explanation": "Rhombus Area computes square units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
     "example": "6|8",
@@ -197,38 +188,11 @@
     ],
     "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
   },
-  "distance-between-points-3d": {
-    "explanation": "3D Point Distance computes units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
-    "example": "1|2|3|4|6|3",
-    "workflows": [
-      "Enter 6 numerical input value(s) separated by |.",
-      "Read the labeled result and unit, then copy the result for your calculation."
-    ],
-    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
-  },
   "slope-between-two-points": {
     "explanation": "Line Slope Between Two Points computes slope using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
     "example": "1|2|3|6",
     "workflows": [
       "Enter 4 numerical input value(s) separated by |.",
-      "Read the labeled result and unit, then copy the result for your calculation."
-    ],
-    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
-  },
-  "degrees-to-radians-calculator": {
-    "explanation": "Degrees to Radians computes radians using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
-    "example": "180",
-    "workflows": [
-      "Enter 1 numerical input value(s) separated by |.",
-      "Read the labeled result and unit, then copy the result for your calculation."
-    ],
-    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
-  },
-  "radians-to-degrees-calculator": {
-    "explanation": "Radians to Degrees computes degrees using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
-    "example": "3.141592653589793",
-    "workflows": [
-      "Enter 1 numerical input value(s) separated by |.",
       "Read the labeled result and unit, then copy the result for your calculation."
     ],
     "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
@@ -722,15 +686,6 @@
   "gross-revenue-from-unit-economics": {
     "explanation": "Gross Revenue from Units and Price computes currency units using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
     "example": "12|45",
-    "workflows": [
-      "Enter 2 numerical input value(s) separated by |.",
-      "Read the labeled result and unit, then copy the result for your calculation."
-    ],
-    "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
-  },
-  "revenue-growth-from-two-periods": {
-    "explanation": "Revenue Growth Between Periods computes percent using the supplied numerical values. Enter values in the same order as the provided sample, separated by vertical bars (|).",
-    "example": "100|125",
     "workflows": [
       "Enter 2 numerical input value(s) separated by |.",
       "Read the labeled result and unit, then copy the result for your calculation."

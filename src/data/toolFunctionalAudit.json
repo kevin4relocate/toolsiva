@@ -9,8 +9,8 @@
   },
   "after": {
     "public": 123,
-    "queued": 373,
-    "total": 496,
+    "queued": 968,
+    "total": 1091,
     "weeklyLimit": 10
   },
   "retired": [
@@ -121,6 +121,41 @@
       "keptAs": "spf-mechanism-inspector",
       "name": "SPF Include Domain Extractor",
       "originalPosition": 391
+    },
+    {
+      "slug": "rectangle-diagonal-calculator",
+      "keptAs": "pythagorean-theorem-calculator",
+      "name": "Rectangle Diagonal",
+      "originalPosition": 773,
+      "reason": "Same Math.hypot(two sides) hypotenuse calculation; rectangle diagonal is exactly a right triangle hypotenuse."
+    },
+    {
+      "slug": "distance-between-points-3d",
+      "keptAs": "euclidean-vector-distance-calculator",
+      "name": "3D Point Distance",
+      "originalPosition": 795,
+      "reason": "General Euclidean distance accepts 3D point coordinates as two vectors and computes the same metric."
+    },
+    {
+      "slug": "degrees-to-radians-calculator",
+      "keptAs": "angle-converter",
+      "name": "Degrees to Radians",
+      "originalPosition": 797,
+      "reason": "The publicly available Angle Converter already supports degrees to radians and other angle units."
+    },
+    {
+      "slug": "radians-to-degrees-calculator",
+      "keptAs": "angle-converter",
+      "name": "Radians to Degrees",
+      "originalPosition": 798,
+      "reason": "The publicly available Angle Converter already supports radians to degrees and other angle units."
+    },
+    {
+      "slug": "revenue-growth-from-two-periods",
+      "keptAs": "percentage-change-calculator",
+      "name": "Revenue Growth Between Periods",
+      "originalPosition": 854,
+      "reason": "Growth percentage for two positive revenues is identical to the existing percentage-change calculation."
     }
   ],
   "keptDistinct": [
@@ -189,5 +224,18 @@
       "right": "fibonacci-sequence-generator",
       "reason": "Single exact large-index result vs bounded sequence generation"
     }
-  ]
+  ],
+  "latestAudit": {
+    "date": "2026-11-17",
+    "queuedBefore": 973,
+    "queuedAfter": 968,
+    "retiredNew": [
+      "rectangle-diagonal-calculator",
+      "distance-between-points-3d",
+      "degrees-to-radians-calculator",
+      "radians-to-degrees-calculator",
+      "revenue-growth-from-two-periods"
+    ],
+    "summary": "Removed five additional overlap utilities before first scheduled publication. Kept more general existing tools, preserved exact 10/week release cadence and no early publication."
+  }
 }

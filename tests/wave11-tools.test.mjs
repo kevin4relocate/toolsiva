@@ -14,21 +14,21 @@ const specs=["Geometry","Physics","Science","Statistics","Business"].flatMap(x=>
 const wave=queue.filter(x=>x.batch===11);
 
 test("Wave 11 schedules 100 distinct, implemented and explained browser calculators",()=>{
- assert.equal(queue.length,973);
+ assert.equal(queue.length,968);
  assert.equal(wave.length,100);
  assert.equal(specs.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,973);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,968);
  const legacySlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(legacySlugs.length,123);
- assert.equal(new Set([...legacySlugs,...queue.map(x=>x.slug)]).size,1096);
+ assert.equal(new Set([...legacySlugs,...queue.map(x=>x.slug)]).size,1091);
  const retired=JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired.map(x=>x.slug);
  assert.ok(specs.every(s=>!retired.includes(s.slug)));
  const implemented=engines.map((_,i)=>fs.readFileSync("src/lib/wave11"+["Geometry","Physics","Science","Statistics","Business"][i]+".mjs","utf8")).join("\n");
  for(let i=0;i<specs.length;i++){
   const s=specs[i],tool=wave[i],guide=guides[s.slug];
   assert.equal(tool.slug,s.slug,"queue order");
-  assert.equal(tool.week,Math.floor((873+i)/10)+1,"10 per week");
+  assert.equal(tool.week,Math.floor((868+i)/10)+1,"10 per week");
   assert.ok(tool.ready);
   assert.equal(tool.example,s.example);
   assert.ok(tool.metaDescription.length>=60&&tool.metaDescription.length<=180,s.slug+" SEO");

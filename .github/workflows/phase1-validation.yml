@@ -38,6 +38,7 @@ jobs:
       - run: npm run test:wave4
       - run: npm run test:wave5
       - run: npm run test:dedup
+      - run: npm run catalog:audit
       - run: npm run test:wave6
       - run: npm run test:wave7
       - run: npm run test:wave8
@@ -65,8 +66,9 @@ jobs:
           npm run check
           npm run build
           npm run tools:verify
+          npm run catalog:audit
           npm run seo:audit
-      - name: Simulate all weekly releases and audit 1096 built tool pages
+      - name: Simulate all weekly releases and audit 1091 built tool pages
         shell: bash
         run: |
           trap 'git restore -- src/data/simpleToolRelease.json' EXIT
@@ -85,7 +87,15 @@ jobs:
           npm run check
           npm run build
           npm run tools:verify
+          npm run catalog:audit
           npm run seo:audit
+      - name: Upload catalog audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: toolsiva-catalog-audit
+          path: reports/catalog-readiness.json
+          if-no-files-found: warn
       - name: Upload SEO audit report
         if: always()
         uses: actions/upload-artifact@v4

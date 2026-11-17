@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: toolsiva-curated-daily-publisher
+  group: toolsiva-main-publication
   cancel-in-progress: false
 
 jobs:

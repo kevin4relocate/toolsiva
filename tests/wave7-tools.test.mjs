@@ -20,10 +20,10 @@ const run=(slug,input)=>{for(const fn of engines){const v=fn(slug,input);if(v!==
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8")),latest=queue.filter(x=>x.batch===7);
 const browserOnly=new Set(["html-landmark-accessibility-auditor"]);
 test("100 unique tools are queued, have complete metadata and produce real output from samples",()=>{
- assert.equal(queue.length,973);
+ assert.equal(queue.length,968);
  assert.equal(latest.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,973);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,968);
  assert.equal(queue[473].slug,"common-prefix-finder");
  assert.equal(queue.filter(x=>x.batch===7).at(-1).slug,"network-port-range-merger");
  const publicCount=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].length;

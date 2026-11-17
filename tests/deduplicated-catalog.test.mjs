@@ -15,20 +15,20 @@ const source=fs.readFileSync("src/data/tools.ts","utf8");
 const publicSlugs=[...source.matchAll(/(?:["']slug["']|slug)\s*:\s*["']([^"']+)["']/g)].map(x=>x[1]);
 const active=new Set([...publicSlugs,...queue.map(x=>x.slug)]);
 
-test("Audit removes exactly 18 functional duplicates without touching 123 public tools",()=>{
+test("Audit removes 23 functional duplicates without touching 123 public tools",()=>{
  assert.equal(publicSlugs.length,123);
- assert.equal(queue.length,973);
- assert.equal(active.size,1096);
+ assert.equal(queue.length,968);
+ assert.equal(active.size,1091);
  assert.equal(audit.baseline.public,123);
  assert.equal(audit.baseline.queued,391);
- assert.equal(audit.after.queued,373);
- assert.equal(audit.after.total,496);
- assert.equal(audit.retired.length,18);
- assert.equal(new Set(audit.retired.map(x=>x.slug)).size,18);
+ assert.equal(audit.after.queued,968);
+ assert.equal(audit.after.total,1091);
+ assert.equal(audit.retired.length,23);
+ assert.equal(new Set(audit.retired.map(x=>x.slug)).size,23);
  for(const entry of audit.retired){
   assert.ok(!active.has(entry.slug),"Retired tool remained available: "+entry.slug);
   assert.ok(active.has(entry.keptAs),"Canonical tool not available: "+entry.keptAs);
-  assert.ok(entry.originalPosition>=1&&entry.originalPosition<=391);
+  assert.ok(entry.originalPosition>=0&&entry.originalPosition<=973);
  }
  assert.deepEqual(Object.fromEntries([1,2,3,4,5,6,7,8,9].map(n=>[n,queue.filter(x=>x.batch===n).length])),{1:89,2:50,3:50,4:97,5:87,6:100,7:100,8:100,9:100});
  const names=[...[...source.matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"[\s\S]{0,200}?(?:name|"name")\s*:\s*"([^"]+)"/g)].map(x=>x[2]),...queue.map(x=>x.name)];
@@ -36,14 +36,15 @@ test("Audit removes exactly 18 functional duplicates without touching 123 public
 });
 
 test("Retired implementations and queued SEO guides cannot accidentally reactivate",()=>{
- const code=["simpleToolMath","wave4Text","wave5Text","wave5MarkdownData","wave5Web"].map(name=>fs.readFileSync("src/lib/"+name+".mjs","utf8")).join("\n");
- const guides=[JSON.parse(fs.readFileSync("src/data/wave4ToolGuides.json","utf8")),JSON.parse(fs.readFileSync("src/data/wave5ToolGuides.json","utf8"))];
+ const code=["simpleToolMath","wave4Text","wave5Text","wave5MarkdownData","wave5Web","wave10Calculator"].map(name=>fs.readFileSync("src/lib/"+name+".mjs","utf8")).join("\n");
+ const guides=[JSON.parse(fs.readFileSync("src/data/wave4ToolGuides.json","utf8")),JSON.parse(fs.readFileSync("src/data/wave5ToolGuides.json","utf8")),JSON.parse(fs.readFileSync("src/data/wave10ToolGuides.json","utf8"))];
  for(const entry of audit.retired){
   assert.ok(!code.includes('case "'+entry.slug+'"'),"Dead switch case: "+entry.slug);
   for(const guide of guides)assert.ok(!Object.hasOwn(guide,entry.slug),"Retired SEO guide: "+entry.slug);
  }
  assert.equal(Object.keys(guides[0]).length,97);
  assert.equal(Object.keys(guides[1]).length,87);
+ assert.equal(Object.keys(guides[2]).length,95);
 });
 
 test("Canonical tools actually cover removed calculations and extraction functions",()=>{
@@ -87,7 +88,7 @@ test("Weekly release cadence and SEO blog schedule remain consistent",()=>{
  assert.ok(Array.isArray(state.published));
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  assert.equal(new Set(state.published).size,state.published.length);
- assert.equal(queue.at(-1).week,98);
+ assert.equal(queue.at(-1).week,97);
  for(let i=0;i<queue.length;i++)assert.equal(queue[i].week,Math.floor(i/10)+1,"week ordering at "+i);
  const toolWorkflow=fs.readFileSync(".github/workflows/publish-simple-tools.yml","utf8");
  const blogWorkflow=fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8");
