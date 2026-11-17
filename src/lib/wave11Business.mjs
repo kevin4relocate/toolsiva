@@ -117,7 +117,7 @@ export function w11Business(slug,input){switch(slug){
  case "kanban-replenishment-cards": {
     const a=w11Parse(input,4,"Kanban Replenishment Cards");
     if(!(a[0]>=0&&a[1]>=0&&a[2]>0&&a[3]>=0&&a[3]<=10))throw Error("Kanban Replenishment Cards input out of domain. Expected demand units/day | lead time days | units per card | fractional safety stock");
-    const value=Math.ceil(a[0]*a[1]*(1+a[3])/a[2]);
+    const value=Math.ceil(Number((a[0]*a[1]*(1+a[3])/a[2]).toPrecision(13)));
     return w11Result("Kanban Replenishment Cards",value,"cards");
   }
  default:return null;
