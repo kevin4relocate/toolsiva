@@ -12,7 +12,7 @@ excerpt: "Solve a missing term in an equivalent proportion, verify the result us
 featuredImage: "/blog/illustrations/proportion-calculator-missing-value.svg"
 imageAlt: "Visual walkthrough for how to solve a missing value in a proportion: 6 : 9, 10 : x, then x = 15."
 imageCaption: "Cross multiplication works only when both ratios describe the same relationship."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
