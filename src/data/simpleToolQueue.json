@@ -10864,18 +10864,18 @@
     "batch": 9
   },
   {
-    "slug": "dna-restriction-site-finder",
-    "name": "DNA Restriction Site Finder",
+    "slug": "dna-oligo-melting-temperature-calculator",
+    "name": "DNA Oligo Melting Temperature Calculator",
     "category": "calculator",
     "week": 68,
-    "shortDescription": "Find DNA recognition sites on forward/reverse strands.",
-    "metaDescription": "Find DNA recognition sites on forward/reverse strands. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "shortDescription": "Estimate short DNA oligonucleotide melting temperature using the approximate Wallace rule.",
+    "metaDescription": "Estimate short DNA oligonucleotide melting temperature using the approximate Wallace rule. Works entirely offline from pasted text; no uploads or paid APIs.",
     "keywords": [
-      "dna restriction site finder",
-      "free dna restriction site finder",
-      "online dna restriction site finder"
+      "dna oligo melting temperature calculator",
+      "free dna oligo melting temperature calculator",
+      "online dna oligo melting temperature calculator"
     ],
-    "example": "GAATTCGCGGAATTC\n---\nGAATTC",
+    "example": "ATGCCGTA",
     "ready": true,
     "batch": 9
   },
@@ -12000,18 +12000,18 @@
     "batch": 9
   },
   {
-    "slug": "csv-category-proportion-table",
-    "name": "CSV Category Proportion Table",
+    "slug": "csv-numeric-zero-crossing-detector",
+    "name": "CSV Numeric Zero Crossing Detector",
     "category": "developer",
     "week": 76,
-    "shortDescription": "Calculate categorical CSV value counts and shares.",
-    "metaDescription": "Calculate categorical CSV value counts and shares. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "shortDescription": "Detect consecutive positive-to-negative and negative-to-positive transitions in ordered numeric CSV values.",
+    "metaDescription": "Detect consecutive positive-to-negative and negative-to-positive transitions in ordered numeric CSV values. Works entirely offline from pasted text; no uploads or paid APIs.",
     "keywords": [
-      "csv category proportion table",
-      "free csv category proportion table",
-      "online csv category proportion table"
+      "csv numeric zero crossing detector",
+      "free csv numeric zero crossing detector",
+      "online csv numeric zero crossing detector"
     ],
-    "example": "status\n---\nstatus\nnew\nnew\ndone",
+    "example": "value\n-2\n1\n-1\n3",
     "ready": true,
     "batch": 9
   },
