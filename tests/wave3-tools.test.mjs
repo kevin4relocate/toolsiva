@@ -1,3 +1,4 @@
+import { simulateScheduledPhase } from "./helpers/tool-release-fixtures.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -28,7 +29,7 @@ test("Exactly 50 new tools follow the prior 141 and all have working examples",(
   assert.ok(tool.ready&&guides[tool.slug],tool.slug+" missing ready or guide");
   assert.ok(tool.metaDescription.length>=60&&tool.metaDescription.length<=180,tool.slug+" meta length");
   assert.equal(guides[tool.slug].example,tool.example);
-  assert.ok(tool.week>=14&&tool.week<=19);
+  assert.ok(tool.week===Math.floor(queue.findIndex(z=>z.slug===tool.slug)/20)+1);
   assert.ok(sources.includes('case "'+tool.slug+'"'),tool.slug+" missing engine");
   assert.doesNotMatch(tool.slug,/pdf|image|upload|barcode|qr-reader/);
   if(tool.slug==="html-table-to-csv")continue; // DOMParser is available in the browser build.
@@ -105,22 +106,12 @@ test("Marketing and website results are meaningful and reject invalid options",(
  assert.throws(()=>run("dmarc-record-generator","reject,101,mailto:a@example.com"),/Percentage/);
 });
 
-test("First 189 distinct tools publish at ten per Monday for 19 weeks",()=>{
- const phase=queue.filter(x=>x.batch<=3),weeks=Math.ceil(phase.length/10);
- const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave3-dedup-"));
- try{
-  fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  for(let i=0;i<weeks;i++){
-   const result=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(result.released.length,Math.min(10,phase.length-i*10),"week "+(i+1));
-  }
-  const out=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(out.published,phase.map(x=>x.slug));
-  assert.equal(out.history.length,weeks);
-  assert.equal(out.published[phase.findIndex(x=>x.batch===3)],"text-line-includes-filter");
- }finally{fs.rmSync(root,{recursive:true,force:true});}
+test("Wave 3 preserves 10-tool Monday/Thursday slots and maximum 20 per week",()=>{
+ const {state,phase,slots,weeks}=simulateScheduledPhase(queue,3);
+ assert.equal(slots,Math.ceil(phase.length/10));
+ assert.equal(weeks,Math.ceil(phase.length/20));
+ assert.equal(state.history.at(-1).slugs.length,phase.length%10||10);
+ assert.equal(state.published[phase.findIndex(x=>x.batch===3)],"text-line-includes-filter");
 });
 
 test("New engines use no uploads, network calls, or arbitrary code execution",()=>{
