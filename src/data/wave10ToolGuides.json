@@ -880,5 +880,23 @@
       "Read the labeled result and unit, then copy the result for your calculation."
     ],
     "limitation": "This is a direct formula tool based on typed inputs, not live data. Assumptions and units must be consistent. Verify calculations independently before using results in engineering, financial, medical or safety-critical decisions."
+  },
+  "trapezoid-midsegment-length": {
+    "explanation": "Trapezoid Midsegment Length produces the specified geometric measurement from pasted numerical inputs in consistent units.",
+    "example": "8|4",
+    "workflows": [
+      "Enter the numeric dimensions separated with |.",
+      "Review the calculation and unit in the output."
+    ],
+    "limitation": "This calculator assumes ideal geometric shapes and consistent measurement units. Verify specifications independently for engineering and safety-critical applications."
+  },
+  "hemisphere-surface-area-total": {
+    "explanation": "Hemisphere Total Surface Area produces the specified geometric measurement from pasted numerical inputs in consistent units.",
+    "example": "3",
+    "workflows": [
+      "Enter the numeric dimensions separated with |.",
+      "Review the calculation and unit in the output."
+    ],
+    "limitation": "This calculator assumes ideal geometric shapes and consistent measurement units. Verify specifications independently for engineering and safety-critical applications."
   }
 }
