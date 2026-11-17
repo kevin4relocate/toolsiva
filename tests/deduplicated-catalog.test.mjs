@@ -84,14 +84,16 @@ test("Retained near-overlap tools have documented differences and remain availab
 
 test("Weekly release cadence and SEO blog schedule remain consistent",()=>{
  assert.equal(state.startDate,"2026-11-23");
- assert.equal(state.weeklyLimit,10);
+ assert.equal(state.weeklyLimit,20);
+ assert.equal(state.perSlotLimit,10);
  assert.ok(Array.isArray(state.published));
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  assert.equal(new Set(state.published).size,state.published.length);
- assert.equal(queue.at(-1).week,97);
- for(let i=0;i<queue.length;i++)assert.equal(queue[i].week,Math.floor(i/10)+1,"week ordering at "+i);
+ assert.equal(queue.at(-1).week,49);
+ for(let i=0;i<queue.length;i++)assert.equal(queue[i].week,Math.floor(i/20)+1,"week ordering at "+i);
  const toolWorkflow=fs.readFileSync(".github/workflows/publish-simple-tools.yml","utf8");
  const blogWorkflow=fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8");
  assert.match(toolWorkflow,/tools:release|release-simple-tools/);
+ assert.match(toolWorkflow,/0 2 \* \* 1,4/);
  assert.match(blogWorkflow,/blog:release|release-curated-guide/);
 });
