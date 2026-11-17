@@ -21,16 +21,16 @@ const run=(slug,input)=>{for(const fn of engines){const out=fn(slug,input);if(ou
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8")),wave=queue.filter(x=>x.batch===8);
 const browserOnly=new Set(["css-selector-matcher","html-form-constraint-auditor"]);
 test("Wave eight adds 100 unique implemented tools without exposing them prematurely",()=>{
- assert.equal(queue.length,673);
+ assert.equal(queue.length,773);
  assert.equal(wave.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,673);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,773);
  assert.equal(queue[573].slug,"euler-totient-calculator");
- assert.equal(queue.at(-1).slug,"median-of-means-calculator");
+ assert.equal(queue.filter(x=>x.batch===8).at(-1).slug,"median-of-means-calculator");
  const original=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(original.length,123);
  const active=new Set([...original,...queue.map(x=>x.slug)]);
- assert.equal(active.size,796);
+ assert.equal(active.size,896);
  const retired=JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired;
  for(const t of retired)assert.ok(!active.has(t.slug),t.slug+" reintroduced");
  const code=modules.map(m=>fs.readFileSync("src/lib/wave8"+m+".mjs","utf8")).join("\n");
@@ -157,19 +157,20 @@ test("Robust descriptive statistics produce expected observations",()=>{
  assert.match(run("median-of-means-calculator","1,2,3,4,50,6|3"),/Median of means:/);
 });
 test("Scheduled release stays 10 tools per Monday with 68-week simulation",()=>{
+ const phase=queue.filter(x=>x.batch<=8);
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave8-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const weeks=Math.ceil(queue.length/10);
+  const weeks=Math.ceil(phase.length/10);
   assert.equal(weeks,68);
   for(let i=0;i<weeks;i++){
    const r=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+7*i,2))});
-   assert.equal(r.released.length,Math.min(10,queue.length-10*i),"week "+(i+1));
+   assert.equal(r.released.length,Math.min(10,phase.length-10*i),"week "+(i+1));
   }
   const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,queue.map(x=>x.slug));
+  assert.deepEqual(state.published,phase.map(x=>x.slug));
   assert.equal(state.history.length,68);
   assert.equal(state.history.at(-1).slugs.length,3);
   assert.equal(state.published[573],"euler-totient-calculator");
