@@ -24,7 +24,7 @@ test("Wave eight adds 100 unique implemented tools without exposing them prematu
  assert.equal(queue.length,873);
  assert.equal(wave.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,773);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,873);
  assert.equal(queue[573].slug,"euler-totient-calculator");
  assert.equal(queue.filter(x=>x.batch===8).at(-1).slug,"median-of-means-calculator");
  const original=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
