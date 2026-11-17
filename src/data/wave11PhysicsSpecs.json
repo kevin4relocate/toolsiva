@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "projectile-range-level-ground",
+    "name": "Projectile Range on Level Ground",
+    "example": "20|45",
+    "expression": "a[0]**2*Math.sin(2*a[1]*Math.PI/180)/9.80665",
+    "unit": "meters",
+    "inputs": "launch speed m/s | launch angle degrees",
+    "valid": "a[0]>=0&&a[1]>=0&&a[1]<=90",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "projectile-maximum-height",
+    "name": "Projectile Maximum Height",
+    "example": "20|30",
+    "expression": "(a[0]*Math.sin(a[1]*Math.PI/180))**2/(2*9.80665)",
+    "unit": "meters",
+    "inputs": "launch speed m/s | launch angle degrees",
+    "valid": "a[0]>=0&&a[1]>=0&&a[1]<=90",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "projectile-flight-time",
+    "name": "Projectile Total Flight Time",
+    "example": "20|30",
+    "expression": "2*a[0]*Math.sin(a[1]*Math.PI/180)/9.80665",
+    "unit": "seconds",
+    "inputs": "launch speed m/s | launch angle degrees",
+    "valid": "a[0]>=0&&a[1]>=0&&a[1]<=90",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "freefall-time-from-height",
+    "name": "Free Fall Time from Height",
+    "example": "19.6133",
+    "expression": "Math.sqrt(2*a[0]/9.80665)",
+    "unit": "seconds",
+    "inputs": "vertical drop height meters",
+    "valid": "a[0]>=0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "freefall-impact-speed",
+    "name": "Free Fall Impact Speed",
+    "example": "19.6133",
+    "expression": "Math.sqrt(2*9.80665*a[0])",
+    "unit": "m/s",
+    "inputs": "vertical drop height meters",
+    "valid": "a[0]>=0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "gravitational-force-two-masses",
+    "name": "Newtonian Gravitational Force",
+    "example": "5|7|2",
+    "expression": "6.67430e-11*a[0]*a[1]/a[2]**2",
+    "unit": "newtons",
+    "inputs": "mass 1 kg | mass 2 kg | center distance meters",
+    "valid": "a[0]>0&&a[1]>0&&a[2]>0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "escape-velocity-from-gravity",
+    "name": "Escape Speed at Surface",
+    "example": "5.972e24|6371000",
+    "expression": "Math.sqrt(2*6.67430e-11*a[0]/a[1])",
+    "unit": "m/s",
+    "inputs": "planet mass kg | distance from center meters",
+    "valid": "a.every(x=>x>0)",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "circular-orbit-speed",
+    "name": "Circular Orbit Speed",
+    "example": "5.972e24|6771000",
+    "expression": "Math.sqrt(6.67430e-11*a[0]/a[1])",
+    "unit": "m/s",
+    "inputs": "central mass kg | orbital radius meters",
+    "valid": "a.every(x=>x>0)",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "circular-orbit-period",
+    "name": "Circular Orbit Period",
+    "example": "5.972e24|6771000",
+    "expression": "2*Math.PI*Math.sqrt(a[1]**3/(6.67430e-11*a[0]))",
+    "unit": "seconds",
+    "inputs": "central mass kg | orbital radius meters",
+    "valid": "a.every(x=>x>0)",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "torque-from-force-angle",
+    "name": "Torque from Force at Angle",
+    "example": "10|2|90",
+    "expression": "a[0]*a[1]*Math.sin(a[2]*Math.PI/180)",
+    "unit": "N·m",
+    "inputs": "force newtons | lever arm meters | angle degrees",
+    "valid": "a[0]>=0&&a[1]>=0&&a[2]>=0&&a[2]<=180",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "rotational-kinetic-energy",
+    "name": "Rotational Kinetic Energy",
+    "example": "2|3",
+    "expression": "0.5*a[0]*a[1]**2",
+    "unit": "joules",
+    "inputs": "moment of inertia kg m² | angular speed rad/s",
+    "valid": "a[0]>=0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "solid-disk-moment-inertia",
+    "name": "Solid Disk Moment of Inertia",
+    "example": "4|2",
+    "expression": "0.5*a[0]*a[1]**2",
+    "unit": "kg·m²",
+    "inputs": "disk mass kg | disk radius meters",
+    "valid": "a.every(x=>x>0)",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "solid-sphere-moment-inertia",
+    "name": "Solid Sphere Moment of Inertia",
+    "example": "4|2",
+    "expression": "0.4*a[0]*a[1]**2",
+    "unit": "kg·m²",
+    "inputs": "sphere mass kg | sphere radius meters",
+    "valid": "a.every(x=>x>0)",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "mechanical-advantage-from-forces",
+    "name": "Mechanical Advantage from Forces",
+    "example": "150|50",
+    "expression": "a[0]/a[1]",
+    "unit": "ratio",
+    "inputs": "output load force | applied effort force",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "engineering-stress-calculator",
+    "name": "Engineering Stress",
+    "example": "1000|0.005",
+    "expression": "a[0]/a[1]",
+    "unit": "pascals",
+    "inputs": "axial force newtons | original cross sectional area m²",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "engineering-strain-calculator",
+    "name": "Engineering Strain",
+    "example": "0.001|1",
+    "expression": "a[0]/a[1]",
+    "unit": "ratio",
+    "inputs": "length change meters | initial length meters",
+    "valid": "a[1]>0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "youngs-modulus-from-stress-strain",
+    "name": "Young's Modulus from Stress and Strain",
+    "example": "2000000|0.001",
+    "expression": "a[0]/a[1]",
+    "unit": "pascals",
+    "inputs": "axial stress pascals | axial engineering strain",
+    "valid": "a[1]!==0&&a[0]/a[1]>0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "speed-of-sound-air-temperature",
+    "name": "Approximate Sound Speed in Air",
+    "example": "20",
+    "expression": "331.3+0.606*a[0]",
+    "unit": "m/s",
+    "inputs": "air temperature Celsius",
+    "valid": "a[0]>=-50&&a[0]<=50",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "echo-distance-from-roundtrip",
+    "name": "Echo Distance from Round Trip",
+    "example": "0.2|343",
+    "expression": "a[0]*a[1]/2",
+    "unit": "meters",
+    "inputs": "round trip time seconds | sound speed m/s",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Mechanics and acoustics"
+  },
+  {
+    "slug": "sound-pressure-level-calculator",
+    "name": "Sound Pressure Level",
+    "example": "0.2",
+    "expression": "20*Math.log10(a[0]/0.00002)",
+    "unit": "dB SPL",
+    "inputs": "RMS sound pressure pascals",
+    "valid": "a[0]>0",
+    "group": "Mechanics and acoustics"
+  }
+]

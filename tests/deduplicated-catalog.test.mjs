@@ -17,8 +17,8 @@ const active=new Set([...publicSlugs,...queue.map(x=>x.slug)]);
 
 test("Audit removes exactly 18 functional duplicates without touching 123 public tools",()=>{
  assert.equal(publicSlugs.length,123);
- assert.equal(queue.length,873);
- assert.equal(active.size,996);
+ assert.equal(queue.length,973);
+ assert.equal(active.size,1096);
  assert.equal(audit.baseline.public,123);
  assert.equal(audit.baseline.queued,391);
  assert.equal(audit.after.queued,373);
@@ -87,7 +87,7 @@ test("Weekly release cadence and SEO blog schedule remain consistent",()=>{
  assert.ok(Array.isArray(state.published));
  assert.deepEqual(state.published,queue.slice(0,state.published.length).map(x=>x.slug));
  assert.equal(new Set(state.published).size,state.published.length);
- assert.equal(queue.at(-1).week,88);
+ assert.equal(queue.at(-1).week,98);
  for(let i=0;i<queue.length;i++)assert.equal(queue[i].week,Math.floor(i/10)+1,"week ordering at "+i);
  const toolWorkflow=fs.readFileSync(".github/workflows/publish-simple-tools.yml","utf8");
  const blogWorkflow=fs.readFileSync(".github/workflows/publish-curated-guides.yml","utf8");

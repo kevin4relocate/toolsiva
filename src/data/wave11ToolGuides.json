@@ -1,0 +1,902 @@
+{
+  "triangle-third-side-cosine-rule": {
+    "explanation": "Triangle Third Side (Cosine Rule) computes units from side A, side B, included angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "3|4|60",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: side A, side B, included angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 3|4|60, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "triangle-area-included-angle": {
+    "explanation": "Triangle Area from Included Angle computes square units from side A, side B, included angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "3|4|90",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: side A, side B, included angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 3|4|90, replace with your own inputs, and check the unit (square units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "triangle-height-from-base-area": {
+    "explanation": "Triangle Height from Base and Area computes units from base length, triangle area. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "6|12",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: base length, triangle area. Separate inputs with a vertical bar (|).",
+      "Load the example 6|12, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "right-triangle-missing-leg": {
+    "explanation": "Missing Right Triangle Leg computes units from hypotenuse, known leg. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: hypotenuse, known leg. Separate inputs with a vertical bar (|).",
+      "Load the example 5|3, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "rectangular-prism-space-diagonal": {
+    "explanation": "Rectangular Prism Space Diagonal computes units from length, width, height. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "3|4|12",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: length, width, height. Separate inputs with a vertical bar (|).",
+      "Load the example 3|4|12, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "rectangular-prism-total-surface": {
+    "explanation": "Rectangular Prism Total Surface Area computes square units from length, width, height. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3|4",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: length, width, height. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3|4, replace with your own inputs, and check the unit (square units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "right-cone-total-surface-area": {
+    "explanation": "Right Cone Total Surface Area computes square units from base radius, perpendicular height. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: base radius, perpendicular height. Separate inputs with a vertical bar (|).",
+      "Load the example 3|4, replace with your own inputs, and check the unit (square units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "cylinder-total-surface-area": {
+    "explanation": "Cylinder Total Surface Area computes square units from radius, height. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|5",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: radius, height. Separate inputs with a vertical bar (|).",
+      "Load the example 2|5, replace with your own inputs, and check the unit (square units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "hemisphere-volume-calculator": {
+    "explanation": "Hemisphere Volume computes cubic units from hemisphere radius. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "3",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: hemisphere radius. Separate inputs with a vertical bar (|).",
+      "Load the example 3, replace with your own inputs, and check the unit (cubic units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "ellipsoid-volume-calculator": {
+    "explanation": "Ellipsoid Volume computes cubic units from semi-axis A, semi-axis B, semi-axis C. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3|4",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: semi-axis A, semi-axis B, semi-axis C. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3|4, replace with your own inputs, and check the unit (cubic units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "annulus-area-calculator": {
+    "explanation": "Annulus Area computes square units from outer radius, inner radius. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: outer radius, inner radius. Separate inputs with a vertical bar (|).",
+      "Load the example 5|3, replace with your own inputs, and check the unit (square units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "hollow-cylinder-material-volume": {
+    "explanation": "Hollow Cylinder Material Volume computes cubic units from outer radius, inner radius, height. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5|3|10",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: outer radius, inner radius, height. Separate inputs with a vertical bar (|).",
+      "Load the example 5|3|10, replace with your own inputs, and check the unit (cubic units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "regular-polygon-apothem-calculator": {
+    "explanation": "Regular Polygon Apothem computes units from number of sides, side length. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "6|2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: number of sides, side length. Separate inputs with a vertical bar (|).",
+      "Load the example 6|2, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "regular-polygon-circumradius": {
+    "explanation": "Regular Polygon Circumradius computes units from number of sides, side length. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "6|2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: number of sides, side length. Separate inputs with a vertical bar (|).",
+      "Load the example 6|2, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "regular-polygon-perimeter": {
+    "explanation": "Regular Polygon Perimeter computes units from number of sides, side length. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "6|2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: number of sides, side length. Separate inputs with a vertical bar (|).",
+      "Load the example 6|2, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "ellipse-circumference-ramanujan": {
+    "explanation": "Ellipse Circumference (Ramanujan) computes units from semi-major axis, semi-minor axis. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: semi-major axis, semi-minor axis. Separate inputs with a vertical bar (|).",
+      "Load the example 5|3, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "right-cone-slant-height": {
+    "explanation": "Right Cone Slant Height computes units from base radius, perpendicular height. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "3|4",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: base radius, perpendicular height. Separate inputs with a vertical bar (|).",
+      "Load the example 3|4, replace with your own inputs, and check the unit (units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "vector3-dot-product-calculator": {
+    "explanation": "3D Vector Dot Product computes squared vector units from Ax, Ay, Az, Bx, By, Bz. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|2|3|4|5|6",
+    "workflows": [
+      "Enter 6 finite numeric values in this order: Ax, Ay, Az, Bx, By, Bz. Separate inputs with a vertical bar (|).",
+      "Load the example 1|2|3|4|5|6, replace with your own inputs, and check the unit (squared vector units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "vector3-cross-product-magnitude": {
+    "explanation": "3D Cross Product Magnitude computes squared vector units from Ax, Ay, Az, Bx, By, Bz. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|0|0|0|3|0",
+    "workflows": [
+      "Enter 6 finite numeric values in this order: Ax, Ay, Az, Bx, By, Bz. Separate inputs with a vertical bar (|).",
+      "Load the example 1|0|0|0|3|0, replace with your own inputs, and check the unit (squared vector units) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "vector3-angle-between": {
+    "explanation": "3D Vector Angle computes degrees from Ax, Ay, Az, Bx, By, Bz. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|0|0|0|1|0",
+    "workflows": [
+      "Enter 6 finite numeric values in this order: Ax, Ay, Az, Bx, By, Bz. Separate inputs with a vertical bar (|).",
+      "Load the example 1|0|0|0|1|0, replace with your own inputs, and check the unit (degrees) before copying."
+    ],
+    "limitation": "Assumes ideal Euclidean geometry and consistently measured dimensions. Confirm shape assumptions and units independently before engineering use. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "projectile-range-level-ground": {
+    "explanation": "Projectile Range on Level Ground computes meters from launch speed m/s, launch angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "20|45",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: launch speed m/s, launch angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 20|45, replace with your own inputs, and check the unit (meters) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "projectile-maximum-height": {
+    "explanation": "Projectile Maximum Height computes meters from launch speed m/s, launch angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "20|30",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: launch speed m/s, launch angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 20|30, replace with your own inputs, and check the unit (meters) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "projectile-flight-time": {
+    "explanation": "Projectile Total Flight Time computes seconds from launch speed m/s, launch angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "20|30",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: launch speed m/s, launch angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 20|30, replace with your own inputs, and check the unit (seconds) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "freefall-time-from-height": {
+    "explanation": "Free Fall Time from Height computes seconds from vertical drop height meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "19.6133",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: vertical drop height meters. Separate inputs with a vertical bar (|).",
+      "Load the example 19.6133, replace with your own inputs, and check the unit (seconds) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "freefall-impact-speed": {
+    "explanation": "Free Fall Impact Speed computes m/s from vertical drop height meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "19.6133",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: vertical drop height meters. Separate inputs with a vertical bar (|).",
+      "Load the example 19.6133, replace with your own inputs, and check the unit (m/s) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "gravitational-force-two-masses": {
+    "explanation": "Newtonian Gravitational Force computes newtons from mass 1 kg, mass 2 kg, center distance meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5|7|2",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: mass 1 kg, mass 2 kg, center distance meters. Separate inputs with a vertical bar (|).",
+      "Load the example 5|7|2, replace with your own inputs, and check the unit (newtons) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "escape-velocity-from-gravity": {
+    "explanation": "Escape Speed at Surface computes m/s from planet mass kg, distance from center meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5.972e24|6371000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: planet mass kg, distance from center meters. Separate inputs with a vertical bar (|).",
+      "Load the example 5.972e24|6371000, replace with your own inputs, and check the unit (m/s) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "circular-orbit-speed": {
+    "explanation": "Circular Orbit Speed computes m/s from central mass kg, orbital radius meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5.972e24|6771000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: central mass kg, orbital radius meters. Separate inputs with a vertical bar (|).",
+      "Load the example 5.972e24|6771000, replace with your own inputs, and check the unit (m/s) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "circular-orbit-period": {
+    "explanation": "Circular Orbit Period computes seconds from central mass kg, orbital radius meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5.972e24|6771000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: central mass kg, orbital radius meters. Separate inputs with a vertical bar (|).",
+      "Load the example 5.972e24|6771000, replace with your own inputs, and check the unit (seconds) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "torque-from-force-angle": {
+    "explanation": "Torque from Force at Angle computes N·m from force newtons, lever arm meters, angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "10|2|90",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: force newtons, lever arm meters, angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 10|2|90, replace with your own inputs, and check the unit (N·m) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "rotational-kinetic-energy": {
+    "explanation": "Rotational Kinetic Energy computes joules from moment of inertia kg m², angular speed rad/s. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: moment of inertia kg m², angular speed rad/s. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3, replace with your own inputs, and check the unit (joules) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "solid-disk-moment-inertia": {
+    "explanation": "Solid Disk Moment of Inertia computes kg·m² from disk mass kg, disk radius meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "4|2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: disk mass kg, disk radius meters. Separate inputs with a vertical bar (|).",
+      "Load the example 4|2, replace with your own inputs, and check the unit (kg·m²) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "solid-sphere-moment-inertia": {
+    "explanation": "Solid Sphere Moment of Inertia computes kg·m² from sphere mass kg, sphere radius meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "4|2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: sphere mass kg, sphere radius meters. Separate inputs with a vertical bar (|).",
+      "Load the example 4|2, replace with your own inputs, and check the unit (kg·m²) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "mechanical-advantage-from-forces": {
+    "explanation": "Mechanical Advantage from Forces computes ratio from output load force, applied effort force. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "150|50",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: output load force, applied effort force. Separate inputs with a vertical bar (|).",
+      "Load the example 150|50, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "engineering-stress-calculator": {
+    "explanation": "Engineering Stress computes pascals from axial force newtons, original cross sectional area m². Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1000|0.005",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: axial force newtons, original cross sectional area m². Separate inputs with a vertical bar (|).",
+      "Load the example 1000|0.005, replace with your own inputs, and check the unit (pascals) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "engineering-strain-calculator": {
+    "explanation": "Engineering Strain computes ratio from length change meters, initial length meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.001|1",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: length change meters, initial length meters. Separate inputs with a vertical bar (|).",
+      "Load the example 0.001|1, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "youngs-modulus-from-stress-strain": {
+    "explanation": "Young's Modulus from Stress and Strain computes pascals from axial stress pascals, axial engineering strain. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2000000|0.001",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: axial stress pascals, axial engineering strain. Separate inputs with a vertical bar (|).",
+      "Load the example 2000000|0.001, replace with your own inputs, and check the unit (pascals) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "speed-of-sound-air-temperature": {
+    "explanation": "Approximate Sound Speed in Air computes m/s from air temperature Celsius. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "20",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: air temperature Celsius. Separate inputs with a vertical bar (|).",
+      "Load the example 20, replace with your own inputs, and check the unit (m/s) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "echo-distance-from-roundtrip": {
+    "explanation": "Echo Distance from Round Trip computes meters from round trip time seconds, sound speed m/s. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.2|343",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: round trip time seconds, sound speed m/s. Separate inputs with a vertical bar (|).",
+      "Load the example 0.2|343, replace with your own inputs, and check the unit (meters) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "sound-pressure-level-calculator": {
+    "explanation": "Sound Pressure Level computes dB SPL from RMS sound pressure pascals. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.2",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: RMS sound pressure pascals. Separate inputs with a vertical bar (|).",
+      "Load the example 0.2, replace with your own inputs, and check the unit (dB SPL) before copying."
+    ],
+    "limitation": "Uses an ideal physical model and stated constants. Effects such as atmospheric drag, irregular mass distribution and uncertainty are not modeled. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "moles-from-mass-molar-mass": {
+    "explanation": "Moles from Mass and Molar Mass computes mol from mass grams, molar mass g/mol. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "18|18",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: mass grams, molar mass g/mol. Separate inputs with a vertical bar (|).",
+      "Load the example 18|18, replace with your own inputs, and check the unit (mol) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "mass-from-moles-molar-mass": {
+    "explanation": "Mass from Moles and Molar Mass computes grams from amount mol, molar mass g/mol. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|18",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: amount mol, molar mass g/mol. Separate inputs with a vertical bar (|).",
+      "Load the example 2|18, replace with your own inputs, and check the unit (grams) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "solution-volume-percent": {
+    "explanation": "Solution Volume Percent computes percent from solute volume mL, final solution volume mL. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "20|200",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: solute volume mL, final solution volume mL. Separate inputs with a vertical bar (|).",
+      "Load the example 20|200, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "dilute-water-ppm-mg-l": {
+    "explanation": "Approximate Water Concentration in ppm computes ppm approx from dissolved mass mg, water solution volume L. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "10|2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: dissolved mass mg, water solution volume L. Separate inputs with a vertical bar (|).",
+      "Load the example 10|2, replace with your own inputs, and check the unit (ppm approx) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "ideal-gas-density-calculator": {
+    "explanation": "Ideal Gas Density computes kg/m³ from pressure Pa, molar mass kg/mol, Kelvin. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "101325|0.02897|293.15",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: pressure Pa, molar mass kg/mol, Kelvin. Separate inputs with a vertical bar (|).",
+      "Load the example 101325|0.02897|293.15, replace with your own inputs, and check the unit (kg/m³) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "dalton-partial-pressure": {
+    "explanation": "Dalton Partial Pressure computes pascals from total pressure pascals, species mole fraction. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "101325|0.2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: total pressure pascals, species mole fraction. Separate inputs with a vertical bar (|).",
+      "Load the example 101325|0.2, replace with your own inputs, and check the unit (pascals) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "mole-fraction-two-components": {
+    "explanation": "Mole Fraction of Component A computes ratio from component A mol, component B mol. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: component A mol, component B mol. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "ideal-gas-rms-molecular-speed": {
+    "explanation": "Ideal Gas RMS Molecular Speed computes m/s from gas temperature Kelvin, molar mass kg/mol. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "300|0.02897",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: gas temperature Kelvin, molar mass kg/mol. Separate inputs with a vertical bar (|).",
+      "Load the example 300|0.02897, replace with your own inputs, and check the unit (m/s) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "gas-molecule-mean-kinetic-energy": {
+    "explanation": "Gas Molecule Mean Translational Energy computes joules per molecule from gas temperature Kelvin. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "300",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: gas temperature Kelvin. Separate inputs with a vertical bar (|).",
+      "Load the example 300, replace with your own inputs, and check the unit (joules per molecule) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "coulomb-electric-force-magnitude": {
+    "explanation": "Electrostatic Force Magnitude computes newtons from charge Q1 coulombs, charge Q2 coulombs, separation meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.000001|-0.000001|0.1",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: charge Q1 coulombs, charge Q2 coulombs, separation meters. Separate inputs with a vertical bar (|).",
+      "Load the example 0.000001|-0.000001|0.1, replace with your own inputs, and check the unit (newtons) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "point-charge-electric-field": {
+    "explanation": "Point Charge Electric Field Magnitude computes N/C from point charge coulombs, radial distance meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.000001|0.1",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: point charge coulombs, radial distance meters. Separate inputs with a vertical bar (|).",
+      "Load the example 0.000001|0.1, replace with your own inputs, and check the unit (N/C) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "point-charge-electric-potential": {
+    "explanation": "Point Charge Electric Potential computes volts from point charge coulombs, radial distance meters. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.000001|0.1",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: point charge coulombs, radial distance meters. Separate inputs with a vertical bar (|).",
+      "Load the example 0.000001|0.1, replace with your own inputs, and check the unit (volts) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "resistive-wire-resistance": {
+    "explanation": "Wire Resistance from Resistivity computes ohms from material resistivity ohm m, wire length meters, cross section m². Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.0000000172|10|0.000001",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: material resistivity ohm m, wire length meters, cross section m². Separate inputs with a vertical bar (|).",
+      "Load the example 0.0000000172|10|0.000001, replace with your own inputs, and check the unit (ohms) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "electric-conductance-from-resistance": {
+    "explanation": "Electrical Conductance computes siemens from resistance ohms. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "5",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: resistance ohms. Separate inputs with a vertical bar (|).",
+      "Load the example 5, replace with your own inputs, and check the unit (siemens) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "photon-energy-from-wavelength": {
+    "explanation": "Photon Energy from Wavelength computes eV from vacuum wavelength nanometers. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: vacuum wavelength nanometers. Separate inputs with a vertical bar (|).",
+      "Load the example 500, replace with your own inputs, and check the unit (eV) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "photon-frequency-from-wavelength": {
+    "explanation": "Photon Frequency from Wavelength computes hertz from vacuum wavelength nanometers. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: vacuum wavelength nanometers. Separate inputs with a vertical bar (|).",
+      "Load the example 500, replace with your own inputs, and check the unit (hertz) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "thin-lens-focal-length": {
+    "explanation": "Thin Lens Focal Length computes distance units from object distance, image distance. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "30|60",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: object distance, image distance. Separate inputs with a vertical bar (|).",
+      "Load the example 30|60, replace with your own inputs, and check the unit (distance units) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "thin-lens-lateral-magnification": {
+    "explanation": "Thin Lens Lateral Magnification computes ratio from object distance, image distance. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "30|60",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: object distance, image distance. Separate inputs with a vertical bar (|).",
+      "Load the example 30|60, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "snells-law-refraction-angle": {
+    "explanation": "Snell's Law Refracted Angle computes degrees from incident index n1, transmitted index n2, incident angle degrees. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|1.5|30",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: incident index n1, transmitted index n2, incident angle degrees. Separate inputs with a vertical bar (|).",
+      "Load the example 1|1.5|30, replace with your own inputs, and check the unit (degrees) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "total-internal-reflection-critical-angle": {
+    "explanation": "Critical Angle for Total Internal Reflection computes degrees from higher refractive index, lower refractive index. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1.5|1",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: higher refractive index, lower refractive index. Separate inputs with a vertical bar (|).",
+      "Load the example 1.5|1, replace with your own inputs, and check the unit (degrees) before copying."
+    ],
+    "limitation": "Idealized scientific equations rely on stated units and reference conditions. Verify experimental and safety-critical work independently. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "standard-error-of-mean": {
+    "explanation": "Standard Error of Sample Mean computes data units from sample standard deviation, sample size. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "10|100",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: sample standard deviation, sample size. Separate inputs with a vertical bar (|).",
+      "Load the example 10|100, replace with your own inputs, and check the unit (data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "normal-mean-confidence-bounds": {
+    "explanation": "Normal Mean Confidence Bounds computes interval from sample mean, standard deviation, sample size, normal z critical value. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "50|10|100|1.96",
+    "workflows": [
+      "Enter 4 finite numeric values in this order: sample mean, standard deviation, sample size, normal z critical value. Separate inputs with a vertical bar (|).",
+      "Load the example 50|10|100|1.96, replace with your own inputs, and check the unit (interval) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "adjusted-r-squared-calculator": {
+    "explanation": "Adjusted R Squared computes ratio from ordinary R², sample size, predictor count. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.8|100|3",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: ordinary R², sample size, predictor count. Separate inputs with a vertical bar (|).",
+      "Load the example 0.8|100|3, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "one-sample-t-statistic": {
+    "explanation": "One Sample t Statistic computes t statistic from sample mean, null mean, sample sd, sample size. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "105|100|10|25",
+    "workflows": [
+      "Enter 4 finite numeric values in this order: sample mean, null mean, sample sd, sample size. Separate inputs with a vertical bar (|).",
+      "Load the example 105|100|10|25, replace with your own inputs, and check the unit (t statistic) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "welch-two-sample-t-statistic": {
+    "explanation": "Welch Two Sample t Statistic computes t statistic from mean1, mean2, sd1, sd2, n1, n2. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|90|10|12|25|30",
+    "workflows": [
+      "Enter 6 finite numeric values in this order: mean1, mean2, sd1, sd2, n1, n2. Separate inputs with a vertical bar (|).",
+      "Load the example 100|90|10|12|25|30, replace with your own inputs, and check the unit (t statistic) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "pooled-two-sample-variance": {
+    "explanation": "Pooled Two Sample Variance computes data units squared from sd1, sd2, n1, n2. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "10|12|25|30",
+    "workflows": [
+      "Enter 4 finite numeric values in this order: sd1, sd2, n1, n2. Separate inputs with a vertical bar (|).",
+      "Load the example 10|12|25|30, replace with your own inputs, and check the unit (data units squared) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "beta-distribution-expectation": {
+    "explanation": "Beta Distribution Expected Value computes ratio from alpha shape, beta shape. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: alpha shape, beta shape. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "beta-distribution-variance": {
+    "explanation": "Beta Distribution Variance computes variance from alpha shape, beta shape. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: alpha shape, beta shape. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3, replace with your own inputs, and check the unit (variance) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "gamma-distribution-expected-value": {
+    "explanation": "Gamma Distribution Expected Value computes data units from shape k, scale theta. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: shape k, scale theta. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3, replace with your own inputs, and check the unit (data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "gamma-distribution-variance": {
+    "explanation": "Gamma Distribution Variance computes squared data units from shape k, scale theta. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: shape k, scale theta. Separate inputs with a vertical bar (|).",
+      "Load the example 2|3, replace with your own inputs, and check the unit (squared data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "lognormal-distribution-median": {
+    "explanation": "Lognormal Distribution Median computes data units from log scale mean mu, log scale sd sigma. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|0.2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: log scale mean mu, log scale sd sigma. Separate inputs with a vertical bar (|).",
+      "Load the example 1|0.2, replace with your own inputs, and check the unit (data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "lognormal-distribution-mean": {
+    "explanation": "Lognormal Distribution Mean computes data units from log scale mean mu, log scale sd sigma. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|0.2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: log scale mean mu, log scale sd sigma. Separate inputs with a vertical bar (|).",
+      "Load the example 1|0.2, replace with your own inputs, and check the unit (data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "lognormal-distribution-variance": {
+    "explanation": "Lognormal Distribution Variance computes squared data units from log scale mean mu, log scale sd sigma. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|0.2",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: log scale mean mu, log scale sd sigma. Separate inputs with a vertical bar (|).",
+      "Load the example 1|0.2, replace with your own inputs, and check the unit (squared data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "continuous-uniform-distribution-mean": {
+    "explanation": "Continuous Uniform Mean computes data units from minimum bound, maximum bound. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|8",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: minimum bound, maximum bound. Separate inputs with a vertical bar (|).",
+      "Load the example 2|8, replace with your own inputs, and check the unit (data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "continuous-uniform-distribution-variance": {
+    "explanation": "Continuous Uniform Variance computes squared data units from minimum bound, maximum bound. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "2|8",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: minimum bound, maximum bound. Separate inputs with a vertical bar (|).",
+      "Load the example 2|8, replace with your own inputs, and check the unit (squared data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "triangular-distribution-mean": {
+    "explanation": "Triangular Distribution Mean computes data units from minimum a, mode c, maximum b. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|3|7",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: minimum a, mode c, maximum b. Separate inputs with a vertical bar (|).",
+      "Load the example 1|3|7, replace with your own inputs, and check the unit (data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "triangular-distribution-variance": {
+    "explanation": "Triangular Distribution Variance computes squared data units from minimum a, mode c, maximum b. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1|3|7",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: minimum a, mode c, maximum b. Separate inputs with a vertical bar (|).",
+      "Load the example 1|3|7, replace with your own inputs, and check the unit (squared data units) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "geometric-distribution-expected-trials": {
+    "explanation": "Geometric Distribution Expected Trials computes trials from success probability p. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.2",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: success probability p. Separate inputs with a vertical bar (|).",
+      "Load the example 0.2, replace with your own inputs, and check the unit (trials) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "geometric-distribution-trials-variance": {
+    "explanation": "Geometric Distribution Trials Variance computes trials squared from success probability p. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "0.2",
+    "workflows": [
+      "Enter 1 finite numeric values in this order: success probability p. Separate inputs with a vertical bar (|).",
+      "Load the example 0.2, replace with your own inputs, and check the unit (trials squared) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "binomial-distribution-expected-successes": {
+    "explanation": "Binomial Expected Successes computes successes from number of independent trials n, success probability p. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "20|0.3",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: number of independent trials n, success probability p. Separate inputs with a vertical bar (|).",
+      "Load the example 20|0.3, replace with your own inputs, and check the unit (successes) before copying."
+    ],
+    "limitation": "Parametric result requires suitable sampling assumptions, distribution choice and consistent parameterization; not a full hypothesis test. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "cost-of-goods-sold-inventory-flow": {
+    "explanation": "Cost of Goods Sold from Inventory Flow computes currency units from opening inventory, purchases, closing inventory. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|300|50",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: opening inventory, purchases, closing inventory. Separate inputs with a vertical bar (|).",
+      "Load the example 100|300|50, replace with your own inputs, and check the unit (currency units) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "inventory-days-on-hand-from-value": {
+    "explanation": "Inventory Days on Hand from Value computes days from average inventory value, period COGS, days in period. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|800|365",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: average inventory value, period COGS, days in period. Separate inputs with a vertical bar (|).",
+      "Load the example 100|800|365, replace with your own inputs, and check the unit (days) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "receivables-turnover-calculator": {
+    "explanation": "Accounts Receivable Turnover computes times per period from net credit sales, average accounts receivable. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "1200|100",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: net credit sales, average accounts receivable. Separate inputs with a vertical bar (|).",
+      "Load the example 1200|100, replace with your own inputs, and check the unit (times per period) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "payables-days-outstanding": {
+    "explanation": "Days Payable Outstanding computes days from average accounts payable, period COGS, days in period. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|800|365",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: average accounts payable, period COGS, days in period. Separate inputs with a vertical bar (|).",
+      "Load the example 100|800|365, replace with your own inputs, and check the unit (days) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "return-on-capital-employed": {
+    "explanation": "Return on Capital Employed computes percent from EBIT, total assets, current liabilities. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "200|1000|200",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: EBIT, total assets, current liabilities. Separate inputs with a vertical bar (|).",
+      "Load the example 200|1000|200, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "debt-to-equity-calculator": {
+    "explanation": "Debt to Equity Ratio computes ratio from total debt, shareholders equity. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500|1000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: total debt, shareholders equity. Separate inputs with a vertical bar (|).",
+      "Load the example 500|1000, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "current-liquidity-ratio": {
+    "explanation": "Current Liquidity Ratio computes ratio from current assets, current liabilities. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500|250",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: current assets, current liabilities. Separate inputs with a vertical bar (|).",
+      "Load the example 500|250, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "quick-liquidity-ratio": {
+    "explanation": "Quick Liquidity Ratio computes ratio from current assets, inventory, prepaid, current liabilities. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500|100|50|250",
+    "workflows": [
+      "Enter 4 finite numeric values in this order: current assets, inventory, prepaid, current liabilities. Separate inputs with a vertical bar (|).",
+      "Load the example 500|100|50|250, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "cash-liquidity-ratio": {
+    "explanation": "Cash Liquidity Ratio computes ratio from cash, cash equivalents, current liabilities. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|20|250",
+    "workflows": [
+      "Enter 3 finite numeric values in this order: cash, cash equivalents, current liabilities. Separate inputs with a vertical bar (|).",
+      "Load the example 100|20|250, replace with your own inputs, and check the unit (ratio) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "interest-coverage-ratio": {
+    "explanation": "EBIT Interest Coverage Ratio computes times from EBIT, interest expense. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500|100",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: EBIT, interest expense. Separate inputs with a vertical bar (|).",
+      "Load the example 500|100, replace with your own inputs, and check the unit (times) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "operating-cashflow-margin": {
+    "explanation": "Operating Cash Flow Margin computes percent from operating cash flow, revenue. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "300|1000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: operating cash flow, revenue. Separate inputs with a vertical bar (|).",
+      "Load the example 300|1000, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "warranty-claim-incidence": {
+    "explanation": "Warranty Claim Rate computes percent from eligible units with claims, eligible units sold. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "12|1000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: eligible units with claims, eligible units sold. Separate inputs with a vertical bar (|).",
+      "Load the example 12|1000, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "service-order-fill-rate": {
+    "explanation": "Service Order Fill Rate computes percent from orders fulfilled in full, total orders. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "80|100",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: orders fulfilled in full, total orders. Separate inputs with a vertical bar (|).",
+      "Load the example 80|100, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "hotel-room-occupancy-percentage": {
+    "explanation": "Hotel Room Occupancy Rate computes percent from rooms sold, room nights available. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "80|100",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: rooms sold, room nights available. Separate inputs with a vertical bar (|).",
+      "Load the example 80|100, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "restaurant-food-cost-percentage": {
+    "explanation": "Restaurant Food Cost Percentage computes percent from food ingredients cost, food sales revenue. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "300|1000",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: food ingredients cost, food sales revenue. Separate inputs with a vertical bar (|).",
+      "Load the example 300|1000, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "labor-output-per-hour": {
+    "explanation": "Labor Output per Person Hour computes units per person hour from good units produced, total person hours. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "200|40",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: good units produced, total person hours. Separate inputs with a vertical bar (|).",
+      "Load the example 200|40, replace with your own inputs, and check the unit (units per person hour) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "net-working-capital-calculator": {
+    "explanation": "Net Working Capital computes currency units from current assets, current liabilities. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500|250",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: current assets, current liabilities. Separate inputs with a vertical bar (|).",
+      "Load the example 500|250, replace with your own inputs, and check the unit (currency units) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "inventory-shrinkage-percentage": {
+    "explanation": "Inventory Shrinkage Percentage computes percent from book inventory units, physical inventory units. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "500|480",
+    "workflows": [
+      "Enter 2 finite numeric values in this order: book inventory units, physical inventory units. Separate inputs with a vertical bar (|).",
+      "Load the example 500|480, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "two-period-weighted-absolute-error": {
+    "explanation": "Two Period Weighted Absolute Percentage Error computes percent from actual 1, forecast 1, actual 2, forecast 2. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|90|200|220",
+    "workflows": [
+      "Enter 4 finite numeric values in this order: actual 1, forecast 1, actual 2, forecast 2. Separate inputs with a vertical bar (|).",
+      "Load the example 100|90|200|220, replace with your own inputs, and check the unit (percent) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  },
+  "kanban-replenishment-cards": {
+    "explanation": "Kanban Replenishment Cards computes cards from demand units/day, lead time days, units per card, fractional safety stock. Enter all numerical parameters in the same order as the sample and read the labeled result.",
+    "example": "100|2|10|0.1",
+    "workflows": [
+      "Enter 4 finite numeric values in this order: demand units/day, lead time days, units per card, fractional safety stock. Separate inputs with a vertical bar (|).",
+      "Load the example 100|2|10|0.1, replace with your own inputs, and check the unit (cards) before copying."
+    ],
+    "limitation": "Use consistent accounting periods, definitions and denominators. This is not live financial data or professional advice. Inputs are processed only inside your browser. Large or invalid numeric values are rejected; confirm results separately if a decision could be consequential."
+  }
+}
