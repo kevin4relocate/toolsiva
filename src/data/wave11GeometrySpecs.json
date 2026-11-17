@@ -188,15 +188,5 @@
     "inputs": "Ax | Ay | Az | Bx | By | Bz",
     "valid": "a.every(Number.isFinite)",
     "group": "Geometry and vectors"
-  },
-  {
-    "slug": "vector3-angle-between",
-    "name": "3D Vector Angle",
-    "example": "1|0|0|0|1|0",
-    "expression": "Math.acos(Math.max(-1,Math.min(1,(a[0]*a[3]+a[1]*a[4]+a[2]*a[5])/(Math.hypot(a[0],a[1],a[2])*Math.hypot(a[3],a[4],a[5])))))*180/Math.PI",
-    "unit": "degrees",
-    "inputs": "Ax | Ay | Az | Bx | By | Bz",
-    "valid": "Math.hypot(a[0],a[1],a[2])>0&&Math.hypot(a[3],a[4],a[5])>0",
-    "group": "Geometry and vectors"
   }
 ]

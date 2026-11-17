@@ -14,14 +14,14 @@ const specs=["Geometry","Physics","Science","Statistics","Business"].flatMap(x=>
 const wave=queue.filter(x=>x.batch===11);
 
 test("Wave 11 schedules 100 distinct, implemented and explained browser calculators",()=>{
- assert.equal(queue.length,968);
- assert.equal(wave.length,100);
- assert.equal(specs.length,100);
- assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,968);
+ assert.equal(queue.length,967);
+ assert.equal(wave.length,99);
+ assert.equal(specs.length,99);
+ assert.equal(Object.keys(guides).length,99);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,967);
  const legacySlugs=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(legacySlugs.length,123);
- assert.equal(new Set([...legacySlugs,...queue.map(x=>x.slug)]).size,1091);
+ assert.equal(new Set([...legacySlugs,...queue.map(x=>x.slug)]).size,1090);
  const retired=JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired.map(x=>x.slug);
  assert.ok(specs.every(s=>!retired.includes(s.slug)));
  const implemented=engines.map((_,i)=>fs.readFileSync("src/lib/wave11"+["Geometry","Physics","Science","Statistics","Business"][i]+".mjs","utf8")).join("\n");
@@ -52,9 +52,9 @@ test("Geometry provides correct triangle and vector outputs",()=>{
  assert.match(run("rectangular-prism-space-diagonal","3|4|12"),/13 units/);
  assert.match(run("vector3-dot-product-calculator","1|2|3|4|5|6"),/32 squared vector units/);
  assert.match(run("vector3-cross-product-magnitude","1|0|0|0|3|0"),/3 squared vector units/);
- assert.match(run("vector3-angle-between","1|0|0|0|1|0"),/90 degrees/);
+ assert.equal(w11Geometry("vector3-angle-between","1|0|0|0|1|0"),null);
  assert.throws(()=>run("right-triangle-missing-leg","3|5"),/domain/);
- assert.throws(()=>run("vector3-angle-between","0|0|0|0|1|0"),/domain/);
+ assert.equal(w11Geometry("vector3-angle-between","0|0|0|0|1|0"),null);
 });
 test("Physics and scientific models use documented constants and units",()=>{
  assert.match(run("freefall-time-from-height","19.6133"),/2 seconds/);

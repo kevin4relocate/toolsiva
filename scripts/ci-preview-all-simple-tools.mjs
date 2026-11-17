@@ -3,7 +3,7 @@ import { releaseSimpleTools } from "./release-simple-tools.mjs";
 
 const queue = JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json", "utf8"));
 const state = JSON.parse(fs.readFileSync("src/data/simpleToolRelease.json", "utf8"));
-if (queue.length < 968) throw new Error("Expected at least 968 queued tools.");
+if (queue.length < 967) throw new Error("Expected at least 967 queued tools.");
 if (new Set(queue.map((tool) => tool.slug)).size !== queue.length) throw new Error("Duplicate scheduled tool slugs.");
 
 const limit = state.weeklyLimit;

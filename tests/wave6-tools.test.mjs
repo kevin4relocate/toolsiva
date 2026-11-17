@@ -23,10 +23,10 @@ const run=(slug,input)=>{for(const fn of engines){const output=fn(slug,input);if
 const browserOnly=new Set(["social-meta-tag-auditor","html-table-accessibility-checker"]);
 
 test("All 100 wave-six tools have unique slugs, real implementations, detailed examples and no forbidden categories",()=>{
- assert.equal(queue.length,968);
+ assert.equal(queue.length,967);
  assert.equal(tools.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,968);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,967);
  assert.equal(queue[373].slug,"text-template-variable-filler");
  assert.equal(queue.filter(x=>x.batch===6).at(-1).slug,"dns-srv-record-generator");
  const priorSlugs=fs.readFileSync("src/data/tools.ts","utf8").match(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)||[];
@@ -219,4 +219,13 @@ test("All ten wave-six engines use no remote requests, file uploads or eval",()=
  const workspace=fs.readFileSync("src/components/tools/SimpleToolWorkspace.astro","utf8");
  for(const name of ["w6Text","w6Time","w6Probability","w6Math","w6Finance","w6Business","w6CsvTools","w6ConfigTools","w6WebTools","w6Network"])
   assert.ok(workspace.includes(name+"(mode,content)"),name+" not mounted");
+});
+
+test("Canonical vector angle supports 3D signed vectors formerly served by the retired tool",()=>{
+ const angle3d=w6Math("vector-angle-calculator","1,0,0\n---\n0,1,0");
+ assert.match(angle3d,/90/);
+ const opposite=w6Math("vector-angle-calculator","-1,0,0\n---\n1,0,0");
+ assert.match(opposite,/180/);
+ const queued=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8"));
+ assert.ok(!queued.some(x=>x.slug==="vector3-angle-between"));
 });

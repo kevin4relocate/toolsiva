@@ -114,11 +114,6 @@ export function w11Geometry(slug,input){switch(slug){
     const value=Math.hypot(a[1]*a[5]-a[2]*a[4],a[2]*a[3]-a[0]*a[5],a[0]*a[4]-a[1]*a[3]);
     return w11Result("3D Cross Product Magnitude",value,"squared vector units");
   }
- case "vector3-angle-between": {
-    const a=w11Parse(input,6,"3D Vector Angle");
-    if(!(Math.hypot(a[0],a[1],a[2])>0&&Math.hypot(a[3],a[4],a[5])>0))throw Error("3D Vector Angle input out of domain. Expected Ax | Ay | Az | Bx | By | Bz");
-    const value=Math.acos(Math.max(-1,Math.min(1,(a[0]*a[3]+a[1]*a[4]+a[2]*a[5])/(Math.hypot(a[0],a[1],a[2])*Math.hypot(a[3],a[4],a[5])))))*180/Math.PI;
-    return w11Result("3D Vector Angle",value,"degrees");
-  }
+
  default:return null;
 }}

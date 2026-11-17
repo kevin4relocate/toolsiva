@@ -68,7 +68,7 @@ jobs:
           npm run tools:verify
           npm run catalog:audit
           npm run seo:audit
-      - name: Simulate all weekly releases and audit 1091 built tool pages
+      - name: Simulate all weekly releases and audit 1090 built tool pages
         shell: bash
         run: |
           trap 'git restore -- src/data/simpleToolRelease.json' EXIT

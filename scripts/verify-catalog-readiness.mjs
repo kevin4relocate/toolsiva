@@ -13,7 +13,7 @@ const check = (condition, message) => { if (!condition) errors.push(message); };
 const duplicates = (values) => [...values.reduce((acc, x) => acc.set(x, (acc.get(x) ?? 0) + 1), new Map())].filter(([, n]) => n > 1);
 
 check(original.length === 123, "The original public catalog should contain exactly 123 tools.");
-check(queue.length >= 968, "Expected at least 968 scheduled tools after the 2026-11-17 dedup audit.");
+check(queue.length >= 967, "Expected at least 967 scheduled tools after the 2026-11-17 dedup audit.");
 check(duplicates(active).length === 0, "Duplicate tool slugs found.");
 check(duplicates(active.map(x => x.replace(/[^a-z0-9]/gi, "").toLowerCase())).length === 0, "Normalized tool slugs are duplicated.");
 check(duplicates(queue.map(t => t.name.trim().toLowerCase().replace(/[^a-z0-9]/g, ""))).length === 0, "Duplicated scheduled tool names.");
@@ -45,6 +45,7 @@ const equivalences = [
  ["pythagorean-theorem-calculator", "rectangle-diagonal-calculator"],
  ["euclidean-vector-distance-calculator", "distance-between-points-3d"],
  ["percentage-change-calculator", "revenue-growth-from-two-periods"],
+ ["vector-angle-calculator", "vector3-angle-between"],
 ];
 for (const [canonical, alias] of equivalences) check(active.includes(canonical) && !active.includes(alias), "Known redundant capability is still queued: " + alias);
 const weekdays = state.history.map(h => {
