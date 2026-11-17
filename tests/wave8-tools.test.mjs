@@ -21,7 +21,7 @@ const run=(slug,input)=>{for(const fn of engines){const out=fn(slug,input);if(ou
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8")),wave=queue.filter(x=>x.batch===8);
 const browserOnly=new Set(["css-selector-matcher","html-form-constraint-auditor"]);
 test("Wave eight adds 100 unique implemented tools without exposing them prematurely",()=>{
- assert.equal(queue.length,773);
+ assert.equal(queue.length,873);
  assert.equal(wave.length,100);
  assert.equal(Object.keys(guides).length,100);
  assert.equal(new Set(queue.map(x=>x.slug)).size,773);
@@ -30,7 +30,7 @@ test("Wave eight adds 100 unique implemented tools without exposing them prematu
  const original=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].map(x=>x[1]);
  assert.equal(original.length,123);
  const active=new Set([...original,...queue.map(x=>x.slug)]);
- assert.equal(active.size,896);
+ assert.equal(active.size,996);
  const retired=JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8")).retired;
  for(const t of retired)assert.ok(!active.has(t.slug),t.slug+" reintroduced");
  const code=modules.map(m=>fs.readFileSync("src/lib/wave8"+m+".mjs","utf8")).join("\n");
