@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "standard-error-of-mean",
+    "name": "Standard Error of Sample Mean",
+    "example": "10|100",
+    "expression": "a[0]/Math.sqrt(a[1])",
+    "unit": "data units",
+    "inputs": "sample standard deviation | sample size",
+    "valid": "a[0]>=0&&Number.isSafeInteger(a[1])&&a[1]>=2",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "normal-mean-confidence-bounds",
+    "name": "Normal Mean Confidence Bounds",
+    "example": "50|10|100|1.96",
+    "expression": "a[3]*a[1]/Math.sqrt(a[2])",
+    "unit": "interval",
+    "inputs": "sample mean | standard deviation | sample size | normal z critical value",
+    "valid": "a[1]>=0&&Number.isSafeInteger(a[2])&&a[2]>=2&&a[3]>0",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "adjusted-r-squared-calculator",
+    "name": "Adjusted R Squared",
+    "example": "0.8|100|3",
+    "expression": "1-(1-a[0])*(a[1]-1)/(a[1]-a[2]-1)",
+    "unit": "ratio",
+    "inputs": "ordinary R² | sample size | predictor count",
+    "valid": "a[0]>=0&&a[0]<=1&&Number.isSafeInteger(a[1])&&Number.isSafeInteger(a[2])&&a[2]>=1&&a[1]>a[2]+1",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "one-sample-t-statistic",
+    "name": "One Sample t Statistic",
+    "example": "105|100|10|25",
+    "expression": "(a[0]-a[1])/(a[2]/Math.sqrt(a[3]))",
+    "unit": "t statistic",
+    "inputs": "sample mean | null mean | sample sd | sample size",
+    "valid": "a[2]>0&&Number.isSafeInteger(a[3])&&a[3]>=2",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "welch-two-sample-t-statistic",
+    "name": "Welch Two Sample t Statistic",
+    "example": "100|90|10|12|25|30",
+    "expression": "(a[0]-a[1])/Math.sqrt(a[2]**2/a[4]+a[3]**2/a[5])",
+    "unit": "t statistic",
+    "inputs": "mean1 | mean2 | sd1 | sd2 | n1 | n2",
+    "valid": "a[2]>=0&&a[3]>=0&&(a[2]>0||a[3]>0)&&Number.isSafeInteger(a[4])&&Number.isSafeInteger(a[5])&&a[4]>=2&&a[5]>=2",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "pooled-two-sample-variance",
+    "name": "Pooled Two Sample Variance",
+    "example": "10|12|25|30",
+    "expression": "((a[2]-1)*a[0]**2+(a[3]-1)*a[1]**2)/(a[2]+a[3]-2)",
+    "unit": "data units squared",
+    "inputs": "sd1 | sd2 | n1 | n2",
+    "valid": "a[0]>=0&&a[1]>=0&&Number.isSafeInteger(a[2])&&Number.isSafeInteger(a[3])&&a[2]>=2&&a[3]>=2",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "beta-distribution-expectation",
+    "name": "Beta Distribution Expected Value",
+    "example": "2|3",
+    "expression": "a[0]/(a[0]+a[1])",
+    "unit": "ratio",
+    "inputs": "alpha shape | beta shape",
+    "valid": "a.every(x=>x>0)",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "beta-distribution-variance",
+    "name": "Beta Distribution Variance",
+    "example": "2|3",
+    "expression": "a[0]*a[1]/((a[0]+a[1])**2*(a[0]+a[1]+1))",
+    "unit": "variance",
+    "inputs": "alpha shape | beta shape",
+    "valid": "a.every(x=>x>0)",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "gamma-distribution-expected-value",
+    "name": "Gamma Distribution Expected Value",
+    "example": "2|3",
+    "expression": "a[0]*a[1]",
+    "unit": "data units",
+    "inputs": "shape k | scale theta",
+    "valid": "a.every(x=>x>0)",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "gamma-distribution-variance",
+    "name": "Gamma Distribution Variance",
+    "example": "2|3",
+    "expression": "a[0]*a[1]**2",
+    "unit": "squared data units",
+    "inputs": "shape k | scale theta",
+    "valid": "a.every(x=>x>0)",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "lognormal-distribution-median",
+    "name": "Lognormal Distribution Median",
+    "example": "1|0.2",
+    "expression": "Math.exp(a[0])",
+    "unit": "data units",
+    "inputs": "log scale mean mu | log scale sd sigma",
+    "valid": "a[1]>=0",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "lognormal-distribution-mean",
+    "name": "Lognormal Distribution Mean",
+    "example": "1|0.2",
+    "expression": "Math.exp(a[0]+a[1]**2/2)",
+    "unit": "data units",
+    "inputs": "log scale mean mu | log scale sd sigma",
+    "valid": "a[1]>=0",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "lognormal-distribution-variance",
+    "name": "Lognormal Distribution Variance",
+    "example": "1|0.2",
+    "expression": "(Math.exp(a[1]**2)-1)*Math.exp(2*a[0]+a[1]**2)",
+    "unit": "squared data units",
+    "inputs": "log scale mean mu | log scale sd sigma",
+    "valid": "a[1]>=0",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "continuous-uniform-distribution-mean",
+    "name": "Continuous Uniform Mean",
+    "example": "2|8",
+    "expression": "(a[0]+a[1])/2",
+    "unit": "data units",
+    "inputs": "minimum bound | maximum bound",
+    "valid": "a[1]>a[0]",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "continuous-uniform-distribution-variance",
+    "name": "Continuous Uniform Variance",
+    "example": "2|8",
+    "expression": "(a[1]-a[0])**2/12",
+    "unit": "squared data units",
+    "inputs": "minimum bound | maximum bound",
+    "valid": "a[1]>a[0]",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "triangular-distribution-mean",
+    "name": "Triangular Distribution Mean",
+    "example": "1|3|7",
+    "expression": "(a[0]+a[1]+a[2])/3",
+    "unit": "data units",
+    "inputs": "minimum a | mode c | maximum b",
+    "valid": "a[0]<a[2]&&a[1]>=a[0]&&a[1]<=a[2]",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "triangular-distribution-variance",
+    "name": "Triangular Distribution Variance",
+    "example": "1|3|7",
+    "expression": "(a[0]**2+a[1]**2+a[2]**2-a[0]*a[1]-a[0]*a[2]-a[1]*a[2])/18",
+    "unit": "squared data units",
+    "inputs": "minimum a | mode c | maximum b",
+    "valid": "a[0]<a[2]&&a[1]>=a[0]&&a[1]<=a[2]",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "geometric-distribution-expected-trials",
+    "name": "Geometric Distribution Expected Trials",
+    "example": "0.2",
+    "expression": "1/a[0]",
+    "unit": "trials",
+    "inputs": "success probability p",
+    "valid": "a[0]>0&&a[0]<=1",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "geometric-distribution-trials-variance",
+    "name": "Geometric Distribution Trials Variance",
+    "example": "0.2",
+    "expression": "(1-a[0])/a[0]**2",
+    "unit": "trials squared",
+    "inputs": "success probability p",
+    "valid": "a[0]>0&&a[0]<=1",
+    "group": "Probability and statistical inference"
+  },
+  {
+    "slug": "binomial-distribution-expected-successes",
+    "name": "Binomial Expected Successes",
+    "example": "20|0.3",
+    "expression": "a[0]*a[1]",
+    "unit": "successes",
+    "inputs": "number of independent trials n | success probability p",
+    "valid": "Number.isSafeInteger(a[0])&&a[0]>=0&&a[0]<=1000000000&&a[1]>=0&&a[1]<=1",
+    "group": "Probability and statistical inference"
+  }
+]
