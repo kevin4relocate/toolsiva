@@ -33,15 +33,15 @@ The catalog-wide audit is now executable with `npm run catalog:audit`. It checks
 
 - **Start date:** Monday, 2026-11-23.
 - **Cron:** `0 2 * * 1` (02:00 UTC = 09:00 in Vietnam).
-- **Capacity:** at most 10 queued tools per eligible Monday.
+- **Capacity:** at most 20 queued tools per week, split into up to 10 on Monday and 10 on Thursday at 09:00 Vietnam time, from 2026-11-23.
 - **Manifest:** `src/data/simpleToolRelease.json` initially has `published: []` and `history: []`.
 - **Content gating:** the Astro site builds only original tools and entries explicitly present in `simpleToolRelease.published`; queued-but-unreleased tools have no public pages.
 - **Publication check:** workflow runs `npm run catalog:audit` before selecting a batch and after building the new pages. It commits only the manifest on passing validation.
-- **Concurrent writers:** the daily curated blog and weekly tool publication share GitHub Actions concurrency group `toolsiva-main-publication`, so scheduled commits to main do not run simultaneously.
+- **Concurrent writers:** the daily curated blog and twice-weekly tool publication share GitHub Actions concurrency group `toolsiva-main-publication`, so scheduled commits to main do not run simultaneously.
 
 ## Quality gates
 
-The pull-request CI runs all prior-wave tests, the Wave 10/11 regressions, uniqueness checks, TypeScript/Astro checks, site build, routing and SEO audits, and full weekly-release simulation. The final workflow audits build output for all **1,090** potential tool pages without publishing them prematurely.
+The pull-request CI also checks that the homepage's visible counter and the generated sitemap reflect the exact published catalog (and exclude all queued/unreleased pages). The pull-request CI runs all prior-wave tests, the Wave 10/11 regressions, uniqueness checks, TypeScript/Astro checks, site build, routing and SEO audits, and full weekly-release simulation. The final workflow audits build output for all **1,090** potential tool pages without publishing them prematurely.
 
 **Limitations:** Node regression tests exercise supplied examples, strict validations and major edge cases, but do not guarantee every browser interaction on every device; some DOM-dependent tools are excluded from Node smoke calls. This audit does not claim exhaustive equivalence testing of every possible input.
 
@@ -70,3 +70,7 @@ These comparisons are not a mathematical proof that no other functional overlap 
 The repository contains `npm run deploy` (`wrangler deploy`) and a GitHub-triggered weekly manifest publication workflow, but **no verified direct Cloudflare deployment action or Cloudflare environment access from this audit**. Merging to `main` stages all new code and manifests; whether Cloudflare automatically deploys on each `main` push depends on the separately configured Cloudflare Git integration. Actual production deployment and its success must be verified in Cloudflare's build/deploy history.
 
 **Do not manually run the tool release command or add every queued slug to the published manifest.** Publish only through the scheduled workflow, beginning 2026-11-23. A successful PR CI is a pre-merge quality gate, not proof of a Cloudflare production deployment.
+
+## Schedule change — 2026-11-17
+
+The user approved increasing publication from 10 to 20 tools per week, split into two ten-tool releases: **Monday and Thursday, 09:00 ICT** (02:00 UTC). This changes the weekly release horizon for the 967 queued tools from 97 weeks to **49 weeks (97 slots)**. The first publication remains Monday 2026-11-23; the final 7-tool publication is scheduled for Monday 2027-10-25 if every deployment and job succeeds on time. `weeklyLimit=20`, `perSlotLimit=10`, and the GitHub Actions cron is `0 2 * * 1,4`. After each manifest commit and Cloudflare build, the homepage counts and Astro-generated sitemap include only newly published tools. GitHub CI validates the homepage counter, sitemap contents, and absence of unreleased tools before merge and before scheduled publication. These dates are planned, not guarantees about GitHub Actions or Cloudflare deployment timing.
