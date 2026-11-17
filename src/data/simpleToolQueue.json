@@ -9166,5 +9166,1605 @@
     "example": "80,443,1000-1005,1003-1010",
     "ready": true,
     "batch": 7
+  },
+  {
+    "slug": "euler-totient-calculator",
+    "name": "Euler Totient Calculator",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Count positive integers up to n that are coprime to n.",
+    "metaDescription": "Count positive integers up to n that are coprime to n. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "euler totient calculator",
+      "free euler totient calculator",
+      "online euler totient calculator"
+    ],
+    "example": "36",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "mobius-function-calculator",
+    "name": "Mobius Function Calculator",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Find the Möbius number from a positive integer's distinct prime factors.",
+    "metaDescription": "Find the Möbius number from a positive integer's distinct prime factors. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "mobius function calculator",
+      "free mobius function calculator",
+      "online mobius function calculator"
+    ],
+    "example": "30",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "sum-of-proper-divisors-calculator",
+    "name": "Sum of Proper Divisors Calculator",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Sum divisors smaller than a positive integer and classify it by abundance.",
+    "metaDescription": "Sum divisors smaller than a positive integer and classify it by abundance. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "sum of proper divisors calculator",
+      "free sum of proper divisors calculator",
+      "online sum of proper divisors calculator"
+    ],
+    "example": "28",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "goldbach-prime-pair-finder",
+    "name": "Goldbach Prime Pair Finder",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Find a pair of prime numbers whose sum is an even integer.",
+    "metaDescription": "Find a pair of prime numbers whose sum is an even integer. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "goldbach prime pair finder",
+      "free goldbach prime pair finder",
+      "online goldbach prime pair finder"
+    ],
+    "example": "28",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "collatz-trajectory-generator",
+    "name": "Collatz Trajectory Generator",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Generate the 3n+1 trajectory of a positive integer with a safety step limit.",
+    "metaDescription": "Generate the 3n+1 trajectory of a positive integer with a safety step limit. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "collatz trajectory generator",
+      "free collatz trajectory generator",
+      "online collatz trajectory generator"
+    ],
+    "example": "7",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "happy-number-checker",
+    "name": "Happy Number Checker",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Find whether repeated sums of squared decimal digits converge to 1.",
+    "metaDescription": "Find whether repeated sums of squared decimal digits converge to 1. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "happy number checker",
+      "free happy number checker",
+      "online happy number checker"
+    ],
+    "example": "19",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "chinese-remainder-theorem-solver",
+    "name": "Chinese Remainder Theorem Solver",
+    "category": "calculator",
+    "week": 58,
+    "shortDescription": "Solve simultaneous congruences, including compatible non-coprime moduli.",
+    "metaDescription": "Solve simultaneous congruences, including compatible non-coprime moduli. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "chinese remainder theorem solver",
+      "free chinese remainder theorem solver",
+      "online chinese remainder theorem solver"
+    ],
+    "example": "2|3\n3|5\n2|7",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "extended-euclidean-coefficients",
+    "name": "Extended Euclidean Coefficients",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Find gcd(a,b) and integer Bézout coefficients x,y satisfying ax+by=gcd.",
+    "metaDescription": "Find gcd(a,b) and integer Bézout coefficients x,y satisfying ax+by=gcd. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "extended euclidean coefficients",
+      "free extended euclidean coefficients",
+      "online extended euclidean coefficients"
+    ],
+    "example": "240|46",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "continued-fraction-expansion-calculator",
+    "name": "Continued Fraction Expansion Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Expand a rational number into its finite simple continued fraction.",
+    "metaDescription": "Expand a rational number into its finite simple continued fraction. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "continued fraction expansion calculator",
+      "free continued fraction expansion calculator",
+      "online continued fraction expansion calculator"
+    ],
+    "example": "415|93",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "farey-sequence-generator",
+    "name": "Farey Sequence Generator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "List all reduced fractions from 0 to 1 having denominator at most n.",
+    "metaDescription": "List all reduced fractions from 0 to 1 having denominator at most n. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "farey sequence generator",
+      "free farey sequence generator",
+      "online farey sequence generator"
+    ],
+    "example": "5",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "catalan-number-calculator",
+    "name": "Catalan Number Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Calculate the Catalan number for balanced brackets, tree shapes and paths.",
+    "metaDescription": "Calculate the Catalan number for balanced brackets, tree shapes and paths. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "catalan number calculator",
+      "free catalan number calculator",
+      "online catalan number calculator"
+    ],
+    "example": "10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "stirling-second-kind-calculator",
+    "name": "Stirling Second Kind Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Count partitions of n labeled items into k nonempty unlabeled sets.",
+    "metaDescription": "Count partitions of n labeled items into k nonempty unlabeled sets. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "stirling second kind calculator",
+      "free stirling second kind calculator",
+      "online stirling second kind calculator"
+    ],
+    "example": "5|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "bell-number-calculator",
+    "name": "Bell Number Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Count ways to partition a set into nonempty unlabeled subsets.",
+    "metaDescription": "Count ways to partition a set into nonempty unlabeled subsets. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "bell number calculator",
+      "free bell number calculator",
+      "online bell number calculator"
+    ],
+    "example": "5",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "derangement-count-calculator",
+    "name": "Derangement Count Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Count permutations in which no element stays in its original position.",
+    "metaDescription": "Count permutations in which no element stays in its original position. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "derangement count calculator",
+      "free derangement count calculator",
+      "online derangement count calculator"
+    ],
+    "example": "5",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "integer-partition-count-calculator",
+    "name": "Integer Partition Count Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Count unordered positive integer partitions of a target number.",
+    "metaDescription": "Count unordered positive integer partitions of a target number. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "integer partition count calculator",
+      "free integer partition count calculator",
+      "online integer partition count calculator"
+    ],
+    "example": "10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "pascal-triangle-row-generator",
+    "name": "Pascal Triangle Row Generator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Generate the entire nth row of Pascal's triangle as exact integers.",
+    "metaDescription": "Generate the entire nth row of Pascal's triangle as exact integers. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "pascal triangle row generator",
+      "free pascal triangle row generator",
+      "online pascal triangle row generator"
+    ],
+    "example": "5",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "multinomial-coefficient-calculator",
+    "name": "Multinomial Coefficient Calculator",
+    "category": "calculator",
+    "week": 59,
+    "shortDescription": "Count distinct permutations of objects in several indistinguishable groups.",
+    "metaDescription": "Count distinct permutations of objects in several indistinguishable groups. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "multinomial coefficient calculator",
+      "free multinomial coefficient calculator",
+      "online multinomial coefficient calculator"
+    ],
+    "example": "2,3,1",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "birthday-match-probability-calculator",
+    "name": "Birthday Match Probability Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Estimate the probability that at least two people share a birthday.",
+    "metaDescription": "Estimate the probability that at least two people share a birthday. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "birthday match probability calculator",
+      "free birthday match probability calculator",
+      "online birthday match probability calculator"
+    ],
+    "example": "23|365",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "coupon-collector-expected-draws-calculator",
+    "name": "Coupon Collector Expected Draws Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Compute expected draws required to observe each of n equally likely coupons.",
+    "metaDescription": "Compute expected draws required to observe each of n equally likely coupons. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "coupon collector expected draws calculator",
+      "free coupon collector expected draws calculator",
+      "online coupon collector expected draws calculator"
+    ],
+    "example": "10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "three-set-inclusion-exclusion-calculator",
+    "name": "Three Set Inclusion Exclusion Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Calculate union size of three sets from individual and intersection counts.",
+    "metaDescription": "Calculate union size of three sets from individual and intersection counts. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "three set inclusion exclusion calculator",
+      "free three set inclusion exclusion calculator",
+      "online three set inclusion exclusion calculator"
+    ],
+    "example": "60|50|30|20|10|5|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "net-present-value-calculator",
+    "name": "Net Present Value Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Discount dated-by-period cash flows to calculate net present value.",
+    "metaDescription": "Discount dated-by-period cash flows to calculate net present value. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "net present value calculator",
+      "free net present value calculator",
+      "online net present value calculator"
+    ],
+    "example": "0.10\n---\n-1000,400,400,400",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "internal-rate-of-return-calculator",
+    "name": "Internal Rate of Return Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Find a valid positive-discount-rate IRR for conventional annual cash flows.",
+    "metaDescription": "Find a valid positive-discount-rate IRR for conventional annual cash flows. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "internal rate of return calculator",
+      "free internal rate of return calculator",
+      "online internal rate of return calculator"
+    ],
+    "example": "-1000,600,600",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "annuity-present-value-calculator",
+    "name": "Annuity Present Value Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Discount fixed end-of-period annuity payments to today's value.",
+    "metaDescription": "Discount fixed end-of-period annuity payments to today's value. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "annuity present value calculator",
+      "free annuity present value calculator",
+      "online annuity present value calculator"
+    ],
+    "example": "100|0.05|10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "annuity-future-value-calculator",
+    "name": "Annuity Future Value Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Accumulate repeated end-of-period payments over a specified term.",
+    "metaDescription": "Accumulate repeated end-of-period payments over a specified term. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "annuity future value calculator",
+      "free annuity future value calculator",
+      "online annuity future value calculator"
+    ],
+    "example": "100|0.05|10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "bond-price-calculator",
+    "name": "Bond Price Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Estimate fixed-coupon bond price from face value, coupon, yield and payments.",
+    "metaDescription": "Estimate fixed-coupon bond price from face value, coupon, yield and payments. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "bond price calculator",
+      "free bond price calculator",
+      "online bond price calculator"
+    ],
+    "example": "1000|0.05|0.06|5|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "macaulay-bond-duration-calculator",
+    "name": "Macaulay Bond Duration Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Find cash-flow-weighted duration of a fixed-coupon bond in years.",
+    "metaDescription": "Find cash-flow-weighted duration of a fixed-coupon bond in years. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "macaulay bond duration calculator",
+      "free macaulay bond duration calculator",
+      "online macaulay bond duration calculator"
+    ],
+    "example": "1000|0.05|0.06|5|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "weighted-average-cost-of-capital-calculator",
+    "name": "Weighted Average Cost of Capital Calculator",
+    "category": "calculator",
+    "week": 60,
+    "shortDescription": "Calculate after-tax WACC using equity/debt weights, costs and tax rate.",
+    "metaDescription": "Calculate after-tax WACC using equity/debt weights, costs and tax rate. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "weighted average cost of capital calculator",
+      "free weighted average cost of capital calculator",
+      "online weighted average cost of capital calculator"
+    ],
+    "example": "0.6|0.4|0.12|0.06|0.25",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "debt-service-coverage-ratio-calculator",
+    "name": "Debt Service Coverage Ratio Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Divide net operating income by contractual annual debt service.",
+    "metaDescription": "Divide net operating income by contractual annual debt service. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "debt service coverage ratio calculator",
+      "free debt service coverage ratio calculator",
+      "online debt service coverage ratio calculator"
+    ],
+    "example": "120000|80000",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "gordon-growth-dividend-valuation",
+    "name": "Gordon Growth Dividend Valuation",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Estimate perpetual dividend-discount value from next dividend and growth.",
+    "metaDescription": "Estimate perpetual dividend-discount value from next dividend and growth. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "gordon growth dividend valuation",
+      "free gordon growth dividend valuation",
+      "online gordon growth dividend valuation"
+    ],
+    "example": "2|0.09|0.04",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "degree-of-operating-leverage-calculator",
+    "name": "Degree of Operating Leverage Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate contribution margin divided by operating income.",
+    "metaDescription": "Calculate contribution margin divided by operating income. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "degree of operating leverage calculator",
+      "free degree of operating leverage calculator",
+      "online degree of operating leverage calculator"
+    ],
+    "example": "100000|60000|20000",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "ohms-law-current-solver",
+    "name": "Ohms Law Current Solver",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate current in amperes using voltage and resistance.",
+    "metaDescription": "Calculate current in amperes using voltage and resistance. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "ohms law current solver",
+      "free ohms law current solver",
+      "online ohms law current solver"
+    ],
+    "example": "12|6",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "series-parallel-resistor-calculator",
+    "name": "Series Parallel Resistor Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate equivalent resistance for ideal series or parallel resistors.",
+    "metaDescription": "Calculate equivalent resistance for ideal series or parallel resistors. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "series parallel resistor calculator",
+      "free series parallel resistor calculator",
+      "online series parallel resistor calculator"
+    ],
+    "example": "parallel|100,200",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "voltage-divider-calculator",
+    "name": "Voltage Divider Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate unloaded output voltage of a two-resistor divider.",
+    "metaDescription": "Calculate unloaded output voltage of a two-resistor divider. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "voltage divider calculator",
+      "free voltage divider calculator",
+      "online voltage divider calculator"
+    ],
+    "example": "12|1000|2000",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "rc-circuit-time-constant-calculator",
+    "name": "RC Circuit Time Constant Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate resistor-capacitor time constant and approximate 95% settling time.",
+    "metaDescription": "Calculate resistor-capacitor time constant and approximate 95% settling time. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "rc circuit time constant calculator",
+      "free rc circuit time constant calculator",
+      "online rc circuit time constant calculator"
+    ],
+    "example": "1000|0.000001",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "half-life-remaining-quantity-calculator",
+    "name": "Half Life Remaining Quantity Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate quantity remaining after elapsed time and a fixed half-life.",
+    "metaDescription": "Calculate quantity remaining after elapsed time and a fixed half-life. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "half life remaining quantity calculator",
+      "free half life remaining quantity calculator",
+      "online half life remaining quantity calculator"
+    ],
+    "example": "100|5|10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "hydrogen-ion-ph-calculator",
+    "name": "Hydrogen Ion pH Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Compute pH from hydrogen ion concentration in mol/L.",
+    "metaDescription": "Compute pH from hydrogen ion concentration in mol/L. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "hydrogen ion ph calculator",
+      "free hydrogen ion ph calculator",
+      "online hydrogen ion ph calculator"
+    ],
+    "example": "0.0001",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "solution-molarity-calculator",
+    "name": "Solution Molarity Calculator",
+    "category": "calculator",
+    "week": 61,
+    "shortDescription": "Calculate molarity in mol/L from solute moles and solution liters.",
+    "metaDescription": "Calculate molarity in mol/L from solute moles and solution liters. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "solution molarity calculator",
+      "free solution molarity calculator",
+      "online solution molarity calculator"
+    ],
+    "example": "0.5|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "solution-dilution-volume-calculator",
+    "name": "Solution Dilution Volume Calculator",
+    "category": "calculator",
+    "week": 62,
+    "shortDescription": "Use C1V1=C2V2 to calculate diluted final volume.",
+    "metaDescription": "Use C1V1=C2V2 to calculate diluted final volume. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "solution dilution volume calculator",
+      "free solution dilution volume calculator",
+      "online solution dilution volume calculator"
+    ],
+    "example": "1|2|0.5",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "ideal-gas-pressure-calculator",
+    "name": "Ideal Gas Pressure Calculator",
+    "category": "calculator",
+    "week": 62,
+    "shortDescription": "Apply PV=nRT to estimate ideal-gas pressure in pascals.",
+    "metaDescription": "Apply PV=nRT to estimate ideal-gas pressure in pascals. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "ideal gas pressure calculator",
+      "free ideal gas pressure calculator",
+      "online ideal gas pressure calculator"
+    ],
+    "example": "1|300|0.024",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "decibel-power-ratio-calculator",
+    "name": "Decibel Power Ratio Calculator",
+    "category": "calculator",
+    "week": 62,
+    "shortDescription": "Calculate decibel gain or loss for a positive power ratio.",
+    "metaDescription": "Calculate decibel gain or loss for a positive power ratio. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "decibel power ratio calculator",
+      "free decibel power ratio calculator",
+      "online decibel power ratio calculator"
+    ],
+    "example": "100",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "vigenere-cipher-translator",
+    "name": "Vigenere Cipher Translator",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "Encode or decode alphabetic text using a repeating Vigenère keyword.",
+    "metaDescription": "Encode or decode alphabetic text using a repeating Vigenère keyword. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "vigenere cipher translator",
+      "free vigenere cipher translator",
+      "online vigenere cipher translator"
+    ],
+    "example": "encode|ATTACK AT DAWN|LEMON",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "atbash-cipher-translator",
+    "name": "Atbash Cipher Translator",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "Substitute each Latin letter by its reversed-alphabet counterpart.",
+    "metaDescription": "Substitute each Latin letter by its reversed-alphabet counterpart. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "atbash cipher translator",
+      "free atbash cipher translator",
+      "online atbash cipher translator"
+    ],
+    "example": "ABC XYZ",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "rot47-text-translator",
+    "name": "ROT47 Text Translator",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "Apply ROT47 substitution to printable ASCII characters.",
+    "metaDescription": "Apply ROT47 substitution to printable ASCII characters. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "rot47 text translator",
+      "free rot47 text translator",
+      "online rot47 text translator"
+    ],
+    "example": "Hello World!",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "pig-latin-translator",
+    "name": "Pig Latin Translator",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "Apply a rule-based English Pig Latin transformation to words.",
+    "metaDescription": "Apply a rule-based English Pig Latin transformation to words. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "pig latin translator",
+      "free pig latin translator",
+      "online pig latin translator"
+    ],
+    "example": "Hello there",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "leetspeak-text-converter",
+    "name": "Leetspeak Text Converter",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "Transform common Latin characters into readable leetspeak substitutions.",
+    "metaDescription": "Transform common Latin characters into readable leetspeak substitutions. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "leetspeak text converter",
+      "free leetspeak text converter",
+      "online leetspeak text converter"
+    ],
+    "example": "hello world",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "lexical-diversity-calculator",
+    "name": "Lexical Diversity Calculator",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "Calculate unique word ratio, root type-token ratio and word counts.",
+    "metaDescription": "Calculate unique word ratio, root type-token ratio and word counts. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "lexical diversity calculator",
+      "free lexical diversity calculator",
+      "online lexical diversity calculator"
+    ],
+    "example": "one two one three",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "hapax-legomena-finder",
+    "name": "Hapax Legomena Finder",
+    "category": "text",
+    "week": 62,
+    "shortDescription": "List words occurring exactly once in a text.",
+    "metaDescription": "List words occurring exactly once in a text. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "hapax legomena finder",
+      "free hapax legomena finder",
+      "online hapax legomena finder"
+    ],
+    "example": "apple apple pear mango",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "tf-idf-term-scorer",
+    "name": "TF IDF Term Scorer",
+    "category": "text",
+    "week": 63,
+    "shortDescription": "Score one term using TF-IDF across a small pasted document corpus.",
+    "metaDescription": "Score one term using TF-IDF across a small pasted document corpus. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "tf idf term scorer",
+      "free tf idf term scorer",
+      "online tf idf term scorer"
+    ],
+    "example": "apple\n---\napple banana\n---\nbanana orange",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "text-acrostic-extractor",
+    "name": "Text Acrostic Extractor",
+    "category": "text",
+    "week": 63,
+    "shortDescription": "Extract first letter of each nonempty line as an acrostic.",
+    "metaDescription": "Extract first letter of each nonempty line as an acrostic. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "text acrostic extractor",
+      "free text acrostic extractor",
+      "online text acrostic extractor"
+    ],
+    "example": "Hello world\nEvery day\nLearn more\nPractice often",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "text-pattern-redactor",
+    "name": "Text Pattern Redactor",
+    "category": "text",
+    "week": 63,
+    "shortDescription": "Redact all matching text spans using a typed regular expression.",
+    "metaDescription": "Redact all matching text spans using a typed regular expression. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "text pattern redactor",
+      "free text pattern redactor",
+      "online text pattern redactor"
+    ],
+    "example": "[A-Z]{2}\\d{3}\n---\nOrder AB123 processed and XY456 shipped",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-monthly-date-aggregator",
+    "name": "CSV Monthly Date Aggregator",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Aggregate numerical CSV measures into calendar months by an ISO date field.",
+    "metaDescription": "Aggregate numerical CSV measures into calendar months by an ISO date field. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv monthly date aggregator",
+      "free csv monthly date aggregator",
+      "online csv monthly date aggregator"
+    ],
+    "example": "date|amount\n---\ndate,amount\n2026-01-02,20\n2026-01-08,5\n2026-02-01,7",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-cohort-retention-matrix",
+    "name": "CSV Cohort Retention Matrix",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Compute distinct-user monthly retention percentages by first-seen cohort.",
+    "metaDescription": "Compute distinct-user monthly retention percentages by first-seen cohort. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv cohort retention matrix",
+      "free csv cohort retention matrix",
+      "online csv cohort retention matrix"
+    ],
+    "example": "user|month\n---\nuser,month\nA,2026-01\nA,2026-02\nB,2026-01\nC,2026-02",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-top-k-per-group",
+    "name": "CSV Top K Per Group",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Select the top N numeric-scored CSV records independently per group.",
+    "metaDescription": "Select the top N numeric-scored CSV records independently per group. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv top k per group",
+      "free csv top k per group",
+      "online csv top k per group"
+    ],
+    "example": "team|score|1\n---\nteam,score\nA,8\nA,10\nB,3\nB,5",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-contingency-table-builder",
+    "name": "CSV Contingency Table Builder",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Build a cross-tabulation of category counts from two CSV fields.",
+    "metaDescription": "Build a cross-tabulation of category counts from two CSV fields. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv contingency table builder",
+      "free csv contingency table builder",
+      "online csv contingency table builder"
+    ],
+    "example": "region|status\n---\nregion,status\nEast,new\nEast,active\nWest,new",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-weighted-mean-by-group",
+    "name": "CSV Weighted Mean By Group",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Calculate weighted means using per-row weights for each CSV group.",
+    "metaDescription": "Calculate weighted means using per-row weights for each CSV group. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv weighted mean by group",
+      "free csv weighted mean by group",
+      "online csv weighted mean by group"
+    ],
+    "example": "team|score|weight\n---\nteam,score,weight\nA,10,2\nA,20,1\nB,5,1",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-moving-median-column",
+    "name": "CSV Moving Median Column",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Append sliding-window medians to a sorted-by-row numeric CSV series.",
+    "metaDescription": "Append sliding-window medians to a sorted-by-row numeric CSV series. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv moving median column",
+      "free csv moving median column",
+      "online csv moving median column"
+    ],
+    "example": "value|3\n---\nvalue\n1\n10\n2\n20",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-lag-lead-column-generator",
+    "name": "CSV Lag Lead Column Generator",
+    "category": "developer",
+    "week": 63,
+    "shortDescription": "Add a lagged or leading version of a CSV column with chosen row offset.",
+    "metaDescription": "Add a lagged or leading version of a CSV column with chosen row offset. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv lag lead column generator",
+      "free csv lag lead column generator",
+      "online csv lag lead column generator"
+    ],
+    "example": "lag|amount|1\n---\namount\n10\n20\n30",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-duplicate-column-detector",
+    "name": "CSV Duplicate Column Detector",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Find columns having identical data values under different headers.",
+    "metaDescription": "Find columns having identical data values under different headers. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv duplicate column detector",
+      "free csv duplicate column detector",
+      "online csv duplicate column detector"
+    ],
+    "example": "a,b,c\n1,1,2\n3,3,4",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-skewness-kurtosis-reporter",
+    "name": "CSV Skewness Kurtosis Reporter",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Calculate population moment skewness and excess kurtosis of CSV values.",
+    "metaDescription": "Calculate population moment skewness and excess kurtosis of CSV values. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv skewness kurtosis reporter",
+      "free csv skewness kurtosis reporter",
+      "online csv skewness kurtosis reporter"
+    ],
+    "example": "value\n---\nvalue\n1\n2\n2\n3\n8",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "csv-missing-calendar-dates-finder",
+    "name": "CSV Missing Calendar Dates Finder",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "List missing ISO dates between minimum and maximum dates in a CSV column.",
+    "metaDescription": "List missing ISO dates between minimum and maximum dates in a CSV column. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "csv missing calendar dates finder",
+      "free csv missing calendar dates finder",
+      "online csv missing calendar dates finder"
+    ],
+    "example": "date\n---\ndate\n2026-01-01\n2026-01-03",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-recursive-key-case-converter",
+    "name": "JSON Recursive Key Case Converter",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Rename nested JSON object keys to camelCase or snake_case consistently.",
+    "metaDescription": "Rename nested JSON object keys to camelCase or snake_case consistently. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json recursive key case converter",
+      "free json recursive key case converter",
+      "online json recursive key case converter"
+    ],
+    "example": "snake\n---\n{\"firstName\":\"Ada\",\"userProfile\":{\"lastName\":\"L\"}}",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-arrays-merge-by-key",
+    "name": "JSON Arrays Merge By Key",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Combine two arrays of JSON objects by unique identifier keys.",
+    "metaDescription": "Combine two arrays of JSON objects by unique identifier keys. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json arrays merge by key",
+      "free json arrays merge by key",
+      "online json arrays merge by key"
+    ],
+    "example": "id\n---\n[{\"id\":1,\"name\":\"Ada\"}]\n---\n[{\"id\":1,\"score\":95},{\"id\":2,\"name\":\"Bob\"}]",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-arrays-intersection-by-key",
+    "name": "JSON Arrays Intersection By Key",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Keep first-array JSON records whose identifiers exist in the second array.",
+    "metaDescription": "Keep first-array JSON records whose identifiers exist in the second array. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json arrays intersection by key",
+      "free json arrays intersection by key",
+      "online json arrays intersection by key"
+    ],
+    "example": "id\n---\n[{\"id\":1},{\"id\":2}]\n---\n[{\"id\":2},{\"id\":3}]",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-arrays-difference-by-key",
+    "name": "JSON Arrays Difference By Key",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Return first-array JSON records whose keys are absent in the second array.",
+    "metaDescription": "Return first-array JSON records whose keys are absent in the second array. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json arrays difference by key",
+      "free json arrays difference by key",
+      "online json arrays difference by key"
+    ],
+    "example": "id\n---\n[{\"id\":1},{\"id\":2}]\n---\n[{\"id\":2},{\"id\":3}]",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-iso-date-string-scanner",
+    "name": "JSON ISO Date String Scanner",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Locate malformed ISO date-only strings throughout nested JSON.",
+    "metaDescription": "Locate malformed ISO date-only strings throughout nested JSON. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json iso date string scanner",
+      "free json iso date string scanner",
+      "online json iso date string scanner"
+    ],
+    "example": "{\"created\":\"2026-02-30\",\"updated\":\"2026-11-17\"}",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-value-frequency-by-pointer",
+    "name": "JSON Value Frequency By Pointer",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Count unique values at a chosen JSON Pointer across object-array records.",
+    "metaDescription": "Count unique values at a chosen JSON Pointer across object-array records. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json value frequency by pointer",
+      "free json value frequency by pointer",
+      "online json value frequency by pointer"
+    ],
+    "example": "/status\n---\n[{\"status\":\"new\"},{\"status\":\"new\"},{\"status\":\"done\"}]",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-collection-foreign-key-validator",
+    "name": "JSON Collection Foreign Key Validator",
+    "category": "developer",
+    "week": 64,
+    "shortDescription": "Find child JSON records referencing missing parent identifiers.",
+    "metaDescription": "Find child JSON records referencing missing parent identifiers. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json collection foreign key validator",
+      "free json collection foreign key validator",
+      "online json collection foreign key validator"
+    ],
+    "example": "customerId|id\n---\n[{\"customerId\":1},{\"customerId\":3}]\n---\n[{\"id\":1},{\"id\":2}]",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-locale-key-coverage-comparator",
+    "name": "JSON Locale Key Coverage Comparator",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Report missing translation keys between nested locale dictionaries.",
+    "metaDescription": "Report missing translation keys between nested locale dictionaries. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json locale key coverage comparator",
+      "free json locale key coverage comparator",
+      "online json locale key coverage comparator"
+    ],
+    "example": "{\"home\":{\"title\":\"Home\",\"desc\":\"Welcome\"}}\n---\n{\"home\":{\"title\":\"Trang chủ\"}}",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "jsonpath-numeric-aggregator",
+    "name": "JSONPath Numeric Aggregator",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Sum, average, count, min or max numbers selected by a simple JSONPath.",
+    "metaDescription": "Sum, average, count, min or max numbers selected by a simple JSONPath. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "jsonpath numeric aggregator",
+      "free jsonpath numeric aggregator",
+      "online jsonpath numeric aggregator"
+    ],
+    "example": "$.items[*].price|sum\n---\n{\"items\":[{\"price\":2},{\"price\":3}]}",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "json-key-naming-convention-auditor",
+    "name": "JSON Key Naming Convention Auditor",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Find JSON object keys inconsistent with selected camelCase or snake_case.",
+    "metaDescription": "Find JSON object keys inconsistent with selected camelCase or snake_case. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "json key naming convention auditor",
+      "free json key naming convention auditor",
+      "online json key naming convention auditor"
+    ],
+    "example": "snake\n---\n{\"firstName\":\"Ada\",\"last_name\":\"L\"}",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "css-color-contrast-ratio-calculator",
+    "name": "CSS Color Contrast Ratio Calculator",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Calculate WCAG relative luminance contrast ratio and AA/AAA text thresholds.",
+    "metaDescription": "Calculate WCAG relative luminance contrast ratio and AA/AAA text thresholds. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "css color contrast ratio calculator",
+      "free css color contrast ratio calculator",
+      "online css color contrast ratio calculator"
+    ],
+    "example": "#ffffff|#000000",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "css-color-format-converter",
+    "name": "CSS Color Format Converter",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Convert typed hexadecimal, RGB or HSL colors among CSS representations.",
+    "metaDescription": "Convert typed hexadecimal, RGB or HSL colors among CSS representations. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "css color format converter",
+      "free css color format converter",
+      "online css color format converter"
+    ],
+    "example": "rgb|#336699",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "css-clamp-fluid-value-generator",
+    "name": "CSS Clamp Fluid Value Generator",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Generate CSS clamp() with interpolated rem/vw scaling between viewport widths.",
+    "metaDescription": "Generate CSS clamp() with interpolated rem/vw scaling between viewport widths. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "css clamp fluid value generator",
+      "free css clamp fluid value generator",
+      "online css clamp fluid value generator"
+    ],
+    "example": "16|24|320|1200",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "css-grid-track-sizing-calculator",
+    "name": "CSS Grid Track Sizing Calculator",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Calculate equal grid track widths from container width, columns and gap.",
+    "metaDescription": "Calculate equal grid track widths from container width, columns and gap. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "css grid track sizing calculator",
+      "free css grid track sizing calculator",
+      "online css grid track sizing calculator"
+    ],
+    "example": "1200|3|20",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "css-selector-matcher",
+    "name": "CSS Selector Matcher",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Count HTML elements matching a typed CSS selector using the browser DOM parser.",
+    "metaDescription": "Count HTML elements matching a typed CSS selector using the browser DOM parser. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "css selector matcher",
+      "free css selector matcher",
+      "online css selector matcher"
+    ],
+    "example": "article.highlight\n---\n<article class=\"highlight\">Hi</article><p>Bye</p>",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "http-security-headers-checklist",
+    "name": "HTTP Security Headers Checklist",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Audit presence and basic validity of common browser security response headers.",
+    "metaDescription": "Audit presence and basic validity of common browser security response headers. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "http security headers checklist",
+      "free http security headers checklist",
+      "online http security headers checklist"
+    ],
+    "example": "Strict-Transport-Security: max-age=31536000\nX-Content-Type-Options: nosniff\nReferrer-Policy: strict-origin",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "http-cache-directive-conflict-detector",
+    "name": "HTTP Cache Directive Conflict Detector",
+    "category": "developer",
+    "week": 65,
+    "shortDescription": "Identify mutually contradictory HTTP Cache-Control response directives.",
+    "metaDescription": "Identify mutually contradictory HTTP Cache-Control response directives. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "http cache directive conflict detector",
+      "free http cache directive conflict detector",
+      "online http cache directive conflict detector"
+    ],
+    "example": "public, private, no-store, max-age=3600",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "http-content-negotiation-matcher",
+    "name": "HTTP Content Negotiation Matcher",
+    "category": "developer",
+    "week": 66,
+    "shortDescription": "Select the best offered MIME type against an Accept header.",
+    "metaDescription": "Select the best offered MIME type against an Accept header. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "http content negotiation matcher",
+      "free http content negotiation matcher",
+      "online http content negotiation matcher"
+    ],
+    "example": "application/json,text/html;q=0.5\n---\ntext/html,application/json",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "idn-url-hostname-normalizer",
+    "name": "IDN URL Hostname Normalizer",
+    "category": "developer",
+    "week": 66,
+    "shortDescription": "Normalize an internationalized URL hostname to its ASCII punycode form.",
+    "metaDescription": "Normalize an internationalized URL hostname to its ASCII punycode form. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "idn url hostname normalizer",
+      "free idn url hostname normalizer",
+      "online idn url hostname normalizer"
+    ],
+    "example": "https://bücher.example/path?x=1",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "html-form-constraint-auditor",
+    "name": "HTML Form Constraint Auditor",
+    "category": "developer",
+    "week": 66,
+    "shortDescription": "Inspect pasted HTML forms for missing names and invalid input constraints.",
+    "metaDescription": "Inspect pasted HTML forms for missing names and invalid input constraints. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "html form constraint auditor",
+      "free html form constraint auditor",
+      "online html form constraint auditor"
+    ],
+    "example": "<form><input type=\"email\" required><input type=\"number\" min=\"10\" max=\"2\"></form>",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "rrule-date-occurrence-expander",
+    "name": "RRULE Date Occurrence Expander",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Expand supported daily/weekly/monthly recurrence rules into future dates.",
+    "metaDescription": "Expand supported daily/weekly/monthly recurrence rules into future dates. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "rrule date occurrence expander",
+      "free rrule date occurrence expander",
+      "online rrule date occurrence expander"
+    ],
+    "example": "FREQ=WEEKLY;COUNT=3;BYDAY=MO\n---\n2026-11-16",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "holiday-aware-business-day-counter",
+    "name": "Holiday Aware Business Day Counter",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Count Monday–Friday dates in a range excluding a pasted holiday list.",
+    "metaDescription": "Count Monday–Friday dates in a range excluding a pasted holiday list. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "holiday aware business day counter",
+      "free holiday aware business day counter",
+      "online holiday aware business day counter"
+    ],
+    "example": "2026-11-16|2026-11-20\n---\n2026-11-18",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "monthly-anniversary-date-generator",
+    "name": "Monthly Anniversary Date Generator",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Generate subsequent monthly anniversaries with end-of-month clamping.",
+    "metaDescription": "Generate subsequent monthly anniversaries with end-of-month clamping. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "monthly anniversary date generator",
+      "free monthly anniversary date generator",
+      "online monthly anniversary date generator"
+    ],
+    "example": "2026-01-31|4",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "annual-leave-accrual-calculator",
+    "name": "Annual Leave Accrual Calculator",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Estimate earned leave balance from monthly accrual, elapsed months and used days.",
+    "metaDescription": "Estimate earned leave balance from monthly accrual, elapsed months and used days. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "annual leave accrual calculator",
+      "free annual leave accrual calculator",
+      "online annual leave accrual calculator"
+    ],
+    "example": "1.5|6|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "overtime-tier-wage-calculator",
+    "name": "Overtime Tier Wage Calculator",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Calculate weekly earnings using regular hours and two overtime pay multipliers.",
+    "metaDescription": "Calculate weekly earnings using regular hours and two overtime pay multipliers. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "overtime tier wage calculator",
+      "free overtime tier wage calculator",
+      "online overtime tier wage calculator"
+    ],
+    "example": "45|20|40|1.5|2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "shift-coverage-gap-analyzer",
+    "name": "Shift Coverage Gap Analyzer",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Find unstaffed intervals of a planned work shift from coverage intervals.",
+    "metaDescription": "Find unstaffed intervals of a planned work shift from coverage intervals. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "shift coverage gap analyzer",
+      "free shift coverage gap analyzer",
+      "online shift coverage gap analyzer"
+    ],
+    "example": "09:00|17:00\n---\n09:00,12:00\n13:00,17:00",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "project-pert-estimate-calculator",
+    "name": "Project PERT Estimate Calculator",
+    "category": "calculator",
+    "week": 66,
+    "shortDescription": "Calculate three-point PERT expected duration and uncertainty.",
+    "metaDescription": "Calculate three-point PERT expected duration and uncertainty. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "project pert estimate calculator",
+      "free project pert estimate calculator",
+      "online project pert estimate calculator"
+    ],
+    "example": "2|5|14",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "project-earned-value-metrics-calculator",
+    "name": "Project Earned Value Metrics Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Compute schedule and cost performance from planned, earned and actual value.",
+    "metaDescription": "Compute schedule and cost performance from planned, earned and actual value. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "project earned value metrics calculator",
+      "free project earned value metrics calculator",
+      "online project earned value metrics calculator"
+    ],
+    "example": "10000|6000|5000",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "weekly-team-capacity-planner",
+    "name": "Weekly Team Capacity Planner",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Estimate available weekly capacity from hours per person and focus factor.",
+    "metaDescription": "Estimate available weekly capacity from hours per person and focus factor. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "weekly team capacity planner",
+      "free weekly team capacity planner",
+      "online weekly team capacity planner"
+    ],
+    "example": "40|5|0.75",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "meeting-rotation-fairness-calculator",
+    "name": "Meeting Rotation Fairness Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Compare participants' meeting-hour burdens across two proposed rotations.",
+    "metaDescription": "Compare participants' meeting-hour burdens across two proposed rotations. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "meeting rotation fairness calculator",
+      "free meeting rotation fairness calculator",
+      "online meeting rotation fairness calculator"
+    ],
+    "example": "09:00,10:00,15:00\n---\n08:00,08:00,18:00",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "robust-median-absolute-deviation-calculator",
+    "name": "Robust Median Absolute Deviation Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Calculate robust median absolute deviation and scaled normal-equivalent MAD.",
+    "metaDescription": "Calculate robust median absolute deviation and scaled normal-equivalent MAD. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "robust median absolute deviation calculator",
+      "free robust median absolute deviation calculator",
+      "online robust median absolute deviation calculator"
+    ],
+    "example": "1,2,2,3,100",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "trimmed-mean-calculator",
+    "name": "Trimmed Mean Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Compute a symmetric alpha-trimmed mean with extremes excluded.",
+    "metaDescription": "Compute a symmetric alpha-trimmed mean with extremes excluded. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "trimmed mean calculator",
+      "free trimmed mean calculator",
+      "online trimmed mean calculator"
+    ],
+    "example": "1,2,3,4,100|0.2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "winsorized-mean-calculator",
+    "name": "Winsorized Mean Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Compute a symmetric winsorized mean by replacing tail values.",
+    "metaDescription": "Compute a symmetric winsorized mean by replacing tail values. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "winsorized mean calculator",
+      "free winsorized mean calculator",
+      "online winsorized mean calculator"
+    ],
+    "example": "1,2,3,4,100|0.2",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "gini-inequality-coefficient-calculator",
+    "name": "Gini Inequality Coefficient Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Calculate Gini coefficient for nonnegative values.",
+    "metaDescription": "Calculate Gini coefficient for nonnegative values. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "gini inequality coefficient calculator",
+      "free gini inequality coefficient calculator",
+      "online gini inequality coefficient calculator"
+    ],
+    "example": "0,0,1,3",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "lorenz-curve-points-generator",
+    "name": "Lorenz Curve Points Generator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Generate cumulative share points for a Lorenz curve of nonnegative values.",
+    "metaDescription": "Generate cumulative share points for a Lorenz curve of nonnegative values. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "lorenz curve points generator",
+      "free lorenz curve points generator",
+      "online lorenz curve points generator"
+    ],
+    "example": "0,1,2,3",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "cramers-v-association-calculator",
+    "name": "Cramers V Association Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Calculate Cramér's V association coefficient from a contingency table.",
+    "metaDescription": "Calculate Cramér's V association coefficient from a contingency table. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "cramers v association calculator",
+      "free cramers v association calculator",
+      "online cramers v association calculator"
+    ],
+    "example": "10,20;20,10",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "population-stability-index-calculator",
+    "name": "Population Stability Index Calculator",
+    "category": "calculator",
+    "week": 67,
+    "shortDescription": "Compare baseline and current bucket distributions using population stability index.",
+    "metaDescription": "Compare baseline and current bucket distributions using population stability index. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "population stability index calculator",
+      "free population stability index calculator",
+      "online population stability index calculator"
+    ],
+    "example": "10,20,70\n---\n20,20,60",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "bootstrap-mean-interval-calculator",
+    "name": "Bootstrap Mean Interval Calculator",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Compute a seeded bootstrap percentile interval for a sample mean.",
+    "metaDescription": "Compute a seeded bootstrap percentile interval for a sample mean. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "bootstrap mean interval calculator",
+      "free bootstrap mean interval calculator",
+      "online bootstrap mean interval calculator"
+    ],
+    "example": "1,2,3,4,5|0.95|500|123",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "paired-sample-difference-summary",
+    "name": "Paired Sample Difference Summary",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Report paired mean, median and spread of differences between two numeric lists.",
+    "metaDescription": "Report paired mean, median and spread of differences between two numeric lists. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "paired sample difference summary",
+      "free paired sample difference summary",
+      "online paired sample difference summary"
+    ],
+    "example": "10,20,30\n---\n8,23,25",
+    "ready": true,
+    "batch": 8
+  },
+  {
+    "slug": "median-of-means-calculator",
+    "name": "Median Of Means Calculator",
+    "category": "calculator",
+    "week": 68,
+    "shortDescription": "Divide a numeric sequence into groups, average each, then take median of means.",
+    "metaDescription": "Divide a numeric sequence into groups, average each, then take median of means. Works entirely in your browser from pasted values. No uploads or paid API.",
+    "keywords": [
+      "median of means calculator",
+      "free median of means calculator",
+      "online median of means calculator"
+    ],
+    "example": "1,2,3,4,50,6|3",
+    "ready": true,
+    "batch": 8
   }
 ]

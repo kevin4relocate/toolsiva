@@ -20,12 +20,12 @@ const run=(slug,input)=>{for(const fn of engines){const v=fn(slug,input);if(v!==
 const queue=JSON.parse(fs.readFileSync("src/data/simpleToolQueue.json","utf8")),latest=queue.filter(x=>x.batch===7);
 const browserOnly=new Set(["html-landmark-accessibility-auditor"]);
 test("100 unique tools are queued, have complete metadata and produce real output from samples",()=>{
- assert.equal(queue.length,573);
+ assert.equal(queue.length,673);
  assert.equal(latest.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,573);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,673);
  assert.equal(queue[473].slug,"common-prefix-finder");
- assert.equal(queue.at(-1).slug,"network-port-range-merger");
+ assert.equal(queue.filter(x=>x.batch===7).at(-1).slug,"network-port-range-merger");
  const publicCount=[...fs.readFileSync("src/data/tools.ts","utf8").matchAll(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)].length;
  assert.equal(publicCount,123);
  const sources=["Text","Markdown","CsvQuality","CsvAnalytics","Json","Stats","Math","Business","Schedule","Web"].map(x=>fs.readFileSync("src/lib/wave7"+x+".mjs","utf8")).join("\n");
@@ -120,18 +120,19 @@ test("Scheduling and networking preserve dates, financial units, and CIDR behavi
  assert.equal(run("network-port-range-merger","80,443,1000-1005,1003-1010"),"80,443,1000-1010");
 });
 test("Release of 573 queued tools is strictly limited to 10 per Monday over 58 weeks",()=>{
+ const phase=queue.filter(x=>x.batch<=7);
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-wave7-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  assert.equal(Math.ceil(queue.length/10),58);
+  assert.equal(Math.ceil(phase.length/10),58);
   for(let i=0;i<58;i++){
    const out=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(out.released.length,Math.min(10,queue.length-10*i),"week "+(i+1));
+   assert.equal(out.released.length,Math.min(10,phase.length-10*i),"week "+(i+1));
   }
   const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,queue.map(x=>x.slug));
+  assert.deepEqual(state.published,phase.map(x=>x.slug));
   assert.equal(state.history.length,58);
   assert.equal(state.history.at(-1).slugs.length,3);
   assert.equal(state.published[473],"common-prefix-finder");

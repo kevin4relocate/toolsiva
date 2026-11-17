@@ -60,6 +60,16 @@ const timer=mode==="simple-pomodoro-timer";
   import { w7Business } from "@/lib/wave7Business.mjs";
   import { w7Schedule } from "@/lib/wave7Schedule.mjs";
   import { w7Web } from "@/lib/wave7Web.mjs";
+  import { w8Number } from "@/lib/wave8Number.mjs";
+  import { w8Combinatorics } from "@/lib/wave8Combinatorics.mjs";
+  import { w8Finance } from "@/lib/wave8Finance.mjs";
+  import { w8Science } from "@/lib/wave8Science.mjs";
+  import { w8Text } from "@/lib/wave8Text.mjs";
+  import { w8CsvTools } from "@/lib/wave8Csv.mjs";
+  import { w8JsonTools } from "@/lib/wave8Json.mjs";
+  import { w8Web } from "@/lib/wave8Web.mjs";
+  import { w8Schedule } from "@/lib/wave8Schedule.mjs";
+  import { w8Stats } from "@/lib/wave8Stats.mjs";
   import { parse as parseYaml } from "yaml";
 
   document.querySelectorAll<HTMLElement>("[data-simple-tool]").forEach(root=>{
@@ -84,7 +94,7 @@ const timer=mode==="simple-pomodoro-timer";
         if(!content){output.value="";status.textContent="Enter a value to begin.";return;}
         let result:string|null;
         if(mode==="yaml-to-json"){result=JSON.stringify(parseYaml(content),null,2);}
-        else result=calcSimple(mode,content)??processTextTool(mode,content)??runExtraText(mode,content)??runExtraData(mode,content)??runExtraWeb(mode,content)??thirdText(mode,content)??thirdCsvJson(mode,content)??dateSlots3(mode,content)??math4(mode,content)??web5(mode,content)??t4A(mode,content)??t4B(mode,content)??h4Html(mode,content)??u4Tools(mode,content)??j4Tools(mode,content)??c4Tools(mode,content)??n4Buss(mode,content)??n4Stats(mode,content)??v4Http(mode,content)??v4Validate(mode,content)??t5TextA(mode,content)??t5TextB(mode,content)??m5Process(mode,content)??d5Process(mode,content)??j5Tools(mode,content)??d5DateTools(mode,content)??n5Math(mode,content)??n5Business(mode,content)??c5HtmlCss(mode,content)??s5Security(mode,content)??w6Text(mode,content)??w6Time(mode,content)??w6Probability(mode,content)??w6Math(mode,content)??w6Finance(mode,content)??w6Business(mode,content)??w6CsvTools(mode,content)??w6ConfigTools(mode,content)??w6WebTools(mode,content)??w6Network(mode,content)??w7Text(mode,content)??w7Markdown(mode,content)??w7CsvQuality(mode,content)??w7CsvAnalytics(mode,content)??w7JsonTools(mode,content)??w7Stats(mode,content)??w7Math(mode,content)??w7Business(mode,content)??w7Schedule(mode,content)??w7Web(mode,content);
+        else result=calcSimple(mode,content)??processTextTool(mode,content)??runExtraText(mode,content)??runExtraData(mode,content)??runExtraWeb(mode,content)??thirdText(mode,content)??thirdCsvJson(mode,content)??dateSlots3(mode,content)??math4(mode,content)??web5(mode,content)??t4A(mode,content)??t4B(mode,content)??h4Html(mode,content)??u4Tools(mode,content)??j4Tools(mode,content)??c4Tools(mode,content)??n4Buss(mode,content)??n4Stats(mode,content)??v4Http(mode,content)??v4Validate(mode,content)??t5TextA(mode,content)??t5TextB(mode,content)??m5Process(mode,content)??d5Process(mode,content)??j5Tools(mode,content)??d5DateTools(mode,content)??n5Math(mode,content)??n5Business(mode,content)??c5HtmlCss(mode,content)??s5Security(mode,content)??w6Text(mode,content)??w6Time(mode,content)??w6Probability(mode,content)??w6Math(mode,content)??w6Finance(mode,content)??w6Business(mode,content)??w6CsvTools(mode,content)??w6ConfigTools(mode,content)??w6WebTools(mode,content)??w6Network(mode,content)??w7Text(mode,content)??w7Markdown(mode,content)??w7CsvQuality(mode,content)??w7CsvAnalytics(mode,content)??w7JsonTools(mode,content)??w7Stats(mode,content)??w7Math(mode,content)??w7Business(mode,content)??w7Schedule(mode,content)??w7Web(mode,content)??w8Number(mode,content)??w8Combinatorics(mode,content)??w8Finance(mode,content)??w8Science(mode,content)??w8Text(mode,content)??w8CsvTools(mode,content)??w8JsonTools(mode,content)??w8Web(mode,content)??w8Schedule(mode,content)??w8Stats(mode,content);
         if(result===null)throw Error("This tool mode has no implementation.");
         output.value=String(result);
         status.textContent="Processed locally in your browser.";
