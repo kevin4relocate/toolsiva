@@ -28,7 +28,7 @@ test("Wave 11 schedules 100 distinct, implemented and explained browser calculat
  for(let i=0;i<specs.length;i++){
   const s=specs[i],tool=wave[i],guide=guides[s.slug];
   assert.equal(tool.slug,s.slug,"queue order");
-  assert.equal(tool.week,Math.floor((868+i)/10)+1,"10 per week");
+  assert.equal(tool.week,Math.floor((868+i)/20)+1,"20 per week");
   assert.ok(tool.ready);
   assert.equal(tool.example,s.example);
   assert.ok(tool.metaDescription.length>=60&&tool.metaDescription.length<=180,s.slug+" SEO");
