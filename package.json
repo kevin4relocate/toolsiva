@@ -46,7 +46,8 @@
     "test:wave4": "node --test tests/wave4-tools.test.mjs",
     "test:wave5": "node --test tests/wave5-tools.test.mjs",
     "test:dedup": "node --test tests/deduplicated-catalog.test.mjs",
-    "test:wave6": "node --test tests/wave6-tools.test.mjs"
+    "test:wave6": "node --test tests/wave6-tools.test.mjs",
+    "test:wave7": "node --test tests/wave7-tools.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
