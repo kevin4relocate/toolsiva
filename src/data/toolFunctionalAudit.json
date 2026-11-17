@@ -230,6 +230,46 @@
       "left": "fibonacci-number-finder",
       "right": "fibonacci-sequence-generator",
       "reason": "Single exact large-index result vs bounded sequence generation"
+    },
+    {
+      "left": "csv-column-extractor",
+      "right": "delimited-text-column-extractor",
+      "reason": "Quote-aware CSV with header-name lookup versus literal splitting with custom delimiter and numeric column position."
+    },
+    {
+      "left": "timezone-offset-calculator",
+      "right": "timezone-offset-at-date-calculator",
+      "reason": "Fixed UTC-offset time translation versus date-dependent IANA time zone lookup including seasonal offset changes."
+    },
+    {
+      "left": "business-days-calculator",
+      "right": "add-business-days-calculator",
+      "reason": "Counting weekdays in a date interval versus shifting a start date by specified business days."
+    },
+    {
+      "left": "contribution-margin-calculator",
+      "right": "contribution-margin-ratio-calculator",
+      "reason": "Net contribution amount per unit versus unit contribution as a fraction of unit selling price."
+    },
+    {
+      "left": "kinetic-energy-calculator",
+      "right": "rotational-kinetic-energy",
+      "reason": "Linear kinetic energy from mass and speed differs physically from rotational kinetic energy from inertia and angular velocity."
+    },
+    {
+      "left": "capacitor-stored-energy",
+      "right": "inductor-stored-energy",
+      "reason": "Capacitance and electric potential energy versus inductance and magnetic-field energy despite an identical algebraic shape."
+    },
+    {
+      "left": "polygon-shoelace-area-calculator",
+      "right": "regular-polygon-area-calculator",
+      "reason": "General polygon area from vertices versus regular polygon area from side count and side length."
+    },
+    {
+      "left": "moles-from-mass-molar-mass",
+      "right": "mass-from-moles-molar-mass",
+      "reason": "Different directions of conversion between mass and molar amount with distinct inputs and desired outputs."
     }
   ],
   "latestAudit": {
@@ -253,7 +293,7 @@
     "newFunctionalDuplicatesRetired": [
       "vector3-angle-between"
     ],
-    "reviewMethod": "Reviewed 1,090 catalog items, high lexical-similarity pairs, source equations, input domains, output units, and generalized versus specialized coverage.",
+    "reviewMethod": "Compared all catalog names, inspected 50 high-lexical-overlap pairs and algebraic formula groups across Wave 10 and Wave 11, then examined selected engine code, input domains and outputs. This is a targeted semantic audit, not a formal proof of uniqueness.",
     "note": "Identical algebraic expressions across unrelated physical/business domains are not automatically equivalent features. Reversible transformations and different metrics also remain separate."
   }
 }
