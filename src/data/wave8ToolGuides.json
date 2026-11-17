@@ -1,0 +1,902 @@
+{
+  "euler-totient-calculator": {
+    "explanation": "Count positive integers up to n that are coprime to n.",
+    "example": "36",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "mobius-function-calculator": {
+    "explanation": "Find the Möbius number from a positive integer's distinct prime factors.",
+    "example": "30",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "sum-of-proper-divisors-calculator": {
+    "explanation": "Sum divisors smaller than a positive integer and classify it by abundance.",
+    "example": "28",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "goldbach-prime-pair-finder": {
+    "explanation": "Find a pair of prime numbers whose sum is an even integer.",
+    "example": "28",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "collatz-trajectory-generator": {
+    "explanation": "Generate the 3n+1 trajectory of a positive integer with a safety step limit.",
+    "example": "7",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "happy-number-checker": {
+    "explanation": "Find whether repeated sums of squared decimal digits converge to 1.",
+    "example": "19",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "chinese-remainder-theorem-solver": {
+    "explanation": "Solve simultaneous congruences, including compatible non-coprime moduli.",
+    "example": "2|3\n3|5\n2|7",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "extended-euclidean-coefficients": {
+    "explanation": "Find gcd(a,b) and integer Bézout coefficients x,y satisfying ax+by=gcd.",
+    "example": "240|46",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "continued-fraction-expansion-calculator": {
+    "explanation": "Expand a rational number into its finite simple continued fraction.",
+    "example": "415|93",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "farey-sequence-generator": {
+    "explanation": "List all reduced fractions from 0 to 1 having denominator at most n.",
+    "example": "5",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "catalan-number-calculator": {
+    "explanation": "Calculate the Catalan number for balanced brackets, tree shapes and paths.",
+    "example": "10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "stirling-second-kind-calculator": {
+    "explanation": "Count partitions of n labeled items into k nonempty unlabeled sets.",
+    "example": "5|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "bell-number-calculator": {
+    "explanation": "Count ways to partition a set into nonempty unlabeled subsets.",
+    "example": "5",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "derangement-count-calculator": {
+    "explanation": "Count permutations in which no element stays in its original position.",
+    "example": "5",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "integer-partition-count-calculator": {
+    "explanation": "Count unordered positive integer partitions of a target number.",
+    "example": "10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "pascal-triangle-row-generator": {
+    "explanation": "Generate the entire nth row of Pascal's triangle as exact integers.",
+    "example": "5",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "multinomial-coefficient-calculator": {
+    "explanation": "Count distinct permutations of objects in several indistinguishable groups.",
+    "example": "2,3,1",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "birthday-match-probability-calculator": {
+    "explanation": "Estimate the probability that at least two people share a birthday.",
+    "example": "23|365",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "coupon-collector-expected-draws-calculator": {
+    "explanation": "Compute expected draws required to observe each of n equally likely coupons.",
+    "example": "10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "three-set-inclusion-exclusion-calculator": {
+    "explanation": "Calculate union size of three sets from individual and intersection counts.",
+    "example": "60|50|30|20|10|5|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "net-present-value-calculator": {
+    "explanation": "Discount dated-by-period cash flows to calculate net present value.",
+    "example": "0.10\n---\n-1000,400,400,400",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "internal-rate-of-return-calculator": {
+    "explanation": "Find a valid positive-discount-rate IRR for conventional annual cash flows.",
+    "example": "-1000,600,600",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "annuity-present-value-calculator": {
+    "explanation": "Discount fixed end-of-period annuity payments to today's value.",
+    "example": "100|0.05|10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "annuity-future-value-calculator": {
+    "explanation": "Accumulate repeated end-of-period payments over a specified term.",
+    "example": "100|0.05|10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "bond-price-calculator": {
+    "explanation": "Estimate fixed-coupon bond price from face value, coupon, yield and payments.",
+    "example": "1000|0.05|0.06|5|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "macaulay-bond-duration-calculator": {
+    "explanation": "Find cash-flow-weighted duration of a fixed-coupon bond in years.",
+    "example": "1000|0.05|0.06|5|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "weighted-average-cost-of-capital-calculator": {
+    "explanation": "Calculate after-tax WACC using equity/debt weights, costs and tax rate.",
+    "example": "0.6|0.4|0.12|0.06|0.25",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "debt-service-coverage-ratio-calculator": {
+    "explanation": "Divide net operating income by contractual annual debt service.",
+    "example": "120000|80000",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "gordon-growth-dividend-valuation": {
+    "explanation": "Estimate perpetual dividend-discount value from next dividend and growth.",
+    "example": "2|0.09|0.04",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "degree-of-operating-leverage-calculator": {
+    "explanation": "Calculate contribution margin divided by operating income.",
+    "example": "100000|60000|20000",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "ohms-law-current-solver": {
+    "explanation": "Calculate current in amperes using voltage and resistance.",
+    "example": "12|6",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "series-parallel-resistor-calculator": {
+    "explanation": "Calculate equivalent resistance for ideal series or parallel resistors.",
+    "example": "parallel|100,200",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "voltage-divider-calculator": {
+    "explanation": "Calculate unloaded output voltage of a two-resistor divider.",
+    "example": "12|1000|2000",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "rc-circuit-time-constant-calculator": {
+    "explanation": "Calculate resistor-capacitor time constant and approximate 95% settling time.",
+    "example": "1000|0.000001",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "half-life-remaining-quantity-calculator": {
+    "explanation": "Calculate quantity remaining after elapsed time and a fixed half-life.",
+    "example": "100|5|10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "hydrogen-ion-ph-calculator": {
+    "explanation": "Compute pH from hydrogen ion concentration in mol/L.",
+    "example": "0.0001",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "solution-molarity-calculator": {
+    "explanation": "Calculate molarity in mol/L from solute moles and solution liters.",
+    "example": "0.5|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "solution-dilution-volume-calculator": {
+    "explanation": "Use C1V1=C2V2 to calculate diluted final volume.",
+    "example": "1|2|0.5",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "ideal-gas-pressure-calculator": {
+    "explanation": "Apply PV=nRT to estimate ideal-gas pressure in pascals.",
+    "example": "1|300|0.024",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "decibel-power-ratio-calculator": {
+    "explanation": "Calculate decibel gain or loss for a positive power ratio.",
+    "example": "100",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "vigenere-cipher-translator": {
+    "explanation": "Encode or decode alphabetic text using a repeating Vigenère keyword.",
+    "example": "encode|ATTACK AT DAWN|LEMON",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "atbash-cipher-translator": {
+    "explanation": "Substitute each Latin letter by its reversed-alphabet counterpart.",
+    "example": "ABC XYZ",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "rot47-text-translator": {
+    "explanation": "Apply ROT47 substitution to printable ASCII characters.",
+    "example": "Hello World!",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "pig-latin-translator": {
+    "explanation": "Apply a rule-based English Pig Latin transformation to words.",
+    "example": "Hello there",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "leetspeak-text-converter": {
+    "explanation": "Transform common Latin characters into readable leetspeak substitutions.",
+    "example": "hello world",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "lexical-diversity-calculator": {
+    "explanation": "Calculate unique word ratio, root type-token ratio and word counts.",
+    "example": "one two one three",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "hapax-legomena-finder": {
+    "explanation": "List words occurring exactly once in a text.",
+    "example": "apple apple pear mango",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "tf-idf-term-scorer": {
+    "explanation": "Score one term using TF-IDF across a small pasted document corpus.",
+    "example": "apple\n---\napple banana\n---\nbanana orange",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "text-acrostic-extractor": {
+    "explanation": "Extract first letter of each nonempty line as an acrostic.",
+    "example": "Hello world\nEvery day\nLearn more\nPractice often",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "text-pattern-redactor": {
+    "explanation": "Redact all matching text spans using a typed regular expression.",
+    "example": "[A-Z]{2}\\d{3}\n---\nOrder AB123 processed and XY456 shipped",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-monthly-date-aggregator": {
+    "explanation": "Aggregate numerical CSV measures into calendar months by an ISO date field.",
+    "example": "date|amount\n---\ndate,amount\n2026-01-02,20\n2026-01-08,5\n2026-02-01,7",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-cohort-retention-matrix": {
+    "explanation": "Compute distinct-user monthly retention percentages by first-seen cohort.",
+    "example": "user|month\n---\nuser,month\nA,2026-01\nA,2026-02\nB,2026-01\nC,2026-02",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-top-k-per-group": {
+    "explanation": "Select the top N numeric-scored CSV records independently per group.",
+    "example": "team|score|1\n---\nteam,score\nA,8\nA,10\nB,3\nB,5",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-contingency-table-builder": {
+    "explanation": "Build a cross-tabulation of category counts from two CSV fields.",
+    "example": "region|status\n---\nregion,status\nEast,new\nEast,active\nWest,new",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-weighted-mean-by-group": {
+    "explanation": "Calculate weighted means using per-row weights for each CSV group.",
+    "example": "team|score|weight\n---\nteam,score,weight\nA,10,2\nA,20,1\nB,5,1",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-moving-median-column": {
+    "explanation": "Append sliding-window medians to a sorted-by-row numeric CSV series.",
+    "example": "value|3\n---\nvalue\n1\n10\n2\n20",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-lag-lead-column-generator": {
+    "explanation": "Add a lagged or leading version of a CSV column with chosen row offset.",
+    "example": "lag|amount|1\n---\namount\n10\n20\n30",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-duplicate-column-detector": {
+    "explanation": "Find columns having identical data values under different headers.",
+    "example": "a,b,c\n1,1,2\n3,3,4",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-skewness-kurtosis-reporter": {
+    "explanation": "Calculate population moment skewness and excess kurtosis of CSV values.",
+    "example": "value\n---\nvalue\n1\n2\n2\n3\n8",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "csv-missing-calendar-dates-finder": {
+    "explanation": "List missing ISO dates between minimum and maximum dates in a CSV column.",
+    "example": "date\n---\ndate\n2026-01-01\n2026-01-03",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-recursive-key-case-converter": {
+    "explanation": "Rename nested JSON object keys to camelCase or snake_case consistently.",
+    "example": "snake\n---\n{\"firstName\":\"Ada\",\"userProfile\":{\"lastName\":\"L\"}}",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-arrays-merge-by-key": {
+    "explanation": "Combine two arrays of JSON objects by unique identifier keys.",
+    "example": "id\n---\n[{\"id\":1,\"name\":\"Ada\"}]\n---\n[{\"id\":1,\"score\":95},{\"id\":2,\"name\":\"Bob\"}]",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-arrays-intersection-by-key": {
+    "explanation": "Keep first-array JSON records whose identifiers exist in the second array.",
+    "example": "id\n---\n[{\"id\":1},{\"id\":2}]\n---\n[{\"id\":2},{\"id\":3}]",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-arrays-difference-by-key": {
+    "explanation": "Return first-array JSON records whose keys are absent in the second array.",
+    "example": "id\n---\n[{\"id\":1},{\"id\":2}]\n---\n[{\"id\":2},{\"id\":3}]",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-iso-date-string-scanner": {
+    "explanation": "Locate malformed ISO date-only strings throughout nested JSON.",
+    "example": "{\"created\":\"2026-02-30\",\"updated\":\"2026-11-17\"}",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-value-frequency-by-pointer": {
+    "explanation": "Count unique values at a chosen JSON Pointer across object-array records.",
+    "example": "/status\n---\n[{\"status\":\"new\"},{\"status\":\"new\"},{\"status\":\"done\"}]",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-collection-foreign-key-validator": {
+    "explanation": "Find child JSON records referencing missing parent identifiers.",
+    "example": "customerId|id\n---\n[{\"customerId\":1},{\"customerId\":3}]\n---\n[{\"id\":1},{\"id\":2}]",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-locale-key-coverage-comparator": {
+    "explanation": "Report missing translation keys between nested locale dictionaries.",
+    "example": "{\"home\":{\"title\":\"Home\",\"desc\":\"Welcome\"}}\n---\n{\"home\":{\"title\":\"Trang chủ\"}}",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "jsonpath-numeric-aggregator": {
+    "explanation": "Sum, average, count, min or max numbers selected by a simple JSONPath.",
+    "example": "$.items[*].price|sum\n---\n{\"items\":[{\"price\":2},{\"price\":3}]}",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "json-key-naming-convention-auditor": {
+    "explanation": "Find JSON object keys inconsistent with selected camelCase or snake_case.",
+    "example": "snake\n---\n{\"firstName\":\"Ada\",\"last_name\":\"L\"}",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "css-color-contrast-ratio-calculator": {
+    "explanation": "Calculate WCAG relative luminance contrast ratio and AA/AAA text thresholds.",
+    "example": "#ffffff|#000000",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "css-color-format-converter": {
+    "explanation": "Convert typed hexadecimal, RGB or HSL colors among CSS representations.",
+    "example": "rgb|#336699",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "css-clamp-fluid-value-generator": {
+    "explanation": "Generate CSS clamp() with interpolated rem/vw scaling between viewport widths.",
+    "example": "16|24|320|1200",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "css-grid-track-sizing-calculator": {
+    "explanation": "Calculate equal grid track widths from container width, columns and gap.",
+    "example": "1200|3|20",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "css-selector-matcher": {
+    "explanation": "Count HTML elements matching a typed CSS selector using the browser DOM parser.",
+    "example": "article.highlight\n---\n<article class=\"highlight\">Hi</article><p>Bye</p>",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "http-security-headers-checklist": {
+    "explanation": "Audit presence and basic validity of common browser security response headers.",
+    "example": "Strict-Transport-Security: max-age=31536000\nX-Content-Type-Options: nosniff\nReferrer-Policy: strict-origin",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "http-cache-directive-conflict-detector": {
+    "explanation": "Identify mutually contradictory HTTP Cache-Control response directives.",
+    "example": "public, private, no-store, max-age=3600",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "http-content-negotiation-matcher": {
+    "explanation": "Select the best offered MIME type against an Accept header.",
+    "example": "application/json,text/html;q=0.5\n---\ntext/html,application/json",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "idn-url-hostname-normalizer": {
+    "explanation": "Normalize an internationalized URL hostname to its ASCII punycode form.",
+    "example": "https://bücher.example/path?x=1",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "html-form-constraint-auditor": {
+    "explanation": "Inspect pasted HTML forms for missing names and invalid input constraints.",
+    "example": "<form><input type=\"email\" required><input type=\"number\" min=\"10\" max=\"2\"></form>",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "rrule-date-occurrence-expander": {
+    "explanation": "Expand supported daily/weekly/monthly recurrence rules into future dates.",
+    "example": "FREQ=WEEKLY;COUNT=3;BYDAY=MO\n---\n2026-11-16",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "holiday-aware-business-day-counter": {
+    "explanation": "Count Monday–Friday dates in a range excluding a pasted holiday list.",
+    "example": "2026-11-16|2026-11-20\n---\n2026-11-18",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "monthly-anniversary-date-generator": {
+    "explanation": "Generate subsequent monthly anniversaries with end-of-month clamping.",
+    "example": "2026-01-31|4",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "annual-leave-accrual-calculator": {
+    "explanation": "Estimate earned leave balance from monthly accrual, elapsed months and used days.",
+    "example": "1.5|6|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "overtime-tier-wage-calculator": {
+    "explanation": "Calculate weekly earnings using regular hours and two overtime pay multipliers.",
+    "example": "45|20|40|1.5|2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "shift-coverage-gap-analyzer": {
+    "explanation": "Find unstaffed intervals of a planned work shift from coverage intervals.",
+    "example": "09:00|17:00\n---\n09:00,12:00\n13:00,17:00",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "project-pert-estimate-calculator": {
+    "explanation": "Calculate three-point PERT expected duration and uncertainty.",
+    "example": "2|5|14",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "project-earned-value-metrics-calculator": {
+    "explanation": "Compute schedule and cost performance from planned, earned and actual value.",
+    "example": "10000|6000|5000",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "weekly-team-capacity-planner": {
+    "explanation": "Estimate available weekly capacity from hours per person and focus factor.",
+    "example": "40|5|0.75",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "meeting-rotation-fairness-calculator": {
+    "explanation": "Compare participants' meeting-hour burdens across two proposed rotations.",
+    "example": "09:00,10:00,15:00\n---\n08:00,08:00,18:00",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "robust-median-absolute-deviation-calculator": {
+    "explanation": "Calculate robust median absolute deviation and scaled normal-equivalent MAD.",
+    "example": "1,2,2,3,100",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "trimmed-mean-calculator": {
+    "explanation": "Compute a symmetric alpha-trimmed mean with extremes excluded.",
+    "example": "1,2,3,4,100|0.2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "winsorized-mean-calculator": {
+    "explanation": "Compute a symmetric winsorized mean by replacing tail values.",
+    "example": "1,2,3,4,100|0.2",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "gini-inequality-coefficient-calculator": {
+    "explanation": "Calculate Gini coefficient for nonnegative values.",
+    "example": "0,0,1,3",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "lorenz-curve-points-generator": {
+    "explanation": "Generate cumulative share points for a Lorenz curve of nonnegative values.",
+    "example": "0,1,2,3",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "cramers-v-association-calculator": {
+    "explanation": "Calculate Cramér's V association coefficient from a contingency table.",
+    "example": "10,20;20,10",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "population-stability-index-calculator": {
+    "explanation": "Compare baseline and current bucket distributions using population stability index.",
+    "example": "10,20,70\n---\n20,20,60",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "bootstrap-mean-interval-calculator": {
+    "explanation": "Compute a seeded bootstrap percentile interval for a sample mean.",
+    "example": "1,2,3,4,5|0.95|500|123",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "paired-sample-difference-summary": {
+    "explanation": "Report paired mean, median and spread of differences between two numeric lists.",
+    "example": "10,20,30\n---\n8,23,25",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  },
+  "median-of-means-calculator": {
+    "explanation": "Divide a numeric sequence into groups, average each, then take median of means.",
+    "example": "1,2,3,4,50,6|3",
+    "limitation": "Calculations are based on the typed inputs and documented assumptions; verify decisions involving money, safety or legal obligations. No live external data is retrieved.",
+    "workflows": [
+      "Paste or type the values shown in the input example.",
+      "Run the calculation locally and review the clearly labeled result."
+    ]
+  }
+}
