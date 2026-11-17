@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "cost-of-goods-sold-inventory-flow",
+    "name": "Cost of Goods Sold from Inventory Flow",
+    "example": "100|300|50",
+    "expression": "a[0]+a[1]-a[2]",
+    "unit": "currency units",
+    "inputs": "opening inventory | purchases | closing inventory",
+    "valid": "a.every(x=>x>=0)&&a[2]<=a[0]+a[1]",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "inventory-days-on-hand-from-value",
+    "name": "Inventory Days on Hand from Value",
+    "example": "100|800|365",
+    "expression": "a[0]/a[1]*a[2]",
+    "unit": "days",
+    "inputs": "average inventory value | period COGS | days in period",
+    "valid": "a[0]>=0&&a[1]>0&&Number.isSafeInteger(a[2])&&a[2]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "receivables-turnover-calculator",
+    "name": "Accounts Receivable Turnover",
+    "example": "1200|100",
+    "expression": "a[0]/a[1]",
+    "unit": "times per period",
+    "inputs": "net credit sales | average accounts receivable",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "payables-days-outstanding",
+    "name": "Days Payable Outstanding",
+    "example": "100|800|365",
+    "expression": "a[0]/a[1]*a[2]",
+    "unit": "days",
+    "inputs": "average accounts payable | period COGS | days in period",
+    "valid": "a[0]>=0&&a[1]>0&&Number.isSafeInteger(a[2])&&a[2]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "return-on-capital-employed",
+    "name": "Return on Capital Employed",
+    "example": "200|1000|200",
+    "expression": "100*a[0]/(a[1]-a[2])",
+    "unit": "percent",
+    "inputs": "EBIT | total assets | current liabilities",
+    "valid": "a[1]>a[2]&&a[2]>=0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "debt-to-equity-calculator",
+    "name": "Debt to Equity Ratio",
+    "example": "500|1000",
+    "expression": "a[0]/a[1]",
+    "unit": "ratio",
+    "inputs": "total debt | shareholders equity",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "current-liquidity-ratio",
+    "name": "Current Liquidity Ratio",
+    "example": "500|250",
+    "expression": "a[0]/a[1]",
+    "unit": "ratio",
+    "inputs": "current assets | current liabilities",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "quick-liquidity-ratio",
+    "name": "Quick Liquidity Ratio",
+    "example": "500|100|50|250",
+    "expression": "(a[0]-a[1]-a[2])/a[3]",
+    "unit": "ratio",
+    "inputs": "current assets | inventory | prepaid | current liabilities",
+    "valid": "a[0]>=a[1]+a[2]&&a[1]>=0&&a[2]>=0&&a[3]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "cash-liquidity-ratio",
+    "name": "Cash Liquidity Ratio",
+    "example": "100|20|250",
+    "expression": "(a[0]+a[1])/a[2]",
+    "unit": "ratio",
+    "inputs": "cash | cash equivalents | current liabilities",
+    "valid": "a[0]>=0&&a[1]>=0&&a[2]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "interest-coverage-ratio",
+    "name": "EBIT Interest Coverage Ratio",
+    "example": "500|100",
+    "expression": "a[0]/a[1]",
+    "unit": "times",
+    "inputs": "EBIT | interest expense",
+    "valid": "a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "operating-cashflow-margin",
+    "name": "Operating Cash Flow Margin",
+    "example": "300|1000",
+    "expression": "100*a[0]/a[1]",
+    "unit": "percent",
+    "inputs": "operating cash flow | revenue",
+    "valid": "a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "warranty-claim-incidence",
+    "name": "Warranty Claim Rate",
+    "example": "12|1000",
+    "expression": "100*a[0]/a[1]",
+    "unit": "percent",
+    "inputs": "eligible units with claims | eligible units sold",
+    "valid": "a[0]>=0&&a[1]>0&&a[0]<=a[1]",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "service-order-fill-rate",
+    "name": "Service Order Fill Rate",
+    "example": "80|100",
+    "expression": "100*a[0]/a[1]",
+    "unit": "percent",
+    "inputs": "orders fulfilled in full | total orders",
+    "valid": "a[0]>=0&&a[1]>0&&a[0]<=a[1]",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "hotel-room-occupancy-percentage",
+    "name": "Hotel Room Occupancy Rate",
+    "example": "80|100",
+    "expression": "100*a[0]/a[1]",
+    "unit": "percent",
+    "inputs": "rooms sold | room nights available",
+    "valid": "a[0]>=0&&a[1]>0&&a[0]<=a[1]",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "restaurant-food-cost-percentage",
+    "name": "Restaurant Food Cost Percentage",
+    "example": "300|1000",
+    "expression": "100*a[0]/a[1]",
+    "unit": "percent",
+    "inputs": "food ingredients cost | food sales revenue",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "labor-output-per-hour",
+    "name": "Labor Output per Person Hour",
+    "example": "200|40",
+    "expression": "a[0]/a[1]",
+    "unit": "units per person hour",
+    "inputs": "good units produced | total person hours",
+    "valid": "a[0]>=0&&a[1]>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "net-working-capital-calculator",
+    "name": "Net Working Capital",
+    "example": "500|250",
+    "expression": "a[0]-a[1]",
+    "unit": "currency units",
+    "inputs": "current assets | current liabilities",
+    "valid": "a.every(x=>x>=0)",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "inventory-shrinkage-percentage",
+    "name": "Inventory Shrinkage Percentage",
+    "example": "500|480",
+    "expression": "100*(a[0]-a[1])/a[0]",
+    "unit": "percent",
+    "inputs": "book inventory units | physical inventory units",
+    "valid": "a[0]>0&&a[1]>=0&&a[1]<=a[0]",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "two-period-weighted-absolute-error",
+    "name": "Two Period Weighted Absolute Percentage Error",
+    "example": "100|90|200|220",
+    "expression": "100*(Math.abs(a[0]-a[1])+Math.abs(a[2]-a[3]))/(Math.abs(a[0])+Math.abs(a[2]))",
+    "unit": "percent",
+    "inputs": "actual 1 | forecast 1 | actual 2 | forecast 2",
+    "valid": "Math.abs(a[0])+Math.abs(a[2])>0",
+    "group": "Business, service and operations"
+  },
+  {
+    "slug": "kanban-replenishment-cards",
+    "name": "Kanban Replenishment Cards",
+    "example": "100|2|10|0.1",
+    "expression": "Math.ceil(a[0]*a[1]*(1+a[3])/a[2])",
+    "unit": "cards",
+    "inputs": "demand units/day | lead time days | units per card | fractional safety stock",
+    "valid": "a[0]>=0&&a[1]>=0&&a[2]>0&&a[3]>=0&&a[3]<=10",
+    "group": "Business, service and operations"
+  }
+]
