@@ -95,12 +95,13 @@ test("All 967 distinct queued browser tools remain inside the weekly release que
    assert.match(q.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
    assert.ok(q.name&&q.category&&q.example&&q.metaDescription);
    assert.ok(["text","developer","security","calculator","converter"].includes(q.category));
-   assert.ok(q.week>=1&&q.week<=97);
+   assert.ok(q.week>=1&&q.week<=49);
  }
  assert.ok(Array.isArray(release.published));
  assert.equal(new Set(release.published).size,release.published.length);
  assert.ok(release.published.every(slug=>queue.some(tool=>tool.slug===slug&&tool.ready)));
- assert.equal(release.weeklyLimit,10);
+ assert.equal(release.weeklyLimit,20);
+ assert.equal(release.perSlotLimit,10);
 });
 
 test("Every queued tool has an engine case, and sample inputs produce useful results",()=>{
@@ -129,23 +130,29 @@ test("High-value examples produce correct outputs",()=>{
  assert.match(processTextTool("meta-tag-generator","Title|Summary|https://example.com"),/<title>Title<\/title>/);
 });
 
-test("Weekly release never publishes early, twice, or more than ten in a week",()=>{
+test("Two release slots per week never publish early, twice, or exceed 20 tools per week",()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),"toolsiva-simple-release-"));
  try{
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
-  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue.map(x=>({...x,ready:true}))));
-  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const before=releaseSimpleTools({root,now:new Date("2026-11-23T01:59:59Z")});
-  assert.equal(before.released.length,0);
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
+  fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:20,perSlotLimit:10,published:[],history:[]}));
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-23T01:59:59Z")}).released.length,0);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-24T02:00:00Z")}).released.length,0);
   const dry=releaseSimpleTools({root,now:new Date("2026-11-23T02:00:00Z"),dryRun:true});
   assert.equal(dry.released.length,10);
-  const first=releaseSimpleTools({root,now:new Date("2026-11-23T02:00:00Z")});
-  assert.equal(first.released.length,10);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-23T02:00:00Z")}).released.length,10);
   assert.equal(releaseSimpleTools({root,now:new Date("2026-11-23T05:00:00Z")}).released.length,0);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-26T01:59:59Z")}).released.length,0);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-26T02:00:00Z")}).released.length,10);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-26T03:00:00Z")}).released.length,0);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-11-27T02:00:00Z")}).released.length,0);
   assert.equal(releaseSimpleTools({root,now:new Date("2026-11-30T02:00:00Z")}).released.length,10);
+  assert.equal(releaseSimpleTools({root,now:new Date("2026-12-03T02:00:00Z")}).released.length,10);
   const saved=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.equal(saved.published.length,20);
-  assert.equal(new Set(saved.published).size,20);
-  assert.equal(saved.history.length,2);
+  assert.equal(saved.published.length,40);
+  assert.equal(new Set(saved.published).size,40);
+  assert.equal(saved.history.length,4);
+  assert.deepEqual(saved.published,queue.slice(0,40).map(x=>x.slug));
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
+
