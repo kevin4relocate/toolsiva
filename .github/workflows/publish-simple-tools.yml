@@ -26,6 +26,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Validate full catalog before selecting weekly batch
+        run: npm run catalog:audit
       - run: npm run tools:release
       - name: Validate before publishing
         run: |
@@ -35,6 +37,7 @@ jobs:
           npm run check
           npm run build
           npm run tools:verify
+          npm run catalog:audit
           npm run seo:audit
       - name: Commit manifest only after successful build
         run: |
