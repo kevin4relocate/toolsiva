@@ -11,7 +11,7 @@
     "public": 123,
     "queued": 967,
     "total": 1090,
-    "weeklyLimit": 10
+    "weeklyLimit": 20
   },
   "retired": [
     {
@@ -295,5 +295,14 @@
     ],
     "reviewMethod": "Compared all catalog names, inspected 50 high-lexical-overlap pairs and algebraic formula groups across Wave 10 and Wave 11, then examined selected engine code, input domains and outputs. This is a targeted semantic audit, not a formal proof of uniqueness.",
     "note": "Identical algebraic expressions across unrelated physical/business domains are not automatically equivalent features. Reversible transformations and different metrics also remain separate."
+  },
+  "releasePolicy": {
+    "startDate": "2026-11-23",
+    "weekdays": "Monday and Thursday",
+    "timeLocal": "09:00 Asia/Ho_Chi_Minh",
+    "weeklyLimit": 20,
+    "perSlotLimit": 10,
+    "queueSize": 967,
+    "plannedWeeks": 49
   }
 }
