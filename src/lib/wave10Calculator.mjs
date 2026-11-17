@@ -99,6 +99,8 @@ export function w10Calculator(slug,input){
  case "right-triangle-hypotenuse-height":{const a=wave10Numbers(input,2);wave10Require(a.every(x=>x>=0),"Use nonnegative quantities.");const p=(a[0]+a[1]+a[2])/2;return wave10Result("Right Triangle Altitude to Hypotenuse",a[0]*a[1]/Math.hypot(a[0],a[1]),"units");}
  case "cylinder-lateral-area-calculator":{const a=wave10Numbers(input,2);wave10Require(a.every(x=>x>=0),"Use nonnegative quantities.");const p=(a[0]+a[1]+a[2])/2;return wave10Result("Cylinder Lateral Surface Area",2*Math.PI*a[0]*a[1],"square units");}
  case "spherical-cap-volume-calculator":{const a=wave10Numbers(input,2);wave10Require(a[0]>0&&a[1]>=0&&a[1]<=2*a[0],"Cap height must lie between zero and twice the sphere radius.");const p=(a[0]+a[1]+a[2])/2;return wave10Result("Spherical Cap Volume",Math.PI*a[1]**2*(3*a[0]-a[1])/3,"cubic units");}
+ case "trapezoid-midsegment-length":{const a=wave10Numbers(input,2);wave10Require(a.every(x=>x>=0),"Values must be nonnegative.");return wave10Result("Trapezoid Midsegment Length",(a[0]+a[1])/2,"units");}
+ case "hemisphere-surface-area-total":{const a=wave10Numbers(input,1);wave10Require(a.every(x=>x>=0),"Values must be nonnegative.");return wave10Result("Hemisphere Total Surface Area",3*Math.PI*a[0]**2,"square units");}
  default:return null;
  }
 }
