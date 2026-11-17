@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "triangle-third-side-cosine-rule",
+    "name": "Triangle Third Side (Cosine Rule)",
+    "example": "3|4|60",
+    "expression": "Math.sqrt(a[0]**2+a[1]**2-2*a[0]*a[1]*Math.cos(a[2]*Math.PI/180))",
+    "unit": "units",
+    "inputs": "side A | side B | included angle degrees",
+    "valid": "a[0]>0&&a[1]>0&&a[2]>0&&a[2]<180",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "triangle-area-included-angle",
+    "name": "Triangle Area from Included Angle",
+    "example": "3|4|90",
+    "expression": "a[0]*a[1]*Math.sin(a[2]*Math.PI/180)/2",
+    "unit": "square units",
+    "inputs": "side A | side B | included angle degrees",
+    "valid": "a[0]>0&&a[1]>0&&a[2]>0&&a[2]<180",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "triangle-height-from-base-area",
+    "name": "Triangle Height from Base and Area",
+    "example": "6|12",
+    "expression": "2*a[1]/a[0]",
+    "unit": "units",
+    "inputs": "base length | triangle area",
+    "valid": "a[0]>0&&a[1]>=0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "right-triangle-missing-leg",
+    "name": "Missing Right Triangle Leg",
+    "example": "5|3",
+    "expression": "Math.sqrt(a[0]**2-a[1]**2)",
+    "unit": "units",
+    "inputs": "hypotenuse | known leg",
+    "valid": "a[0]>a[1]&&a[1]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "rectangular-prism-space-diagonal",
+    "name": "Rectangular Prism Space Diagonal",
+    "example": "3|4|12",
+    "expression": "Math.hypot(...a)",
+    "unit": "units",
+    "inputs": "length | width | height",
+    "valid": "a.every(x=>x>0)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "rectangular-prism-total-surface",
+    "name": "Rectangular Prism Total Surface Area",
+    "example": "2|3|4",
+    "expression": "2*(a[0]*a[1]+a[1]*a[2]+a[0]*a[2])",
+    "unit": "square units",
+    "inputs": "length | width | height",
+    "valid": "a.every(x=>x>0)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "right-cone-total-surface-area",
+    "name": "Right Cone Total Surface Area",
+    "example": "3|4",
+    "expression": "Math.PI*a[0]*(a[0]+Math.hypot(a[0],a[1]))",
+    "unit": "square units",
+    "inputs": "base radius | perpendicular height",
+    "valid": "a.every(x=>x>0)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "cylinder-total-surface-area",
+    "name": "Cylinder Total Surface Area",
+    "example": "2|5",
+    "expression": "2*Math.PI*a[0]*(a[0]+a[1])",
+    "unit": "square units",
+    "inputs": "radius | height",
+    "valid": "a.every(x=>x>0)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "hemisphere-volume-calculator",
+    "name": "Hemisphere Volume",
+    "example": "3",
+    "expression": "2*Math.PI*a[0]**3/3",
+    "unit": "cubic units",
+    "inputs": "hemisphere radius",
+    "valid": "a[0]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "ellipsoid-volume-calculator",
+    "name": "Ellipsoid Volume",
+    "example": "2|3|4",
+    "expression": "4*Math.PI*a[0]*a[1]*a[2]/3",
+    "unit": "cubic units",
+    "inputs": "semi-axis A | semi-axis B | semi-axis C",
+    "valid": "a.every(x=>x>0)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "annulus-area-calculator",
+    "name": "Annulus Area",
+    "example": "5|3",
+    "expression": "Math.PI*(a[0]**2-a[1]**2)",
+    "unit": "square units",
+    "inputs": "outer radius | inner radius",
+    "valid": "a[0]>a[1]&&a[1]>=0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "hollow-cylinder-material-volume",
+    "name": "Hollow Cylinder Material Volume",
+    "example": "5|3|10",
+    "expression": "Math.PI*(a[0]**2-a[1]**2)*a[2]",
+    "unit": "cubic units",
+    "inputs": "outer radius | inner radius | height",
+    "valid": "a[0]>a[1]&&a[1]>=0&&a[2]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "regular-polygon-apothem-calculator",
+    "name": "Regular Polygon Apothem",
+    "example": "6|2",
+    "expression": "a[1]/(2*Math.tan(Math.PI/a[0]))",
+    "unit": "units",
+    "inputs": "number of sides | side length",
+    "valid": "Number.isSafeInteger(a[0])&&a[0]>=3&&a[0]<=100000&&a[1]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "regular-polygon-circumradius",
+    "name": "Regular Polygon Circumradius",
+    "example": "6|2",
+    "expression": "a[1]/(2*Math.sin(Math.PI/a[0]))",
+    "unit": "units",
+    "inputs": "number of sides | side length",
+    "valid": "Number.isSafeInteger(a[0])&&a[0]>=3&&a[0]<=100000&&a[1]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "regular-polygon-perimeter",
+    "name": "Regular Polygon Perimeter",
+    "example": "6|2",
+    "expression": "a[0]*a[1]",
+    "unit": "units",
+    "inputs": "number of sides | side length",
+    "valid": "Number.isSafeInteger(a[0])&&a[0]>=3&&a[0]<=100000&&a[1]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "ellipse-circumference-ramanujan",
+    "name": "Ellipse Circumference (Ramanujan)",
+    "example": "5|3",
+    "expression": "Math.PI*(3*(a[0]+a[1])-Math.sqrt((3*a[0]+a[1])*(a[0]+3*a[1])))",
+    "unit": "units",
+    "inputs": "semi-major axis | semi-minor axis",
+    "valid": "a[0]>=a[1]&&a[1]>0",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "right-cone-slant-height",
+    "name": "Right Cone Slant Height",
+    "example": "3|4",
+    "expression": "Math.hypot(a[0],a[1])",
+    "unit": "units",
+    "inputs": "base radius | perpendicular height",
+    "valid": "a.every(x=>x>0)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "vector3-dot-product-calculator",
+    "name": "3D Vector Dot Product",
+    "example": "1|2|3|4|5|6",
+    "expression": "a[0]*a[3]+a[1]*a[4]+a[2]*a[5]",
+    "unit": "squared vector units",
+    "inputs": "Ax | Ay | Az | Bx | By | Bz",
+    "valid": "a.every(Number.isFinite)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "vector3-cross-product-magnitude",
+    "name": "3D Cross Product Magnitude",
+    "example": "1|0|0|0|3|0",
+    "expression": "Math.hypot(a[1]*a[5]-a[2]*a[4],a[2]*a[3]-a[0]*a[5],a[0]*a[4]-a[1]*a[3])",
+    "unit": "squared vector units",
+    "inputs": "Ax | Ay | Az | Bx | By | Bz",
+    "valid": "a.every(Number.isFinite)",
+    "group": "Geometry and vectors"
+  },
+  {
+    "slug": "vector3-angle-between",
+    "name": "3D Vector Angle",
+    "example": "1|0|0|0|1|0",
+    "expression": "Math.acos(Math.max(-1,Math.min(1,(a[0]*a[3]+a[1]*a[4]+a[2]*a[5])/(Math.hypot(a[0],a[1],a[2])*Math.hypot(a[3],a[4],a[5])))))*180/Math.PI",
+    "unit": "degrees",
+    "inputs": "Ax | Ay | Az | Bx | By | Bz",
+    "valid": "Math.hypot(a[0],a[1],a[2])>0&&Math.hypot(a[3],a[4],a[5])>0",
+    "group": "Geometry and vectors"
+  }
+]
