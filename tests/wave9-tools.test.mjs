@@ -49,7 +49,7 @@ test("DNA FASTA protein and chemistry formulas have actual biological and chemic
  assert.match(run("rna-codon-translator","AUGGCCUUUUAA"),/MAF\*/);
  assert.match(run("fasta-sequence-validator",">a\nACGT\n>b\nGG"),/records: 2/);
  assert.match(run("dna-motif-position-finder","ATATAT\n---\nATAT"),/1, 3/);
- assert.match(run("dna-restriction-site-finder","GAATTC\n---\nGAATTC"),/matches: 1/);
+ assert.match(run("dna-oligo-melting-temperature-calculator","ATGCCGTA"),/24 °C/);
  assert.match(run("protein-amino-acid-composition","AACC"),/A: 2 \(50%/);
  assert.match(run("protein-molecular-weight-estimator","ACD"),/Da/);
  assert.match(run("dna-open-reading-frame-finder","ATGAAATAG"),/ORFs: 1/);
@@ -130,7 +130,7 @@ test("JSON and CSV modes perform typed integrity and time-series tasks",()=>{
  assert.match(run("csv-linear-trend-slope","x\n---\nx\n2\n4\n6"),/slope per row: 2/);
  assert.match(run("csv-index-rebasing-tool","x|100\n---\nx\n40\n44"),/44,110/);
  assert.match(run("csv-conditional-distinct-counter","g|flag|yes|user\n---\ng,flag,user\nA,yes,u1\nA,yes,u1"),/A,1/);
- assert.match(run("csv-category-proportion-table","x\n---\nx\nA\nA\nB"),/A,2,66.666/);
+ assert.match(run("csv-numeric-zero-crossing-detector","value\n-2\n1\n-1\n3"),/zero crossings: 3/);
  assert.match(run("csv-numeric-quantile-summary","x\n---\nx\n1\n2\n3"),/median: 2/);
  assert.match(run("csv-consecutive-value-run-detector","x\n---\nx\nA\nA\nB"),/2 rows/);
 });
