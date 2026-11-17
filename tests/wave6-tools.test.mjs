@@ -26,7 +26,7 @@ test("All 100 wave-six tools have unique slugs, real implementations, detailed e
  assert.equal(queue.length,573);
  assert.equal(tools.length,100);
  assert.equal(Object.keys(guides).length,100);
- assert.equal(new Set(queue.map(x=>x.slug)).size,473);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,573);
  assert.equal(queue[373].slug,"text-template-variable-filler");
  assert.equal(queue.filter(x=>x.batch===6).at(-1).slug,"dns-srv-record-generator");
  const priorSlugs=fs.readFileSync("src/data/tools.ts","utf8").match(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)||[];
