@@ -193,7 +193,7 @@
     "slug": "kanban-replenishment-cards",
     "name": "Kanban Replenishment Cards",
     "example": "100|2|10|0.1",
-    "expression": "Math.ceil(a[0]*a[1]*(1+a[3])/a[2])",
+    "expression": "Math.ceil(Number((a[0]*a[1]*(1+a[3])/a[2]).toPrecision(13)))",
     "unit": "cards",
     "inputs": "demand units/day | lead time days | units per card | fractional safety stock",
     "valid": "a[0]>=0&&a[1]>=0&&a[2]>0&&a[3]>=0&&a[3]<=10",
