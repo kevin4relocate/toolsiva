@@ -53,15 +53,6 @@
     ],
     "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
   },
-  "dna-restriction-site-finder": {
-    "explanation": "Find DNA recognition sites on forward/reverse strands.",
-    "example": "GAATTCGCGGAATTC\n---\nGAATTC",
-    "workflows": [
-      "Paste text or numerical values using the documented example format.",
-      "Review the generated output, check assumptions and copy the result as needed."
-    ],
-    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
-  },
   "protein-amino-acid-composition": {
     "explanation": "Count amino acid residues and their percentages in a protein.",
     "example": "MKWVTFISLLFLFSSAYS",
@@ -683,15 +674,6 @@
     ],
     "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
   },
-  "csv-category-proportion-table": {
-    "explanation": "Calculate categorical CSV value counts and shares.",
-    "example": "status\n---\nstatus\nnew\nnew\ndone",
-    "workflows": [
-      "Paste text or numerical values using the documented example format.",
-      "Review the generated output, check assumptions and copy the result as needed."
-    ],
-    "limitation": "Works locally on user-supplied text and values. Limitations, input assumptions and supported formats must be considered; do not rely on the calculation for clinical, safety-critical, regulatory or financial decisions."
-  },
   "csv-numeric-quantile-summary": {
     "explanation": "Summarize CSV P10, quartiles, median, P90 and extrema.",
     "example": "price\n---\nprice\n1\n2\n3\n4\n5",
@@ -898,5 +880,23 @@
       "Review locally calculated output and any warnings or limitations."
     ],
     "limitation": "Uses the Gregorian calendar and Western Easter computus for years 1583–4099; regional Eastern Orthodox observances may differ."
+  },
+  "dna-oligo-melting-temperature-calculator": {
+    "explanation": "Estimate short DNA oligonucleotide melting temperature using the approximate Wallace rule.",
+    "example": "ATGCCGTA",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Read the locally calculated result and apply the documented assumptions."
+    ],
+    "limitation": "The Wallace 2×(A+T)+4×(G+C) °C approximation is most suitable for short unmodified oligonucleotides. Salt, concentration, mismatches and chemical conditions can change melting temperature substantially."
+  },
+  "csv-numeric-zero-crossing-detector": {
+    "explanation": "Detect consecutive positive-to-negative and negative-to-positive transitions in ordered numeric CSV values.",
+    "example": "value\n-2\n1\n-1\n3",
+    "workflows": [
+      "Paste the values shown in the example.",
+      "Read the locally calculated result and apply the documented assumptions."
+    ],
+    "limitation": "Only sign flips between adjacent nonzero numeric observations are counted. Zero-valued observations separate runs; row order is preserved as pasted."
   }
 }
