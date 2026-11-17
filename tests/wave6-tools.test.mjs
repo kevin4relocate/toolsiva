@@ -23,12 +23,12 @@ const run=(slug,input)=>{for(const fn of engines){const output=fn(slug,input);if
 const browserOnly=new Set(["social-meta-tag-auditor","html-table-accessibility-checker"]);
 
 test("All 100 wave-six tools have unique slugs, real implementations, detailed examples and no forbidden categories",()=>{
- assert.equal(queue.length,473);
+ assert.equal(queue.length,573);
  assert.equal(tools.length,100);
  assert.equal(Object.keys(guides).length,100);
  assert.equal(new Set(queue.map(x=>x.slug)).size,473);
  assert.equal(queue[373].slug,"text-template-variable-filler");
- assert.equal(queue.at(-1).slug,"dns-srv-record-generator");
+ assert.equal(queue.filter(x=>x.batch===6).at(-1).slug,"dns-srv-record-generator");
  const priorSlugs=fs.readFileSync("src/data/tools.ts","utf8").match(/(?:slug|"slug")\s*:\s*"([^"]+)"/g)||[];
  assert.equal(priorSlugs.length,123);
  const audit=JSON.parse(fs.readFileSync("src/data/toolFunctionalAudit.json","utf8"));
@@ -195,14 +195,16 @@ test("Publication preserves old order and simulates 473 tools in 48 Monday relea
   fs.mkdirSync(path.join(root,"src/data"),{recursive:true});
   fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(queue));
   fs.writeFileSync(path.join(root,"src/data/simpleToolRelease.json"),JSON.stringify({startDate:"2026-11-23",weeklyLimit:10,published:[],history:[]}));
-  const weeks=Math.ceil(queue.length/10);
+  const phase=queue.filter(x=>x.batch<=6);
+  fs.writeFileSync(path.join(root,"src/data/simpleToolQueue.json"),JSON.stringify(phase));
+  const weeks=Math.ceil(phase.length/10);
   assert.equal(weeks,48);
   for(let i=0;i<weeks;i++){
    const r=releaseSimpleTools({root,now:new Date(Date.UTC(2026,10,23+i*7,2))});
-   assert.equal(r.released.length,Math.min(10,queue.length-i*10));
+   assert.equal(r.released.length,Math.min(10,phase.length-i*10));
   }
   const state=JSON.parse(fs.readFileSync(path.join(root,"src/data/simpleToolRelease.json"),"utf8"));
-  assert.deepEqual(state.published,queue.map(x=>x.slug));
+  assert.deepEqual(state.published,phase.map(x=>x.slug));
   assert.equal(state.history.length,48);
   assert.equal(state.history.at(-1).slugs.length,3);
   assert.equal(state.published[373],"text-template-variable-filler");
