@@ -18,7 +18,7 @@ export function w7DateFmt(d){return String(d.getUTCFullYear()).padStart(4,"0")+"
 
 export function w7Mean(v){if(!v.length)throw Error("At least one data point required.");return v.reduce((a,b)=>a+b,0)/v.length;}
 
-export function w7Quantile(values,p){if(!values.length||p<0||p>1)throw Error("Quantile requires nonempty data and probability 0–1.");const s=[...values].sort((a,b)=>a-b),x=(s.length-1)*p,lo=Math.floor(x),hi=Math.ceil(x);return s[lo]*(hi-x)+s[hi]*(x-lo);}
+export function w7Quantile(values,p){if(!values.length||p<0||p>1)throw Error("Quantile requires nonempty data and probability 0–1.");const s=[...values].sort((a,b)=>a-b),x=(s.length-1)*p,lo=Math.floor(x),hi=Math.ceil(x);return lo===hi?s[lo]:s[lo]*(hi-x)+s[hi]*(x-lo);}
 
 export function w7Rank(v){const pairs=v.map((x,i)=>({x,i})).sort((a,b)=>a.x-b.x),out=Array(v.length).fill(0);for(let i=0;i<pairs.length;){let j=i+1;while(j<pairs.length&&pairs[i].x===pairs[j].x)j++;const rank=(i+j+1)/2;for(let k=i;k<j;k++)out[pairs[k].i]=rank;i=j;}return out;}
 
