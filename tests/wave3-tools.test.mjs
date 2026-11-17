@@ -16,12 +16,12 @@ const added=queue.filter(x=>x.batch===3);
 const run=(slug,value)=>thirdText(slug,value)??thirdCsvJson(slug,value)??dateSlots3(slug,value)??math4(slug,value)??web5(slug,value);
 
 test("Exactly 50 new tools follow the prior 141 and all have working examples",()=>{
- assert.equal(queue.length,673);
+ assert.equal(queue.length,773);
  assert.equal(added.length,50);
  assert.equal(queue.filter(x=>x.batch===2).at(-1).slug,"ipv4-subnet-calculator");
  assert.equal(added[0].slug,"text-line-includes-filter");
  assert.equal(added.at(-1).slug,"dmarc-record-generator");
- assert.equal(new Set(queue.map(x=>x.slug)).size,673);
+ assert.equal(new Set(queue.map(x=>x.slug)).size,773);
  assert.equal(Object.keys(guides).length,50);
  const sources=["wave3Text","wave3Data","wave3Dates","wave3Math","wave3Web"].map(x=>fs.readFileSync("src/lib/"+x+".mjs","utf8")).join("\n");
  for(const tool of added){
