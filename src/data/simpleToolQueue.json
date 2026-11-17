@@ -11856,18 +11856,18 @@
     "batch": 9
   },
   {
-    "slug": "json-pointer-batch-lookup",
-    "name": "JSON Pointer Batch Lookup",
+    "slug": "json-schema-constraint-coverage-reporter",
+    "name": "JSON Schema Constraint Coverage Reporter",
     "category": "developer",
     "week": 75,
-    "shortDescription": "Resolve multiple JSON Pointers against pasted JSON at once.",
-    "metaDescription": "Resolve multiple JSON Pointers against pasted JSON at once. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "shortDescription": "Audit an object JSON Schema and measure its required fields and validation constraint coverage.",
+    "metaDescription": "Audit an object JSON Schema and measure its required fields and validation constraint coverage. Runs offline using typed values; no upload or paid API.",
     "keywords": [
-      "json pointer batch lookup",
-      "free json pointer batch lookup",
-      "online json pointer batch lookup"
+      "json schema constraint coverage reporter",
+      "free json schema constraint coverage reporter",
+      "online json schema constraint coverage reporter"
     ],
-    "example": "/a\n/b/c\n---\n{\"a\":1,\"b\":{\"c\":2}}",
+    "example": "{\"type\":\"object\",\"required\":[\"name\"],\"properties\":{\"name\":{\"type\":\"string\",\"minLength\":2},\"age\":{\"type\":\"integer\",\"minimum\":0},\"city\":{\"type\":\"string\"}}}",
     "ready": true,
     "batch": 9
   },
@@ -12240,18 +12240,18 @@
     "batch": 9
   },
   {
-    "slug": "iso-week-date-to-calendar-date",
-    "name": "ISO Week Date To Calendar Date",
+    "slug": "gregorian-easter-date-calculator",
+    "name": "Gregorian Easter Date Calculator",
     "category": "calculator",
     "week": 77,
-    "shortDescription": "Convert ISO week year/number/weekday into Gregorian date.",
-    "metaDescription": "Convert ISO week year/number/weekday into Gregorian date. Works with pasted text and values offline; no file uploads or paid APIs.",
+    "shortDescription": "Calculate Easter Sunday and Easter Monday dates using the Gregorian computus algorithm.",
+    "metaDescription": "Calculate Easter Sunday and Easter Monday dates using the Gregorian computus algorithm. Runs offline using typed values; no upload or paid API.",
     "keywords": [
-      "iso week date to calendar date",
-      "free iso week date to calendar date",
-      "online iso week date to calendar date"
+      "gregorian easter date calculator",
+      "free gregorian easter date calculator",
+      "online gregorian easter date calculator"
     ],
-    "example": "2026-W47-1",
+    "example": "2027",
     "ready": true,
     "batch": 9
   },
