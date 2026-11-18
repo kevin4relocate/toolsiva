@@ -12,7 +12,7 @@ excerpt: "Calculate a restaurant tip, total and even split with an $80 example, 
 featuredImage: "/blog/illustrations/tip-calculator-split-bill.svg"
 imageAlt: "Visual walkthrough for how to calculate a tip and split a restaurant bill: Bill: $80, Tip: 15%, then Two people: $46 each."
 imageCaption: "A $12 tip makes a $92 total, split evenly into $46 per person."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
