@@ -12,7 +12,7 @@ excerpt: "Use original generated sample text to expose UI problems with long par
 featuredImage: "/blog/illustrations/random-text-for-design-tests.svg"
 imageAlt: "Visual walkthrough for how to use random text for realistic design testing: Short labels, Long paragraphs, then Check overflow."
 imageCaption: "Placeholder text helps reveal layout problems before final copy is ready."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
