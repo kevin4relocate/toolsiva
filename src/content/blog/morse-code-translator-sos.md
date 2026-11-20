@@ -12,7 +12,7 @@ excerpt: "Translate SOS between letters and Morse symbols, learn why spacing mat
 featuredImage: "/blog/illustrations/morse-code-translator-sos.svg"
 imageAlt: "Visual walkthrough for morse code translator: encode and decode sos: S = ..., O = ---, then SOS = ... --- ...."
 imageCaption: "Morse symbols represent letters; spacing determines where one symbol or word ends."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
