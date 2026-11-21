@@ -12,7 +12,7 @@ excerpt: "Join multiline lists using the right separator and learn when a simple
 featuredImage: "/blog/illustrations/list-to-text-csv-ready.svg"
 imageAlt: "Visual walkthrough for turn a multiline list into clean separated text: alpha · beta · gamma, Choose separator, then alpha, beta, gamma."
 imageCaption: "Convert a line-based list into one line with a deliberate separator."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
