@@ -12,7 +12,7 @@ excerpt: "Understand word counts versus character counts, set writing goals and 
 featuredImage: "/blog/illustrations/word-counter-writing-goals.svg"
 imageAlt: "Visual walkthrough for how to check word count without confusing characters: Paste draft, Count words, then Review length."
 imageCaption: "Word count, character count and line count answer different editorial questions."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
