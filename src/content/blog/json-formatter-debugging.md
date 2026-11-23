@@ -12,7 +12,7 @@ excerpt: "Reformat compact JSON for easier debugging while preserving data types
 featuredImage: "/blog/illustrations/json-formatter-debugging.svg"
 imageAlt: "Visual walkthrough for format json for debugging without changing data: Compact JSON, Add indentation, then Readable object."
 imageCaption: "Formatting reorganizes whitespace; it does not repair missing syntax automatically."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
