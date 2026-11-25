@@ -12,7 +12,7 @@ excerpt: "Generate a scannable Wi-Fi QR with the correct SSID, security type and
 featuredImage: "/blog/illustrations/wifi-qr-code-safely.svg"
 imageAlt: "Visual walkthrough for create a wi-fi qr code without sharing the password in text: Network name, Security + secret, then Scan to join."
 imageCaption: "A Wi-Fi QR image contains connection details and should be treated as sensitive."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
