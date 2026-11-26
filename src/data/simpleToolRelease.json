@@ -11,7 +11,17 @@
     "prime-number-checker",
     "leap-year-checker",
     "day-of-year-calculator",
-    "bytes-to-bits"
+    "bytes-to-bits",
+    "weighted-average-calculator",
+    "scientific-notation-converter",
+    "number-sequence-generator",
+    "random-number-generator",
+    "rot13-encoder",
+    "caesar-cipher-tool",
+    "uuid-validator",
+    "pixels-to-rem-converter",
+    "hours-to-decimal-converter",
+    "decimal-to-hours-converter"
   ],
   "history": [
     {
@@ -27,6 +37,21 @@
         "leap-year-checker",
         "day-of-year-calculator",
         "bytes-to-bits"
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "slugs": [
+        "weighted-average-calculator",
+        "scientific-notation-converter",
+        "number-sequence-generator",
+        "random-number-generator",
+        "rot13-encoder",
+        "caesar-cipher-tool",
+        "uuid-validator",
+        "pixels-to-rem-converter",
+        "hours-to-decimal-converter",
+        "decimal-to-hours-converter"
       ]
     }
   ],
