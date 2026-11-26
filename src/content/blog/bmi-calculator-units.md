@@ -12,7 +12,7 @@ excerpt: "Calculate BMI using kilograms and centimetres, see a 70 kg and 170 cm 
 featuredImage: "/blog/illustrations/bmi-calculator-units.svg"
 imageAlt: "Visual walkthrough for bmi calculator: convert height and weight into the right units: 70 kg, 1.70 m, then BMI ≈ 24.2."
 imageCaption: "BMI is a screening measure based on weight and height, not a diagnosis."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
