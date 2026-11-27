@@ -12,7 +12,7 @@ excerpt: "Measure relative growth and decline using the original value, with 100
 featuredImage: "/blog/illustrations/percentage-change-increase-decrease.svg"
 imageAlt: "Visual walkthrough for percentage change: calculate increases and decreases correctly: Original: 100, New: 125, then +25%."
 imageCaption: "A percentage change uses the original value as its reference."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
