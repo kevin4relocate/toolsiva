@@ -12,7 +12,7 @@ excerpt: "Estimate fixed-rate loan payments with a $100,000 example, interpret t
 featuredImage: "/blog/illustrations/loan-monthly-payment-explained.svg"
 imageAlt: "Visual walkthrough for estimate a monthly loan payment and understand the assumptions: $100,000, 6% · 30 years, then ≈ $599.55/month."
 imageCaption: "The calculated payment excludes additional fees, insurance and variable-rate changes."
-draft: true
+draft: false
 aiAssisted: true
 curatedSeries: true
 ---
